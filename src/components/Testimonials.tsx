@@ -32,6 +32,36 @@ const testimonials = [
     piece: "Diamante natural GIA · Platino",
     text: "Soy bastante exigente y fui con muchas preguntas técnicas. Macarena las respondió todas sin dudar. La pieza que hicimos juntos es exactamente lo que pedí.",
   },
+  {
+    name: "Francisca L.",
+    piece: "Solitario princesa · Oro 18k blanco",
+    text: "Mi pololo me propuso con un anillo que diseñó con Macarena. Cuando lo vi, supe que ella lo había entendido perfectamente — capturó algo que ni yo sabía que quería.",
+  },
+  {
+    name: "Martín G.",
+    piece: "Tricillo diamantes · Platino",
+    text: "Comparé con tres joyerías antes de llegar a Gia Solari. Macarena fue la única que me explicó las diferencias entre piedras sin intentar venderme la más cara. Eso me dio confianza total.",
+  },
+  {
+    name: "Javiera C.",
+    piece: "Pulsera · Oro 18k amarillo",
+    text: "Quería una pulsera fina para el día a día. Macarena diseñó algo que puedo usar al trabajo y a una cena sin cambiarme. La uso desde hace un año y parece nueva.",
+  },
+  {
+    name: "Diego M.",
+    piece: "Argollas grabadas · Platino",
+    text: "Nos casamos en pandemia y las argollas fueron lo único que pudimos elegir con calma. Macarena nos hizo sentir que ese detalle importaba tanto como toda la fiesta.",
+  },
+  {
+    name: "Constanza R.",
+    piece: "Aros esmeralda · Oro 18k rosado",
+    text: "Le pedí algo que combinara con mis ojos verdes. Cuando vi las esmeraldas que eligió, no lo podía creer. Cada vez que me los pongo alguien me pregunta dónde los compré.",
+  },
+  {
+    name: "Felipe A.",
+    piece: "Anillo de compromiso · Moissanita · Oro 18k blanco",
+    text: "No quería un diamante por convicción y Macarena lo respetó completamente. Me mostró moissanitas espectaculares y el resultado es una piedra que brilla más que cualquier diamante que vi.",
+  },
 ];
 
 const Testimonials = () => {
@@ -60,7 +90,7 @@ const Testimonials = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
+              transition={{ delay: i * 0.05 }}
               className="bg-background border border-border p-6 rounded-lg"
             >
               <div className="flex gap-0.5 mb-4">

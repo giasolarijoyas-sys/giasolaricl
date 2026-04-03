@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Send, Upload, X, Heart, Calendar, Image } from "lucide-react";
+import { ChevronLeft, ChevronRight, Send, Upload, X, Heart, Calendar, Image, CheckCircle, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 type FormData = {
   pieza: string;
@@ -104,6 +106,8 @@ const OptionCard = ({
 
 const QuoteForm = () => {
   const [step, setStep] = useState(1);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [form, setForm] = useState<FormData>({
     pieza: "",
@@ -143,45 +147,103 @@ const QuoteForm = () => {
   const next = () => setStep((s) => Math.min(s + 1, STEPS.length));
   const prev = () => setStep((s) => Math.max(s - 1, 1));
 
-  const buildWhatsAppMessage = () => {
-    const lines = [
-      `✨ *Nueva cotización Gia Solari*`,
-      ``,
-      `*Pieza:* ${form.pieza}`,
-      `*Metal:* ${form.metal}`,
-      `*Piedra:* ${form.piedra}`,
-      form.forma ? `*Forma:* ${form.forma}` : "",
-      form.quilates ? `*Quilates:* ${form.quilates}` : "",
-      `*Estilo:* ${form.estilo}`,
-      `*Engaste:* ${form.engaste}`,
-      form.grabado ? `*Grabado:* ${form.grabado}` : "",
-      form.referencias ? `*Referencias:* ${form.referencias}` : "",
-      ``,
-      `*Nombre:* ${form.nombre}`,
-      `*WhatsApp:* ${form.whatsapp}`,
-      `*Email:* ${form.email}`,
-      form.presupuesto ? `*Presupuesto:* ${form.presupuesto}` : "",
-      form.fechaLimite ? `*Fecha límite:* ${form.fechaLimite}` : "",
-      form.comoNosConociste ? `*¿Cómo nos conociste?* ${form.comoNosConociste}` : "",
-      ``,
-      form.nombrePareja ? `💕 *Info de tu historia*` : "",
-      form.nombrePareja ? `*Nombre pareja:* ${form.nombrePareja}` : "",
-      form.fechaAniversario ? `*Aniversario:* ${form.fechaAniversario}` : "",
-      form.fechaCumplePareja ? `*Cumpleaños pareja:* ${form.fechaCumplePareja}` : "",
-      form.notasPareja ? `*Notas:* ${form.notasPareja}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
-    return encodeURIComponent(lines);
+  const uploadImages = async (): Promise<string[]> => {
+    const urls: string[] = [];
+    for (const file of form.imagenes) {
+      const ext = file.name.split('.').pop() || 'jpg';
+      const path = `${crypto.randomUUID()}.${ext}`;
+      const { error } = await supabase.storage
+        .from('quote-images')
+        .upload(path, file);
+      if (!error) {
+        const { data } = supabase.storage
+          .from('quote-images')
+          .getPublicUrl(path);
+        urls.push(data.publicUrl);
+      }
+    }
+    return urls;
   };
 
-  const handleSubmit = () => {
-    const msg = buildWhatsAppMessage();
-    window.open(
-      `https://wa.me/56984049502?text=${msg}`,
-      "_blank"
-    );
+  const handleSubmit = async () => {
+    if (!form.nombre || !form.whatsapp || !form.email || !form.pieza || !form.metal) {
+      toast({
+        title: "Faltan datos",
+        description: "Por favor completa al menos nombre, WhatsApp, email, pieza y metal.",
+      });
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      // Upload images first
+      const imageUrls = form.imagenes.length > 0 ? await uploadImages() : [];
+
+      // Send to edge function
+      const { error } = await supabase.functions.invoke('process-quote', {
+        body: {
+          pieza: form.pieza,
+          metal: form.metal,
+          piedra: form.piedra,
+          forma: form.forma,
+          quilates: form.quilates,
+          estilo: form.estilo,
+          engaste: form.engaste,
+          grabado: form.grabado,
+          referencias: form.referencias,
+          nombre: form.nombre,
+          whatsapp: form.whatsapp,
+          email: form.email,
+          como_nos_conociste: form.comoNosConociste,
+          presupuesto: form.presupuesto,
+          fecha_limite: form.fechaLimite,
+          nombre_pareja: form.nombrePareja,
+          fecha_aniversario: form.fechaAniversario,
+          fecha_cumple_pareja: form.fechaCumplePareja,
+          notas_pareja: form.notasPareja,
+          image_urls: imageUrls,
+        },
+      });
+
+      if (error) throw error;
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Submit error:', err);
+      toast({
+        title: "Error al enviar",
+        description: "Hubo un problema enviando tu cotización. Inténtalo de nuevo o escríbenos por WhatsApp.",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
+
+  if (submitted) {
+    return (
+      <section id="cotizador" className="py-24 md:py-32 bg-background">
+        <div className="container mx-auto px-4 md:px-8 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-card border border-border rounded-lg p-10 md:p-16 text-center"
+          >
+            <CheckCircle size={48} className="text-primary mx-auto mb-6" />
+            <h2 className="font-display text-2xl md:text-3xl text-foreground mb-4">
+              ¡Cotización recibida!
+            </h2>
+            <p className="text-muted-foreground leading-relaxed max-w-md mx-auto mb-2">
+              Gracias, <strong className="text-foreground">{form.nombre}</strong>. 
+              Recibí tu solicitud y te contacto personalmente en menos de 24 horas 
+              con una propuesta detallada.
+            </p>
+            <p className="text-muted-foreground text-sm">
+              — Macarena González Solari
+            </p>
+          </motion.div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="cotizador" className="py-24 md:py-32 bg-background">
@@ -445,7 +507,7 @@ const QuoteForm = () => {
                             />
                             <button
                               onClick={() => removeImage(i)}
-                              className="absolute top-0 right-0 bg-charcoal/70 text-cream p-0.5 rounded-bl"
+                              className="absolute top-0 right-0 bg-foreground/70 text-background p-0.5 rounded-bl"
                             >
                               <X size={12} />
                             </button>
@@ -464,7 +526,7 @@ const QuoteForm = () => {
                     Tus datos
                   </h3>
                   <p className="text-muted-foreground text-sm mb-6">
-                    Te envío cotización por email y WhatsApp en menos de 24 horas
+                    Te envío una cotización personalizada en menos de 24 horas
                   </p>
                   <div className="grid gap-4">
                     <div>
@@ -636,9 +698,18 @@ const QuoteForm = () => {
             ) : (
               <button
                 onClick={handleSubmit}
-                className="flex items-center gap-2 px-6 py-2.5 bg-gradient-gold text-charcoal text-sm font-semibold hover:opacity-90 transition-opacity rounded-lg"
+                disabled={submitting}
+                className="flex items-center gap-2 px-6 py-2.5 bg-gradient-gold text-charcoal text-sm font-semibold hover:opacity-90 transition-opacity rounded-lg disabled:opacity-50"
               >
-                <Send size={16} /> Enviar por WhatsApp
+                {submitting ? (
+                  <>
+                    <Loader2 size={16} className="animate-spin" /> Enviando...
+                  </>
+                ) : (
+                  <>
+                    <Send size={16} /> Enviar cotización
+                  </>
+                )}
               </button>
             )}
           </div>
