@@ -44,8 +44,9 @@ const Hero = () => {
             transition={{ delay: 0.6 }}
             className="text-cream/70 text-lg md:text-xl mb-10 max-w-lg font-light leading-relaxed"
           >
-            Diseñamos anillos de compromiso personalizados con atención uno a
-            uno y una experiencia pensada para durar generaciones.
+            Diseñamos todo tipo de joyas a pedido — anillos de compromiso,
+            argollas, aros, collares, pulseras y esclavas — con atención
+            personalizada y una experiencia pensada para durar generaciones.
           </motion.p>
 
           <motion.div

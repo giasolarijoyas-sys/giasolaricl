@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import fundadoraImg from "@/assets/maca-fundadora.jpeg";
 import giannaImg from "@/assets/maca-gianna.jpeg";
 
 const Historia = () => {
@@ -7,29 +6,21 @@ const Historia = () => {
     <section id="historia" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-          {/* Images */}
+          {/* Image — solo foto con mamá */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative grid grid-cols-2 gap-4"
+            className="relative"
           >
-            <img
-              src={fundadoraImg}
-              alt="Macarena González Solari, fundadora de Gia Solari"
-              loading="lazy"
-              width={400}
-              height={500}
-              className="w-full aspect-[4/5] object-cover col-span-2"
-            />
             <img
               src={giannaImg}
               alt="Gianna y Macarena — el legado madre e hija de Gia Solari"
               loading="lazy"
-              width={400}
-              height={300}
-              className="w-full aspect-[4/3] object-cover col-span-2"
+              width={600}
+              height={450}
+              className="w-full aspect-[4/3] object-cover"
             />
             <div className="absolute -bottom-4 -right-4 w-32 h-32 border border-gold/30" />
           </motion.div>

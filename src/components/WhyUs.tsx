@@ -40,8 +40,8 @@ const WhyUs = () => {
             Garantía por Gusto
           </h3>
           <p className="text-muted-foreground leading-relaxed max-w-lg mx-auto">
-            Si no te encanta el resultado, lo rehacemos. Sin preguntas, sin
-            costo extra. Tu satisfacción es nuestra prioridad absoluta.
+            Si no te encanta el resultado, lo rehacemos. Tu satisfacción es
+            nuestra prioridad absoluta.
           </p>
         </motion.div>
 

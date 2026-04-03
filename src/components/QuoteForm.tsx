@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Send, Upload, X, Heart, Calendar, Image, CheckCircle, Loader2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Send, Upload, X, Heart, Calendar, Image, CheckCircle, Loader2, SkipForward } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 
@@ -25,6 +25,15 @@ type FormData = {
   fechaCumplePareja: string;
   notasPareja: string;
   imagenes: File[];
+  // Perfil de ella
+  queLeGusta: string;
+  deporte: string;
+  trabajo: string;
+  usaJoyas: string;
+  estiloVestir: string;
+  colorFavorito: string;
+  notasExtra: string;
+  tallaMano: string;
 };
 
 const STEPS = [
@@ -33,8 +42,9 @@ const STEPS = [
   { num: 3, label: "Piedra" },
   { num: 4, label: "Estilo" },
   { num: 5, label: "Inspiración" },
-  { num: 6, label: "Datos" },
-  { num: 7, label: "Tu historia" },
+  { num: 6, label: "Cuéntanos de ella" },
+  { num: 7, label: "Talla" },
+  { num: 8, label: "Datos" },
 ];
 
 const piezas = [
@@ -43,13 +53,15 @@ const piezas = [
   { emoji: "✨", label: "Aros", desc: "Clásicos o personalizados" },
   { emoji: "📿", label: "Collar", desc: "Colgantes y piezas especiales" },
   { emoji: "⛓️", label: "Pulsera", desc: "Pulsera fina o con detalles" },
+  { emoji: "🔗", label: "Esclava", desc: "Esclavas en oro o platino" },
   { emoji: "🔮", label: "Transformar joya heredada", desc: "Nueva vida a tu tesoro" },
+  { emoji: "💫", label: "Otra joya", desc: "Cuéntanos qué tienes en mente" },
 ];
 
 const metales = [
+  { emoji: "🟡", label: "Oro 18k Amarillo" },
   { emoji: "🤍", label: "Platino" },
   { emoji: "⚪", label: "Oro 18k Blanco" },
-  { emoji: "🟡", label: "Oro 18k Amarillo" },
   { emoji: "🌸", label: "Oro 18k Rosado" },
 ];
 
@@ -75,6 +87,15 @@ const engastes = [
   { emoji: "👑", label: "Halo" },
   { emoji: "💫", label: "Tricillo" },
   { emoji: "〰️", label: "Liso / sin engaste" },
+];
+
+const tallaManos = [
+  { emoji: "🤏", label: "XS — Mano muy delgada", desc: "Talla 4–5 (aprox. 15mm)" },
+  { emoji: "✋", label: "S — Mano delgada", desc: "Talla 5–6 (aprox. 16mm)" },
+  { emoji: "🖐️", label: "M — Mano mediana", desc: "Talla 6–7 (aprox. 17mm)" },
+  { emoji: "🫲", label: "L — Mano ancha", desc: "Talla 7–8 (aprox. 18mm)" },
+  { emoji: "🤚", label: "XL — Mano grande", desc: "Talla 8+ (aprox. 19mm+)" },
+  { emoji: "❓", label: "No lo sé", desc: "Te ayudamos a medir" },
 ];
 
 const OptionCard = ({
@@ -130,6 +151,14 @@ const QuoteForm = () => {
     fechaCumplePareja: "",
     notasPareja: "",
     imagenes: [],
+    queLeGusta: "",
+    deporte: "",
+    trabajo: "",
+    usaJoyas: "",
+    estiloVestir: "",
+    colorFavorito: "",
+    notasExtra: "",
+    tallaMano: "",
   });
 
   const set = (key: keyof FormData, val: string) =>
@@ -146,6 +175,7 @@ const QuoteForm = () => {
 
   const next = () => setStep((s) => Math.min(s + 1, STEPS.length));
   const prev = () => setStep((s) => Math.max(s - 1, 1));
+  const skip = () => next();
 
   const uploadImages = async (): Promise<string[]> => {
     const urls: string[] = [];
@@ -166,24 +196,33 @@ const QuoteForm = () => {
   };
 
   const handleSubmit = async () => {
-    if (!form.nombre || !form.whatsapp || !form.email || !form.pieza || !form.metal) {
+    if (!form.nombre || !form.whatsapp || !form.email) {
       toast({
         title: "Faltan datos",
-        description: "Por favor completa al menos nombre, WhatsApp, email, pieza y metal.",
+        description: "Por favor completa al menos nombre, WhatsApp y email.",
       });
       return;
     }
 
     setSubmitting(true);
     try {
-      // Upload images first
       const imageUrls = form.imagenes.length > 0 ? await uploadImages() : [];
 
-      // Send to edge function
+      const perfilElla = [
+        form.queLeGusta ? `Le gusta: ${form.queLeGusta}` : "",
+        form.deporte ? `Deporte: ${form.deporte}` : "",
+        form.trabajo ? `Trabajo: ${form.trabajo}` : "",
+        form.usaJoyas ? `Usa joyas: ${form.usaJoyas}` : "",
+        form.estiloVestir ? `Estilo: ${form.estiloVestir}` : "",
+        form.colorFavorito ? `Color favorito: ${form.colorFavorito}` : "",
+        form.notasExtra ? `Notas: ${form.notasExtra}` : "",
+        form.tallaMano ? `Talla mano: ${form.tallaMano}` : "",
+      ].filter(Boolean).join(" | ");
+
       const { error } = await supabase.functions.invoke('process-quote', {
         body: {
           pieza: form.pieza,
-          metal: form.metal,
+          metal: form.metal || "Oro 18k Amarillo",
           piedra: form.piedra,
           forma: form.forma,
           quilates: form.quilates,
@@ -200,7 +239,7 @@ const QuoteForm = () => {
           nombre_pareja: form.nombrePareja,
           fecha_aniversario: form.fechaAniversario,
           fecha_cumple_pareja: form.fechaCumplePareja,
-          notas_pareja: form.notasPareja,
+          notas_pareja: perfilElla || form.notasPareja,
           image_urls: imageUrls,
         },
       });
@@ -217,6 +256,9 @@ const QuoteForm = () => {
       setSubmitting(false);
     }
   };
+
+  // Check if step is skippable (all except datos personales)
+  const isSkippable = step !== STEPS.length;
 
   if (submitted) {
     return (
@@ -261,8 +303,8 @@ const QuoteForm = () => {
             Diseña tu <em className="text-primary not-italic">joya ideal</em>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
-            Cuéntame tu visión paso a paso. Te respondo con una propuesta clara
-            y personalizada en menos de 24 horas.
+            Cuéntame tu visión paso a paso — o sáltate lo que no sepas y te ayudo.
+            Te respondo con una propuesta personalizada en menos de 24 horas.
           </p>
         </motion.div>
 
@@ -284,7 +326,7 @@ const QuoteForm = () => {
               </button>
               {s.num < STEPS.length && (
                 <div
-                  className={`w-6 md:w-10 h-px ${
+                  className={`w-4 md:w-8 h-px ${
                     step > s.num ? "bg-primary" : "bg-border"
                   }`}
                 />
@@ -310,9 +352,9 @@ const QuoteForm = () => {
                     ¿Qué pieza estás buscando?
                   </h3>
                   <p className="text-muted-foreground text-sm mb-6">
-                    Selecciona el tipo de joya que quieres cotizar
+                    Hacemos todo tipo de joyas a pedido. Selecciona o sáltate este paso.
                   </p>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                     {piezas.map((p) => (
                       <OptionCard
                         key={p.label}
@@ -332,18 +374,31 @@ const QuoteForm = () => {
                     Elige tu metal
                   </h3>
                   <p className="text-muted-foreground text-sm mb-6">
-                    Los metales más nobles para tu pieza
+                    {form.pieza === "Argollas de matrimonio"
+                      ? "Las argollas se trabajan en Oro 18k Amarillo"
+                      : "Los metales más nobles para tu pieza"}
                   </p>
-                  <div className="grid grid-cols-2 gap-3">
-                    {metales.map((m) => (
+                  {form.pieza === "Argollas de matrimonio" ? (
+                    <div className="grid grid-cols-1 max-w-xs mx-auto gap-3">
                       <OptionCard
-                        key={m.label}
-                        {...m}
-                        selected={form.metal === m.label}
-                        onClick={() => set("metal", m.label)}
+                        emoji="🟡"
+                        label="Oro 18k Amarillo"
+                        selected={true}
+                        onClick={() => set("metal", "Oro 18k Amarillo")}
                       />
-                    ))}
-                  </div>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-2 gap-3">
+                      {metales.map((m) => (
+                        <OptionCard
+                          key={m.label}
+                          {...m}
+                          selected={form.metal === m.label}
+                          onClick={() => set("metal", m.label)}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -354,7 +409,7 @@ const QuoteForm = () => {
                     Piedra central
                   </h3>
                   <p className="text-muted-foreground text-sm mb-6">
-                    ¿Qué piedra imaginas? (Opcional para pulseras y collares)
+                    ¿Qué piedra imaginas? Si no estás seguro, sáltate este paso y te asesoramos.
                   </p>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
                     {piedras.map((p) => (
@@ -414,7 +469,7 @@ const QuoteForm = () => {
                     Estilo y diseño
                   </h3>
                   <p className="text-muted-foreground text-sm mb-6">
-                    ¿Cómo lo imaginas?
+                    ¿Cómo lo imaginas? Si no lo tienes claro, te ayudamos.
                   </p>
                   <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wide">Estilo</p>
                   <div className="grid grid-cols-3 gap-3 mb-6">
@@ -451,16 +506,15 @@ const QuoteForm = () => {
                 </div>
               )}
 
-              {/* Step 5: Inspiración - imágenes de referencia */}
+              {/* Step 5: Inspiración */}
               {step === 5 && (
                 <div>
                   <h3 className="font-display text-xl mb-2 text-foreground flex items-center gap-2">
                     <Image size={20} className="text-primary" /> Inspiración visual
                   </h3>
                   <p className="text-muted-foreground text-sm mb-6">
-                    Sube fotos de anillos que te gusten o comparte un link de Pinterest.
-                    Esto nos ayuda a entender exactamente lo que buscas — no es obligatorio,
-                    pero hace que el resultado sea mucho más preciso.
+                    Sube fotos de joyas que te gusten o comparte un link de Pinterest.
+                    No es obligatorio, pero nos ayuda mucho.
                   </p>
 
                   <div className="mb-6">
@@ -519,8 +573,172 @@ const QuoteForm = () => {
                 </div>
               )}
 
-              {/* Step 6: Datos personales */}
+              {/* Step 6: Cuéntanos de ella */}
               {step === 6 && (
+                <div>
+                  <h3 className="font-display text-xl mb-2 text-foreground flex items-center gap-2">
+                    <Heart size={20} className="text-primary" /> Cuéntanos de ella
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-2">
+                    Mientras más sepamos de tu futura mujer, mejor podemos recomendarte el anillo perfecto.
+                    <strong className="text-foreground"> Responde lo que puedas</strong> — todo es opcional.
+                  </p>
+                  <p className="text-muted-foreground text-xs mb-6 italic">
+                    Esto nos ayuda a entender su estilo y proponerte algo que realmente la represente.
+                  </p>
+
+                  <div className="grid gap-4">
+                    <div>
+                      <label className="text-sm text-muted-foreground block mb-1">Nombre de tu pareja</label>
+                      <input
+                        type="text"
+                        value={form.nombrePareja}
+                        onChange={(e) => set("nombrePareja", e.target.value)}
+                        placeholder="Para personalizar tu experiencia"
+                        className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
+                      />
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="text-sm text-muted-foreground block mb-1">¿Qué le gusta hacer?</label>
+                        <input
+                          type="text"
+                          value={form.queLeGusta}
+                          onChange={(e) => set("queLeGusta", e.target.value)}
+                          placeholder="Ej: Viajar, cocinar, leer, naturaleza..."
+                          className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-sm text-muted-foreground block mb-1">¿Hace deporte?</label>
+                        <input
+                          type="text"
+                          value={form.deporte}
+                          onChange={(e) => set("deporte", e.target.value)}
+                          placeholder="Ej: Yoga, running, gym, no..."
+                          className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
+                        />
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="text-sm text-muted-foreground block mb-1">¿En qué trabaja?</label>
+                        <input
+                          type="text"
+                          value={form.trabajo}
+                          onChange={(e) => set("trabajo", e.target.value)}
+                          placeholder="Ej: Arquitecta, doctora, profesora..."
+                          className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-sm text-muted-foreground block mb-1">¿Usa joyas regularmente?</label>
+                        <select
+                          value={form.usaJoyas}
+                          onChange={(e) => set("usaJoyas", e.target.value)}
+                          className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
+                        >
+                          <option value="">Seleccionar…</option>
+                          <option>Sí, todos los días</option>
+                          <option>A veces, en ocasiones especiales</option>
+                          <option>Casi nunca</option>
+                          <option>No lo sé</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="text-sm text-muted-foreground block mb-1">¿Cómo describirías su estilo?</label>
+                        <select
+                          value={form.estiloVestir}
+                          onChange={(e) => set("estiloVestir", e.target.value)}
+                          className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
+                        >
+                          <option value="">Seleccionar…</option>
+                          <option>Clásico / elegante</option>
+                          <option>Moderno / minimalista</option>
+                          <option>Bohemio / relajado</option>
+                          <option>Glamoroso / llamativo</option>
+                          <option>Deportivo / casual</option>
+                          <option>No sabría describirlo</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="text-sm text-muted-foreground block mb-1">Color favorito de ella</label>
+                        <input
+                          type="text"
+                          value={form.colorFavorito}
+                          onChange={(e) => set("colorFavorito", e.target.value)}
+                          placeholder="Ej: Azul, dorado, rosa..."
+                          className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
+                        />
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="text-sm text-muted-foreground block mb-1 flex items-center gap-1">
+                          <Calendar size={14} /> Fecha de aniversario
+                        </label>
+                        <input
+                          type="date"
+                          value={form.fechaAniversario}
+                          onChange={(e) => set("fechaAniversario", e.target.value)}
+                          className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-sm text-muted-foreground block mb-1 flex items-center gap-1">
+                          <Calendar size={14} /> Cumpleaños de tu pareja
+                        </label>
+                        <input
+                          type="date"
+                          value={form.fechaCumplePareja}
+                          onChange={(e) => set("fechaCumplePareja", e.target.value)}
+                          className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="text-sm text-muted-foreground block mb-1">
+                        ¿Algo más que nos ayude a conocerla?
+                      </label>
+                      <textarea
+                        value={form.notasExtra}
+                        onChange={(e) => set("notasExtra", e.target.value)}
+                        rows={3}
+                        placeholder="Ej: Le gustan los diseños vintage, su color favorito es el azul, estamos juntos hace 5 años, le encanta el mar..."
+                        className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm resize-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Step 7: Talla de mano */}
+              {step === 7 && (
+                <div>
+                  <h3 className="font-display text-xl mb-2 text-foreground">
+                    Talla aproximada
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-6">
+                    ¿Qué tipo de mano tiene? Si no lo sabes, te ayudamos a medir después.
+                    Esto es solo una referencia inicial.
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {tallaManos.map((t) => (
+                      <OptionCard
+                        key={t.label}
+                        {...t}
+                        selected={form.tallaMano === t.label}
+                        onClick={() => set("tallaMano", t.label)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Step 8: Datos personales */}
+              {step === 8 && (
                 <div>
                   <h3 className="font-display text-xl mb-2 text-foreground">
                     Tus datos
@@ -607,74 +825,6 @@ const QuoteForm = () => {
                   </div>
                 </div>
               )}
-
-              {/* Step 7: Historia de amor - info pareja */}
-              {step === 7 && (
-                <div>
-                  <h3 className="font-display text-xl mb-2 text-foreground flex items-center gap-2">
-                    <Heart size={20} className="text-primary" /> Cuéntanos tu historia
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-2">
-                    Esta sección es <strong className="text-foreground">completamente opcional</strong>, pero nos
-                    encanta conocer la historia detrás de cada joya.
-                  </p>
-                  <p className="text-muted-foreground text-xs mb-6 italic">
-                    Si compartes estos datos, podemos contactarte en fechas especiales con ideas
-                    pensadas para ti — nunca spam, solo inspiración en los momentos que importan.
-                  </p>
-
-                  <div className="grid gap-4">
-                    <div>
-                      <label className="text-sm text-muted-foreground block mb-1 flex items-center gap-1">
-                        <Heart size={14} /> Nombre de tu pareja
-                      </label>
-                      <input
-                        type="text"
-                        value={form.nombrePareja}
-                        onChange={(e) => set("nombrePareja", e.target.value)}
-                        placeholder="Para poder personalizar tu experiencia"
-                        className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
-                      />
-                    </div>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="text-sm text-muted-foreground block mb-1 flex items-center gap-1">
-                          <Calendar size={14} /> Fecha de aniversario
-                        </label>
-                        <input
-                          type="date"
-                          value={form.fechaAniversario}
-                          onChange={(e) => set("fechaAniversario", e.target.value)}
-                          className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-sm text-muted-foreground block mb-1 flex items-center gap-1">
-                          <Calendar size={14} /> Cumpleaños de tu pareja
-                        </label>
-                        <input
-                          type="date"
-                          value={form.fechaCumplePareja}
-                          onChange={(e) => set("fechaCumplePareja", e.target.value)}
-                          className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="text-sm text-muted-foreground block mb-1">
-                        ¿Algo más que quieras contarnos?
-                      </label>
-                      <textarea
-                        value={form.notasPareja}
-                        onChange={(e) => set("notasPareja", e.target.value)}
-                        rows={3}
-                        placeholder="Ej: Le gustan los diseños vintage, su color favorito es el azul, estamos juntos hace 5 años..."
-                        className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm resize-none"
-                      />
-                    </div>
-                  </div>
-                </div>
-              )}
             </motion.div>
           </AnimatePresence>
 
@@ -688,30 +838,41 @@ const QuoteForm = () => {
               <ChevronLeft size={16} /> Volver
             </button>
 
-            {step < STEPS.length ? (
-              <button
-                onClick={next}
-                className="flex items-center gap-1 px-6 py-2.5 bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity rounded-lg"
-              >
-                Continuar <ChevronRight size={16} />
-              </button>
-            ) : (
-              <button
-                onClick={handleSubmit}
-                disabled={submitting}
-                className="flex items-center gap-2 px-6 py-2.5 bg-gradient-gold text-charcoal text-sm font-semibold hover:opacity-90 transition-opacity rounded-lg disabled:opacity-50"
-              >
-                {submitting ? (
-                  <>
-                    <Loader2 size={16} className="animate-spin" /> Enviando...
-                  </>
-                ) : (
-                  <>
-                    <Send size={16} /> Enviar cotización
-                  </>
-                )}
-              </button>
-            )}
+            <div className="flex items-center gap-3">
+              {isSkippable && (
+                <button
+                  onClick={skip}
+                  className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Saltar <SkipForward size={14} />
+                </button>
+              )}
+
+              {step < STEPS.length ? (
+                <button
+                  onClick={next}
+                  className="flex items-center gap-1 px-6 py-2.5 bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity rounded-lg"
+                >
+                  Continuar <ChevronRight size={16} />
+                </button>
+              ) : (
+                <button
+                  onClick={handleSubmit}
+                  disabled={submitting}
+                  className="flex items-center gap-2 px-6 py-2.5 bg-gradient-gold text-charcoal text-sm font-semibold hover:opacity-90 transition-opacity rounded-lg disabled:opacity-50"
+                >
+                  {submitting ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" /> Enviando...
+                    </>
+                  ) : (
+                    <>
+                      <Send size={16} /> Enviar cotización
+                    </>
+                  )}
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
