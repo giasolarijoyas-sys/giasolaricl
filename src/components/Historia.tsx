@@ -20,7 +20,7 @@ const Historia = () => {
               loading="lazy"
               width={600}
               height={450}
-              className="w-full aspect-[4/3] object-cover"
+              className="w-full object-contain"
             />
             <div className="absolute -bottom-4 -right-4 w-32 h-32 border border-gold/30" />
           </motion.div>
