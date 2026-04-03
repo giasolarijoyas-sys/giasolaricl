@@ -1,66 +1,61 @@
 
 
-# Plan: Usar fotos reales + agregar Garantia por Gusto
+# Plan: Cotización por email + base de datos de precios + más testimonios
 
 ## Resumen
 
-Reemplazar todas las imagenes generadas/placeholder por las fotos reales que subiste, y agregar prominentemente la "Garantia por Gusto" como diferenciador principal en la seccion "Que nos hace unicas".
+Tres cambios principales: (1) el formulario de cotización deja de enviar por WhatsApp y en su lugar guarda en base de datos + envía email a Macarena, (2) se crea una tabla de precios base para generar cotizaciones rápidas, y (3) se expanden los testimonios a 12 clientes.
 
-## Fotos y donde usarlas
+## 1. Base de datos: tablas de cotizaciones y precios
 
-Las 8 fotos subidas se distribuyen asi:
+### Tabla `quotes` (cotizaciones recibidas)
+Guarda cada cotización con todos los campos del formulario actual (pieza, metal, piedra, forma, quilates, estilo, engaste, grabado, referencias, nombre, whatsapp, email, presupuesto, fecha_limite, nombre_pareja, fecha_aniversario, fecha_cumple_pareja, notas_pareja). Más un campo `status` (nueva, en_proceso, cotizada, cerrada) y `quoted_price` (precio cotizado). Sin RLS restrictivo ya que no hay auth de clientes — se usa `anon` insert + service role para lectura admin.
 
-| Foto | Uso |
+### Tabla `base_prices` (lista de precios actualizables)
+Columnas: `id`, `category` (metal, piedra, mano_de_obra, etc.), `item` (ej: "Platino", "Diamante Natural 0.5ct"), `price_clp`, `notes`, `updated_at`. Macarena puede actualizar precios y el sistema los usa para generar cotizaciones orientativas rápidas.
+
+### Storage bucket `quote-images`
+Para guardar las imágenes de referencia que sube el cliente en el formulario.
+
+## 2. Edge function: `process-quote`
+
+Recibe la cotización, guarda en `quotes`, sube imágenes a storage, y envía un email a Macarena con todos los detalles formateados. Usa el Lovable AI Gateway para NO necesitar API key de email externo — en su lugar, el email se envía vía la infraestructura de Lovable Cloud (se necesita configurar dominio de email).
+
+**Alternativa sin dominio de email:** Como configurar un dominio de email requiere DNS, en una primera versión la edge function puede guardar todo en la base de datos y notificar por WhatsApp API o simplemente Macarena revisa un panel admin. El email al cliente se implementa cuando se configure el dominio.
+
+## 3. Cambios en `QuoteForm.tsx`
+
+- Reemplazar `handleSubmit` para que use `supabase.functions.invoke('process-quote')` en lugar de abrir WhatsApp.
+- Subir imágenes a storage bucket antes de enviar.
+- Mostrar confirmación bonita al usuario después de enviar ("Tu cotización fue recibida, te contactamos en menos de 24 horas").
+- El botón cambia de "Enviar por WhatsApp" a "Enviar cotización".
+
+## 4. Testimonios expandidos (12 clientes)
+
+Actualizar `Testimonials.tsx` con 12 testimonios (los 6 actuales + 6 nuevos inventados con el mismo estilo y tono). Cada uno con nombre, pieza y texto.
+
+## 5. Secciones sin fotos (respuesta)
+
+Estas secciones actualmente NO tienen fotos reales y podrían beneficiarse de ellas:
+- **Cotizador** (#cotizador): No tiene imágenes, solo el formulario. Podría tener una foto de fondo o lateral.
+- **¿Qué nos hace únicas?** (WhyUs): Solo emojis, sin fotos.
+- **Footer**: Sin imágenes.
+- **Hero, Historia, Galería**: Ya tienen fotos reales tuyas.
+- **Testimonios**: Solo iniciales, podría tener fotos de las piezas mencionadas.
+
+## Archivos a crear/modificar
+
+| Archivo | Acción |
 |---|---|
-| `WhatsApp_Image..._6.jpeg` (Maca close-up con joyas, vestido negro) | **Hero** - imagen principal del sitio |
-| `WhatsApp_Image..._5.jpeg` (Maca cuerpo completo, vestido azul) | **Historia** - foto de la fundadora |
-| `WhatsApp_Image...14.jpeg` (Gianna y Maca juntas) | **Historia** - segunda foto, legado madre-hija |
-| `WhatsApp_Image..._4.jpeg` (anillo zafiro azul en caja) | **Galeria** |
-| `WhatsApp_Image..._3.jpeg` (argolla platino con carta) | **Galeria** |
-| `WhatsApp_Image..._2.jpeg` (tricillo diamantes, marco dorado) | **Galeria** |
-| `WhatsApp_Image..._1.jpeg` (tricillo diamantes, marco dorado vista 2) | **Galeria** |
-| `WhatsApp_Image...43.jpeg` (anillo princesa en marco dorado) | **Galeria** |
+| DB migration | Crear tablas `quotes` y `base_prices` + storage bucket |
+| `supabase/functions/process-quote/index.ts` | Crear — recibe cotización, guarda en DB, sube imágenes |
+| `src/components/QuoteForm.tsx` | Modificar — enviar a edge function en lugar de WhatsApp |
+| `src/components/Testimonials.tsx` | Modificar — expandir a 12 testimonios |
 
-## Cambios por archivo
+## Orden de implementación
 
-### 1. Copiar las 8 fotos a `src/assets/`
-
-Copiar todas las imagenes subidas al proyecto para usarlas como imports ES6.
-
-### 2. `src/components/Hero.tsx`
-
-Reemplazar `hero-ring.jpg` (imagen generada) por la foto de Maca con joyas (close-up vestido negro).
-
-### 3. `src/components/Historia.tsx`
-
-- Reemplazar `fundadora.jpg` (imagen generada) por la foto de Maca cuerpo completo (vestido azul)
-- Agregar segunda foto de Gianna y Maca juntas para reforzar el legado madre-hija
-
-### 4. `src/components/Gallery.tsx`
-
-Reemplazar las URLs externas de Netlify por las 5 fotos reales de producto (anillos). Reducir la galeria a las piezas reales disponibles. Eliminar imagenes placeholder.
-
-### 5. `src/components/WhyUs.tsx` - Garantia por Gusto
-
-Agregar como **primer item** (el mas destacado) la "Garantia por Gusto":
-- Titulo: "Garantia por Gusto"
-- Descripcion: "Si no te encanta el resultado, lo rehacemos. Sin preguntas, sin costo extra. Tu satisfaccion es nuestra prioridad absoluta."
-- Darle un estilo visual destacado (borde dorado, tamanio mayor) para que sea lo primero que se vea
-
-Los demas items se mantienen.
-
-### 6. System prompt del chatbot
-
-Agregar la garantia por gusto al conocimiento del asistente IA para que pueda mencionarla cuando corresponda.
-
-## Archivos a modificar
-
-| Archivo | Cambio |
-|---|---|
-| `src/assets/` | Copiar 8 fotos reales |
-| `src/components/Hero.tsx` | Cambiar imagen hero |
-| `src/components/Historia.tsx` | Cambiar foto fundadora + agregar foto madre-hija |
-| `src/components/Gallery.tsx` | Reemplazar galeria con fotos reales |
-| `src/components/WhyUs.tsx` | Agregar Garantia por Gusto destacada |
-| `supabase/functions/jewelry-assistant/index.ts` | Agregar garantia por gusto al system prompt |
+1. Crear tablas y storage bucket (migration)
+2. Crear edge function `process-quote`
+3. Actualizar `QuoteForm.tsx`
+4. Expandir testimonios
 
