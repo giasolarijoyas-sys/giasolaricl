@@ -16,9 +16,8 @@ const Index = () => {
       <Hero />
       <Historia />
       <Gallery />
-      <QuoteForm />
-      <Testimonials />
       <WhyUs />
+      <Testimonials />
       <Footer />
       <WhatsAppButton />
       <JewelryChat />
