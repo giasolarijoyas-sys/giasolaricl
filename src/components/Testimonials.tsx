@@ -10,22 +10,12 @@ const testimonials = [
   {
     name: "Roberto S.",
     piece: "Collar con zafiro · Oro 18k amarillo",
-    text: "Quería algo para nuestro décimo aniversario que fuera más que un regalo. Cuando mi esposa vio la pieza, lloró. Dijo que era como si alguien hubiera convertido una historia en oro.",
-  },
-  {
-    name: "Catalina M.",
-    piece: "Transformación · Aros heredados",
-    text: "Tenía los aros de mi abuela guardados hace diez años. Macarena los transformó en algo completamente nuevo sin perder el oro original. Ahora los uso todos los días.",
+    text: "Quería algo para nuestro décimo aniversario que fuera más que un regalo. Cuando mi mujer vio la pieza, lloró. Dijo que era como si alguien hubiera convertido una historia en oro.",
   },
   {
     name: "Ignacio F.",
-    piece: "Argollas de matrimonio · Oro 18k blanco",
+    piece: "Argollas de matrimonio · Oro 18k amarillo",
     text: "Lo que más me sorprendió fue la honestidad. Le dije mi presupuesto y en vez de empujarme a gastar más, me mostró exactamente lo que era posible — y quedó espectacular.",
-  },
-  {
-    name: "Valentina P.",
-    piece: "Anillo de autor · Zafiro azul · Oro 18k rosado",
-    text: "Me regalé un anillo por mis 40 años. Macarena me ayudó a diseñar algo que dijera exactamente quién soy. Fue la primera vez que me sentí el centro del proceso.",
   },
   {
     name: "Tomás R.",
@@ -33,34 +23,44 @@ const testimonials = [
     text: "Soy bastante exigente y fui con muchas preguntas técnicas. Macarena las respondió todas sin dudar. La pieza que hicimos juntos es exactamente lo que pedí.",
   },
   {
-    name: "Francisca L.",
-    piece: "Solitario princesa · Oro 18k blanco",
-    text: "Mi pololo me propuso con un anillo que diseñó con Macarena. Cuando lo vi, supe que ella lo había entendido perfectamente — capturó algo que ni yo sabía que quería.",
-  },
-  {
     name: "Martín G.",
     piece: "Tricillo diamantes · Platino",
     text: "Comparé con tres joyerías antes de llegar a Gia Solari. Macarena fue la única que me explicó las diferencias entre piedras sin intentar venderme la más cara. Eso me dio confianza total.",
   },
   {
-    name: "Javiera C.",
-    piece: "Pulsera · Oro 18k amarillo",
-    text: "Quería una pulsera fina para el día a día. Macarena diseñó algo que puedo usar al trabajo y a una cena sin cambiarme. La uso desde hace un año y parece nueva.",
-  },
-  {
     name: "Diego M.",
-    piece: "Argollas grabadas · Platino",
+    piece: "Argollas grabadas · Oro 18k amarillo",
     text: "Nos casamos en pandemia y las argollas fueron lo único que pudimos elegir con calma. Macarena nos hizo sentir que ese detalle importaba tanto como toda la fiesta.",
-  },
-  {
-    name: "Constanza R.",
-    piece: "Aros esmeralda · Oro 18k rosado",
-    text: "Le pedí algo que combinara con mis ojos verdes. Cuando vi las esmeraldas que eligió, no lo podía creer. Cada vez que me los pongo alguien me pregunta dónde los compré.",
   },
   {
     name: "Felipe A.",
     piece: "Anillo de compromiso · Moissanita · Oro 18k blanco",
     text: "No quería un diamante por convicción y Macarena lo respetó completamente. Me mostró moissanitas espectaculares y el resultado es una piedra que brilla más que cualquier diamante que vi.",
+  },
+  {
+    name: "Sebastián C.",
+    piece: "Solitario esmeralda · Oro 18k amarillo",
+    text: "Mi novia siempre quiso una esmeralda. Macarena me ayudó a encontrar la piedra perfecta y diseñó un anillo que superó todo lo que imaginé. La propuesta fue un éxito.",
+  },
+  {
+    name: "Nicolás P.",
+    piece: "Anillo halo · Diamante lab · Platino",
+    text: "Quería sorprenderla con algo espectacular pero sin gastar una fortuna. Macarena me recomendó un diamante de laboratorio y el resultado es idéntico a uno natural. Ella quedó fascinada.",
+  },
+  {
+    name: "Cristóbal L.",
+    piece: "Solitario cushion · Oro 18k rosado",
+    text: "Le describí el estilo de mi polola — minimalista pero con un toque especial — y Macarena lo entendió al tiro. Diseñó algo que es exactamente ella. La reacción no tuvo precio.",
+  },
+  {
+    name: "Matías H.",
+    piece: "Anillo vintage · Zafiro · Platino",
+    text: "Busqué meses un anillo con estilo vintage sin éxito. Llegué donde Macarena, le mostré tres fotos de Pinterest y en dos semanas tenía algo mejor que cualquiera de esas fotos.",
+  },
+  {
+    name: "Gonzalo E.",
+    piece: "Solitario oval · Diamante GIA · Platino",
+    text: "Me daba nervio equivocarme. Macarena me preguntó cosas de mi señora que yo ni había pensado — qué joyas usa, cómo se viste, qué le gusta. Con eso diseñó algo perfecto.",
   },
 ];
 
