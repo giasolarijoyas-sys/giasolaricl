@@ -14,7 +14,120 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      base_prices: {
+        Row: {
+          category: string
+          created_at: string
+          id: string
+          item: string
+          notes: string | null
+          price_clp: number
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          id?: string
+          item: string
+          notes?: string | null
+          price_clp: number
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          id?: string
+          item?: string
+          notes?: string | null
+          price_clp?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      quotes: {
+        Row: {
+          como_nos_conociste: string | null
+          created_at: string
+          email: string
+          engaste: string | null
+          estilo: string | null
+          fecha_aniversario: string | null
+          fecha_cumple_pareja: string | null
+          fecha_limite: string | null
+          forma: string | null
+          grabado: string | null
+          id: string
+          image_urls: string[] | null
+          metal: string
+          nombre: string
+          nombre_pareja: string | null
+          notas_pareja: string | null
+          piedra: string | null
+          pieza: string
+          presupuesto: string | null
+          quilates: string | null
+          quoted_price: number | null
+          referencias: string | null
+          status: string
+          updated_at: string
+          whatsapp: string
+        }
+        Insert: {
+          como_nos_conociste?: string | null
+          created_at?: string
+          email: string
+          engaste?: string | null
+          estilo?: string | null
+          fecha_aniversario?: string | null
+          fecha_cumple_pareja?: string | null
+          fecha_limite?: string | null
+          forma?: string | null
+          grabado?: string | null
+          id?: string
+          image_urls?: string[] | null
+          metal: string
+          nombre: string
+          nombre_pareja?: string | null
+          notas_pareja?: string | null
+          piedra?: string | null
+          pieza: string
+          presupuesto?: string | null
+          quilates?: string | null
+          quoted_price?: number | null
+          referencias?: string | null
+          status?: string
+          updated_at?: string
+          whatsapp: string
+        }
+        Update: {
+          como_nos_conociste?: string | null
+          created_at?: string
+          email?: string
+          engaste?: string | null
+          estilo?: string | null
+          fecha_aniversario?: string | null
+          fecha_cumple_pareja?: string | null
+          fecha_limite?: string | null
+          forma?: string | null
+          grabado?: string | null
+          id?: string
+          image_urls?: string[] | null
+          metal?: string
+          nombre?: string
+          nombre_pareja?: string | null
+          notas_pareja?: string | null
+          piedra?: string | null
+          pieza?: string
+          presupuesto?: string | null
+          quilates?: string | null
+          quoted_price?: number | null
+          referencias?: string | null
+          status?: string
+          updated_at?: string
+          whatsapp?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
