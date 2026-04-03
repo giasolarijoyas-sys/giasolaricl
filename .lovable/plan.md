@@ -1,78 +1,66 @@
 
 
-# Plan: Chatbot IA Experto en Joyas para Gia Solari
+# Plan: Usar fotos reales + agregar Garantia por Gusto
 
 ## Resumen
 
-Crear un chatbot de IA flotante integrado en la página web que actue como asesor experto en joyas. El chatbot usa Lovable Cloud (Supabase edge function + Lovable AI Gateway) para responder preguntas, recomendar anillos, guiar al usuario por la web y recibir fotos de referencia. El tono es cercano, cálido y orientado a que el proceso de compra sea una experiencia.
+Reemplazar todas las imagenes generadas/placeholder por las fotos reales que subiste, y agregar prominentemente la "Garantia por Gusto" como diferenciador principal en la seccion "Que nos hace unicas".
 
-## Arquitectura
+## Fotos y donde usarlas
 
-```text
-┌─────────────────┐     ┌──────────────────────┐     ┌──────────────┐
-│  ChatBot Widget │────▶│  Edge Function        │────▶│ Lovable AI   │
-│  (React)        │     │  /jewelry-assistant   │     │ Gateway      │
-│  - texto        │     │  - system prompt con  │     │ gemini-3-    │
-│  - fotos        │     │    info de Gia Solari │     │ flash-preview│
-│  - audio→texto  │     │  - streaming SSE      │     └──────────────┘
-└─────────────────┘     └──────────────────────┘
-```
+Las 8 fotos subidas se distribuyen asi:
 
-## Pasos de implementacion
-
-### 1. Activar Lovable Cloud y crear edge function
-
-Crear `supabase/functions/jewelry-assistant/index.ts` con:
-- System prompt extenso con TODA la informacion de Gia Solari (historia, metales, piedras, estilos, precios orientativos, proceso de trabajo, testimonios, FAQ)
-- Streaming SSE hacia el cliente
-- Soporte para mensajes con imagenes (vision multimodal via Gemini)
-- Manejo de errores 429/402
-
-### 2. Crear componente `JewelryChat.tsx`
-
-Widget flotante (boton en esquina inferior izquierda, al lado del WhatsApp que esta a la derecha):
-- Chat expandible tipo drawer/modal
-- Input de texto + boton para adjuntar fotos + boton de audio
-- Streaming token-by-token con react-markdown para renderizar respuestas
-- Historial de conversacion en estado local
-- Sugerencias rapidas predefinidas ("Quiero un anillo de compromiso", "Cual es la diferencia entre diamante natural y lab?", "Tengo presupuesto de $X")
-- Links internos: el bot puede sugerir "Mira nuestra galeria" con links a #galeria, #cotizador, etc.
-
-### 3. Audio: Speech-to-Text via browser
-
-Usar la Web Speech API nativa del navegador (`webkitSpeechRecognition`) para transcribir audio a texto en el cliente, sin necesidad de API externa. Sencillo y sin costo.
-
-### 4. Fotos de referencia
-
-El usuario puede subir fotos desde el chat. Se convierten a base64 y se envian al edge function, que las pasa al modelo multimodal (Gemini soporta imagenes). El bot puede comentar el estilo, sugerir metales/piedras similares, etc.
-
-### 5. Integrar en Index.tsx
-
-Agregar `<JewelryChat />` junto al `<WhatsAppButton />`.
-
-## Detalle tecnico: System Prompt
-
-El system prompt incluira:
-- Identidad: "Soy el asistente virtual de Gia Solari, joyeria de autor en Santiago"
-- Conocimiento: metales (platino, oro 18k blanco/amarillo/rosado), piedras (diamante natural/lab, moissanita, zafiro, esmeralda, rubi), estilos (clasico, moderno, vintage), engastes, proceso de creacion
-- Historia de la marca y de Macarena
-- Testimonios reales para dar confianza
-- Guia de navegacion: puede recomendar ir al cotizador, ver la galeria, leer testimonios
-- Tono: calido, cercano, como hablar con una amiga que sabe mucho de joyas
-- Objetivo: que el usuario se sienta acompanado, no presionado; derivar a WhatsApp/cotizador cuando este listo
-
-## Dependencias nuevas
-
-- `react-markdown` - renderizar respuestas del bot
-- `@supabase/supabase-js` - invocar edge function
-
-## Archivos a crear/modificar
-
-| Archivo | Accion |
+| Foto | Uso |
 |---|---|
-| `supabase/functions/jewelry-assistant/index.ts` | Crear - edge function con streaming |
-| `src/components/JewelryChat.tsx` | Crear - widget de chat completo |
-| `src/pages/Index.tsx` | Modificar - agregar JewelryChat |
-| `src/integrations/supabase/client.ts` | Crear - cliente Supabase |
-| `package.json` | Agregar react-markdown, @supabase/supabase-js |
+| `WhatsApp_Image..._6.jpeg` (Maca close-up con joyas, vestido negro) | **Hero** - imagen principal del sitio |
+| `WhatsApp_Image..._5.jpeg` (Maca cuerpo completo, vestido azul) | **Historia** - foto de la fundadora |
+| `WhatsApp_Image...14.jpeg` (Gianna y Maca juntas) | **Historia** - segunda foto, legado madre-hija |
+| `WhatsApp_Image..._4.jpeg` (anillo zafiro azul en caja) | **Galeria** |
+| `WhatsApp_Image..._3.jpeg` (argolla platino con carta) | **Galeria** |
+| `WhatsApp_Image..._2.jpeg` (tricillo diamantes, marco dorado) | **Galeria** |
+| `WhatsApp_Image..._1.jpeg` (tricillo diamantes, marco dorado vista 2) | **Galeria** |
+| `WhatsApp_Image...43.jpeg` (anillo princesa en marco dorado) | **Galeria** |
+
+## Cambios por archivo
+
+### 1. Copiar las 8 fotos a `src/assets/`
+
+Copiar todas las imagenes subidas al proyecto para usarlas como imports ES6.
+
+### 2. `src/components/Hero.tsx`
+
+Reemplazar `hero-ring.jpg` (imagen generada) por la foto de Maca con joyas (close-up vestido negro).
+
+### 3. `src/components/Historia.tsx`
+
+- Reemplazar `fundadora.jpg` (imagen generada) por la foto de Maca cuerpo completo (vestido azul)
+- Agregar segunda foto de Gianna y Maca juntas para reforzar el legado madre-hija
+
+### 4. `src/components/Gallery.tsx`
+
+Reemplazar las URLs externas de Netlify por las 5 fotos reales de producto (anillos). Reducir la galeria a las piezas reales disponibles. Eliminar imagenes placeholder.
+
+### 5. `src/components/WhyUs.tsx` - Garantia por Gusto
+
+Agregar como **primer item** (el mas destacado) la "Garantia por Gusto":
+- Titulo: "Garantia por Gusto"
+- Descripcion: "Si no te encanta el resultado, lo rehacemos. Sin preguntas, sin costo extra. Tu satisfaccion es nuestra prioridad absoluta."
+- Darle un estilo visual destacado (borde dorado, tamanio mayor) para que sea lo primero que se vea
+
+Los demas items se mantienen.
+
+### 6. System prompt del chatbot
+
+Agregar la garantia por gusto al conocimiento del asistente IA para que pueda mencionarla cuando corresponda.
+
+## Archivos a modificar
+
+| Archivo | Cambio |
+|---|---|
+| `src/assets/` | Copiar 8 fotos reales |
+| `src/components/Hero.tsx` | Cambiar imagen hero |
+| `src/components/Historia.tsx` | Cambiar foto fundadora + agregar foto madre-hija |
+| `src/components/Gallery.tsx` | Reemplazar galeria con fotos reales |
+| `src/components/WhyUs.tsx` | Agregar Garantia por Gusto destacada |
+| `supabase/functions/jewelry-assistant/index.ts` | Agregar garantia por gusto al system prompt |
 
