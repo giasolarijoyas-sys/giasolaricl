@@ -7,6 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import WhyUs from "@/components/WhyUs";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import JewelryChat from "@/components/JewelryChat";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <WhyUs />
       <Footer />
       <WhatsAppButton />
+      <JewelryChat />
     </div>
   );
 };
