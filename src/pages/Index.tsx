@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Historia from "@/components/Historia";
 import Gallery from "@/components/Gallery";
-import QuoteForm from "@/components/QuoteForm";
+import QuizContainer from "@/components/quiz/QuizContainer";
 import Testimonials from "@/components/Testimonials";
 import WhyUs from "@/components/WhyUs";
 import Footer from "@/components/Footer";
@@ -15,7 +15,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <WhyUs />
-      <QuoteForm />
+      <QuizContainer />
       <Gallery />
       <Historia />
       <Testimonials />
