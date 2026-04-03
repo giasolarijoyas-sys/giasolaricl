@@ -47,6 +47,7 @@ export type Database = {
       quotes: {
         Row: {
           como_nos_conociste: string | null
+          confidence_score: number | null
           created_at: string
           email: string
           engaste: string | null
@@ -66,7 +67,9 @@ export type Database = {
           pieza: string
           presupuesto: string | null
           quilates: string | null
+          quiz_answers: Json | null
           quoted_price: number | null
+          recommendation: Json | null
           referencias: string | null
           status: string
           updated_at: string
@@ -74,6 +77,7 @@ export type Database = {
         }
         Insert: {
           como_nos_conociste?: string | null
+          confidence_score?: number | null
           created_at?: string
           email: string
           engaste?: string | null
@@ -93,7 +97,9 @@ export type Database = {
           pieza: string
           presupuesto?: string | null
           quilates?: string | null
+          quiz_answers?: Json | null
           quoted_price?: number | null
+          recommendation?: Json | null
           referencias?: string | null
           status?: string
           updated_at?: string
@@ -101,6 +107,7 @@ export type Database = {
         }
         Update: {
           como_nos_conociste?: string | null
+          confidence_score?: number | null
           created_at?: string
           email?: string
           engaste?: string | null
@@ -120,7 +127,9 @@ export type Database = {
           pieza?: string
           presupuesto?: string | null
           quilates?: string | null
+          quiz_answers?: Json | null
           quoted_price?: number | null
+          recommendation?: Json | null
           referencias?: string | null
           status?: string
           updated_at?: string
