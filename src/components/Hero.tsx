@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-ring.jpg";
+import heroImage from "@/assets/maca-hero.jpeg";
 
 const Hero = () => {
   return (
@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Anillo de compromiso solitario en platino sobre mármol"
+          alt="Macarena González Solari, fundadora de Gia Solari"
           width={1920}
           height={1080}
           className="w-full h-full object-cover"

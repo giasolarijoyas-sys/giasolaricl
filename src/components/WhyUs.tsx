@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const reasons = [
+  { emoji: "✍️", title: "100% a Pedido", desc: "Ninguna pieza es igual. Cada joya nace de tu historia." },
   { emoji: "🤍", title: "Especialistas en Platino", desc: "De las pocas joyerías en Chile que trabaja el platino con verdadera maestría." },
   { emoji: "💎", title: "Piedras Certificadas", desc: "Solo piedras con certificado GIA o IGI. Transparencia total." },
-  { emoji: "✍️", title: "100% a Pedido", desc: "Ninguna pieza es igual. Cada joya nace de tu historia." },
   { emoji: "🌿", title: "Transparencia Total", desc: "Te explicamos cada material y proceso. Quiero que entiendas exactamente lo que estás eligiendo." },
   { emoji: "❤️", title: "Atención Personalizada", desc: "La Maca te acompaña personalmente en todo el proceso." },
   { emoji: "📍", title: "Santiago, Chile", desc: "Showroom en Las Condes. Visítanos con cita previa." },
@@ -26,6 +26,23 @@ const WhyUs = () => {
             Lo que nos hace{" "}
             <em className="text-primary not-italic">únicas</em>
           </h2>
+        </motion.div>
+
+        {/* Garantía por Gusto — featured */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-10 p-8 md:p-12 border-2 border-primary/40 rounded-lg bg-primary/5 text-center max-w-2xl mx-auto"
+        >
+          <span className="text-4xl mb-4 block">🛡️</span>
+          <h3 className="font-display text-2xl md:text-3xl text-foreground mb-3">
+            Garantía por Gusto
+          </h3>
+          <p className="text-muted-foreground leading-relaxed max-w-lg mx-auto">
+            Si no te encanta el resultado, lo rehacemos. Sin preguntas, sin
+            costo extra. Tu satisfacción es nuestra prioridad absoluta.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

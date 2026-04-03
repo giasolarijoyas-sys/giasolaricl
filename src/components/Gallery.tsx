@@ -1,47 +1,16 @@
 import { motion } from "framer-motion";
+import galZafiro from "@/assets/gal-zafiro.jpeg";
+import galArgolla from "@/assets/gal-argolla.jpeg";
+import galTricillo from "@/assets/gal-tricillo.jpeg";
+import galTricillo2 from "@/assets/gal-tricillo2.jpeg";
+import galPrincesa from "@/assets/gal-princesa.jpeg";
 
 const pieces = [
-  {
-    img: "https://marvelous-longma-81cce5.netlify.app/img/espejo-vintage-marmol.jpg",
-    name: "Colección Nusa",
-    desc: "Anillo · Collar · Platino",
-    featured: true,
-  },
-  {
-    img: "https://marvelous-longma-81cce5.netlify.app/img/gal-duo-caja-verde.jpg",
-    name: "Duo Compromiso",
-    desc: "Tricillo & Halo · Platino",
-  },
-  {
-    img: "https://marvelous-longma-81cce5.netlify.app/img/oval-caja-dorada.jpg",
-    name: "Anillo Alma",
-    desc: "Oval Vintage · Oro 18k",
-  },
-  {
-    img: "https://marvelous-longma-81cce5.netlify.app/img/hero-zafiro-bandeja.jpg",
-    name: "Anillo Diana",
-    desc: "Zafiro Azul · Halo Diamantes",
-  },
-  {
-    img: "https://marvelous-longma-81cce5.netlify.app/img/nusa-caja-rosa.jpg",
-    name: "Anillo Cielo",
-    desc: "Solitario · Caja Gia Solari",
-  },
-  {
-    img: "https://marvelous-longma-81cce5.netlify.app/img/gal-princesa-marco.jpg",
-    name: "Anillo Reina",
-    desc: "Tricillo Princesa · Platino",
-  },
-  {
-    img: "https://marvelous-longma-81cce5.netlify.app/img/set-caja-verde-olivo.jpg",
-    name: "Set Luna",
-    desc: "Halo Oval · Cintillo V",
-  },
-  {
-    img: "https://marvelous-longma-81cce5.netlify.app/img/gal-solitario-verde.jpg",
-    name: "Anillo Sol",
-    desc: "Solitario · Diamantes Laterales",
-  },
+  { img: galZafiro, name: "Anillo Diana", desc: "Zafiro Azul · Halo Diamantes" },
+  { img: galArgolla, name: "Argolla Eterna", desc: "Platino · Diseño Clásico" },
+  { img: galTricillo, name: "Anillo Reina", desc: "Tricillo Diamantes · Platino" },
+  { img: galTricillo2, name: "Anillo Legado", desc: "Tricillo · Vista Detalle" },
+  { img: galPrincesa, name: "Anillo Princesa", desc: "Corte Princesa · Oro 18k" },
 ];
 
 const Gallery = () => {
@@ -65,7 +34,7 @@ const Gallery = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
           {pieces.map((piece, i) => (
             <motion.div
               key={piece.name}
@@ -91,11 +60,6 @@ const Gallery = () => {
                   <p className="text-cream/60 text-xs">{piece.desc}</p>
                 </div>
               </div>
-              {piece.featured && (
-                <span className="absolute top-3 left-3 px-2 py-1 bg-primary text-primary-foreground text-[10px] tracking-widest uppercase">
-                  Destacado
-                </span>
-              )}
             </motion.div>
           ))}
         </div>

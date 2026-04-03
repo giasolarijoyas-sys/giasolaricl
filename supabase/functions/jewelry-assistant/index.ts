@@ -49,6 +49,9 @@ Redonda (la más brillante), Oval (alarga el dedo), Pera (elegante), Princesa (m
 - **Tricillo**: Tres piedras, simboliza pasado-presente-futuro.
 - **Liso**: Sin piedras, perfecto para argollas.
 
+### Garantía por Gusto
+Si el cliente no queda 100% satisfecho con el resultado final, Gia Solari lo rehace sin costo extra y sin preguntas. Es la garantía más importante de la marca y un diferenciador clave. Siempre mencionarla cuando el usuario tenga dudas o inseguridad sobre hacer un pedido.
+
 ### Proceso de trabajo
 1. Consulta inicial (formulario web o WhatsApp)
 2. Asesoría personalizada con Macarena
