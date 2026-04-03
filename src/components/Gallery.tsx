@@ -27,7 +27,7 @@ const Gallery = () => {
             Colección
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground">
-            Nuestras <em className="text-primary not-italic">joyitas</em>
+            Un poco de <em className="text-primary not-italic">lo que hacemos</em>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-md mx-auto">
             Cada pieza es única y se crea exclusivamente a pedido.
