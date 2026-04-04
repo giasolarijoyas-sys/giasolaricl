@@ -50,7 +50,7 @@ const Terminos = () => {
                   <strong>Adelanto (70%):</strong> Una vez aprobado el diseño final, se requiere un adelanto del 70% del precio total para iniciar la fabricación y adquisición de materiales (piedras, metales). Este adelanto <strong>no es reembolsable</strong> dado que los materiales se adquieren específicamente para tu pieza.
                 </li>
                 <li>
-                  <strong>Saldo (50%):</strong> El 50% restante se paga al momento de la entrega de la joya terminada.
+                  <strong>Saldo (30%):</strong> El 30% restante se paga al momento de la entrega de la joya terminada.
                 </li>
                 <li>
                   <strong>Medios de pago:</strong> Transferencia bancaria, tarjeta de crédito/débito. Consultar por opciones de pago en cuotas.
