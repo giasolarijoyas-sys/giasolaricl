@@ -53,7 +53,7 @@ const Terminos = () => {
               <h2 className="font-display text-xl text-foreground">3. Proceso de compra y pagos</h2>
               <ul className="space-y-2">
                 <li>
-                  <strong>Asesoría y diseño:</strong> La asesoría inicial, bocetos y diseño 3D son <strong>sin costo</strong>. No se cobra hasta que el cliente apruebe el diseño final.
+                  <strong>Asesoría y diseño:</strong> La asesoría inicial y bocetos son <strong>sin costo</strong>. No se cobra hasta que el cliente apruebe el diseño final.
                 </li>
                 <li>
                   <strong>Adelanto (70%):</strong> Una vez aprobado el diseño final, se requiere un adelanto del 70% del precio total para iniciar la fabricación y adquisición de materiales (piedras, metales). Este adelanto <strong>no es reembolsable</strong> dado que los materiales se adquieren específicamente para tu pieza.
