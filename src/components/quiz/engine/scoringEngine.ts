@@ -189,7 +189,7 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
         add(s.metal, ['gold_yellow', 'gold_white'], 1);
         break;
       case 'sustainability':
-        add(s.stoneType, ['lab_diamond', 'moissanite'], 3);
+        add(s.stoneType, ['lab_diamond'], 3);
         break;
       case 'rarity':
         add(s.stoneType, ['natural_diamond', 'sapphire', 'emerald', 'ruby'], 2);
