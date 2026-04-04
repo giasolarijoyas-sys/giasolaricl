@@ -533,6 +533,10 @@ const Guia = () => {
                     a: "Sí, estamos en Las Condes, Santiago. Las visitas son con cita previa para darte una atención 100% personalizada. Puedes agendar en nuestro Calendly o por WhatsApp."
                   },
                   {
+                    q: "¿Cuánto dura una cita?",
+                    a: "Depende del tipo de reunión: Asesoría personalizada o Joya personalizada (1 hora), Argollas o Ajustes (30 min), y Retiro de pedido (15 min). Puedes agendar la que necesites en calendly.com/giasolarijoyas."
+                  },
+                  {
                     q: "¿Hacen envíos a regiones o fuera de Chile?",
                     a: "Sí, coordinamos el envío con el cliente. Los costos de envío corren por cuenta del cliente, salvo acuerdo en contrario."
                   },

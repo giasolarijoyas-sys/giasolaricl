@@ -33,7 +33,7 @@ const Footer = () => {
             </p>
             <div className="flex flex-col gap-2">
               <a
-                href="https://calendly.com/integrations"
+                href="https://calendly.com/giasolarijoyas"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm hover:text-gold transition-colors"
