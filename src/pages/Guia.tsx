@@ -405,7 +405,7 @@ const Guia = () => {
 
               <h3 className="font-display text-lg text-foreground mt-8 mb-3">¿Cómo funciona el proceso y los pagos?</h3>
               <p className="text-sm">
-                Nos inspiramos en el modelo de las mejores joyerías custom del mundo (como CustomMade en EE.UU.), adaptándolo al mercado chileno:
+                Somos pioneros y los únicos en Chile en ofrecer esta garantía. Es nuestro principal diferenciador y lo que nos define como joyería:
               </p>
 
               <div className="grid md:grid-cols-3 gap-4 mt-4">
