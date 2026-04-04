@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div>
-            <img src={logoHorizontal} alt="Gia Solari" className="h-10 mb-4 brightness-0 invert opacity-80" />
+            <img src={logoHorizontal} alt="Gia Solari" className="h-12 mb-4 brightness-0 invert" />
             <p className="text-sm leading-relaxed">
               Joyería de autor en Santiago, Chile. Anillos de compromiso, argollas
               de matrimonio y joyas personalizadas en oro 18k, platino y piedras
