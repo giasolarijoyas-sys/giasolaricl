@@ -18,8 +18,7 @@ const WelcomeStep = ({ onNext }: StepProps) => {
         No necesitas saber exactamente qué anillo quiere
       </h3>
       <p className="text-muted-foreground leading-relaxed max-w-lg mx-auto mb-3">
-        Solo cuéntanos cómo es ella, qué le gusta y cómo es su estilo.
-        Nuestro sistema te recomendará el anillo perfecto basado en lo que nos digas.
+        Te recomendaremos el anillo perfecto basado en lo que nos digas.
       </p>
       <p className="text-muted-foreground text-sm max-w-md mx-auto mb-8">
         <Sparkles size={14} className="inline text-primary mr-1" />
