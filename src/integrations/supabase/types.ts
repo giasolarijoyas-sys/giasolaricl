@@ -44,6 +44,30 @@ export type Database = {
         }
         Relationships: []
       }
+      newsletter_subscribers: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          nombre: string | null
+          subscribed: boolean
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          nombre?: string | null
+          subscribed?: boolean
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          nombre?: string | null
+          subscribed?: boolean
+        }
+        Relationships: []
+      }
       quotes: {
         Row: {
           como_nos_conociste: string | null
