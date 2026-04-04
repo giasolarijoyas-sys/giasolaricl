@@ -20,8 +20,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-8">
         <a href="/" className="flex items-center">
-          <img src={logoIcon} alt="Gia Solari" className="h-10 w-10 md:hidden" />
-          <img src={logoHorizontal} alt="Gia Solari - Joyas que trascienden generaciones" className="hidden md:block h-10" />
+          <img src={logoIcon} alt="Gia Solari" className="h-9 w-9 md:hidden" />
+          <img src={logoHorizontal} alt="Gia Solari - Joyas que trascienden generaciones" className="hidden md:block h-12" />
         </a>
 
         {/* Desktop */}
