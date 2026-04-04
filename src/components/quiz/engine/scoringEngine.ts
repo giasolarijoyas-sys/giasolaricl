@@ -265,7 +265,7 @@ function buildExplanation(answers: QuizAnswers, rec: { style: string; stone: str
     parts.push('su preferencia por joyería dorada');
   } else if (answers.jewelryColorPreference === 'silver') {
     parts.push('su preferencia por tonos plateados');
-
+  }
   if (answers.wearsJewelry === 'daily') {
     parts.push('que usa joyas a diario');
   } else if (answers.wearsJewelry === 'rarely') {
