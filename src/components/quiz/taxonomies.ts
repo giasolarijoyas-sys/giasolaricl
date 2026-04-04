@@ -38,7 +38,7 @@ export const METALS = [
   { key: 'gold_yellow', label: 'Oro 18k Amarillo', emoji: '🟡', desc: 'Cálido y clásico' },
   { key: 'platinum', label: 'Platino', emoji: '⚪', desc: 'El más resistente y puro' },
   { key: 'gold_white', label: 'Oro 18k Blanco', emoji: '🤍', desc: 'Elegancia plateada' },
-  { key: 'gold_rose', label: 'Oro 18k Rosado', emoji: '🌸', desc: 'Romántico y moderno' },
+  
 ] as const;
 
 export const SIZE_PREFERENCES = [
