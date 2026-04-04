@@ -24,7 +24,7 @@ Gia Solari nace de la pasión de Macarena por las joyas finas y un profundo lega
 - **Platino**: El más noble, hipoalergénico, no pierde color. Ideal para diamantes y piedras claras. Más pesado y resistente que el oro blanco.
 - **Oro 18k Blanco**: Elegante, más accesible que el platino. Requiere baño de rodio cada 1-2 años.
 - **Oro 18k Amarillo**: Clásico atemporal, cálido, no requiere mantenimiento de color.
-- **Oro 18k Rosado**: Romántico y moderno, perfecto para estilos vintage.
+
 
 ### Piedras
 - **Diamante Natural**: La opción tradicional. Certificación GIA. Dureza 10/10. Las 4C: Corte, Color, Claridad, Quilates.
