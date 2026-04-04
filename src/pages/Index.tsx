@@ -4,6 +4,7 @@ import Historia from "@/components/Historia";
 import Gallery from "@/components/Gallery";
 import QuizContainer from "@/components/quiz/QuizContainer";
 import Testimonials from "@/components/Testimonials";
+import WishListForm from "@/components/WishListForm";
 import WhyUs from "@/components/WhyUs";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -19,6 +20,7 @@ const Index = () => {
       <Gallery />
       <Historia />
       <Testimonials />
+      <WishListForm />
       <Footer />
       <WhatsAppButton />
       <JewelryChat />

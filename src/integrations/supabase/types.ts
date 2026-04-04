@@ -137,6 +137,60 @@ export type Database = {
         }
         Relationships: []
       }
+      wish_list: {
+        Row: {
+          created_at: string
+          email: string
+          fecha_aniversario: string | null
+          fecha_cumple_pareja: string | null
+          id: string
+          metal_preferido: string | null
+          nombre: string
+          nombre_pareja: string
+          notas: string | null
+          otras_fechas: string | null
+          piedra_preferida: string | null
+          preferencias: string
+          presupuesto_aproximado: string | null
+          tipo_joya: string | null
+          whatsapp: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          fecha_aniversario?: string | null
+          fecha_cumple_pareja?: string | null
+          id?: string
+          metal_preferido?: string | null
+          nombre: string
+          nombre_pareja: string
+          notas?: string | null
+          otras_fechas?: string | null
+          piedra_preferida?: string | null
+          preferencias: string
+          presupuesto_aproximado?: string | null
+          tipo_joya?: string | null
+          whatsapp: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          fecha_aniversario?: string | null
+          fecha_cumple_pareja?: string | null
+          id?: string
+          metal_preferido?: string | null
+          nombre?: string
+          nombre_pareja?: string
+          notas?: string | null
+          otras_fechas?: string | null
+          piedra_preferida?: string | null
+          preferencias?: string
+          presupuesto_aproximado?: string | null
+          tipo_joya?: string | null
+          whatsapp?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
