@@ -5,62 +5,62 @@ const testimonials = [
   {
     name: "Andrés V.",
     piece: "Solitario oval · Platino",
-    text: "No tenía idea de por dónde empezar. Macarena me hizo las preguntas correctas — no sobre el anillo, sino sobre Francisca. Cuando se lo puse, me dijo que era exactamente lo que siempre había soñado.",
+    text: "Yo no cachaba nada de anillos. La Maca me preguntó cosas de la Fran que ni yo había pensado y armó algo que cuando se lo puse, me dijo 'es exactamente lo que siempre soñé'. Eso fue todo.",
   },
   {
     name: "Roberto S.",
     piece: "Collar con zafiro · Oro 18k amarillo",
-    text: "Quería algo para nuestro décimo aniversario que fuera más que un regalo. Cuando mi mujer vio la pieza, lloró. Dijo que era como si alguien hubiera convertido una historia en oro.",
+    text: "Quería algo especial pa nuestros 10 años, no un regalo más. Mi mujer cuando lo vio se largó a llorar. Me dijo que era como si alguien hubiera metido nuestra historia en una joya.",
   },
   {
     name: "Ignacio F.",
     piece: "Argollas de matrimonio · Oro 18k amarillo",
-    text: "Lo que más me sorprendió fue la honestidad. Le dije mi presupuesto y en vez de empujarme a gastar más, me mostró exactamente lo que era posible — y quedó espectacular.",
+    text: "Lo que más rescato es la honestidad. Le dije mi presupuesto a la Maca y en vez de meterme más plata, me mostró exactamente lo que se podía hacer. Quedaron increíbles.",
   },
   {
     name: "Tomás R.",
     piece: "Diamante natural GIA · Platino",
-    text: "Soy bastante exigente y fui con muchas preguntas técnicas. Macarena las respondió todas sin dudar. La pieza que hicimos juntos es exactamente lo que pedí.",
+    text: "Soy medio hinchapelotas con los detalles y fui con mil preguntas técnicas. La Maca las respondió todas sin drama. La pieza quedó tal cual la pedí, cero improvisación.",
   },
   {
     name: "Martín G.",
     piece: "Tricillo diamantes · Platino",
-    text: "Comparé con tres joyerías antes de llegar a Gia Solari. Macarena fue la única que me explicó las diferencias entre piedras sin intentar venderme la más cara. Eso me dio confianza total.",
+    text: "Coticé en tres joyerías antes. La Maca fue la única que me explicó las diferencias entre piedras sin tratar de venderme la más cara. Ahí caché que estaba en el lugar correcto.",
   },
   {
     name: "Diego M.",
     piece: "Argollas grabadas · Oro 18k amarillo",
-    text: "Nos casamos en pandemia y las argollas fueron lo único que pudimos elegir con calma. Macarena nos hizo sentir que ese detalle importaba tanto como toda la fiesta.",
+    text: "Nos casamos en pandemia y las argollas fueron lo único que elegimos con calma. La Maca nos hizo sentir que ese detalle importaba tanto como toda la fiesta que no pudimos hacer.",
   },
   {
     name: "Felipe A.",
     piece: "Anillo de compromiso · Moissanita · Oro 18k blanco",
-    text: "No quería un diamante por convicción y Macarena lo respetó completamente. Me mostró moissanitas espectaculares y el resultado es una piedra que brilla más que cualquier diamante que vi.",
+    text: "No quería diamante por convicción y la Maca lo respetó al toque. Me mostró moissanitas que brillan una locura. Mi polola está chocha y nadie nota la diferencia.",
   },
   {
     name: "Sebastián C.",
     piece: "Solitario esmeralda · Oro 18k amarillo",
-    text: "Mi novia siempre quiso una esmeralda. Macarena me ayudó a encontrar la piedra perfecta y diseñó un anillo que superó todo lo que imaginé. La propuesta fue un éxito.",
+    text: "Mi señora siempre quiso una esmeralda. Le conté eso a la Maca y me ayudó a pillar la piedra perfecta. El anillo quedó mucho mejor de lo que imaginé. La propuesta fue un éxito total.",
   },
   {
     name: "Nicolás P.",
     piece: "Anillo halo · Diamante lab · Platino",
-    text: "Quería sorprenderla con algo espectacular pero sin gastar una fortuna. Macarena me recomendó un diamante de laboratorio y el resultado es idéntico a uno natural. Ella quedó fascinada.",
+    text: "Quería algo espectacular pero sin dejar la billetera vacía. La Maca me recomendó un diamante de laboratorio y weon, es idéntico a uno natural. Ella quedó loca.",
   },
   {
     name: "Cristóbal L.",
     piece: "Solitario cushion · Oro 18k rosado",
-    text: "Le describí el estilo de mi polola — minimalista pero con un toque especial — y Macarena lo entendió al tiro. Diseñó algo que es exactamente ella. La reacción no tuvo precio.",
+    text: "Le describí el estilo de mi polola — piola pero con su toque — y la Maca lo pilló al tiro. Diseñó algo que es exactamente ella. La cara que puso no tiene precio.",
   },
   {
     name: "Matías H.",
     piece: "Anillo vintage · Zafiro · Platino",
-    text: "Busqué meses un anillo con estilo vintage sin éxito. Llegué donde Macarena, le mostré tres fotos de Pinterest y en dos semanas tenía algo mejor que cualquiera de esas fotos.",
+    text: "Busqué meses un anillo con onda vintage y no encontraba nada. Llegué donde la Maca, le mostré tres fotos de Pinterest y en dos semanas me tenía algo mejor que cualquiera de esas fotos.",
   },
   {
     name: "Gonzalo E.",
     piece: "Solitario oval · Diamante GIA · Platino",
-    text: "Me daba nervio equivocarme. Macarena me preguntó cosas de mi señora que yo ni había pensado — qué joyas usa, cómo se viste, qué le gusta. Con eso diseñó algo perfecto.",
+    text: "Me daba susto equivocarme. La Maca me preguntó cosas de mi señora que yo ni había pensado — qué joyas usa, cómo se viste. Con eso armó algo perfecto, cero riesgo.",
   },
 ];
 
