@@ -47,10 +47,10 @@ const Terminos = () => {
                   <strong>Asesoría y diseño:</strong> La asesoría inicial, bocetos y diseño 3D son <strong>sin costo</strong>. No se cobra hasta que el cliente apruebe el diseño final.
                 </li>
                 <li>
-                  <strong>Adelanto (50%):</strong> Una vez aprobado el diseño final, se requiere un adelanto del 50% del precio total para iniciar la fabricación y adquisición de materiales (piedras, metales). Este adelanto <strong>no es reembolsable</strong> dado que los materiales se adquieren específicamente para tu pieza.
+                  <strong>Adelanto (70%):</strong> Una vez aprobado el diseño final, se requiere un adelanto del 70% del precio total para iniciar la fabricación y adquisición de materiales (piedras, metales). Este adelanto <strong>no es reembolsable</strong> dado que los materiales se adquieren específicamente para tu pieza.
                 </li>
                 <li>
-                  <strong>Saldo (50%):</strong> El 50% restante se paga al momento de la entrega de la joya terminada.
+                  <strong>Saldo (30%):</strong> El 30% restante se paga al momento de la entrega de la joya terminada.
                 </li>
                 <li>
                   <strong>Medios de pago:</strong> Transferencia bancaria, tarjeta de crédito/débito. Consultar por opciones de pago en cuotas.
@@ -111,7 +111,7 @@ const Terminos = () => {
                   <strong>Baño de rodio</strong> (oro blanco): El primer baño de rodio es sin costo dentro del primer año.
                 </li>
                 <li>
-                  <strong>Certificaciones:</strong> Todos los diamantes sobre 0.30 ct incluyen certificación GIA (naturales) o IGI (laboratorio).
+                   <strong>Certificaciones:</strong> Las certificaciones GIA (diamantes naturales) o IGI (diamantes de laboratorio) están disponibles a solicitud del cliente. Se pueden incluir en el pedido al momento de cotizar.
                 </li>
               </ul>
             </section>
