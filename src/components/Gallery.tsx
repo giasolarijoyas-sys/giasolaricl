@@ -49,7 +49,7 @@ const pieces: Piece[] = [
   { img: galHaloZafiro, name: "Anillo Royal", desc: "Zafiro Oval · Halo Clásico", category: "compromiso" },
   { img: galTricillo, name: "Anillo Reina", desc: "Tricillo Diamantes · Platino", category: "compromiso" },
   { img: galArtDeco, name: "Anillo Gatsby", desc: "Corte Princesa · Art Déco", category: "compromiso" },
-  { img: galSolitarioChevron, name: "Anillo Etéreo", desc: "{ img: galSolitarioChevron, name: "Anillo Etéreo", desc: "Solitario Chevrón · Oro Blanco", category: "compromiso" },", category: "compromiso" },
+  { img: galSolitarioChevron, name: "Anillo Etéreo", desc: "Solitario Chevrón · Oro Blanco", category: "compromiso" },
   { img: galTricillo2, name: "Anillo Legado", desc: "Tricillo · Vista Detalle", category: "compromiso" },
   { img: galCincoPiedras, name: "Anillo Constelación", desc: "Cinco Piedras · Platino", category: "compromiso" },
   { img: galPrincesa, name: "Anillo Princesa", desc: "Corte Princesa · Oro 18k", category: "compromiso" },
