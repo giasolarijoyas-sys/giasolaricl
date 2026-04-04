@@ -153,7 +153,7 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
       add(s.sizePreference, ['discrete'], 1);
       break;
     case '500k_1m':
-      add(s.stoneType, ['moissanite', 'lab_diamond'], 2);
+      add(s.stoneType, ['lab_diamond'], 2);
       break;
     case '1m_2m':
       add(s.stoneType, ['lab_diamond', 'natural_diamond'], 2);
