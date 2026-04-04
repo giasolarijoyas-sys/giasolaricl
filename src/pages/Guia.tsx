@@ -405,7 +405,7 @@ const Guia = () => {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">✓</span>
-                    <span>Antes de fabricar, aprobamos juntos el diseño final con renders 3D para que no haya sorpresas.</span>
+                    <span>Antes de fabricar, aprobamos juntos el diseño final para que no haya sorpresas.</span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">✓</span>
