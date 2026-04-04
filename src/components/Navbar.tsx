@@ -3,12 +3,12 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "La Marca", href: "#historia" },
-  { label: "Joyas", href: "#galeria" },
+  { label: "La Marca", href: "/#historia" },
+  { label: "Joyas", href: "/#galeria" },
   { label: "Guía", href: "/guia" },
-  { label: "Cotizar", href: "#cotizador" },
-  { label: "Lista de Deseos", href: "#wish-list" },
-  { label: "Testimonios", href: "#testimonios" },
+  { label: "Cotizar", href: "/#cotizador" },
+  { label: "Lista de Deseos", href: "/#wish-list" },
+  { label: "Testimonios", href: "/#testimonios" },
 ];
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-8">
-        <a href="#" className="font-display text-xl tracking-widest text-foreground">
+        <a href="/" className="font-display text-xl tracking-widest text-foreground">
           GIA SOLARI
         </a>
 
