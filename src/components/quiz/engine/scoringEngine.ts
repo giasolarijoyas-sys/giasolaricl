@@ -148,8 +148,8 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
   // --- Budget inference ---
   switch (answers.budgetRange) {
     case 'under_500k':
-      add(s.stoneType, ['moissanite'], 4);
-      add(s.metal, ['gold_yellow', 'gold_white', 'gold_rose'], 1);
+      add(s.stoneType, ['lab_diamond'], 4);
+      add(s.metal, ['gold_yellow', 'gold_white'], 1);
       add(s.sizePreference, ['discrete'], 1);
       break;
     case '500k_1m':
