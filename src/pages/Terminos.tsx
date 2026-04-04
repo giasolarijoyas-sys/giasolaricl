@@ -47,7 +47,7 @@ const Terminos = () => {
                   <strong>Asesoría y diseño:</strong> La asesoría inicial, bocetos y diseño 3D son <strong>sin costo</strong>. No se cobra hasta que el cliente apruebe el diseño final.
                 </li>
                 <li>
-                  <strong>Adelanto (50%):</strong> Una vez aprobado el diseño final, se requiere un adelanto del 50% del precio total para iniciar la fabricación y adquisición de materiales (piedras, metales). Este adelanto <strong>no es reembolsable</strong> dado que los materiales se adquieren específicamente para tu pieza.
+                  <strong>Adelanto (70%):</strong> Una vez aprobado el diseño final, se requiere un adelanto del 70% del precio total para iniciar la fabricación y adquisición de materiales (piedras, metales). Este adelanto <strong>no es reembolsable</strong> dado que los materiales se adquieren específicamente para tu pieza.
                 </li>
                 <li>
                   <strong>Saldo (50%):</strong> El 50% restante se paga al momento de la entrega de la joya terminada.
