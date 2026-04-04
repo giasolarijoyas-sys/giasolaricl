@@ -42,24 +42,24 @@ const Historia = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Gia Solari nace de mi pasión por las joyas finas y de un{" "}
-                <strong className="text-foreground">profundo legado familiar</strong> —
-                tres generaciones de mujeres que me enseñaron que una joya no es
-                un objeto, es una historia que se hereda.
+                Soy Maca. Gia Solari nace de mi amor por las joyas y de lo que
+                aprendí viendo a mi mamá —{" "}
+                <strong className="text-foreground">Gianna</strong> — trabajar
+                con piedras y metales desde que tengo memoria. Ella me enseñó
+                que una joya no es un objeto, es una historia que se lleva puesta.
               </p>
               <p>
-                Nos especializamos en piezas creadas a pedido con{" "}
+                Juntas nos especializamos en piezas a pedido con{" "}
                 <strong className="text-foreground">transparencia técnica</strong>,
                 atención completamente personalizada y asesoría real. Somos de
                 las pocas joyerías en Chile que trabaja el{" "}
                 <strong className="text-foreground">platino con verdadera maestría</strong>.
               </p>
               <p className="italic text-foreground font-display text-lg pt-2">
-                "Cada pieza es un diálogo: tú nos cuentas tu historia, nosotras
-                la convertimos en joya."
+                "Tú me cuentas tu historia, yo la convierto en joya."
               </p>
               <p className="text-sm text-primary tracking-wide">
-                — Macarena González Solari · Fundadora
+                — Maca González Solari · Fundadora
               </p>
             </div>
           </motion.div>
