@@ -44,7 +44,7 @@ const Terminos = () => {
                 Todas nuestras joyas son <strong>piezas únicas fabricadas a pedido</strong>. Esto significa que cada pieza se diseña y manufactura específicamente para cada cliente según sus preferencias, medidas y requerimientos.
               </p>
               <p>
-                El proceso incluye: asesoría personalizada, diseño, aprobación de boceto/render 3D, selección de materiales, fabricación artesanal y entrega.
+                El proceso incluye: asesoría personalizada, diseño, aprobación de boceto, selección de materiales, fabricación artesanal y entrega.
               </p>
             </section>
 
