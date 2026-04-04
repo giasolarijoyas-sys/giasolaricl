@@ -565,7 +565,8 @@ const Guia = () => {
         </div>
       </div>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

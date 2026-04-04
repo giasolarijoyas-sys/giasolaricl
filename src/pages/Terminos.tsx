@@ -205,7 +205,8 @@ const Terminos = () => {
         </div>
       </div>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 
