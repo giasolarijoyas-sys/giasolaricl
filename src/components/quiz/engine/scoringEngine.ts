@@ -87,7 +87,7 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
       add(s.metal, ['platinum', 'gold_white'], 3);
       break;
     case 'mixed':
-      add(s.metal, ['gold_yellow', 'gold_white', 'gold_rose', 'platinum'], 1);
+      add(s.metal, ['gold_yellow', 'gold_white', 'platinum'], 1);
       break;
   }
 
