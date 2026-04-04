@@ -13,7 +13,7 @@ const TIPO_JOYA_OPTIONS = [
 ];
 
 const METAL_OPTIONS = ["Oro 18k amarillo", "Oro 18k blanco", "Platino", "No estoy segura"];
-const PIEDRA_OPTIONS = ["Diamante", "Zafiro", "Esmeralda", "Rubí", "Sin piedra", "No estoy segura"];
+const PIEDRA_OPTIONS = ["Diamante", "Zafiro", "Esmeralda", "Rubí", "Aguamarina", "Sin piedra", "No estoy segura"];
 const PRESUPUESTO_OPTIONS = [
   "Hasta $500.000",
   "$500.000–$1.000.000",

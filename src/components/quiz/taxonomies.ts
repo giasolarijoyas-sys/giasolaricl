@@ -20,6 +20,7 @@ export const CENTER_STONE_TYPES = [
   { key: 'sapphire', label: 'Zafiro', emoji: '💙', desc: 'Piedra de color, elegancia real' },
   { key: 'emerald', label: 'Esmeralda', emoji: '💚', desc: 'Verde profundo, único y especial' },
   { key: 'ruby', label: 'Rubí', emoji: '❤️', desc: 'Rojo pasión, piedra de amor' },
+  { key: 'aquamarine', label: 'Aguamarina', emoji: '🩵', desc: 'Azul celeste, delicada y luminosa' },
 ] as const;
 
 export const STONE_SHAPES = [

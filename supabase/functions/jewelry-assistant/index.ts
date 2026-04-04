@@ -33,6 +33,7 @@ Gia Solari nace de la pasión de Macarena por las joyas finas y un profundo lega
 - **Zafiro**: Dureza 9/10. Disponible en azul, rosa, amarillo, blanco. Elegancia real.
 - **Esmeralda**: Piedra de carácter. Requiere más cuidado. Hermosa en oro amarillo.
 - **Rubí**: Pasión en piedra. Dureza 9/10. Impactante y único.
+- **Aguamarina**: Azul celeste de la familia del berilo. Dureza 7.5-8/10. Delicada, luminosa, excelente relación calidad-precio.
 
 ### Formas de piedra
 Redonda (la más brillante), Oval (alarga el dedo), Pera (elegante), Princesa (moderna), Esmeralda (art deco), Marquesa (dramática), Corazón (romántica), Cushion (vintage).
