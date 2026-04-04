@@ -6,6 +6,7 @@ const navLinks = [
   { label: "La Marca", href: "#historia" },
   { label: "Joyas", href: "#galeria" },
   { label: "Cotizar", href: "#cotizador" },
+  { label: "Lista de Deseos", href: "#wish-list" },
   { label: "Testimonios", href: "#testimonios" },
 ];
 
