@@ -14,6 +14,7 @@ export const PRICE_CONSTANTS = {
     sapphire: { min: 400000, max: 900000 },
     emerald: { min: 500000, max: 1200000 },
     ruby: { min: 600000, max: 1300000 },
+    aquamarine: { min: 200000, max: 500000 },
   } as Record<string, { min: number; max: number }>,
 
   // Metal multiplier (applied to base)
