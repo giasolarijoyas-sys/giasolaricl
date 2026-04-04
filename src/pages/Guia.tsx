@@ -43,6 +43,7 @@ const CutCard = ({ name, emoji, desc }: { name: string; emoji: string; desc: str
 );
 
 const Guia = () => {
+  return (
     <>
       <Helmet>
         <title>Guía de Joyas | Gia Solari — Todo sobre Anillos, Metales y Piedras</title>

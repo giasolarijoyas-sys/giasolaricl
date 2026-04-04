@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
 const Terminos = () => {
+  return (
     <>
       <Helmet>
         <title>Términos y Condiciones | Gia Solari Joyas</title>
