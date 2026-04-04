@@ -16,7 +16,7 @@ export const RING_STYLES = [
 export const CENTER_STONE_TYPES = [
   { key: 'natural_diamond', label: 'Diamante Natural', emoji: '💎', desc: 'El clásico eterno, máximo brillo' },
   { key: 'lab_diamond', label: 'Diamante Lab', emoji: '🔬', desc: 'Mismo diamante, creado en laboratorio' },
-  { key: 'moissanite', label: 'Moissanita', emoji: '⭐', desc: 'Brillo excepcional, gran valor' },
+  
   { key: 'sapphire', label: 'Zafiro', emoji: '💙', desc: 'Piedra de color, elegancia real' },
   { key: 'emerald', label: 'Esmeralda', emoji: '💚', desc: 'Verde profundo, único y especial' },
   { key: 'ruby', label: 'Rubí', emoji: '❤️', desc: 'Rojo pasión, piedra de amor' },
