@@ -4,13 +4,31 @@ import galArgolla from "@/assets/gal-argolla.jpeg";
 import galTricillo from "@/assets/gal-tricillo.jpeg";
 import galTricillo2 from "@/assets/gal-tricillo2.jpeg";
 import galPrincesa from "@/assets/gal-princesa.jpeg";
+import galHaloZafiro from "@/assets/gal-halo-zafiro.jpeg";
+import galEsmeraldaHalo from "@/assets/gal-esmeralda-halo.png";
+import galZafirosBanda from "@/assets/gal-zafiros-banda.png";
+import galArtDeco from "@/assets/gal-art-deco.png";
+import galVintageFiligrana from "@/assets/gal-vintage-filigrana.jpg";
+import galOvalPave from "@/assets/gal-oval-pave.jpg";
+import galSolitarioChevron from "@/assets/gal-solitario-chevron.jpg";
+import galCincoPiedras from "@/assets/gal-cinco-piedras.jpeg";
+import galBrazaleteOro from "@/assets/gal-brazalete-oro.png";
 
 const pieces = [
   { img: galZafiro, name: "Anillo Diana", desc: "Zafiro Azul · Halo Diamantes" },
+  { img: galEsmeraldaHalo, name: "Anillo Celeste", desc: "Corte Esmeralda · Halo Pavé" },
+  { img: galOvalPave, name: "Anillo Paraíba", desc: "Turmalina Oval · Pavé Diamantes" },
   { img: galArgolla, name: "Argolla Eterna", desc: "Platino · Diseño Clásico" },
+  { img: galHaloZafiro, name: "Anillo Royal", desc: "Zafiro Oval · Halo Clásico" },
   { img: galTricillo, name: "Anillo Reina", desc: "Tricillo Diamantes · Platino" },
+  { img: galZafirosBanda, name: "Anillo Corona", desc: "Zafiros · Banda Diamantes" },
+  { img: galVintageFiligrana, name: "Anillo Heritage", desc: "Aguamarina · Filigrana Vintage" },
+  { img: galArtDeco, name: "Anillo Gatsby", desc: "Corte Princesa · Art Déco" },
+  { img: galSolitarioChevron, name: "Anillo Etéreo", desc: "Solitario Chevrón · Oro Rosado" },
   { img: galTricillo2, name: "Anillo Legado", desc: "Tricillo · Vista Detalle" },
+  { img: galCincoPiedras, name: "Anillo Constelación", desc: "Cinco Piedras · Platino" },
   { img: galPrincesa, name: "Anillo Princesa", desc: "Corte Princesa · Oro 18k" },
+  { img: galBrazaleteOro, name: "Brazalete Clásico", desc: "Oro 18k · Diseño Atemporal" },
 ];
 
 const Gallery = () => {
@@ -34,14 +52,14 @@ const Gallery = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {pieces.map((piece, i) => (
             <motion.div
               key={piece.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
+              transition={{ delay: i * 0.04 }}
               className="group relative overflow-hidden cursor-pointer"
             >
               <div className="aspect-square overflow-hidden">
