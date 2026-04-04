@@ -14,11 +14,12 @@ import galOvalPave from "@/assets/gal-oval-pave.jpg";
 import galSolitarioChevron from "@/assets/gal-solitario-chevron.jpg";
 import galCincoPiedras from "@/assets/gal-cinco-piedras.jpeg";
 import galBrazaleteOro from "@/assets/gal-brazalete-oro.png";
+import galSolitarioCaja from "@/assets/gal-solitario-caja.jpg";
+import galPrincesaMarco from "@/assets/gal-princesa-marco.jpeg";
 
 type Category =
   | "todas"
-  | "compromiso"
-  | "petit"
+  | "anillos"
   | "collares"
   | "aros"
   | "pulseras"
@@ -33,8 +34,7 @@ interface Piece {
 
 const categories: { key: Category; label: string }[] = [
   { key: "todas", label: "Todas" },
-  { key: "compromiso", label: "Anillos de Compromiso" },
-  { key: "petit", label: "Anillos Petit" },
+  { key: "anillos", label: "Anillos" },
   { key: "collares", label: "Collares" },
   { key: "aros", label: "Aros" },
   { key: "pulseras", label: "Pulseras & Esclavas" },
@@ -42,22 +42,22 @@ const categories: { key: Category; label: string }[] = [
 ];
 
 const pieces: Piece[] = [
-  // Anillos de compromiso
-  { img: galZafiro, name: "Anillo Diana", desc: "Zafiro Azul · Halo Diamantes", category: "compromiso" },
-  { img: galEsmeraldaHalo, name: "Anillo Celeste", desc: "Corte Esmeralda · Halo Pavé", category: "compromiso" },
-  { img: galOvalPave, name: "Anillo Paraíba", desc: "Turmalina Oval · Pavé Diamantes", category: "compromiso" },
-  { img: galHaloZafiro, name: "Anillo Royal", desc: "Zafiro Oval · Halo Clásico", category: "compromiso" },
-  { img: galTricillo, name: "Anillo Reina", desc: "Tricillo Diamantes · Platino", category: "compromiso" },
-  { img: galArtDeco, name: "Anillo Gatsby", desc: "Corte Princesa · Art Déco", category: "compromiso" },
-  { img: galSolitarioChevron, name: "Anillo Etéreo", desc: "Solitario Chevrón · Oro Blanco", category: "compromiso" },
-  { img: galTricillo2, name: "Anillo Legado", desc: "Tricillo · Vista Detalle", category: "compromiso" },
-  { img: galCincoPiedras, name: "Anillo Constelación", desc: "Cinco Piedras · Platino", category: "compromiso" },
-  { img: galPrincesa, name: "Anillo Princesa", desc: "Corte Princesa · Oro 18k", category: "compromiso" },
-
-  // Anillos petit
-  { img: galZafirosBanda, name: "Anillo Corona", desc: "Zafiros · Banda Diamantes", category: "petit" },
-  { img: galVintageFiligrana, name: "Anillo Heritage", desc: "Aguamarina · Filigrana Vintage", category: "petit" },
-  { img: galArgolla, name: "Argolla Eterna", desc: "Platino · Diseño Clásico", category: "petit" },
+  // Anillos
+  { img: galSolitarioCaja, name: "Solitario Clásico", desc: "Diamante · Caja Gia Solari", category: "anillos" },
+  { img: galPrincesaMarco, name: "Anillo Tres Piedras", desc: "Corte Princesa · Platino", category: "anillos" },
+  { img: galZafiro, name: "Anillo Diana", desc: "Zafiro Azul · Halo Diamantes", category: "anillos" },
+  { img: galEsmeraldaHalo, name: "Anillo Celeste", desc: "Corte Esmeralda · Halo Pavé", category: "anillos" },
+  { img: galOvalPave, name: "Anillo Paraíba", desc: "Turmalina Oval · Pavé Diamantes", category: "anillos" },
+  { img: galHaloZafiro, name: "Anillo Royal", desc: "Zafiro Oval · Halo Clásico", category: "anillos" },
+  { img: galTricillo, name: "Anillo Reina", desc: "Tricillo Diamantes · Platino", category: "anillos" },
+  { img: galArtDeco, name: "Anillo Gatsby", desc: "Corte Princesa · Art Déco", category: "anillos" },
+  { img: galSolitarioChevron, name: "Anillo Etéreo", desc: "Solitario Chevrón · Oro Blanco", category: "anillos" },
+  { img: galTricillo2, name: "Anillo Legado", desc: "Tricillo · Vista Detalle", category: "anillos" },
+  { img: galCincoPiedras, name: "Anillo Constelación", desc: "Cinco Piedras · Platino", category: "anillos" },
+  { img: galPrincesa, name: "Anillo Princesa", desc: "Corte Princesa · Oro 18k", category: "anillos" },
+  { img: galZafirosBanda, name: "Anillo Corona", desc: "Zafiros · Banda Diamantes", category: "anillos" },
+  { img: galVintageFiligrana, name: "Anillo Heritage", desc: "Aguamarina · Filigrana Vintage", category: "anillos" },
+  { img: galArgolla, name: "Argolla Eterna", desc: "Platino · Diseño Clásico", category: "anillos" },
 
   // Pulseras
   { img: galBrazaleteOro, name: "Brazalete Clásico", desc: "Oro 18k · Diseño Atemporal", category: "pulseras" },
