@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoHorizontal from "@/assets/logo-horizontal.png";
+import logoIcon from "@/assets/logo-icon.png";
 
 const navLinks = [
   { label: "La Marca", href: "/#historia" },
@@ -17,8 +19,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-8">
-        <a href="/" className="font-display text-xl tracking-widest text-foreground">
-          GIA SOLARI
+        <a href="/" className="flex items-center">
+          <img src={logoIcon} alt="Gia Solari" className="h-10 w-10 md:hidden" />
+          <img src={logoHorizontal} alt="Gia Solari - Joyas que trascienden generaciones" className="hidden md:block h-10" />
         </a>
 
         {/* Desktop */}
