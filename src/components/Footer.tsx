@@ -75,6 +75,14 @@ const Footer = () => {
               >
                 TikTok: @giasolari.cl
               </a>
+              <a
+                href="https://cl.pinterest.com/giasolarijoyas/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gold transition-colors"
+              >
+                Pinterest: giasolarijoyas
+              </a>
               <p>Santiago, Las Condes · Cita previa</p>
             </div>
           </div>
