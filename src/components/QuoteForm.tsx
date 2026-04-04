@@ -62,7 +62,6 @@ const metales = [
   { emoji: "🟡", label: "Oro 18k Amarillo" },
   { emoji: "🤍", label: "Platino" },
   { emoji: "⚪", label: "Oro 18k Blanco" },
-  { emoji: "🌸", label: "Oro 18k Rosado" },
 ];
 
 const piedras = [

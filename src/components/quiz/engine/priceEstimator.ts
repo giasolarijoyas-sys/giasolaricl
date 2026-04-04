@@ -20,7 +20,7 @@ export const PRICE_CONSTANTS = {
   metalMultiplier: {
     gold_yellow: 1.0,
     gold_white: 1.0,
-    gold_rose: 1.0,
+    
     platinum: 1.1,
   } as Record<string, number>,
 

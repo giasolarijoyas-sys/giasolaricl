@@ -49,7 +49,7 @@ const testimonials = [
   },
   {
     name: "Cristóbal L.",
-    piece: "Solitario cushion · Oro 18k rosado",
+    piece: "Solitario cushion · Oro 18k amarillo",
     text: "Le describí el estilo de mi polola — piola pero con su toque — y la Maca lo pilló al tiro. Diseñó algo que es exactamente ella. La cara que puso no tiene precio.",
   },
   {

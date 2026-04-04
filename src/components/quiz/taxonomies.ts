@@ -103,7 +103,7 @@ export const JEWELRY_USAGE = [
 export const JEWELRY_COLORS = [
   { key: 'gold', label: 'Dorado', emoji: '🟡' },
   { key: 'silver', label: 'Plateado', emoji: '⚪' },
-  { key: 'rose_gold', label: 'Rosado', emoji: '🌸' },
+  
   { key: 'mixed', label: 'Mezcla de todo', emoji: '🎨' },
   { key: 'unknown', label: 'No lo sé', emoji: '❓' },
 ] as const;
