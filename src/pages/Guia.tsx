@@ -268,24 +268,18 @@ const Guia = () => {
 
             {/* CORTES */}
             <Section id="cortes" icon={Scissors} title="Formas y cortes de piedra">
-              <p>La forma de la piedra define el carácter del anillo. Cada corte tiene su brillo y personalidad:</p>
+              <p>Las formas más populares para anillos de compromiso:</p>
 
-              <div className="grid grid-cols-3 md:grid-cols-5 gap-3">
-                <CutCard name="Redonda" emoji="⚪" desc="La más brillante. 57 facetas que maximizan la luz." />
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <CutCard name="Redonda" emoji="⚪" desc="La más brillante y clásica. 57 facetas que maximizan la luz." />
                 <CutCard name="Oval" emoji="🥚" desc="Alarga el dedo. Muy elegante y moderna." />
-                <CutCard name="Esmeralda" emoji="▬" desc="Rectángulo con esquinas cortadas. Efecto hall of mirrors." />
-                <CutCard name="Pera" emoji="💧" desc="Forma de gota. Única, femenina y alargadora." />
                 <CutCard name="Cushion" emoji="▢" desc="Cuadrado con bordes suaves. Aire romántico y vintage." />
-                <CutCard name="Marquesa" emoji="◇" desc="Alargada y puntiaguda. Maximiza el tamaño visual." />
-                <CutCard name="Princesa" emoji="◆" desc="Cuadrada con brillo intenso. La segunda más popular." />
-                <CutCard name="Asscher" emoji="⬜" desc="Cuadrado con efecto espejo. Estilo Art Déco." />
-                <CutCard name="Radiante" emoji="🔷" desc="Combina brillo de redonda con forma rectangular." />
-                <CutCard name="Corazón" emoji="💜" desc="Romántico y simbólico. Requiere buena simetría." />
+                <CutCard name="Esmeralda" emoji="▬" desc="Rectángulo sofisticado. Efecto hall of mirrors." />
               </div>
 
               <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
                 <p className="text-sm text-foreground">
-                  <strong>💡 Dato:</strong> El corte redondo brillante es el que más refleja la luz (brillo), pero cortes como el oval y el marquesa hacen que la piedra se vea más grande de lo que es. ¡A veces el corte importa más que los quilates!
+                  <strong>💡 Dato:</strong> El corte redondo brillante es el que más refleja la luz, pero el oval y el cushion hacen que la piedra se vea más grande de lo que es. ¡A veces el corte importa más que los quilates!
                 </p>
               </div>
             </Section>
