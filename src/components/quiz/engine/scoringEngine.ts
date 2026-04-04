@@ -177,7 +177,7 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
         add(s.stoneShape, ['round'], 2);
         break;
       case 'size':
-        add(s.stoneType, ['moissanite', 'lab_diamond'], 2);
+        add(s.stoneType, ['lab_diamond'], 2);
         add(s.sizePreference, ['statement'], 1);
         break;
       case 'durability':
