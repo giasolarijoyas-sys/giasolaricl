@@ -3,12 +3,12 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "La Marca", href: "#historia" },
-  { label: "Joyas", href: "#galeria" },
+  { label: "La Marca", href: "/#historia" },
+  { label: "Joyas", href: "/#galeria" },
   { label: "Guía", href: "/guia" },
-  { label: "Cotizar", href: "#cotizador" },
-  { label: "Lista de Deseos", href: "#wish-list" },
-  { label: "Testimonios", href: "#testimonios" },
+  { label: "Cotizar", href: "/#cotizador" },
+  { label: "Lista de Deseos", href: "/#wish-list" },
+  { label: "Testimonios", href: "/#testimonios" },
 ];
 
 const Navbar = () => {
