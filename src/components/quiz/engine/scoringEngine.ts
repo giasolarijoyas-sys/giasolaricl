@@ -173,7 +173,7 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
   answers.priorities.forEach(p => {
     switch (p) {
       case 'brilliance':
-        add(s.stoneType, ['natural_diamond', 'lab_diamond', 'moissanite'], 1);
+        add(s.stoneType, ['natural_diamond', 'lab_diamond'], 1);
         add(s.stoneShape, ['round'], 2);
         break;
       case 'size':
