@@ -1,10 +1,19 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
 const Terminos = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <Helmet>
+        <title>Términos y Condiciones | Gia Solari Joyas</title>
+        <meta name="description" content="Términos y condiciones, políticas de cambio y garantías de Gia Solari Joyas. Conoce nuestra Garantía por Gusto." />
+        <link rel="canonical" href="https://www.giasolarijoyas.cl/terminos" />
+        <meta property="og:title" content="Términos y Condiciones | Gia Solari Joyas" />
+        <meta property="og:url" content="https://www.giasolarijoyas.cl/terminos" />
+      </Helmet>
+      <div className="min-h-screen bg-background">
       <Navbar />
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
@@ -197,7 +206,8 @@ const Terminos = () => {
         </div>
       </div>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 
