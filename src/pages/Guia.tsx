@@ -43,8 +43,16 @@ const CutCard = ({ name, emoji, desc }: { name: string; emoji: string; desc: str
 );
 
 const Guia = () => {
-  return (
-    <div className="min-h-screen bg-background">
+    <>
+      <Helmet>
+        <title>Guía de Joyas | Gia Solari — Todo sobre Anillos, Metales y Piedras</title>
+        <meta name="description" content="Guía completa de joyería: tipos de metales, piedras preciosas, estilos de anillos de compromiso, argollas y más. Aprende a elegir tu joya perfecta con Gia Solari." />
+        <link rel="canonical" href="https://www.giasolarijoyas.cl/guia" />
+        <meta property="og:title" content="Guía de Joyas | Gia Solari" />
+        <meta property="og:description" content="Guía completa de joyería: metales, piedras, estilos y preguntas frecuentes para elegir tu joya perfecta." />
+        <meta property="og:url" content="https://www.giasolarijoyas.cl/guia" />
+      </Helmet>
+      <div className="min-h-screen bg-background">
       <Navbar />
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
