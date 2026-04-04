@@ -31,7 +31,7 @@ Gia Solari nace de la pasión de Macarena por las joyas finas y un profundo lega
 - **Diamante Lab (laboratorio)**: Mismas propiedades físicas/ópticas que el natural, pero creado en laboratorio. Más accesible (30-40% menos). Certificación IGI. Opción ética y sustentable.
 
 - **Zafiro**: Dureza 9/10. Disponible en azul, rosa, amarillo, blanco. Elegancia real.
-- **Esmeralda**: Piedra de carácter. Requiere más cuidado. Hermosa en oro amarillo y rosado.
+- **Esmeralda**: Piedra de carácter. Requiere más cuidado. Hermosa en oro amarillo.
 - **Rubí**: Pasión en piedra. Dureza 9/10. Impactante y único.
 
 ### Formas de piedra
