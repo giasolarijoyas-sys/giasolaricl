@@ -122,7 +122,7 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
       case 'romantic':
         add(s.ringStyle, ['halo', 'vintage', 'toi_et_moi'], 2);
         add(s.stoneShape, ['oval', 'pear', 'cushion'], 1);
-        add(s.metal, ['gold_rose'], 1);
+        
         break;
       case 'contemporary':
         add(s.ringStyle, ['modern', 'bezel', 'toi_et_moi'], 2);
