@@ -1,12 +1,12 @@
+import logoHorizontal from "@/assets/logo-horizontal.png";
+
 const Footer = () => {
   return (
     <footer className="bg-charcoal text-cream/70 py-16">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div>
-            <p className="font-display text-xl text-cream tracking-widest mb-4">
-              GIA SOLARI
-            </p>
+            <img src={logoHorizontal} alt="Gia Solari" className="h-10 mb-4 brightness-0 invert opacity-80" />
             <p className="text-sm leading-relaxed">
               Joyería de autor en Santiago, Chile. Anillos de compromiso, argollas
               de matrimonio y joyas personalizadas en oro 18k, platino y piedras
