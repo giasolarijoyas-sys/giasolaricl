@@ -16,7 +16,7 @@ export const RING_STYLES = [
 export const CENTER_STONE_TYPES = [
   { key: 'natural_diamond', label: 'Diamante Natural', emoji: '💎', desc: 'El clásico eterno, máximo brillo' },
   { key: 'lab_diamond', label: 'Diamante Lab', emoji: '🔬', desc: 'Mismo diamante, creado en laboratorio' },
-  { key: 'moissanite', label: 'Moissanita', emoji: '⭐', desc: 'Brillo excepcional, gran valor' },
+  
   { key: 'sapphire', label: 'Zafiro', emoji: '💙', desc: 'Piedra de color, elegancia real' },
   { key: 'emerald', label: 'Esmeralda', emoji: '💚', desc: 'Verde profundo, único y especial' },
   { key: 'ruby', label: 'Rubí', emoji: '❤️', desc: 'Rojo pasión, piedra de amor' },
@@ -38,7 +38,7 @@ export const METALS = [
   { key: 'gold_yellow', label: 'Oro 18k Amarillo', emoji: '🟡', desc: 'Cálido y clásico' },
   { key: 'platinum', label: 'Platino', emoji: '⚪', desc: 'El más resistente y puro' },
   { key: 'gold_white', label: 'Oro 18k Blanco', emoji: '🤍', desc: 'Elegancia plateada' },
-  { key: 'gold_rose', label: 'Oro 18k Rosado', emoji: '🌸', desc: 'Romántico y moderno' },
+  
 ] as const;
 
 export const SIZE_PREFERENCES = [
@@ -103,7 +103,7 @@ export const JEWELRY_USAGE = [
 export const JEWELRY_COLORS = [
   { key: 'gold', label: 'Dorado', emoji: '🟡' },
   { key: 'silver', label: 'Plateado', emoji: '⚪' },
-  { key: 'rose_gold', label: 'Rosado', emoji: '🌸' },
+  
   { key: 'mixed', label: 'Mezcla de todo', emoji: '🎨' },
   { key: 'unknown', label: 'No lo sé', emoji: '❓' },
 ] as const;

@@ -34,8 +34,8 @@ const testimonials = [
   },
   {
     name: "Felipe A.",
-    piece: "Anillo de compromiso · Moissanita · Oro 18k blanco",
-    text: "No quería diamante por convicción y la Maca lo respetó al toque. Me mostró moissanitas que brillan una locura. Mi polola está chocha y nadie nota la diferencia.",
+    piece: "Anillo de compromiso · Diamante Lab · Oro 18k blanco",
+    text: "Quería algo especial sin gastar una locura y la Maca me mostró diamantes de laboratorio que brillan increíble. Mi polola está chocha y se ve espectacular.",
   },
   {
     name: "Sebastián C.",
@@ -49,7 +49,7 @@ const testimonials = [
   },
   {
     name: "Cristóbal L.",
-    piece: "Solitario cushion · Oro 18k rosado",
+    piece: "Solitario cushion · Oro 18k amarillo",
     text: "Le describí el estilo de mi polola — piola pero con su toque — y la Maca lo pilló al tiro. Diseñó algo que es exactamente ella. La cara que puso no tiene precio.",
   },
   {

@@ -10,7 +10,7 @@ export const PRICE_CONSTANTS = {
   stoneType: {
     natural_diamond: { min: 1000000, max: 1500000 },
     lab_diamond: { min: 300000, max: 600000 },
-    moissanite: { min: 150000, max: 300000 },
+    
     sapphire: { min: 400000, max: 900000 },
     emerald: { min: 500000, max: 1200000 },
     ruby: { min: 600000, max: 1300000 },
@@ -20,7 +20,7 @@ export const PRICE_CONSTANTS = {
   metalMultiplier: {
     gold_yellow: 1.0,
     gold_white: 1.0,
-    gold_rose: 1.0,
+    
     platinum: 1.1,
   } as Record<string, number>,
 

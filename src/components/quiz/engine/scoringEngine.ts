@@ -46,7 +46,7 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
     case 'bohemian':
       add(s.ringStyle, ['nature_inspired', 'vintage', 'toi_et_moi'], 3);
       add(s.stoneShape, ['oval', 'pear', 'marquise'], 2);
-      add(s.metal, ['gold_rose', 'gold_yellow'], 2);
+      add(s.metal, ['gold_yellow'], 2);
       add(s.sizePreference, ['balanced'], 1);
       break;
     case 'glamorous':
@@ -86,11 +86,8 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
     case 'silver':
       add(s.metal, ['platinum', 'gold_white'], 3);
       break;
-    case 'rose_gold':
-      add(s.metal, ['gold_rose'], 4);
-      break;
     case 'mixed':
-      add(s.metal, ['gold_yellow', 'gold_white', 'gold_rose', 'platinum'], 1);
+      add(s.metal, ['gold_yellow', 'gold_white', 'platinum'], 1);
       break;
   }
 
@@ -125,7 +122,7 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
       case 'romantic':
         add(s.ringStyle, ['halo', 'vintage', 'toi_et_moi'], 2);
         add(s.stoneShape, ['oval', 'pear', 'cushion'], 1);
-        add(s.metal, ['gold_rose'], 1);
+        
         break;
       case 'contemporary':
         add(s.ringStyle, ['modern', 'bezel', 'toi_et_moi'], 2);
@@ -151,12 +148,12 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
   // --- Budget inference ---
   switch (answers.budgetRange) {
     case 'under_500k':
-      add(s.stoneType, ['moissanite'], 4);
-      add(s.metal, ['gold_yellow', 'gold_white', 'gold_rose'], 1);
+      add(s.stoneType, ['lab_diamond'], 4);
+      add(s.metal, ['gold_yellow', 'gold_white'], 1);
       add(s.sizePreference, ['discrete'], 1);
       break;
     case '500k_1m':
-      add(s.stoneType, ['moissanite', 'lab_diamond'], 2);
+      add(s.stoneType, ['lab_diamond'], 2);
       break;
     case '1m_2m':
       add(s.stoneType, ['lab_diamond', 'natural_diamond'], 2);
@@ -176,11 +173,11 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
   answers.priorities.forEach(p => {
     switch (p) {
       case 'brilliance':
-        add(s.stoneType, ['natural_diamond', 'lab_diamond', 'moissanite'], 1);
+        add(s.stoneType, ['natural_diamond', 'lab_diamond'], 1);
         add(s.stoneShape, ['round'], 2);
         break;
       case 'size':
-        add(s.stoneType, ['moissanite', 'lab_diamond'], 2);
+        add(s.stoneType, ['lab_diamond'], 2);
         add(s.sizePreference, ['statement'], 1);
         break;
       case 'durability':
@@ -188,11 +185,11 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
         add(s.ringStyle, ['bezel'], 2);
         break;
       case 'price':
-        add(s.stoneType, ['moissanite', 'lab_diamond'], 3);
-        add(s.metal, ['gold_yellow', 'gold_white', 'gold_rose'], 1);
+        add(s.stoneType, ['lab_diamond'], 3);
+        add(s.metal, ['gold_yellow', 'gold_white'], 1);
         break;
       case 'sustainability':
-        add(s.stoneType, ['lab_diamond', 'moissanite'], 3);
+        add(s.stoneType, ['lab_diamond'], 3);
         break;
       case 'rarity':
         add(s.stoneType, ['natural_diamond', 'sapphire', 'emerald', 'ruby'], 2);
@@ -268,10 +265,7 @@ function buildExplanation(answers: QuizAnswers, rec: { style: string; stone: str
     parts.push('su preferencia por joyería dorada');
   } else if (answers.jewelryColorPreference === 'silver') {
     parts.push('su preferencia por tonos plateados');
-  } else if (answers.jewelryColorPreference === 'rose_gold') {
-    parts.push('su gusto por lo rosado');
   }
-
   if (answers.wearsJewelry === 'daily') {
     parts.push('que usa joyas a diario');
   } else if (answers.wearsJewelry === 'rarely') {
