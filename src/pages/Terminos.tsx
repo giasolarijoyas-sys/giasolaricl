@@ -111,7 +111,7 @@ const Terminos = () => {
                   <strong>Baño de rodio</strong> (oro blanco): El primer baño de rodio es sin costo dentro del primer año.
                 </li>
                 <li>
-                  <strong>Certificaciones:</strong> Todos los diamantes sobre 0.30 ct incluyen certificación GIA (naturales) o IGI (laboratorio).
+                   <strong>Certificaciones:</strong> Las certificaciones GIA (diamantes naturales) o IGI (diamantes de laboratorio) están disponibles a solicitud del cliente. Se pueden incluir en el pedido al momento de cotizar.
                 </li>
               </ul>
             </section>
