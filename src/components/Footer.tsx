@@ -21,8 +21,10 @@ const Footer = () => {
             <div className="flex flex-col gap-2">
               <a href="#historia" className="text-sm hover:text-gold transition-colors">La Marca</a>
               <a href="#galeria" className="text-sm hover:text-gold transition-colors">Joyas</a>
+              <a href="/guia" className="text-sm hover:text-gold transition-colors">Guía de Joyas</a>
               <a href="#cotizador" className="text-sm hover:text-gold transition-colors">Cotizar</a>
               <a href="#testimonios" className="text-sm hover:text-gold transition-colors">Testimonios</a>
+              <a href="/terminos" className="text-sm hover:text-gold transition-colors">Términos y Condiciones</a>
             </div>
           </div>
 
