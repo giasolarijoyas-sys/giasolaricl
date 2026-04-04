@@ -185,8 +185,8 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
         add(s.ringStyle, ['bezel'], 2);
         break;
       case 'price':
-        add(s.stoneType, ['moissanite', 'lab_diamond'], 3);
-        add(s.metal, ['gold_yellow', 'gold_white', 'gold_rose'], 1);
+        add(s.stoneType, ['lab_diamond'], 3);
+        add(s.metal, ['gold_yellow', 'gold_white'], 1);
         break;
       case 'sustainability':
         add(s.stoneType, ['lab_diamond', 'moissanite'], 3);
