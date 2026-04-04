@@ -30,7 +30,7 @@ const testimonials = [
   {
     name: "Diego M.",
     piece: "Argollas grabadas · Oro 18k amarillo",
-    text: "Nos casamos en pandemia y las argollas fueron lo único que elegimos con calma. La Maca nos hizo sentir que ese detalle importaba tanto como toda la fiesta que no pudimos hacer.",
+    text: "Las argollas las elegimos con calma, disfrutando cada paso. La Maca nos hizo sentir que cada detalle importaba. Quedaron exactamente como las imaginamos.",
   },
   {
     name: "Felipe A.",
