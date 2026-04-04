@@ -5,13 +5,7 @@ export type CertaintyLevel = 'sure' | 'maybe' | 'no_idea';
 export interface QuizAnswers {
   // Step 1: Welcome (no data, just intro)
   
-  // Step 2: Relationship
-  relationshipLength: string;
-  hasGivenHints: string;
-  hintsDescription: string;
-  proposalContext: string;
-  
-  // Step 3: Personality
+  // Step 2: Personality
   partnerName: string;
   hobbies: string;
   sport: string;
@@ -21,26 +15,30 @@ export interface QuizAnswers {
   favoriteColor: string;
   personalityNotes: string;
   
-  // Step 4: Style exploration
+  // Step 3: Style exploration
   aestheticPreference: string[];
   jewelryColorPreference: string;
   
-  // Step 5: Stone preference
+  // Step 4: Stone preference
   stoneType: string;
   stoneShape: string;
   sizePreference: string;
   
-  // Step 6: Metal
+  // Step 5: Metal
   metalPreference: string;
   
-  // Step 7: Budget & timeline
+  // Step 6: Budget & timeline
   budgetRange: string;
   deadline: string;
   priorities: string[];
   
-  // Step 8: Inspiration
+  // Step 7: Inspiration
   referenceUrls: string;
   images: File[];
+  
+  // Legacy/optional — kept for hints context
+  hasGivenHints: string;
+  hintsDescription: string;
   
   // Certainty tracking
   certaintyScores: Record<string, CertaintyLevel>;
@@ -83,10 +81,6 @@ export interface QuizState {
 }
 
 export const INITIAL_ANSWERS: QuizAnswers = {
-  relationshipLength: '',
-  hasGivenHints: '',
-  hintsDescription: '',
-  proposalContext: '',
   partnerName: '',
   hobbies: '',
   sport: '',
@@ -106,20 +100,21 @@ export const INITIAL_ANSWERS: QuizAnswers = {
   priorities: [],
   referenceUrls: '',
   images: [],
+  hasGivenHints: '',
+  hintsDescription: '',
   certaintyScores: {},
 };
 
 export const QUIZ_STEPS = [
   { num: 0, label: 'Inicio', key: 'welcome' },
-  { num: 1, label: 'Relación', key: 'relationship' },
-  { num: 2, label: 'Personalidad', key: 'personality' },
-  { num: 3, label: 'Estilo', key: 'style' },
-  { num: 4, label: 'Piedra', key: 'stone' },
-  { num: 5, label: 'Metal', key: 'metal' },
-  { num: 6, label: 'Presupuesto', key: 'budget' },
-  { num: 7, label: 'Inspiración', key: 'inspiration' },
-  { num: 8, label: 'Resultado', key: 'result' },
-  { num: 9, label: 'Contacto', key: 'lead' },
+  { num: 1, label: 'Personalidad', key: 'personality' },
+  { num: 2, label: 'Estilo', key: 'style' },
+  { num: 3, label: 'Piedra', key: 'stone' },
+  { num: 4, label: 'Metal', key: 'metal' },
+  { num: 5, label: 'Presupuesto', key: 'budget' },
+  { num: 6, label: 'Inspiración', key: 'inspiration' },
+  { num: 7, label: 'Resultado', key: 'result' },
+  { num: 8, label: 'Contacto', key: 'lead' },
 ] as const;
 
 export type StepProps = {

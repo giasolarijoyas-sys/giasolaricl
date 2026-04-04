@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, SkipForward, CheckCircle } from "lucide-react";
 import QuizProgress from "./QuizProgress";
 import WelcomeStep from "./steps/WelcomeStep";
-import RelationshipStep from "./steps/RelationshipStep";
 import PersonalityStep from "./steps/PersonalityStep";
 import StyleExploreStep from "./steps/StyleExploreStep";
 import StonePreferenceStep from "./steps/StonePreferenceStep";
@@ -27,12 +26,15 @@ const QuizContainer = () => {
     setAnswers(prev => ({ ...prev, ...partial }));
   };
 
+  const lastQuizStep = 6;
+  const resultStep = 7;
+  const leadStep = 8;
+
   const next = () => {
-    if (step === 7) {
-      // Moving from last quiz step → generate recommendations
+    if (step === lastQuizStep) {
       const recs = generateRecommendations(answers);
       setRecommendations(recs);
-      setStep(8);
+      setStep(resultStep);
     } else {
       setStep(s => Math.min(s + 1, QUIZ_STEPS.length - 1));
     }
@@ -41,8 +43,7 @@ const QuizContainer = () => {
   const prev = () => setStep(s => Math.max(s - 1, 0));
   const skip = () => next();
   const goToStep = (s: number) => setStep(s);
-
-  const goToLeadCapture = () => setStep(9);
+  const goToLeadCapture = () => setStep(leadStep);
 
   const stepProps: StepProps = {
     answers,
@@ -52,7 +53,7 @@ const QuizContainer = () => {
   };
 
   const stepLabels = QUIZ_STEPS.map(s => s.label);
-  const isQuizStep = step >= 1 && step <= 7;
+  const isQuizStep = step >= 1 && step <= lastQuizStep;
   const isSkippable = isQuizStep;
 
   if (submitted) {
@@ -118,14 +119,13 @@ const QuizContainer = () => {
               transition={{ duration: 0.3 }}
             >
               {step === 0 && <WelcomeStep {...stepProps} />}
-              {step === 1 && <RelationshipStep {...stepProps} />}
-              {step === 2 && <PersonalityStep {...stepProps} />}
-              {step === 3 && <StyleExploreStep {...stepProps} />}
-              {step === 4 && <StonePreferenceStep {...stepProps} />}
-              {step === 5 && <MetalStep {...stepProps} />}
-              {step === 6 && <BudgetTimelineStep {...stepProps} />}
-              {step === 7 && <InspirationStep {...stepProps} />}
-              {step === 8 && (
+              {step === 1 && <PersonalityStep {...stepProps} />}
+              {step === 2 && <StyleExploreStep {...stepProps} />}
+              {step === 3 && <StonePreferenceStep {...stepProps} />}
+              {step === 4 && <MetalStep {...stepProps} />}
+              {step === 5 && <BudgetTimelineStep {...stepProps} />}
+              {step === 6 && <InspirationStep {...stepProps} />}
+              {step === resultStep && (
                 <ResultView
                   recommendations={recommendations}
                   answers={answers}
@@ -133,7 +133,7 @@ const QuizContainer = () => {
                   onRequestQuote={goToLeadCapture}
                 />
               )}
-              {step === 9 && (
+              {step === leadStep && (
                 <LeadCaptureStep
                   answers={answers}
                   recommendation={selectedRec}
@@ -143,7 +143,6 @@ const QuizContainer = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation — only for quiz steps 1–7 */}
           {isQuizStep && (
             <div className="flex items-center justify-between mt-8 pt-6 border-t border-border">
               <button
@@ -171,8 +170,7 @@ const QuizContainer = () => {
             </div>
           )}
 
-          {/* Back button for result/lead steps */}
-          {step === 8 && (
+          {step === resultStep && (
             <div className="mt-6 pt-4 border-t border-border">
               <button
                 onClick={prev}
@@ -182,10 +180,10 @@ const QuizContainer = () => {
               </button>
             </div>
           )}
-          {step === 9 && (
+          {step === leadStep && (
             <div className="mt-6 pt-4 border-t border-border">
               <button
-                onClick={() => setStep(8)}
+                onClick={() => setStep(resultStep)}
                 className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 <ChevronLeft size={16} /> Ver recomendaciones
