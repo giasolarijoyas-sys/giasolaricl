@@ -44,7 +44,7 @@ const Terminos = () => {
                 Todas nuestras joyas son <strong>piezas únicas fabricadas a pedido</strong>. Esto significa que cada pieza se diseña y manufactura específicamente para cada cliente según sus preferencias, medidas y requerimientos.
               </p>
               <p>
-                El proceso incluye: asesoría personalizada, diseño, aprobación de boceto/render 3D, selección de materiales, fabricación artesanal y entrega.
+                El proceso incluye: asesoría personalizada, diseño, aprobación de boceto, selección de materiales, fabricación artesanal y entrega.
               </p>
             </section>
 
@@ -53,7 +53,7 @@ const Terminos = () => {
               <h2 className="font-display text-xl text-foreground">3. Proceso de compra y pagos</h2>
               <ul className="space-y-2">
                 <li>
-                  <strong>Asesoría y diseño:</strong> La asesoría inicial, bocetos y diseño 3D son <strong>sin costo</strong>. No se cobra hasta que el cliente apruebe el diseño final.
+                  <strong>Asesoría y diseño:</strong> La asesoría inicial y bocetos son <strong>sin costo</strong>. No se cobra hasta que el cliente apruebe el diseño final.
                 </li>
                 <li>
                   <strong>Adelanto (70%):</strong> Una vez aprobado el diseño final, se requiere un adelanto del 70% del precio total para iniciar la fabricación y adquisición de materiales (piedras, metales). Este adelanto <strong>no es reembolsable</strong> dado que los materiales se adquieren específicamente para tu pieza.
@@ -98,7 +98,7 @@ const Terminos = () => {
                   Esta garantía aplica siempre que la pieza se haya fabricado según el diseño aprobado por el cliente. Si el cliente solicita cambios al diseño original, se evaluará caso a caso.
                 </li>
                 <li>
-                  La garantía cubre defectos de fabricación, diferencias significativas con el render aprobado, y problemas de terminación.
+                  La garantía cubre defectos de fabricación, diferencias significativas con el diseño aprobado, y problemas de terminación.
                 </li>
               </ul>
             </section>

@@ -405,7 +405,7 @@ const Guia = () => {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">✓</span>
-                    <span>Antes de fabricar, aprobamos juntos el diseño final con renders 3D para que no haya sorpresas.</span>
+                    <span>Antes de fabricar, aprobamos juntos el diseño final para que no haya sorpresas.</span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">✓</span>
@@ -422,8 +422,8 @@ const Guia = () => {
               <div className="grid md:grid-cols-3 gap-4 mt-4">
                 <div className="p-4 rounded-lg border border-border bg-card text-center">
                   <div className="text-3xl mb-2">1️⃣</div>
-                  <h4 className="font-display text-foreground mb-1">Diseño gratuito</h4>
-                  <p className="text-xs text-muted-foreground">La asesoría, bocetos y diseño 3D son sin costo. Diseñamos hasta que digas "¡es perfecto!".</p>
+                   <h4 className="font-display text-foreground mb-1">Diseño gratuito</h4>
+                   <p className="text-xs text-muted-foreground">La asesoría, bocetos y diseño son sin costo. Diseñamos hasta que digas "¡es perfecto!".</p>
                 </div>
                 <div className="p-4 rounded-lg border border-border bg-card text-center">
                   <div className="text-3xl mb-2">2️⃣</div>
@@ -514,7 +514,7 @@ const Guia = () => {
                   },
                   {
                     q: "¿Puedo ver el diseño antes de fabricar?",
-                    a: "¡Sí! Antes de fabricar, aprobamos juntos el diseño final con renders 3D para que no haya sorpresas. Hacemos los ajustes que sean necesarios hasta que digas '¡es perfecto!'."
+                    a: "¡Sí! Antes de fabricar, aprobamos juntos el diseño final para que no haya sorpresas. Hacemos los ajustes que sean necesarios hasta que digas '¡es perfecto!'."
                   },
                   {
                     q: "¿Qué pasa si no me gusta el resultado final?",
