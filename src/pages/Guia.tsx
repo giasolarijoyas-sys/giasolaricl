@@ -422,8 +422,8 @@ const Guia = () => {
               <div className="grid md:grid-cols-3 gap-4 mt-4">
                 <div className="p-4 rounded-lg border border-border bg-card text-center">
                   <div className="text-3xl mb-2">1️⃣</div>
-                  <h4 className="font-display text-foreground mb-1">Diseño gratuito</h4>
-                  <p className="text-xs text-muted-foreground">La asesoría, bocetos y diseño 3D son sin costo. Diseñamos hasta que digas "¡es perfecto!".</p>
+                   <h4 className="font-display text-foreground mb-1">Diseño gratuito</h4>
+                   <p className="text-xs text-muted-foreground">La asesoría, bocetos y diseño son sin costo. Diseñamos hasta que digas "¡es perfecto!".</p>
                 </div>
                 <div className="p-4 rounded-lg border border-border bg-card text-center">
                   <div className="text-3xl mb-2">2️⃣</div>
