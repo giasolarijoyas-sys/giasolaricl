@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Gem, Ruler, Palette, Scissors, ShieldCheck, Star } from "lucide-react";
+import { Gem, Ruler, Palette, Scissors, ShieldCheck, Star, HelpCircle } from "lucide-react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -66,6 +66,7 @@ const Guia = () => {
               { label: "Las 4C", href: "#4c" },
               { label: "Argollas", href: "#argollas" },
               { label: "Garantía", href: "#garantia" },
+              { label: "FAQ", href: "#faq" },
             ].map((l) => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-xs tracking-widest uppercase border border-border rounded-full hover:border-primary hover:text-primary transition-colors">
                 {l.label}
@@ -490,6 +491,51 @@ const Guia = () => {
                 <p className="text-sm text-foreground">
                   <strong>💡 Tip:</strong> Las argollas se pueden personalizar con grabado interior (nombres, fecha, frase especial) sin costo adicional. El plazo de fabricación es de 2 a 4 semanas.
                 </p>
+              </div>
+            </Section>
+
+            {/* FAQ */}
+            <Section id="faq" icon={HelpCircle} title="Preguntas frecuentes">
+              <div className="space-y-4">
+                {[
+                  {
+                    q: "¿Cuánto demora fabricar un anillo de compromiso?",
+                    a: "Entre 3 y 6 semanas dependiendo de la complejidad del diseño. Si necesitamos importar una piedra especial, puede tomar un poco más."
+                  },
+                  {
+                    q: "¿Puedo ver el diseño antes de fabricar?",
+                    a: "¡Sí! Antes de fabricar, aprobamos juntos el diseño final con renders 3D para que no haya sorpresas. Hacemos los ajustes que sean necesarios hasta que digas '¡es perfecto!'."
+                  },
+                  {
+                    q: "¿Qué pasa si no me gusta el resultado final?",
+                    a: "Nuestra Garantía por Gusto te cubre: si no te encanta, la rehacemos. Somos los únicos en Chile en ofrecer esta garantía."
+                  },
+                  {
+                    q: "¿Las joyas vienen con certificado?",
+                    a: "Las certificaciones GIA (diamantes naturales) o IGI (diamantes de laboratorio) están disponibles a solicitud del cliente. Se pueden incluir al momento de cotizar."
+                  },
+                  {
+                    q: "¿Cómo es la forma de pago?",
+                    a: "70% de adelanto al aprobar el diseño final para iniciar fabricación y adquirir materiales. El 30% restante se paga al momento de la entrega."
+                  },
+                  {
+                    q: "¿Tienen showroom?",
+                    a: "Sí, estamos en Las Condes, Santiago. Las visitas son con cita previa para darte una atención 100% personalizada. Puedes agendar en nuestro Calendly o por WhatsApp."
+                  },
+                  {
+                    q: "¿Hacen envíos a regiones o fuera de Chile?",
+                    a: "Sí, coordinamos el envío con el cliente. Los costos de envío corren por cuenta del cliente, salvo acuerdo en contrario."
+                  },
+                  {
+                    q: "¿Tienen descuento en argollas si hice el anillo de compromiso con ustedes?",
+                    a: "¡Sí! Los novios que hacen su anillo de compromiso con nosotros tienen un 20% de descuento en la echura de las argollas de matrimonio."
+                  },
+                ].map(({ q, a }) => (
+                  <div key={q} className="p-4 rounded-lg border border-border bg-card">
+                    <h4 className="font-display text-foreground mb-2">{q}</h4>
+                    <p className="text-sm text-muted-foreground">{a}</p>
+                  </div>
+                ))}
               </div>
             </Section>
           </div>
