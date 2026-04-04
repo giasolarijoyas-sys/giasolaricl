@@ -480,7 +480,7 @@ const Guia = () => {
                 <div className="p-4 rounded-lg border border-border bg-card">
                   <h5 className="font-display text-foreground mb-2">Para él</h5>
                   <ul className="text-sm space-y-1 text-muted-foreground">
-                    <li>• <strong>Ancho:</strong> 4mm a 6mm (lo más común: 5mm)</li>
+                    <li>• <strong>Ancho:</strong> 3mm a 6mm (lo más común: 3mm)</li>
                     <li>• <strong>Talla:</strong> 16 a 22 (Chile)</li>
                     <li>• El ancho depende del tamaño de la mano y preferencia personal</li>
                   </ul>
