@@ -64,6 +64,7 @@ const Guia = () => {
               { label: "Metales", href: "#metales" },
               { label: "Cortes", href: "#cortes" },
               { label: "Las 4C", href: "#4c" },
+              { label: "Argollas", href: "#argollas" },
               { label: "Garantía", href: "#garantia" },
             ].map((l) => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-xs tracking-widest uppercase border border-border rounded-full hover:border-primary hover:text-primary transition-colors">
