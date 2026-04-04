@@ -65,12 +65,12 @@ export function estimatePrice(input: PriceInput): { min: number; max: number } {
   const rawMin = (labor + metal.min + stone.min + style.min) * sizeMult;
   const rawMax = (labor + metal.max + stone.max + style.max) * sizeMult;
 
-  // Round to nearest 50k
+  // Round to nearest 50k, enforce $1.8M floor
   const round50k = (n: number) => Math.round(n / 50000) * 50000;
 
   return {
-    min: round50k(rawMin),
-    max: round50k(rawMax),
+    min: Math.max(1800000, round50k(rawMin)),
+    max: Math.max(2000000, round50k(rawMax)),
   };
 }
 
