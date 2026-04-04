@@ -42,24 +42,29 @@ const Historia = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Soy Maca. Gia Solari nace de mi amor por las joyas y de lo que
-                aprendí viendo a mi mamá —{" "}
-                <strong className="text-foreground">Gianna</strong> — trabajar
-                con piedras y metales desde que tengo memoria. Ella me enseñó
-                que una joya no es un objeto, es una historia que se lleva puesta.
+                Somos Maca y Gianna — madre e hija, ambas{" "}
+                <strong className="text-foreground">joyeras</strong>. Gia Solari
+                nace de nuestro amor compartido por las joyas y de años
+                trabajando juntas con piedras y metales. Maca además es{" "}
+                <strong className="text-foreground">orfebre</strong>, y en
+                nuestro taller nos apoyamos con los mejores orfebres del rubro
+                para garantizar que cada proceso cuente con su especialista.
               </p>
               <p>
-                Juntas nos especializamos en piezas a pedido con{" "}
-                <strong className="text-foreground">transparencia técnica</strong>,
-                atención completamente personalizada y asesoría real. Somos de
-                las pocas joyerías en Chile que trabaja el{" "}
+                Amamos los detalles. Nos especializamos en piezas a pedido con{" "}
+                <strong className="text-foreground">transparencia técnica</strong>{" "}
+                y atención completamente personalizada, porque creemos que tu
+                joya tiene que ser{" "}
+                <strong className="text-foreground">auténtica y única</strong>,
+                igual que tu historia. Somos de las pocas joyerías en Chile que
+                trabaja el{" "}
                 <strong className="text-foreground">platino con verdadera maestría</strong>.
               </p>
               <p className="italic text-foreground font-display text-lg pt-2">
-                "Tú me cuentas tu historia, yo la convierto en joya."
+                "Tú nos cuentas tu historia, nosotras la convertimos en joya."
               </p>
               <p className="text-sm text-primary tracking-wide">
-                — Maca González Solari · Fundadora
+                — Maca & Gianna · Gia Solari
               </p>
             </div>
           </motion.div>
