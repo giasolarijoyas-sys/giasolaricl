@@ -29,7 +29,7 @@ Gia Solari nace de la pasión de Macarena por las joyas finas y un profundo lega
 ### Piedras
 - **Diamante Natural**: La opción tradicional. Certificación GIA. Dureza 10/10. Las 4C: Corte, Color, Claridad, Quilates.
 - **Diamante Lab (laboratorio)**: Mismas propiedades físicas/ópticas que el natural, pero creado en laboratorio. Más accesible (30-40% menos). Certificación IGI. Opción ética y sustentable.
-- **Moissanita**: Brillo excepcional (más que el diamante), dureza 9.25/10. Mucho más accesible. Excelente relación calidad-precio.
+
 - **Zafiro**: Dureza 9/10. Disponible en azul, rosa, amarillo, blanco. Elegancia real.
 - **Esmeralda**: Piedra de carácter. Requiere más cuidado. Hermosa en oro amarillo y rosado.
 - **Rubí**: Pasión en piedra. Dureza 9/10. Impactante y único.
