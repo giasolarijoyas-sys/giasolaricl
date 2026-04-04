@@ -144,6 +144,7 @@ export type Database = {
           fecha_aniversario: string | null
           fecha_cumple_pareja: string | null
           id: string
+          image_urls: string[] | null
           metal_preferido: string | null
           nombre: string
           nombre_pareja: string
@@ -152,6 +153,7 @@ export type Database = {
           piedra_preferida: string | null
           preferencias: string
           presupuesto_aproximado: string | null
+          referencias: string | null
           tipo_joya: string | null
           whatsapp: string
         }
@@ -161,6 +163,7 @@ export type Database = {
           fecha_aniversario?: string | null
           fecha_cumple_pareja?: string | null
           id?: string
+          image_urls?: string[] | null
           metal_preferido?: string | null
           nombre: string
           nombre_pareja: string
@@ -169,6 +172,7 @@ export type Database = {
           piedra_preferida?: string | null
           preferencias: string
           presupuesto_aproximado?: string | null
+          referencias?: string | null
           tipo_joya?: string | null
           whatsapp: string
         }
@@ -178,6 +182,7 @@ export type Database = {
           fecha_aniversario?: string | null
           fecha_cumple_pareja?: string | null
           id?: string
+          image_urls?: string[] | null
           metal_preferido?: string | null
           nombre?: string
           nombre_pareja?: string
@@ -186,6 +191,7 @@ export type Database = {
           piedra_preferida?: string | null
           preferencias?: string
           presupuesto_aproximado?: string | null
+          referencias?: string | null
           tipo_joya?: string | null
           whatsapp?: string
         }
