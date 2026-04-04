@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Gem, Ruler, Palette, Scissors, ShieldCheck, Star } from "lucide-react";
+import { Gem, Ruler, Palette, Scissors, ShieldCheck, Star, HelpCircle } from "lucide-react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
