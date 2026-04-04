@@ -61,6 +61,10 @@ const pieces: Piece[] = [
   { img: galPrincesa, name: "Anillo Princesa", desc: "Corte Princesa · Oro 18k", category: "anillos" },
   { img: galZafirosBanda, name: "Anillo Corona", desc: "Zafiros · Banda Diamantes", category: "anillos" },
   { img: galVintageFiligrana, name: "Anillo Heritage", desc: "Aguamarina · Filigrana Vintage", category: "anillos" },
+  { img: galHaloOvalCaja, name: "Anillo Nusa", desc: "Halo Oval · Caja Terciopelo", category: "anillos" },
+  { img: galZafiroFloral, name: "Anillo Flora", desc: "Zafiro · Halo Floral · Oro", category: "anillos" },
+  { img: galSolitarioMarco, name: "Anillo Atelier", desc: "Solitario Redondo · Oro Blanco", category: "anillos" },
+  { img: galHaloZafiroRedondo, name: "Anillo Índigo", desc: "Zafiro Redondo · Halo Pavé", category: "anillos" },
   { img: galArgolla, name: "Argolla Eterna", desc: "Platino · Diseño Clásico", category: "anillos" },
 
   // Pulseras
