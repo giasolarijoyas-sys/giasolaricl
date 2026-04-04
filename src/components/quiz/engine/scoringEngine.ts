@@ -46,7 +46,7 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
     case 'bohemian':
       add(s.ringStyle, ['nature_inspired', 'vintage', 'toi_et_moi'], 3);
       add(s.stoneShape, ['oval', 'pear', 'marquise'], 2);
-      add(s.metal, ['gold_rose', 'gold_yellow'], 2);
+      add(s.metal, ['gold_yellow'], 2);
       add(s.sizePreference, ['balanced'], 1);
       break;
     case 'glamorous':
