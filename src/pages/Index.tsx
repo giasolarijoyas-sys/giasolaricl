@@ -19,6 +19,7 @@ const Index = () => {
       <Gallery />
       <Historia />
       <Testimonials />
+      <WishListForm />
       <Footer />
       <WhatsAppButton />
       <JewelryChat />
