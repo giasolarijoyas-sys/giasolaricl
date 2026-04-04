@@ -108,7 +108,10 @@ const Terminos = () => {
                   <strong>Reparaciones:</strong> Si tu joya sufre algún daño, nos encargamos de repararla. Las reparaciones por uso normal tienen un costo preferencial.
                 </li>
                 <li>
-                  <strong>Baño de rodio</strong> (oro blanco): El primer baño de rodio es sin costo dentro del primer año.
+                  <strong>Baño de rodio</strong> (oro blanco): Todas las joyas de oro blanco incluyen un rodinado antes de la entrega. El siguiente baño de rodio es sin costo dentro del primer año.
+                </li>
+                <li>
+                  <strong>Garantía por caída de piedras:</strong> Garantía de 1 año por caída de piedras, siempre que la joya no presente evidencia de mal uso o golpes.
                 </li>
                 <li>
                    <strong>Certificaciones:</strong> Las certificaciones GIA (diamantes naturales) o IGI (diamantes de laboratorio) están disponibles a solicitud del cliente. Se pueden incluir en el pedido al momento de cotizar.

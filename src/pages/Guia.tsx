@@ -64,6 +64,7 @@ const Guia = () => {
               { label: "Metales", href: "#metales" },
               { label: "Cortes", href: "#cortes" },
               { label: "Las 4C", href: "#4c" },
+              { label: "Argollas", href: "#argollas" },
               { label: "Garantía", href: "#garantia" },
             ].map((l) => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-xs tracking-widest uppercase border border-border rounded-full hover:border-primary hover:text-primary transition-colors">
@@ -267,24 +268,18 @@ const Guia = () => {
 
             {/* CORTES */}
             <Section id="cortes" icon={Scissors} title="Formas y cortes de piedra">
-              <p>La forma de la piedra define el carácter del anillo. Cada corte tiene su brillo y personalidad:</p>
+              <p>Las formas más populares para anillos de compromiso:</p>
 
-              <div className="grid grid-cols-3 md:grid-cols-5 gap-3">
-                <CutCard name="Redonda" emoji="⚪" desc="La más brillante. 57 facetas que maximizan la luz." />
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <CutCard name="Redonda" emoji="⚪" desc="La más brillante y clásica. 57 facetas que maximizan la luz." />
                 <CutCard name="Oval" emoji="🥚" desc="Alarga el dedo. Muy elegante y moderna." />
-                <CutCard name="Esmeralda" emoji="▬" desc="Rectángulo con esquinas cortadas. Efecto hall of mirrors." />
-                <CutCard name="Pera" emoji="💧" desc="Forma de gota. Única, femenina y alargadora." />
                 <CutCard name="Cushion" emoji="▢" desc="Cuadrado con bordes suaves. Aire romántico y vintage." />
-                <CutCard name="Marquesa" emoji="◇" desc="Alargada y puntiaguda. Maximiza el tamaño visual." />
-                <CutCard name="Princesa" emoji="◆" desc="Cuadrada con brillo intenso. La segunda más popular." />
-                <CutCard name="Asscher" emoji="⬜" desc="Cuadrado con efecto espejo. Estilo Art Déco." />
-                <CutCard name="Radiante" emoji="🔷" desc="Combina brillo de redonda con forma rectangular." />
-                <CutCard name="Corazón" emoji="💜" desc="Romántico y simbólico. Requiere buena simetría." />
+                <CutCard name="Esmeralda" emoji="▬" desc="Rectángulo sofisticado. Efecto hall of mirrors." />
               </div>
 
               <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
                 <p className="text-sm text-foreground">
-                  <strong>💡 Dato:</strong> El corte redondo brillante es el que más refleja la luz (brillo), pero cortes como el oval y el marquesa hacen que la piedra se vea más grande de lo que es. ¡A veces el corte importa más que los quilates!
+                  <strong>💡 Dato:</strong> El corte redondo brillante es el que más refleja la luz, pero el oval y el cushion hacen que la piedra se vea más grande de lo que es. ¡A veces el corte importa más que los quilates!
                 </p>
               </div>
             </Section>
@@ -421,12 +416,12 @@ const Guia = () => {
                 </div>
                 <div className="p-4 rounded-lg border border-border bg-card text-center">
                   <div className="text-3xl mb-2">2️⃣</div>
-                  <h4 className="font-display text-foreground mb-1">50% de adelanto</h4>
-                  <p className="text-xs text-muted-foreground">Al aprobar el diseño final, se paga el 50% para comenzar la fabricación y adquirir los materiales.</p>
+                  <h4 className="font-display text-foreground mb-1">70% de adelanto</h4>
+                  <p className="text-xs text-muted-foreground">Al aprobar el diseño final, se paga el 70% para comenzar la fabricación y adquirir los materiales.</p>
                 </div>
                 <div className="p-4 rounded-lg border border-border bg-card text-center">
                   <div className="text-3xl mb-2">3️⃣</div>
-                  <h4 className="font-display text-foreground mb-1">50% al entregar</h4>
+                  <h4 className="font-display text-foreground mb-1">30% al entregar</h4>
                   <p className="text-xs text-muted-foreground">El saldo restante se paga al recibir tu joya terminada. Verificas que te encante antes de pagar.</p>
                 </div>
               </div>
@@ -434,6 +429,66 @@ const Guia = () => {
               <div className="p-4 rounded-lg bg-primary/5 border border-primary/20 mt-4">
                 <p className="text-sm text-foreground">
                   <strong>Plazo de fabricación:</strong> Entre 3 y 6 semanas dependiendo de la complejidad del diseño. Las piezas con piedras especiales pueden tomar un poco más si necesitamos importar la piedra perfecta.
+                </p>
+              </div>
+            </Section>
+
+            {/* ARGOLLAS DE MATRIMONIO */}
+            <Section id="argollas" icon={Gem} title="Argollas de Matrimonio">
+              <div className="p-6 rounded-xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 mb-6">
+                <h3 className="font-display text-xl text-foreground mb-2">🎉 20% de descuento en la echura</h3>
+                <p className="text-sm">
+                  Si hiciste tu anillo de compromiso con nosotros, tienes un <strong>20% de descuento en la echura</strong> de tus argollas de matrimonio. ¡Nuestro regalo para la pareja!
+                </p>
+              </div>
+
+              <p>Las argollas de matrimonio en Gia Solari son exclusivamente de <strong>oro 18k amarillo</strong>, fabricadas a mano con el mismo cuidado artesanal de nuestros anillos de compromiso.</p>
+
+              <h4 className="font-display text-lg text-foreground mt-6 mb-3">Formas más comunes</h4>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 rounded-lg border border-border bg-card">
+                  <h5 className="font-display text-foreground mb-2">Media caña (inglés) ⭐</h5>
+                  <p className="text-sm text-muted-foreground">
+                    El clásico por excelencia. Perfil en forma de "D": plano por dentro y abombado por fuera. Cómodo, atemporal y elegante. <strong>El favorito de la Maca.</strong>
+                  </p>
+                </div>
+                <div className="p-4 rounded-lg border border-border bg-card">
+                  <h5 className="font-display text-foreground mb-2">Plana</h5>
+                  <p className="text-sm text-muted-foreground">
+                    Perfil rectangular, moderna y minimalista. Ideal para quienes prefieren un look más contemporáneo y angular.
+                  </p>
+                </div>
+                <div className="p-4 rounded-lg border border-border bg-card">
+                  <h5 className="font-display text-foreground mb-2">Comfort Fit</h5>
+                  <p className="text-sm text-muted-foreground">
+                    Abombada tanto por dentro como por fuera. Máxima comodidad al ponérsela y quitársela. Ideal para quienes no están acostumbrados a usar anillo.
+                  </p>
+                </div>
+              </div>
+
+              <h4 className="font-display text-lg text-foreground mt-6 mb-3">Medidas típicas</h4>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg border border-border bg-card">
+                  <h5 className="font-display text-foreground mb-2">Para ella</h5>
+                  <ul className="text-sm space-y-1 text-muted-foreground">
+                    <li>• <strong>Ancho:</strong> 2mm a 3mm (lo más común: 2.5mm)</li>
+                    <li>• <strong>Talla:</strong> 8 a 12 (Chile)</li>
+                    <li>• Las más delgadas se ven elegantes y combinan bien con el anillo de compromiso</li>
+                  </ul>
+                </div>
+                <div className="p-4 rounded-lg border border-border bg-card">
+                  <h5 className="font-display text-foreground mb-2">Para él</h5>
+                  <ul className="text-sm space-y-1 text-muted-foreground">
+                    <li>• <strong>Ancho:</strong> 4mm a 6mm (lo más común: 5mm)</li>
+                    <li>• <strong>Talla:</strong> 16 a 22 (Chile)</li>
+                    <li>• El ancho depende del tamaño de la mano y preferencia personal</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="p-4 rounded-lg bg-primary/5 border border-primary/20 mt-4">
+                <p className="text-sm text-foreground">
+                  <strong>💡 Tip:</strong> Las argollas se pueden personalizar con grabado interior (nombres, fecha, frase especial) sin costo adicional. El plazo de fabricación es de 2 a 4 semanas.
                 </p>
               </div>
             </Section>
