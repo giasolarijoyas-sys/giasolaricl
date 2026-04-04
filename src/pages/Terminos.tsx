@@ -98,7 +98,7 @@ const Terminos = () => {
                   Esta garantía aplica siempre que la pieza se haya fabricado según el diseño aprobado por el cliente. Si el cliente solicita cambios al diseño original, se evaluará caso a caso.
                 </li>
                 <li>
-                  La garantía cubre defectos de fabricación, diferencias significativas con el render aprobado, y problemas de terminación.
+                  La garantía cubre defectos de fabricación, diferencias significativas con el diseño aprobado, y problemas de terminación.
                 </li>
               </ul>
             </section>

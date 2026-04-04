@@ -56,7 +56,7 @@ Si el cliente no queda 100% satisfecho con el resultado final, Gia Solari lo reh
 ### Proceso de trabajo
 1. Consulta inicial (formulario web o WhatsApp)
 2. Asesoría personalizada con Macarena
-3. Diseño y render 3D
+3. Diseño y aprobación del boceto
 4. Aprobación del cliente
 5. Fabricación artesanal (4-6 semanas aprox.)
 6. Entrega con packaging Gia Solari

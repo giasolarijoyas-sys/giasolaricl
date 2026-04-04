@@ -514,7 +514,7 @@ const Guia = () => {
                   },
                   {
                     q: "¿Puedo ver el diseño antes de fabricar?",
-                    a: "¡Sí! Antes de fabricar, aprobamos juntos el diseño final con renders 3D para que no haya sorpresas. Hacemos los ajustes que sean necesarios hasta que digas '¡es perfecto!'."
+                    a: "¡Sí! Antes de fabricar, aprobamos juntos el diseño final para que no haya sorpresas. Hacemos los ajustes que sean necesarios hasta que digas '¡es perfecto!'."
                   },
                   {
                     q: "¿Qué pasa si no me gusta el resultado final?",
