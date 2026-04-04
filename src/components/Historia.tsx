@@ -1,5 +1,16 @@
 import { motion } from "framer-motion";
 import giannaImg from "@/assets/maca-gianna.jpeg";
+import taller1 from "@/assets/taller-1.jpg";
+import taller2 from "@/assets/taller-2.jpg";
+import taller3 from "@/assets/taller-3.jpeg";
+import taller4 from "@/assets/taller-4.jpg";
+
+const tallerPhotos = [
+  { src: taller1, alt: "Testeo de diamantes en el taller Gia Solari" },
+  { src: taller2, alt: "Fundición de metales preciosos en el taller" },
+  { src: taller3, alt: "Trabajo de precisión con herramientas de joyería" },
+  { src: taller4, alt: "Soldadura con soplete en el taller de orfebrería" },
+];
 
 const Historia = () => {
   return (
@@ -69,6 +80,38 @@ const Historia = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Taller photos grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-20"
+        >
+          <p className="text-primary tracking-[0.3em] uppercase text-xs mb-6 text-center">
+            Nuestro Taller
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {tallerPhotos.map((photo, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="aspect-square overflow-hidden group"
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
