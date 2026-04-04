@@ -16,6 +16,10 @@ import galCincoPiedras from "@/assets/gal-cinco-piedras.jpeg";
 import galBrazaleteOro from "@/assets/gal-brazalete-oro.png";
 import galSolitarioCaja from "@/assets/gal-solitario-caja.jpg";
 import galPrincesaMarco from "@/assets/gal-princesa-marco.jpeg";
+import galHaloOvalCaja from "@/assets/gal-halo-oval-caja.jpg";
+import galZafiroFloral from "@/assets/gal-zafiro-floral.png";
+import galSolitarioMarco from "@/assets/gal-solitario-marco.png";
+import galHaloZafiroRedondo from "@/assets/gal-halo-zafiro-redondo.png";
 
 type Category =
   | "todas"
