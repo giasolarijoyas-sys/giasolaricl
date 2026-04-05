@@ -1,4 +1,4 @@
-import logoHorizontal from "@/assets/logo-horizontal.png";
+import logoCrema from "@/assets/logo-icon-cream.png";
 
 const Footer = () => {
   return (
