@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Sparkles, ArrowRight } from "lucide-react";
+import { Heart, ArrowRight, Target, Clock, MessageCircle } from "lucide-react";
 import type { StepProps } from "../types";
 
 const WelcomeStep = ({ onNext }: StepProps) => {
@@ -21,7 +21,6 @@ const WelcomeStep = ({ onNext }: StepProps) => {
         Te recomendaremos el anillo perfecto basado en lo que nos digas.
       </p>
       <p className="text-muted-foreground text-sm max-w-md mx-auto mb-8">
-        <Sparkles size={14} className="inline text-primary mr-1" />
         Puedes saltarte cualquier pregunta que no sepas. Siempre llegarás a una recomendación personalizada.
       </p>
 
@@ -34,12 +33,12 @@ const WelcomeStep = ({ onNext }: StepProps) => {
 
       <div className="mt-10 grid grid-cols-3 gap-4 max-w-md mx-auto">
         {[
-          { icon: '🎯', text: 'Recomendación personalizada' },
-          { icon: '⏱️', text: 'Solo 3–5 minutos' },
-          { icon: '💬', text: 'Respuesta en 24 horas' },
+          { icon: Target, text: 'Recomendación personalizada' },
+          { icon: Clock, text: 'Solo 3–5 minutos' },
+          { icon: MessageCircle, text: 'Respuesta en 24 horas' },
         ].map((item) => (
           <div key={item.text} className="text-center">
-            <span className="text-xl">{item.icon}</span>
+            <item.icon size={20} className="text-primary mx-auto mb-1" />
             <p className="text-xs text-muted-foreground mt-1">{item.text}</p>
           </div>
         ))}

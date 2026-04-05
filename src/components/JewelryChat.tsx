@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 type Msg = { role: "user" | "assistant"; content: string; imageUrl?: string };
 
 const SUGGESTIONS = [
-  "Quiero un anillo de compromiso 💍",
+  "Quiero un anillo de compromiso",
   "¿Diamante natural o lab?",
   "¿Qué metal me recomiendas?",
   "Tengo un presupuesto acotado",

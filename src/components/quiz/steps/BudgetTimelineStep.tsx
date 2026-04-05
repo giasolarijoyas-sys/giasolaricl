@@ -63,7 +63,7 @@ const BudgetTimelineStep = ({ answers, onUpdate }: StepProps) => {
                     : "bg-muted text-muted-foreground hover:bg-muted/80 disabled:opacity-40"
                 }`}
               >
-                {p.emoji} {p.label}
+                {p.label}
               </button>
             ))}
           </div>
