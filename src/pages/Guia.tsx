@@ -274,10 +274,10 @@ const Guia = () => {
               <p>Las formas más populares para anillos de compromiso:</p>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <CutCard name="Redonda" emoji="⚪" desc="La más brillante y clásica. 57 facetas que maximizan la luz." />
-                <CutCard name="Oval" emoji="🥚" desc="Alarga el dedo. Muy elegante y moderna." />
-                <CutCard name="Cushion" emoji="▢" desc="Cuadrado con bordes suaves. Aire romántico y vintage." />
-                <CutCard name="Esmeralda" emoji="▬" desc="Rectángulo sofisticado. Efecto hall of mirrors." />
+                <CutCard name="Redonda" desc="La más brillante y clásica. 57 facetas que maximizan la luz." />
+                <CutCard name="Oval" desc="Alarga el dedo. Muy elegante y moderna." />
+                <CutCard name="Cushion" desc="Cuadrado con bordes suaves. Aire romántico y vintage." />
+                <CutCard name="Esmeralda" desc="Rectángulo sofisticado. Efecto hall of mirrors." />
               </div>
 
               <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
