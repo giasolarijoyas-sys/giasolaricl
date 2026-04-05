@@ -44,45 +44,56 @@ const ResultView = ({ recommendations, answers, onSelectRecommendation, onReques
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="bg-card border-2 border-primary/30 rounded-lg p-6 md:p-8 mb-6"
+        className="bg-card border-2 border-primary/30 rounded-lg overflow-hidden mb-6"
       >
-        <div className="flex items-center gap-2 mb-3">
-          <Star size={18} className="text-primary fill-primary" />
-          <span className="text-xs uppercase tracking-wider text-primary font-medium">Recomendación principal</span>
-        </div>
-
-        <h4 className="font-display text-xl text-foreground mb-2">
-          {primary.ringStyleLabel} con {primary.stoneTypeLabel} {primary.stoneShapeLabel}
-        </h4>
-        <p className="text-sm text-muted-foreground mb-1">
-          Metal: <span className="text-foreground">{primary.metalLabel}</span>
-        </p>
-        <p className="text-sm text-muted-foreground mb-4">
-          {primary.explanation}
-        </p>
-
-        <div className="flex flex-wrap items-center gap-4 mb-4">
-          <div className="bg-muted rounded-lg px-4 py-2">
-            <p className="text-xs text-muted-foreground">Rango estimado</p>
-            <p className="text-sm font-medium text-foreground">
-              {formatCLP(primary.estimatedPriceRange.min)} – {formatCLP(primary.estimatedPriceRange.max)}
-            </p>
+        {primary.matchingImage && (
+          <div className="aspect-[16/9] overflow-hidden">
+            <img
+              src={primary.matchingImage}
+              alt={`${primary.ringStyleLabel} con ${primary.stoneTypeLabel}`}
+              className="w-full h-full object-cover"
+            />
           </div>
-          <ConfidenceBadge score={primary.confidenceScore} />
-        </div>
+        )}
+        <div className="p-6 md:p-8">
+          <div className="flex items-center gap-2 mb-3">
+            <Star size={18} className="text-primary fill-primary" />
+            <span className="text-xs uppercase tracking-wider text-primary font-medium">Recomendación principal</span>
+          </div>
 
-        <button
-          onClick={() => { onSelectRecommendation(primary); onRequestQuote(); }}
-          className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
-        >
-          Solicitar cotización detallada <ArrowRight size={16} />
-        </button>
+          <h4 className="font-display text-xl text-foreground mb-2">
+            {primary.ringStyleLabel} con {primary.stoneTypeLabel} {primary.stoneShapeLabel}
+          </h4>
+          <p className="text-sm text-muted-foreground mb-1">
+            Metal: <span className="text-foreground">{primary.metalLabel}</span>
+          </p>
+          <p className="text-sm text-muted-foreground mb-4">
+            {primary.explanation}
+          </p>
+
+          <div className="flex flex-wrap items-center gap-4 mb-4">
+            <div className="bg-muted rounded-lg px-4 py-2">
+              <p className="text-xs text-muted-foreground">Rango estimado</p>
+              <p className="text-sm font-medium text-foreground">
+                {formatCLP(primary.estimatedPriceRange.min)} – {formatCLP(primary.estimatedPriceRange.max)}
+              </p>
+            </div>
+            <ConfidenceBadge score={primary.confidenceScore} />
+          </div>
+
+          <button
+            onClick={() => { onSelectRecommendation(primary); onRequestQuote(); }}
+            className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+          >
+            Solicitar cotización <ArrowRight size={16} />
+          </button>
+        </div>
       </motion.div>
 
       {/* Alternatives */}
       {alternatives.length > 0 && (
         <>
-          <p className="text-xs text-muted-foreground uppercase tracking-wide mb-3">Alternativas cercanas</p>
+          <p className="text-xs text-muted-foreground uppercase tracking-wide mb-3">Alternativas</p>
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             {alternatives.map((alt, i) => (
               <motion.div
@@ -90,22 +101,33 @@ const ResultView = ({ recommendations, answers, onSelectRecommendation, onReques
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.1 }}
-                className="bg-card border border-border rounded-lg p-5"
+                className="bg-card border border-border rounded-lg overflow-hidden"
               >
-                <h5 className="font-display text-base text-foreground mb-1">
-                  {alt.ringStyleLabel} con {alt.stoneTypeLabel} {alt.stoneShapeLabel}
-                </h5>
-                <p className="text-xs text-muted-foreground mb-1">Metal: {alt.metalLabel}</p>
-                <p className="text-xs text-muted-foreground mb-3">
-                  {formatCLP(alt.estimatedPriceRange.min)} – {formatCLP(alt.estimatedPriceRange.max)}
-                </p>
-                <ConfidenceBadge score={alt.confidenceScore} />
-                <button
-                  onClick={() => { onSelectRecommendation(alt); onRequestQuote(); }}
-                  className="mt-3 w-full text-sm text-primary border border-primary/30 py-2 rounded-lg hover:bg-primary/5 transition-colors"
-                >
-                  Cotizar esta opción
-                </button>
+                {alt.matchingImage && (
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <img
+                      src={alt.matchingImage}
+                      alt={`${alt.ringStyleLabel} con ${alt.stoneTypeLabel}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                <div className="p-5">
+                  <h5 className="font-display text-base text-foreground mb-1">
+                    {alt.ringStyleLabel} con {alt.stoneTypeLabel} {alt.stoneShapeLabel}
+                  </h5>
+                  <p className="text-xs text-muted-foreground mb-1">Metal: {alt.metalLabel}</p>
+                  <p className="text-xs text-muted-foreground mb-3">
+                    {formatCLP(alt.estimatedPriceRange.min)} – {formatCLP(alt.estimatedPriceRange.max)}
+                  </p>
+                  <ConfidenceBadge score={alt.confidenceScore} />
+                  <button
+                    onClick={() => { onSelectRecommendation(alt); onRequestQuote(); }}
+                    className="mt-3 w-full text-sm text-primary border border-primary/30 py-2 rounded-lg hover:bg-primary/5 transition-colors"
+                  >
+                    Cotizar esta opción
+                  </button>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -113,7 +135,7 @@ const ResultView = ({ recommendations, answers, onSelectRecommendation, onReques
       )}
 
       <p className="text-xs text-center text-muted-foreground italic">
-        * Los precios son estimaciones orientativas. La cotización final depende del diseño exacto y materiales seleccionados.
+        * Los precios son estimaciones orientativas. La cotización final depende del diseño exacto.
       </p>
     </div>
   );

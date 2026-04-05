@@ -1,12 +1,12 @@
 import type { StepProps } from "../types";
-import { CENTER_STONE_TYPES, STONE_SHAPES, SIZE_PREFERENCES } from "../taxonomies";
+import { CENTER_STONE_TYPES, STONE_SHAPES, METALS } from "../taxonomies";
 
 const OptionCard = ({ label, desc, selected, onClick }: {
   label: string; desc?: string; selected: boolean; onClick: () => void;
 }) => (
   <button
     onClick={onClick}
-    className={`flex flex-col items-center gap-2 p-4 rounded-lg border-2 transition-all text-center ${
+    className={`flex flex-col items-center gap-1 p-4 rounded-lg border-2 transition-all text-center ${
       selected ? "border-primary bg-primary/10" : "border-border hover:border-primary/40"
     }`}
   >
@@ -15,18 +15,18 @@ const OptionCard = ({ label, desc, selected, onClick }: {
   </button>
 );
 
-const StonePreferenceStep = ({ answers, onUpdate }: StepProps) => {
+const StoneMetalStep = ({ answers, onUpdate }: StepProps) => {
   return (
     <div>
       <h3 className="font-display text-xl mb-2 text-foreground">
-        Piedra central
+        Piedra y metal
       </h3>
       <p className="text-muted-foreground text-sm mb-6">
-        ¿Qué piedra imaginas? Si no estás seguro, sáltate este paso y te asesoramos.
+        Elige lo que prefieras. Si no estás seguro, sáltate lo que no sepas.
       </p>
 
       <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wide">Tipo de piedra</p>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
+      <div className="grid grid-cols-2 gap-3 mb-6">
         {CENTER_STONE_TYPES.map((s) => (
           <OptionCard
             key={s.key}
@@ -39,7 +39,7 @@ const StonePreferenceStep = ({ answers, onUpdate }: StepProps) => {
       </div>
 
       <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wide">Forma de la piedra</p>
-      <div className="grid grid-cols-3 gap-3 mb-6">
+      <div className="grid grid-cols-2 gap-3 mb-6">
         {STONE_SHAPES.map((s) => (
           <OptionCard
             key={s.key}
@@ -51,15 +51,15 @@ const StonePreferenceStep = ({ answers, onUpdate }: StepProps) => {
         ))}
       </div>
 
-      <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wide">Tamaño visual deseado</p>
+      <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wide">Metal</p>
       <div className="grid grid-cols-3 gap-3">
-        {SIZE_PREFERENCES.map((s) => (
+        {METALS.map((m) => (
           <OptionCard
-            key={s.key}
-            label={s.label}
-            desc={s.desc}
-            selected={answers.sizePreference === s.key}
-            onClick={() => onUpdate({ sizePreference: s.key })}
+            key={m.key}
+            label={m.label}
+            desc={m.desc}
+            selected={answers.metalPreference === m.key}
+            onClick={() => onUpdate({ metalPreference: m.key })}
           />
         ))}
       </div>
@@ -67,4 +67,4 @@ const StonePreferenceStep = ({ answers, onUpdate }: StepProps) => {
   );
 };
 
-export default StonePreferenceStep;
+export default StoneMetalStep;

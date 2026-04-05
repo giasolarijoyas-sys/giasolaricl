@@ -3,6 +3,7 @@ import { Loader2, Send } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import type { QuizAnswers, Recommendation } from "./types";
+import { BUDGET_RANGES } from "./taxonomies";
 
 interface LeadCaptureStepProps {
   answers: QuizAnswers;
@@ -15,8 +16,6 @@ const LeadCaptureStep = ({ answers, recommendation, onSubmitted }: LeadCaptureSt
   const [whatsapp, setWhatsapp] = useState('');
   const [email, setEmail] = useState('');
   const [comoNosConociste, setComoNosConociste] = useState('');
-  const [presupuesto, setPresupuesto] = useState('');
-  const [fechaLimite, setFechaLimite] = useState(answers.deadline || '');
   const [submitting, setSubmitting] = useState(false);
 
   const uploadImages = async (): Promise<string[]> => {
@@ -41,7 +40,7 @@ const LeadCaptureStep = ({ answers, recommendation, onSubmitted }: LeadCaptureSt
     if (!nombre || !whatsapp || !email) {
       toast({
         title: "Faltan datos",
-        description: "Por favor completa al menos nombre, WhatsApp y email.",
+        description: "Por favor completa nombre, WhatsApp y email.",
       });
       return;
     }
@@ -49,6 +48,7 @@ const LeadCaptureStep = ({ answers, recommendation, onSubmitted }: LeadCaptureSt
     setSubmitting(true);
     try {
       const imageUrls = answers.images.length > 0 ? await uploadImages() : [];
+      const budgetLabel = BUDGET_RANGES.find(b => b.key === answers.budgetRange)?.label || '';
 
       const { error } = await supabase.functions.invoke('process-quote', {
         body: {
@@ -65,8 +65,8 @@ const LeadCaptureStep = ({ answers, recommendation, onSubmitted }: LeadCaptureSt
           whatsapp,
           email,
           como_nos_conociste: comoNosConociste,
-          presupuesto: presupuesto || answers.budgetRange,
-          fecha_limite: fechaLimite,
+          presupuesto: budgetLabel || answers.budgetRange,
+          fecha_limite: answers.deadline,
           nombre_pareja: answers.partnerName,
           fecha_aniversario: '',
           fecha_cumple_pareja: '',
@@ -84,7 +84,7 @@ const LeadCaptureStep = ({ answers, recommendation, onSubmitted }: LeadCaptureSt
       console.error('Submit error:', err);
       toast({
         title: "Error al enviar",
-        description: "Hubo un problema enviando tu cotización. Inténtalo de nuevo o escríbenos por WhatsApp.",
+        description: "Hubo un problema. Inténtalo de nuevo o escríbenos por WhatsApp.",
       });
     } finally {
       setSubmitting(false);
@@ -97,7 +97,7 @@ const LeadCaptureStep = ({ answers, recommendation, onSubmitted }: LeadCaptureSt
         Tus datos de contacto
       </h3>
       <p className="text-muted-foreground text-sm mb-6">
-        Te envío una cotización personalizada en menos de 24 horas
+        Te envío una cotización personalizada en menos de 24 horas.
       </p>
 
       {recommendation && (
@@ -143,47 +143,19 @@ const LeadCaptureStep = ({ answers, recommendation, onSubmitted }: LeadCaptureSt
             />
           </div>
         </div>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div>
-            <label className="text-sm text-muted-foreground block mb-1">¿Cómo nos conociste?</label>
-            <select
-              value={comoNosConociste}
-              onChange={(e) => setComoNosConociste(e.target.value)}
-              className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
-            >
-              <option value="">Seleccionar…</option>
-              <option>Instagram</option>
-              <option>Google</option>
-              <option>Referido</option>
-              <option>TikTok</option>
-              <option>Otro</option>
-            </select>
-          </div>
-          <div>
-            <label className="text-sm text-muted-foreground block mb-1">Presupuesto (CLP)</label>
-            <select
-              value={presupuesto}
-              onChange={(e) => setPresupuesto(e.target.value)}
-              className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
-            >
-              <option value="">Seleccionar…</option>
-              <option>Hasta $500.000</option>
-              <option>$500.000–$1.000.000</option>
-              <option>$1.000.000–$2.000.000</option>
-              <option>$2.000.000–$4.000.000</option>
-              <option>+$4.000.000</option>
-              <option>Prefiero no indicarlo</option>
-            </select>
-          </div>
-        </div>
         <div>
-          <label className="text-sm text-muted-foreground block mb-1">Fecha límite (si tienes)</label>
-          <input
-            type="date"
-            value={fechaLimite}
-            onChange={(e) => setFechaLimite(e.target.value)}
+          <label className="text-sm text-muted-foreground block mb-1">¿Cómo nos conociste?</label>
+          <select
+            value={comoNosConociste}
+            onChange={(e) => setComoNosConociste(e.target.value)}
             className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
-          />
+          >
+            <option value="">Seleccionar…</option>
+            <option>Instagram</option>
+            <option>Google</option>
+            <option>Referido</option>
+            <option>Otro</option>
+          </select>
         </div>
       </div>
 

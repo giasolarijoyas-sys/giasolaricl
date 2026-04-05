@@ -1,47 +1,46 @@
 // Quiz types — shared across all quiz components and engine
 
-export type CertaintyLevel = 'sure' | 'maybe' | 'no_idea';
+export type KnowledgeLevel = 'expert' | 'intermediate' | 'beginner';
 
 export interface QuizAnswers {
-  // Step 1: Welcome (no data, just intro)
-  
-  // Step 2: Personality
+  // Knowledge level (determines path)
+  knowledgeLevel: KnowledgeLevel | '';
+
+  // Personality (beginner path)
   partnerName: string;
-  hobbies: string;
-  sport: string;
-  job: string;
-  wearsJewelry: string;
   dressStyle: string;
+  wearsJewelry: string;
   favoriteColor: string;
   personalityNotes: string;
-  
-  // Step 3: Style exploration
+
+  // Style (beginner + intermediate)
   aestheticPreference: string[];
   jewelryColorPreference: string;
-  
-  // Step 4: Stone preference
+
+  // Stone (all paths)
   stoneType: string;
   stoneShape: string;
   sizePreference: string;
-  
-  // Step 5: Metal
+
+  // Metal (all paths)
   metalPreference: string;
-  
-  // Step 6: Budget & timeline
+
+  // Budget (all paths)
   budgetRange: string;
   deadline: string;
-  priorities: string[];
-  
-  // Step 7: Inspiration
+
+  // Inspiration (all paths)
   referenceUrls: string;
   images: File[];
-  
-  // Legacy/optional — kept for hints context
+
+  // Legacy
+  hobbies: string;
+  sport: string;
+  job: string;
+  priorities: string[];
   hasGivenHints: string;
   hintsDescription: string;
-  
-  // Certainty tracking
-  certaintyScores: Record<string, CertaintyLevel>;
+  certaintyScores: Record<string, string>;
 }
 
 export interface ScoreMap {
@@ -67,9 +66,10 @@ export interface Recommendation {
   sizePreference: string;
   accentStones: string;
   estimatedPriceRange: { min: number; max: number };
-  confidenceScore: number; // 0–100
+  confidenceScore: number;
   explanation: string;
   aestheticKeywords: string[];
+  matchingImage?: string;
 }
 
 export interface QuizState {
@@ -81,12 +81,10 @@ export interface QuizState {
 }
 
 export const INITIAL_ANSWERS: QuizAnswers = {
+  knowledgeLevel: '',
   partnerName: '',
-  hobbies: '',
-  sport: '',
-  job: '',
-  wearsJewelry: '',
   dressStyle: '',
+  wearsJewelry: '',
   favoriteColor: '',
   personalityNotes: '',
   aestheticPreference: [],
@@ -97,25 +95,21 @@ export const INITIAL_ANSWERS: QuizAnswers = {
   metalPreference: '',
   budgetRange: '',
   deadline: '',
-  priorities: [],
   referenceUrls: '',
   images: [],
+  hobbies: '',
+  sport: '',
+  job: '',
+  priorities: [],
   hasGivenHints: '',
   hintsDescription: '',
   certaintyScores: {},
 };
 
-export const QUIZ_STEPS = [
-  { num: 0, label: 'Inicio', key: 'welcome' },
-  { num: 1, label: 'Personalidad', key: 'personality' },
-  { num: 2, label: 'Estilo', key: 'style' },
-  { num: 3, label: 'Piedra', key: 'stone' },
-  { num: 4, label: 'Metal', key: 'metal' },
-  { num: 5, label: 'Presupuesto', key: 'budget' },
-  { num: 6, label: 'Inspiración', key: 'inspiration' },
-  { num: 7, label: 'Resultado', key: 'result' },
-  { num: 8, label: 'Contacto', key: 'lead' },
-] as const;
+// Steps per path
+export const STEPS_EXPERT = ['welcome', 'stone_metal', 'budget', 'inspiration', 'result', 'lead'] as const;
+export const STEPS_INTERMEDIATE = ['welcome', 'style', 'stone_metal', 'budget', 'inspiration', 'result', 'lead'] as const;
+export const STEPS_BEGINNER = ['welcome', 'personality', 'style', 'stone_metal', 'budget', 'inspiration', 'result', 'lead'] as const;
 
 export type StepProps = {
   answers: QuizAnswers;
