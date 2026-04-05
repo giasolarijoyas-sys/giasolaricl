@@ -1,49 +1,81 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, SkipForward, CheckCircle } from "lucide-react";
 import QuizProgress from "./QuizProgress";
 import WelcomeStep from "./steps/WelcomeStep";
 import PersonalityStep from "./steps/PersonalityStep";
 import StyleExploreStep from "./steps/StyleExploreStep";
-import StonePreferenceStep from "./steps/StonePreferenceStep";
-import MetalStep from "./steps/MetalStep";
+import StoneMetalStep from "./steps/StoneMetalStep";
 import BudgetTimelineStep from "./steps/BudgetTimelineStep";
 import InspirationStep from "./steps/InspirationStep";
 import ResultView from "./ResultView";
 import LeadCaptureStep from "./LeadCaptureStep";
 import { generateRecommendations } from "./engine/scoringEngine";
-import type { QuizAnswers, Recommendation, StepProps } from "./types";
-import { INITIAL_ANSWERS, QUIZ_STEPS } from "./types";
+import type { QuizAnswers, Recommendation, StepProps, KnowledgeLevel } from "./types";
+import { INITIAL_ANSWERS, STEPS_EXPERT, STEPS_INTERMEDIATE, STEPS_BEGINNER } from "./types";
+
+function getStepsForLevel(level: KnowledgeLevel | '') {
+  switch (level) {
+    case 'expert': return STEPS_EXPERT;
+    case 'intermediate': return STEPS_INTERMEDIATE;
+    case 'beginner': return STEPS_BEGINNER;
+    default: return STEPS_BEGINNER;
+  }
+}
+
+const stepComponents: Record<string, React.FC<StepProps>> = {
+  personality: PersonalityStep,
+  style: StyleExploreStep,
+  stone_metal: StoneMetalStep,
+  budget: BudgetTimelineStep,
+  inspiration: InspirationStep,
+};
+
+const stepLabelsMap: Record<string, string> = {
+  welcome: 'Inicio',
+  personality: 'Personalidad',
+  style: 'Estilo',
+  stone_metal: 'Piedra y Metal',
+  budget: 'Presupuesto',
+  inspiration: 'Inspiración',
+  result: 'Resultado',
+  lead: 'Contacto',
+};
 
 const QuizContainer = () => {
-  const [step, setStep] = useState(0);
+  const [stepIndex, setStepIndex] = useState(0);
   const [answers, setAnswers] = useState<QuizAnswers>({ ...INITIAL_ANSWERS });
   const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
   const [selectedRec, setSelectedRec] = useState<Recommendation | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
+  const steps = useMemo(() => getStepsForLevel(answers.knowledgeLevel), [answers.knowledgeLevel]);
+  const currentStepKey = steps[stepIndex];
+
   const updateAnswers = (partial: Partial<QuizAnswers>) => {
     setAnswers(prev => ({ ...prev, ...partial }));
   };
 
-  const lastQuizStep = 6;
-  const resultStep = 7;
-  const leadStep = 8;
+  const isResultStep = currentStepKey === 'result';
+  const isLeadStep = currentStepKey === 'lead';
+  const isWelcomeStep = currentStepKey === 'welcome';
+  const isQuizStep = !isResultStep && !isLeadStep && !isWelcomeStep;
+
+  const lastQuizStepIndex = steps.indexOf('result') - 1;
 
   const next = () => {
-    if (step === lastQuizStep) {
+    if (stepIndex === lastQuizStepIndex) {
       const recs = generateRecommendations(answers);
       setRecommendations(recs);
-      setStep(resultStep);
+      setStepIndex(steps.indexOf('result'));
     } else {
-      setStep(s => Math.min(s + 1, QUIZ_STEPS.length - 1));
+      setStepIndex(s => Math.min(s + 1, steps.length - 1));
     }
   };
 
-  const prev = () => setStep(s => Math.max(s - 1, 0));
+  const prev = () => setStepIndex(s => Math.max(s - 1, 0));
   const skip = () => next();
-  const goToStep = (s: number) => setStep(s);
-  const goToLeadCapture = () => setStep(leadStep);
+  const goToLeadCapture = () => setStepIndex(steps.indexOf('lead'));
 
   const stepProps: StepProps = {
     answers,
@@ -52,9 +84,7 @@ const QuizContainer = () => {
     onSkip: skip,
   };
 
-  const stepLabels = QUIZ_STEPS.map(s => s.label);
-  const isQuizStep = step >= 1 && step <= lastQuizStep;
-  const isSkippable = isQuizStep;
+  const stepLabels = steps.map(s => stepLabelsMap[s] || s);
 
   if (submitted) {
     return (
@@ -70,8 +100,7 @@ const QuizContainer = () => {
               ¡Cotización recibida!
             </h2>
             <p className="text-muted-foreground leading-relaxed max-w-md mx-auto mb-2">
-              Gracias. Recibí tu solicitud y te contacto personalmente en menos de 24 horas
-              con una propuesta detallada.
+              Gracias. Te contacto personalmente en menos de 24 horas con una propuesta detallada.
             </p>
             <p className="text-muted-foreground text-sm">
               — Macarena González Solari
@@ -81,6 +110,8 @@ const QuizContainer = () => {
       </section>
     );
   }
+
+  const StepComponent = stepComponents[currentStepKey];
 
   return (
     <section id="cotizador" className="py-24 md:py-32 bg-background">
@@ -98,34 +129,31 @@ const QuizContainer = () => {
             Diseña tu <em className="text-primary not-italic">joya ideal</em>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
-            Cuéntanos sobre ella y te recomendamos el anillo perfecto — o sáltate lo que no sepas.
+            Cuéntanos qué buscas y te recomendamos el anillo perfecto.
           </p>
         </motion.div>
 
-        <QuizProgress
-          currentStep={step}
-          totalSteps={QUIZ_STEPS.length}
-          stepLabels={stepLabels}
-          onStepClick={goToStep}
-        />
+        {!isWelcomeStep && (
+          <QuizProgress
+            currentStep={stepIndex}
+            totalSteps={steps.length}
+            stepLabels={stepLabels}
+            onStepClick={(s) => s <= stepIndex && setStepIndex(s)}
+          />
+        )}
 
-        <div className="bg-card border border-border rounded-lg p-6 md:p-10 min-h-[400px]">
+        <div className="bg-card border border-border rounded-lg p-6 md:p-10 min-h-[350px]">
           <AnimatePresence mode="wait">
             <motion.div
-              key={step}
+              key={stepIndex}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
             >
-              {step === 0 && <WelcomeStep {...stepProps} />}
-              {step === 1 && <PersonalityStep {...stepProps} />}
-              {step === 2 && <StyleExploreStep {...stepProps} />}
-              {step === 3 && <StonePreferenceStep {...stepProps} />}
-              {step === 4 && <MetalStep {...stepProps} />}
-              {step === 5 && <BudgetTimelineStep {...stepProps} />}
-              {step === 6 && <InspirationStep {...stepProps} />}
-              {step === resultStep && (
+              {isWelcomeStep && <WelcomeStep {...stepProps} />}
+              {StepComponent && <StepComponent {...stepProps} />}
+              {isResultStep && (
                 <ResultView
                   recommendations={recommendations}
                   answers={answers}
@@ -133,7 +161,7 @@ const QuizContainer = () => {
                   onRequestQuote={goToLeadCapture}
                 />
               )}
-              {step === leadStep && (
+              {isLeadStep && (
                 <LeadCaptureStep
                   answers={answers}
                   recommendation={selectedRec}
@@ -152,14 +180,12 @@ const QuizContainer = () => {
                 <ChevronLeft size={16} /> Atrás
               </button>
               <div className="flex items-center gap-3">
-                {isSkippable && (
-                  <button
-                    onClick={skip}
-                    className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <SkipForward size={14} /> Saltar
-                  </button>
-                )}
+                <button
+                  onClick={skip}
+                  className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <SkipForward size={14} /> Saltar
+                </button>
                 <button
                   onClick={next}
                   className="flex items-center gap-1 bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
@@ -170,20 +196,20 @@ const QuizContainer = () => {
             </div>
           )}
 
-          {step === resultStep && (
+          {isResultStep && (
             <div className="mt-6 pt-4 border-t border-border">
               <button
                 onClick={prev}
                 className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                <ChevronLeft size={16} /> Volver a editar respuestas
+                <ChevronLeft size={16} /> Volver a editar
               </button>
             </div>
           )}
-          {step === leadStep && (
+          {isLeadStep && (
             <div className="mt-6 pt-4 border-t border-border">
               <button
-                onClick={() => setStep(resultStep)}
+                onClick={() => setStepIndex(steps.indexOf('result'))}
                 className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 <ChevronLeft size={16} /> Ver recomendaciones

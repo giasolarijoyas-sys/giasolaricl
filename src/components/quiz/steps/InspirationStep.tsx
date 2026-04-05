@@ -17,16 +17,15 @@ const InspirationStep = ({ answers, onUpdate }: StepProps) => {
   return (
     <div>
       <h3 className="font-display text-xl mb-2 text-foreground flex items-center gap-2">
-        <Image size={20} className="text-primary" /> Inspiración visual
+        <Image size={20} className="text-primary" /> Inspiración
       </h3>
       <p className="text-muted-foreground text-sm mb-6">
-        Sube fotos de joyas que te gusten o comparte un link de Pinterest.
-        No es obligatorio, pero nos ayuda mucho.
+        ¿Tienes fotos de referencia? No es obligatorio, pero nos ayuda mucho.
       </p>
 
       <div className="mb-6">
         <label className="text-sm text-muted-foreground block mb-1">
-          Link de Pinterest o referencia web (opcional)
+          Link de Pinterest o referencia (opcional)
         </label>
         <input
           type="url"
@@ -39,7 +38,7 @@ const InspirationStep = ({ answers, onUpdate }: StepProps) => {
 
       <div>
         <label className="text-sm text-muted-foreground block mb-2">
-          Sube imágenes de referencia (máximo 5)
+          Imágenes de referencia (máximo 5)
         </label>
         <input
           ref={fileInputRef}
@@ -54,7 +53,7 @@ const InspirationStep = ({ answers, onUpdate }: StepProps) => {
           className="w-full p-6 border-2 border-dashed border-border rounded-lg hover:border-primary/40 transition-colors flex flex-col items-center gap-2 text-muted-foreground"
         >
           <Upload size={24} />
-          <span className="text-sm">Haz clic para subir imágenes</span>
+          <span className="text-sm">Subir imágenes</span>
         </button>
 
         {answers.images.length > 0 && (

@@ -1,17 +1,16 @@
 import type { StepProps } from "../types";
 import { AESTHETIC_KEYWORDS, JEWELRY_COLORS } from "../taxonomies";
 
-const OptionCard = ({ label, desc, selected, onClick }: {
-  label: string; desc?: string; selected: boolean; onClick: () => void;
+const OptionCard = ({ label, selected, onClick }: {
+  label: string; selected: boolean; onClick: () => void;
 }) => (
   <button
     onClick={onClick}
-    className={`flex flex-col items-center gap-2 p-4 rounded-lg border-2 transition-all text-center ${
-      selected ? "border-primary bg-primary/10" : "border-border hover:border-primary/40"
+    className={`p-4 rounded-lg border-2 transition-all text-center text-sm font-medium ${
+      selected ? "border-primary bg-primary/10 text-foreground" : "border-border hover:border-primary/40 text-muted-foreground"
     }`}
   >
-    <span className="text-sm font-medium text-foreground">{label}</span>
-    {desc && <span className="text-xs text-muted-foreground">{desc}</span>}
+    {label}
   </button>
 );
 
@@ -27,14 +26,14 @@ const StyleExploreStep = ({ answers, onUpdate }: StepProps) => {
   return (
     <div>
       <h3 className="font-display text-xl mb-2 text-foreground">
-        Exploración de estilo
+        Estilo
       </h3>
       <p className="text-muted-foreground text-sm mb-6">
-        ¿Qué palabras describen mejor su estilo? Puedes elegir varias.
+        ¿Qué estética la representa? Puedes elegir varias.
       </p>
 
-      <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wide">Estética que la representa</p>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+      <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wide">Estética</p>
+      <div className="grid grid-cols-2 gap-3 mb-8">
         {AESTHETIC_KEYWORDS.map((a) => (
           <OptionCard
             key={a.key}
@@ -45,8 +44,8 @@ const StyleExploreStep = ({ answers, onUpdate }: StepProps) => {
         ))}
       </div>
 
-      <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wide">¿Qué color de joyería usa normalmente?</p>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wide">¿Qué color de joyería usa?</p>
+      <div className="grid grid-cols-2 gap-3">
         {JEWELRY_COLORS.map((c) => (
           <OptionCard
             key={c.key}

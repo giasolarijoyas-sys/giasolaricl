@@ -2,6 +2,7 @@
 import type { QuizAnswers, Recommendation, ScoreMap } from '../types';
 import { RING_STYLES, CENTER_STONE_TYPES, STONE_SHAPES, METALS, SIZE_PREFERENCES } from '../taxonomies';
 import { estimatePrice } from './priceEstimator';
+import { findMatchingImage } from './imageMatching';
 
 function createEmptyScoreMap(): ScoreMap {
   const map: ScoreMap = {
@@ -39,27 +40,19 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
       break;
     case 'modern':
       add(s.ringStyle, ['modern', 'bezel', 'solitaire'], 3);
-      add(s.stoneShape, ['emerald_cut', 'radiant', 'asscher'], 2);
+      add(s.stoneShape, ['emerald_cut', 'cushion'], 2);
       add(s.metal, ['platinum', 'gold_white'], 2);
       add(s.sizePreference, ['discrete', 'balanced'], 1);
       break;
     case 'bohemian':
       add(s.ringStyle, ['nature_inspired', 'vintage', 'toi_et_moi'], 3);
-      add(s.stoneShape, ['oval', 'pear', 'marquise'], 2);
+      add(s.stoneShape, ['oval', 'cushion'], 2);
       add(s.metal, ['gold_yellow'], 2);
-      add(s.sizePreference, ['balanced'], 1);
       break;
     case 'glamorous':
       add(s.ringStyle, ['halo', 'pave', 'three_stone'], 3);
       add(s.stoneShape, ['cushion', 'oval', 'round'], 2);
-      add(s.metal, ['platinum', 'gold_white'], 1);
       add(s.sizePreference, ['statement'], 3);
-      break;
-    case 'sporty':
-      add(s.ringStyle, ['bezel', 'solitaire', 'modern'], 3);
-      add(s.stoneShape, ['round'], 2);
-      add(s.sizePreference, ['discrete'], 3);
-      add(s.metal, ['platinum'], 2); // durability
       break;
   }
 
@@ -106,32 +99,15 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
         add(s.ringStyle, ['halo', 'pave', 'three_stone'], 2);
         add(s.sizePreference, ['statement'], 2);
         break;
-      case 'bohemian':
-        add(s.ringStyle, ['nature_inspired', 'vintage'], 2);
-        add(s.stoneShape, ['pear', 'marquise'], 1);
-        break;
       case 'minimalist':
         add(s.ringStyle, ['solitaire', 'bezel', 'modern'], 3);
         add(s.accentStones, ['none'], 2);
         add(s.sizePreference, ['discrete'], 1);
         break;
-      case 'ornate':
-        add(s.ringStyle, ['vintage', 'halo', 'pave'], 3);
-        add(s.accentStones, ['halo', 'pave', 'side_stones'], 2);
-        break;
-      case 'romantic':
-        add(s.ringStyle, ['halo', 'vintage', 'toi_et_moi'], 2);
-        add(s.stoneShape, ['oval', 'pear', 'cushion'], 1);
-        
-        break;
-      case 'contemporary':
-        add(s.ringStyle, ['modern', 'bezel', 'toi_et_moi'], 2);
-        add(s.stoneShape, ['emerald_cut', 'radiant', 'asscher'], 2);
-        break;
     }
   });
 
-  // --- Direct stone choice ---
+  // --- Direct choices ---
   if (answers.stoneType && answers.stoneType !== 'unknown') {
     add(s.stoneType, [answers.stoneType], 10);
   }
@@ -147,18 +123,14 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
 
   // --- Budget inference ---
   switch (answers.budgetRange) {
-    case 'under_500k':
-      add(s.stoneType, ['lab_diamond'], 4);
-      add(s.metal, ['gold_yellow', 'gold_white'], 1);
-      add(s.sizePreference, ['discrete'], 1);
-      break;
-    case '500k_1m':
-      add(s.stoneType, ['lab_diamond'], 2);
-      break;
     case '1m_2m':
+      add(s.stoneType, ['lab_diamond', 'aquamarine'], 2);
+      add(s.sizePreference, ['discrete', 'balanced'], 1);
+      break;
+    case '2m_3m':
       add(s.stoneType, ['lab_diamond', 'natural_diamond'], 2);
       break;
-    case '2m_4m':
+    case '3m_4m':
       add(s.stoneType, ['natural_diamond', 'lab_diamond'], 3);
       add(s.metal, ['platinum'], 1);
       break;
@@ -167,44 +139,6 @@ export function computeScores(answers: QuizAnswers): ScoreMap {
       add(s.metal, ['platinum'], 2);
       add(s.sizePreference, ['statement'], 1);
       break;
-  }
-
-  // --- Priority modifiers ---
-  answers.priorities.forEach(p => {
-    switch (p) {
-      case 'brilliance':
-        add(s.stoneType, ['natural_diamond', 'lab_diamond'], 1);
-        add(s.stoneShape, ['round'], 2);
-        break;
-      case 'size':
-        add(s.stoneType, ['lab_diamond'], 2);
-        add(s.sizePreference, ['statement'], 1);
-        break;
-      case 'durability':
-        add(s.metal, ['platinum'], 2);
-        add(s.ringStyle, ['bezel'], 2);
-        break;
-      case 'price':
-        add(s.stoneType, ['lab_diamond'], 3);
-        add(s.metal, ['gold_yellow', 'gold_white'], 1);
-        break;
-      case 'sustainability':
-        add(s.stoneType, ['lab_diamond'], 3);
-        break;
-      case 'rarity':
-        add(s.stoneType, ['natural_diamond', 'sapphire', 'emerald', 'ruby'], 2);
-        break;
-      case 'symbolism':
-        add(s.ringStyle, ['three_stone', 'toi_et_moi'], 2);
-        break;
-    }
-  });
-
-  // --- Sport / active lifestyle ---
-  if (answers.sport && answers.sport.toLowerCase() !== 'no' && answers.sport.trim()) {
-    add(s.ringStyle, ['bezel', 'solitaire'], 1);
-    add(s.sizePreference, ['discrete', 'balanced'], 1);
-    add(s.metal, ['platinum'], 1);
   }
 
   return s;
@@ -232,7 +166,7 @@ function findLabel(items: readonly { key: string; label: string }[], key: string
 
 function computeConfidence(answers: QuizAnswers): number {
   let answered = 0;
-  let total = 10;
+  const total = 8;
   if (answers.dressStyle) answered++;
   if (answers.wearsJewelry) answered++;
   if (answers.jewelryColorPreference) answered++;
@@ -240,54 +174,36 @@ function computeConfidence(answers: QuizAnswers): number {
   if (answers.stoneType) answered++;
   if (answers.stoneShape) answered++;
   if (answers.metalPreference) answered++;
-  if (answers.sizePreference) answered++;
   if (answers.budgetRange) answered++;
-  if (answers.priorities.length > 0) answered++;
   return Math.round((answered / total) * 100);
 }
 
 function buildExplanation(answers: QuizAnswers, rec: { style: string; stone: string; metal: string; shape: string }): string {
   const parts: string[] = [];
-  
-  if (answers.dressStyle === 'classic') {
-    parts.push('su estilo elegante');
-  } else if (answers.dressStyle === 'modern') {
-    parts.push('su gusto por lo moderno');
-  } else if (answers.dressStyle === 'bohemian') {
-    parts.push('su espíritu bohemio');
-  } else if (answers.dressStyle === 'glamorous') {
-    parts.push('su personalidad glamorosa');
-  } else if (answers.dressStyle === 'sporty') {
-    parts.push('su estilo de vida activo');
-  }
-  
-  if (answers.jewelryColorPreference === 'gold') {
-    parts.push('su preferencia por joyería dorada');
-  } else if (answers.jewelryColorPreference === 'silver') {
-    parts.push('su preferencia por tonos plateados');
-  }
-  if (answers.wearsJewelry === 'daily') {
-    parts.push('que usa joyas a diario');
-  } else if (answers.wearsJewelry === 'rarely') {
-    parts.push('que prefiere piezas discretas');
-  }
+
+  if (answers.dressStyle === 'classic') parts.push('su estilo elegante');
+  else if (answers.dressStyle === 'modern') parts.push('su gusto por lo moderno');
+  else if (answers.dressStyle === 'bohemian') parts.push('su espíritu bohemio');
+  else if (answers.dressStyle === 'glamorous') parts.push('su personalidad glamorosa');
+
+  if (answers.jewelryColorPreference === 'gold') parts.push('su preferencia por joyería dorada');
+  else if (answers.jewelryColorPreference === 'silver') parts.push('su preferencia por tonos plateados');
 
   if (parts.length === 0) {
-    return `Te recomendamos un anillo ${findLabel(RING_STYLES, rec.style)} con ${findLabel(CENTER_STONE_TYPES, rec.stone)} ${findLabel(STONE_SHAPES, rec.shape)} en ${findLabel(METALS, rec.metal)}. Esta es una elección versátil y atemporal.`;
+    return `Te recomendamos un ${findLabel(RING_STYLES, rec.style)} con ${findLabel(CENTER_STONE_TYPES, rec.stone)} ${findLabel(STONE_SHAPES, rec.shape)} en ${findLabel(METALS, rec.metal)}.`;
   }
 
-  const joined = parts.length > 1 
+  const joined = parts.length > 1
     ? parts.slice(0, -1).join(', ') + ' y ' + parts[parts.length - 1]
     : parts[0];
 
-  return `Basándonos en ${joined}, te recomendamos un anillo ${findLabel(RING_STYLES, rec.style)} con ${findLabel(CENTER_STONE_TYPES, rec.stone)} ${findLabel(STONE_SHAPES, rec.shape)} en ${findLabel(METALS, rec.metal)}.`;
+  return `Basándonos en ${joined}, te recomendamos un ${findLabel(RING_STYLES, rec.style)} con ${findLabel(CENTER_STONE_TYPES, rec.stone)} ${findLabel(STONE_SHAPES, rec.shape)} en ${findLabel(METALS, rec.metal)}.`;
 }
 
 export function generateRecommendations(answers: QuizAnswers): Recommendation[] {
   const scores = computeScores(answers);
   const confidence = computeConfidence(answers);
 
-  // Default conservative if very few answers
   if (confidence < 20) {
     scores.ringStyle['solitaire'] += 5;
     scores.stoneType['lab_diamond'] += 3;
@@ -296,7 +212,6 @@ export function generateRecommendations(answers: QuizAnswers): Recommendation[] 
     scores.sizePreference['balanced'] += 3;
   }
 
-  // Generate primary + 2 alternatives by varying the top attributes
   const topStyles = topKeys(scores.ringStyle, 3);
   const topStones = topKeys(scores.stoneType, 2);
   const topShapes = topKeys(scores.stoneShape, 2);
@@ -319,6 +234,13 @@ export function generateRecommendations(answers: QuizAnswers): Recommendation[] 
       sizePreference: bestSize,
     });
 
+    const matchingImage = findMatchingImage({
+      ringStyle: combo.style,
+      stoneType: combo.stone,
+      stoneShape: combo.shape,
+      metal: combo.metal,
+    });
+
     return {
       id: `rec-${i}`,
       ringStyle: combo.style,
@@ -335,6 +257,7 @@ export function generateRecommendations(answers: QuizAnswers): Recommendation[] 
       confidenceScore: Math.max(10, confidence - i * 10),
       explanation: buildExplanation(answers, combo),
       aestheticKeywords: topAesthetics,
+      matchingImage,
     };
   });
 }
