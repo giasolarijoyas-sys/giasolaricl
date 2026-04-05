@@ -43,6 +43,7 @@ const Footer = () => {
               <a href="/terminos" className="text-sm hover:text-gold transition-colors">Políticas de cambios y garantías</a>
               <a href="/guia#garantia" className="text-sm hover:text-gold transition-colors">Confianza y certificación</a>
               <a href="/guia#faq" className="text-sm hover:text-gold transition-colors">Preguntas frecuentes</a>
+              <a href="/admin" className="text-sm hover:text-gold transition-colors text-cream/40">Administracion</a>
             </div>
           </div>
 
