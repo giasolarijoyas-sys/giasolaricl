@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+// Existing gallery images
 import galZafiro from "@/assets/gal-zafiro.jpeg";
 import galArgolla from "@/assets/gal-argolla.jpeg";
 import galTricillo from "@/assets/gal-tricillo.jpeg";
@@ -21,13 +23,80 @@ import galZafiroFloral from "@/assets/gal-zafiro-floral.png";
 import galSolitarioMarco from "@/assets/gal-solitario-marco.png";
 import galHaloZafiroRedondo from "@/assets/gal-halo-zafiro-redondo.png";
 
+// Session photos - ring product shots
+import galSesion5646 from "@/assets/gal-sesion-dsc_5646.jpg";
+import galSesion5690 from "@/assets/gal-sesion-dsc_5690.jpg";
+import galSesion5708 from "@/assets/gal-sesion-dsc_5708.jpg";
+import galSesion5722 from "@/assets/gal-sesion-dsc_5722.jpg";
+import galSesion5729 from "@/assets/gal-sesion-dsc_5729.jpg";
+import galSesion5734 from "@/assets/gal-sesion-dsc_5734.jpg";
+import galSesion5770 from "@/assets/gal-sesion-dsc_5770.jpg";
+import galSesion5775 from "@/assets/gal-sesion-dsc_5775.jpg";
+import galSesion5777 from "@/assets/gal-sesion-dsc_5777.jpg";
+import galSesion5803 from "@/assets/gal-sesion-dsc_5803.jpg";
+import galSesion5813 from "@/assets/gal-sesion-dsc_5813.jpg";
+import galSesion5822 from "@/assets/gal-sesion-dsc_5822.jpg";
+import galSesion5835 from "@/assets/gal-sesion-dsc_5835.jpg";
+import galSesion5848 from "@/assets/gal-sesion-dsc_5848.jpg";
+import galSesion5863 from "@/assets/gal-sesion-dsc_5863.jpg";
+import galSesion5881 from "@/assets/gal-sesion-dsc_5881.jpg";
+import galSesion5890 from "@/assets/gal-sesion-dsc_5890.jpg";
+import galSesion5898 from "@/assets/gal-sesion-dsc_5898.jpg";
+import galSesion5902 from "@/assets/gal-sesion-dsc_5902.jpg";
+import galSesion5913 from "@/assets/gal-sesion-dsc_5913.jpg";
+import galSesion5915 from "@/assets/gal-sesion-dsc_5915.jpg";
+import galSesion5923 from "@/assets/gal-sesion-dsc_5923.jpg";
+import galSesion5927 from "@/assets/gal-sesion-dsc_5927.jpg";
+import galSesion5936 from "@/assets/gal-sesion-dsc_5936.jpg";
+import galSesion5938 from "@/assets/gal-sesion-dsc_5938.jpg";
+import galSesion5948 from "@/assets/gal-sesion-dsc_5948.jpg";
+import galSesion5962 from "@/assets/gal-sesion-dsc_5962.jpg";
+import galSesion5970 from "@/assets/gal-sesion-dsc_5970.jpg";
+import galSesion5977 from "@/assets/gal-sesion-dsc_5977.jpg";
+import galSesion5984 from "@/assets/gal-sesion-dsc_5984.jpg";
+
+// Product photos
+import galProd2059 from "@/assets/gal-prod-img_2059.jpg";
+import galProd2072 from "@/assets/gal-prod-img_2072.jpg";
+import galProd2081 from "@/assets/gal-prod-img_2081.jpg";
+import galProd2083 from "@/assets/gal-prod-img_2083.jpg";
+import galProd2091 from "@/assets/gal-prod-img_2091.jpg";
+import galProd2096 from "@/assets/gal-prod-img_2096.jpg";
+import galProd2103 from "@/assets/gal-prod-img_2103.jpg";
+import galProd2104 from "@/assets/gal-prod-img_2104.jpg";
+import galProd2109 from "@/assets/gal-prod-img_2109.jpg";
+import galProd2110 from "@/assets/gal-prod-img_2110.jpg";
+import galProd2113 from "@/assets/gal-prod-img_2113.jpg";
+import galProd2116 from "@/assets/gal-prod-img_2116.jpg";
+import galProd2117 from "@/assets/gal-prod-img_2117.jpg";
+import galProd2121 from "@/assets/gal-prod-img_2121.jpg";
+import galProd2123 from "@/assets/gal-prod-img_2123.jpg";
+import galProd2126 from "@/assets/gal-prod-img_2126.jpg";
+import galProd2133 from "@/assets/gal-prod-img_2133.jpg";
+import galProd2135 from "@/assets/gal-prod-img_2135.jpg";
+import galProd2141 from "@/assets/gal-prod-img_2141.jpg";
+import galProd2143 from "@/assets/gal-prod-img_2143.jpg";
+import galProd2147 from "@/assets/gal-prod-img_2147.jpg";
+import galProd2151 from "@/assets/gal-prod-img_2151.jpg";
+import galProd2156 from "@/assets/gal-prod-img_2156.jpg";
+import galProd2159 from "@/assets/gal-prod-img_2159.jpg";
+import galProd2168 from "@/assets/gal-prod-img_2168.jpg";
+import galProd2172 from "@/assets/gal-prod-img_2172.jpg";
+import galProd2195 from "@/assets/gal-prod-img_2195.jpg";
+import galProd2197 from "@/assets/gal-prod-img_2197.jpg";
+import galProd2214 from "@/assets/gal-prod-img_2214.jpg";
+
+// Individual uploads
+import galNusaDetail from "@/assets/gal-nusa-detail.jpg";
+import galVintageDetail from "@/assets/gal-vintage-detail.jpg";
+
 type Category =
   | "todas"
   | "anillos"
   | "collares"
   | "aros"
   | "pulseras"
-  | "religiosas";
+  | "taller";
 
 interface Piece {
   img: string;
@@ -42,11 +111,11 @@ const categories: { key: Category; label: string }[] = [
   { key: "collares", label: "Collares" },
   { key: "aros", label: "Aros" },
   { key: "pulseras", label: "Pulseras & Esclavas" },
-  { key: "religiosas", label: "Bautizo & Religiosas" },
+  { key: "taller", label: "Nuestro Taller" },
 ];
 
 const pieces: Piece[] = [
-  // Anillos
+  // ── Original ring collection ──
   { img: galSolitarioCaja, name: "Solitario Clásico", desc: "Diamante · Caja Gia Solari", category: "anillos" },
   { img: galPrincesaMarco, name: "Anillo Tres Piedras", desc: "Corte Princesa · Platino", category: "anillos" },
   { img: galZafiro, name: "Anillo Diana", desc: "Zafiro Azul · Halo Diamantes", category: "anillos" },
@@ -67,8 +136,80 @@ const pieces: Piece[] = [
   { img: galHaloZafiroRedondo, name: "Anillo Índigo", desc: "Zafiro Redondo · Halo Pavé", category: "anillos" },
   { img: galArgolla, name: "Argolla Eterna", desc: "Platino · Diseño Clásico", category: "anillos" },
 
-  // Pulseras
+  // ── Session - Ring product shots ──
+  { img: galSesion5646, name: "Cintillo Pavé", desc: "Diamantes · Doble Fila", category: "anillos" },
+  { img: galSesion5690, name: "Solitario Caja Rosa", desc: "Diamante · Caja Gia Solari", category: "anillos" },
+  { img: galSesion5708, name: "Cinco Piedras Verde", desc: "Diamantes · Caja Terciopelo", category: "anillos" },
+  { img: galSesion5722, name: "Solitario Clásico", desc: "Diamante · Caja Rosa", category: "anillos" },
+  { img: galSesion5729, name: "Tres Piedras Marco", desc: "Corte Princesa · Marco Dorado", category: "anillos" },
+  { img: galSesion5734, name: "Solitario Pavé", desc: "Diamante · Marco Dorado", category: "anillos" },
+  { img: galSesion5770, name: "Tricillo Esmeralda", desc: "Tres Piedras · Marco Dorado", category: "anillos" },
+  { img: galSesion5775, name: "Tricillo en Mano", desc: "Diamantes · Vista Detalle", category: "anillos" },
+  { img: galSesion5777, name: "Argolla Channel", desc: "Diamantes Corte Princesa", category: "anillos" },
+  { img: galSesion5803, name: "Tricillo Terciopelo", desc: "Tres Piedras · Caja Azul", category: "anillos" },
+  { img: galSesion5822, name: "Halo & Tricillo", desc: "Par de Anillos · Caja Verde", category: "anillos" },
+  { img: galSesion5835, name: "Solitario Pavé Menta", desc: "Diamante · Caja Terciopelo", category: "anillos" },
+  { img: galSesion5848, name: "Solitario Rosé", desc: "Diamante · Bandeja Dorada", category: "anillos" },
+  { img: galSesion5863, name: "Solitario Gris", desc: "Diamante · Caja Terciopelo", category: "anillos" },
+  { img: galSesion5881, name: "Zafiro Diana", desc: "Halo Diamantes · Bandeja", category: "anillos" },
+  { img: galSesion5913, name: "Cintillo Halo", desc: "Diamantes · Espejo Rose Gold", category: "anillos" },
+  { img: galSesion5915, name: "Par Art Déco Oro", desc: "Diamantes · Caja Azul", category: "anillos" },
+  { img: galSesion5923, name: "Solitario Baguette", desc: "Diamante · Seda Dorada", category: "anillos" },
+  { img: galSesion5927, name: "Solitario Satinado", desc: "Diamante Redondo · Seda", category: "anillos" },
+  { img: galSesion5936, name: "Halo Marquesa", desc: "Diamante · Caja Oliva", category: "anillos" },
+  { img: galSesion5938, name: "Art Déco Esmeralda", desc: "Diamantes · Caja Mostaza", category: "anillos" },
+  { img: galSesion5962, name: "Halo Redondo", desc: "Diamante · Caja Gris", category: "anillos" },
+  { img: galSesion5970, name: "Pavé Seda Rosa", desc: "Diamante Redondo · Solitario", category: "anillos" },
+  { img: galSesion5977, name: "Solitario Celeste", desc: "Diamante · Caja Azul Claro", category: "anillos" },
+
+  // ── Product photos (styled) ──
+  { img: galProd2059, name: "Display Vintage", desc: "Anillos · Cofre & Marco Dorado", category: "anillos" },
+  { img: galProd2072, name: "Tricillo Satén", desc: "Tres Piedras · Lazo Verde", category: "anillos" },
+  { img: galProd2081, name: "Art Déco Carta", desc: "Anillo Navette · Caja Esmeralda", category: "anillos" },
+  { img: galProd2083, name: "Halo Oval Carta", desc: "Diamante · Sobre Carta Vintage", category: "anillos" },
+  { img: galProd2091, name: "Solitario Baguette Seda", desc: "Diamante · Fondo Dorado", category: "anillos" },
+  { img: galProd2096, name: "Halo Aguamarina", desc: "Oro 18k · Cofre de Vidrio", category: "anillos" },
+  { img: galProd2103, name: "Halo Aqua Vitrina", desc: "Piedra Azul · Cofre Dorado", category: "anillos" },
+  { img: galProd2104, name: "Cintillo Channel Seda", desc: "Diamantes · Sobre Seda Rosa", category: "anillos" },
+  { img: galProd2109, name: "Halo Esmeralda", desc: "Corte Esmeralda · Mármol", category: "anillos" },
+  { img: galProd2110, name: "Halo Pera Mármol", desc: "Corte Pera · Halo Pavé", category: "anillos" },
+  { img: galProd2113, name: "Solitario Oval Espejo", desc: "Diamante · Pavé Lateral", category: "anillos" },
+  { img: galProd2116, name: "Halo Cushion", desc: "Diamante · Caja Terciopelo", category: "anillos" },
+  { img: galProd2117, name: "Zafiro Oval Halo", desc: "Zafiro Azul · Oro Blanco", category: "anillos" },
+  { img: galProd2121, name: "Halo Marquesa Oliva", desc: "Diamante · Caja Terciopelo", category: "anillos" },
+  { img: galProd2123, name: "Halo Cushion Mármol", desc: "Diamante · Vista Lateral", category: "anillos" },
+  { img: galProd2126, name: "Solitario Satén Rosa", desc: "Diamante · Sobre Satén", category: "anillos" },
+  { img: galProd2133, name: "Tricillo Lino", desc: "Tres Piedras · Tela Natural", category: "anillos" },
+  { img: galProd2135, name: "Navette Pavé", desc: "Diamantes · Filigrana Platino", category: "anillos" },
+  { img: galProd2141, name: "Halo Cushion Blanco", desc: "Diamante · Fondo Textil", category: "anillos" },
+  { img: galProd2143, name: "Art Déco Navette", desc: "Diamante · Esmeraldas", category: "anillos" },
+  { img: galProd2147, name: "Solitario Textura", desc: "Diamante · Fondo Textil", category: "anillos" },
+  { img: galProd2151, name: "Halo Redondo Eucalipto", desc: "Diamante · Decoración Natural", category: "anillos" },
+  { img: galProd2156, name: "Solitario Eucalipto", desc: "Diamante · Vista Cenital", category: "anillos" },
+  { img: galProd2159, name: "Tricillo Dorado", desc: "Tres Piedras · Sobre Lino", category: "anillos" },
+  { img: galProd2168, name: "Cintillo Brillantes", desc: "Diamantes · Sobre Terciopelo", category: "anillos" },
+  { img: galProd2172, name: "Par Argollas Oro", desc: "Art Déco · Caja Azul", category: "anillos" },
+  { img: galProd2195, name: "Halo Cushion Floral", desc: "Diamante · Sobre Lino Verde", category: "anillos" },
+  { img: galProd2197, name: "Cluster Diamantes", desc: "Pavé · Sobre Lino Natural", category: "anillos" },
+
+  // ── Individual uploads ──
+  { img: galNusaDetail, name: "Anillo Nusa Detalle", desc: "Zafiro Azul · Vista Macro", category: "anillos" },
+  { img: galVintageDetail, name: "Vintage Filigrana", desc: "Diamante · Vista Macro", category: "anillos" },
+
+  // ── Collares ──
+  { img: galProd2214, name: "Cadena Eslabones", desc: "Oro 18k · Aros Diamante", category: "collares" },
+  { img: galSesion5813, name: "Cadena & Aros Dorados", desc: "Oro 18k · Estilo Editorial", category: "collares" },
+
+  // ── Pulseras ──
   { img: galBrazaleteOro, name: "Brazalete Clásico", desc: "Oro 18k · Diseño Atemporal", category: "pulseras" },
+
+  // ── Taller ──
+  { img: galSesion5902, name: "Calado a Mano", desc: "Sierra de Joyero · Precisión", category: "taller" },
+  { img: galSesion5948, name: "Fundición de Oro", desc: "Soplete · Crisol Artesanal", category: "taller" },
+  { img: galSesion5962, name: "Laminado de Metal", desc: "Prensa de Laminación", category: "taller" },
+  { img: galSesion5984, name: "Formado del Anillo", desc: "Mandril · Trabajo Manual", category: "taller" },
+  { img: galSesion5890, name: "Test de Diamantes", desc: "Certificación GIA · Tester", category: "taller" },
+  { img: galSesion5898, name: "Diseño & Selección", desc: "Piedras · Calibrador Digital", category: "taller" },
 ];
 
 const Gallery = () => {
@@ -76,7 +217,6 @@ const Gallery = () => {
 
   const filtered = active === "todas" ? pieces : pieces.filter((p) => p.category === active);
 
-  // Count items per category for the badge
   const countFor = (cat: Category) =>
     cat === "todas" ? pieces.length : pieces.filter((p) => p.category === cat).length;
 
@@ -124,7 +264,7 @@ const Gallery = () => {
           })}
         </div>
 
-        {/* Empty state for categories without items */}
+        {/* Empty state */}
         {filtered.length === 0 && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -150,10 +290,10 @@ const Gallery = () => {
           >
             {filtered.map((piece, i) => (
               <motion.div
-                key={piece.name}
+                key={piece.name + i}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.04 }}
+                transition={{ delay: Math.min(i * 0.03, 0.6) }}
                 className="group relative overflow-hidden cursor-pointer"
               >
                 <div className="aspect-square overflow-hidden">
