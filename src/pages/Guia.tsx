@@ -157,37 +157,31 @@ const Guia = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <StoneCard
                   name="Diamante Natural"
-                  emoji="💎"
                   hardness="10/10 (el más duro)"
                   desc="La piedra eterna por excelencia. Certificación GIA. Máximo brillo y fuego. Es la opción más tradicional y con mayor valor de reventa."
                 />
                 <StoneCard
                   name="Diamante de Laboratorio"
-                  emoji="🔬"
                   hardness="10/10"
                   desc="Exactamente el mismo diamante a nivel físico, químico y óptico. Creado en laboratorio, es un 30-40% más accesible. Certificación IGI. Opción ética y sustentable."
                 />
                 <StoneCard
                   name="Zafiro"
-                  emoji="💙"
                   hardness="9/10"
                   desc="Piedra de la realeza. Disponible en azul, rosa, amarillo y blanco. Extremadamente durable para uso diario. El zafiro azul de Ceilán es el más cotizado."
                 />
                 <StoneCard
                   name="Esmeralda"
-                  emoji="💚"
                   hardness="7.5-8/10"
                   desc="Verde profundo e hipnótico. Cada esmeralda es única por sus inclusiones naturales llamadas 'jardín'. Las colombianas son las más valoradas. Requiere algo más de cuidado."
                 />
                 <StoneCard
                   name="Rubí"
-                  emoji="❤️"
                   hardness="9/10"
                   desc="Piedra de la pasión. Su rojo intenso la hace una de las gemas más valiosas del mundo. El rubí 'sangre de paloma' de Birmania es el más cotizado."
                 />
                 <StoneCard
                   name="Aguamarina"
-                  emoji="🩵"
                   hardness="7.5-8/10"
                   desc="De la familia del berilo (igual que la esmeralda). Su azul celeste evoca el mar. Es durable, luminosa y perfecta para diseños delicados y románticos. Excelente relación calidad-precio."
                 />
