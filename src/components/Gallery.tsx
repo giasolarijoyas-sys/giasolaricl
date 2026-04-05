@@ -1,5 +1,7 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
+import { motion } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Existing gallery images
 import galZafiro from "@/assets/gal-zafiro.jpeg";
@@ -23,7 +25,7 @@ import galZafiroFloral from "@/assets/gal-zafiro-floral.png";
 import galSolitarioMarco from "@/assets/gal-solitario-marco.png";
 import galHaloZafiroRedondo from "@/assets/gal-halo-zafiro-redondo.png";
 
-// Session photos - ring product shots
+// Session photos
 import galSesion5646 from "@/assets/gal-sesion-dsc_5646.jpg";
 import galSesion5690 from "@/assets/gal-sesion-dsc_5690.jpg";
 import galSesion5708 from "@/assets/gal-sesion-dsc_5708.jpg";
@@ -152,6 +154,7 @@ const pieces: Piece[] = [
   { img: galSesion5848, name: "Solitario Rosé", desc: "Diamante · Bandeja Dorada", category: "anillos" },
   { img: galSesion5863, name: "Solitario Gris", desc: "Diamante · Caja Terciopelo", category: "anillos" },
   { img: galSesion5881, name: "Zafiro Diana", desc: "Halo Diamantes · Bandeja", category: "anillos" },
+  { img: galSesion5813, name: "Anillo Dorado Editorial", desc: "Oro 18k · Estilo Editorial", category: "anillos" },
   { img: galSesion5913, name: "Cintillo Halo", desc: "Diamantes · Espejo Rose Gold", category: "anillos" },
   { img: galSesion5915, name: "Par Art Déco Oro", desc: "Diamantes · Caja Azul", category: "anillos" },
   { img: galSesion5923, name: "Solitario Baguette", desc: "Diamante · Seda Dorada", category: "anillos" },
@@ -198,7 +201,6 @@ const pieces: Piece[] = [
 
   // ── Collares ──
   { img: galProd2214, name: "Cadena Eslabones", desc: "Oro 18k · Aros Diamante", category: "collares" },
-  { img: galSesion5813, name: "Cadena & Aros Dorados", desc: "Oro 18k · Estilo Editorial", category: "collares" },
 
   // ── Pulseras ──
   { img: galBrazaleteOro, name: "Brazalete Clásico", desc: "Oro 18k · Diseño Atemporal", category: "pulseras" },
@@ -212,10 +214,51 @@ const pieces: Piece[] = [
   { img: galSesion5898, name: "Diseño & Selección", desc: "Piedras · Calibrador Digital", category: "taller" },
 ];
 
+const AUTOPLAY_INTERVAL = 3000;
+
 const Gallery = () => {
   const [active, setActive] = useState<Category>("todas");
-
   const filtered = active === "todas" ? pieces : pieces.filter((p) => p.category === active);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    slidesToScroll: 1,
+    containScroll: "trimSnaps",
+  });
+
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
+
+  // Autoplay
+  useEffect(() => {
+    if (!emblaApi) return;
+    const timer = setInterval(() => {
+      emblaApi.scrollNext();
+    }, AUTOPLAY_INTERVAL);
+    return () => clearInterval(timer);
+  }, [emblaApi, active]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  // Re-init when filter changes
+  useEffect(() => {
+    if (emblaApi) emblaApi.reInit();
+  }, [active, emblaApi]);
 
   const countFor = (cat: Category) =>
     cat === "todas" ? pieces.length : pieces.filter((p) => p.category === cat).length;
@@ -278,44 +321,58 @@ const Gallery = () => {
           </motion.div>
         )}
 
-        {/* Grid */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
-          >
-            {filtered.map((piece, i) => (
-              <motion.div
-                key={piece.name + i}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: Math.min(i * 0.03, 0.6) }}
-                className="group relative overflow-hidden cursor-pointer"
-              >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={piece.img}
-                    alt={piece.name}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/60 transition-all duration-500 flex items-end p-4">
-                  <div className="translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <p className="text-cream font-display text-sm md:text-base">
-                      {piece.name}
-                    </p>
-                    <p className="text-cream/60 text-xs">{piece.desc}</p>
+        {/* Carousel */}
+        {filtered.length > 0 && (
+          <div className="relative group/carousel">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex -ml-3 md:-ml-4">
+                {filtered.map((piece, i) => (
+                  <div
+                    key={piece.name + i}
+                    className="flex-[0_0_50%] sm:flex-[0_0_33.333%] lg:flex-[0_0_25%] xl:flex-[0_0_20%] pl-3 md:pl-4 min-w-0"
+                  >
+                    <div className="group relative overflow-hidden cursor-pointer">
+                      <div className="aspect-square overflow-hidden">
+                        <img
+                          src={piece.img}
+                          alt={piece.name}
+                          loading="lazy"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                      </div>
+                      <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/60 transition-all duration-500 flex items-end p-4">
+                        <div className="translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                          <p className="text-cream font-display text-sm md:text-base">
+                            {piece.name}
+                          </p>
+                          <p className="text-cream/60 text-xs">{piece.desc}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation arrows */}
+            <button
+              onClick={() => emblaApi?.scrollPrev()}
+              disabled={!canScrollPrev}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-opacity disabled:opacity-0 hover:bg-background"
+              aria-label="Anterior"
+            >
+              <ChevronLeft className="w-5 h-5 text-foreground" />
+            </button>
+            <button
+              onClick={() => emblaApi?.scrollNext()}
+              disabled={!canScrollNext}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-opacity disabled:opacity-0 hover:bg-background"
+              aria-label="Siguiente"
+            >
+              <ChevronRight className="w-5 h-5 text-foreground" />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
