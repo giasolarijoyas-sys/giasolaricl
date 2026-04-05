@@ -5,7 +5,7 @@ const reasons = [
   { icon: Pen, title: "100% a Pedido", desc: "Ninguna pieza es igual. Cada joya nace de tu historia." },
   { icon: Heart, title: "Especialistas en Platino", desc: "De las pocas joyerías en Chile que trabaja el platino con verdadera maestría." },
   { icon: Gem, title: "Piedras Certificadas", desc: "Solo piedras con certificado GIA o IGI. Transparencia total." },
-  { icon: Leaf, title: "Transparencia Total", desc: "Te explicamos cada material y proceso. Quiero que entiendas exactamente lo que estás eligiendo." },
+  { icon: Leaf, title: "Transparencia en Todo", desc: "Te explicamos cada material y proceso. Quiero que entiendas exactamente lo que estás eligiendo." },
   { icon: Users, title: "Atención Personalizada", desc: "La Maca te acompaña personalmente en todo el proceso." },
   { icon: MapPin, title: "Santiago, Chile", desc: "Showroom en Las Condes. Visítanos con cita previa." },
 ];
