@@ -23,10 +23,9 @@ const Section = ({ id, icon: Icon, title, children }: { id: string; icon: React.
   </motion.section>
 );
 
-const StoneCard = ({ name, emoji, hardness, desc }: { name: string; emoji: string; hardness: string; desc: string }) => (
+const StoneCard = ({ name, hardness, desc }: { name: string; hardness: string; desc: string }) => (
   <div className="p-4 rounded-lg border border-border bg-card hover:border-primary/30 transition-colors">
     <div className="flex items-center gap-2 mb-2">
-      <span className="text-xl">{emoji}</span>
       <h4 className="font-display text-lg text-foreground">{name}</h4>
     </div>
     <p className="text-xs text-primary/70 mb-1">Dureza: {hardness}</p>
@@ -34,9 +33,8 @@ const StoneCard = ({ name, emoji, hardness, desc }: { name: string; emoji: strin
   </div>
 );
 
-const CutCard = ({ name, emoji, desc }: { name: string; emoji: string; desc: string }) => (
+const CutCard = ({ name, desc }: { name: string; desc: string }) => (
   <div className="p-3 rounded-lg border border-border bg-card text-center hover:border-primary/30 transition-colors">
-    <span className="text-2xl block mb-1">{emoji}</span>
     <h4 className="font-medium text-sm text-foreground">{name}</h4>
     <p className="text-xs text-muted-foreground mt-1">{desc}</p>
   </div>
