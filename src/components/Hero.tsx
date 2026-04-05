@@ -2,10 +2,10 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import heroImage from "@/assets/maca-hero.jpeg";
-import slideVintage from "@/assets/slide-vintage.png";
-import bannerHands from "@/assets/banner-hands.jpg";
+import heroDsc5775 from "@/assets/hero-dsc-5775.jpg";
+import heroDsc5803 from "@/assets/hero-dsc-5803.jpg";
 import heroVideo1 from "@/assets/hero-video-1.mp4.asset.json";
-import galProd2096 from "@/assets/gal-prod-img_2096.jpg";
+import bannerHands from "@/assets/banner-hands.jpg";
 
 type Slide = {
   type: "image" | "video";
@@ -16,8 +16,8 @@ type Slide = {
 const slides: Slide[] = [
   { type: "image", src: heroImage, alt: "Macarena González Solari, fundadora de Gia Solari" },
   { type: "video", src: heroVideo1.url },
-  { type: "image", src: slideVintage, alt: "Anillo vintage con diamante" },
-  { type: "image", src: galProd2096, alt: "Halo aguamarina en cofre dorado" },
+  { type: "image", src: heroDsc5775, alt: "Anillo tricillo con marco dorado" },
+  { type: "image", src: heroDsc5803, alt: "Anillo tricillo en cofre de terciopelo" },
   { type: "image", src: bannerHands, alt: "Joyas Gia Solari en detalle" },
 ];
 
