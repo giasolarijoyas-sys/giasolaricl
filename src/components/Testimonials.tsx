@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -64,9 +65,58 @@ const testimonials = [
   },
 ];
 
+const AUTOPLAY_INTERVAL = 5000;
+
 const Testimonials = () => {
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % testimonials.length);
+  }, []);
+
+  const prev = useCallback(() => {
+    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  }, []);
+
+  useEffect(() => {
+    if (paused) return;
+    const timer = setTimeout(next, AUTOPLAY_INTERVAL);
+    return () => clearTimeout(timer);
+  }, [current, paused, next]);
+
+  // Show 1 on mobile, 2 on md, 3 on lg
+  const getVisibleCount = () => {
+    if (typeof window === 'undefined') return 1;
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  };
+
+  const [visibleCount, setVisibleCount] = useState(1);
+
+  useEffect(() => {
+    const update = () => setVisibleCount(getVisibleCount());
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  const getVisibleTestimonials = () => {
+    const result = [];
+    for (let i = 0; i < visibleCount; i++) {
+      result.push(testimonials[(current + i) % testimonials.length]);
+    }
+    return result;
+  };
+
   return (
-    <section id="testimonios" className="py-24 md:py-32 bg-card">
+    <section
+      id="testimonios"
+      className="py-24 md:py-32 bg-card"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -83,39 +133,79 @@ const Testimonials = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={t.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="bg-background border border-border p-6 rounded-lg"
-            >
-              <div className="flex gap-0.5 mb-4">
-                {Array.from({ length: 5 }).map((_, j) => (
-                  <Star
-                    key={j}
-                    size={14}
-                    className="fill-primary text-primary"
-                  />
+        <div className="relative">
+          {/* Navigation arrows */}
+          <button
+            onClick={prev}
+            className="absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors"
+            aria-label="Anterior"
+          >
+            <ChevronLeft className="w-5 h-5 text-foreground" />
+          </button>
+          <button
+            onClick={next}
+            className="absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors"
+            aria-label="Siguiente"
+          >
+            <ChevronRight className="w-5 h-5 text-foreground" />
+          </button>
+
+          {/* Cards */}
+          <div className="overflow-hidden px-6">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -30 }}
+                transition={{ duration: 0.3 }}
+                className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+              >
+                {getVisibleTestimonials().map((t) => (
+                  <div
+                    key={t.name}
+                    className="bg-background border border-border p-6 rounded-lg"
+                  >
+                    <div className="flex gap-0.5 mb-4">
+                      {Array.from({ length: 5 }).map((_, j) => (
+                        <Star
+                          key={j}
+                          size={14}
+                          className="fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4 italic">
+                      "{t.text}"
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-display text-sm">
+                        {t.name[0]}
+                      </div>
+                      <div>
+                        <p className="text-foreground text-sm font-medium">{t.name}</p>
+                        <p className="text-muted-foreground text-xs">{t.piece}</p>
+                      </div>
+                    </div>
+                  </div>
                 ))}
-              </div>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4 italic">
-                "{t.text}"
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-display text-sm">
-                  {t.name[0]}
-                </div>
-                <div>
-                  <p className="text-foreground text-sm font-medium">{t.name}</p>
-                  <p className="text-muted-foreground text-xs">{t.piece}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-1.5 mt-8">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                  i === current ? "bg-primary w-5" : "bg-border hover:bg-primary/40"
+                }`}
+                aria-label={`Testimonio ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

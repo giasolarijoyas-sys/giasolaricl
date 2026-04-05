@@ -5,8 +5,17 @@ import heroImage from "@/assets/maca-hero.jpeg";
 import slideNusa from "@/assets/slide-nusa.png";
 import slideVintage from "@/assets/slide-vintage.png";
 import bannerHands from "@/assets/banner-hands.jpg";
+import bannerDetail from "@/assets/banner-detail.jpg";
+import bannerNusa from "@/assets/banner-anillo-nusa.png";
+import bannerHalo from "@/assets/banner-halo-oval.png";
 import heroVideo1 from "@/assets/hero-video-1.mp4.asset.json";
 import heroVideo2 from "@/assets/hero-video-2.mp4.asset.json";
+
+// Additional gallery images for variety
+import galSesion5690 from "@/assets/gal-sesion-dsc_5690.jpg";
+import galSesion5822 from "@/assets/gal-sesion-dsc_5822.jpg";
+import galProd2096 from "@/assets/gal-prod-img_2096.jpg";
+import galProd2083 from "@/assets/gal-prod-img_2083.jpg";
 
 type Slide = {
   type: "image" | "video";
@@ -18,13 +27,20 @@ const slides: Slide[] = [
   { type: "image", src: heroImage, alt: "Macarena González Solari, fundadora de Gia Solari" },
   { type: "video", src: heroVideo1.url },
   { type: "image", src: slideNusa, alt: "Anillo Nusa con zafiro azul" },
+  { type: "image", src: galSesion5690, alt: "Solitario en caja rosa Gia Solari" },
   { type: "video", src: heroVideo2.url },
   { type: "image", src: slideVintage, alt: "Anillo vintage con diamante" },
-  { type: "image", src: bannerHands, alt: "Joyas Gia Solari" },
+  { type: "image", src: galProd2096, alt: "Halo aguamarina en cofre dorado" },
+  { type: "image", src: bannerHands, alt: "Joyas Gia Solari en detalle" },
+  { type: "image", src: galSesion5822, alt: "Par de anillos en caja verde" },
+  { type: "image", src: galProd2083, alt: "Halo oval sobre carta vintage" },
+  { type: "image", src: bannerDetail, alt: "Detalle artesanal Gia Solari" },
+  { type: "image", src: bannerNusa, alt: "Anillo Nusa zafiro azul" },
+  { type: "image", src: bannerHalo, alt: "Solitario halo oval" },
 ];
 
-const INTERVAL_IMAGE = 5000;
-const INTERVAL_VIDEO = 6000;
+const INTERVAL_IMAGE = 2500;
+const INTERVAL_VIDEO = 3000;
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
@@ -56,7 +72,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="absolute inset-0"
         >
           {slides[current].type === "video" ? (
@@ -137,14 +153,14 @@ const Hero = () => {
       </div>
 
       {/* Dots indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-1.5">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => goTo(i)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
               i === current
-                ? "bg-gold w-6"
+                ? "bg-gold w-5"
                 : "bg-cream/40 hover:bg-cream/60"
             }`}
             aria-label={`Ir a slide ${i + 1}`}
