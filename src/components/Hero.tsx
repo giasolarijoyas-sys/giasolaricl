@@ -2,10 +2,10 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import heroImage from "@/assets/maca-hero.jpeg";
-import slideVintage from "@/assets/slide-vintage.png";
-import bannerHands from "@/assets/banner-hands.jpg";
+import heroDsc5775 from "@/assets/hero-dsc-5775.jpg";
+import heroDsc5803 from "@/assets/hero-dsc-5803.jpg";
 import heroVideo1 from "@/assets/hero-video-1.mp4.asset.json";
-import galProd2096 from "@/assets/gal-prod-img_2096.jpg";
+import bannerHands from "@/assets/banner-hands.jpg";
 
 type Slide = {
   type: "image" | "video";
