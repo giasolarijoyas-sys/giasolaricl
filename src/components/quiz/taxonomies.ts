@@ -1,62 +1,60 @@
-// Jewelry taxonomies — catalogs with labels, emojis, and scoring keys
+// Jewelry taxonomies — catalogs with labels and scoring keys
 
 export const RING_STYLES = [
-  { key: 'solitaire', label: 'Solitario', emoji: '💍', desc: 'Una piedra central protagonista, elegancia pura' },
-  { key: 'halo', label: 'Halo', emoji: '👑', desc: 'Piedra central rodeada de piedras pequeñas' },
-  { key: 'three_stone', label: 'Tricillo', emoji: '💫', desc: 'Tres piedras que simbolizan pasado, presente y futuro' },
-  { key: 'vintage', label: 'Vintage', emoji: '🌹', desc: 'Detalles milgrain, filigrana y aire clásico' },
-  { key: 'nature_inspired', label: 'Inspirado en la naturaleza', emoji: '🌿', desc: 'Formas orgánicas, hojas, flores' },
-  { key: 'modern', label: 'Moderno', emoji: '◻️', desc: 'Líneas limpias y diseño contemporáneo' },
-  { key: 'cathedral', label: 'Cathedral', emoji: '🏛️', desc: 'Arcos elegantes que elevan la piedra' },
-  { key: 'pave', label: 'Pavé', emoji: '✨', desc: 'Banda cubierta de pequeños diamantes' },
-  { key: 'bezel', label: 'Bisel', emoji: '⭕', desc: 'Metal rodea la piedra, máxima protección' },
-  { key: 'toi_et_moi', label: 'Toi et Moi', emoji: '💕', desc: 'Dos piedras que se encuentran' },
+  { key: 'solitaire', label: 'Solitario', desc: 'Una piedra central protagonista, elegancia pura' },
+  { key: 'halo', label: 'Halo', desc: 'Piedra central rodeada de piedras pequeñas' },
+  { key: 'three_stone', label: 'Tricillo', desc: 'Tres piedras que simbolizan pasado, presente y futuro' },
+  { key: 'vintage', label: 'Vintage', desc: 'Detalles milgrain, filigrana y aire clásico' },
+  { key: 'nature_inspired', label: 'Inspirado en la naturaleza', desc: 'Formas orgánicas, hojas, flores' },
+  { key: 'modern', label: 'Moderno', desc: 'Líneas limpias y diseño contemporáneo' },
+  { key: 'cathedral', label: 'Cathedral', desc: 'Arcos elegantes que elevan la piedra' },
+  { key: 'pave', label: 'Pavé', desc: 'Banda cubierta de pequeños diamantes' },
+  { key: 'bezel', label: 'Bisel', desc: 'Metal rodea la piedra, máxima protección' },
+  { key: 'toi_et_moi', label: 'Toi et Moi', desc: 'Dos piedras que se encuentran' },
 ] as const;
 
 export const CENTER_STONE_TYPES = [
-  { key: 'natural_diamond', label: 'Diamante Natural', emoji: '💎', desc: 'El clásico eterno, máximo brillo' },
-  { key: 'lab_diamond', label: 'Diamante Lab', emoji: '🔬', desc: 'Mismo diamante, creado en laboratorio' },
-  
-  { key: 'sapphire', label: 'Zafiro', emoji: '💙', desc: 'Piedra de color, elegancia real' },
-  { key: 'emerald', label: 'Esmeralda', emoji: '💚', desc: 'Verde profundo, único y especial' },
-  { key: 'ruby', label: 'Rubí', emoji: '❤️', desc: 'Rojo pasión, piedra de amor' },
-  { key: 'aquamarine', label: 'Aguamarina', emoji: '🩵', desc: 'Azul celeste, delicada y luminosa' },
+  { key: 'natural_diamond', label: 'Diamante Natural', desc: 'El clásico eterno, máximo brillo' },
+  { key: 'lab_diamond', label: 'Diamante Lab', desc: 'Mismo diamante, creado en laboratorio' },
+  { key: 'sapphire', label: 'Zafiro', desc: 'Piedra de color, elegancia real' },
+  { key: 'emerald', label: 'Esmeralda', desc: 'Verde profundo, único y especial' },
+  { key: 'ruby', label: 'Rubí', desc: 'Rojo pasión, piedra de amor' },
+  { key: 'aquamarine', label: 'Aguamarina', desc: 'Azul celeste, delicada y luminosa' },
 ] as const;
 
 export const STONE_SHAPES = [
-  { key: 'round', label: 'Redonda', emoji: '⚪', desc: 'La más clásica, máximo brillo' },
-  { key: 'oval', label: 'Oval', emoji: '🥚', desc: 'Alarga el dedo, muy elegante' },
-  { key: 'emerald_cut', label: 'Esmeralda', emoji: '▬', desc: 'Rectángulo con esquinas cortadas, art deco' },
-  { key: 'pear', label: 'Pera', emoji: '💧', desc: 'Forma de gota, única y femenina' },
-  { key: 'cushion', label: 'Cushion', emoji: '▢', desc: 'Cuadrado con bordes suaves, romántica' },
-  { key: 'marquise', label: 'Marquesa', emoji: '◇', desc: 'Alargada y puntiaguda, maximiza tamaño' },
-  { key: 'princess', label: 'Princesa', emoji: '◆', desc: 'Cuadrada con brillo intenso' },
-  { key: 'asscher', label: 'Asscher', emoji: '⬜', desc: 'Cuadrado con efecto espejo, vintage' },
-  { key: 'radiant', label: 'Radiante', emoji: '🔷', desc: 'Combina brillo de redonda con forma rectangular' },
+  { key: 'round', label: 'Redonda', desc: 'La más clásica, máximo brillo' },
+  { key: 'oval', label: 'Oval', desc: 'Alarga el dedo, muy elegante' },
+  { key: 'emerald_cut', label: 'Esmeralda', desc: 'Rectángulo con esquinas cortadas, art deco' },
+  { key: 'pear', label: 'Pera', desc: 'Forma de gota, única y femenina' },
+  { key: 'cushion', label: 'Cushion', desc: 'Cuadrado con bordes suaves, romántica' },
+  { key: 'marquise', label: 'Marquesa', desc: 'Alargada y puntiaguda, maximiza tamaño' },
+  { key: 'princess', label: 'Princesa', desc: 'Cuadrada con brillo intenso' },
+  { key: 'asscher', label: 'Asscher', desc: 'Cuadrado con efecto espejo, vintage' },
+  { key: 'radiant', label: 'Radiante', desc: 'Combina brillo de redonda con forma rectangular' },
 ] as const;
 
 export const METALS = [
-  { key: 'gold_yellow', label: 'Oro 18k Amarillo', emoji: '🟡', desc: 'Cálido y clásico' },
-  { key: 'platinum', label: 'Platino', emoji: '⚪', desc: 'El más resistente y puro' },
-  { key: 'gold_white', label: 'Oro 18k Blanco', emoji: '🤍', desc: 'Elegancia plateada' },
-  
+  { key: 'gold_yellow', label: 'Oro 18k Amarillo', desc: 'Cálido y clásico' },
+  { key: 'platinum', label: 'Platino', desc: 'El más resistente y puro' },
+  { key: 'gold_white', label: 'Oro 18k Blanco', desc: 'Elegancia plateada' },
 ] as const;
 
 export const SIZE_PREFERENCES = [
-  { key: 'discrete', label: 'Discreto', emoji: '🤏', desc: 'Elegante y sutil, perfecto para el día a día' },
-  { key: 'balanced', label: 'Balanceado', emoji: '✋', desc: 'Visible pero no exagerado' },
-  { key: 'statement', label: 'Impactante', emoji: '🤩', desc: 'Que se note, que brille' },
+  { key: 'discrete', label: 'Discreto', desc: 'Elegante y sutil, perfecto para el día a día' },
+  { key: 'balanced', label: 'Balanceado', desc: 'Visible pero no exagerado' },
+  { key: 'statement', label: 'Impactante', desc: 'Que se note, que brille' },
 ] as const;
 
 export const AESTHETIC_KEYWORDS = [
-  { key: 'delicate', label: 'Delicado', emoji: '🦋' },
-  { key: 'elegant', label: 'Elegante', emoji: '👸' },
-  { key: 'bold', label: 'Llamativo', emoji: '✨' },
-  { key: 'bohemian', label: 'Bohemio', emoji: '🌻' },
-  { key: 'minimalist', label: 'Minimalista', emoji: '〰️' },
-  { key: 'ornate', label: 'Ornamentado', emoji: '🏰' },
-  { key: 'romantic', label: 'Romántico', emoji: '🌹' },
-  { key: 'contemporary', label: 'Contemporáneo', emoji: '🔲' },
+  { key: 'delicate', label: 'Delicado' },
+  { key: 'elegant', label: 'Elegante' },
+  { key: 'bold', label: 'Llamativo' },
+  { key: 'bohemian', label: 'Bohemio' },
+  { key: 'minimalist', label: 'Minimalista' },
+  { key: 'ornate', label: 'Ornamentado' },
+  { key: 'romantic', label: 'Romántico' },
+  { key: 'contemporary', label: 'Contemporáneo' },
 ] as const;
 
 export const ACCENT_STONE_OPTIONS = [
@@ -76,13 +74,13 @@ export const BUDGET_RANGES = [
 ] as const;
 
 export const PRIORITY_OPTIONS = [
-  { key: 'brilliance', label: 'Brillo', emoji: '💎' },
-  { key: 'size', label: 'Tamaño de piedra', emoji: '📏' },
-  { key: 'durability', label: 'Durabilidad', emoji: '🛡️' },
-  { key: 'price', label: 'Mejor precio', emoji: '💰' },
-  { key: 'sustainability', label: 'Sostenibilidad', emoji: '🌍' },
-  { key: 'rarity', label: 'Rareza', emoji: '🦄' },
-  { key: 'symbolism', label: 'Simbolismo', emoji: '💝' },
+  { key: 'brilliance', label: 'Brillo' },
+  { key: 'size', label: 'Tamaño de piedra' },
+  { key: 'durability', label: 'Durabilidad' },
+  { key: 'price', label: 'Mejor precio' },
+  { key: 'sustainability', label: 'Sostenibilidad' },
+  { key: 'rarity', label: 'Rareza' },
+  { key: 'symbolism', label: 'Simbolismo' },
 ] as const;
 
 export const DRESS_STYLES = [
@@ -102,11 +100,10 @@ export const JEWELRY_USAGE = [
 ] as const;
 
 export const JEWELRY_COLORS = [
-  { key: 'gold', label: 'Dorado', emoji: '🟡' },
-  { key: 'silver', label: 'Plateado', emoji: '⚪' },
-  
-  { key: 'mixed', label: 'Mezcla de todo', emoji: '🎨' },
-  { key: 'unknown', label: 'No lo sé', emoji: '❓' },
+  { key: 'gold', label: 'Dorado' },
+  { key: 'silver', label: 'Plateado' },
+  { key: 'mixed', label: 'Mezcla de todo' },
+  { key: 'unknown', label: 'No lo sé' },
 ] as const;
 
 export const RELATIONSHIP_LENGTHS = [
@@ -117,8 +114,8 @@ export const RELATIONSHIP_LENGTHS = [
 ] as const;
 
 export const HINT_OPTIONS = [
-  { key: 'yes_specific', label: 'Sí, ha dado pistas claras', emoji: '🎯' },
-  { key: 'yes_vague', label: 'Sí, pero vagas', emoji: '🤔' },
-  { key: 'no', label: 'No ha dicho nada', emoji: '🤷' },
-  { key: 'surprise', label: 'Es una sorpresa total', emoji: '🎉' },
+  { key: 'yes_specific', label: 'Sí, ha dado pistas claras' },
+  { key: 'yes_vague', label: 'Sí, pero vagas' },
+  { key: 'no', label: 'No ha dicho nada' },
+  { key: 'surprise', label: 'Es una sorpresa total' },
 ] as const;

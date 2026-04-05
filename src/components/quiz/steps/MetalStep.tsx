@@ -1,8 +1,8 @@
 import type { StepProps } from "../types";
 import { METALS } from "../taxonomies";
 
-const OptionCard = ({ emoji, label, desc, selected, onClick }: {
-  emoji: string; label: string; desc?: string; selected: boolean; onClick: () => void;
+const OptionCard = ({ label, desc, selected, onClick }: {
+  label: string; desc?: string; selected: boolean; onClick: () => void;
 }) => (
   <button
     onClick={onClick}
@@ -10,7 +10,6 @@ const OptionCard = ({ emoji, label, desc, selected, onClick }: {
       selected ? "border-primary bg-primary/10" : "border-border hover:border-primary/40"
     }`}
   >
-    <span className="text-2xl">{emoji}</span>
     <span className="text-sm font-medium text-foreground">{label}</span>
     {desc && <span className="text-xs text-muted-foreground">{desc}</span>}
   </button>
@@ -32,7 +31,6 @@ const MetalStep = ({ answers, onUpdate }: StepProps) => {
         {METALS.map((m) => (
           <OptionCard
             key={m.key}
-            emoji={m.emoji}
             label={m.label}
             desc={m.desc}
             selected={answers.metalPreference === m.key}
@@ -49,7 +47,7 @@ const MetalStep = ({ answers, onUpdate }: StepProps) => {
             : "border-border hover:border-primary/40 text-muted-foreground"
         }`}
       >
-        ❓ No lo sé — recomiéndame
+        No lo sé — recomiéndame
       </button>
     </div>
   );

@@ -23,10 +23,9 @@ const Section = ({ id, icon: Icon, title, children }: { id: string; icon: React.
   </motion.section>
 );
 
-const StoneCard = ({ name, emoji, hardness, desc }: { name: string; emoji: string; hardness: string; desc: string }) => (
+const StoneCard = ({ name, hardness, desc }: { name: string; hardness: string; desc: string }) => (
   <div className="p-4 rounded-lg border border-border bg-card hover:border-primary/30 transition-colors">
     <div className="flex items-center gap-2 mb-2">
-      <span className="text-xl">{emoji}</span>
       <h4 className="font-display text-lg text-foreground">{name}</h4>
     </div>
     <p className="text-xs text-primary/70 mb-1">Dureza: {hardness}</p>
@@ -34,9 +33,8 @@ const StoneCard = ({ name, emoji, hardness, desc }: { name: string; emoji: strin
   </div>
 );
 
-const CutCard = ({ name, emoji, desc }: { name: string; emoji: string; desc: string }) => (
+const CutCard = ({ name, desc }: { name: string; desc: string }) => (
   <div className="p-3 rounded-lg border border-border bg-card text-center hover:border-primary/30 transition-colors">
-    <span className="text-2xl block mb-1">{emoji}</span>
     <h4 className="font-medium text-sm text-foreground">{name}</h4>
     <p className="text-xs text-muted-foreground mt-1">{desc}</p>
   </div>
@@ -91,7 +89,7 @@ const Guia = () => {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="p-4 rounded-lg border border-border bg-card">
-                  <h4 className="font-display text-foreground mb-2">📏 Método del hilo o papel</h4>
+                  <h4 className="font-display text-foreground mb-2">Método del hilo o papel</h4>
                   <ol className="text-sm space-y-1 list-decimal list-inside">
                     <li>Corta una tira de papel o hilo fino</li>
                     <li>Enróllalo alrededor del dedo donde usarás el anillo</li>
@@ -101,7 +99,7 @@ const Guia = () => {
                   </ol>
                 </div>
                 <div className="p-4 rounded-lg border border-border bg-card">
-                  <h4 className="font-display text-foreground mb-2">💍 Método del anillo existente</h4>
+                  <h4 className="font-display text-foreground mb-2">Método del anillo existente</h4>
                   <ol className="text-sm space-y-1 list-decimal list-inside">
                     <li>Toma un anillo que le quede bien</li>
                     <li>Ponlo sobre una regla</li>
@@ -147,7 +145,7 @@ const Guia = () => {
 
               <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
                 <p className="text-sm text-foreground">
-                  <strong>💡 Tip de la Maca:</strong> Mide siempre al final del día cuando los dedos están un poco más hinchados. Evita medir después de ejercicio o cuando tengas frío. Si tienes dudas, escríbenos y te ayudamos.
+                  <strong>Tip de la Maca:</strong> Mide siempre al final del día cuando los dedos están un poco más hinchados. Evita medir después de ejercicio o cuando tengas frío. Si tienes dudas, escríbenos y te ayudamos.
                 </p>
               </div>
             </Section>
@@ -159,37 +157,31 @@ const Guia = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <StoneCard
                   name="Diamante Natural"
-                  emoji="💎"
                   hardness="10/10 (el más duro)"
                   desc="La piedra eterna por excelencia. Certificación GIA. Máximo brillo y fuego. Es la opción más tradicional y con mayor valor de reventa."
                 />
                 <StoneCard
                   name="Diamante de Laboratorio"
-                  emoji="🔬"
                   hardness="10/10"
                   desc="Exactamente el mismo diamante a nivel físico, químico y óptico. Creado en laboratorio, es un 30-40% más accesible. Certificación IGI. Opción ética y sustentable."
                 />
                 <StoneCard
                   name="Zafiro"
-                  emoji="💙"
                   hardness="9/10"
                   desc="Piedra de la realeza. Disponible en azul, rosa, amarillo y blanco. Extremadamente durable para uso diario. El zafiro azul de Ceilán es el más cotizado."
                 />
                 <StoneCard
                   name="Esmeralda"
-                  emoji="💚"
                   hardness="7.5-8/10"
                   desc="Verde profundo e hipnótico. Cada esmeralda es única por sus inclusiones naturales llamadas 'jardín'. Las colombianas son las más valoradas. Requiere algo más de cuidado."
                 />
                 <StoneCard
                   name="Rubí"
-                  emoji="❤️"
                   hardness="9/10"
                   desc="Piedra de la pasión. Su rojo intenso la hace una de las gemas más valiosas del mundo. El rubí 'sangre de paloma' de Birmania es el más cotizado."
                 />
                 <StoneCard
                   name="Aguamarina"
-                  emoji="🩵"
                   hardness="7.5-8/10"
                   desc="De la familia del berilo (igual que la esmeralda). Su azul celeste evoca el mar. Es durable, luminosa y perfecta para diseños delicados y románticos. Excelente relación calidad-precio."
                 />
@@ -208,7 +200,7 @@ const Guia = () => {
 
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="p-5 rounded-lg border border-border bg-card">
-                  <div className="text-2xl mb-2">⚪</div>
+                  
                   <h4 className="font-display text-foreground text-lg mb-2">Platino</h4>
                   <ul className="text-sm space-y-1 text-muted-foreground">
                     <li>• El más noble y resistente</li>
@@ -221,7 +213,7 @@ const Guia = () => {
                   <p className="text-xs text-primary mt-3">El favorito de Gia Solari</p>
                 </div>
                 <div className="p-5 rounded-lg border border-border bg-card">
-                  <div className="text-2xl mb-2">🟡</div>
+                  
                   <h4 className="font-display text-foreground text-lg mb-2">Oro 18k Amarillo</h4>
                   <ul className="text-sm space-y-1 text-muted-foreground">
                     <li>• Clásico atemporal</li>
@@ -233,7 +225,7 @@ const Guia = () => {
                   </ul>
                 </div>
                 <div className="p-5 rounded-lg border border-border bg-card">
-                  <div className="text-2xl mb-2">🤍</div>
+                  
                   <h4 className="font-display text-foreground text-lg mb-2">Oro 18k Blanco</h4>
                   <ul className="text-sm space-y-1 text-muted-foreground">
                     <li>• Elegancia plateada</li>
@@ -259,7 +251,7 @@ const Guia = () => {
                   <tbody>
                     {[
                       ["Pureza", "95%", "75%", "75%"],
-                      ["Durabilidad", "⭐⭐⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐"],
+                      ["Durabilidad", "Excelente", "Muy buena", "Muy buena"],
                       ["Hipoalergénico", "Sí", "Depende", "Depende"],
                       ["Mantenimiento de color", "Ninguno", "Ninguno", "Baño de rodio"],
                       ["Peso", "Más pesado", "Medio", "Medio"],
@@ -282,15 +274,15 @@ const Guia = () => {
               <p>Las formas más populares para anillos de compromiso:</p>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <CutCard name="Redonda" emoji="⚪" desc="La más brillante y clásica. 57 facetas que maximizan la luz." />
-                <CutCard name="Oval" emoji="🥚" desc="Alarga el dedo. Muy elegante y moderna." />
-                <CutCard name="Cushion" emoji="▢" desc="Cuadrado con bordes suaves. Aire romántico y vintage." />
-                <CutCard name="Esmeralda" emoji="▬" desc="Rectángulo sofisticado. Efecto hall of mirrors." />
+                <CutCard name="Redonda" desc="La más brillante y clásica. 57 facetas que maximizan la luz." />
+                <CutCard name="Oval" desc="Alarga el dedo. Muy elegante y moderna." />
+                <CutCard name="Cushion" desc="Cuadrado con bordes suaves. Aire romántico y vintage." />
+                <CutCard name="Esmeralda" desc="Rectángulo sofisticado. Efecto hall of mirrors." />
               </div>
 
               <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
                 <p className="text-sm text-foreground">
-                  <strong>💡 Dato:</strong> El corte redondo brillante es el que más refleja la luz, pero el oval y el cushion hacen que la piedra se vea más grande de lo que es. ¡A veces el corte importa más que los quilates!
+                  <strong>Dato:</strong> El corte redondo brillante es el que más refleja la luz, pero el oval y el cushion hacen que la piedra se vea más grande de lo que es. ¡A veces el corte importa más que los quilates!
                 </p>
               </div>
             </Section>
@@ -302,7 +294,7 @@ const Guia = () => {
               <div className="space-y-6">
                 {/* CUT */}
                 <div className="p-5 rounded-lg border border-border bg-card">
-                  <h4 className="font-display text-xl text-foreground mb-2">1. Cut (Corte) ✂️</h4>
+                  <h4 className="font-display text-xl text-foreground mb-2">1. Cut (Corte)</h4>
                   <p className="text-sm mb-3">
                     <strong>El factor más importante.</strong> No se refiere a la forma (redonda, oval, etc.), sino a qué tan bien se tallaron las facetas. Un buen corte hace que la luz entre, rebote internamente y salga como brillo y fuego.
                   </p>
@@ -320,7 +312,7 @@ const Guia = () => {
 
                 {/* COLOR */}
                 <div className="p-5 rounded-lg border border-border bg-card">
-                  <h4 className="font-display text-xl text-foreground mb-2">2. Color 🎨</h4>
+                  <h4 className="font-display text-xl text-foreground mb-2">2. Color</h4>
                   <p className="text-sm mb-3">
                     En diamantes blancos, se evalúa la <em>ausencia</em> de color. La escala va de D (totalmente incoloro) a Z (amarillento visible).
                   </p>
@@ -338,7 +330,7 @@ const Guia = () => {
 
                 {/* CLARITY */}
                 <div className="p-5 rounded-lg border border-border bg-card">
-                  <h4 className="font-display text-xl text-foreground mb-2">3. Clarity (Claridad) 🔍</h4>
+                  <h4 className="font-display text-xl text-foreground mb-2">3. Clarity (Claridad)</h4>
                   <p className="text-sm mb-3">
                     Mide las inclusiones internas (marcas de nacimiento naturales). La mayoría son invisibles a simple vista.
                   </p>
@@ -356,7 +348,7 @@ const Guia = () => {
 
                 {/* CARAT */}
                 <div className="p-5 rounded-lg border border-border bg-card">
-                  <h4 className="font-display text-xl text-foreground mb-2">4. Carat (Quilates) ⚖️</h4>
+                  <h4 className="font-display text-xl text-foreground mb-2">4. Carat (Quilates)</h4>
                   <p className="text-sm mb-3">
                     El peso del diamante. 1 quilate = 0.2 gramos. Pero ojo: un quilate no siempre se ve igual de grande — depende del corte y la forma.
                   </p>
@@ -375,7 +367,7 @@ const Guia = () => {
                     ))}
                   </div>
                   <p className="text-xs text-muted-foreground mt-3">
-                    💡 Un diamante de 0.9 ct puede verse igual de grande que uno de 1.0 ct, pero costar significativamente menos. ¡Pregúntanos por las "magic sizes"!
+                    Un diamante de 0.9 ct puede verse igual de grande que uno de 1.0 ct, pero costar significativamente menos. ¡Pregúntanos por las "magic sizes"!
                   </p>
                 </div>
               </div>
@@ -421,17 +413,17 @@ const Guia = () => {
 
               <div className="grid md:grid-cols-3 gap-4 mt-4">
                 <div className="p-4 rounded-lg border border-border bg-card text-center">
-                  <div className="text-3xl mb-2">1️⃣</div>
+                  <div className="text-sm font-display text-primary mb-2">Paso 1</div>
                    <h4 className="font-display text-foreground mb-1">Diseño gratuito</h4>
                    <p className="text-xs text-muted-foreground">La asesoría, bocetos y diseño son sin costo. Diseñamos hasta que digas "¡es perfecto!".</p>
                 </div>
                 <div className="p-4 rounded-lg border border-border bg-card text-center">
-                  <div className="text-3xl mb-2">2️⃣</div>
+                  <div className="text-sm font-display text-primary mb-2">Paso 2</div>
                   <h4 className="font-display text-foreground mb-1">70% de adelanto</h4>
                   <p className="text-xs text-muted-foreground">Al aprobar el diseño final, se paga el 70% para comenzar la fabricación y adquirir los materiales.</p>
                 </div>
                 <div className="p-4 rounded-lg border border-border bg-card text-center">
-                  <div className="text-3xl mb-2">3️⃣</div>
+                  <div className="text-sm font-display text-primary mb-2">Paso 3</div>
                   <h4 className="font-display text-foreground mb-1">30% al entregar</h4>
                   <p className="text-xs text-muted-foreground">El saldo restante se paga al recibir tu joya terminada. Verificas que te encante antes de pagar.</p>
                 </div>
@@ -447,7 +439,7 @@ const Guia = () => {
             {/* ARGOLLAS DE MATRIMONIO */}
             <Section id="argollas" icon={Gem} title="Argollas de Matrimonio">
               <div className="p-6 rounded-xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 mb-6">
-                <h3 className="font-display text-xl text-foreground mb-2">🎉 20% de descuento en la echura</h3>
+                <h3 className="font-display text-xl text-foreground mb-2">20% de descuento en la echura</h3>
                 <p className="text-sm">
                   Si hiciste tu anillo de compromiso con nosotros, tienes un <strong>20% de descuento en la echura</strong> de tus argollas de matrimonio. ¡Nuestro regalo para la pareja!
                 </p>
@@ -458,7 +450,7 @@ const Guia = () => {
               <h4 className="font-display text-lg text-foreground mt-6 mb-3">Formas más comunes</h4>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="p-4 rounded-lg border border-border bg-card">
-                  <h5 className="font-display text-foreground mb-2">Media caña (inglés) ⭐</h5>
+                  <h5 className="font-display text-foreground mb-2">Media caña (inglés)</h5>
                   <p className="text-sm text-muted-foreground">
                     El clásico por excelencia. Perfil en forma de "D": plano por dentro y abombado por fuera. Cómodo, atemporal y elegante. <strong>El favorito de la Maca.</strong>
                   </p>
@@ -499,7 +491,7 @@ const Guia = () => {
 
               <div className="p-4 rounded-lg bg-primary/5 border border-primary/20 mt-4">
                 <p className="text-sm text-foreground">
-                  <strong>💡 Tip:</strong> Las argollas se pueden personalizar con grabado interior (nombres, fecha, frase especial) sin costo adicional. El plazo de fabricación es de 2 a 4 semanas.
+                  <strong>Tip:</strong> Las argollas se pueden personalizar con grabado interior (nombres, fecha, frase especial) sin costo adicional. El plazo de fabricación es de 2 a 4 semanas.
                 </p>
               </div>
             </Section>

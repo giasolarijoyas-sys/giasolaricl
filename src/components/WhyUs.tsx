@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
+import { Pen, Heart, Gem, Leaf, Users, MapPin, ShieldCheck } from "lucide-react";
 
 const reasons = [
-  { emoji: "✍️", title: "100% a Pedido", desc: "Ninguna pieza es igual. Cada joya nace de tu historia." },
-  { emoji: "🤍", title: "Especialistas en Platino", desc: "De las pocas joyerías en Chile que trabaja el platino con verdadera maestría." },
-  { emoji: "💎", title: "Piedras Certificadas", desc: "Solo piedras con certificado GIA o IGI. Transparencia total." },
-  { emoji: "🌿", title: "Transparencia Total", desc: "Te explicamos cada material y proceso. Quiero que entiendas exactamente lo que estás eligiendo." },
-  { emoji: "❤️", title: "Atención Personalizada", desc: "La Maca te acompaña personalmente en todo el proceso." },
-  { emoji: "📍", title: "Santiago, Chile", desc: "Showroom en Las Condes. Visítanos con cita previa." },
+  { icon: Pen, title: "100% a Pedido", desc: "Ninguna pieza es igual. Cada joya nace de tu historia." },
+  { icon: Heart, title: "Especialistas en Platino", desc: "De las pocas joyerías en Chile que trabaja el platino con verdadera maestría." },
+  { icon: Gem, title: "Piedras Certificadas", desc: "Solo piedras con certificado GIA o IGI. Transparencia total." },
+  { icon: Leaf, title: "Transparencia Total", desc: "Te explicamos cada material y proceso. Quiero que entiendas exactamente lo que estás eligiendo." },
+  { icon: Users, title: "Atención Personalizada", desc: "La Maca te acompaña personalmente en todo el proceso." },
+  { icon: MapPin, title: "Santiago, Chile", desc: "Showroom en Las Condes. Visítanos con cita previa." },
 ];
 
 const WhyUs = () => {
@@ -35,7 +36,7 @@ const WhyUs = () => {
           viewport={{ once: true }}
           className="mb-10 p-8 md:p-12 border-2 border-primary/40 rounded-lg bg-primary/5 text-center max-w-2xl mx-auto"
         >
-          <span className="text-4xl mb-4 block">🛡️</span>
+          <ShieldCheck size={36} className="text-primary mx-auto mb-4" />
           <h3 className="font-display text-2xl md:text-3xl text-foreground mb-3">
             Garantía por Gusto
           </h3>
@@ -55,7 +56,7 @@ const WhyUs = () => {
               transition={{ delay: i * 0.08 }}
               className="text-center p-8 border border-border rounded-lg hover:border-primary/30 transition-colors"
             >
-              <span className="text-3xl mb-4 block">{r.emoji}</span>
+              <r.icon size={28} className="text-primary mx-auto mb-4" />
               <h3 className="font-display text-lg text-foreground mb-2">{r.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{r.desc}</p>
             </motion.div>

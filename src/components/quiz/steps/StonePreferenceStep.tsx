@@ -1,8 +1,8 @@
 import type { StepProps } from "../types";
 import { CENTER_STONE_TYPES, STONE_SHAPES, SIZE_PREFERENCES } from "../taxonomies";
 
-const OptionCard = ({ emoji, label, desc, selected, onClick }: {
-  emoji: string; label: string; desc?: string; selected: boolean; onClick: () => void;
+const OptionCard = ({ label, desc, selected, onClick }: {
+  label: string; desc?: string; selected: boolean; onClick: () => void;
 }) => (
   <button
     onClick={onClick}
@@ -10,7 +10,6 @@ const OptionCard = ({ emoji, label, desc, selected, onClick }: {
       selected ? "border-primary bg-primary/10" : "border-border hover:border-primary/40"
     }`}
   >
-    <span className="text-2xl">{emoji}</span>
     <span className="text-sm font-medium text-foreground">{label}</span>
     {desc && <span className="text-xs text-muted-foreground">{desc}</span>}
   </button>
@@ -31,7 +30,6 @@ const StonePreferenceStep = ({ answers, onUpdate }: StepProps) => {
         {CENTER_STONE_TYPES.map((s) => (
           <OptionCard
             key={s.key}
-            emoji={s.emoji}
             label={s.label}
             desc={s.desc}
             selected={answers.stoneType === s.key}
@@ -45,7 +43,6 @@ const StonePreferenceStep = ({ answers, onUpdate }: StepProps) => {
         {STONE_SHAPES.map((s) => (
           <OptionCard
             key={s.key}
-            emoji={s.emoji}
             label={s.label}
             desc={s.desc}
             selected={answers.stoneShape === s.key}
@@ -59,7 +56,6 @@ const StonePreferenceStep = ({ answers, onUpdate }: StepProps) => {
         {SIZE_PREFERENCES.map((s) => (
           <OptionCard
             key={s.key}
-            emoji={s.emoji}
             label={s.label}
             desc={s.desc}
             selected={answers.sizePreference === s.key}
