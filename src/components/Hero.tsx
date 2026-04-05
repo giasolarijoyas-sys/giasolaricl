@@ -1,20 +1,85 @@
-import { motion } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 import heroImage from "@/assets/maca-hero.jpeg";
+import slideNusa from "@/assets/slide-nusa.png";
+import slideVintage from "@/assets/slide-vintage.png";
+import bannerHands from "@/assets/banner-hands.jpg";
+import heroVideo1 from "@/assets/hero-video-1.mp4.asset.json";
+import heroVideo2 from "@/assets/hero-video-2.mp4.asset.json";
+
+type Slide = {
+  type: "image" | "video";
+  src: string;
+  alt?: string;
+};
+
+const slides: Slide[] = [
+  { type: "image", src: heroImage, alt: "Macarena González Solari, fundadora de Gia Solari" },
+  { type: "video", src: heroVideo1.url },
+  { type: "image", src: slideNusa, alt: "Anillo Nusa con zafiro azul" },
+  { type: "video", src: heroVideo2.url },
+  { type: "image", src: slideVintage, alt: "Anillo vintage con diamante" },
+  { type: "image", src: bannerHands, alt: "Joyas Gia Solari" },
+];
+
+const INTERVAL_IMAGE = 5000;
+const INTERVAL_VIDEO = 6000;
 
 const Hero = () => {
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % slides.length);
+  }, []);
+
+  useEffect(() => {
+    if (paused) return;
+    const duration = slides[current].type === "video" ? INTERVAL_VIDEO : INTERVAL_IMAGE;
+    const timer = setTimeout(next, duration);
+    return () => clearTimeout(timer);
+  }, [current, paused, next]);
+
+  const goTo = (i: number) => setCurrent(i);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Macarena González Solari, fundadora de Gia Solari"
-          width={1920}
-          height={1080}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/50 to-transparent" />
-      </div>
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {/* Slides */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0"
+        >
+          {slides[current].type === "video" ? (
+            <video
+              src={slides[current].src}
+              autoPlay
+              muted
+              playsInline
+              loop
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <img
+              src={slides[current].src}
+              alt={slides[current].alt || "Gia Solari"}
+              className="w-full h-full object-cover"
+            />
+          )}
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/50 to-transparent z-[1]" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-8">
@@ -65,18 +130,27 @@ const Hero = () => {
               href="#historia"
               className="px-8 py-4 border border-cream/30 text-cream tracking-widest uppercase text-sm text-center hover:border-gold-light hover:text-gold-light transition-colors"
             >
-              Conocer más →
+              Conocer más
             </a>
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 w-px h-12 bg-gradient-to-b from-gold/60 to-transparent"
-      />
+      {/* Dots indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => goTo(i)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              i === current
+                ? "bg-gold w-6"
+                : "bg-cream/40 hover:bg-cream/60"
+            }`}
+            aria-label={`Ir a slide ${i + 1}`}
+          />
+        ))}
+      </div>
     </section>
   );
 };
