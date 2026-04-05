@@ -16,8 +16,8 @@ type Slide = {
 const slides: Slide[] = [
   { type: "image", src: heroImage, alt: "Macarena González Solari, fundadora de Gia Solari" },
   { type: "video", src: heroVideo1.url },
-  { type: "image", src: slideVintage, alt: "Anillo vintage con diamante" },
-  { type: "image", src: galProd2096, alt: "Halo aguamarina en cofre dorado" },
+  { type: "image", src: heroDsc5775, alt: "Anillo tricillo con marco dorado" },
+  { type: "image", src: heroDsc5803, alt: "Anillo tricillo en cofre de terciopelo" },
   { type: "image", src: bannerHands, alt: "Joyas Gia Solari en detalle" },
 ];
 
