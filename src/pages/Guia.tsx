@@ -4,6 +4,21 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Gem, Ruler, Palette, Scissors, ShieldCheck, Star, HelpCircle } from "lucide-react";
 
+// Photos for visual breaks
+import bannerDetail from "@/assets/banner-detail.jpg";
+import bannerHands from "@/assets/banner-hands.jpg";
+import galSesion5690 from "@/assets/gal-sesion-dsc_5690.jpg";
+import galSesion5770 from "@/assets/gal-sesion-dsc_5770.jpg";
+import galSesion5881 from "@/assets/gal-sesion-dsc_5881.jpg";
+import galSesion5835 from "@/assets/gal-sesion-dsc_5835.jpg";
+import galProd2096 from "@/assets/gal-prod-img_2096.jpg";
+import galProd2117 from "@/assets/gal-prod-img_2117.jpg";
+import galProd2172 from "@/assets/gal-prod-img_2172.jpg";
+import galProd2159 from "@/assets/gal-prod-img_2159.jpg";
+import galProd2109 from "@/assets/gal-prod-img_2109.jpg";
+import galProd2143 from "@/assets/gal-prod-img_2143.jpg";
+import heroDsc5775 from "@/assets/hero-dsc-5775.jpg";
+
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -23,11 +38,76 @@ const Section = ({ id, icon: Icon, title, children }: { id: string; icon: React.
   </motion.section>
 );
 
+const PhotoBanner = ({ image, alt, text, subtext }: { image: string; alt: string; text?: string; subtext?: string }) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="relative h-[35vh] md:h-[45vh] w-screen left-1/2 -translate-x-1/2 overflow-hidden my-16 md:my-24"
+  >
+    <div
+      className="absolute inset-0 bg-cover bg-center bg-fixed"
+      style={{ backgroundImage: `url(${image})` }}
+      role="img"
+      aria-label={alt}
+    />
+    <div className="absolute inset-0 bg-charcoal/50" />
+    {(text || subtext) && (
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+        {text && (
+          <h3 className="font-display text-2xl md:text-4xl lg:text-5xl text-cream tracking-wide">
+            {text}
+          </h3>
+        )}
+        {subtext && (
+          <p className="mt-3 text-cream/80 text-sm md:text-base tracking-widest uppercase max-w-lg">
+            {subtext}
+          </p>
+        )}
+      </div>
+    )}
+  </motion.div>
+);
+
+const PhotoPair = ({ images }: { images: { src: string; alt: string }[] }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+    className="grid grid-cols-2 gap-3 my-8"
+  >
+    {images.map((img, i) => (
+      <div key={i} className="aspect-[4/3] overflow-hidden rounded-lg">
+        <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+      </div>
+    ))}
+  </motion.div>
+);
+
+const PhotoSide = ({ image, alt, children, reverse = false }: { image: string; alt: string; children: React.ReactNode; reverse?: boolean }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+    className={`grid md:grid-cols-2 gap-8 items-center my-8 ${reverse ? "direction-rtl" : ""}`}
+  >
+    <div className={`${reverse ? "md:order-2" : ""}`}>
+      <div className="aspect-[4/3] overflow-hidden rounded-lg">
+        <img src={image} alt={alt} loading="lazy" className="w-full h-full object-cover" />
+      </div>
+    </div>
+    <div className={`${reverse ? "md:order-1" : ""} space-y-4`}>
+      {children}
+    </div>
+  </motion.div>
+);
+
 const StoneCard = ({ name, hardness, desc }: { name: string; hardness: string; desc: string }) => (
   <div className="p-4 rounded-lg border border-border bg-card hover:border-primary/30 transition-colors">
-    <div className="flex items-center gap-2 mb-2">
-      <h4 className="font-display text-lg text-foreground">{name}</h4>
-    </div>
+    <h4 className="font-display text-lg text-foreground">{name}</h4>
     <p className="text-xs text-primary/70 mb-1">Dureza: {hardness}</p>
     <p className="text-sm text-muted-foreground">{desc}</p>
   </div>
@@ -52,38 +132,70 @@ const Guia = () => {
         <meta property="og:url" content="https://www.giasolarijoyas.cl/guia" />
       </Helmet>
       <div className="min-h-screen bg-background">
-      <Navbar />
-      <div className="pt-24 pb-16">
-        <div className="container mx-auto px-4 md:px-8 max-w-4xl">
-          {/* Header */}
-          <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
-            <p className="text-primary text-sm tracking-widest uppercase mb-3">Educación</p>
-            <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4">Guía de Joyas</h1>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              Todo lo que necesitas saber para elegir la joya perfecta. Desde cómo medir tu talla hasta entender las 4C de los diamantes.
-            </p>
-          </motion.div>
+        <Navbar />
 
-          {/* Quick nav */}
-          <div className="flex flex-wrap gap-2 justify-center mb-16">
-            {[
-              { label: "Tallas", href: "#tallas" },
-              { label: "Piedras", href: "#piedras" },
-              { label: "Metales", href: "#metales" },
-              { label: "Cortes", href: "#cortes" },
-              { label: "Las 4C", href: "#4c" },
-              { label: "Argollas", href: "#argollas" },
-              { label: "Garantía", href: "#garantia" },
-              { label: "FAQ", href: "#faq" },
-            ].map((l) => (
-              <a key={l.href} href={l.href} className="px-4 py-2 text-xs tracking-widest uppercase border border-border rounded-full hover:border-primary hover:text-primary transition-colors">
-                {l.label}
-              </a>
-            ))}
+        {/* ── Hero Banner ── */}
+        <div className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${heroDsc5775})` }}
+            role="img"
+            aria-label="Anillo tricillo — Gia Solari"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/40 to-transparent" />
+          <div className="relative z-10 flex flex-col items-center justify-end h-full text-center px-4 pb-16">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-gold-light tracking-[0.3em] uppercase text-xs mb-4"
+            >
+              Educación
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="font-display text-4xl md:text-5xl lg:text-6xl text-cream mb-4"
+            >
+              Guía de Joyas
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="text-cream/70 max-w-xl text-sm md:text-base"
+            >
+              Todo lo que necesitas saber para elegir la joya perfecta.
+            </motion.p>
           </div>
+        </div>
 
-          <div className="space-y-20">
-            {/* TALLAS */}
+        {/* ── Quick nav ── */}
+        <div className="bg-background border-b border-border sticky top-16 z-20">
+          <div className="container mx-auto px-4 py-4">
+            <div className="flex flex-wrap gap-2 justify-center">
+              {[
+                { label: "Tallas", href: "#tallas" },
+                { label: "Piedras", href: "#piedras" },
+                { label: "Metales", href: "#metales" },
+                { label: "Cortes", href: "#cortes" },
+                { label: "Las 4C", href: "#4c" },
+                { label: "Argollas", href: "#argollas" },
+                { label: "Garantía", href: "#garantia" },
+                { label: "FAQ", href: "#faq" },
+              ].map((l) => (
+                <a key={l.href} href={l.href} className="px-4 py-2 text-xs tracking-widest uppercase border border-border rounded-full hover:border-primary hover:text-primary transition-colors">
+                  {l.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 md:px-8 max-w-4xl pt-16 pb-16">
+          <div className="space-y-8">
+            {/* ═══ TALLAS ═══ */}
             <Section id="tallas" icon={Ruler} title="¿Cómo saber tu talla de anillo?">
               <p>Existen varios métodos para conocer tu talla. Aquí te dejamos los más confiables:</p>
 
@@ -150,57 +262,83 @@ const Guia = () => {
               </div>
             </Section>
 
-            {/* PIEDRAS */}
+            {/* ── Photo break: ring in box ── */}
+            <PhotoBanner
+              image={galSesion5690}
+              alt="Solitario en caja Gia Solari"
+              text="Cada piedra tiene su historia"
+              subtext="Aprende a elegir la tuya"
+            />
+
+            {/* ═══ PIEDRAS ═══ */}
             <Section id="piedras" icon={Gem} title="Tipos de piedras preciosas">
               <p>Cada piedra tiene su carácter, dureza y brillo. Aquí te explicamos las que trabajamos:</p>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <StoneCard
-                  name="Diamante Natural"
-                  hardness="10/10 (el más duro)"
-                  desc="La piedra eterna por excelencia. Certificación GIA. Máximo brillo y fuego. Es la opción más tradicional y con mayor valor de reventa."
-                />
-                <StoneCard
-                  name="Diamante de Laboratorio"
-                  hardness="10/10"
-                  desc="Exactamente el mismo diamante a nivel físico, químico y óptico. Creado en laboratorio, es un 30-40% más accesible. Certificación IGI. Opción ética y sustentable."
-                />
-                <StoneCard
-                  name="Zafiro"
-                  hardness="9/10"
-                  desc="Piedra de la realeza. Disponible en azul, rosa, amarillo y blanco. Extremadamente durable para uso diario. El zafiro azul de Ceilán es el más cotizado."
-                />
-                <StoneCard
-                  name="Esmeralda"
-                  hardness="7.5-8/10"
-                  desc="Verde profundo e hipnótico. Cada esmeralda es única por sus inclusiones naturales llamadas 'jardín'. Las colombianas son las más valoradas. Requiere algo más de cuidado."
-                />
-                <StoneCard
-                  name="Rubí"
-                  hardness="9/10"
-                  desc="Piedra de la pasión. Su rojo intenso la hace una de las gemas más valiosas del mundo. El rubí 'sangre de paloma' de Birmania es el más cotizado."
-                />
-                <StoneCard
-                  name="Aguamarina"
-                  hardness="7.5-8/10"
-                  desc="De la familia del berilo (igual que la esmeralda). Su azul celeste evoca el mar. Es durable, luminosa y perfecta para diseños delicados y románticos. Excelente relación calidad-precio."
-                />
-              </div>
-
-              <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
-                <p className="text-sm text-foreground">
-                  <strong>¿Sabías que?</strong> La dureza se mide en la escala de Mohs del 1 al 10. Para uso diario en un anillo de compromiso, recomendamos piedras con dureza 7.5 o superior.
-                </p>
-              </div>
             </Section>
 
-            {/* METALES */}
+            <PhotoSide image={galProd2117} alt="Anillo zafiro oval halo">
+              <StoneCard
+                name="Diamante Natural"
+                hardness="10/10 (el más duro)"
+                desc="La piedra eterna por excelencia. Certificación GIA. Máximo brillo y fuego. Es la opción más tradicional y con mayor valor de reventa."
+              />
+              <StoneCard
+                name="Diamante de Laboratorio"
+                hardness="10/10"
+                desc="Exactamente el mismo diamante a nivel físico, químico y óptico. Creado en laboratorio, es un 30-40% más accesible. Certificación IGI. Opción ética y sustentable."
+              />
+            </PhotoSide>
+
+            <PhotoSide image={galProd2096} alt="Anillo halo aguamarina en cofre" reverse>
+              <StoneCard
+                name="Zafiro"
+                hardness="9/10"
+                desc="Piedra de la realeza. Disponible en azul, rosa, amarillo y blanco. Extremadamente durable para uso diario. El zafiro azul de Ceilán es el más cotizado."
+              />
+              <StoneCard
+                name="Esmeralda"
+                hardness="7.5-8/10"
+                desc="Verde profundo e hipnótico. Cada esmeralda es única por sus inclusiones naturales llamadas 'jardín'. Las colombianas son las más valoradas."
+              />
+            </PhotoSide>
+
+            <PhotoPair images={[
+              { src: galSesion5881, alt: "Anillo zafiro Diana sobre bandeja" },
+              { src: galProd2143, alt: "Anillo Art Déco con esmeraldas" },
+            ]} />
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <StoneCard
+                name="Rubí"
+                hardness="9/10"
+                desc="Piedra de la pasión. Su rojo intenso la hace una de las gemas más valiosas del mundo. El rubí 'sangre de paloma' de Birmania es el más cotizado."
+              />
+              <StoneCard
+                name="Aguamarina"
+                hardness="7.5-8/10"
+                desc="De la familia del berilo. Su azul celeste evoca el mar. Es durable, luminosa y perfecta para diseños delicados y románticos. Excelente relación calidad-precio."
+              />
+            </div>
+
+            <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
+              <p className="text-sm text-foreground">
+                <strong>¿Sabías que?</strong> La dureza se mide en la escala de Mohs del 1 al 10. Para uso diario en un anillo de compromiso, recomendamos piedras con dureza 7.5 o superior.
+              </p>
+            </div>
+
+            {/* ── Photo break: metales ── */}
+            <PhotoBanner
+              image={bannerHands}
+              alt="Manos con joyas Gia Solari"
+              text="El metal perfecto existe"
+              subtext="Platino · Oro Amarillo · Oro Blanco"
+            />
+
+            {/* ═══ METALES ═══ */}
             <Section id="metales" icon={Palette} title="Diferencias entre metales">
               <p>El metal del anillo influye en su durabilidad, color y mantenimiento. Estos son los que trabajamos:</p>
 
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="p-5 rounded-lg border border-border bg-card">
-                  
                   <h4 className="font-display text-foreground text-lg mb-2">Platino</h4>
                   <ul className="text-sm space-y-1 text-muted-foreground">
                     <li>• El más noble y resistente</li>
@@ -213,7 +351,6 @@ const Guia = () => {
                   <p className="text-xs text-primary mt-3">El favorito de Gia Solari</p>
                 </div>
                 <div className="p-5 rounded-lg border border-border bg-card">
-                  
                   <h4 className="font-display text-foreground text-lg mb-2">Oro 18k Amarillo</h4>
                   <ul className="text-sm space-y-1 text-muted-foreground">
                     <li>• Clásico atemporal</li>
@@ -225,7 +362,6 @@ const Guia = () => {
                   </ul>
                 </div>
                 <div className="p-5 rounded-lg border border-border bg-card">
-                  
                   <h4 className="font-display text-foreground text-lg mb-2">Oro 18k Blanco</h4>
                   <ul className="text-sm space-y-1 text-muted-foreground">
                     <li>• Elegancia plateada</li>
@@ -269,7 +405,13 @@ const Guia = () => {
               </div>
             </Section>
 
-            {/* CORTES */}
+            {/* ── Photo pair break ── */}
+            <PhotoPair images={[
+              { src: galSesion5770, alt: "Tricillo esmeralda en marco dorado" },
+              { src: galSesion5835, alt: "Solitario pavé en caja menta" },
+            ]} />
+
+            {/* ═══ CORTES ═══ */}
             <Section id="cortes" icon={Scissors} title="Formas y cortes de piedra">
               <p>Las formas más populares para anillos de compromiso:</p>
 
@@ -287,12 +429,19 @@ const Guia = () => {
               </div>
             </Section>
 
-            {/* 4C */}
+            {/* ── Photo banner: 4C ── */}
+            <PhotoBanner
+              image={galProd2109}
+              alt="Anillo halo esmeralda sobre mármol"
+              text="Entiende las 4C"
+              subtext="Corte · Color · Claridad · Quilates"
+            />
+
+            {/* ═══ 4C ═══ */}
             <Section id="4c" icon={Star} title="Las 4C de los diamantes">
               <p>El sistema universal para evaluar un diamante. Entenderlo te ayuda a tomar la mejor decisión según tu presupuesto:</p>
 
               <div className="space-y-6">
-                {/* CUT */}
                 <div className="p-5 rounded-lg border border-border bg-card">
                   <h4 className="font-display text-xl text-foreground mb-2">1. Cut (Corte)</h4>
                   <p className="text-sm mb-3">
@@ -310,7 +459,6 @@ const Guia = () => {
                   </p>
                 </div>
 
-                {/* COLOR */}
                 <div className="p-5 rounded-lg border border-border bg-card">
                   <h4 className="font-display text-xl text-foreground mb-2">2. Color</h4>
                   <p className="text-sm mb-3">
@@ -328,7 +476,6 @@ const Guia = () => {
                   </p>
                 </div>
 
-                {/* CLARITY */}
                 <div className="p-5 rounded-lg border border-border bg-card">
                   <h4 className="font-display text-xl text-foreground mb-2">3. Clarity (Claridad)</h4>
                   <p className="text-sm mb-3">
@@ -346,7 +493,6 @@ const Guia = () => {
                   </p>
                 </div>
 
-                {/* CARAT */}
                 <div className="p-5 rounded-lg border border-border bg-card">
                   <h4 className="font-display text-xl text-foreground mb-2">4. Carat (Quilates)</h4>
                   <p className="text-sm mb-3">
@@ -379,7 +525,15 @@ const Guia = () => {
               </div>
             </Section>
 
-            {/* GARANTÍA POR GUSTO */}
+            {/* ── Photo break: garantía ── */}
+            <PhotoBanner
+              image={bannerDetail}
+              alt="Solitario en caja Gia Solari"
+              text="Si no te encanta, la rehacemos"
+              subtext="Garantía por Gusto — Solo en Gia Solari"
+            />
+
+            {/* ═══ GARANTÍA ═══ */}
             <Section id="garantia" icon={ShieldCheck} title="Garantía por Gusto">
               <div className="p-6 rounded-xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20">
                 <h3 className="font-display text-xl text-foreground mb-4">Si no te encanta, la rehacemos.</h3>
@@ -414,8 +568,8 @@ const Guia = () => {
               <div className="grid md:grid-cols-3 gap-4 mt-4">
                 <div className="p-4 rounded-lg border border-border bg-card text-center">
                   <div className="text-sm font-display text-primary mb-2">Paso 1</div>
-                   <h4 className="font-display text-foreground mb-1">Diseño gratuito</h4>
-                   <p className="text-xs text-muted-foreground">La asesoría, bocetos y diseño son sin costo. Diseñamos hasta que digas "¡es perfecto!".</p>
+                  <h4 className="font-display text-foreground mb-1">Diseño gratuito</h4>
+                  <p className="text-xs text-muted-foreground">La asesoría, bocetos y diseño son sin costo. Diseñamos hasta que digas "¡es perfecto!".</p>
                 </div>
                 <div className="p-4 rounded-lg border border-border bg-card text-center">
                   <div className="text-sm font-display text-primary mb-2">Paso 2</div>
@@ -436,7 +590,13 @@ const Guia = () => {
               </div>
             </Section>
 
-            {/* ARGOLLAS DE MATRIMONIO */}
+            {/* ── Photo pair: argollas ── */}
+            <PhotoPair images={[
+              { src: galProd2172, alt: "Par de argollas Art Déco en caja azul" },
+              { src: galProd2159, alt: "Tricillo dorado sobre lino" },
+            ]} />
+
+            {/* ═══ ARGOLLAS ═══ */}
             <Section id="argollas" icon={Gem} title="Argollas de Matrimonio">
               <div className="p-6 rounded-xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 mb-6">
                 <h3 className="font-display text-xl text-foreground mb-2">20% de descuento en la echura</h3>
@@ -496,7 +656,13 @@ const Guia = () => {
               </div>
             </Section>
 
-            {/* FAQ */}
+            {/* ── Photo banner: FAQ ── */}
+            <PhotoBanner
+              image={galProd2159}
+              alt="Tricillo dorado sobre lino"
+            />
+
+            {/* ═══ FAQ ═══ */}
             <Section id="faq" icon={HelpCircle} title="Preguntas frecuentes">
               <div className="space-y-4">
                 {[
@@ -560,8 +726,7 @@ const Guia = () => {
             </a>
           </motion.div>
         </div>
-      </div>
-      <Footer />
+        <Footer />
       </div>
     </>
   );
