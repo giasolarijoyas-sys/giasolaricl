@@ -112,7 +112,6 @@ const categories: { key: Category; label: string }[] = [
   { key: "collares", label: "Collares" },
   { key: "aros", label: "Aros" },
   { key: "pulseras", label: "Pulseras & Esclavas" },
-  { key: "taller", label: "Nuestro Taller" },
 ];
 
 const pieces: Piece[] = [
