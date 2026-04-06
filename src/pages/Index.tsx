@@ -1,11 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Historia from "@/components/Historia";
+import Marquee from "@/components/Marquee";
 import Gallery from "@/components/Gallery";
-import QuizContainer from "@/components/quiz/QuizContainer";
-import Testimonials from "@/components/Testimonials";
-import WishListForm from "@/components/WishListForm";
 import WhyUs from "@/components/WhyUs";
+import ProcessSteps from "@/components/ProcessSteps";
+import Testimonials from "@/components/Testimonials";
+import Historia from "@/components/Historia";
+import QuoteWizard from "@/components/QuoteWizard";
+import WishListForm from "@/components/WishListForm";
+import FAQAccordion from "@/components/FAQAccordion";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -20,9 +23,17 @@ import bannerHands from "@/assets/banner-hands.jpg";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      {/* 1. Navegación fija */}
       <Navbar />
+
+      {/* 2. Hero con slideshow */}
       <Hero />
-      <WhyUs />
+
+      {/* 3. Barra marquee de keywords */}
+      <Marquee />
+
+      {/* 4. Galería de trabajos */}
+      <Gallery />
 
       <SectionBanner
         image={bannerNusa}
@@ -31,7 +42,11 @@ const Index = () => {
         subtext="Diseño artesanal con piedras certificadas"
       />
 
-      <QuizContainer />
+      {/* 5. Diferenciadores / por qué elegirnos */}
+      <WhyUs />
+
+      {/* 6. Proceso paso a paso */}
+      <ProcessSteps />
 
       <SectionBanner
         image={bannerHands}
@@ -40,7 +55,10 @@ const Index = () => {
         subtext="100% personalizado, 100% único"
       />
 
-      <Gallery />
+      {/* 7. Testimonios */}
+      <Testimonials />
+
+      {/* 8. Historia de la marca */}
       <Historia />
 
       <SectionBanner
@@ -49,20 +67,32 @@ const Index = () => {
         text="Tu Historia, Nuestra Inspiración"
       />
 
-      <Testimonials />
+      {/* 9. Guía — enlace en nav */}
+
+      {/* 10. Formulario de cotización (wizard) */}
+      <QuoteWizard />
 
       <SectionBanner
         image={bannerHalo}
         alt="Anillo solitario halo oval Gia Solari"
-        text="Cotiza tu Joya"
-        subtext="Sin compromiso, con todo el cariño"
-        ctaHref="#cotizador"
-        ctaLabel="Comenzar Cotización"
+        text="Lista de Deseos"
+        subtext="Cuéntanos qué te gustaría recibir"
+        ctaHref="#wish-list"
+        ctaLabel="Ir a la lista"
       />
 
+      {/* WishList form */}
       <WishListForm />
+
+      {/* Newsletter */}
       <Newsletter />
+
+      {/* 11. Acordeón de términos y condiciones */}
+      <FAQAccordion />
+
+      {/* 12. Footer */}
       <Footer />
+
       <WhatsAppButton />
       <JewelryChat />
     </div>

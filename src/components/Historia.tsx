@@ -17,7 +17,7 @@ const Historia = () => {
     <section id="historia" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-          {/* Image — solo foto con mamá */}
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -44,7 +44,7 @@ const Historia = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">
-              Desde 2019
+              Nuestra Historia
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground leading-tight mb-6">
               Una joyería nacida del{" "}
@@ -53,29 +53,30 @@ const Historia = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Somos Maca y Gianna — madre e hija, ambas{" "}
-                <strong className="text-foreground">joyeras</strong>. Gia Solari
-                nace de nuestro amor compartido por las joyas y de años
-                trabajando juntas con piedras y metales. Maca además es{" "}
-                <strong className="text-foreground">orfebre</strong>, y en
-                nuestro taller nos apoyamos con los mejores orfebres del rubro
-                para garantizar que cada proceso cuente con su especialista.
+                Gia Solari nace de dos cosas que amamos profundamente:{" "}
+                <strong className="text-foreground">Gianna</strong>, mi mamá y socia, quien me enseñó que una joya es una historia que se hereda — y{" "}
+                <strong className="text-foreground">GIA</strong>, el Gemological Institute of America, la institución de gemología más reconocida del mundo, que respalda cada piedra que elegimos.
               </p>
               <p>
-                Amamos los detalles. Nos especializamos en piezas a pedido con{" "}
-                <strong className="text-foreground">transparencia técnica</strong>{" "}
-                y atención completamente personalizada, porque creemos que tu
-                joya tiene que ser{" "}
-                <strong className="text-foreground">auténtica y única</strong>,
-                igual que tu historia. Somos de las pocas joyerías en Chile que
-                trabaja el{" "}
-                <strong className="text-foreground">platino con verdadera maestría</strong>.
+                Yo soy <strong className="text-foreground">Maca</strong>, diseñadora y gemóloga. Juntas formamos Gia Solari Joyas.
+              </p>
+              <p>
+                Somos Gianna y Maca, madre e hija, unidas por la pasión a las joyas y el conocimiento en orfebrería. Asesoramos, diseñamos y creamos las más lindas pulseras, argollas, aros, collares y nuestra especialidad:{" "}
+                <strong className="text-foreground">anillos de compromiso</strong>.
+              </p>
+              <p>
+                Nuestra misión es dar una atención personalizada y dedicada, para que mandar a hacer una joya sea una{" "}
+                <strong className="text-foreground">experiencia extraordinaria</strong> — tanto para quien la compra como para quien la recibe.
+              </p>
+              <p>
+                Trabajamos en oro 18k, diamantes certificados, diamantes de laboratorio y{" "}
+                <strong className="text-foreground">platino, trabajado con verdadera maestría</strong>. Nuestro compromiso de transparencia técnica hace que tu joya sea auténtica y única, igual que tu historia.
               </p>
               <p className="italic text-foreground font-display text-lg pt-2">
                 "Tú nos cuentas tu historia, nosotras la convertimos en joya."
               </p>
               <p className="text-sm text-primary tracking-wide">
-                — Maca & Gianna · Gia Solari
+                — Maca y Gianna · Gia Solari
               </p>
             </div>
           </motion.div>

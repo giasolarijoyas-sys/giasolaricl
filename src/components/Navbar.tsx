@@ -36,7 +36,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="https://wa.me/56984049502?text=Hola%20Maca%2C%20vengo%20desde%20www.giasolarijoyas.cl%20y%20quiero%20cotizar%20una%20joya."
+            href="https://wa.me/56984049502?text=Hola%20Maca%2C%20quiero%20cotizar%20una%20joya%20%F0%9F%92%9B"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 text-sm tracking-widest uppercase border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
@@ -72,7 +72,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="https://wa.me/56984049502"
+                href="https://wa.me/56984049502?text=Hola%20Maca%2C%20quiero%20cotizar%20una%20joya%20%F0%9F%92%9B"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-2 text-sm tracking-widest uppercase border border-primary text-primary"
