@@ -97,8 +97,7 @@ type Category =
   | "anillos"
   | "collares"
   | "aros"
-  | "pulseras"
-  | "taller";
+  | "pulseras";
 
 interface Piece {
   img: string;
