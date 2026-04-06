@@ -203,13 +203,6 @@ const pieces: Piece[] = [
   // ── Pulseras ──
   { img: galBrazaleteOro, name: "Brazalete Clásico", desc: "Oro 18k · Diseño Atemporal", category: "pulseras" },
 
-  // ── Taller ──
-  { img: galSesion5902, name: "Calado a Mano", desc: "Sierra de Joyero · Precisión", category: "taller" },
-  { img: galSesion5948, name: "Fundición de Oro", desc: "Soplete · Crisol Artesanal", category: "taller" },
-  { img: galSesion5962, name: "Laminado de Metal", desc: "Prensa de Laminación", category: "taller" },
-  { img: galSesion5984, name: "Formado del Anillo", desc: "Mandril · Trabajo Manual", category: "taller" },
-  { img: galSesion5890, name: "Test de Diamantes", desc: "Certificación GIA · Tester", category: "taller" },
-  { img: galSesion5898, name: "Diseño & Selección", desc: "Piedras · Calibrador Digital", category: "taller" },
 ];
 
 const AUTOPLAY_INTERVAL = 3000;
