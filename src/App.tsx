@@ -14,6 +14,7 @@ import QuoteDetail from "./pages/admin/QuoteDetail.tsx";
 import WishListAdmin from "./pages/admin/WishListAdmin.tsx";
 import NewsletterAdmin from "./pages/admin/NewsletterAdmin.tsx";
 import StatsAdmin from "./pages/admin/StatsAdmin.tsx";
+import ListaDeseos from "./pages/ListaDeseos.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/guia" element={<Guia />} />
             <Route path="/terminos" element={<Terminos />} />
+            <Route path="/lista-de-deseos" element={<ListaDeseos />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<Dashboard />} />
             <Route path="/admin/cotizacion/:id" element={<QuoteDetail />} />
