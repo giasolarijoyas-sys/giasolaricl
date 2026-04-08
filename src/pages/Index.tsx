@@ -8,7 +8,6 @@ import Testimonials from "@/components/Testimonials";
 import Historia from "@/components/Historia";
 import QuoteWizard from "@/components/QuoteWizard";
 import FAQAccordion from "@/components/FAQAccordion";
-import FAQAccordion from "@/components/FAQAccordion";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
