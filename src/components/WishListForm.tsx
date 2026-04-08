@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { Gift, Heart, Send, Loader2, Calendar, Sparkles, ImagePlus, Link, X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import logoIcon from "@/assets/logo-icon.png";
 
 const TIPO_JOYA_OPTIONS = [
   "Anillo de compromiso",
