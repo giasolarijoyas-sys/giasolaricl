@@ -14,6 +14,7 @@ import QuoteDetail from "./pages/admin/QuoteDetail.tsx";
 import WishListAdmin from "./pages/admin/WishListAdmin.tsx";
 import NewsletterAdmin from "./pages/admin/NewsletterAdmin.tsx";
 import StatsAdmin from "./pages/admin/StatsAdmin.tsx";
+import ListaDeseos from "./pages/ListaDeseos.tsx";
 
 const queryClient = new QueryClient();
 
