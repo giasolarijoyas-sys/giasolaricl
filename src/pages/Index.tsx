@@ -7,7 +7,7 @@ import ProcessSteps from "@/components/ProcessSteps";
 import Testimonials from "@/components/Testimonials";
 import Historia from "@/components/Historia";
 import QuoteWizard from "@/components/QuoteWizard";
-import WishListForm from "@/components/WishListForm";
+import FAQAccordion from "@/components/FAQAccordion";
 import FAQAccordion from "@/components/FAQAccordion";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
