@@ -77,12 +77,9 @@ const Index = () => {
         alt="Anillo solitario halo oval Gia Solari"
         text="Lista de Deseos"
         subtext="Cuéntanos qué te gustaría recibir"
-        ctaHref="#wish-list"
+        ctaHref="/lista-de-deseos"
         ctaLabel="Ir a la lista"
       />
-
-      {/* WishList form */}
-      <WishListForm />
 
       {/* Newsletter */}
       <Newsletter />
