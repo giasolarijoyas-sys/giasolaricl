@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { Gift, Heart, Send, Loader2, Calendar, Sparkles, ImagePlus, Link, X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import logoIcon from "@/assets/logo-icon.png";
 
 const TIPO_JOYA_OPTIONS = [
   "Anillo de compromiso",
@@ -149,6 +150,7 @@ const WishListForm = () => {
       <div className="container max-w-3xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10">
+          <img src={logoIcon} alt="Gia Solari" className="w-10 h-10 mx-auto mb-3 opacity-80" />
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-4">
             <Gift size={16} />
             Lista de deseos
@@ -157,7 +159,7 @@ const WishListForm = () => {
             Déjanos saber <em className="text-primary not-italic">qué te gustaría</em>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Cuéntanos qué joyas te hacen soñar y tus fechas importantes. La Maca se encargará de contactar a tu pareja en el momento justo para que te sorprenda con el regalo perfecto. <span className="font-medium text-foreground">Cuéntanos qué joyas te hacen soñar y tus fechas importantes. La Maca se encargará de contactar a tu pareja en el momento justo para que te sorprenda con el regalo perfecto. <span className="font-medium text-foreground">¡Tu pareja no se va a enterar que tú nos escribiste!</span></span>
+            Cuéntanos qué joyas te hacen soñar y tus fechas importantes. La Maca se encargará de contactar a tu pareja en el momento justo para que te sorprenda con el regalo perfecto. <span className="font-medium text-foreground">¡Tu pareja no se va a enterar que tú nos escribiste!</span>
           </p>
         </div>
 
