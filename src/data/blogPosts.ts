@@ -13,11 +13,11 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "oro-18k-vs-platino",
-    title: "Oro 18k vs Platino: ¿cuál elegir para tu argolla?",
+    title: "Oro 18k vs Platino: ¿cuál elegir para tu anillo?",
     category: "Guías",
     date: "2026-03-15",
     author: "Maca",
-    excerpt: "Ambos metales son hermosos y duraderos, pero tienen diferencias clave que debes conocer antes de elegir.",
+    excerpt: "Ambos metales son duraderos y elegantes, pero tienen diferencias clave que debes conocer antes de elegir.",
     content: `## ¿Oro 18k o Platino?
 
 Es una de las preguntas más frecuentes que recibo. Y la respuesta honesta es: depende de tu estilo de vida, tu presupuesto y tus preferencias estéticas.

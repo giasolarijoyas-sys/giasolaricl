@@ -61,11 +61,11 @@ const EnTusManos = () => {
 
         {/* Carousel */}
         <div
-          className="relative max-w-4xl mx-auto overflow-hidden rounded-lg"
+          className="relative max-w-md mx-auto overflow-hidden rounded-lg"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <div className="aspect-[4/3] md:aspect-[16/9] relative">
+          <div className="aspect-square relative">
             <AnimatePresence mode="wait">
               <motion.img
                 key={current}
@@ -80,10 +80,10 @@ const EnTusManos = () => {
             </AnimatePresence>
 
             {/* Overlay caption */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-4">
               <div>
-                <p className="text-white font-display text-lg">{slides[current].name}</p>
-                <p className="text-white/70 text-sm">{slides[current].piece}</p>
+                <p className="text-white font-display text-sm">{slides[current].name}</p>
+                <p className="text-white/70 text-xs">{slides[current].piece}</p>
               </div>
             </div>
           </div>
@@ -91,27 +91,27 @@ const EnTusManos = () => {
           {/* Arrows */}
           <button
             onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors"
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors"
             aria-label="Anterior"
           >
-            <ChevronLeft className="w-5 h-5 text-foreground" />
+            <ChevronLeft className="w-4 h-4 text-foreground" />
           </button>
           <button
             onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors"
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors"
             aria-label="Siguiente"
           >
-            <ChevronRight className="w-5 h-5 text-foreground" />
+            <ChevronRight className="w-4 h-4 text-foreground" />
           </button>
 
           {/* Dots */}
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
             {slides.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  i === current ? "bg-primary w-5" : "bg-white/50 hover:bg-white/80"
+                className={`w-1.5 h-1.5 rounded-full transition-all ${
+                  i === current ? "bg-primary w-4" : "bg-white/50 hover:bg-white/80"
                 }`}
                 aria-label={`Foto ${i + 1}`}
               />
