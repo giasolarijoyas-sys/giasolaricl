@@ -55,7 +55,7 @@ const BlogPost = () => {
           <div className="container mx-auto px-4 md:px-8 max-w-[700px]">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <Link to="/blog" className="text-primary text-sm tracking-widest uppercase mb-6 inline-block hover:underline">← Blog</Link>
-              <div className="aspect-[16/9] bg-muted rounded-lg mb-8" />
+              
               <span className="text-primary text-xs tracking-widest uppercase">{post.category}</span>
               <h1 className="font-display text-3xl md:text-4xl text-foreground mt-2 mb-4">{post.title}</h1>
               <div className="flex items-center gap-3 text-muted-foreground text-sm mb-10">
@@ -83,7 +83,7 @@ const BlogPost = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   {related.map((r) => (
                     <Link key={r.slug} to={`/blog/${r.slug}`} className="group block">
-                      <div className="aspect-[16/10] bg-muted rounded-lg mb-3" />
+                      
                       <span className="text-primary text-xs tracking-widest uppercase">{r.category}</span>
                       <h4 className="font-display text-foreground mt-1 group-hover:text-primary transition-colors">{r.title}</h4>
                     </Link>
