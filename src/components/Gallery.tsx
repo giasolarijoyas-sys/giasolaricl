@@ -42,20 +42,15 @@ import galSesion5835 from "@/assets/gal-sesion-dsc_5835.jpg";
 import galSesion5848 from "@/assets/gal-sesion-dsc_5848.jpg";
 import galSesion5863 from "@/assets/gal-sesion-dsc_5863.jpg";
 import galSesion5881 from "@/assets/gal-sesion-dsc_5881.jpg";
-import galSesion5890 from "@/assets/gal-sesion-dsc_5890.jpg";
-import galSesion5898 from "@/assets/gal-sesion-dsc_5898.jpg";
-import galSesion5902 from "@/assets/gal-sesion-dsc_5902.jpg";
 import galSesion5913 from "@/assets/gal-sesion-dsc_5913.jpg";
 import galSesion5915 from "@/assets/gal-sesion-dsc_5915.jpg";
 import galSesion5923 from "@/assets/gal-sesion-dsc_5923.jpg";
 import galSesion5927 from "@/assets/gal-sesion-dsc_5927.jpg";
 import galSesion5936 from "@/assets/gal-sesion-dsc_5936.jpg";
 import galSesion5938 from "@/assets/gal-sesion-dsc_5938.jpg";
-import galSesion5948 from "@/assets/gal-sesion-dsc_5948.jpg";
 import galSesion5962 from "@/assets/gal-sesion-dsc_5962.jpg";
 import galSesion5970 from "@/assets/gal-sesion-dsc_5970.jpg";
 import galSesion5977 from "@/assets/gal-sesion-dsc_5977.jpg";
-import galSesion5984 from "@/assets/gal-sesion-dsc_5984.jpg";
 
 // Product photos
 import galProd2059 from "@/assets/gal-prod-img_2059.jpg";
@@ -102,7 +97,7 @@ type Category =
   | "aros"
   | "pulseras";
 
-type Material = "todos" | "oro18k" | "platino" | "plata950";
+type Material = "todos" | "oro18k" | "platino";
 type Estilo = "todos" | "solitario" | "pave" | "halo" | "tres-piedras" | "minimalista";
 
 interface Piece {
@@ -127,7 +122,6 @@ const materials: { key: Material; label: string }[] = [
   { key: "todos", label: "Todos" },
   { key: "oro18k", label: "Oro 18k" },
   { key: "platino", label: "Platino" },
-  { key: "plata950", label: "Plata 950" },
 ];
 
 const estilos: { key: Estilo; label: string }[] = [
