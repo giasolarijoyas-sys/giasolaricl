@@ -224,6 +224,9 @@ const pieces: Piece[] = [
   // ── Individual uploads ──
   { img: galNusaDetail, name: "Anillo Nusa Detalle", desc: "Zafiro Azul · Vista Macro", category: "anillos" },
   { img: galVintageDetail, name: "Vintage Filigrana", desc: "Diamante · Vista Macro", category: "anillos" },
+  { img: galHaloOlivo, name: "Halo Olivo", desc: "Diamante · Halo Pavé", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloVintageCaja, name: "Halo Vintage", desc: "Diamante · Caja Terciopelo", category: "anillos", material: "oro18k", estilo: "halo" },
+  { img: galHaloEucalipto, name: "Halo Eucalipto", desc: "Diamante · Halo Milgrain", category: "anillos", material: "platino", estilo: "halo" },
 
   // ── Collares ──
   { img: galProd2214, name: "Cadena Eslabones", desc: "Oro 18k · Aros Diamante", category: "collares" },
