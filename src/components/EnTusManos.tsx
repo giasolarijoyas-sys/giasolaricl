@@ -14,16 +14,16 @@ import foto9 from "@/assets/en-tus-manos-9.jpg";
 import foto10 from "@/assets/en-tus-manos-10.jpg";
 
 const slides = [
-  { id: 0, src: foto1, name: "Anillo de compromiso", piece: "Halo con zafiro" },
-  { id: 1, src: foto2, name: "Momento especial", piece: "Anillo solitario" },
-  { id: 2, src: foto3, name: "Amor eterno", piece: "Anillo de compromiso" },
-  { id: 3, src: foto4, name: "Aventura juntos", piece: "Anillo con diamante" },
-  { id: 4, src: foto5, name: "Felicidad pura", piece: "Cintillo de diamantes" },
-  { id: 5, src: foto6, name: "En la playa", piece: "Anillo halo" },
-  { id: 6, src: foto7, name: "Tarde en el parque", piece: "Cintillo pavé" },
-  { id: 7, src: foto8, name: "Aurora boreal", piece: "Anillo de compromiso" },
-  { id: 8, src: foto9, name: "Nuevos novios GIA", piece: "Anillo pavé" },
-  { id: 9, src: foto10, name: "Juntos siempre", piece: "Anillo solitario" },
+  { id: 0, src: foto1 },
+  { id: 1, src: foto2 },
+  { id: 2, src: foto3 },
+  { id: 3, src: foto4 },
+  { id: 4, src: foto5 },
+  { id: 5, src: foto6 },
+  { id: 6, src: foto7 },
+  { id: 7, src: foto8 },
+  { id: 8, src: foto9 },
+  { id: 9, src: foto10 },
 ];
 
 const AUTOPLAY = 4000;
@@ -61,31 +61,23 @@ const EnTusManos = () => {
 
         {/* Carousel */}
         <div
-          className="relative max-w-md mx-auto overflow-hidden rounded-lg"
+          className="relative max-w-xs mx-auto overflow-hidden rounded-lg"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <div className="aspect-square relative">
+          <div className="aspect-[3/4] relative">
             <AnimatePresence mode="wait">
               <motion.img
                 key={current}
                 src={slides[current].src}
-                alt={slides[current].name}
+                alt={`Clientas Gia Solari ${current + 1}`}
                 initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -60 }}
                 transition={{ duration: 0.4 }}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover scale-[0.85]"
               />
             </AnimatePresence>
-
-            {/* Overlay caption */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-4">
-              <div>
-                <p className="text-white font-display text-sm">{slides[current].name}</p>
-                <p className="text-white/70 text-xs">{slides[current].piece}</p>
-              </div>
-            </div>
           </div>
 
           {/* Arrows */}
