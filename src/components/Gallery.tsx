@@ -91,6 +91,9 @@ import galProd2214 from "@/assets/gal-prod-img_2214.jpg";
 // Individual uploads
 import galNusaDetail from "@/assets/gal-nusa-detail.jpg";
 import galVintageDetail from "@/assets/gal-vintage-detail.jpg";
+import galHaloOlivo from "@/assets/gal-halo-olivo.png";
+import galHaloVintageCaja from "@/assets/gal-halo-vintage-caja.png";
+import galHaloEucalipto from "@/assets/gal-halo-eucalipto.png";
 
 type Category =
   | "todas"
