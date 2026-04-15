@@ -91,6 +91,9 @@ import galProd2214 from "@/assets/gal-prod-img_2214.jpg";
 // Individual uploads
 import galNusaDetail from "@/assets/gal-nusa-detail.jpg";
 import galVintageDetail from "@/assets/gal-vintage-detail.jpg";
+import galHaloOlivo from "@/assets/gal-halo-olivo.png";
+import galHaloVintageCaja from "@/assets/gal-halo-vintage-caja.png";
+import galHaloEucalipto from "@/assets/gal-halo-eucalipto.png";
 
 type Category =
   | "todas"
@@ -221,6 +224,9 @@ const pieces: Piece[] = [
   // ── Individual uploads ──
   { img: galNusaDetail, name: "Anillo Nusa Detalle", desc: "Zafiro Azul · Vista Macro", category: "anillos" },
   { img: galVintageDetail, name: "Vintage Filigrana", desc: "Diamante · Vista Macro", category: "anillos" },
+  { img: galHaloOlivo, name: "Halo Olivo", desc: "Diamante · Halo Pavé", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloVintageCaja, name: "Halo Vintage", desc: "Diamante · Caja Terciopelo", category: "anillos", material: "oro18k", estilo: "halo" },
+  { img: galHaloEucalipto, name: "Halo Eucalipto", desc: "Diamante · Halo Milgrain", category: "anillos", material: "platino", estilo: "halo" },
 
   // ── Collares ──
   { img: galProd2214, name: "Cadena Eslabones", desc: "Oro 18k · Aros Diamante", category: "collares" },
