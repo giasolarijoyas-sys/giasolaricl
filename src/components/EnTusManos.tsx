@@ -55,7 +55,7 @@ const EnTusManos = () => {
             En tus manos
           </h2>
           <p className="text-muted-foreground mt-4 max-w-md mx-auto italic">
-            Las joyas viven cuando las llevan quienes amo
+            Cada joya, una historia que empieza a usarse y crear su historia
           </p>
         </motion.div>
 
