@@ -306,28 +306,52 @@ const Gallery = () => {
           </p>
         </motion.div>
 
-        {/* Category filters */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {categories.map((cat) => {
-            const count = countFor(cat.key);
-            if (count === 0 && cat.key !== "todas") return null;
-            return (
+        {/* Filters */}
+        <div className="space-y-4 mb-10">
+          <div className="flex flex-wrap justify-center gap-2">
+            {categories.map((cat) => (
               <button
                 key={cat.key}
                 onClick={() => setActive(cat.key)}
                 className={`px-4 py-2 rounded-full text-sm transition-all border ${
                   active === cat.key
-                    ? "bg-primary text-primary-foreground border-primary"
+                    ? "bg-primary/15 text-foreground border-primary"
                     : "bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
                 }`}
               >
                 {cat.label}
-                {cat.key !== "todas" && (
-                  <span className="ml-1.5 text-xs opacity-60">({count})</span>
-                )}
               </button>
-            );
-          })}
+            ))}
+          </div>
+          <div className="flex flex-wrap justify-center gap-2">
+            {materials.map((m) => (
+              <button
+                key={m.key}
+                onClick={() => setActiveMaterial(m.key)}
+                className={`px-3 py-1.5 rounded-full text-xs transition-all border ${
+                  activeMaterial === m.key
+                    ? "bg-primary/15 text-foreground border-primary"
+                    : "bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
+                }`}
+              >
+                {m.label}
+              </button>
+            ))}
+            <span className="w-px h-6 bg-border self-center mx-1" />
+            {estilos.map((e) => (
+              <button
+                key={e.key}
+                onClick={() => setActiveEstilo(e.key)}
+                className={`px-3 py-1.5 rounded-full text-xs transition-all border ${
+                  activeEstilo === e.key
+                    ? "bg-primary/15 text-foreground border-primary"
+                    : "bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
+                }`}
+              >
+                {e.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Empty state */}
