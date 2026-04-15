@@ -40,7 +40,7 @@ const Aprende = () => (
       description="Todo lo que necesitas saber antes de comprar tu anillo de compromiso o joya a medida: diamantes, metales, tallas y más."
       path="/aprende"
     />
-    </Helmet>
+    
     <div className="min-h-screen">
       <Navbar />
       <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">
