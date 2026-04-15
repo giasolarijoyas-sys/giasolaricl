@@ -32,18 +32,13 @@ const Footer = () => {
               Información
             </p>
             <div className="flex flex-col gap-2">
-              <a
-                href="https://calendly.com/giasolarijoyas"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm hover:text-gold transition-colors"
-              >
-                Agenda tu Visita
-              </a>
-              <a href="/terminos" className="text-sm hover:text-gold transition-colors">Políticas de cambios y garantías</a>
-              <a href="/guia#garantia" className="text-sm hover:text-gold transition-colors">Confianza y certificación</a>
-              <a href="/guia#faq" className="text-sm hover:text-gold transition-colors">Preguntas frecuentes</a>
-              <a href="/admin" className="text-sm hover:text-gold transition-colors text-cream/40">Administracion</a>
+              <a href="/sobre-gia" className="text-sm hover:text-gold transition-colors">Sobre Gia</a>
+              <a href="/preguntas-frecuentes" className="text-sm hover:text-gold transition-colors">Preguntas frecuentes</a>
+              <a href="/guia-de-tallas" className="text-sm hover:text-gold transition-colors">Guía de tallas</a>
+              <a href="/cuidado-de-la-joya" className="text-sm hover:text-gold transition-colors">Cuidado de tu joya</a>
+              <a href="/garantia-por-gusto" className="text-sm hover:text-gold transition-colors">Garantía por gusto</a>
+              <a href="/terminos" className="text-sm hover:text-gold transition-colors">Políticas y términos</a>
+              <a href="/admin" className="text-sm hover:text-gold transition-colors text-cream/40">Administración</a>
             </div>
           </div>
 

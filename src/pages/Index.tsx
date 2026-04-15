@@ -1,13 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import TrustBadges from "@/components/TrustBadges";
 import Marquee from "@/components/Marquee";
 import Gallery from "@/components/Gallery";
 import WhyUs from "@/components/WhyUs";
 import ProcessSteps from "@/components/ProcessSteps";
+import VideoSection from "@/components/VideoSection";
 import Testimonials from "@/components/Testimonials";
 import Historia from "@/components/Historia";
 import QuoteWizard from "@/components/QuoteWizard";
 import FAQAccordion from "@/components/FAQAccordion";
+import EnTusManos from "@/components/EnTusManos";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -28,6 +31,9 @@ const Index = () => {
       {/* 2. Hero con slideshow */}
       <Hero />
 
+      {/* Trust badges */}
+      <TrustBadges />
+
       {/* 3. Barra marquee de keywords */}
       <Marquee />
 
@@ -46,6 +52,9 @@ const Index = () => {
 
       {/* 6. Proceso paso a paso */}
       <ProcessSteps />
+
+      {/* Video section */}
+      <VideoSection />
 
       <SectionBanner
         image={bannerHands}
@@ -66,8 +75,6 @@ const Index = () => {
         text="Tu Historia, Nuestra Inspiración"
       />
 
-      {/* 9. Guía — enlace en nav */}
-
       {/* 10. Formulario de cotización (wizard) */}
       <QuoteWizard />
 
@@ -79,6 +86,9 @@ const Index = () => {
         ctaHref="/lista-de-deseos"
         ctaLabel="Ir a la lista"
       />
+
+      {/* En tus manos gallery */}
+      <EnTusManos />
 
       {/* Newsletter */}
       <Newsletter />

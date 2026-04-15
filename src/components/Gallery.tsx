@@ -99,28 +99,53 @@ type Category =
   | "aros"
   | "pulseras";
 
+type Material = "todos" | "oro18k" | "platino" | "plata950";
+type Estilo = "todos" | "solitario" | "pave" | "halo" | "tres-piedras" | "minimalista";
+
 interface Piece {
   img: string;
   name: string;
   desc: string;
   category: Category;
+  material?: Material;
+  estilo?: Estilo;
+  priceFrom?: number;
 }
 
 const categories: { key: Category; label: string }[] = [
-  { key: "todas", label: "Todas" },
-  { key: "anillos", label: "Anillos" },
+  { key: "todas", label: "Todos" },
+  { key: "anillos", label: "Anillos de compromiso" },
   { key: "collares", label: "Collares" },
   { key: "aros", label: "Aros" },
-  { key: "pulseras", label: "Pulseras & Esclavas" },
+  { key: "pulseras", label: "Pulseras" },
 ];
+
+const materials: { key: Material; label: string }[] = [
+  { key: "todos", label: "Todos" },
+  { key: "oro18k", label: "Oro 18k" },
+  { key: "platino", label: "Platino" },
+  { key: "plata950", label: "Plata 950" },
+];
+
+const estilos: { key: Estilo; label: string }[] = [
+  { key: "todos", label: "Todos" },
+  { key: "solitario", label: "Solitario" },
+  { key: "pave", label: "Pavé" },
+  { key: "halo", label: "Halo" },
+  { key: "tres-piedras", label: "Tres piedras" },
+  { key: "minimalista", label: "Minimalista" },
+];
+
+const formatPrice = (n: number) =>
+  "$" + n.toLocaleString("es-CL") + " CLP";
 
 const pieces: Piece[] = [
   // ── Original ring collection ──
-  { img: galSolitarioCaja, name: "Solitario Clásico", desc: "Diamante · Caja Gia Solari", category: "anillos" },
-  { img: galPrincesaMarco, name: "Anillo Tres Piedras", desc: "Corte Princesa · Platino", category: "anillos" },
-  { img: galZafiro, name: "Anillo Diana", desc: "Zafiro Azul · Halo Diamantes", category: "anillos" },
-  { img: galEsmeraldaHalo, name: "Anillo Celeste", desc: "Corte Esmeralda · Halo Pavé", category: "anillos" },
-  { img: galOvalPave, name: "Anillo Paraíba", desc: "Turmalina Oval · Pavé Diamantes", category: "anillos" },
+  { img: galSolitarioCaja, name: "Solitario Clásico", desc: "Diamante · Caja Gia Solari", category: "anillos", material: "oro18k", estilo: "solitario", priceFrom: 1200000 },
+  { img: galPrincesaMarco, name: "Anillo Tres Piedras", desc: "Corte Princesa · Platino", category: "anillos", material: "platino", estilo: "tres-piedras", priceFrom: 2500000 },
+  { img: galZafiro, name: "Anillo Diana", desc: "Zafiro Azul · Halo Diamantes", category: "anillos", material: "oro18k", estilo: "halo", priceFrom: 1800000 },
+  { img: galEsmeraldaHalo, name: "Anillo Celeste", desc: "Corte Esmeralda · Halo Pavé", category: "anillos", material: "oro18k", estilo: "halo", priceFrom: 2200000 },
+  { img: galOvalPave, name: "Anillo Paraíba", desc: "Turmalina Oval · Pavé Diamantes", category: "anillos", material: "oro18k", estilo: "pave", priceFrom: 1900000 },
   { img: galHaloZafiro, name: "Anillo Royal", desc: "Zafiro Oval · Halo Clásico", category: "anillos" },
   { img: galTricillo, name: "Anillo Reina", desc: "Tricillo Diamantes · Platino", category: "anillos" },
   { img: galArtDeco, name: "Anillo Gatsby", desc: "Corte Princesa · Art Déco", category: "anillos" },
@@ -209,7 +234,15 @@ const AUTOPLAY_INTERVAL = 3000;
 
 const Gallery = () => {
   const [active, setActive] = useState<Category>("todas");
-  const filtered = active === "todas" ? pieces : pieces.filter((p) => p.category === active);
+  const [activeMaterial, setActiveMaterial] = useState<Material>("todos");
+  const [activeEstilo, setActiveEstilo] = useState<Estilo>("todos");
+
+  const filtered = pieces.filter((p) => {
+    if (active !== "todas" && p.category !== active) return false;
+    if (activeMaterial !== "todos" && p.material !== activeMaterial) return false;
+    if (activeEstilo !== "todos" && p.estilo !== activeEstilo) return false;
+    return true;
+  });
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
@@ -246,10 +279,9 @@ const Gallery = () => {
     };
   }, [emblaApi, onSelect]);
 
-  // Re-init when filter changes
   useEffect(() => {
     if (emblaApi) emblaApi.reInit();
-  }, [active, emblaApi]);
+  }, [active, activeMaterial, activeEstilo, emblaApi]);
 
   const countFor = (cat: Category) =>
     cat === "todas" ? pieces.length : pieces.filter((p) => p.category === cat).length;
@@ -274,28 +306,52 @@ const Gallery = () => {
           </p>
         </motion.div>
 
-        {/* Category filters */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {categories.map((cat) => {
-            const count = countFor(cat.key);
-            if (count === 0 && cat.key !== "todas") return null;
-            return (
+        {/* Filters */}
+        <div className="space-y-4 mb-10">
+          <div className="flex flex-wrap justify-center gap-2">
+            {categories.map((cat) => (
               <button
                 key={cat.key}
                 onClick={() => setActive(cat.key)}
                 className={`px-4 py-2 rounded-full text-sm transition-all border ${
                   active === cat.key
-                    ? "bg-primary text-primary-foreground border-primary"
+                    ? "bg-primary/15 text-foreground border-primary"
                     : "bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
                 }`}
               >
                 {cat.label}
-                {cat.key !== "todas" && (
-                  <span className="ml-1.5 text-xs opacity-60">({count})</span>
-                )}
               </button>
-            );
-          })}
+            ))}
+          </div>
+          <div className="flex flex-wrap justify-center gap-2">
+            {materials.map((m) => (
+              <button
+                key={m.key}
+                onClick={() => setActiveMaterial(m.key)}
+                className={`px-3 py-1.5 rounded-full text-xs transition-all border ${
+                  activeMaterial === m.key
+                    ? "bg-primary/15 text-foreground border-primary"
+                    : "bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
+                }`}
+              >
+                {m.label}
+              </button>
+            ))}
+            <span className="w-px h-6 bg-border self-center mx-1" />
+            {estilos.map((e) => (
+              <button
+                key={e.key}
+                onClick={() => setActiveEstilo(e.key)}
+                className={`px-3 py-1.5 rounded-full text-xs transition-all border ${
+                  activeEstilo === e.key
+                    ? "bg-primary/15 text-foreground border-primary"
+                    : "bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
+                }`}
+              >
+                {e.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Empty state */}
@@ -337,6 +393,9 @@ const Gallery = () => {
                             {piece.name}
                           </p>
                           <p className="text-cream/60 text-xs">{piece.desc}</p>
+                          {piece.priceFrom && (
+                            <p className="text-cream/50 text-xs mt-1">Desde {formatPrice(piece.priceFrom)}</p>
+                          )}
                         </div>
                       </div>
                     </div>
