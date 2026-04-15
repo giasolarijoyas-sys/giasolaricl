@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -66,9 +67,12 @@ const BlogPost = () => {
         <article className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">
            <div className="container mx-auto px-4 md:px-8 max-w-[700px]">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+              <SEO
+                title={`${post.title} | Gia Solari Blog`}
+                description={post.excerpt}
+                path={`/blog/${post.slug}`}
+              />
               <Helmet>
-                <title>{post.title} | Gia Solari Blog</title>
-                <meta name="description" content={post.excerpt} />
                 <script type="application/ld+json">{JSON.stringify(articleJsonLd)}</script>
               </Helmet>
               <Breadcrumbs items={[{ label: "Blog", path: "/blog" }, { label: post.title }]} />
