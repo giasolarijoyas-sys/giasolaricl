@@ -99,20 +99,45 @@ type Category =
   | "aros"
   | "pulseras";
 
+type Material = "todos" | "oro18k" | "platino" | "plata950";
+type Estilo = "todos" | "solitario" | "pave" | "halo" | "tres-piedras" | "minimalista";
+
 interface Piece {
   img: string;
   name: string;
   desc: string;
   category: Category;
+  material?: Material;
+  estilo?: Estilo;
+  priceFrom?: number;
 }
 
 const categories: { key: Category; label: string }[] = [
-  { key: "todas", label: "Todas" },
-  { key: "anillos", label: "Anillos" },
+  { key: "todas", label: "Todos" },
+  { key: "anillos", label: "Anillos de compromiso" },
   { key: "collares", label: "Collares" },
   { key: "aros", label: "Aros" },
-  { key: "pulseras", label: "Pulseras & Esclavas" },
+  { key: "pulseras", label: "Pulseras" },
 ];
+
+const materials: { key: Material; label: string }[] = [
+  { key: "todos", label: "Todos" },
+  { key: "oro18k", label: "Oro 18k" },
+  { key: "platino", label: "Platino" },
+  { key: "plata950", label: "Plata 950" },
+];
+
+const estilos: { key: Estilo; label: string }[] = [
+  { key: "todos", label: "Todos" },
+  { key: "solitario", label: "Solitario" },
+  { key: "pave", label: "Pavé" },
+  { key: "halo", label: "Halo" },
+  { key: "tres-piedras", label: "Tres piedras" },
+  { key: "minimalista", label: "Minimalista" },
+];
+
+const formatPrice = (n: number) =>
+  "$" + n.toLocaleString("es-CL") + " CLP";
 
 const pieces: Piece[] = [
   // ── Original ring collection ──
