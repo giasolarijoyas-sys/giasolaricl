@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -8,10 +8,11 @@ import { Link } from "react-router-dom";
 
 const ComoElegirAnillo = () => (
   <>
-    <Helmet>
-      <title>Cómo Elegir tu Anillo de Compromiso — Guía Paso a Paso | Gia Solari</title>
-      <meta name="description" content="Guía completa para elegir el anillo de compromiso perfecto: presupuesto, estilo, talla y la gran pregunta." />
-    </Helmet>
+    <SEO
+      title="Cómo Elegir el Anillo de Compromiso Perfecto — Guía 2026"
+      description="Guía paso a paso para elegir el anillo de compromiso ideal: presupuesto, estilo, forma del diamante, talla y más. Por Gia Solari Joyas."
+      path="/aprende/como-elegir-anillo-compromiso"
+    />
     <div className="min-h-screen">
       <Navbar />
       <article className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">

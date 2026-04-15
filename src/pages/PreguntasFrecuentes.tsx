@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -20,9 +21,12 @@ const faqs = [
 
 const PreguntasFrecuentes = () => (
   <>
+    <SEO
+      title="Preguntas Frecuentes | Gia Solari Joyas"
+      description="Resolvemos las dudas más comunes sobre anillos de compromiso, diamantes, oro 18k, platino, plazos de entrega y proceso de diseño personalizado."
+      path="/preguntas-frecuentes"
+    />
     <Helmet>
-      <title>Preguntas Frecuentes | Gia Solari Joyas</title>
-      <meta name="description" content="Resolvemos tus dudas sobre joyas a medida, diamantes, plazos, precios y garantía." />
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",

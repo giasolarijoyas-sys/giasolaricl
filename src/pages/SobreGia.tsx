@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -14,10 +14,11 @@ const valores = [
 
 const SobreGia = () => (
   <>
-    <Helmet>
-      <title>Sobre Gia Solari | Joyería a Medida en Santiago</title>
-      <meta name="description" content="Conoce a Maca, diseñadora y gemóloga detrás de Gia Solari. Joyas a medida en Santiago desde 2019." />
-    </Helmet>
+    <SEO
+      title="Sobre Maca | Diseñadora y Gemóloga — Gia Solari Joyas"
+      description="Conoce a Macarena González Solari, diseñadora y gemóloga detrás de Gia Solari. Joyas de autor a medida en Santiago desde 2019."
+      path="/sobre-gia"
+    />
     <div className="min-h-screen">
       <Navbar />
 

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -35,10 +35,12 @@ const articles = [
 
 const Aprende = () => (
   <>
-    <Helmet>
-      <title>Aprende sobre Joyas | Gia Solari</title>
-      <meta name="description" content="Guías educativas sobre diamantes, metales preciosos y cómo elegir la joya perfecta." />
-    </Helmet>
+    <SEO
+      title="Aprende sobre Joyería | Guías y Consejos — Gia Solari"
+      description="Todo lo que necesitas saber antes de comprar tu anillo de compromiso o joya a medida: diamantes, metales, tallas y más."
+      path="/aprende"
+    />
+    
     <div className="min-h-screen">
       <Navbar />
       <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">

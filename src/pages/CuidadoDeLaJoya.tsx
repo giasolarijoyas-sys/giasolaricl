@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -16,10 +16,11 @@ const tips = [
 
 const CuidadoDeLaJoya = () => (
   <>
-    <Helmet>
-      <title>Cuidado de tu Joya | Gia Solari</title>
-      <meta name="description" content="Tips para mantener tu joya como nueva. Guía de cuidado para oro 18k, platino y piedras preciosas." />
-    </Helmet>
+    <SEO
+      title="Cómo Cuidar tu Joya | Consejos de Gia Solari"
+      description="Aprende a cuidar tus joyas de oro 18k, platino y diamantes para que duren generaciones. Limpieza, almacenamiento y qué evitar."
+      path="/cuidado-de-la-joya"
+    />
     <div className="min-h-screen">
       <Navbar />
       <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">

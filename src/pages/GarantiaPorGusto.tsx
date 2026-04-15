@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -14,10 +14,11 @@ const items = [
 
 const GarantiaPorGusto = () => (
   <>
-    <Helmet>
-      <title>Garantía por Gusto | Gia Solari</title>
-      <meta name="description" content="Si no te encanta tu joya, la cambiamos. Conoce nuestra garantía por gusto, cambios de talla gratis y más." />
-    </Helmet>
+    <SEO
+      title="Garantía por Gusto | Solo en Gia Solari Joyas"
+      description="La única joyería en Chile que ofrece garantía por gusto. Si tu joya no te enamora al recibirla, la rehacemos. Así de seguros estamos de nuestro proceso."
+      path="/garantia-por-gusto"
+    />
     <div className="min-h-screen">
       <Navbar />
       <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">

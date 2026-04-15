@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -8,10 +8,11 @@ import { Link } from "react-router-dom";
 
 const Blog = () => (
   <>
-    <Helmet>
-      <title>Blog | Gia Solari — Guías de Joyería y Diamantes</title>
-      <meta name="description" content="Guías, tendencias y consejos de joyería por Maca de Gia Solari." />
-    </Helmet>
+    <SEO
+      title="Blog | Gia Solari Joyas"
+      description="Historias de diseño, tendencias en joyería y consejos para elegir tu anillo de compromiso o joya a medida."
+      path="/blog"
+    />
     <div className="min-h-screen">
       <Navbar />
       <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">
