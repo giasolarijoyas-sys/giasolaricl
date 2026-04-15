@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const testimonials = [
   {
@@ -99,6 +100,26 @@ const Testimonials = () => {
 
   const t = testimonials[current];
 
+  const reviewJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "JewelryStore",
+    "name": "Gia Solari Joyas",
+    "url": "https://www.giasolari.cl",
+    "review": testimonials.map(t => ({
+      "@type": "Review",
+      "author": { "@type": "Person", "name": t.name },
+      "reviewBody": t.text,
+      "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
+      "itemReviewed": { "@type": "Product", "name": t.piece },
+    })),
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 5,
+      "reviewCount": testimonials.length,
+      "bestRating": 5,
+    },
+  };
+
   return (
     <section
       id="testimonios"
@@ -106,6 +127,9 @@ const Testimonials = () => {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(reviewJsonLd)}</script>
+      </Helmet>
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
