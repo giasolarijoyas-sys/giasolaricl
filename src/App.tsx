@@ -15,6 +15,18 @@ import WishListAdmin from "./pages/admin/WishListAdmin.tsx";
 import NewsletterAdmin from "./pages/admin/NewsletterAdmin.tsx";
 import StatsAdmin from "./pages/admin/StatsAdmin.tsx";
 import ListaDeseos from "./pages/ListaDeseos.tsx";
+import SobreGia from "./pages/SobreGia.tsx";
+import PreguntasFrecuentes from "./pages/PreguntasFrecuentes.tsx";
+import GuiaDeTallas from "./pages/GuiaDeTallas.tsx";
+import CuidadoDeLaJoya from "./pages/CuidadoDeLaJoya.tsx";
+import GarantiaPorGusto from "./pages/GarantiaPorGusto.tsx";
+import Blog from "./pages/Blog.tsx";
+import BlogPost from "./pages/BlogPost.tsx";
+import Aprende from "./pages/Aprende.tsx";
+import AprendeDiamantes4C from "./pages/aprende/Diamantes4C.tsx";
+import OroVsPlatino from "./pages/aprende/OroVsPlatino.tsx";
+import NaturalVsLab from "./pages/aprende/NaturalVsLab.tsx";
+import ComoElegirAnillo from "./pages/aprende/ComoElegirAnillo.tsx";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +42,18 @@ const App = () => (
             <Route path="/guia" element={<Guia />} />
             <Route path="/terminos" element={<Terminos />} />
             <Route path="/lista-de-deseos" element={<ListaDeseos />} />
+            <Route path="/sobre-gia" element={<SobreGia />} />
+            <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes />} />
+            <Route path="/guia-de-tallas" element={<GuiaDeTallas />} />
+            <Route path="/cuidado-de-la-joya" element={<CuidadoDeLaJoya />} />
+            <Route path="/garantia-por-gusto" element={<GarantiaPorGusto />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/aprende" element={<Aprende />} />
+            <Route path="/aprende/diamantes-4c" element={<AprendeDiamantes4C />} />
+            <Route path="/aprende/oro-vs-platino" element={<OroVsPlatino />} />
+            <Route path="/aprende/diamante-natural-vs-laboratorio" element={<NaturalVsLab />} />
+            <Route path="/aprende/como-elegir-anillo-compromiso" element={<ComoElegirAnillo />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<Dashboard />} />
             <Route path="/admin/cotizacion/:id" element={<QuoteDetail />} />
