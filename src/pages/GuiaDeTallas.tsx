@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -19,10 +19,11 @@ const tallas = [
 
 const GuiaDeTallas = () => (
   <>
-    <Helmet>
-      <title>Guía de Tallas de Anillos | Gia Solari</title>
-      <meta name="description" content="Aprende a medir tu talla de anillo en casa. Tabla completa de medidas con circunferencia y diámetro." />
-    </Helmet>
+    <SEO
+      title="Guía de Tallas de Anillos | Mide tu Talla en Casa — Gia Solari"
+      description="Guía completa para medir la talla de tu anillo en casa, con tabla de circunferencia y diámetro. Perfecta para sorprender con un anillo de compromiso."
+      path="/guia-de-tallas"
+    />
     <div className="min-h-screen">
       <Navbar />
       <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">
