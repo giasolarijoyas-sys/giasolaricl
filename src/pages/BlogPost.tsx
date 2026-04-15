@@ -41,6 +41,26 @@ const BlogPost = () => {
     datePublished: post.date,
     dateModified: post.date,
   };
+
+  // Simple markdown-like rendering
+  const renderContent = (content: string) => {
+    return content.split("\n").map((line, i) => {
+      if (line.startsWith("### ")) return <h3 key={i} className="font-display text-xl text-foreground mt-8 mb-3">{line.slice(4)}</h3>;
+      if (line.startsWith("## ")) return <h2 key={i} className="font-display text-2xl text-foreground mt-10 mb-4">{line.slice(3)}</h2>;
+      if (line.startsWith("- **")) {
+        const parts = line.slice(2).split("**: ");
+        return <li key={i} className="mb-1"><strong className="text-foreground">{parts[0].replace(/\*\*/g, "")}</strong>: {parts[1]}</li>;
+      }
+      if (line.startsWith("- ")) return <li key={i} className="mb-1">{line.slice(2)}</li>;
+      if (line.startsWith("**") && line.endsWith("**")) return <p key={i} className="text-foreground font-medium my-3">{line.replace(/\*\*/g, "")}</p>;
+      if (line.trim() === "") return <br key={i} />;
+      const rendered = line.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>');
+      return <p key={i} className="mb-2" dangerouslySetInnerHTML={{ __html: rendered }} />;
+    });
+  };
+
+  return (
+    <>
       <div className="min-h-screen">
         <Navbar />
         <article className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">
