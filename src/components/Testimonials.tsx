@@ -127,6 +127,9 @@ const Testimonials = () => {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(reviewJsonLd)}</script>
+      </Helmet>
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
