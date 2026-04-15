@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const AprendeDiamantes4C = () => (
   <>
