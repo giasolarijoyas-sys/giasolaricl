@@ -3,11 +3,27 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import foto1 from "@/assets/en-tus-manos-1.jpg";
-import foto2 from "@/assets/en-tus-manos-2.png";
+import foto2 from "@/assets/en-tus-manos-2.jpg";
+import foto3 from "@/assets/en-tus-manos-3.jpg";
+import foto4 from "@/assets/en-tus-manos-4.jpg";
+import foto5 from "@/assets/en-tus-manos-5.jpg";
+import foto6 from "@/assets/en-tus-manos-6.jpg";
+import foto7 from "@/assets/en-tus-manos-7.jpg";
+import foto8 from "@/assets/en-tus-manos-8.jpg";
+import foto9 from "@/assets/en-tus-manos-9.jpg";
+import foto10 from "@/assets/en-tus-manos-10.jpg";
 
 const slides = [
-  { id: 0, src: foto1, name: "Momento especial", piece: "Novios con sus argollas" },
-  { id: 1, src: foto2, name: "Amor eterno", piece: "Pieza personalizada" },
+  { id: 0, src: foto1, name: "Anillo de compromiso", piece: "Halo con zafiro" },
+  { id: 1, src: foto2, name: "Momento especial", piece: "Anillo solitario" },
+  { id: 2, src: foto3, name: "Amor eterno", piece: "Anillo de compromiso" },
+  { id: 3, src: foto4, name: "Aventura juntos", piece: "Anillo con diamante" },
+  { id: 4, src: foto5, name: "Felicidad pura", piece: "Cintillo de diamantes" },
+  { id: 5, src: foto6, name: "En la playa", piece: "Anillo halo" },
+  { id: 6, src: foto7, name: "Tarde en el parque", piece: "Cintillo pavé" },
+  { id: 7, src: foto8, name: "Aurora boreal", piece: "Anillo de compromiso" },
+  { id: 8, src: foto9, name: "Nuevos novios GIA", piece: "Anillo pavé" },
+  { id: 9, src: foto10, name: "Juntos siempre", piece: "Anillo solitario" },
 ];
 
 const AUTOPLAY = 4000;
