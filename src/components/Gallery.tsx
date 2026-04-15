@@ -141,11 +141,11 @@ const formatPrice = (n: number) =>
 
 const pieces: Piece[] = [
   // ── Original ring collection ──
-  { img: galSolitarioCaja, name: "Solitario Clásico", desc: "Diamante · Caja Gia Solari", category: "anillos" },
-  { img: galPrincesaMarco, name: "Anillo Tres Piedras", desc: "Corte Princesa · Platino", category: "anillos" },
-  { img: galZafiro, name: "Anillo Diana", desc: "Zafiro Azul · Halo Diamantes", category: "anillos" },
-  { img: galEsmeraldaHalo, name: "Anillo Celeste", desc: "Corte Esmeralda · Halo Pavé", category: "anillos" },
-  { img: galOvalPave, name: "Anillo Paraíba", desc: "Turmalina Oval · Pavé Diamantes", category: "anillos" },
+  { img: galSolitarioCaja, name: "Solitario Clásico", desc: "Diamante · Caja Gia Solari", category: "anillos", material: "oro18k", estilo: "solitario", priceFrom: 1200000 },
+  { img: galPrincesaMarco, name: "Anillo Tres Piedras", desc: "Corte Princesa · Platino", category: "anillos", material: "platino", estilo: "tres-piedras", priceFrom: 2500000 },
+  { img: galZafiro, name: "Anillo Diana", desc: "Zafiro Azul · Halo Diamantes", category: "anillos", material: "oro18k", estilo: "halo", priceFrom: 1800000 },
+  { img: galEsmeraldaHalo, name: "Anillo Celeste", desc: "Corte Esmeralda · Halo Pavé", category: "anillos", material: "oro18k", estilo: "halo", priceFrom: 2200000 },
+  { img: galOvalPave, name: "Anillo Paraíba", desc: "Turmalina Oval · Pavé Diamantes", category: "anillos", material: "oro18k", estilo: "pave", priceFrom: 1900000 },
   { img: galHaloZafiro, name: "Anillo Royal", desc: "Zafiro Oval · Halo Clásico", category: "anillos" },
   { img: galTricillo, name: "Anillo Reina", desc: "Tricillo Diamantes · Platino", category: "anillos" },
   { img: galArtDeco, name: "Anillo Gatsby", desc: "Corte Princesa · Art Déco", category: "anillos" },
