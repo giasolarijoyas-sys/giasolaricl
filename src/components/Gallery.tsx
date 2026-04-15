@@ -234,7 +234,15 @@ const AUTOPLAY_INTERVAL = 3000;
 
 const Gallery = () => {
   const [active, setActive] = useState<Category>("todas");
-  const filtered = active === "todas" ? pieces : pieces.filter((p) => p.category === active);
+  const [activeMaterial, setActiveMaterial] = useState<Material>("todos");
+  const [activeEstilo, setActiveEstilo] = useState<Estilo>("todos");
+
+  const filtered = pieces.filter((p) => {
+    if (active !== "todas" && p.category !== active) return false;
+    if (activeMaterial !== "todos" && p.material !== activeMaterial) return false;
+    if (activeEstilo !== "todos" && p.estilo !== activeEstilo) return false;
+    return true;
+  });
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
@@ -271,10 +279,9 @@ const Gallery = () => {
     };
   }, [emblaApi, onSelect]);
 
-  // Re-init when filter changes
   useEffect(() => {
     if (emblaApi) emblaApi.reInit();
-  }, [active, emblaApi]);
+  }, [active, activeMaterial, activeEstilo, emblaApi]);
 
   const countFor = (cat: Category) =>
     cat === "todas" ? pieces.length : pieces.filter((p) => p.category === cat).length;
