@@ -14,16 +14,16 @@ import foto9 from "@/assets/en-tus-manos-9.jpg";
 import foto10 from "@/assets/en-tus-manos-10.jpg";
 
 const slides = [
-  { id: 0, src: foto1 },
-  { id: 1, src: foto2 },
-  { id: 2, src: foto3 },
-  { id: 3, src: foto4 },
-  { id: 4, src: foto5 },
-  { id: 5, src: foto6 },
-  { id: 6, src: foto7 },
-  { id: 7, src: foto8 },
-  { id: 8, src: foto9 },
-  { id: 9, src: foto10 },
+  { id: 0, src: foto1, alt: "Clienta usando anillo de compromiso Gia Solari en mano" },
+  { id: 1, src: foto2, alt: "Detalle de anillo solitario en mano de clienta" },
+  { id: 2, src: foto3, alt: "Clienta mostrando anillo halo con diamante" },
+  { id: 3, src: foto4, alt: "Anillo de compromiso en oro 18k puesto en mano" },
+  { id: 4, src: foto5, alt: "Clienta con anillo tricillo de diamantes" },
+  { id: 5, src: foto6, alt: "Detalle de anillo pavé en mano de clienta" },
+  { id: 6, src: foto7, alt: "Clienta mostrando argollas de matrimonio" },
+  { id: 7, src: foto8, alt: "Anillo solitario con diamante puesto en mano" },
+  { id: 8, src: foto9, alt: "Clienta con anillo art déco de Gia Solari" },
+  { id: 9, src: foto10, alt: "Detalle de anillo de compromiso en mano" },
 ];
 
 const AUTOPLAY = 4000;
@@ -70,7 +70,7 @@ const EnTusManos = () => {
               <motion.img
                 key={current}
                 src={slides[current].src}
-                alt={`Clientas Gia Solari ${current + 1}`}
+                alt={slides[current].alt}
                 initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -60 }}

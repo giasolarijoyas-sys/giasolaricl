@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -16,7 +17,7 @@ const AprendeDiamantes4C = () => (
       <article className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">
         <div className="container mx-auto px-4 md:px-8 max-w-[700px]">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <Link to="/aprende" className="text-primary text-sm tracking-widest uppercase mb-6 inline-block hover:underline">← Aprende</Link>
+            <Breadcrumbs items={[{ label: "Aprende", path: "/aprende" }, { label: "Las 4C del Diamante" }]} />
             <h1 className="font-display text-3xl md:text-4xl text-foreground mb-6">Las 4C del Diamante</h1>
             <p className="text-muted-foreground text-lg leading-relaxed mb-10">Todo lo que necesitas saber para elegir el diamante perfecto, explicado de forma simple y honesta.</p>
 
