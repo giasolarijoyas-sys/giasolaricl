@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Send } from "lucide-react";
+import { ChevronLeft, ChevronRight, Send, ImagePlus, X } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -72,11 +72,20 @@ const STEP_TITLES = [
   "Datos de contacto",
 ];
 
+const MAX_FILES = 5;
+const MAX_SIZE_MB = 10;
+
+const inputCls =
+  "w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all";
+
 const QuoteWizard = () => {
   const [step, setStep] = useState(0);
   const [data, setData] = useState<FormData>({ ...INITIAL });
+  const [files, setFiles] = useState<File[]>([]);
+  const [previews, setPreviews] = useState<string[]>([]);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
 
   const update = (partial: Partial<FormData>) => setData(prev => ({ ...prev, ...partial }));
 
@@ -94,11 +103,58 @@ const QuoteWizard = () => {
   const next = () => { if (canNext() && step < 4) setStep(s => s + 1); };
   const prev = () => { if (step > 0) setStep(s => s - 1); };
 
+  const handleFiles = (selected: FileList | null) => {
+    if (!selected) return;
+    const newFiles = Array.from(selected).filter(f => {
+      if (!f.type.startsWith("image/")) {
+        toast.error("Solo se permiten imágenes");
+        return false;
+      }
+      if (f.size > MAX_SIZE_MB * 1024 * 1024) {
+        toast.error(`${f.name} supera los ${MAX_SIZE_MB}MB`);
+        return false;
+      }
+      return true;
+    });
+    const combined = [...files, ...newFiles].slice(0, MAX_FILES);
+    setFiles(combined);
+    setPreviews(combined.map(f => URL.createObjectURL(f)));
+  };
+
+  const removeFile = (idx: number) => {
+    URL.revokeObjectURL(previews[idx]);
+    setFiles(f => f.filter((_, i) => i !== idx));
+    setPreviews(p => p.filter((_, i) => i !== idx));
+  };
+
+  const uploadImages = async (quoteId: string): Promise<string[]> => {
+    const urls: string[] = [];
+    for (const file of files) {
+      const ext = file.name.split(".").pop() || "jpg";
+      const path = `${quoteId}/${crypto.randomUUID()}.${ext}`;
+      const { error } = await supabase.storage.from("quote-images").upload(path, file);
+      if (error) {
+        console.error("Upload error:", error);
+        continue;
+      }
+      const { data: urlData } = supabase.storage.from("quote-images").getPublicUrl(path);
+      urls.push(urlData.publicUrl);
+    }
+    return urls;
+  };
+
   const submit = async () => {
     if (!canNext()) return;
     setSending(true);
     try {
+      const quoteId = crypto.randomUUID();
+      let imageUrls: string[] = [];
+      if (files.length > 0) {
+        imageUrls = await uploadImages(quoteId);
+      }
+
       const { error } = await supabase.from("quotes").insert({
+        id: quoteId,
         nombre: data.nombre.trim(),
         email: data.email.trim(),
         whatsapp: data.whatsapp.trim(),
@@ -108,9 +164,20 @@ const QuoteWizard = () => {
         presupuesto: data.presupuesto,
         fecha_limite: data.fechaEntrega || null,
         referencias: data.comentarios || null,
+        image_urls: imageUrls.length > 0 ? imageUrls : null,
         status: "nueva",
       });
       if (error) throw error;
+
+      // Send email notification
+      try {
+        await supabase.functions.invoke("process-quote", {
+          body: { quoteId },
+        });
+      } catch (emailErr) {
+        console.error("Email notification error:", emailErr);
+      }
+
       setSent(true);
       toast.success("Cotización enviada");
     } catch {
@@ -214,31 +281,58 @@ const QuoteWizard = () => {
                     <div>
                       <label className="text-sm font-medium text-foreground block mb-1.5">Nombre *</label>
                       <input type="text" value={data.nombre} onChange={e => update({ nombre: e.target.value })}
-                        placeholder="Tu nombre"
-                        className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all" />
+                        placeholder="Tu nombre" className={inputCls} />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground block mb-1.5">Email *</label>
                       <input type="email" value={data.email} onChange={e => update({ email: e.target.value })}
-                        placeholder="tu@email.com"
-                        className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all" />
+                        placeholder="tu@email.com" className={inputCls} />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground block mb-1.5">WhatsApp *</label>
                       <input type="tel" value={data.whatsapp} onChange={e => update({ whatsapp: e.target.value })}
-                        placeholder="+56 9 XXXX XXXX"
-                        className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all" />
+                        placeholder="+56 9 XXXX XXXX" className={inputCls} />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground block mb-1.5">Fecha tentativa de entrega</label>
                       <input type="date" value={data.fechaEntrega} onChange={e => update({ fechaEntrega: e.target.value })}
-                        className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all" />
+                        className={inputCls} />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground block mb-1.5">Comentarios</label>
                       <textarea value={data.comentarios} onChange={e => update({ comentarios: e.target.value })}
                         placeholder="Cuéntanos más sobre lo que buscas..."
-                        className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all min-h-[80px]" />
+                        className={`${inputCls} min-h-[80px]`} />
+                    </div>
+
+                    {/* Image upload */}
+                    <div>
+                      <label className="text-sm font-medium text-foreground block mb-1.5">
+                        Fotos de referencia <span className="text-muted-foreground font-normal">(opcional, máx. {MAX_FILES})</span>
+                      </label>
+                      <input type="file" ref={fileRef} accept="image/*" multiple
+                        className="hidden" onChange={e => handleFiles(e.target.files)} />
+                      
+                      {previews.length > 0 && (
+                        <div className="flex flex-wrap gap-3 mb-3">
+                          {previews.map((src, i) => (
+                            <div key={i} className="relative w-20 h-20 rounded-lg overflow-hidden border border-border">
+                              <img src={src} alt={`Referencia ${i + 1}`} className="w-full h-full object-cover" />
+                              <button onClick={() => removeFile(i)}
+                                className="absolute top-0.5 right-0.5 w-5 h-5 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                <X size={12} className="text-foreground" />
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {files.length < MAX_FILES && (
+                        <button onClick={() => fileRef.current?.click()}
+                          className="flex items-center gap-2 px-4 py-2 border border-dashed border-border rounded-lg text-sm text-muted-foreground hover:border-primary/50 hover:text-foreground transition-all">
+                          <ImagePlus size={16} /> Subir imágenes
+                        </button>
+                      )}
                     </div>
                   </div>
                 </>
