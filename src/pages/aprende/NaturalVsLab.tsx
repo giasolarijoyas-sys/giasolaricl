@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -8,10 +8,11 @@ import { Link } from "react-router-dom";
 
 const NaturalVsLab = () => (
   <>
-    <Helmet>
-      <title>Diamante Natural vs Laboratorio — Guía Honesta | Gia Solari</title>
-      <meta name="description" content="Ambos son diamantes reales. Conoce las diferencias, pros y contras de cada uno." />
-    </Helmet>
+    <SEO
+      title="Diamante Natural vs Laboratorio | Guía Honesta — Gia Solari"
+      description="Comparación sincera entre diamantes naturales y de laboratorio: precio, calidad, durabilidad, ética y valor de reventa. Escrito por una gemóloga."
+      path="/aprende/diamante-natural-vs-laboratorio"
+    />
     <div className="min-h-screen">
       <Navbar />
       <article className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">

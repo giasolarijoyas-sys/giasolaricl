@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -8,10 +8,11 @@ import { Link } from "react-router-dom";
 
 const OroVsPlatino = () => (
   <>
-    <Helmet>
-      <title>Oro 18k vs Platino — Comparación Completa | Gia Solari</title>
-      <meta name="description" content="Comparación detallada entre oro 18k y platino: precio, durabilidad, color y mantenimiento." />
-    </Helmet>
+    <SEO
+      title="Oro 18k vs Platino | Comparación Completa — Gia Solari"
+      description="Cuál es mejor para tu anillo de compromiso o argolla: oro 18k o platino. Durabilidad, color, precio y mantenimiento comparados por una joyera chilena."
+      path="/aprende/oro-18k-vs-platino"
+    />
     <div className="min-h-screen">
       <Navbar />
       <article className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">
