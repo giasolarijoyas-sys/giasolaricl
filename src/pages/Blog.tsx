@@ -24,9 +24,6 @@ const Blog = () => (
             {blogPosts.map((post, i) => (
               <motion.div key={post.slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <Link to={`/blog/${post.slug}`} className="group block">
-                  <div className="aspect-[16/10] bg-muted rounded-lg mb-4 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-muted to-card group-hover:scale-105 transition-transform duration-500" />
-                  </div>
                   <span className="text-primary text-xs tracking-widest uppercase">{post.category}</span>
                   <h2 className="font-display text-lg text-foreground mt-1 mb-2 group-hover:text-primary transition-colors">{post.title}</h2>
                   <p className="text-muted-foreground text-sm line-clamp-2">{post.excerpt}</p>
