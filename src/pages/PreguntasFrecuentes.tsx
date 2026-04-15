@@ -23,6 +23,20 @@ const PreguntasFrecuentes = () => (
     <Helmet>
       <title>Preguntas Frecuentes | Gia Solari Joyas</title>
       <meta name="description" content="Resolvemos tus dudas sobre joyas a medida, diamantes, plazos, precios y garantía." />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.a
+            }
+          }))
+        })}
+      </script>
     </Helmet>
     <div className="min-h-screen">
       <Navbar />
