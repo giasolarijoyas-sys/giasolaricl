@@ -27,7 +27,7 @@ import AprendeDiamantes4C from "./pages/aprende/Diamantes4C.tsx";
 import OroVsPlatino from "./pages/aprende/OroVsPlatino.tsx";
 import NaturalVsLab from "./pages/aprende/NaturalVsLab.tsx";
 import ComoElegirAnillo from "./pages/aprende/ComoElegirAnillo.tsx";
-
+import CotizadorInterno from "./pages/CotizadorInterno.tsx";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -60,6 +60,7 @@ const App = () => (
             <Route path="/admin/wish-list" element={<WishListAdmin />} />
             <Route path="/admin/newsletter" element={<NewsletterAdmin />} />
             <Route path="/admin/stats" element={<StatsAdmin />} />
+            <Route path="/cotizador-interno" element={<CotizadorInterno />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
