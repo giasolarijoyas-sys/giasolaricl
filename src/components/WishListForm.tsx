@@ -97,7 +97,9 @@ const WishListForm = () => {
         imageUrls = await uploadImages();
       }
 
+      const wishId = crypto.randomUUID();
       const { error } = await supabase.from("wish_list").insert({
+        id: wishId,
         nombre: formData.nombre,
         email: formData.email,
         whatsapp: formData.whatsapp,
@@ -116,6 +118,11 @@ const WishListForm = () => {
       });
 
       if (error) throw error;
+
+      // Send email notification
+      supabase.functions.invoke('process-quote', {
+        body: { type: 'wish-list', wishListId: wishId },
+      }).catch((err: any) => console.error('Email notification error:', err));
       setSubmitted(true);
       toast({ title: "¡Recibido! 💎", description: "Nos contactaremos con tu pareja en el momento justo." });
     } catch (err) {
