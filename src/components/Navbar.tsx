@@ -7,6 +7,7 @@ import logoIcon from "@/assets/logo-icon.png";
 const navLinks = [
   { label: "La Marca", href: "/#historia" },
   { label: "Joyas", href: "/#galeria" },
+  { label: "Garantía", href: "/#garantia" },
   { label: "Guía", href: "/guia" },
   { label: "Blog", href: "/blog" },
   { label: "Aprende", href: "/aprende" },
