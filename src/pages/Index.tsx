@@ -13,6 +13,7 @@ import ElTaller from "@/components/ElTaller";
 import QuoteWizard from "@/components/QuoteWizard";
 import FAQAccordion from "@/components/FAQAccordion";
 import EnTusManos from "@/components/EnTusManos";
+import GarantiaSection from "@/components/GarantiaSection";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -83,6 +84,9 @@ const Index = () => {
         alt="Detalle de anillo Gia Solari"
         text="Tu Historia, Nuestra Inspiración"
       />
+
+      {/* Garantía por Gusto - promesa de marca */}
+      <GarantiaSection />
 
       {/* 10. Formulario de cotización (wizard) */}
       <QuoteWizard />

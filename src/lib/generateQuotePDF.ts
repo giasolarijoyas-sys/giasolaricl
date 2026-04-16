@@ -127,7 +127,7 @@ export function generateQuotePDF(quote: Quote) {
     "El plazo de confeccion es de 4 a 6 semanas habiles desde la aprobacion del diseno y pago del anticipo.",
     "Se requiere un anticipo del 50% para comenzar el proceso de fabricacion.",
     "Los precios de las piedras preciosas pueden variar segun disponibilidad del mercado.",
-    "Garantia por gusto: si no te encanta el resultado, lo rehacemos.",
+    "GARANTIA POR GUSTO: 30 dias desde la entrega para redisenar la pieza si no se siente tuya. La hechura va por nuestra cuenta; tu solo cubres la merma del metal (~10%) y las piedras adicionales que requiera el nuevo diseno. Ver detalles en giasolari.cl/garantia-por-gusto.",
   ];
   terms.forEach((t) => {
     doc.text(`· ${t}`, 20, y, { maxWidth: w - 40 });
