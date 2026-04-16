@@ -66,13 +66,25 @@ const SobreGia = () => (
             Lo que no negocio
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {valores.map((v, i) => (
-              <motion.div key={v.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="text-center p-6 border border-border rounded-lg">
-                <v.icon className="w-7 h-7 text-primary mx-auto mb-3" />
-                <h3 className="font-display text-foreground mb-2">{v.title}</h3>
-                <p className="text-muted-foreground text-sm">{v.desc}</p>
-              </motion.div>
-            ))}
+            {valores.map((v, i) => {
+              const isGarantia = v.title === "Garantía por gusto";
+              const content = (
+                <>
+                  <v.icon className="w-7 h-7 text-primary mx-auto mb-3" />
+                  <h3 className="font-display text-foreground mb-2">{v.title}{isGarantia && " →"}</h3>
+                  <p className="text-muted-foreground text-sm">{v.desc}</p>
+                </>
+              );
+              return (
+                <motion.div key={v.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+                  {isGarantia ? (
+                    <a href="/garantia-por-gusto" className="block text-center p-6 border border-border rounded-lg h-full hover:border-primary transition-colors">{content}</a>
+                  ) : (
+                    <div className="text-center p-6 border border-border rounded-lg h-full">{content}</div>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
