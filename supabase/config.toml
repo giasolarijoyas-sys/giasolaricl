@@ -1,1 +1,4 @@
 project_id = "emqfkiahbbfnzyyofbgj"
+
+[functions.send-agenda-email]
+verify_jwt = false
