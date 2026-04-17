@@ -44,6 +44,10 @@ const Joyas = () => {
               Cada pieza es única, hecha a mano en Santiago. Pieza única — cotiza
               a medida.
             </p>
+            <p className="mt-4 text-[12px] text-charcoal/60 italic max-w-md mx-auto leading-relaxed">
+              Cada pieza de Gia Solari se fabrica a mano, una por una. El resultado
+              final puede variar levemente de la imagen de referencia.
+            </p>
           </motion.div>
 
           {/* Feed mobile-first, grid desktop */}
