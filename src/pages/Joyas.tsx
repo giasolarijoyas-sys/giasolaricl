@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -12,6 +12,12 @@ const waUrl = (nombre: string) =>
   )}`;
 
 const Joyas = () => {
+  const [searchParams] = useSearchParams();
+  const showPlaceholders = searchParams.get("preview") === "1";
+  const visibleJoyas = showPlaceholders
+    ? JOYAS
+    : JOYAS.filter((j) => !j.isPlaceholder);
+
   return (
     <div className="min-h-screen bg-background">
       <SEO
@@ -41,8 +47,25 @@ const Joyas = () => {
           </motion.div>
 
           {/* Feed mobile-first, grid desktop */}
+          {visibleJoyas.length === 0 && (
+            <div className="text-center py-16 border border-gold/20 rounded-[4px] bg-cream/30">
+              <p className="text-charcoal/70 text-sm leading-relaxed mb-4">
+                Estamos preparando las fotos de nuestras piezas. Mientras tanto,
+                podemos cotizar tu joya por WhatsApp.
+              </p>
+              <a
+                href="https://wa.me/56984049502?text=Hola%20Gia%2C%20me%20gustar%C3%ADa%20cotizar%20una%20joya%20a%20medida"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block min-h-[44px] px-6 py-3 bg-gradient-gold text-charcoal text-xs tracking-widest uppercase font-semibold"
+              >
+                Cotizar por WhatsApp
+              </a>
+            </div>
+          )}
+
           <div className="space-y-7 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 lg:grid-cols-3">
-            {JOYAS.map((p, i) => (
+            {visibleJoyas.map((p, i) => (
               <motion.article
                 key={p.slug}
                 initial={{ opacity: 0, y: 16 }}
