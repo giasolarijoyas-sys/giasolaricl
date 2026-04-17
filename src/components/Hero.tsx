@@ -4,25 +4,48 @@ import { motion, AnimatePresence } from "framer-motion";
 import heroImage from "@/assets/maca-hero.jpeg";
 import heroDsc5775 from "@/assets/hero-dsc-5775.jpg";
 import heroDsc5803 from "@/assets/hero-dsc-5803.jpg";
-import heroVideo1 from "@/assets/hero-video-1.mp4.asset.json";
-import bannerHands from "@/assets/banner-hands.jpg";
 
 type Slide = {
-  type: "image" | "video";
+  type: "image";
   src: string;
   alt?: string;
+  eyebrow: string;
+  title: string;
+  titleHighlight?: string;
+  subtitle: string;
 };
 
 const slides: Slide[] = [
-  { type: "image", src: heroImage, alt: "Macarena González Solari, fundadora de Gia Solari" },
-  { type: "video", src: heroVideo1.url },
-  { type: "image", src: heroDsc5775, alt: "Anillo tricillo con marco dorado" },
-  { type: "image", src: heroDsc5803, alt: "Anillo tricillo en cofre de terciopelo" },
-  { type: "image", src: bannerHands, alt: "Joyas Gia Solari en detalle" },
+  {
+    type: "image",
+    src: heroImage,
+    alt: "Macarena González Solari, fundadora de Gia Solari",
+    eyebrow: "Oro 18k · Platino · Diamantes certificados",
+    title: "Joyería de autor en",
+    titleHighlight: "Santiago",
+    subtitle: "Anillos de compromiso y argollas con Garantía por Gusto.",
+  },
+  {
+    type: "image",
+    src: heroDsc5775,
+    alt: "Anillo tricillo con marco dorado",
+    eyebrow: "Diseño a medida",
+    title: "Diseñamos la pieza",
+    titleHighlight: "contigo",
+    subtitle: "Bocetos, materiales y diamantes elegidos en conjunto.",
+  },
+  {
+    type: "image",
+    src: heroDsc5803,
+    alt: "Anillo tricillo en cofre de terciopelo",
+    eyebrow: "Materiales certificados",
+    title: "Oro 18k, platino y",
+    titleHighlight: "diamantes certificados",
+    subtitle: "Materiales nobles y trazabilidad completa.",
+  },
 ];
 
-const INTERVAL_IMAGE = 2500;
-const INTERVAL_VIDEO = 3000;
+const INTERVAL_IMAGE = 7000;
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
@@ -34,8 +57,7 @@ const Hero = () => {
 
   useEffect(() => {
     if (paused) return;
-    const duration = slides[current].type === "video" ? INTERVAL_VIDEO : INTERVAL_IMAGE;
-    const timer = setTimeout(next, duration);
+    const timer = setTimeout(next, INTERVAL_IMAGE);
     return () => clearTimeout(timer);
   }, [current, paused, next]);
 
@@ -57,22 +79,13 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="absolute inset-0"
         >
-          {slides[current].type === "video" ? (
-            <video
-              src={slides[current].src}
-              autoPlay
-              muted
-              playsInline
-              loop
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <img
-              src={slides[current].src}
-              alt={slides[current].alt || "Gia Solari"}
-              className="w-full h-full object-cover"
-            />
-          )}
+          <img
+            src={slides[current].src}
+            alt={slides[current].alt || "Gia Solari"}
+            loading={current === 0 ? "eager" : "lazy"}
+            fetchPriority={current === 0 ? "high" : "auto"}
+            className="w-full h-full object-cover"
+          />
         </motion.div>
       </AnimatePresence>
 
@@ -80,48 +93,50 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/50 to-transparent z-[1]" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 md:px-8">
+      <div className="relative z-10 container mx-auto px-4 md:px-8 pt-[90px] pb-[120px] sm:pt-0 sm:pb-0">
         <div className="max-w-2xl">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-gold-light tracking-[0.3em] uppercase text-xs md:text-sm mb-6"
-          >
-            Oro 18k · Platino · Diamantes certificados
-          </motion.p>
+          <AnimatePresence mode="wait">
+            <motion.div key={`copy-${current}`}>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 }}
+                className="text-gold-light tracking-[0.3em] uppercase text-xs md:text-sm mb-6"
+              >
+                {slides[current].eyebrow}
+              </motion.p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-[28px] leading-[1.1] sm:text-4xl md:text-6xl lg:text-7xl font-display text-cream mb-5"
-          >
-            Joyería de autor en{" "}
-            <em className="text-gold-light not-italic">Santiago</em>
-          </motion.h1>
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-[28px] leading-[1.1] sm:text-4xl md:text-6xl lg:text-7xl font-display text-cream mb-5"
+              >
+                {slides[current].title}
+                {slides[current].titleHighlight && (
+                  <>
+                    {" "}
+                    <em className="text-gold-light not-italic">
+                      {slides[current].titleHighlight}
+                    </em>
+                  </>
+                )}
+              </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="text-cream/80 text-base md:text-xl mb-8 max-w-lg font-light leading-relaxed"
-          >
-            Anillos de compromiso y argollas con{" "}
-            <a href="/garantia-por-gusto" className="text-gold-light underline-offset-4 hover:underline">
-              Garantía por Gusto
-            </a>
-            .
-          </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.45 }}
+                className="text-cream/80 text-base md:text-xl mb-8 max-w-lg font-light leading-relaxed"
+              >
+                {slides[current].subtitle}
+              </motion.p>
+            </motion.div>
+          </AnimatePresence>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
-          >
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a
-              href="/catalogo"
+              href="/joyas"
               className="min-h-[48px] px-6 py-3 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm text-center hover:opacity-90 transition-opacity flex items-center justify-center"
             >
               Ver piezas
@@ -134,7 +149,7 @@ const Hero = () => {
             >
               Cotizar por WhatsApp
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
 
