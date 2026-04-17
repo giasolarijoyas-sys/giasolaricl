@@ -101,9 +101,9 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  if (!RESEND_API_KEY || !LOVABLE_API_KEY) {
+  if (!RESEND_API_KEY) {
     return new Response(
-      JSON.stringify({ error: "Email service not configured" }),
+      JSON.stringify({ error: "RESEND_API_KEY not configured" }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
     );
   }
