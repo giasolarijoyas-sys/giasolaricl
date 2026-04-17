@@ -91,6 +91,10 @@ const JoyaDetalle = () => {
                   Pieza única — cotiza a medida. Cada joya se fabrica especialmente
                   para ti, según el metal, las piedras y los detalles que elijas.
                 </p>
+                <p className="mt-3 text-[12px] text-charcoal/60 italic leading-relaxed">
+                  Cada pieza de Gia Solari se fabrica a mano, una por una. El
+                  resultado final puede variar levemente de la imagen de referencia.
+                </p>
               </div>
 
               <a
