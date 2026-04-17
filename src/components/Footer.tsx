@@ -19,11 +19,13 @@ const Footer = () => {
               Navegación
             </p>
             <div className="flex flex-col gap-2">
-              <a href="#historia" className="text-sm hover:text-gold transition-colors">La Marca</a>
-              <a href="#galeria" className="text-sm hover:text-gold transition-colors">Joyas</a>
+              <a href="/#historia" className="text-sm hover:text-gold transition-colors">La Marca</a>
+              <a href="/catalogo" className="text-sm hover:text-gold transition-colors">Catálogo</a>
+              <a href="/proceso" className="text-sm hover:text-gold transition-colors">Nuestro Proceso</a>
+              <a href="/agenda" className="text-sm hover:text-gold transition-colors">Agendar Visita</a>
               <a href="/guia" className="text-sm hover:text-gold transition-colors">Guía de Joyas</a>
-              <a href="#cotizador" className="text-sm hover:text-gold transition-colors">Cotizar</a>
-              <a href="#testimonios" className="text-sm hover:text-gold transition-colors">Testimonios</a>
+              <a href="/blog" className="text-sm hover:text-gold transition-colors">Blog</a>
+              <a href="/lista-de-deseos" className="text-sm hover:text-gold transition-colors">Lista de Deseos</a>
             </div>
           </div>
 
