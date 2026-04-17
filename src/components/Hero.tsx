@@ -86,7 +86,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-gold-light tracking-[0.3em] uppercase text-sm mb-6"
+            className="text-gold-light tracking-[0.3em] uppercase text-xs md:text-sm mb-6"
           >
             Oro 18k · Platino · Diamantes certificados
           </motion.p>
@@ -95,40 +95,44 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-display text-cream leading-tight mb-6"
+            className="text-[28px] leading-[1.1] sm:text-4xl md:text-6xl lg:text-7xl font-display text-cream mb-5"
           >
-            Joyas únicas que{" "}
-            <em className="text-gold-light not-italic">cuentan tu historia</em>
+            Joyería de autor en{" "}
+            <em className="text-gold-light not-italic">Santiago</em>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-cream/70 text-lg md:text-xl mb-10 max-w-lg font-light leading-relaxed"
+            className="text-cream/80 text-base md:text-xl mb-8 max-w-lg font-light leading-relaxed"
           >
-            Diseñamos todo tipo de joyas a pedido — anillos de compromiso,
-            argollas, aros, collares, pulseras y esclavas — con atención
-            personalizada y una experiencia pensada para durar generaciones.
+            Anillos de compromiso y argollas con{" "}
+            <a href="/garantia-por-gusto" className="text-gold-light underline-offset-4 hover:underline">
+              Garantía por Gusto
+            </a>
+            .
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
             <a
-              href="#cotizador"
-              className="px-8 py-4 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm text-center hover:opacity-90 transition-opacity"
+              href="/catalogo"
+              className="min-h-[48px] px-6 py-3 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm text-center hover:opacity-90 transition-opacity flex items-center justify-center"
             >
-              Cotiza tu joya
+              Ver piezas
             </a>
             <a
-              href="#historia"
-              className="px-8 py-4 border border-cream/30 text-cream tracking-widest uppercase text-sm text-center hover:border-gold-light hover:text-gold-light transition-colors"
+              href="https://wa.me/56984049502?text=Hola%20Gia%2C%20te%20escribo%20desde%20la%20web%2C%20me%20gustar%C3%ADa%20cotizar..."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="min-h-[48px] px-6 py-3 border border-cream/40 text-cream tracking-widest uppercase text-sm text-center hover:border-gold-light hover:text-gold-light transition-colors flex items-center justify-center"
             >
-              Conocer más
+              Cotizar por WhatsApp
             </a>
           </motion.div>
         </div>

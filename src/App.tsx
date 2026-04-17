@@ -28,6 +28,11 @@ import OroVsPlatino from "./pages/aprende/OroVsPlatino.tsx";
 import NaturalVsLab from "./pages/aprende/NaturalVsLab.tsx";
 import ComoElegirAnillo from "./pages/aprende/ComoElegirAnillo.tsx";
 import CotizadorInterno from "./pages/CotizadorInterno.tsx";
+import Catalogo from "./pages/Catalogo.tsx";
+import CategoriaCatalogo from "./pages/CategoriaCatalogo.tsx";
+import PiezaDetalle from "./pages/PiezaDetalle.tsx";
+import Agenda from "./pages/Agenda.tsx";
+import Proceso from "./pages/Proceso.tsx";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -61,6 +66,11 @@ const App = () => (
             <Route path="/admin/newsletter" element={<NewsletterAdmin />} />
             <Route path="/admin/stats" element={<StatsAdmin />} />
             <Route path="/cotizador-interno" element={<CotizadorInterno />} />
+            <Route path="/catalogo" element={<Catalogo />} />
+            <Route path="/catalogo/:slug" element={<CategoriaCatalogo />} />
+            <Route path="/catalogo/:categoria/:pieza" element={<PiezaDetalle />} />
+            <Route path="/agenda" element={<Agenda />} />
+            <Route path="/proceso" element={<Proceso />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
