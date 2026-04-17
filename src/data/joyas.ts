@@ -21,6 +21,13 @@ export type Joya = {
   descripcion: string;
   categoria: string;
   imagenes: string[];
+  /**
+   * Marca la pieza como ejemplo/placeholder.
+   * Cuando es true, la ficha /joyas/:slug se sirve con
+   * <meta name="robots" content="noindex, nofollow"> y se omite del sitemap.
+   * Al reemplazar la pieza por contenido real, cambiar a false.
+   */
+  isPlaceholder?: boolean;
 };
 
 export const JOYAS: Joya[] = [
@@ -32,6 +39,7 @@ export const JOYAS: Joya[] = [
       "Halo de diamantes pequeños rodeando un zafiro azul central. Pieza hecha a mano en Santiago.",
     categoria: "Anillo de compromiso",
     imagenes: [galHaloZafiro, galZafiro, galZafirosBanda],
+    isPlaceholder: true,
   },
   {
     slug: "solitario-oval-pave",
@@ -41,6 +49,7 @@ export const JOYAS: Joya[] = [
       "Diamante oval con banda en pavé de diamantes. Diseño contemporáneo y luminoso.",
     categoria: "Anillo de compromiso",
     imagenes: [galOvalPave, galHaloOvalCaja, galSolitarioChevron],
+    isPlaceholder: true,
   },
   {
     slug: "esmeralda-halo",
@@ -50,6 +59,7 @@ export const JOYAS: Joya[] = [
       "Esmeralda corte esmeralda rodeada de halo de diamantes. Para quien busca color y carácter.",
     categoria: "Anillo de compromiso",
     imagenes: [galEsmeraldaHalo, galArtDeco, galCincoPiedras],
+    isPlaceholder: true,
   },
   {
     slug: "tricillo",
@@ -59,6 +69,7 @@ export const JOYAS: Joya[] = [
       "Tres cintillos entrelazados con detalles de diamantes. Un clásico moderno de Gia Solari.",
     categoria: "Anillo de compromiso",
     imagenes: [galTricillo, galTricillo2, galPrincesa],
+    isPlaceholder: true,
   },
   {
     slug: "solitario-clasico",
@@ -68,6 +79,7 @@ export const JOYAS: Joya[] = [
       "Diamante central con caja Gia Solari. La elegancia atemporal del solitario.",
     categoria: "Anillo de compromiso",
     imagenes: [galSolitarioCaja, galHaloOvalCaja, galPrincesa],
+    isPlaceholder: true,
   },
   {
     slug: "argolla-clasica",
@@ -77,6 +89,7 @@ export const JOYAS: Joya[] = [
       "Argolla pulida tradicional, ancho personalizable. Hecha a medida para los dos.",
     categoria: "Argolla de matrimonio",
     imagenes: [galArgolla, galArgolla, galArgolla],
+    isPlaceholder: true,
   },
   {
     slug: "aros-zafiro",
@@ -85,6 +98,7 @@ export const JOYAS: Joya[] = [
     descripcion: "Aros pequeños con zafiros azules para uso diario.",
     categoria: "Aros",
     imagenes: [galZafiro, galHaloZafiro, galZafirosBanda],
+    isPlaceholder: true,
   },
   {
     slug: "brazalete-oro",
@@ -93,5 +107,6 @@ export const JOYAS: Joya[] = [
     descripcion: "Brazalete tipo esclava en oro pulido. Pieza versátil y elegante.",
     categoria: "Pulsera",
     imagenes: [galBrazaleteOro, galBrazaleteOro, galBrazaleteOro],
+    isPlaceholder: true,
   },
 ];
