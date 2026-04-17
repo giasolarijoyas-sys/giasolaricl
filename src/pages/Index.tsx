@@ -107,6 +107,9 @@ const Index = () => {
       {/* Newsletter */}
       <Newsletter />
 
+      {/* Testimonios simples (3 tarjetas) — entre Gallery/secciones intermedias y FAQ */}
+      <TestimoniosHome />
+
       {/* 11. Acordeón de términos y condiciones */}
       <FAQAccordion />
 
