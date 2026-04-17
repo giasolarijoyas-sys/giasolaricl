@@ -13,6 +13,11 @@ import galCincoPiedras from "@/assets/gal-cinco-piedras.jpeg";
 import galBrazaleteOro from "@/assets/gal-brazalete-oro.png";
 import galHaloOvalCaja from "@/assets/gal-halo-oval-caja.jpg";
 import galSolitarioCaja from "@/assets/gal-solitario-caja.jpg";
+import joyaHaloFloralTanzanita from "@/assets/joya-halo-floral-tanzanita.png";
+import joyaEternityEsmeralda from "@/assets/joya-eternity-esmeralda.png";
+import joyaHaloMarquise from "@/assets/joya-halo-marquise.png";
+import joyaSolitarioEmeraldPlatino from "@/assets/joya-solitario-emerald-platino.png";
+import joyaHaloCushionPlatino from "@/assets/joya-halo-cushion-platino.png";
 
 export type Joya = {
   slug: string;
@@ -31,6 +36,56 @@ export type Joya = {
 };
 
 export const JOYAS: Joya[] = [
+  {
+    slug: "halo-floral-tanzanita",
+    nombre: "Halo Floral Tanzanita",
+    material: "Oro 18k amarillo · Tanzanita oval · Diamantes",
+    descripcion:
+      "Tanzanita oval rodeada por un halo de diamantes en forma de flor. Hecha a mano en oro 18k amarillo.",
+    categoria: "Anillo de compromiso",
+    imagenes: [joyaHaloFloralTanzanita],
+    isPlaceholder: false,
+  },
+  {
+    slug: "eternity-esmeralda-diamante",
+    nombre: "Eternity Esmeralda & Diamante",
+    material: "Oro 18k blanco · Esmeraldas · Diamantes",
+    descripcion:
+      "Banda eternity con esmeraldas alternadas con diamantes brillantes. Bezel setting, diseño minimalista.",
+    categoria: "Anillo",
+    imagenes: [joyaEternityEsmeralda],
+    isPlaceholder: false,
+  },
+  {
+    slug: "halo-marquise-diamante",
+    nombre: "Halo Marquise Diamante",
+    material: "Oro 18k · Diamante marquise · Diamantes",
+    descripcion:
+      "Diamante corte marquise con halo de diamantes y banda en pavé. Hecha a mano por encargo.",
+    categoria: "Anillo de compromiso",
+    imagenes: [joyaHaloMarquise],
+    isPlaceholder: false,
+  },
+  {
+    slug: "solitario-emerald-cut-platino",
+    nombre: "Solitario Emerald Cut Platino",
+    material: "Platino · Diamante emerald cut",
+    descripcion:
+      "Diamante corte esmeralda en platino con cathedral setting de inspiración art deco.",
+    categoria: "Anillo de compromiso",
+    imagenes: [joyaSolitarioEmeraldPlatino],
+    isPlaceholder: false,
+  },
+  {
+    slug: "halo-cushion-pave-platino",
+    nombre: "Halo Cushion Pavé Platino",
+    material: "Platino · Diamante cushion · Diamantes",
+    descripcion:
+      "Diamante cushion cut con halo de diamantes, banda pavé y detalle milgrain. Pieza hecha a mano en platino.",
+    categoria: "Anillo de compromiso",
+    imagenes: [joyaHaloCushionPlatino],
+    isPlaceholder: false,
+  },
   {
     slug: "halo-zafiro-azul",
     nombre: "Anillo Halo Zafiro Azul",
