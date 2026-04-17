@@ -7,13 +7,13 @@ const corsHeaders = {
 };
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-const GATEWAY_URL = "https://connector-gateway.lovable.dev/resend";
+const RESEND_API_URL = "https://api.resend.com/emails";
 
 const ADMIN_EMAIL = "giasolarijoyas@gmail.com";
 // IMPORTANTE: para enviar a clientes, hay que verificar el dominio
-// giasolari.cl en Resend. Mientras tanto se usa onboarding@resend.dev,
-// que solo permite enviar al email del owner de la cuenta Resend.
+// giasolari.cl en Resend (https://resend.com/domains).
+// Mientras tanto se usa onboarding@resend.dev, que solo permite enviar
+// al email del owner de la cuenta Resend (= giasolarijoyas@gmail.com).
 const FROM_ADMIN = "Gia Solari Web <onboarding@resend.dev>";
 const FROM_CLIENTE = "Gia Solari <onboarding@resend.dev>";
 
@@ -74,12 +74,11 @@ async function sendEmail(opts: {
   subject: string;
   html: string;
 }) {
-  const res = await fetch(`${GATEWAY_URL}/emails`, {
+  const res = await fetch(RESEND_API_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${LOVABLE_API_KEY}`,
-      "X-Connection-Api-Key": RESEND_API_KEY!,
+      Authorization: `Bearer ${RESEND_API_KEY}`,
     },
     body: JSON.stringify({
       from: opts.from,
