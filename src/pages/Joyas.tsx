@@ -1,0 +1,113 @@
+import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { motion } from "framer-motion";
+import { JOYAS } from "@/data/joyas";
+
+const waUrl = (nombre: string) =>
+  `https://wa.me/56984049502?text=${encodeURIComponent(
+    `Hola Gia, me interesa ${nombre}`,
+  )}`;
+
+const Joyas = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <SEO
+        title="Joyas | Anillos, Argollas y Piezas a Medida — Gia Solari"
+        description="Explora nuestras joyas: anillos de compromiso, argollas, aros, collares y piezas a medida en oro 18k y platino. Cada pieza es única — cotiza por WhatsApp."
+        path="/joyas"
+      />
+      <Navbar />
+
+      <main className="pt-24 pb-32">
+        <div className="max-w-xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-10"
+          >
+            <p className="text-gold tracking-[0.3em] uppercase text-xs mb-4">
+              Nuestra Colección
+            </p>
+            <h1 className="text-3xl md:text-4xl font-display text-charcoal mb-3">
+              Joyas
+            </h1>
+            <p className="text-charcoal/70 text-sm leading-relaxed">
+              Cada pieza es única, hecha a mano en Santiago. Pieza única — cotiza
+              a medida.
+            </p>
+          </motion.div>
+
+          {/* Feed mobile-first, grid desktop */}
+          <div className="space-y-7 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 lg:grid-cols-3">
+            {JOYAS.map((p, i) => (
+              <motion.article
+                key={p.slug}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: Math.min(i, 5) * 0.05 }}
+                className="bg-cream/40"
+              >
+                <Link to={`/joyas/${p.slug}`} className="block">
+                  <div className="aspect-[4/5] overflow-hidden bg-cream rounded-[4px]">
+                    <img
+                      src={p.imagenes[0]}
+                      alt={p.nombre}
+                      loading={i < 2 ? "eager" : "lazy"}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </Link>
+                <div className="pt-3 px-1">
+                  <h2 className="font-display text-[18px] text-charcoal leading-tight">
+                    {p.nombre}
+                  </h2>
+                  <p className="text-[13px] text-charcoal/60 mt-1 mb-3">
+                    {p.material}
+                  </p>
+                  <p className="text-[12px] text-charcoal/50 italic mb-3">
+                    Pieza única — cotiza a medida
+                  </p>
+                  <a
+                    href={waUrl(p.nombre)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-full min-h-[44px] px-4 py-3 bg-charcoal text-cream text-xs tracking-widest uppercase hover:bg-gold hover:text-charcoal transition-colors"
+                  >
+                    Cotizar por WhatsApp
+                  </a>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+
+          {/* CTA final */}
+          <div className="mt-16 text-center border-t border-gold/20 pt-12">
+            <h2 className="font-display text-2xl text-charcoal mb-4">
+              ¿Querés algo a tu medida?
+            </h2>
+            <p className="text-charcoal/70 text-sm mb-6 max-w-md mx-auto">
+              Diseñamos cada pieza desde cero según tu historia. Conversemos.
+            </p>
+            <a
+              href="https://wa.me/56984049502?text=Hola%20Gia%2C%20te%20escribo%20desde%20la%20web%2C%20me%20gustar%C3%ADa%20cotizar..."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block min-h-[48px] px-8 py-4 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm"
+            >
+              Cotizá por WhatsApp
+            </a>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+      <WhatsAppButton />
+    </div>
+  );
+};
+
+export default Joyas;

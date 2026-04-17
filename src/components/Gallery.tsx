@@ -299,11 +299,19 @@ const Gallery = () => {
             Colección
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground">
-            Un poco de <em className="text-primary not-italic">lo que hacemos</em>
+            <a href="/joyas" className="hover:text-primary transition-colors">
+              Joyas
+            </a>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-md mx-auto">
             Cada pieza es única y se crea exclusivamente a pedido.
           </p>
+          <a
+            href="/joyas"
+            className="inline-block mt-6 text-sm tracking-widest uppercase text-primary hover:underline underline-offset-4"
+          >
+            Ver todas las piezas →
+          </a>
         </motion.div>
 
         {/* Filters */}

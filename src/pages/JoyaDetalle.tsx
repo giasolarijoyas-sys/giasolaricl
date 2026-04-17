@@ -4,18 +4,15 @@ import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { CATEGORIAS } from "./CategoriaCatalogo";
+import { JOYAS } from "@/data/joyas";
 
-const PiezaDetalle = () => {
-  const { categoria, pieza } = useParams<{ categoria: string; pieza: string }>();
-  const cat = categoria ? CATEGORIAS[categoria] : undefined;
-  const item = cat?.piezas.find((p) => p.slug === pieza);
+const JoyaDetalle = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const item = JOYAS.find((p) => p.slug === slug);
 
-  if (!cat || !item) return <Navigate to="/catalogo" replace />;
+  if (!item) return <Navigate to="/joyas" replace />;
 
-  const waText = encodeURIComponent(
-    `Hola Gia, te escribo desde la web, me gustaría cotizar la pieza "${item.nombre}"...`,
-  );
+  const waText = encodeURIComponent(`Hola Gia, me interesa ${item.nombre}`);
 
   const productJsonLd = {
     "@context": "https://schema.org",
@@ -24,24 +21,22 @@ const PiezaDetalle = () => {
     description: item.descripcion,
     image: item.imagenes.map((i) => `https://www.giasolari.cl${i}`),
     brand: { "@type": "Brand", name: "Gia Solari" },
-    category: cat.nombre,
+    category: item.categoria,
     material: item.material,
     offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "CLP",
-      lowPrice: "1800000",
-      offerCount: "1",
-      availability: "https://schema.org/InStock",
+      "@type": "Offer",
+      availability: "https://schema.org/MadeToOrder",
       seller: { "@type": "Organization", name: "Gia Solari Joyas" },
+      url: `https://www.giasolari.cl/joyas/${item.slug}`,
     },
   };
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={`${item.nombre} | ${cat.nombre} — Gia Solari`}
-        description={`${item.nombre}: ${item.descripcion} ${item.material}.`}
-        path={`/catalogo/${categoria}/${pieza}`}
+        title={`${item.nombre} | ${item.categoria} — Gia Solari`}
+        description={`${item.nombre}. ${item.descripcion} ${item.material}. Pieza única, hecha a medida.`}
+        path={`/joyas/${item.slug}`}
         image={item.imagenes[0]}
       />
       <Helmet>
@@ -49,18 +44,21 @@ const PiezaDetalle = () => {
       </Helmet>
       <Navbar />
 
-      <main className="pt-24 pb-20">
-        <div className="container mx-auto px-4 md:px-8">
+      <main className="pt-24 pb-32">
+        <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <nav className="text-xs tracking-widest uppercase text-charcoal/60 mb-6">
-            <Link to="/catalogo" className="hover:text-gold">Catálogo</Link>
-            {" / "}
-            <Link to={`/catalogo/${categoria}`} className="hover:text-gold">{cat.nombre}</Link>
+            <Link to="/joyas" className="hover:text-gold">
+              ← Joyas
+            </Link>
           </nav>
 
           <div className="grid lg:grid-cols-2 gap-10">
-            <div className="grid grid-cols-1 gap-3">
+            <div className="space-y-3">
               {item.imagenes.map((src, i) => (
-                <div key={i} className="aspect-square overflow-hidden bg-cream/40">
+                <div
+                  key={i}
+                  className="aspect-[4/5] overflow-hidden bg-cream rounded-[4px]"
+                >
                   <img
                     src={src}
                     alt={`${item.nombre} - foto ${i + 1}`}
@@ -72,14 +70,23 @@ const PiezaDetalle = () => {
             </div>
 
             <div className="lg:sticky lg:top-24 self-start">
-              <h1 className="text-3xl md:text-4xl font-display text-charcoal mb-3">{item.nombre}</h1>
-              <p className="text-xs uppercase tracking-widest text-gold mb-5">{item.material}</p>
-              <p className="text-charcoal/80 leading-relaxed mb-6">{item.descripcion}</p>
+              <p className="text-xs uppercase tracking-widest text-gold mb-2">
+                {item.categoria}
+              </p>
+              <h1 className="text-3xl md:text-4xl font-display text-charcoal mb-3">
+                {item.nombre}
+              </h1>
+              <p className="text-sm uppercase tracking-wider text-charcoal/70 mb-5">
+                {item.material}
+              </p>
+              <p className="text-charcoal/80 leading-relaxed mb-6">
+                {item.descripcion}
+              </p>
 
               <div className="border-t border-b border-gold/20 py-5 mb-6">
-                <p className="text-sm text-charcoal/70 leading-relaxed">
-                  Cada pieza se cotiza a medida según el metal, las piedras y el diseño elegido.
-                  Pide tu cotización personalizada por WhatsApp.
+                <p className="text-sm text-charcoal/70 leading-relaxed italic">
+                  Pieza única — cotiza a medida. Cada joya se fabrica especialmente
+                  para ti, según el metal, las piedras y los detalles que elijas.
                 </p>
               </div>
 
@@ -87,9 +94,9 @@ const PiezaDetalle = () => {
                 href={`https://wa.me/56984049502?text=${waText}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block w-full text-center min-h-[48px] px-6 py-4 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm mb-3"
+                className="inline-flex items-center justify-center w-full min-h-[48px] px-6 py-4 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm mb-3"
               >
-                Cotizar esta pieza
+                Cotizar por WhatsApp
               </a>
               <Link
                 to="/garantia-por-gusto"
@@ -108,4 +115,4 @@ const PiezaDetalle = () => {
   );
 };
 
-export default PiezaDetalle;
+export default JoyaDetalle;

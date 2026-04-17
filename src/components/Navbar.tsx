@@ -5,10 +5,11 @@ import logoHorizontal from "@/assets/logo-horizontal.png";
 import logoIcon from "@/assets/logo-icon.png";
 
 const navLinks = [
-  { label: "La Marca", href: "/#historia" },
-  { label: "Catálogo", href: "/catalogo" },
+  { label: "Inicio", href: "/" },
+  { label: "Joyas", href: "/joyas" },
+  { label: "Sobre Gia", href: "/sobre-gia" },
   { label: "Proceso", href: "/proceso" },
-  { label: "Garantía", href: "/#garantia" },
+  { label: "Garantía", href: "/garantia-por-gusto" },
   { label: "Aprende", href: "/aprende" },
   { label: "Agenda", href: "/agenda" },
   { label: "Cotizar", href: "/#cotizador" },
