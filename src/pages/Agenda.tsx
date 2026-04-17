@@ -33,21 +33,21 @@ const Agenda = () => {
     try {
       const message = `Hola Gia, quiero agendar una visita.\n\nNombre: ${form.nombre}\nWhatsApp: ${form.whatsapp}\nEmail: ${form.email}\nFecha: ${form.fecha}\nHora: ${form.hora}\nMotivo: ${form.motivo}\nNotas: ${form.notas}`;
 
-      // Intenta enviar al backend (no bloquea si falla)
+      // Envía email a giasolarijoyas@gmail.com (y confirmación al cliente si dio email)
       try {
-        await supabase.functions.invoke("process-quote", {
+        await supabase.functions.invoke("send-agenda-email", {
           body: {
-            type: "agenda",
             nombre: form.nombre,
             whatsapp: form.whatsapp,
-            email: form.email || "no-email@agenda.cl",
-            pieza: "Agendar visita",
-            metal: "—",
-            notas_pareja: message,
+            email: form.email,
+            fecha: form.fecha,
+            hora: form.hora,
+            motivo: form.motivo,
+            notas: form.notas,
           },
         });
       } catch (err) {
-        console.warn("No se pudo notificar al backend:", err);
+        console.warn("No se pudo enviar el email:", err);
       }
 
       toast.success("¡Solicitud enviada! Te confirmamos por WhatsApp.");

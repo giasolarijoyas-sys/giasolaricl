@@ -38,9 +38,12 @@ const JoyaDetalle = () => {
         description={`${item.nombre}. ${item.descripcion} ${item.material}. Pieza única, hecha a medida.`}
         path={`/joyas/${item.slug}`}
         image={item.imagenes[0]}
+        noindex={item.isPlaceholder}
       />
       <Helmet>
-        <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>
+        {!item.isPlaceholder && (
+          <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>
+        )}
       </Helmet>
       <Navbar />
 

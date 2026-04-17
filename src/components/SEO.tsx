@@ -5,11 +5,12 @@ interface SEOProps {
   description: string;
   path: string;
   image?: string;
+  noindex?: boolean;
 }
 
 const BASE_URL = "https://www.giasolari.cl";
 
-const SEO = ({ title, description, path, image }: SEOProps) => {
+const SEO = ({ title, description, path, image, noindex }: SEOProps) => {
   const url = `${BASE_URL}${path}`;
   const ogImage = image || `${BASE_URL}/og-image.jpg`;
 
@@ -17,6 +18,7 @@ const SEO = ({ title, description, path, image }: SEOProps) => {
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
