@@ -15,8 +15,8 @@ const valores = [
 const SobreGia = () => (
   <>
     <SEO
-      title="Sobre Maca | Diseñadora y Gemóloga — Gia Solari Joyas"
-      description="Conoce a Macarena González Solari, diseñadora y gemóloga detrás de Gia Solari. Joyas de autor a medida en Santiago desde 2019."
+      title="Sobre Gia Solari | Joyería artesanal en Santiago"
+      description="Conocé a Macarena, diseñadora detrás de Gia Solari Joyas. Joyería hecha a mano en Las Condes, con piedras reales y certificación."
       path="/sobre-gia"
     />
     <div className="min-h-screen">
@@ -28,7 +28,7 @@ const SobreGia = () => (
           <div className="aspect-[4/5] bg-muted rounded-lg" />
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">Sobre nosotras</p>
-            <h1 className="text-4xl md:text-5xl font-display text-foreground mb-4">Hola, soy Maca</h1>
+            <h1 className="text-4xl md:text-5xl font-display text-foreground mb-4">Sobre Gia Solari: joyería artesanal en Santiago</h1>
             <p className="text-muted-foreground text-lg">Diseño joyas a medida en Santiago desde 2019</p>
           </motion.div>
         </div>

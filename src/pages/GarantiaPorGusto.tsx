@@ -44,8 +44,8 @@ const faqs = [
 const GarantiaPorGusto = () => (
   <>
     <SEO
-      title="Garantía por Gusto | Solo en Gia Solari Joyas"
-      description="La única joyería en Chile que ofrece garantía por gusto. Si tu joya no te enamora al recibirla, la rehacemos. Así de seguros estamos de nuestro proceso."
+      title="Garantía por Gusto | Gia Solari"
+      description="Si no te encanta, te ayudamos a modificarla o devolverla. Nuestra garantía por gusto te da tranquilidad al invertir en tu joya."
       path="/garantia-por-gusto"
     />
     <div className="min-h-screen">

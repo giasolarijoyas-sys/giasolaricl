@@ -21,8 +21,8 @@ const Joyas = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Joyas | Anillos, Argollas y Piezas a Medida — Gia Solari"
-        description="Explora nuestras joyas: anillos de compromiso, argollas, aros, collares y piezas a medida en oro 18k y platino. Cada pieza es única — cotiza por WhatsApp."
+        title="Colección de Joyas | Gia Solari"
+        description="Piezas únicas diseñadas y fabricadas a mano: anillos de compromiso, argollas de matrimonio, collares y aros en oro 18k y platino."
         path="/joyas"
       />
       <Navbar />
@@ -38,7 +38,7 @@ const Joyas = () => {
               Nuestra Colección
             </p>
             <h1 className="text-3xl md:text-4xl font-display text-charcoal mb-3">
-              Joyas
+              Colección de joyas a medida
             </h1>
             <p className="text-charcoal/70 text-sm leading-relaxed">
               Cada pieza es única, hecha a mano en Santiago. Pieza única — cotiza
