@@ -9,26 +9,30 @@ import { Gem, CircleDot, FlaskConical, Heart } from "lucide-react";
 const articles = [
   {
     icon: Gem,
+    tag: "Diamantes",
     title: "Las 4C del Diamante",
     desc: "Guía completa de Corte, Color, Claridad y Quilates con tabla comparativa.",
     href: "/aprende/diamantes-4c",
   },
   {
     icon: CircleDot,
+    tag: "Metales",
     title: "Oro 18k vs Platino",
     desc: "Comparación detallada de materiales: precios, durabilidad, color y mantenimiento.",
     href: "/aprende/oro-vs-platino",
   },
   {
     icon: FlaskConical,
-    title: "Diamante Natural vs Laboratorio",
+    tag: "Piedras Preciosas",
+    title: "Diamantes naturales vs de laboratorio",
     desc: "Explicación honesta con pros, contras y diferencias de precio.",
     href: "/aprende/diamante-natural-vs-laboratorio",
   },
   {
     icon: Heart,
-    title: "Cómo Elegir tu Anillo de Compromiso",
-    desc: "Guía paso a paso: presupuesto, estilo, talla y la gran pregunta.",
+    tag: "Guía",
+    title: "Guía de Anillos de Compromiso",
+    desc: "Paso a paso: presupuesto, estilo, talla y la gran pregunta.",
     href: "/aprende/como-elegir-anillo-compromiso",
   },
 ];
@@ -53,10 +57,12 @@ const Aprende = () => (
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {articles.map((a, i) => (
               <motion.div key={a.href} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Link to={a.href} className="group block p-8 bg-card border border-border rounded-lg hover:border-primary/30 transition-colors">
+                <Link to={a.href} className="group block p-8 bg-card border border-border rounded-lg hover:border-primary/30 transition-colors h-full">
                   <a.icon className="w-8 h-8 text-primary mb-4" />
+                  <p className="text-primary tracking-[0.2em] uppercase text-[10px] mb-2">{a.tag}</p>
                   <h2 className="font-display text-xl text-foreground mb-2 group-hover:text-primary transition-colors">{a.title}</h2>
-                  <p className="text-muted-foreground text-sm">{a.desc}</p>
+                  <p className="text-muted-foreground text-sm mb-4">{a.desc}</p>
+                  <span className="text-primary text-sm group-hover:underline">Leer artículo →</span>
                 </Link>
               </motion.div>
             ))}
