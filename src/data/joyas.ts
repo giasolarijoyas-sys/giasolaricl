@@ -94,7 +94,7 @@ export const JOYAS: Joya[] = [
       "Halo de diamantes pequeños rodeando un zafiro azul central. Pieza hecha a mano en Santiago.",
     categoria: "Anillo de compromiso",
     imagenes: [galHaloZafiro, galZafiro, galZafirosBanda],
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
     slug: "solitario-oval-pave",
@@ -104,7 +104,7 @@ export const JOYAS: Joya[] = [
       "Diamante oval con banda en pavé de diamantes. Diseño contemporáneo y luminoso.",
     categoria: "Anillo de compromiso",
     imagenes: [galOvalPave, galHaloOvalCaja, galSolitarioChevron],
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
     slug: "esmeralda-halo",
@@ -114,7 +114,7 @@ export const JOYAS: Joya[] = [
       "Esmeralda corte esmeralda rodeada de halo de diamantes. Para quien busca color y carácter.",
     categoria: "Anillo de compromiso",
     imagenes: [galEsmeraldaHalo, galArtDeco, galCincoPiedras],
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
     slug: "tricillo",
@@ -124,7 +124,7 @@ export const JOYAS: Joya[] = [
       "Tres cintillos entrelazados con detalles de diamantes. Un clásico moderno de Gia Solari.",
     categoria: "Anillo de compromiso",
     imagenes: [galTricillo, galTricillo2, galPrincesa],
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
     slug: "solitario-clasico",
@@ -134,7 +134,7 @@ export const JOYAS: Joya[] = [
       "Diamante central con caja Gia Solari. La elegancia atemporal del solitario.",
     categoria: "Anillo de compromiso",
     imagenes: [galSolitarioCaja, galHaloOvalCaja, galPrincesa],
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
     slug: "argolla-clasica",
@@ -144,7 +144,7 @@ export const JOYAS: Joya[] = [
       "Argolla pulida tradicional, ancho personalizable. Hecha a medida para los dos.",
     categoria: "Argolla de matrimonio",
     imagenes: [galArgolla, galArgolla, galArgolla],
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
     slug: "anillo-lady-di",
@@ -153,7 +153,7 @@ export const JOYAS: Joya[] = [
     descripcion: "Anillo inspirado en el icónico Lady Di: zafiro azul central rodeado de un halo de diamantes.",
     categoria: "Anillo de compromiso",
     imagenes: [galZafiro, galHaloZafiro, galZafirosBanda],
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
     slug: "esclava-oro",
@@ -162,6 +162,6 @@ export const JOYAS: Joya[] = [
     descripcion: "Esclava en oro pulido. Pieza versátil y elegante para uso diario.",
     categoria: "Pulsera",
     imagenes: [galBrazaleteOro, galBrazaleteOro, galBrazaleteOro],
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
 ];
