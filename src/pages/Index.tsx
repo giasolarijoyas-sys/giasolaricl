@@ -30,8 +30,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Gia Solari Joyas | Anillos de Compromiso y Joyería de Autor en Santiago"
-        description="Diseño joyas a medida en Santiago desde 2019. Anillos de compromiso, argollas y piezas personalizadas en oro 18k, platino y diamantes certificados GIA/IGI. Agenda tu cita."
+        title="Gia Solari Joyas | Anillos de compromiso a medida en Santiago"
+        description="Joyería fina artesanal en Las Condes. Anillos de compromiso únicos con piedras reales y certificación GIA. Garantía por Gusto."
         path="/"
       />
       {/* 1. Navegación fija */}

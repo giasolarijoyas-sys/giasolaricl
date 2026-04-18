@@ -21,8 +21,8 @@ const slides: Slide[] = [
     src: heroImage,
     alt: "Macarena González Solari, fundadora de Gia Solari",
     eyebrow: "Oro 18k · Platino · Diamantes certificados",
-    title: "Joyería de autor en",
-    titleHighlight: "Santiago",
+    title: "Joyas hechas a medida para",
+    titleHighlight: "momentos únicos",
     subtitle: "Anillos de compromiso y argollas con Garantía por Gusto.",
   },
   {

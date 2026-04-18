@@ -47,8 +47,8 @@ const Proceso = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Nuestro Proceso | Cómo diseñamos tu joya — Gia Solari"
-        description="Conoce nuestro proceso paso a paso: consulta, diseño, aprobación, fabricación y entrega. Joyas hechas a mano en Santiago."
+        title="Nuestro Proceso | De la idea a la joya"
+        description="Cómo trabajamos: desde la conversación inicial por WhatsApp hasta la entrega de tu joya, paso a paso."
         path="/proceso"
       />
       <Navbar />
