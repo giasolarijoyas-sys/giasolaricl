@@ -81,6 +81,12 @@ const Footer = () => {
               >
                 Pinterest: giasolarijoyas
               </a>
+              <a
+                href="mailto:giasolarijoyas@gmail.com"
+                className="hover:text-gold transition-colors"
+              >
+                Email: giasolarijoyas@gmail.com
+              </a>
               <p>Santiago, Las Condes · Cita previa</p>
             </div>
           </div>
