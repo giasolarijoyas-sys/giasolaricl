@@ -62,7 +62,7 @@ const Proceso = () => {
           >
             <p className="text-gold tracking-[0.3em] uppercase text-xs mb-4">El Proceso</p>
             <h1 className="text-3xl md:text-5xl font-display text-charcoal mb-4">
-              De la idea a la joya
+              Nuestro proceso: de la idea a la joya
             </h1>
             <p className="text-charcoal/70 leading-relaxed">
               Cinco pasos simples. Cada pieza, una conversación.
