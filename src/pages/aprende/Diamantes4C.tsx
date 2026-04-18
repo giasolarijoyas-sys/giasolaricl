@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import ArticleSchema from "@/components/ArticleSchema";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -12,6 +13,12 @@ const AprendeDiamantes4C = () => (
       <title>Las 4C del Diamante — Guía Completa | Gia Solari</title>
       <meta name="description" content="Aprende sobre Corte, Color, Claridad y Quilates. Guía completa para elegir el diamante perfecto." />
     </Helmet>
+    <ArticleSchema
+      headline="Las 4C del Diamante — Guía Completa"
+      description="Aprende sobre Corte, Color, Claridad y Quilates. Guía completa para elegir el diamante perfecto."
+      path="/aprende/diamantes-4c"
+      datePublished="2025-01-15"
+    />
     <div className="min-h-screen">
       <Navbar />
       <article className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">

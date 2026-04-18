@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import ArticleSchema from "@/components/ArticleSchema";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -12,6 +13,12 @@ const NaturalVsLab = () => (
       title="Diamante Natural vs Laboratorio | Guía Honesta — Gia Solari"
       description="Comparación sincera entre diamantes naturales y de laboratorio: precio, calidad, durabilidad, ética y valor de reventa. Escrito por una gemóloga."
       path="/aprende/diamante-natural-vs-laboratorio"
+    />
+    <ArticleSchema
+      headline="Diamante Natural vs Laboratorio — Guía Honesta"
+      description="Comparación sincera entre diamantes naturales y de laboratorio: precio, calidad, durabilidad, ética y valor de reventa."
+      path="/aprende/diamante-natural-vs-laboratorio"
+      datePublished="2025-01-15"
     />
     <div className="min-h-screen">
       <Navbar />
