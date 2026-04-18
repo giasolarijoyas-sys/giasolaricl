@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import ArticleSchema from "@/components/ArticleSchema";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -12,6 +13,12 @@ const OroVsPlatino = () => (
       title="Oro 18k vs Platino | Comparación Completa — Gia Solari"
       description="Cuál es mejor para tu anillo de compromiso o argolla: oro 18k o platino. Durabilidad, color, precio y mantenimiento comparados por una joyera chilena."
       path="/aprende/oro-18k-vs-platino"
+    />
+    <ArticleSchema
+      headline="Oro 18k vs Platino — Comparación Completa"
+      description="Cuál es mejor para tu anillo de compromiso o argolla: oro 18k o platino. Durabilidad, color, precio y mantenimiento."
+      path="/aprende/oro-18k-vs-platino"
+      datePublished="2025-01-15"
     />
     <div className="min-h-screen">
       <Navbar />

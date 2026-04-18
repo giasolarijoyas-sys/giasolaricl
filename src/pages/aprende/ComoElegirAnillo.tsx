@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import ArticleSchema from "@/components/ArticleSchema";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -12,6 +13,12 @@ const ComoElegirAnillo = () => (
       title="Cómo Elegir el Anillo de Compromiso Perfecto — Guía 2026"
       description="Guía paso a paso para elegir el anillo de compromiso ideal: presupuesto, estilo, forma del diamante, talla y más. Por Gia Solari Joyas."
       path="/aprende/como-elegir-anillo-compromiso"
+    />
+    <ArticleSchema
+      headline="Cómo Elegir el Anillo de Compromiso Perfecto"
+      description="Guía paso a paso para elegir el anillo de compromiso ideal: presupuesto, estilo, forma del diamante, talla y más."
+      path="/aprende/como-elegir-anillo-compromiso"
+      datePublished="2025-01-15"
     />
     <div className="min-h-screen">
       <Navbar />
