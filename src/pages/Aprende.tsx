@@ -56,7 +56,7 @@ const Aprende = () => (
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {articles.map((a, i) => (
-              <motion.div key={a.href} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+              <motion.div key={a.href} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
                 <Link to={a.href} className="group block p-8 bg-card border border-border rounded-lg hover:border-primary/30 transition-colors h-full">
                   <a.icon className="w-8 h-8 text-primary mb-4" />
                   <p className="text-primary tracking-[0.2em] uppercase text-[10px] mb-2">{a.tag}</p>
