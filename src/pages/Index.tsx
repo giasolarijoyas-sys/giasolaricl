@@ -20,6 +20,8 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import JewelryChat from "@/components/JewelryChat";
 import SectionBanner from "@/components/SectionBanner";
+import RangoInversion from "@/components/RangoInversion";
+import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 
 import bannerNusa from "@/assets/banner-anillo-nusa.png";
 import bannerHalo from "@/assets/banner-halo-oval.png";
@@ -64,6 +66,12 @@ const Index = () => {
 
       {/* Video section */}
       <VideoSection />
+
+      {/* Rango de inversión — antes de testimonios */}
+      <RangoInversion />
+
+      {/* Testimonios destacados */}
+      <TestimoniosDestacados />
 
       <SectionBanner
         image={bannerHands}
