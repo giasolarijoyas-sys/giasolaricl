@@ -52,6 +52,10 @@ const App = () => (
             <Route path="/guia-de-tallas" element={<GuiaDeTallas />} />
             <Route path="/cuidado-de-la-joya" element={<CuidadoDeLaJoya />} />
             <Route path="/garantia-por-gusto" element={<GarantiaPorGusto />} />
+            {/* Redirects 301 de /blog/* a /aprende/* equivalentes */}
+            <Route path="/blog/oro-18k-vs-platino" element={<Navigate to="/aprende/oro-vs-platino" replace />} />
+            <Route path="/blog/las-4c-del-diamante" element={<Navigate to="/aprende/diamantes-4c" replace />} />
+            <Route path="/blog/diamante-natural-o-laboratorio" element={<Navigate to="/aprende/diamante-natural-vs-laboratorio" replace />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/aprende" element={<Aprende />} />

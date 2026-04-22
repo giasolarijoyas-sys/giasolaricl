@@ -600,9 +600,9 @@ const Guia = () => {
             {/* ═══ ARGOLLAS ═══ */}
             <Section id="argollas" icon={Gem} title="Argollas de Matrimonio">
               <div className="p-6 rounded-xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 mb-6">
-                <h3 className="font-display text-xl text-foreground mb-2">20% de descuento en la echura</h3>
+                <h3 className="font-display text-xl text-foreground mb-2">20% de descuento en la hechura</h3>
                 <p className="text-sm">
-                  Si hiciste tu anillo de compromiso con nosotros, tienes un <strong>20% de descuento en la echura</strong> de tus argollas de matrimonio. ¡Nuestro regalo para la pareja!
+                  Si hiciste tu anillo de compromiso con nosotros, tienes un <strong>20% de descuento en la hechura</strong> de tus argollas de matrimonio. ¡Nuestro regalo para la pareja!
                 </p>
               </div>
 
@@ -701,7 +701,7 @@ const Guia = () => {
                   },
                   {
                     q: "¿Tienen descuento en argollas si hice el anillo de compromiso con ustedes?",
-                    a: "¡Sí! Los novios que hacen su anillo de compromiso con nosotros tienen un 20% de descuento en la echura de las argollas de matrimonio."
+                    a: "¡Sí! Los novios que hacen su anillo de compromiso con nosotros tienen un 20% de descuento en la hechura de las argollas de matrimonio."
                   },
                 ].map(({ q, a }) => (
                   <div key={q} className="p-4 rounded-lg border border-border bg-card">
