@@ -1,12 +1,11 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import Guia from "./pages/Guia.tsx";
 import Terminos from "./pages/Terminos.tsx";
 import AdminLogin from "./pages/admin/Login.tsx";
 import Dashboard from "./pages/admin/Dashboard.tsx";
@@ -27,25 +26,25 @@ import AprendeDiamantes4C from "./pages/aprende/Diamantes4C.tsx";
 import OroVsPlatino from "./pages/aprende/OroVsPlatino.tsx";
 import NaturalVsLab from "./pages/aprende/NaturalVsLab.tsx";
 import ComoElegirAnillo from "./pages/aprende/ComoElegirAnillo.tsx";
-import CotizadorInterno from "./pages/CotizadorInterno.tsx";
 import Joyas from "./pages/Joyas.tsx";
 import JoyaDetalle from "./pages/JoyaDetalle.tsx";
 import Agenda from "./pages/Agenda.tsx";
 import Proceso from "./pages/Proceso.tsx";
 import LaHermana from "./pages/LaHermana.tsx";
-import { Navigate } from "react-router-dom";
+
 const queryClient = new QueryClient();
 
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        
         <Sonner />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/guia" element={<Guia />} />
+            {/* /guia consolidada en /aprende */}
+            <Route path="/guia" element={<Navigate to="/aprende" replace />} />
+            <Route path="/guia/*" element={<Navigate to="/aprende" replace />} />
             <Route path="/terminos" element={<Terminos />} />
             <Route path="/lista-de-deseos" element={<ListaDeseos />} />
             <Route path="/sobre-gia" element={<SobreGia />} />
@@ -53,7 +52,7 @@ const App = () => (
             <Route path="/guia-de-tallas" element={<GuiaDeTallas />} />
             <Route path="/cuidado-de-la-joya" element={<CuidadoDeLaJoya />} />
             <Route path="/garantia-por-gusto" element={<GarantiaPorGusto />} />
-            {/* Redirects 301 de /blog/* a /aprende/* equivalentes */}
+            {/* Redirects de /blog/* duplicadas a /aprende/* (deben matchear ANTES de /blog/:slug) */}
             <Route path="/blog/oro-18k-vs-platino" element={<Navigate to="/aprende/oro-vs-platino" replace />} />
             <Route path="/blog/las-4c-del-diamante" element={<Navigate to="/aprende/diamantes-4c" replace />} />
             <Route path="/blog/diamante-natural-o-laboratorio" element={<Navigate to="/aprende/diamante-natural-vs-laboratorio" replace />} />
@@ -70,13 +69,8 @@ const App = () => (
             <Route path="/admin/wish-list" element={<WishListAdmin />} />
             <Route path="/admin/newsletter" element={<NewsletterAdmin />} />
             <Route path="/admin/stats" element={<StatsAdmin />} />
-            <Route path="/cotizador-interno" element={<CotizadorInterno />} />
             <Route path="/joyas" element={<Joyas />} />
             <Route path="/joyas/:slug" element={<JoyaDetalle />} />
-            {/* Redirects from old /catalogo URLs */}
-            <Route path="/catalogo" element={<Navigate to="/joyas" replace />} />
-            <Route path="/catalogo/:slug" element={<Navigate to="/joyas" replace />} />
-            <Route path="/catalogo/:categoria/:pieza" element={<Navigate to="/joyas" replace />} />
             <Route path="/agenda" element={<Agenda />} />
             <Route path="/proceso" element={<Proceso />} />
             <Route path="/la-hermana" element={<LaHermana />} />
