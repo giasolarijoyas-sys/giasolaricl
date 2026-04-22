@@ -31,7 +31,7 @@ const Agenda = () => {
     }
     setLoading(true);
     try {
-      const message = `Hola Gia, quiero agendar una visita.\n\nNombre: ${form.nombre}\nWhatsApp: ${form.whatsapp}\nEmail: ${form.email}\nFecha: ${form.fecha}\nHora: ${form.hora}\nMotivo: ${form.motivo}\nNotas: ${form.notas}`;
+      const message = `Hola Maca, quiero agendar una visita.\n\nNombre: ${form.nombre}\nWhatsApp: ${form.whatsapp}\nEmail: ${form.email}\nFecha: ${form.fecha}\nHora: ${form.hora}\nMotivo: ${form.motivo}\nNotas: ${form.notas}`;
 
       // Envía email a giasolarijoyas@gmail.com (y confirmación al cliente si dio email)
       try {
