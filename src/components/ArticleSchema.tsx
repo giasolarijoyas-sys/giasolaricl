@@ -31,9 +31,9 @@ const ArticleSchema = ({
     datePublished,
     dateModified: dateModified || datePublished,
     author: {
-      "@type": "Organization",
-      name: "Gia Solari Joyas",
-      url: BASE_URL,
+      "@type": "Person",
+      name: "Macarena González Solari",
+      url: `${BASE_URL}/sobre-gia`,
     },
     publisher: {
       "@type": "Organization",
