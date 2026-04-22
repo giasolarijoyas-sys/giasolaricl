@@ -123,11 +123,11 @@ export function generateQuotePDF(quote: Quote) {
   doc.setFontSize(8);
   doc.setTextColor(130);
   const terms = [
-    "Este presupuesto es referencial y puede variar segun las especificaciones finales del diseno.",
-    "El plazo de confeccion es de 4 a 6 semanas habiles desde la aprobacion del diseno y pago del anticipo.",
+    "Este presupuesto es referencial y puede variar según las especificaciones finales del diseño.",
+    "El plazo de confección es de 4 a 6 semanas hábiles desde la aprobación del diseño y pago del anticipo.",
     "Se requiere un anticipo del 70% para comenzar el proceso de fabricación.",
-    "Los precios de las piedras preciosas pueden variar segun disponibilidad del mercado.",
-    "GARANTIA POR GUSTO: 30 dias desde la entrega para redisenar la pieza si no se siente tuya. La hechura va por nuestra cuenta; tu solo cubres la merma del metal (~10%) y las piedras adicionales que requiera el nuevo diseno. Ver detalles en giasolari.cl/garantia-por-gusto.",
+    "Los precios de las piedras preciosas pueden variar según disponibilidad del mercado.",
+    "GARANTÍA POR GUSTO: 30 días desde la entrega para rediseñar la pieza si no se siente tuya. La hechura va por nuestra cuenta; tú solo cubres la merma del metal (~10%) y las piedras adicionales que requiera el nuevo diseño. Ver detalles en giasolari.cl/garantia-por-gusto.",
   ];
   terms.forEach((t) => {
     doc.text(`· ${t}`, 20, y, { maxWidth: w - 40 });
