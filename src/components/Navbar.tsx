@@ -3,6 +3,9 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoHorizontal from "@/assets/logo-horizontal.png";
 import logoIcon from "@/assets/logo-icon.png";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
+
+const WHATSAPP_HREF = buildWhatsAppUrl("home_hero");
 
 const navLinks = [
   { label: "Inicio", href: "/" },

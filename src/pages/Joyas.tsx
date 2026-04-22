@@ -56,7 +56,7 @@ const Joyas = () => {
                 podemos cotizar tu joya por WhatsApp.
               </p>
               <a
-                href="https://wa.me/56984049502?text=Hola%20Gia%2C%20me%20gustar%C3%ADa%20cotizar%20una%20joya%20a%20medida"
+                href={buildWhatsAppUrl("pieza_custom")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block min-h-[44px] px-6 py-3 bg-gradient-gold text-charcoal text-xs tracking-widest uppercase font-semibold"
@@ -118,7 +118,7 @@ const Joyas = () => {
               Diseñamos cada pieza desde cero según tu historia. Conversemos.
             </p>
             <a
-              href="https://wa.me/56984049502?text=Hola%20Gia%2C%20te%20escribo%20desde%20la%20web%2C%20me%20gustar%C3%ADa%20cotizar..."
+              href={buildWhatsAppUrl("home_hero")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block min-h-[48px] px-8 py-4 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm"

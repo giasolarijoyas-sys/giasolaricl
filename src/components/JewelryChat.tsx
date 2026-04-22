@@ -164,7 +164,7 @@ const JewelryChat = () => {
         ...prev,
         {
           role: "assistant",
-          content: `Lo siento, hubo un error: ${e.message}. Puedes contactarnos directamente por [WhatsApp](https://wa.me/56984049502).`,
+          content: `Lo siento, hubo un error: ${e.message}. Puedes contactarme directamente por [WhatsApp](https://wa.me/56984049502).`,
         },
       ]);
     } finally {
