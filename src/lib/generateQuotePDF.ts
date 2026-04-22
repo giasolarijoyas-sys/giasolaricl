@@ -18,7 +18,7 @@ export function generateQuotePDF(quote: Quote) {
   doc.setTextColor(120);
   doc.text("Joyeria de Autor · Santiago, Chile", w / 2, y, { align: "center" });
   y += 4;
-  doc.text("www.giasolarijoyas.cl · +56 9 8404 9502", w / 2, y, { align: "center" });
+  doc.text("www.giasolari.cl · +56 9 8404 9502", w / 2, y, { align: "center" });
   y += 10;
 
   // Line
@@ -138,7 +138,7 @@ export function generateQuotePDF(quote: Quote) {
   y = doc.internal.pageSize.getHeight() - 15;
   doc.setFontSize(7);
   doc.setTextColor(160);
-  doc.text("GIA SOLARI SpA · Santiago, Las Condes · giasolarijoyas.cl", w / 2, y, { align: "center" });
+  doc.text("GIA SOLARI SpA · Santiago, Las Condes · giasolari.cl", w / 2, y, { align: "center" });
 
   doc.save(`Propuesta_GiaSolari_${quote.nombre.replace(/\s+/g, "_")}_${quote.id.slice(0, 8)}.pdf`);
 }
