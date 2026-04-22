@@ -147,7 +147,7 @@ const Terminos = () => {
                   <strong>Antes de iniciar fabricación:</strong> Se puede cancelar con devolución completa del adelanto, descontando únicamente costos de materiales ya adquiridos (si los hubiere).
                 </li>
                 <li>
-                  <strong>Durante fabricación:</strong> El adelanto del 50% no es reembolsable, ya que los materiales han sido adquiridos y la mano de obra ha comenzado.
+                  <strong>Durante fabricación:</strong> El adelanto del 70% no es reembolsable una vez aprobado el diseño final, dado que los materiales se adquieren específicamente para tu pieza y la mano de obra ya ha comenzado. La Garantía por Gusto (cláusula 5) se aplica por separado y cubre rediseños dentro de 30 días desde la entrega.
                 </li>
               </ul>
             </section>
