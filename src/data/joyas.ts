@@ -1,3 +1,24 @@
+/* =====================================================================
+ * CATÁLOGO DE PIEZAS — Gia Solari Joyas
+ * ---------------------------------------------------------------------
+ * Cómo cargar una pieza REAL (copy-paste de la plantilla de abajo):
+ *
+ * 1. Importá las imágenes arriba con `import imgX from "@/assets/..."`.
+ *    - Foto principal: la que se ve en la grilla y en el hero de la ficha.
+ *    - Galería: 3 a 5 fotos adicionales.
+ * 2. Copiá la PLANTILLA y pegala dentro del array JOYAS.
+ * 3. Completá los campos. Slug en kebab-case y único.
+ * 4. Poné `isPlaceholder: false` para que se indexe y aparezca en sitemap.
+ * 5. (Opcional) Si la pieza tiene precio "desde", llená `precioDesde`.
+ * 6. (Opcional) Si tiene historia detrás, llená `historia`.
+ *
+ * Reglas:
+ * - Si TODAS las piezas tienen `isPlaceholder: true`, /joyas muestra el
+ *   mensaje "Estamos preparando las fotos…". Apenas hay 1 real, se oculta.
+ * - El sitemap se regenera con `npm run build:sitemap` (script en package.json),
+ *   leyendo este archivo y añadiendo cada slug con isPlaceholder:false.
+ * ===================================================================== */
+
 import galZafiro from "@/assets/gal-zafiro.jpeg";
 import galArgolla from "@/assets/gal-argolla.jpeg";
 import galTricillo from "@/assets/gal-tricillo.jpeg";
@@ -20,12 +41,24 @@ import joyaSolitarioEmeraldPlatino from "@/assets/joya-solitario-emerald-platino
 import joyaHaloCushionPlatino from "@/assets/joya-halo-cushion-platino.png";
 
 export type Joya = {
+  /** URL slug, kebab-case, único. Ej: "halo-zafiro-azul" */
   slug: string;
+  /** Nombre visible. Ej: "Anillo Halo Zafiro Azul" */
   nombre: string;
-  material: string;
-  descripcion: string;
+  /** Categoría. Ej: "Anillo de compromiso", "Argolla", "Pulsera" */
   categoria: string;
+  /** Materiales: metal + piedras. Ej: "Oro 18k blanco · Zafiro · Diamantes" */
+  material: string;
+  /** Descripción corta (1-2 líneas) para grilla y meta description */
+  descripcion: string;
+  /** Descripción larga (opcional) para la ficha. Si falta, usa `descripcion`. */
+  descripcionLarga?: string;
+  /** Foto principal (primer item) + galería (3 a 5 fotos). */
   imagenes: string[];
+  /** Precio "desde" en CLP, opcional. Ej: 1800000 */
+  precioDesde?: number;
+  /** Historia detrás de la pieza, opcional. Renderiza un bloque aparte. */
+  historia?: string;
   /**
    * Marca la pieza como ejemplo/placeholder.
    * Cuando es true, la ficha /joyas/:slug se sirve con
@@ -34,6 +67,24 @@ export type Joya = {
    */
   isPlaceholder?: boolean;
 };
+
+/* =====================================================================
+ * PLANTILLA — copiá este bloque para crear una pieza nueva:
+ * ---------------------------------------------------------------------
+ * {
+ *   slug: "nombre-de-la-pieza",
+ *   nombre: "Nombre de la Pieza",
+ *   categoria: "Anillo de compromiso",
+ *   material: "Oro 18k blanco · Diamante natural",
+ *   descripcion: "Una línea breve para la grilla.",
+ *   descripcionLarga:
+ *     "Párrafo más extenso para la ficha. Hablá del diseño, la inspiración, los detalles técnicos.",
+ *   imagenes: [fotoPrincipal, foto2, foto3, foto4],
+ *   precioDesde: 2400000,
+ *   historia: "Diseñada para Camila, que quería algo que le recordara a su abuela.",
+ *   isPlaceholder: false,
+ * },
+ * ===================================================================== */
 
 export const JOYAS: Joya[] = [
   {
@@ -150,7 +201,8 @@ export const JOYAS: Joya[] = [
     slug: "anillo-lady-di",
     nombre: "Anillo Lady Di",
     material: "Oro 18k blanco · Zafiro azul · Diamantes",
-    descripcion: "Anillo inspirado en el icónico Lady Di: zafiro azul central rodeado de un halo de diamantes.",
+    descripcion:
+      "Anillo inspirado en el icónico Lady Di: zafiro azul central rodeado de un halo de diamantes.",
     categoria: "Anillo de compromiso",
     imagenes: [galZafiro, galHaloZafiro, galZafirosBanda],
     isPlaceholder: false,
@@ -159,9 +211,23 @@ export const JOYAS: Joya[] = [
     slug: "esclava-oro",
     nombre: "Esclava Oro",
     material: "Oro 18k amarillo",
-    descripcion: "Esclava en oro pulido. Pieza versátil y elegante para uso diario.",
+    descripcion:
+      "Esclava en oro pulido. Pieza versátil y elegante para uso diario.",
     categoria: "Pulsera",
     imagenes: [galBrazaleteOro, galBrazaleteOro, galBrazaleteOro],
     isPlaceholder: false,
   },
 ];
+
+/** True si hay al menos una pieza real cargada (no placeholder). */
+export const HAS_REAL_JOYAS = JOYAS.some((j) => !j.isPlaceholder);
+
+/** Formatea un precio CLP "desde". */
+export const formatPrecioDesde = (clp?: number) =>
+  typeof clp === "number"
+    ? `Desde ${clp.toLocaleString("es-CL", {
+        style: "currency",
+        currency: "CLP",
+        maximumFractionDigits: 0,
+      })}`
+    : null;
