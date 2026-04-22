@@ -5,11 +5,9 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { motion } from "framer-motion";
 import { JOYAS, HAS_REAL_JOYAS } from "@/data/joyas";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
-const waUrl = (nombre: string) =>
-  `https://wa.me/56984049502?text=${encodeURIComponent(
-    `Hola Gia, me interesa ${nombre}`,
-  )}`;
+const waUrl = (nombre: string) => buildWhatsAppUrl("pieza_especifica", { nombre });
 
 const Joyas = () => {
   const [searchParams] = useSearchParams();
