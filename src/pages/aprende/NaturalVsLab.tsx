@@ -82,7 +82,7 @@ const NaturalVsLab = () => (
             <div className="mt-16 p-8 bg-card border border-border rounded-lg text-center">
               <h3 className="font-display text-xl text-foreground mb-3">¿Quieres comparar en persona?</h3>
               <p className="text-muted-foreground text-sm mb-4">Te muestro ambas opciones con sus certificados.</p>
-              <a href="https://wa.me/56984049502?text=Hola%20Maca%2C%20quiero%20cotizar%20una%20joya%20%F0%9F%92%9B" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-3 bg-primary text-primary-foreground text-sm tracking-widest uppercase">Conversemos</a>
+              <a href={buildWhatsAppUrl("generico")} target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-3 bg-primary text-primary-foreground text-sm tracking-widest uppercase">Conversemos</a>
             </div>
 
             <div className="mt-10 flex gap-4 text-sm">

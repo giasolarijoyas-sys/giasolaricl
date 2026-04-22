@@ -717,7 +717,7 @@ const Guia = () => {
             <h3 className="font-display text-2xl text-foreground mb-4">¿Tienes más preguntas?</h3>
             <p className="text-muted-foreground mb-6">Escríbenos por WhatsApp y te asesoramos personalmente.</p>
             <a
-              href="https://wa.me/56984049502?text=Hola%20Maca%2C%20quiero%20cotizar%20una%20joya%20%F0%9F%92%9B"
+              href={buildWhatsAppUrl("generico")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-3 bg-primary text-primary-foreground font-medium tracking-widest uppercase text-sm hover:bg-primary/90 transition-colors"
