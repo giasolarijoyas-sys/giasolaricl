@@ -21,6 +21,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import JewelryChat from "@/components/JewelryChat";
 import SectionBanner from "@/components/SectionBanner";
 import RangoInversion from "@/components/RangoInversion";
+import IncluyeAnillo from "@/components/IncluyeAnillo";
 import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 
 import bannerNusa from "@/assets/banner-anillo-nusa.png";
@@ -69,6 +70,9 @@ const Index = () => {
 
       {/* Rango de inversión — antes de testimonios */}
       <RangoInversion />
+
+      {/* Qué incluye tu anillo de compromiso */}
+      <IncluyeAnillo />
 
       {/* Testimonios destacados */}
       <TestimoniosDestacados />
