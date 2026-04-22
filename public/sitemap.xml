@@ -2,8 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.giasolari.cl/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://www.giasolari.cl/joyas</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <!-- Fichas /joyas/[slug] omitidas mientras las piezas son placeholders (isPlaceholder:true en src/data/joyas.ts).
-       Al reemplazar por piezas reales, agregar aquí cada URL y poner isPlaceholder:false. -->
+  <!-- Fichas /joyas/[slug] — generadas a partir de src/data/joyas.ts (isPlaceholder:false).
+       Al agregar/quitar piezas reales, actualizar también esta lista. -->
+  <url><loc>https://www.giasolari.cl/joyas/halo-floral-tanzanita</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/joyas/eternity-esmeralda-diamante</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/joyas/halo-marquise-diamante</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/joyas/solitario-emerald-cut-platino</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/joyas/halo-cushion-pave-platino</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/joyas/halo-zafiro-azul</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/joyas/solitario-oval-pave</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/joyas/esmeralda-halo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/joyas/tricillo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/joyas/solitario-clasico</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/joyas/argolla-clasica</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/joyas/anillo-lady-di</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/joyas/esclava-oro</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.giasolari.cl/proceso</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.giasolari.cl/agenda</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.giasolari.cl/sobre-gia</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
