@@ -9,7 +9,7 @@ const ListaDeseos = () => {
     <div className="min-h-screen">
       <SEO
         title="Lista de Deseos | Gia Solari Joyas"
-        description="Cuéntanos qué joyas te hacen soñar y nosotras nos encargamos de que tu pareja te sorprenda con el regalo perfecto."
+        description="Cuéntame qué joyas te hacen soñar y yo me encargo de que tu pareja te sorprenda con el regalo perfecto."
         path="/lista-de-deseos"
       />
       <Navbar />

@@ -114,7 +114,7 @@ const Terminos = () => {
                   <strong>Limpieza y mantenimiento:</strong> Ofrecemos limpieza profesional gratuita de por vida para todas nuestras piezas.
                 </li>
                 <li>
-                  <strong>Reparaciones:</strong> Si tu joya sufre algún daño, nos encargamos de repararla. Las reparaciones por uso normal tienen un costo preferencial.
+                  <strong>Reparaciones:</strong> Si tu joya sufre algún daño, me encargo de repararla. Las reparaciones por uso normal tienen un costo preferencial.
                 </li>
                 <li>
                   <strong>Baño de rodio</strong> (oro blanco): Todas las joyas de oro blanco incluyen un rodinado antes de la entrega. El siguiente baño de rodio es sin costo dentro del primer año.

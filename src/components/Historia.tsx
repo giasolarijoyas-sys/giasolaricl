@@ -61,22 +61,22 @@ const Historia = () => {
                 Yo soy <strong className="text-foreground">Maca</strong>, diseñadora y gemóloga. Juntas formamos Gia Solari Joyas.
               </p>
               <p>
-                Somos Gianna y Maca, madre e hija, unidas por la pasión a las joyas y el conocimiento en orfebrería. Asesoramos, diseñamos y creamos las más lindas pulseras, argollas, aros, collares y nuestra especialidad:{" "}
+                Soy Macarena González Solari, y junto a mi mamá y socia Gianna diseño y fabrico cada pieza de Gia Solari. Asesoro, diseño y creo pulseras, argollas, aros, collares y mi especialidad:{" "}
                 <strong className="text-foreground">anillos de compromiso</strong>.
               </p>
               <p>
-                Nuestra misión es dar una atención personalizada y dedicada, para que mandar a hacer una joya sea una{" "}
+                Mi misión es dar una atención personalizada y dedicada, para que mandar a hacer una joya sea una{" "}
                 <strong className="text-foreground">experiencia extraordinaria</strong> — tanto para quien la compra como para quien la recibe.
               </p>
               <p>
-                Trabajamos en oro 18k, diamantes certificados, diamantes de laboratorio y{" "}
-                <strong className="text-foreground">platino, trabajado con verdadera maestría</strong>. Nuestro compromiso de transparencia técnica hace que tu joya sea auténtica y única, igual que tu historia.
+                Trabajo en oro 18k, diamantes certificados, diamantes de laboratorio y{" "}
+                <strong className="text-foreground">platino, trabajado con verdadera maestría</strong>. Mi compromiso de transparencia técnica hace que tu joya sea auténtica y única, igual que tu historia.
               </p>
               <p className="italic text-foreground font-display text-lg pt-2">
-                "Tú nos cuentas tu historia, nosotras la convertimos en joya."
+                "Tú me cuentas tu historia, yo la convierto en joya."
               </p>
               <p className="text-sm text-primary tracking-wide">
-                — Maca y Gianna · Gia Solari
+                — Maca · Gia Solari
               </p>
             </div>
           </motion.div>
