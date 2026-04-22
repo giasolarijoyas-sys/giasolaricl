@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { supabase } from "@/integrations/supabase/client";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const Agenda = () => {
   const [form, setForm] = useState({
@@ -51,7 +52,7 @@ const Agenda = () => {
       }
 
       toast.success("¡Solicitud enviada! Te confirmamos por WhatsApp.");
-      window.open(`https://wa.me/56984049502?text=${encodeURIComponent(message)}`, "_blank");
+      window.open(buildWhatsAppUrl("agenda", { custom: message }), "_blank");
     } finally {
       setLoading(false);
     }

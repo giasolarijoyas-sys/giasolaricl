@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, X, Send, Image, Mic, MicOff, Loader2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 type Msg = { role: "user" | "assistant"; content: string; imageUrl?: string };
 
@@ -164,7 +165,7 @@ const JewelryChat = () => {
         ...prev,
         {
           role: "assistant",
-          content: `Lo siento, hubo un error: ${e.message}. Puedes contactarme directamente por [WhatsApp](https://wa.me/56984049502).`,
+          content: `Lo siento, hubo un error: ${e.message}. Puedes contactarme directamente por [WhatsApp](${buildWhatsAppUrl("generico")}).`,
         },
       ]);
     } finally {
