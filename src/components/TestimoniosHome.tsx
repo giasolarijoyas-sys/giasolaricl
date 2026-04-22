@@ -41,7 +41,7 @@ const TestimoniosHome = () => {
           </p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-display text-charcoal">
             Lo que dicen quienes{" "}
-            <em className="text-gold not-italic">confiaron en nosotras</em>
+            <em className="text-gold not-italic">confiaron en mí</em>
           </h2>
         </div>
 

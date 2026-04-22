@@ -139,7 +139,7 @@ const WishListForm = () => {
         <div className="container max-w-2xl mx-auto px-4 text-center">
           <div className="bg-card rounded-2xl p-10 shadow-lg border border-border">
             <Heart className="mx-auto mb-4 text-primary" size={48} fill="currentColor" />
-            <h3 className="font-display text-2xl mb-3 text-foreground">¡Gracias por confiar en nosotras!</h3>
+            <h3 className="font-display text-2xl mb-3 text-foreground">¡Gracias por confiar en mí!</h3>
             <p className="text-muted-foreground">
               La Maca se contactará con {formData.nombre_pareja} antes de tus fechas especiales para ayudarlo a elegir la joya perfecta para ti. ¡Todo en secreto! 🤫
             </p>

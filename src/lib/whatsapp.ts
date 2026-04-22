@@ -17,6 +17,7 @@ export type WhatsAppContext =
   | "refundicion"
   | "garantia"
   | "agenda"
+  | "la_hermana"
   | "generico";
 
 export type WhatsAppOptions = {
@@ -36,6 +37,7 @@ const MESSAGES: Record<Exclude<WhatsAppContext, "pieza_especifica">, string> = {
   refundicion: "Hola Maca, quiero refundir oro de herencia",
   garantia: "Hola Maca, quiero conversar sobre mi pieza y la Garantía por Gusto",
   agenda: "Hola Maca, quiero agendar una visita al showroom",
+  la_hermana: "Hola Maca, quiero saber más sobre La Hermana 💛",
   generico: "Hola Maca, te escribo desde la web, me gustaría cotizar…",
 };
 

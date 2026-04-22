@@ -142,7 +142,7 @@ const Testimonials = () => {
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground">
             Lo que dicen quienes{" "}
-            <em className="text-primary not-italic">confiaron en nosotras</em>
+            <em className="text-primary not-italic">confiaron en mí</em>
           </h2>
         </motion.div>
 
