@@ -24,7 +24,7 @@ const Footer = () => {
               <a href="/joyas" className="text-sm hover:text-gold transition-colors">Joyas</a>
               <a href="/proceso" className="text-sm hover:text-gold transition-colors">Nuestro Proceso</a>
               <a href="/agenda" className="text-sm hover:text-gold transition-colors">Agendar Visita</a>
-              <a href="/guia" className="text-sm hover:text-gold transition-colors">Guía de Joyas</a>
+              <a href="/aprende" className="text-sm hover:text-gold transition-colors">Aprende</a>
               <a href="/blog" className="text-sm hover:text-gold transition-colors">Blog</a>
               <a href="/lista-de-deseos" className="text-sm hover:text-gold transition-colors">Lista de Deseos</a>
             </div>
