@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { supabase } from "@/integrations/supabase/client";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const Agenda = () => {
   const [form, setForm] = useState({
@@ -31,7 +32,7 @@ const Agenda = () => {
     }
     setLoading(true);
     try {
-      const message = `Hola Gia, quiero agendar una visita.\n\nNombre: ${form.nombre}\nWhatsApp: ${form.whatsapp}\nEmail: ${form.email}\nFecha: ${form.fecha}\nHora: ${form.hora}\nMotivo: ${form.motivo}\nNotas: ${form.notas}`;
+      const message = `Hola Maca, quiero agendar una visita.\n\nNombre: ${form.nombre}\nWhatsApp: ${form.whatsapp}\nEmail: ${form.email}\nFecha: ${form.fecha}\nHora: ${form.hora}\nMotivo: ${form.motivo}\nNotas: ${form.notas}`;
 
       // Envía email a giasolarijoyas@gmail.com (y confirmación al cliente si dio email)
       try {
@@ -51,7 +52,7 @@ const Agenda = () => {
       }
 
       toast.success("¡Solicitud enviada! Te confirmamos por WhatsApp.");
-      window.open(`https://wa.me/56984049502?text=${encodeURIComponent(message)}`, "_blank");
+      window.open(buildWhatsAppUrl("agenda", { custom: message }), "_blank");
     } finally {
       setLoading(false);
     }

@@ -2,13 +2,15 @@ import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 import { motion } from "framer-motion";
 import { ShieldCheck, Gem, Users, Heart } from "lucide-react";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const valores = [
   { icon: Gem, title: "Certificación real", desc: "Solo piedras con certificado GIA o IGI. Sin excepciones." },
   { icon: ShieldCheck, title: "Transparencia total", desc: "Te explico cada material, cada costo y cada paso del proceso." },
-  { icon: Users, title: "Atención personalizada", desc: "Te acompaño de principio a fin. No delegamos tu proyecto." },
+  { icon: Users, title: "Atención personalizada", desc: "Te acompaño de principio a fin. No delego tu proyecto." },
   { icon: Heart, title: "Garantía por gusto", desc: "Si no te encanta, lo cambiamos. Así de simple." },
 ];
 
@@ -27,9 +29,9 @@ const SobreGia = () => (
         <div className="container mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
           <div className="aspect-[4/5] bg-muted rounded-lg" />
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">Sobre nosotras</p>
+            <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">Sobre mí</p>
             <h1 className="text-4xl md:text-5xl font-display text-foreground mb-4">Sobre Gia Solari: joyería artesanal en Santiago</h1>
-            <p className="text-muted-foreground text-lg">Diseño joyas a medida en Santiago desde 2019</p>
+            <p className="text-muted-foreground text-lg">Diseño joyas a medida en Santiago desde 2019.</p>
           </motion.div>
         </div>
       </section>
@@ -38,9 +40,10 @@ const SobreGia = () => (
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="space-y-5 text-muted-foreground leading-relaxed">
-            <p>Todo empezó con mi mamá, Gianna. Ella me enseñó que una joya no es solo un objeto bonito — es una historia que se hereda, un momento que se guarda para siempre. Crecí viendo cómo las joyas de mi abuela pasaban de mano en mano, cada una con su propia historia.</p>
+            <p>Yo, Macarena González Solari, fundé Gia Solari en 2019. Trabajo junto a mi mamá y socia Gianna, y con orfebres especialistas, pero cada pieza pasa por mis manos.</p>
+            <p>Todo empezó con mi mamá. Ella me enseñó que una joya no es solo un objeto bonito — es una historia que se hereda, un momento que se guarda para siempre. Crecí viendo cómo las joyas de mi abuela pasaban de mano en mano, cada una con su propia historia.</p>
             <p>Estudié gemología en el GIA (Gemological Institute of America) porque quería entender cada piedra, cada metal, cada detalle técnico. Me especialicé en platino y diamantes certificados porque creo que quien invierte en una joya merece saber exactamente qué está comprando.</p>
-            <p>Gia Solari nació en 2019 con una misión simple: que mandar a hacer una joya sea una experiencia extraordinaria. Trabajo desde mi taller en Santiago con orfebres especialistas, y cada pieza pasa por mis manos antes de llegar a las tuyas.</p>
+            <p>Mi misión es simple: que mandar a hacer una joya sea una experiencia extraordinaria. Trabajo desde mi taller en Santiago, y cada pieza pasa por mis manos antes de llegar a las tuyas.</p>
             <p>No tengo vitrina ni stock. Cada joya la diseño contigo, para ti. Porque creo que algo tan importante como un anillo de compromiso o una argolla de matrimonio merece ser pensado, conversado y creado con cariño.</p>
             <p className="italic text-foreground font-display text-lg">"Tú me cuentas tu historia, yo la convierto en joya."</p>
           </motion.div>
@@ -94,15 +97,18 @@ const SobreGia = () => (
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-display text-foreground mb-6">Agendemos una conversación</h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://calendly.com/giasolarijoyas" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors">
+            <a href="/agenda" className="px-8 py-3 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors">
               Agendar cita
             </a>
-            <a href="https://wa.me/56984049502?text=Hola%20Maca%2C%20quiero%20cotizar%20una%20joya%20%F0%9F%92%9B" target="_blank" rel="noopener noreferrer" className="px-8 py-3 border border-primary text-primary text-sm tracking-widest uppercase hover:bg-primary hover:text-primary-foreground transition-all">
+            <a href={buildWhatsAppUrl("generico")} target="_blank" rel="noopener noreferrer" className="px-8 py-3 border border-primary text-primary text-sm tracking-widest uppercase hover:bg-primary hover:text-primary-foreground transition-all">
               WhatsApp
             </a>
           </div>
         </div>
       </section>
+
+      {/* Testimonios destacados */}
+      <TestimoniosDestacados />
 
       <Footer />
       <WhatsAppButton />

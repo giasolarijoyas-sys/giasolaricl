@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { JOYAS, formatPrecioDesde } from "@/data/joyas";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const JoyaDetalle = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -13,10 +14,7 @@ const JoyaDetalle = () => {
 
   if (!item) return <Navigate to="/joyas" replace />;
 
-  const waText = encodeURIComponent(
-    `Hola Gia, me interesa cotizar la pieza "${item.nombre}" (${item.categoria}). ¿Conversamos?`,
-  );
-  const waUrl = `https://wa.me/56984049502?text=${waText}`;
+  const waUrl = buildWhatsAppUrl("pieza_especifica", { nombre: item.nombre });
   const precioLabel = formatPrecioDesde(item.precioDesde);
 
   const productJsonLd = {

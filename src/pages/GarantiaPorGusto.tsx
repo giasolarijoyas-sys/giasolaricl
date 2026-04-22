@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { motion } from "framer-motion";
 import { ShieldCheck, RefreshCw, Ruler, MessageCircle, Quote } from "lucide-react";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import {
   Accordion,
   AccordionContent,
@@ -147,7 +148,7 @@ const GarantiaPorGusto = () => (
               Escribinos por WhatsApp y conversamos. Sin compromiso, sin apuro.
             </p>
             <a
-              href="https://wa.me/56984049502?text=Hola%20Gia%2C%20quiero%20conversar%20sobre%20mi%20pieza%20y%20la%20Garant%C3%ADa%20por%20Gusto."
+              href={buildWhatsAppUrl("garantia")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 text-sm uppercase tracking-[0.2em] bg-primary text-primary-foreground hover:opacity-90 transition-opacity rounded-md"

@@ -3,6 +3,9 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoHorizontal from "@/assets/logo-horizontal.png";
 import logoIcon from "@/assets/logo-icon.png";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
+
+const WHATSAPP_HREF = buildWhatsAppUrl("home_hero");
 
 const navLinks = [
   { label: "Inicio", href: "/" },
@@ -38,7 +41,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="https://wa.me/56984049502?text=Hola%20Maca%2C%20quiero%20cotizar%20una%20joya%20%F0%9F%92%9B"
+            href={WHATSAPP_HREF}
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 text-sm tracking-widest uppercase border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
@@ -74,7 +77,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="https://wa.me/56984049502?text=Hola%20Maca%2C%20quiero%20cotizar%20una%20joya%20%F0%9F%92%9B"
+                href={WHATSAPP_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-2 text-sm tracking-widest uppercase border border-primary text-primary"

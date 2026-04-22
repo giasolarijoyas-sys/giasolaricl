@@ -57,7 +57,7 @@ const AdminSidebar = () => {
           className="flex items-center gap-3 w-full px-3 py-2.5 text-sm text-destructive hover:bg-destructive/10 rounded-md transition-colors"
         >
           <LogOut size={18} />
-          Cerrar sesion
+          Cerrar sesión
         </button>
       </div>
     </aside>

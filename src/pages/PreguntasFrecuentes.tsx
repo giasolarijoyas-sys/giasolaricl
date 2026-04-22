@@ -7,16 +7,18 @@ import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "¿Cuánto demora hacer un anillo a medida?", a: "Entre 4 y 6 semanas, dependiendo de la complejidad del diseño, el tipo de piedra y los detalles que elijas. Si tienes una fecha especial, avísanos con tiempo y hacemos lo posible por cumplir." },
-  { q: "¿Puedo ver los diamantes antes de elegir?", a: "Sí. En la cita presencial te mostramos las piedras disponibles, sus certificados y te explicamos cada detalle para que elijas con total confianza." },
+  { q: "¿Cuánto demora hacer un anillo a medida?", a: "Entre 4 y 6 semanas, dependiendo de la complejidad del diseño, el tipo de piedra y los detalles que elijas. Si tienes una fecha especial, avísame con tiempo y hago lo posible por cumplir." },
+  { q: "¿Puedo ver los diamantes antes de elegir?", a: "Sí. En la cita presencial te muestro las piedras disponibles, sus certificados y te explico cada detalle para que elijas con total confianza." },
   { q: "¿Qué diferencia hay entre diamante natural y de laboratorio?", a: "Ambos son diamantes reales con las mismas propiedades físicas, químicas y ópticas. La diferencia es su origen: uno viene de la tierra y el otro se crea en laboratorio. El de laboratorio es más accesible en precio, con la misma belleza y brillo." },
-  { q: "¿Trabajas con oro que me traigo de herencia?", a: "Sí, hacemos refundición de oro. Evaluamos el metal que traes, te explicamos el proceso y lo integramos en tu nueva pieza. Es una forma hermosa de darle nueva vida a joyas con historia." },
-  { q: "¿Entregan a regiones?", a: "Sí, coordinamos envíos asegurados a todo Chile por WhatsApp. Las piezas a pedido (anillos de compromiso y joyas custom) se entregan preferentemente en persona en Santiago." },
-  { q: "¿Cómo es la garantía por gusto?", a: "Si no te encanta cómo quedó tu joya, la cambiamos. Trabajamos con renders y muestras antes de producir para minimizar sorpresas, pero si algo no te convence, buscamos la solución juntas." },
+  { q: "¿Trabajas con oro que me traigo de herencia?", a: "Sí, hago refundición de oro. Evalúo el metal que traes, te explico el proceso y lo integro en tu nueva pieza. Es una forma hermosa de darle nueva vida a joyas con historia." },
+  { q: "¿Entregan a regiones?", a: "Sí, coordino envíos asegurados a todo Chile por WhatsApp. Las piezas a pedido (anillos de compromiso y joyas custom) se entregan preferentemente en persona en Santiago." },
+  { q: "¿Cómo es la Garantía por Gusto?", a: "Si no te encanta cómo quedó tu joya, la rehago. Trabajo con bocetos y muestras antes de producir para minimizar sorpresas, pero si algo no te convence, buscamos la solución juntos. Tienes 30 días desde la entrega para activar la garantía." },
   { q: "¿Cuánto cuesta un anillo de compromiso?", a: "Los anillos de compromiso parten desde $800.000 CLP aproximadamente para diseños con diamante de laboratorio, y desde $1.500.000 CLP con diamante natural certificado. El precio final depende del tamaño de la piedra, el metal y el diseño." },
-  { q: "¿Qué métodos de pago aceptan?", a: "Aceptamos transferencia bancaria, tarjeta de crédito y débito. También trabajamos con pagos en cuotas según el monto." },
-  { q: "¿Puedo pagar en cuotas?", a: "Sí, ofrecemos facilidades de pago. Conversemos tu caso particular y encontramos la mejor opción para ti." },
-  { q: "¿Hacen entregas urgentes?", a: "En algunos casos podemos acelerar el proceso, pero depende del diseño y la disponibilidad de materiales. Escríbenos y evaluamos juntas si es posible." },
+  { q: "¿Cómo es el sistema de pagos?", a: "Se requiere un anticipo del 70% para comenzar el proceso de fabricación, y el 30% restante se paga contra entrega de la pieza terminada." },
+  { q: "¿Qué métodos de pago aceptan?", a: "Acepto transferencia bancaria, tarjeta de crédito y débito. También trabajo con pagos en cuotas según el monto." },
+  { q: "¿Puedo pagar en cuotas?", a: "Sí, ofrezco facilidades de pago. Conversemos tu caso particular y encontramos la mejor opción para ti." },
+  { q: "¿Hacen entregas urgentes?", a: "En algunos casos puedo acelerar el proceso, pero depende del diseño y la disponibilidad de materiales. Escríbeme y evaluamos juntos si es posible." },
+  { q: "¿Tienen descuento en argollas si hice mi anillo de compromiso con ustedes?", a: "¡Sí! Las parejas que hacen su anillo de compromiso conmigo tienen un 20% de descuento en la hechura de las argollas de matrimonio." },
 ];
 
 const PreguntasFrecuentes = () => (
