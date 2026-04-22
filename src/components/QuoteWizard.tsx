@@ -50,6 +50,7 @@ interface FormData {
   whatsapp: string;
   fechaEntrega: string;
   comentarios: string;
+  grabado: string;
 }
 
 const INITIAL: FormData = {
@@ -62,6 +63,7 @@ const INITIAL: FormData = {
   whatsapp: "",
   fechaEntrega: "",
   comentarios: "",
+  grabado: "",
 };
 
 const STEP_TITLES = [
@@ -153,6 +155,11 @@ const QuoteWizard = () => {
         imageUrls = await uploadImages(quoteId);
       }
 
+      const grabadoNota = data.grabado.trim()
+        ? `[Grabado solicitado: ${data.grabado.trim()}]`
+        : "";
+      const referencias = [data.comentarios, grabadoNota].filter(Boolean).join("\n\n") || null;
+
       const { error } = await supabase.from("quotes").insert({
         id: quoteId,
         nombre: data.nombre.trim(),
@@ -163,7 +170,8 @@ const QuoteWizard = () => {
         piedra: data.piedra,
         presupuesto: data.presupuesto,
         fecha_limite: data.fechaEntrega || null,
-        referencias: data.comentarios || null,
+        referencias,
+        grabado: data.grabado.trim() || null,
         image_urls: imageUrls.length > 0 ? imageUrls : null,
         status: "nueva",
       });
@@ -298,6 +306,21 @@ const QuoteWizard = () => {
                       <input type="date" value={data.fechaEntrega} onChange={e => update({ fechaEntrega: e.target.value })}
                         className={inputCls} />
                     </div>
+                    {data.pieza === "Anillo de compromiso" && (
+                      <div>
+                        <label className="text-sm font-medium text-foreground block mb-1.5">
+                          ¿Qué te gustaría grabar?{" "}
+                          <span className="text-muted-foreground font-normal">(opcional, gratis)</span>
+                        </label>
+                        <input
+                          type="text"
+                          value={data.grabado}
+                          onChange={e => update({ grabado: e.target.value })}
+                          placeholder="Nombres · fecha · una frase… (opcional, gratis)"
+                          className={inputCls}
+                        />
+                      </div>
+                    )}
                     <div>
                       <label className="text-sm font-medium text-foreground block mb-1.5">Comentarios</label>
                       <textarea value={data.comentarios} onChange={e => update({ comentarios: e.target.value })}

@@ -46,6 +46,14 @@ const Joyas = () => {
               Cada pieza de Gia Solari se fabrica a mano, una por una. El resultado
               final puede variar levemente de la imagen de referencia.
             </p>
+            <p className="mt-3 text-[12px] text-charcoal/70 max-w-md mx-auto leading-relaxed">
+              Todo anillo de compromiso incluye{" "}
+              <strong>grabado personalizado</strong> y{" "}
+              <Link to="/la-hermana" className="underline hover:text-gold">
+                La Hermana
+              </Link>{" "}
+              — sin costo adicional.
+            </p>
           </motion.div>
 
           {/* Mensaje "preparando fotos" SOLO si no hay ninguna pieza real cargada */}

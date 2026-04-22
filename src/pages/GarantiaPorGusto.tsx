@@ -3,7 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { motion } from "framer-motion";
-import { ShieldCheck, RefreshCw, Ruler, MessageCircle, Quote } from "lucide-react";
+import { ShieldCheck, RefreshCw, Ruler, MessageCircle, Quote, Gift } from "lucide-react";
+import { Link } from "react-router-dom";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import {
   Accordion,
@@ -134,6 +135,41 @@ const GarantiaPorGusto = () => (
               Camila R. · Las Condes
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Además incluye */}
+      <section className="py-12 md:py-16 bg-background">
+        <div className="container mx-auto px-4 md:px-8 max-w-3xl">
+          <div className="text-center mb-8">
+            <p className="text-primary tracking-[0.3em] uppercase text-xs mb-3">Además</p>
+            <h2 className="font-display text-2xl md:text-3xl text-foreground">
+              Todo anillo de compromiso incluye
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="flex gap-4 p-6 bg-card border border-border rounded-lg">
+              <Gift className="w-6 h-6 text-primary shrink-0 mt-1" strokeWidth={1.4} />
+              <div>
+                <h3 className="font-display text-lg text-foreground mb-1">Grabado personalizado</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Gratis, en el interior del anillo. Nombres, fecha o frase especial.
+                </p>
+              </div>
+            </div>
+            <Link
+              to="/la-hermana"
+              className="flex gap-4 p-6 bg-card border border-border rounded-lg hover:border-primary/40 transition-colors"
+            >
+              <Gift className="w-6 h-6 text-primary shrink-0 mt-1" strokeWidth={1.4} />
+              <div>
+                <h3 className="font-display text-lg text-foreground mb-1">La Hermana</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Réplica en plata y moissanita para el día a día. Incluida sin costo.
+                </p>
+              </div>
+            </Link>
+          </div>
         </div>
       </section>
 

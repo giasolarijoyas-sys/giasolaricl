@@ -32,6 +32,7 @@ import Joyas from "./pages/Joyas.tsx";
 import JoyaDetalle from "./pages/JoyaDetalle.tsx";
 import Agenda from "./pages/Agenda.tsx";
 import Proceso from "./pages/Proceso.tsx";
+import LaHermana from "./pages/LaHermana.tsx";
 import { Navigate } from "react-router-dom";
 const queryClient = new QueryClient();
 
@@ -78,6 +79,7 @@ const App = () => (
             <Route path="/catalogo/:categoria/:pieza" element={<Navigate to="/joyas" replace />} />
             <Route path="/agenda" element={<Agenda />} />
             <Route path="/proceso" element={<Proceso />} />
+            <Route path="/la-hermana" element={<LaHermana />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
