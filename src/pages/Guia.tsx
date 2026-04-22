@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { Gem, Ruler, Palette, Scissors, ShieldCheck, Star, HelpCircle } from "lucide-react";
 
 // Photos for visual breaks
