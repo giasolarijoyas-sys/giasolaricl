@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { motion } from "framer-motion";
-import { JOYAS } from "@/data/joyas";
+import { JOYAS, HAS_REAL_JOYAS } from "@/data/joyas";
 
 const waUrl = (nombre: string) =>
   `https://wa.me/56984049502?text=${encodeURIComponent(
@@ -50,8 +50,8 @@ const Joyas = () => {
             </p>
           </motion.div>
 
-          {/* Feed mobile-first, grid desktop */}
-          {visibleJoyas.length === 0 && (
+          {/* Mensaje "preparando fotos" SOLO si no hay ninguna pieza real cargada */}
+          {visibleJoyas.length === 0 && !HAS_REAL_JOYAS && (
             <div className="text-center py-16 border border-gold/20 rounded-[4px] bg-cream/30">
               <p className="text-charcoal/70 text-sm leading-relaxed mb-4">
                 Estamos preparando las fotos de nuestras piezas. Mientras tanto,

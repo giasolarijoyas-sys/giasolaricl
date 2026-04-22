@@ -9,9 +9,9 @@ const Terminos = () => {
       <Helmet>
         <title>Términos y Condiciones | Gia Solari Joyas</title>
         <meta name="description" content="Términos y condiciones, políticas de cambio y garantías de Gia Solari Joyas. Conoce nuestra Garantía por Gusto." />
-        <link rel="canonical" href="https://www.giasolarijoyas.cl/terminos" />
+        <link rel="canonical" href="https://www.giasolari.cl/terminos" />
         <meta property="og:title" content="Términos y Condiciones | Gia Solari Joyas" />
-        <meta property="og:url" content="https://www.giasolarijoyas.cl/terminos" />
+        <meta property="og:url" content="https://www.giasolari.cl/terminos" />
       </Helmet>
       <div className="min-h-screen bg-background">
       <Navbar />
