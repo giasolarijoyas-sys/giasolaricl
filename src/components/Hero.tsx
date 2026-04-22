@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 import heroImage from "@/assets/maca-hero.jpeg";
 import heroDsc5775 from "@/assets/hero-dsc-5775.jpg";
@@ -142,7 +143,7 @@ const Hero = () => {
               Ver piezas
             </a>
             <a
-              href="https://wa.me/56984049502?text=Hola%20Gia%2C%20te%20escribo%20desde%20la%20web%2C%20me%20gustar%C3%ADa%20cotizar..."
+              href={buildWhatsAppUrl("home_hero")}
               target="_blank"
               rel="noopener noreferrer"
               className="min-h-[48px] px-6 py-3 border border-cream/40 text-cream tracking-widest uppercase text-sm text-center hover:border-gold-light hover:text-gold-light transition-colors flex items-center justify-center"

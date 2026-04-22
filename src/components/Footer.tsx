@@ -1,4 +1,5 @@
 import logoCrema from "@/assets/logo-icon-cream.png";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const Footer = () => {
   return (
@@ -50,7 +51,7 @@ const Footer = () => {
             </p>
             <div className="flex flex-col gap-2 text-sm">
               <a
-                href="https://wa.me/56984049502"
+                href={buildWhatsAppUrl("generico")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gold transition-colors"
