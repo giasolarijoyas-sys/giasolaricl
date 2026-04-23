@@ -10,11 +10,30 @@ import { buildWhatsAppUrl } from "@/lib/whatsapp";
 const waUrl = (nombre: string) => buildWhatsAppUrl("pieza_especifica", { nombre });
 
 const Joyas = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const showPlaceholders = searchParams.get("preview") === "1";
-  const visibleJoyas = showPlaceholders
+  const categoryFilter = searchParams.get("categoria") ?? "todas";
+  const metalFilter = searchParams.get("metal") ?? "todos";
+  const styleFilter = searchParams.get("estilo") ?? "todos";
+  const baseJoyas = showPlaceholders
     ? JOYAS
     : JOYAS.filter((j) => !j.isPlaceholder);
+  const categories = ["todas", ...Array.from(new Set(baseJoyas.map((j) => j.categoria)))]
+  const metals = ["todos", ...Array.from(new Set(baseJoyas.map((j) => j.metalPrincipal ?? j.material.split(" · ")[0])))]
+  const styles = ["todos", ...Array.from(new Set(baseJoyas.map((j) => j.estilo).filter(Boolean)))] as string[];
+  const visibleJoyas = baseJoyas.filter((j) => {
+    if (categoryFilter !== "todas" && j.categoria !== categoryFilter) return false;
+    if (metalFilter !== "todos" && (j.metalPrincipal ?? j.material.split(" · ")[0]) !== metalFilter) return false;
+    if (styleFilter !== "todos" && j.estilo !== styleFilter) return false;
+    return true;
+  });
+
+  const updateFilter = (key: "categoria" | "metal" | "estilo", value: string) => {
+    const next = new URLSearchParams(searchParams);
+    if (["todas", "todos"].includes(value)) next.delete(key);
+    else next.set(key, value);
+    setSearchParams(next);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -55,6 +74,34 @@ const Joyas = () => {
               — sin costo adicional.
             </p>
           </motion.div>
+
+          <div className="mb-10 space-y-4">
+            {[
+              { label: "Categoría", key: "categoria" as const, value: categoryFilter, options: categories },
+              { label: "Metal", key: "metal" as const, value: metalFilter, options: metals },
+              { label: "Estilo", key: "estilo" as const, value: styleFilter, options: styles },
+            ].map((filter) => (
+              <div key={filter.key} className="flex flex-wrap items-center justify-center gap-2">
+                <span className="mr-1 text-[11px] uppercase tracking-widest text-charcoal/50">
+                  {filter.label}
+                </span>
+                {filter.options.map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    onClick={() => updateFilter(filter.key, option)}
+                    className={`min-h-[34px] px-3 border text-[11px] uppercase tracking-widest transition-colors ${
+                      filter.value === option
+                        ? "border-gold bg-gold/10 text-charcoal"
+                        : "border-gold/20 text-charcoal/60 hover:border-gold/60"
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            ))}
+          </div>
 
           {/* Mensaje "preparando fotos" SOLO si no hay ninguna pieza real cargada */}
           {visibleJoyas.length === 0 && !HAS_REAL_JOYAS && (
