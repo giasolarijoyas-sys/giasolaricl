@@ -423,12 +423,16 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "esclava-oro",
-    nombre: "Esclava Oro",
-    material: "Oro 18k amarillo",
+    nombre: "Esclava · Oro",
+    material: "Oro 18k amarillo · Pulido",
+    metalPrincipal: "Oro 18k amarillo",
+    estilo: "Atemporal",
     descripcion:
       "Esclava en oro pulido. Pieza versátil y elegante para uso diario.",
+    descripcionLarga:
+      "Esclava en oro 18k amarillo pulido, fina y elegante. La pieza versátil que se queda puesta — combina con todo, dura toda la vida y se siente liviana al uso diario.",
     categoria: "Pulsera",
-    imagenes: [galBrazaleteOro, galBrazaleteOro, galBrazaleteOro],
+    imagenes: [esclavaOro01],
     isPlaceholder: false,
   },
 ];
