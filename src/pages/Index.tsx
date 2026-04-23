@@ -23,6 +23,7 @@ import SectionBanner from "@/components/SectionBanner";
 import RangoInversion from "@/components/RangoInversion";
 import IncluyeAnillo from "@/components/IncluyeAnillo";
 import TestimoniosDestacados from "@/components/TestimoniosDestacados";
+import SoloEnGiaSolari from "@/components/SoloEnGiaSolari";
 
 import bannerNusa from "@/assets/banner-anillo-nusa.png";
 import bannerHalo from "@/assets/banner-halo-oval.png";
@@ -58,6 +59,9 @@ const Index = () => {
         text="Cada Detalle Cuenta"
         subtext="Diseño artesanal con piedras certificadas"
       />
+
+      {/* Lo que solo encontrás en Gia Solari */}
+      <SoloEnGiaSolari />
 
       {/* 5. Diferenciadores / por qué elegirnos */}
       <WhyUs />
