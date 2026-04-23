@@ -57,6 +57,10 @@ export type Joya = {
   categoria: string;
   /** Materiales: metal + piedras. Ej: "Oro 18k blanco · Zafiro · Diamantes" */
   material: string;
+  /** Metal principal para filtros del catálogo. */
+  metalPrincipal?: string;
+  /** Estilo/colección para filtros del catálogo. */
+  estilo?: string;
   /** Descripción corta (1-2 líneas) para grilla y meta description */
   descripcion: string;
   /** Descripción larga (opcional) para la ficha. Si falta, usa `descripcion`. */
@@ -138,7 +142,9 @@ export const JOYAS: Joya[] = [
   {
     slug: "halo-cushion-pave-platino",
     nombre: "Halo Cushion Pavé · Platino",
-    material: "Platino · Diamante natural · Diamantes",
+    material: "Platino · Diamante natural cojín · Halo de diamantes + banda pavé + milgrain · Certificación GIA",
+    metalPrincipal: "Platino",
+    estilo: "Editorial",
     descripcion:
       "Diamante cushion cut con halo de diamantes, banda pavé y detalle milgrain. Platino.",
     descripcionLarga:
@@ -150,7 +156,9 @@ export const JOYAS: Joya[] = [
   {
     slug: "solitario-aguamarina-oval",
     nombre: "Solitario Aguamarina · Oval",
-    material: "Oro 18k blanco · Aguamarina oval · Diamantes",
+    material: "Oro 18k blanco · Aguamarina oval · Banda pavé de diamantes · Grifas",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Color",
     descripcion:
       "Aguamarina oval a grifas sobre banda en pavé de diamantes, oro 18k blanco. Luminoso y contemporáneo.",
     descripcionLarga:
@@ -162,7 +170,9 @@ export const JOYAS: Joya[] = [
   {
     slug: "anillo-cupula",
     nombre: "Anillo Cúpula",
-    material: "Oro 18k blanco · Diamante natural · Diamantes",
+    material: "Oro 18k blanco · Diamante natural brillante redondo · Halo de diamantes grandes + pavé lateral · Grifas",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Editorial",
     descripcion:
       "Diamante redondo central rodeado por un halo de diamantes grandes en forma de cúpula, sobre banda ancha con pavé lateral.",
     descripcionLarga:
@@ -234,7 +244,9 @@ export const JOYAS: Joya[] = [
   {
     slug: "anillo-lady-di",
     nombre: "Anillo Lady Di · Zafiro",
-    material: "Oro 18k blanco · Zafiro azul · Diamantes",
+    material: "Oro 18k blanco · Zafiro oval · Halo de diamantes · Bezel",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Color",
     descripcion:
       "Anillo inspirado en el icónico Lady Di: zafiro azul central rodeado de un halo de diamantes.",
     descripcionLarga:
