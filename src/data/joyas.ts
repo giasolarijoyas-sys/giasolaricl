@@ -38,7 +38,6 @@ import joyaHaloFloralTanzanita from "@/assets/joya-halo-floral-tanzanita.png";
 import joyaEternityEsmeralda from "@/assets/joya-eternity-esmeralda.png";
 import joyaHaloMarquise from "@/assets/joya-halo-marquise.png";
 import joyaSolitarioEmeraldPlatino from "@/assets/joya-solitario-emerald-platino.png";
-import joyaHaloCushionPlatino from "@/assets/joya-halo-cushion-platino.png";
 import anilloCupula01 from "@/assets/joyas/anillo-cupula-01.png";
 import anilloCupula02 from "@/assets/joyas/anillo-cupula-02.png";
 import anilloLadyDiZafiro01 from "@/assets/joyas/anillo-lady-di-zafiro-01.png";
@@ -234,12 +233,14 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "anillo-lady-di",
-    nombre: "Anillo Lady Di",
+    nombre: "Anillo Lady Di · Zafiro",
     material: "Oro 18k blanco · Zafiro azul · Diamantes",
     descripcion:
       "Anillo inspirado en el icónico Lady Di: zafiro azul central rodeado de un halo de diamantes.",
+    descripcionLarga:
+      "Inspirado en uno de los anillos de compromiso más icónicos del siglo: zafiro azul oval central enmarcado en un engaste bezel y rodeado por un halo de diamantes brillantes, sobre oro 18k blanco. Una pieza con historia, ahora en versión Gia Solari. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
-    imagenes: [galZafiro, galHaloZafiro, galZafirosBanda],
+    imagenes: [anilloLadyDiZafiro01, anilloLadyDiZafiro02],
     isPlaceholder: false,
   },
   {
