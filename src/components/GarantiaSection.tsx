@@ -73,13 +73,13 @@ const GarantiaSection = () => {
             className="font-display text-xl md:text-2xl italic max-w-2xl mx-auto"
             style={{ color: "#1A1614" }}
           >
-            Porque una joya que te acompañará toda la vida tiene que empezar por gustarte de verdad.
+            Queremos que ames tu joya — no que te conformes.
           </p>
           <p
             className="mt-8 font-body text-base md:text-[15px] leading-relaxed mx-auto"
-            style={{ color: "#6B6560", maxWidth: "640px" }}
+            style={{ color: "#6B6560", maxWidth: "680px" }}
           >
-            Diseñar una joya de autor es un proceso íntimo. Por eso te damos 30 días después de recibirla para asegurarte de que es exactamente la pieza que imaginaste. Si algo no se siente tuyo — el estilo, la proporción, el detalle — la rehacemos juntas.
+            Si al recibir tu pieza sentís que no es exactamente lo que imaginabas, te la ajustamos o reemplazamos sin costo adicional. Somos la única joyería en Chile que ofrece esta garantía.
           </p>
         </motion.div>
 
