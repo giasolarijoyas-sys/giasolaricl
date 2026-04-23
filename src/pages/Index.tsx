@@ -24,6 +24,7 @@ import RangoInversion from "@/components/RangoInversion";
 import IncluyeAnillo from "@/components/IncluyeAnillo";
 import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 import SoloEnGiaSolari from "@/components/SoloEnGiaSolari";
+import SoloEnGiaSolariCompact from "@/components/SoloEnGiaSolariCompact";
 
 import bannerNusa from "@/assets/banner-anillo-nusa.png";
 import bannerHalo from "@/assets/banner-halo-oval.png";
@@ -46,6 +47,9 @@ const Index = () => {
 
       {/* Trust badges */}
       <TrustBadges />
+
+      {/* Compact diferenciadores con CTA a Garantía por Gusto */}
+      <SoloEnGiaSolariCompact />
 
       {/* 3. Barra marquee de keywords */}
       <Marquee />
