@@ -47,6 +47,15 @@ import haloCushionPavePlatino02 from "@/assets/joyas/halo-cushion-pave-platino-0
 import solitarioAguamarinaOval01 from "@/assets/joyas/solitario-aguamarina-oval-01.jpg";
 import solitarioAguamarinaOval02 from "@/assets/joyas/solitario-aguamarina-oval-02.jpg";
 import solitarioAguamarinaOval03 from "@/assets/joyas/solitario-aguamarina-oval-03.jpg";
+import zafiroHaloClusterVintage01 from "@/assets/joyas/zafiro-halo-cluster-vintage-01.jpeg";
+import haloAguamarinaCushion01 from "@/assets/joyas/halo-aguamarina-cushion-01.jpg";
+import haloAguamarinaCushion02 from "@/assets/joyas/halo-aguamarina-cushion-02.png";
+import aguamarinaRectangularAtelier01 from "@/assets/joyas/aguamarina-rectangular-atelier-01.png";
+import aguamarinaRectangularAtelier02 from "@/assets/joyas/aguamarina-rectangular-atelier-02.png";
+import mandalaVintageFlorDeLuz01 from "@/assets/joyas/mandala-vintage-flor-de-luz-01.png";
+import mandalaVintageFlorDeLuz02 from "@/assets/joyas/mandala-vintage-flor-de-luz-02.png";
+import onixHalo01 from "@/assets/joyas/onix-halo-01.png";
+import onixHalo02 from "@/assets/joyas/onix-halo-02.png";
 
 export type Joya = {
   /** URL slug, kebab-case, único. Ej: "halo-zafiro-azul" */
@@ -99,6 +108,76 @@ export type Joya = {
  * ===================================================================== */
 
 export const JOYAS: Joya[] = [
+  {
+    slug: "zafiro-halo-cluster-vintage",
+    nombre: "Zafiro Halo Cluster · Vintage",
+    material: "Oro 18k blanco · Zafiro oval · Halo cluster asimétrico de diamantes (starburst)",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Editorial",
+    descripcion:
+      "Zafiro azul oval central rodeado por un halo cluster asimétrico de diamantes estilo starburst, oro 18k blanco sobre cofre verde oliva.",
+    descripcionLarga:
+      "Un zafiro azul oval al centro, rodeado por un halo cluster que no se cierra: los diamantes se abren como rayos desde la piedra, formando un starburst asimétrico de inspiración art déco. Presentado sobre cofre de terciopelo verde oliva — firma visual de la casa. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [zafiroHaloClusterVintage01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "halo-aguamarina-cushion",
+    nombre: "Halo Aguamarina · Cushion",
+    material: "Oro 18k blanco · Aguamarina cushion · Halo de diamantes",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Color",
+    descripcion:
+      "Aguamarina cushion cut rodeada por un halo de diamantes. Oro 18k blanco sobre cofre de terciopelo azul.",
+    descripcionLarga:
+      "Aguamarina corte cushion en oro 18k blanco, rodeada por un halo de pequeños diamantes. Una pieza con la frescura del agua y la luz del cielo, presentada sobre cofre de terciopelo azul. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [haloAguamarinaCushion01, haloAguamarinaCushion02],
+    isPlaceholder: false,
+  },
+  {
+    slug: "aguamarina-rectangular-atelier",
+    nombre: "Aguamarina Rectangular · Atelier",
+    material: "Oro 18k blanco · Aguamarina corte emerald · Halo octogonal de diamantes con milgrain",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Color",
+    descripcion:
+      "Aguamarina corte emerald rectangular con halo octogonal de diamantes, milgrain y banda con diamantes, oro 18k blanco.",
+    descripcionLarga:
+      "Aguamarina corte emerald, rectangular y luminosa, enmarcada por un halo octogonal de diamantes con milgrain — un trabajo de atelier que se inclina al art déco. La banda acompaña con pequeños diamantes para continuar la línea de luz. Pieza estudiada al detalle. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [aguamarinaRectangularAtelier01, aguamarinaRectangularAtelier02],
+    isPlaceholder: false,
+  },
+  {
+    slug: "mandala-flor-de-luz",
+    nombre: "Mandala Vintage · Flor de Luz",
+    material: "Oro 18k blanco · Diamante brillante redondo · Rosetón/mandala de diamantes pavé con milgrain",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Editorial",
+    descripcion:
+      "Diamante redondo central con rosetón de diamantes pavé en forma de mandala, detalle milgrain, oro 18k blanco.",
+    descripcionLarga:
+      "Un mandala de luz hecho anillo. El brillante central se multiplica en un rosetón pavé de diamantes pequeños que dibujan una flor geométrica, terminada con milgrain que le da el toque antiguo. Una pieza editorial que convierte el dedo en una joya-objeto. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [mandalaVintageFlorDeLuz01, mandalaVintageFlorDeLuz02],
+    isPlaceholder: false,
+  },
+  {
+    slug: "onix-halo",
+    nombre: "Onix · Halo",
+    material: "Oro 18k blanco · Ónix oval · Halo de diamantes + banda pavé",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Color",
+    descripcion:
+      "Ónix oval central con halo de diamantes y banda en pavé, oro 18k blanco. Contraste profundo y elegante.",
+    descripcionLarga:
+      "El negro mate del ónix contra el destello blanco de los diamantes del halo: un juego de contrastes que transforma cualquier mano. La banda en pavé continúa la luz alrededor del dedo. Pieza perfecta para quien busca algo fuera del diamante clásico. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [onixHalo01, onixHalo02],
+    isPlaceholder: false,
+  },
   {
     slug: "halo-floral-tanzanita",
     nombre: "Halo Floral Tanzanita",
