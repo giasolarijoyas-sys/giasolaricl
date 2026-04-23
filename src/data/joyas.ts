@@ -38,7 +38,15 @@ import joyaHaloFloralTanzanita from "@/assets/joya-halo-floral-tanzanita.png";
 import joyaEternityEsmeralda from "@/assets/joya-eternity-esmeralda.png";
 import joyaHaloMarquise from "@/assets/joya-halo-marquise.png";
 import joyaSolitarioEmeraldPlatino from "@/assets/joya-solitario-emerald-platino.png";
-import joyaHaloCushionPlatino from "@/assets/joya-halo-cushion-platino.png";
+import anilloCupula01 from "@/assets/joyas/anillo-cupula-01.png";
+import anilloCupula02 from "@/assets/joyas/anillo-cupula-02.png";
+import anilloLadyDiZafiro01 from "@/assets/joyas/anillo-lady-di-zafiro-01.png";
+import anilloLadyDiZafiro02 from "@/assets/joyas/anillo-lady-di-zafiro-02.png";
+import haloCushionPavePlatino01 from "@/assets/joyas/halo-cushion-pave-platino-01.png";
+import haloCushionPavePlatino02 from "@/assets/joyas/halo-cushion-pave-platino-02.png";
+import solitarioAguamarinaOval01 from "@/assets/joyas/solitario-aguamarina-oval-01.jpg";
+import solitarioAguamarinaOval02 from "@/assets/joyas/solitario-aguamarina-oval-02.jpg";
+import solitarioAguamarinaOval03 from "@/assets/joyas/solitario-aguamarina-oval-03.jpg";
 
 export type Joya = {
   /** URL slug, kebab-case, único. Ej: "halo-zafiro-azul" */
@@ -129,12 +137,38 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-cushion-pave-platino",
-    nombre: "Halo Cushion Pavé Platino",
-    material: "Platino · Diamante cushion · Diamantes",
+    nombre: "Halo Cushion Pavé · Platino",
+    material: "Platino · Diamante natural · Diamantes",
     descripcion:
-      "Diamante cushion cut con halo de diamantes, banda pavé y detalle milgrain. Pieza hecha a mano en platino.",
+      "Diamante cushion cut con halo de diamantes, banda pavé y detalle milgrain. Platino.",
+    descripcionLarga:
+      "Diamante cushion con certificación GIA, rodeado por un halo de brillantes y una banda en pavé con detalle milgrain. El platino aporta temperatura fría y la milgrain suma un guiño vintage. Editorial sin perder uso diario. Cada anillo incluye Certificado Gia Solari, además del certificado GIA del diamante.",
     categoria: "Anillo de compromiso",
-    imagenes: [joyaHaloCushionPlatino],
+    imagenes: [haloCushionPavePlatino01, haloCushionPavePlatino02],
+    isPlaceholder: false,
+  },
+  {
+    slug: "solitario-aguamarina-oval",
+    nombre: "Solitario Aguamarina · Oval",
+    material: "Oro 18k blanco · Aguamarina oval · Diamantes",
+    descripcion:
+      "Aguamarina oval a grifas sobre banda en pavé de diamantes, oro 18k blanco. Luminoso y contemporáneo.",
+    descripcionLarga:
+      "Una aguamarina oval, clara como el mar, elevada sobre grifas que la dejan atrapar toda la luz. La banda en pavé de diamantes acompaña discretamente, sin robarle protagonismo. La versión en color del solitario clásico. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [solitarioAguamarinaOval01, solitarioAguamarinaOval02, solitarioAguamarinaOval03],
+    isPlaceholder: false,
+  },
+  {
+    slug: "anillo-cupula",
+    nombre: "Anillo Cúpula",
+    material: "Oro 18k blanco · Diamante natural · Diamantes",
+    descripcion:
+      "Diamante redondo central rodeado por un halo de diamantes grandes en forma de cúpula, sobre banda ancha con pavé lateral.",
+    descripcionLarga:
+      "Una cúpula de diamantes que se eleva sobre la mano: el brillante central queda contenido en una arquitectura de piedras que lo sostienen como una flor escultórica. La banda ancha con pavé y la filigrana calada en el perfil lateral le dan volumen y aire de joyería heredada. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [anilloCupula01, anilloCupula02],
     isPlaceholder: false,
   },
   {
@@ -199,12 +233,14 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "anillo-lady-di",
-    nombre: "Anillo Lady Di",
+    nombre: "Anillo Lady Di · Zafiro",
     material: "Oro 18k blanco · Zafiro azul · Diamantes",
     descripcion:
       "Anillo inspirado en el icónico Lady Di: zafiro azul central rodeado de un halo de diamantes.",
+    descripcionLarga:
+      "Inspirado en uno de los anillos de compromiso más icónicos del siglo: zafiro azul oval central enmarcado en un engaste bezel y rodeado por un halo de diamantes brillantes, sobre oro 18k blanco. Una pieza con historia, ahora en versión Gia Solari. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
-    imagenes: [galZafiro, galHaloZafiro, galZafirosBanda],
+    imagenes: [anilloLadyDiZafiro01, anilloLadyDiZafiro02],
     isPlaceholder: false,
   },
   {
