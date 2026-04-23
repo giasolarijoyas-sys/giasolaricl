@@ -56,6 +56,13 @@ import mandalaVintageFlorDeLuz01 from "@/assets/joyas/mandala-vintage-flor-de-lu
 import mandalaVintageFlorDeLuz02 from "@/assets/joyas/mandala-vintage-flor-de-luz-02.png";
 import onixHalo01 from "@/assets/joyas/onix-halo-01.png";
 import onixHalo02 from "@/assets/joyas/onix-halo-02.png";
+import brumaDorada01 from "@/assets/joyas/bruma-dorada-01.jpg";
+import solitarioBezelOroAmarillo01 from "@/assets/joyas/solitario-bezel-oro-amarillo-01.jpg";
+import bandaCincoDiamantes01 from "@/assets/joyas/banda-cinco-diamantes-01.jpg";
+import cincoPiedrasPlatino01 from "@/assets/joyas/cinco-piedras-platino-01.jpg";
+import argollaEternityDiamantes01 from "@/assets/joyas/argolla-eternity-diamantes-01.jpg";
+import esclavaOro01 from "@/assets/joyas/esclava-oro-01.jpg";
+import pulseraOroBroche01 from "@/assets/joyas/pulsera-oro-con-broche-01.jpg";
 
 export type Joya = {
   /** URL slug, kebab-case, único. Ej: "halo-zafiro-azul" */
@@ -108,6 +115,86 @@ export type Joya = {
  * ===================================================================== */
 
 export const JOYAS: Joya[] = [
+  {
+    slug: "bruma-dorada",
+    nombre: "Bruma Dorada",
+    material: "Oro 18k amarillo · Esmeralda oval · 2 diamantes laterales en bezel + halo de diamantes pequeños",
+    metalPrincipal: "Oro 18k amarillo",
+    estilo: "Color",
+    descripcion:
+      "Esmeralda oval central en bezel, dos diamantes laterales en bezel y halo de diamantes pequeños, oro 18k amarillo.",
+    descripcionLarga:
+      "Una esmeralda oval, verde profundo, enmarcada en un bezel dorado que la protege como un pequeño relicario. A los costados, dos diamantes en bezel acompañan como guardianes. El oro amarillo le aporta la calidez de una pieza vintage, recuperada. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [brumaDorada01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "solitario-bezel-oro-amarillo",
+    nombre: "Solitario Bezel · Oro Amarillo",
+    material: "Oro 18k amarillo · Diamante brillante redondo · Bezel",
+    metalPrincipal: "Oro 18k amarillo",
+    estilo: "Atemporal",
+    descripcion:
+      "Solitario con diamante redondo en engaste bezel. Oro 18k amarillo, diseño minimalista.",
+    descripcionLarga:
+      "Solitario con diamante en engaste bezel — el aro de oro abraza completamente la piedra, dándole una silueta minimalista y moderna. Sobre oro 18k amarillo para un acabado cálido y editorial. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [solitarioBezelOroAmarillo01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "banda-cinco-diamantes",
+    nombre: "Banda Cinco Diamantes",
+    material: "Oro 18k blanco · Diamante brillante redondo · 5 diamantes centrales",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Atemporal",
+    descripcion: "Banda con cinco diamantes redondos en arco. Diseño clásico y luminoso en oro blanco.",
+    descripcionLarga:
+      "Cinco diamantes brillantes alineados en arco sobre una banda fina de oro 18k blanco. Una pieza limpia, luminosa y simétrica — perfecta como argolla de compromiso o banda de aniversario. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [bandaCincoDiamantes01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "cinco-piedras-platino",
+    nombre: "Cinco Piedras · Platino",
+    material: "Platino · Diamante brillante redondo · 5 piedras alineadas",
+    metalPrincipal: "Platino",
+    estilo: "Atemporal",
+    descripcion: "Anillo con cinco piedras en línea, montado en platino. Presentación sobre cofre verde oliva.",
+    descripcionLarga:
+      "Cinco piedras en línea sobre platino, presentadas en cofre de terciopelo verde oliva. La fuerza del platino y la simetría de las piedras le dan a la pieza un aire de joyería heredada. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [cincoPiedrasPlatino01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "argolla-eternity-diamantes",
+    nombre: "Argolla Eternity · Diamantes",
+    material: "Oro 18k blanco · Diamantes brillantes · Media eternity en microgrifa",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Atemporal",
+    descripcion: "Media eternity con diamantes redondos. Pieza versátil como argolla de matrimonio o banda de aniversario.",
+    descripcionLarga:
+      "Media eternity en oro 18k blanco, con diamantes brillantes engastados en microgrifa a lo largo de toda la cara visible. Pieza versátil: argolla de matrimonio, banda de aniversario o anillo de uso diario. Incluye Certificado Gia Solari.",
+    categoria: "Argolla",
+    imagenes: [argollaEternityDiamantes01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "pulsera-oro-broche",
+    nombre: "Pulsera · Oro con Broche",
+    material: "Oro 18k amarillo · Broche central",
+    metalPrincipal: "Oro 18k amarillo",
+    estilo: "Atemporal",
+    descripcion: "Pulsera rígida fina en oro 18k amarillo con broche central. Pieza versátil para uso diario.",
+    descripcionLarga:
+      "Una pulsera rígida, fina y pulida, con un broche discreto al medio que se mantiene siempre a la vista. En oro 18k amarillo, pensada para combinar con reloj, esclava o usarse sola. La pieza que se queda puesta.",
+    categoria: "Pulsera",
+    imagenes: [pulseraOroBroche01],
+    isPlaceholder: false,
+  },
   {
     slug: "zafiro-halo-cluster-vintage",
     nombre: "Zafiro Halo Cluster · Vintage",
@@ -336,12 +423,16 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "esclava-oro",
-    nombre: "Esclava Oro",
-    material: "Oro 18k amarillo",
+    nombre: "Esclava · Oro",
+    material: "Oro 18k amarillo · Pulido",
+    metalPrincipal: "Oro 18k amarillo",
+    estilo: "Atemporal",
     descripcion:
       "Esclava en oro pulido. Pieza versátil y elegante para uso diario.",
+    descripcionLarga:
+      "Esclava en oro 18k amarillo pulido, fina y elegante. La pieza versátil que se queda puesta — combina con todo, dura toda la vida y se siente liviana al uso diario.",
     categoria: "Pulsera",
-    imagenes: [galBrazaleteOro, galBrazaleteOro, galBrazaleteOro],
+    imagenes: [esclavaOro01],
     isPlaceholder: false,
   },
 ];
