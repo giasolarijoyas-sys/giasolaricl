@@ -158,7 +158,7 @@ const Joyas = () => {
           {/* CTA final */}
           <div className="mt-16 text-center border-t border-gold/20 pt-12">
             <h2 className="font-display text-2xl text-charcoal mb-4">
-              ¿Querés algo a tu medida?
+              ¿Quieres algo a tu medida?
             </h2>
             <p className="text-charcoal/70 text-sm mb-6 max-w-md mx-auto">
               Diseñamos cada pieza desde cero según tu historia. Conversemos.

@@ -76,7 +76,7 @@ const GarantiaSection = () => {
             className="mt-8 font-body text-base md:text-[15px] leading-relaxed mx-auto"
             style={{ color: "#6B6560", maxWidth: "680px" }}
           >
-            Si al recibir tu pieza sentís que no es exactamente lo que imaginabas, te la ajustamos o reemplazamos sin costo adicional. Somos la única joyería en Chile que ofrece esta garantía.
+            Si al recibir tu pieza sientes que no es exactamente lo que imaginabas, te la ajustamos o reemplazamos sin costo adicional. Somos la única joyería en Chile que ofrece esta garantía.
           </p>
         </motion.div>
 

@@ -23,15 +23,15 @@ const items = [
 const faqs = [
   {
     q: "¿Qué cubre exactamente la Garantía por Gusto?",
-    a: "Cubre el rediseño completo de tu pieza si al recibirla no se siente tuya: el estilo, la proporción, un detalle del engaste o la silueta general. Reutilizamos las piedras originales siempre que sean compatibles y la mano de obra del nuevo diseño va por nuestra cuenta. Solo cubrís la merma del metal al refundir (aproximadamente 10% del valor del metal original) y, si el nuevo diseño requiere piedras adicionales, se cotizan aparte.",
+    a: "Cubre el rediseño completo de tu pieza si al recibirla no se siente tuya: el estilo, la proporción, un detalle del engaste o la silueta general. Reutilizamos las piedras originales siempre que sean compatibles y la mano de obra del nuevo diseño va por nuestra cuenta. Solo cubres la merma del metal al refundir (aproximadamente 10% del valor del metal original) y, si el nuevo diseño requiere piedras adicionales, se cotizan aparte.",
   },
   {
     q: "¿Cuánto tiempo tengo para decidir si no me gusta?",
-    a: "Tenés 30 días corridos desde el día que recibís la pieza. Sabemos que una joya se conoce de verdad usándola: viéndola con distintas luces, combinándola con tu ropa, mostrándola a la gente que querés. Por eso te damos un mes entero, sin apuro, para confirmar que es exactamente la pieza que imaginaste.",
+    a: "Tienes 30 días corridos desde el día que recibes la pieza. Sabemos que una joya se conoce de verdad usándola: viéndola con distintas luces, combinándola con tu ropa, mostrándola a la gente que quieres. Por eso te damos un mes entero, sin apuro, para confirmar que es exactamente la pieza que imaginaste.",
   },
   {
     q: "¿Cómo funciona el proceso de cambio o devolución?",
-    a: "Nos escribís por WhatsApp o email contando qué no te convence. Coordinamos una reunión (presencial o por videollamada) para conversar el rediseño y mostrarte opciones. Una vez que aprobás el nuevo boceto, comenzamos la fabricación. El plazo de ejecución del remake es de 4 a 6 semanas desde que se confirma el nuevo diseño.",
+    a: "Nos escribes por WhatsApp o email contando qué no te convence. Coordinamos una reunión (presencial o por videollamada) para conversar el rediseño y mostrarte opciones. Una vez que apruebas el nuevo boceto, comenzamos la fabricación. El plazo de ejecución del remake es de 4 a 6 semanas desde que se confirma el nuevo diseño.",
   },
   {
     q: "¿Aplica también a piezas hechas a medida?",
@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "¿Qué pasa si quiero modificar la pieza en vez de devolverla?",
-    a: "Es lo más común y lo que más nos gusta hacer. Si querés cambiar el tipo de engaste, ajustar la proporción, sumar un detalle o cambiar la silueta, lo conversamos y rediseñamos sobre la pieza original. La idea es que termines con una joya que de verdad te enamore, no que te quedes con algo que no usás.",
+    a: "Es lo más común y lo que más nos gusta hacer. Si quieres cambiar el tipo de engaste, ajustar la proporción, sumar un detalle o cambiar la silueta, lo conversamos y rediseñamos sobre la pieza original. La idea es que termines con una joya que de verdad te enamore, no que te quedes con algo que no usas.",
   },
 ];
 
@@ -66,10 +66,10 @@ const GarantiaPorGusto = () => (
             className="space-y-5 text-muted-foreground leading-relaxed text-base md:text-[17px] mb-12"
           >
             <p>
-              La Garantía por Gusto nace de algo simple: creemos que una joya que vas a usar toda la vida tiene que empezar por gustarte de verdad. No la mitad. No "está bonita". Tiene que enamorarte. Y como diseñar una pieza de autor es un proceso íntimo, donde a veces lo que imaginás y lo que terminás recibiendo necesitan un último ajuste, te damos espacio real para confirmarlo.
+              La Garantía por Gusto nace de algo simple: creemos que una joya que vas a usar toda la vida tiene que empezar por gustarte de verdad. No la mitad. No "está bonita". Tiene que enamorarte. Y como diseñar una pieza de autor es un proceso íntimo, donde a veces lo que imaginas y lo que terminas recibiendo necesitan un último ajuste, te damos espacio real para confirmarlo.
             </p>
             <p>
-              No somos una joyería industrial que produce en masa y se desentiende. Cada pieza que sale del taller es una conversación que tuvimos con vos, y queremos que esa conversación termine bien. Por eso, si al recibirla algo no se siente tuyo, la rehacemos. No es un favor ni una excepción: es parte de cómo trabajamos. Tu tranquilidad es la base de nuestra relación.
+              No somos una joyería industrial que produce en masa y se desentiende. Cada pieza que sale del taller es una conversación que tuvimos contigo, y queremos que esa conversación termine bien. Por eso, si al recibirla algo no se siente tuyo, la rehacemos. No es un favor ni una excepción: es parte de cómo trabajamos. Tu tranquilidad es la base de nuestra relación.
             </p>
           </motion.div>
 
@@ -93,7 +93,7 @@ const GarantiaPorGusto = () => (
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
           <motion.div className="text-center mb-10">
             <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">Preguntas frecuentes</p>
-            <h2 className="text-3xl md:text-4xl font-display text-foreground">Lo que solés preguntarnos</h2>
+            <h2 className="text-3xl md:text-4xl font-display text-foreground">Lo que sueles preguntarnos</h2>
           </motion.div>
 
           <Accordion type="single" collapsible className="space-y-3">
@@ -160,7 +160,7 @@ const GarantiaPorGusto = () => (
         <div className="container mx-auto px-4 md:px-8 max-w-2xl text-center">
           <motion.div>
             <h2 className="text-2xl md:text-3xl font-display text-foreground mb-4">
-              ¿Tenés dudas sobre tu pieza?
+              ¿Tienes dudas sobre tu pieza?
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
               Escribinos por WhatsApp y conversamos. Sin compromiso, sin apuro.
