@@ -19,25 +19,7 @@
  *   leyendo este archivo y añadiendo cada slug con isPlaceholder:false.
  * ===================================================================== */
 
-import galZafiro from "@/assets/gal-zafiro.jpeg";
-import galArgolla from "@/assets/gal-argolla.jpeg";
-import galTricillo from "@/assets/gal-tricillo.jpeg";
-import galTricillo2 from "@/assets/gal-tricillo2.jpeg";
-import galPrincesa from "@/assets/gal-princesa.jpeg";
-import galHaloZafiro from "@/assets/gal-halo-zafiro.jpeg";
-import galEsmeraldaHalo from "@/assets/gal-esmeralda-halo.png";
-import galZafirosBanda from "@/assets/gal-zafiros-banda.png";
-import galArtDeco from "@/assets/gal-art-deco.png";
-import galOvalPave from "@/assets/gal-oval-pave.jpg";
-import galSolitarioChevron from "@/assets/gal-solitario-chevron.jpg";
-import galCincoPiedras from "@/assets/gal-cinco-piedras.jpeg";
 import galBrazaleteOro from "@/assets/gal-brazalete-oro.png";
-import galHaloOvalCaja from "@/assets/gal-halo-oval-caja.jpg";
-import galSolitarioCaja from "@/assets/gal-solitario-caja.jpg";
-import joyaHaloFloralTanzanita from "@/assets/joya-halo-floral-tanzanita.png";
-import joyaEternityEsmeralda from "@/assets/joya-eternity-esmeralda.png";
-import joyaHaloMarquise from "@/assets/joya-halo-marquise.png";
-import joyaSolitarioEmeraldPlatino from "@/assets/joya-solitario-emerald-platino.png";
 import anilloCupula01 from "@/assets/joyas/anillo-cupula-01.png";
 import anilloCupula02 from "@/assets/joyas/anillo-cupula-02.png";
 import anilloLadyDiZafiro01 from "@/assets/joyas/anillo-lady-di-01.png";
