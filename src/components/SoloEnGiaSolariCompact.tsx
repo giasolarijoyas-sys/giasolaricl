@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Gem, PenLine, ArrowRight } from "lucide-react";
+import { ShieldCheck, PenLine, ArrowRight } from "lucide-react";
 
 const items = [
   { icon: ShieldCheck, text: "Garantía por Gusto — únicos en Chile" },
-  { icon: Gem, text: "Réplica en plata y moissanite — gratis" },
   { icon: PenLine, text: "Grabado interior personalizado — gratis" },
 ];
 
@@ -14,7 +13,7 @@ const SoloEnGiaSolariCompact = () => (
         <p className="text-center text-primary tracking-[0.3em] uppercase text-xs mb-6">
           Lo que solo encontrás en Gia Solari
         </p>
-        <ul className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8">
+        <ul className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8">
           {items.map((it, i) => (
             <motion.li
               key={it.text}

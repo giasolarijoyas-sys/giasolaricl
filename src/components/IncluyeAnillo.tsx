@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const beneficios = [
-  "Copia del anillo en plata + moissanite (gratis)",
   "Grabado interior personalizado (gratis)",
   "Garantía por Gusto",
   "Certificado GIA",
