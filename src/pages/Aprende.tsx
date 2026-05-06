@@ -52,7 +52,7 @@ const Aprende = () => (
           <motion.div animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
             <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">Educación</p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground">Guías sobre diamantes, oro y joyería fina</h1>
-            <p className="text-muted-foreground mt-4 max-w-lg mx-auto">Guías completas para que tomes decisiones informadas. Porque una joya es una inversión emocional y financiera.</p>
+            <p className="text-muted-foreground mt-4 max-w-lg mx-auto">Antes de elegir, vale la pena entender. Guías honestas sobre diamantes, metales y la pregunta correcta.</p>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {articles.map((a, i) => (
