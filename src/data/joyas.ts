@@ -62,6 +62,89 @@ import solitarioOvalPlatino01 from "@/assets/joyas/solitario-oval-platino-01.jpg
 import trilogiaColorOro01 from "@/assets/joyas/trilogia-color-oro-01.jpg";
 import trilogiaVintagePlatino01 from "@/assets/joyas/trilogia-vintage-platino-01.jpg";
 
+import pendiente001 from "@/assets/joyas/pendiente-001.jpg";
+import pendiente002 from "@/assets/joyas/pendiente-002.jpg";
+import pendiente003 from "@/assets/joyas/pendiente-003.jpg";
+import pendiente004 from "@/assets/joyas/pendiente-004.jpg";
+import pendiente005 from "@/assets/joyas/pendiente-005.jpg";
+import pendiente006 from "@/assets/joyas/pendiente-006.jpg";
+import pendiente007 from "@/assets/joyas/pendiente-007.jpg";
+import pendiente008 from "@/assets/joyas/pendiente-008.jpg";
+import pendiente009 from "@/assets/joyas/pendiente-009.jpg";
+import pendiente010 from "@/assets/joyas/pendiente-010.jpg";
+import pendiente011 from "@/assets/joyas/pendiente-011.jpg";
+import pendiente012 from "@/assets/joyas/pendiente-012.jpg";
+import pendiente013 from "@/assets/joyas/pendiente-013.jpg";
+import pendiente014 from "@/assets/joyas/pendiente-014.jpg";
+import pendiente015 from "@/assets/joyas/pendiente-015.jpg";
+import pendiente016 from "@/assets/joyas/pendiente-016.jpg";
+import pendiente017 from "@/assets/joyas/pendiente-017.jpg";
+import pendiente018 from "@/assets/joyas/pendiente-018.jpg";
+import pendiente019 from "@/assets/joyas/pendiente-019.jpg";
+import pendiente020 from "@/assets/joyas/pendiente-020.jpg";
+import pendiente021 from "@/assets/joyas/pendiente-021.jpg";
+import pendiente022 from "@/assets/joyas/pendiente-022.jpg";
+import pendiente023 from "@/assets/joyas/pendiente-023.jpg";
+import pendiente024 from "@/assets/joyas/pendiente-024.jpg";
+import pendiente025 from "@/assets/joyas/pendiente-025.jpg";
+import pendiente026 from "@/assets/joyas/pendiente-026.jpg";
+import pendiente027 from "@/assets/joyas/pendiente-027.jpg";
+import pendiente028 from "@/assets/joyas/pendiente-028.jpg";
+import pendiente029 from "@/assets/joyas/pendiente-029.jpg";
+import pendiente030 from "@/assets/joyas/pendiente-030.jpg";
+import pendiente031 from "@/assets/joyas/pendiente-031.jpg";
+import pendiente032 from "@/assets/joyas/pendiente-032.jpg";
+import pendiente033 from "@/assets/joyas/pendiente-033.jpg";
+import pendiente034 from "@/assets/joyas/pendiente-034.jpg";
+import pendiente035 from "@/assets/joyas/pendiente-035.jpg";
+import pendiente036 from "@/assets/joyas/pendiente-036.jpg";
+import pendiente037 from "@/assets/joyas/pendiente-037.jpg";
+import pendiente038 from "@/assets/joyas/pendiente-038.jpg";
+import pendiente039 from "@/assets/joyas/pendiente-039.jpg";
+import pendiente049 from "@/assets/joyas/pendiente-049.jpg";
+import pendiente050 from "@/assets/joyas/pendiente-050.jpg";
+import pendiente051 from "@/assets/joyas/pendiente-051.jpg";
+import pendiente052 from "@/assets/joyas/pendiente-052.jpg";
+import pendiente053 from "@/assets/joyas/pendiente-053.jpg";
+import pendiente054 from "@/assets/joyas/pendiente-054.jpg";
+import pendiente055 from "@/assets/joyas/pendiente-055.jpg";
+import pendiente056 from "@/assets/joyas/pendiente-056.jpg";
+import pendiente057 from "@/assets/joyas/pendiente-057.jpg";
+import pendiente058 from "@/assets/joyas/pendiente-058.jpg";
+import pendiente059 from "@/assets/joyas/pendiente-059.jpg";
+import pendiente060 from "@/assets/joyas/pendiente-060.jpg";
+import pendiente061 from "@/assets/joyas/pendiente-061.jpg";
+import pendiente062 from "@/assets/joyas/pendiente-062.jpg";
+import pendiente063 from "@/assets/joyas/pendiente-063.jpg";
+import pendiente064 from "@/assets/joyas/pendiente-064.jpg";
+import pendiente065 from "@/assets/joyas/pendiente-065.jpg";
+import pendiente066 from "@/assets/joyas/pendiente-066.jpg";
+import pendiente067 from "@/assets/joyas/pendiente-067.jpg";
+import pendiente068 from "@/assets/joyas/pendiente-068.jpg";
+import pendiente069 from "@/assets/joyas/pendiente-069.jpg";
+import pendiente070 from "@/assets/joyas/pendiente-070.jpg";
+import pendiente071 from "@/assets/joyas/pendiente-071.jpg";
+import pendiente072 from "@/assets/joyas/pendiente-072.jpg";
+import pendiente073 from "@/assets/joyas/pendiente-073.jpg";
+import pendiente074 from "@/assets/joyas/pendiente-074.jpg";
+import pendiente075 from "@/assets/joyas/pendiente-075.jpg";
+import pendiente076 from "@/assets/joyas/pendiente-076.jpg";
+import pendiente077 from "@/assets/joyas/pendiente-077.jpg";
+import pendiente078 from "@/assets/joyas/pendiente-078.jpg";
+import pendiente079 from "@/assets/joyas/pendiente-079.jpg";
+import pendiente080 from "@/assets/joyas/pendiente-080.jpg";
+import pendiente081 from "@/assets/joyas/pendiente-081.jpg";
+import pendiente085 from "@/assets/joyas/pendiente-085.jpg";
+import pendiente086 from "@/assets/joyas/pendiente-086.jpg";
+import pendiente090 from "@/assets/joyas/pendiente-090.jpg";
+import pendiente091 from "@/assets/joyas/pendiente-091.jpg";
+import pendiente092 from "@/assets/joyas/pendiente-092.jpg";
+import pendiente093 from "@/assets/joyas/pendiente-093.jpg";
+import pendiente094 from "@/assets/joyas/pendiente-094.jpg";
+import pendiente095 from "@/assets/joyas/pendiente-095.jpg";
+import pendiente096 from "@/assets/joyas/pendiente-096.jpg";
+import pendiente097 from "@/assets/joyas/pendiente-097.jpg";
+
 export type Joya = {
   /** URL slug, kebab-case, único. Ej: "halo-zafiro-azul" */
   slug: string;
@@ -462,6 +545,1072 @@ export const JOYAS: Joya[] = [
       "Diamantes brillantes engastados en microgrifa rodeando toda la circunferencia de la banda — una eternity completa en platino. Pieza versátil: argolla de matrimonio, banda de aniversario o anillo de uso diario que multiplica la luz. Incluye Certificado Gia Solari.",
     categoria: "Argolla",
     imagenes: [eternityDiamantesPlatino01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-001",
+    nombre: "Vintage 1",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente001],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-002",
+    nombre: "Vintage 2",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente002],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-003",
+    nombre: "Vintage 3",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente003],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-004",
+    nombre: "Vintage 4",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente004],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-005",
+    nombre: "Vintage 5",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente005],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-006",
+    nombre: "Vintage 6",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente006],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-007",
+    nombre: "Vintage 7",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente007],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-008",
+    nombre: "Vintage 8",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente008],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-009",
+    nombre: "Vintage 9",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente009],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-010",
+    nombre: "Vintage 10",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente010],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-011",
+    nombre: "Vintage 11",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente011],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-012",
+    nombre: "Vintage 12",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente012],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-013",
+    nombre: "Vintage 13",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente013],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-014",
+    nombre: "Vintage 14",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente014],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-015",
+    nombre: "Vintage 15",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente015],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-016",
+    nombre: "Vintage 16",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente016],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-017",
+    nombre: "Vintage 17",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente017],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-018",
+    nombre: "Vintage 18",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente018],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-019",
+    nombre: "Vintage 19",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente019],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-020",
+    nombre: "Vintage 20",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente020],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-021",
+    nombre: "Vintage 21",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente021],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-022",
+    nombre: "Vintage 22",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente022],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-023",
+    nombre: "Vintage 23",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente023],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-024",
+    nombre: "Vintage 24",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente024],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-025",
+    nombre: "Vintage 25",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente025],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-026",
+    nombre: "Vintage 26",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente026],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-027",
+    nombre: "Vintage 27",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente027],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-028",
+    nombre: "Vintage 28",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente028],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-029",
+    nombre: "Vintage 29",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente029],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-030",
+    nombre: "Vintage 30",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente030],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-031",
+    nombre: "Vintage 31",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente031],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-032",
+    nombre: "Vintage 32",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente032],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-033",
+    nombre: "Vintage 33",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente033],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-034",
+    nombre: "Vintage 34",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente034],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-035",
+    nombre: "Vintage 35",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente035],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-036",
+    nombre: "Vintage 36",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente036],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-037",
+    nombre: "Vintage 37",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente037],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-038",
+    nombre: "Vintage 38",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente038],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-039",
+    nombre: "Vintage 39",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente039],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-049",
+    nombre: "Vintage 49",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente049],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-050",
+    nombre: "Vintage 50",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente050],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-051",
+    nombre: "Vintage 51",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente051],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-052",
+    nombre: "Vintage 52",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente052],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-053",
+    nombre: "Vintage 53",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente053],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-054",
+    nombre: "Vintage 54",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente054],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-055",
+    nombre: "Vintage 55",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente055],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-056",
+    nombre: "Vintage 56",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente056],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-057",
+    nombre: "Vintage 57",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente057],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-058",
+    nombre: "Vintage 58",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente058],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-059",
+    nombre: "Vintage 59",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente059],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-060",
+    nombre: "Vintage 60",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente060],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-061",
+    nombre: "Vintage 61",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente061],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-062",
+    nombre: "Vintage 62",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente062],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-063",
+    nombre: "Vintage 63",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente063],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-064",
+    nombre: "Vintage 64",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente064],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-065",
+    nombre: "Vintage 65",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente065],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-066",
+    nombre: "Vintage 66",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente066],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-067",
+    nombre: "Vintage 67",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente067],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-068",
+    nombre: "Vintage 68",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente068],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-069",
+    nombre: "Vintage 69",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente069],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-070",
+    nombre: "Vintage 70",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente070],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-071",
+    nombre: "Vintage 71",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente071],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-072",
+    nombre: "Vintage 72",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente072],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-073",
+    nombre: "Vintage 73",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente073],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-074",
+    nombre: "Vintage 74",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente074],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-075",
+    nombre: "Vintage 75",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente075],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-076",
+    nombre: "Vintage 76",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente076],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-077",
+    nombre: "Vintage 77",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente077],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-078",
+    nombre: "Vintage 78",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente078],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-079",
+    nombre: "Vintage 79",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente079],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-080",
+    nombre: "Vintage 80",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente080],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-081",
+    nombre: "Vintage 81",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente081],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-085",
+    nombre: "Vintage 85",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente085],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-086",
+    nombre: "Vintage 86",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente086],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-090",
+    nombre: "Vintage 90",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente090],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-091",
+    nombre: "Vintage 91",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente091],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-092",
+    nombre: "Vintage 92",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente092],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-093",
+    nombre: "Vintage 93",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente093],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-094",
+    nombre: "Vintage 94",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente094],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-095",
+    nombre: "Vintage 95",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente095],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-096",
+    nombre: "Vintage 96",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente096],
+    isPlaceholder: false,
+  },
+  {
+    slug: "vintage-097",
+    nombre: "Vintage 97",
+    categoria: "Anillo de Compromiso",
+    material: "A definir",
+    metalPrincipal: "A definir",
+    estilo: "Vintage",
+    descripcion: "Pieza única hecha a mano. Cotiza a medida.",
+    descripcionLarga:
+      "Pieza única de Gia Solari, hecha a mano en Santiago. Esta foto muestra una pieza del archivo de la casa — el material, las piedras y los detalles se definen en conversación. Cotiza a medida para conocer disponibilidad, opciones de personalización y precio.",
+    imagenes: [pendiente097],
     isPlaceholder: false,
   },
 ];
