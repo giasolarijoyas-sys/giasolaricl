@@ -152,9 +152,6 @@ const Hero = () => {
             </a>
           </div>
 
-          <p className="mt-5 text-cream/70 text-xs md:text-sm tracking-wide">
-            Atendemos con cita previa en El Golf, Las Condes y Vitacura.
-          </p>
         </div>
       </div>
 

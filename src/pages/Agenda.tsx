@@ -83,7 +83,7 @@ const Agenda = () => {
               Agendar Visita
             </h1>
             <p className="text-center text-charcoal/70 mb-3 leading-relaxed">
-              Atiendo con cita previa en El Golf, Las Condes y Vitacura.
+              Atiendo con cita previa en Las Condes, Santiago.
             </p>
             <p className="text-center text-charcoal/70 mb-10 leading-relaxed">
               Confírmanos fecha y hora y coordinamos contigo por WhatsApp.
