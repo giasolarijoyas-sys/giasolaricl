@@ -52,8 +52,8 @@ import haloAguamarinaCushion01 from "@/assets/joyas/halo-aguamarina-cushion-01.j
 import haloAguamarinaCushion02 from "@/assets/joyas/halo-aguamarina-cushion-02.png";
 import aguamarinaRectangularAtelier01 from "@/assets/joyas/aguamarina-rectangular-atelier-01.png";
 import aguamarinaRectangularAtelier02 from "@/assets/joyas/aguamarina-rectangular-atelier-02.png";
-import mandalaVintageFlorDeLuz01 from "@/assets/joyas/mandala-vintage-flor-de-luz-01.png";
-import mandalaVintageFlorDeLuz02 from "@/assets/joyas/mandala-vintage-flor-de-luz-02.png";
+import mandalaVintageFlorDeLuz01 from "@/assets/joyas/mandala-flor-de-luz-01.png";
+import mandalaVintageFlorDeLuz02 from "@/assets/joyas/mandala-flor-de-luz-02.png";
 import onixHalo01 from "@/assets/joyas/onix-halo-01.png";
 import onixHalo02 from "@/assets/joyas/onix-halo-02.png";
 import brumaDorada01 from "@/assets/joyas/bruma-dorada-01.jpg";
