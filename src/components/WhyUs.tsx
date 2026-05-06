@@ -23,19 +23,7 @@ const WhyUs = () => {
           </h2>
         </motion.div>
 
-        {/* Garantía por Gusto — featured */}
-        <motion.div
-          className="mb-10 p-8 md:p-12 border-2 border-primary/40 rounded-lg bg-primary/5 text-center max-w-2xl mx-auto"
-        >
-          <ShieldCheck size={36} className="text-primary mx-auto mb-4" />
-          <h3 className="font-display text-2xl md:text-3xl text-foreground mb-3">
-            Garantía por Gusto
-          </h3>
-          <p className="text-muted-foreground leading-relaxed max-w-lg mx-auto">
-            Si no te encanta el resultado, lo rehacemos. Tu satisfacción es
-            nuestra prioridad absoluta.
-          </p>
-        </motion.div>
+
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reasons.map((r, i) => (
