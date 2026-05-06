@@ -41,7 +41,7 @@ import onixHalo02 from "@/assets/joyas/onix-halo-02.png";
 import brumaDorada01 from "@/assets/joyas/bruma-dorada-01.jpg";
 
 import bandaCincoDiamantes01 from "@/assets/joyas/banda-cinco-diamantes-01.jpg";
-import cincoPiedrasPlatino01 from "@/assets/joyas/cinco-piedras-platino-01.jpg";
+
 import argollaEternityDiamantes01 from "@/assets/joyas/argolla-eternity-diamantes-01.jpg";
 import esclavaOro01 from "@/assets/joyas/esclava-oro-01.jpg";
 import pulseraOroBroche01 from "@/assets/joyas/pulsera-oro-broche-01.jpg";
@@ -126,19 +126,6 @@ export const JOYAS: Joya[] = [
       "Cinco diamantes brillantes alineados en arco sobre una banda fina de oro 18k blanco. Una pieza limpia, luminosa y simétrica — perfecta como argolla de compromiso o banda de aniversario. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
     imagenes: [bandaCincoDiamantes01],
-    isPlaceholder: false,
-  },
-  {
-    slug: "cinco-piedras-platino",
-    nombre: "Cinco Piedras · Platino",
-    material: "Platino · Diamante brillante redondo · Halo de diamantes pequeños · Banda fina",
-    metalPrincipal: "Platino",
-    estilo: "Atemporal",
-    descripcion: "Solitario con halo de diamantes pequeños sobre banda fina, montado en platino. Presentación sobre cofre oscuro.",
-    descripcionLarga:
-      "Cinco piedras en línea sobre platino, presentadas en cofre de terciopelo verde oliva. La fuerza del platino y la simetría de las piedras le dan a la pieza un aire de joyería heredada. Cada anillo incluye Certificado Gia Solari.",
-    categoria: "Anillo de compromiso",
-    imagenes: [cincoPiedrasPlatino01],
     isPlaceholder: false,
   },
   {

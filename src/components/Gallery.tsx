@@ -16,7 +16,7 @@ import galArtDeco from "@/assets/gal-art-deco.png";
 import galVintageFiligrana from "@/assets/gal-vintage-filigrana.jpg";
 import galOvalPave from "@/assets/gal-oval-pave.jpg";
 import galSolitarioChevron from "@/assets/gal-solitario-chevron.jpg";
-import galCincoPiedras from "@/assets/gal-cinco-piedras.jpeg";
+
 import galBrazaleteOro from "@/assets/gal-brazalete-oro.png";
 import galSolitarioCaja from "@/assets/gal-solitario-caja.jpg";
 import galPrincesaMarco from "@/assets/gal-princesa-marco.jpeg";
@@ -147,7 +147,7 @@ const pieces: Piece[] = [
   { img: galArtDeco, name: "Anillo Gatsby", desc: "Corte Princesa · Art Déco", category: "anillos" },
   { img: galSolitarioChevron, name: "Anillo Etéreo", desc: "Solitario Chevrón · Oro Blanco", category: "anillos" },
   { img: galTricillo2, name: "Anillo Legado", desc: "Tricillo · Vista Detalle", category: "anillos" },
-  { img: galCincoPiedras, name: "Anillo Constelación", desc: "Cinco Piedras · Platino", category: "anillos" },
+  
   { img: galPrincesa, name: "Anillo Princesa", desc: "Corte Princesa · Oro 18k", category: "anillos" },
   { img: galZafirosBanda, name: "Anillo Corona", desc: "Zafiros · Banda Diamantes", category: "anillos" },
   { img: galVintageFiligrana, name: "Anillo Heritage", desc: "Aguamarina · Filigrana Vintage", category: "anillos" },
