@@ -94,46 +94,35 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 pt-[90px] pb-[120px] sm:pt-0 sm:pb-0">
         <div className="max-w-2xl">
-          <AnimatePresence mode="wait">
-            <motion.div key={`copy-${current}`}>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15 }}
-                className="text-gold-light tracking-[0.3em] uppercase text-xs md:text-sm mb-6"
-              >
-                {slides[current].eyebrow}
-              </motion.p>
+          <div key={`copy-${current}`}>
+            <p
+              className="text-gold-light tracking-[0.3em] uppercase text-xs md:text-sm mb-6"
+            >
+              {slides[current].eyebrow}
+            </p>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-[28px] leading-[1.1] sm:text-4xl md:text-6xl lg:text-7xl font-display text-cream mb-5"
-                style={{ textShadow: "0 2px 16px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4)" }}
-              >
-                {slides[current].title}
-                {slides[current].titleHighlight && (
-                  <>
-                    {" "}
-                    <em className="text-gold-light not-italic">
-                      {slides[current].titleHighlight}
-                    </em>
-                  </>
-                )}
-              </motion.h1>
+            <h1
+              className="text-[28px] leading-[1.1] sm:text-4xl md:text-6xl lg:text-7xl font-display text-cream mb-5"
+              style={{ textShadow: "0 2px 16px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4)" }}
+            >
+              {slides[current].title}
+              {slides[current].titleHighlight && (
+                <>
+                  {" "}
+                  <em className="text-gold-light not-italic">
+                    {slides[current].titleHighlight}
+                  </em>
+                </>
+              )}
+            </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.45 }}
-                className="text-cream/95 text-base md:text-xl mb-8 max-w-lg font-light leading-relaxed"
-                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
-              >
-                {slides[current].subtitle}
-              </motion.p>
-            </motion.div>
-          </AnimatePresence>
+            <p
+              className="text-cream/95 text-base md:text-xl mb-8 max-w-lg font-light leading-relaxed"
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
+            >
+              {slides[current].subtitle}
+            </p>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a
