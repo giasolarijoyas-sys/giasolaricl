@@ -19,9 +19,6 @@ const Historia = () => {
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="relative"
           >
@@ -38,9 +35,6 @@ const Historia = () => {
 
           {/* Text */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
             <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">
@@ -84,9 +78,6 @@ const Historia = () => {
 
         {/* Taller photos grid */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-20"
         >
@@ -97,9 +88,6 @@ const Historia = () => {
             {tallerPhotos.map((photo, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 className="aspect-square overflow-hidden group"
               >

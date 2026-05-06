@@ -9,9 +9,6 @@ const VideoSection = () => (
         <div className="w-full h-full bg-gradient-dark" />
       </div>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
         className="relative z-20 text-center px-4"
       >
         <h2 className="font-display text-3xl md:text-5xl text-cream mb-6">

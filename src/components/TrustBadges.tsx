@@ -26,9 +26,6 @@ const TrustBadges = () => (
         {badges.map((b, i) => (
           <motion.div
             key={b.title}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
             className="text-center"
           >

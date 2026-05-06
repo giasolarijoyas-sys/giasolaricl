@@ -39,9 +39,6 @@ const ProcessSteps = () => {
     <section className="py-24 md:py-32 bg-[hsl(var(--accent))]">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="text-center mb-16"
         >
           <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">
@@ -62,9 +59,6 @@ const ProcessSteps = () => {
               {steps.map((s, i) => (
                 <motion.div
                   key={s.num}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   className="flex flex-col items-center text-center"
                 >
@@ -93,9 +87,6 @@ const ProcessSteps = () => {
           {steps.map((s, i) => (
             <motion.div
               key={s.num}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               className="flex gap-4 relative"
             >

@@ -49,14 +49,14 @@ const Aprende = () => (
       <Navbar />
       <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
+          <motion.div animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
             <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">Educación</p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground">Guías sobre diamantes, oro y joyería fina</h1>
             <p className="text-muted-foreground mt-4 max-w-lg mx-auto">Guías completas para que tomes decisiones informadas. Porque una joya es una inversión emocional y financiera.</p>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {articles.map((a, i) => (
-              <motion.div key={a.href} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
+              <motion.div key={a.href} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
                 <Link to={a.href} className="group block p-8 bg-card border border-border rounded-lg hover:border-primary/30 transition-colors h-full">
                   <a.icon className="w-8 h-8 text-primary mb-4" />
                   <p className="text-primary tracking-[0.2em] uppercase text-[10px] mb-2">{a.tag}</p>

@@ -28,7 +28,7 @@ const ResultView = ({ recommendations, answers, onSelectRecommendation, onReques
   return (
     <div>
       <div className="text-center mb-8">
-        <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
+        <motion.div animate={{ scale: 1, opacity: 1 }}>
           <Sparkles size={36} className="text-primary mx-auto mb-3" />
         </motion.div>
         <h3 className="font-display text-2xl md:text-3xl text-foreground mb-2">
@@ -41,7 +41,6 @@ const ResultView = ({ recommendations, answers, onSelectRecommendation, onReques
 
       {/* Primary recommendation */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
         className="bg-card border-2 border-primary/30 rounded-lg overflow-hidden mb-6"
@@ -98,7 +97,6 @@ const ResultView = ({ recommendations, answers, onSelectRecommendation, onReques
             {alternatives.map((alt, i) => (
               <motion.div
                 key={alt.id}
-                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.1 }}
                 className="bg-card border border-border rounded-lg overflow-hidden"

@@ -132,9 +132,6 @@ const Testimonials = () => {
       </Helmet>
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="text-center mb-16"
         >
           <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">
@@ -165,7 +162,6 @@ const Testimonials = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
-              initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -30 }}
               transition={{ duration: 0.3 }}

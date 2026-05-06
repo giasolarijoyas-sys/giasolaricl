@@ -34,9 +34,6 @@ const FAQAccordion = () => {
     <section id="faq-terminos" className="py-24 md:py-32 bg-card">
       <div className="container mx-auto px-4 md:px-8 max-w-3xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="text-center mb-12"
         >
           <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">
@@ -49,9 +46,6 @@ const FAQAccordion = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
         >
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, i) => (

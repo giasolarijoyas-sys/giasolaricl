@@ -15,9 +15,6 @@ const WhyUs = () => {
     <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="text-center mb-16"
         >
           <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">
@@ -31,9 +28,6 @@ const WhyUs = () => {
 
         {/* Garantía por Gusto — featured */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="mb-10 p-8 md:p-12 border-2 border-primary/40 rounded-lg bg-primary/5 text-center max-w-2xl mx-auto"
         >
           <ShieldCheck size={36} className="text-primary mx-auto mb-4" />
@@ -50,9 +44,6 @@ const WhyUs = () => {
           {reasons.map((r, i) => (
             <motion.div
               key={r.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               className="text-center p-8 border border-border rounded-lg hover:border-primary/30 transition-colors"
             >
@@ -64,9 +55,6 @@ const WhyUs = () => {
         </div>
 
         <motion.blockquote
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
           className="mt-16 text-center max-w-2xl mx-auto"
         >
           <p className="font-display text-lg md:text-xl italic text-foreground leading-relaxed">

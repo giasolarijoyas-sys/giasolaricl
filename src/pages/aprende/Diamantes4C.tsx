@@ -24,7 +24,7 @@ const AprendeDiamantes4C = () => (
       <Navbar />
       <article className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">
         <div className="container mx-auto px-4 md:px-8 max-w-[700px]">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <motion.div animate={{ opacity: 1, y: 0 }}>
             <Breadcrumbs items={[{ label: "Aprende", path: "/aprende" }, { label: "Las 4C del Diamante" }]} />
             <h1 className="font-display text-3xl md:text-4xl text-foreground mb-6">Las 4C del Diamante</h1>
             <p className="text-muted-foreground text-lg leading-relaxed mb-10">Todo lo que necesitas saber para elegir el diamante perfecto, explicado de forma simple y honesta.</p>

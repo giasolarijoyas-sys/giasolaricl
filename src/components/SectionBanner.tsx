@@ -23,9 +23,6 @@ const SectionBanner = ({ image, alt, text, subtext, ctaHref, ctaLabel, height = 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         {text && (
           <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             className="font-display text-3xl md:text-5xl text-cream tracking-wide"
           >
             {text}
@@ -33,9 +30,6 @@ const SectionBanner = ({ image, alt, text, subtext, ctaHref, ctaLabel, height = 
         )}
         {subtext && (
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ delay: 0.15 }}
             className="mt-4 text-cream/80 text-sm md:text-base tracking-widest uppercase max-w-lg"
           >
@@ -45,9 +39,6 @@ const SectionBanner = ({ image, alt, text, subtext, ctaHref, ctaLabel, height = 
         {ctaHref && ctaLabel && (
           <motion.a
             href={ctaHref}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ delay: 0.25 }}
             className="mt-6 px-8 py-3 border border-cream/60 text-cream text-sm tracking-widest uppercase hover:bg-cream hover:text-charcoal transition-all"
           >

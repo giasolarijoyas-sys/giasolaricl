@@ -33,7 +33,6 @@ const WelcomeStep = ({ answers, onUpdate, onNext }: StepProps) => {
   return (
     <div className="text-center py-4">
       <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.1 }}
         className="mb-6"
@@ -52,7 +51,6 @@ const WelcomeStep = ({ answers, onUpdate, onNext }: StepProps) => {
         {paths.map((path, i) => (
           <motion.button
             key={path.key}
-            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 + i * 0.1 }}
             onClick={() => selectPath(path.key)}
