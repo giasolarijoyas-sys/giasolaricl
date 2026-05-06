@@ -45,9 +45,6 @@ const EnTusManos = () => {
     <section className="py-24 md:py-32 bg-card">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="text-center mb-12"
         >
           <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">Galería</p>
@@ -71,7 +68,6 @@ const EnTusManos = () => {
                 key={current}
                 src={slides[current].src}
                 alt={slides[current].alt}
-                initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -60 }}
                 transition={{ duration: 0.4 }}
@@ -112,9 +108,6 @@ const EnTusManos = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
           className="text-center mt-12"
         >
           <p className="text-muted-foreground text-sm mb-3">

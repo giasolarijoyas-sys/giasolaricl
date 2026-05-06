@@ -46,7 +46,6 @@ const Joyas = () => {
       <main className="pt-24 pb-32">
         <div className="max-w-xl mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-10"
           >
@@ -120,9 +119,6 @@ const Joyas = () => {
             {visibleJoyas.map((p, i) => (
               <motion.article
                 key={p.slug}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: Math.min(i, 5) * 0.05 }}
                 className="bg-cream/40"
               >

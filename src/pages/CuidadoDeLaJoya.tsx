@@ -25,14 +25,14 @@ const CuidadoDeLaJoya = () => (
       <Navbar />
       <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
+          <motion.div animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
             <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">Cuidado</p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground">Cuidado de tu Joya</h1>
             <p className="text-muted-foreground mt-4 max-w-md mx-auto">Sigue estos consejos para que tu joya luzca como nueva por generaciones.</p>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6">
             {tips.map((t, i) => (
-              <motion.div key={t.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="flex gap-4 p-5 bg-card border border-border rounded-lg">
+              <motion.div key={t.title} transition={{ delay: i * 0.08 }} className="flex gap-4 p-5 bg-card border border-border rounded-lg">
                 <t.icon className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                 <div>
                   <h3 className="font-display text-foreground mb-1">{t.title}</h3>

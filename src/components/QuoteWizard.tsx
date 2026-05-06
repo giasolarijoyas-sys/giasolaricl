@@ -199,7 +199,7 @@ const QuoteWizard = () => {
     return (
       <section id="cotizador" className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 max-w-2xl">
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
+          <motion.div animate={{ opacity: 1, scale: 1 }}
             className="bg-card border border-border rounded-lg p-10 md:p-16 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-foreground mb-4">
               Cotización recibida
@@ -232,7 +232,7 @@ const QuoteWizard = () => {
   return (
     <section id="cotizador" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-8 max-w-2xl">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+        <motion.div
           className="text-center mb-12">
           <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">Cotizador</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground">
@@ -251,7 +251,7 @@ const QuoteWizard = () => {
 
         <div className="bg-card border border-border rounded-lg p-6 md:p-10 min-h-[300px]">
           <AnimatePresence mode="wait">
-            <motion.div key={step} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
+            <motion.div key={step} animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }}>
 
               {step === 0 && (

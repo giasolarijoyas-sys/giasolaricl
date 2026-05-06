@@ -17,9 +17,6 @@ const SoloEnGiaSolariCompact = () => (
           {items.map((it, i) => (
             <motion.li
               key={it.text}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               className="flex items-center gap-3 text-sm md:text-base text-foreground"
             >

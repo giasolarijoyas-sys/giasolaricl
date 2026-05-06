@@ -17,7 +17,7 @@ const Terminos = () => {
       <Navbar />
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
-          <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
+          <motion.div animate={{ opacity: 1, y: 0 }}>
             <p className="text-primary text-sm tracking-widest uppercase mb-3 text-center">Legal</p>
             <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4 text-center">Términos y Condiciones</h1>
             <p className="text-muted-foreground text-center mb-12">

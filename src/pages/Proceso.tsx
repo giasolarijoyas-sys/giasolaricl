@@ -56,7 +56,6 @@ const Proceso = () => {
       <main className="pt-24 pb-20">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
@@ -73,9 +72,6 @@ const Proceso = () => {
             {pasos.map((p, i) => (
               <motion.div
                 key={p.n}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
                 className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center ${
                   i % 2 === 1 ? "md:[direction:rtl]" : ""
                 }`}

@@ -51,9 +51,6 @@ const GarantiaSection = () => {
       <div className="container mx-auto px-4 md:px-8 max-w-6xl">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
@@ -88,9 +85,6 @@ const GarantiaSection = () => {
           {cards.map((card, i) => (
             <motion.div
               key={card.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="p-7 md:p-8 flex flex-col"
               style={{

@@ -18,9 +18,6 @@ const IncluyeAnillo = () => (
       </div>
 
       <motion.ul
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
         className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-4 md:gap-5 border border-primary/30 rounded-lg bg-primary/5 p-8 md:p-10"
       >
         {beneficios.map((b) => (

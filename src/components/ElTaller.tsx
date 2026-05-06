@@ -19,9 +19,6 @@ const ElTaller = () => (
   <section id="taller" className="py-24 md:py-32 bg-background">
     <div className="container mx-auto px-4 md:px-8">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
         className="text-center mb-12"
       >
         <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">
@@ -40,9 +37,6 @@ const ElTaller = () => (
         {photos.map((photo, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
             className={`overflow-hidden rounded-lg ${
               i === 0 ? "col-span-2 md:col-span-2 row-span-2" : ""

@@ -18,9 +18,6 @@ const SoloEnGiaSolari = () => (
   <section className="py-20 md:py-28 bg-background">
     <div className="container mx-auto px-4 md:px-8">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
         className="text-center mb-14"
       >
         <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">
@@ -36,9 +33,6 @@ const SoloEnGiaSolari = () => (
         {cards.map((c, i) => (
           <motion.div
             key={c.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
             className="p-8 md:p-10 border-2 border-primary/30 rounded-lg bg-primary/5 text-center flex flex-col items-center hover:border-primary/60 transition-colors"
           >

@@ -91,7 +91,6 @@ const QuizContainer = () => {
       <section id="cotizador" className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             className="bg-card border border-border rounded-lg p-10 md:p-16 text-center"
           >
@@ -117,9 +116,6 @@ const QuizContainer = () => {
     <section id="cotizador" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-8 max-w-3xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="text-center mb-12"
         >
           <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">
@@ -146,7 +142,6 @@ const QuizContainer = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={stepIndex}
-              initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}

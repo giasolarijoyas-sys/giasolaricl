@@ -27,9 +27,6 @@ const TestimoniosDestacados = () => {
           {destacados.slice(0, 3).map((t, i) => (
             <motion.article
               key={t.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className="border border-border rounded-lg p-8 bg-background flex flex-col"
             >
@@ -44,7 +41,6 @@ const TestimoniosDestacados = () => {
         <div className="md:hidden max-w-md mx-auto">
           <motion.article
             key={destacados[index].id}
-            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="border border-border rounded-lg p-8 bg-background"
           >
