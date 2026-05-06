@@ -14,7 +14,7 @@ const Joyas = () => {
   const showPlaceholders = searchParams.get("preview") === "1";
   const categoryFilter = searchParams.get("categoria") ?? "todas";
   const metalFilter = searchParams.get("metal") ?? "todos";
-  const styleFilter = searchParams.get("estilo") ?? "todos";
+  
   const baseJoyas = (showPlaceholders
     ? JOYAS
     : JOYAS.filter((j) => !j.isPlaceholder)
@@ -78,7 +78,7 @@ const Joyas = () => {
             {[
               { label: "Categoría", key: "categoria" as const, value: categoryFilter, options: categories },
               { label: "Metal", key: "metal" as const, value: metalFilter, options: metals },
-              { label: "Estilo", key: "estilo" as const, value: styleFilter, options: styles },
+              
             ].map((filter) => (
               <div key={filter.key} className="flex flex-wrap items-center justify-center gap-2">
                 <span className="mr-1 text-[11px] uppercase tracking-widest text-charcoal/50">
