@@ -6,7 +6,7 @@ import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 import { motion } from "framer-motion";
 import { ShieldCheck, Gem, Users, Heart } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
-import heroImg from "@/assets/gal-halo-vintage-caja.png";
+import heroImg from "@/assets/gia-retrato.jpg";
 
 const valores = [
   { icon: Gem, title: "Certificación real", desc: "Solo piedras con certificado GIA o IGI. Sin excepciones." },
@@ -31,7 +31,7 @@ const SobreGia = () => (
           <div className="aspect-[4/5] overflow-hidden rounded-lg">
             <img
               src={heroImg}
-              alt="Detalle de joyería artesanal Gia Solari"
+              alt="Gia Solari, joyera y diseñadora de la marca"
               loading="eager"
               className="w-full h-full object-cover"
             />
