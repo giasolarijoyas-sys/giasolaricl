@@ -288,6 +288,8 @@ export const JOYAS: Joya[] = [
     estilo: "Editorial",
     descripcion:
       "Anillo art-déco con tres diamantes redondos en disposición vertical, rodeados de halo de diamantes pequeños. Estilo escalonado vintage.",
+    descripcionLarga:
+      "Tres diamantes brillantes redondos en composición vertical centrada, enmarcados por un halo escalonado de diamantes pavé pequeños. Detalle milgrain y arquitectura art-deco. Oro 18k blanco. Pieza con presencia y línea editorial vintage.",
     categoria: "Anillo de compromiso",
     imagenes: [anilloFelisa01, anilloFelisa02],
     isPlaceholder: false,
@@ -300,6 +302,8 @@ export const JOYAS: Joya[] = [
     estilo: "Color",
     descripcion:
       "Zafiro azul corte emerald cut con halo de diamantes, oro 18k blanco. Detalles vintage.",
+    descripcionLarga:
+      "Zafiro azul natural corte emerald cut como protagonista, rodeado por un halo de diamantes brillantes en oro 18k blanco. Banda fina con detalles pavé y aire vintage refinado. Profundidad de color y elegancia atemporal.",
     categoria: "Anillo de compromiso",
     imagenes: [anilloIsabel01, anilloIsabel02],
     isPlaceholder: false,
