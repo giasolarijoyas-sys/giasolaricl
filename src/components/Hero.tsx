@@ -21,28 +21,25 @@ const slides: Slide[] = [
     type: "image",
     src: heroImage,
     alt: "Macarena González Solari, fundadora de Gia Solari",
-    eyebrow: "Oro 18k · Platino · Diamantes certificados",
-    title: "Joyas hechas a medida para",
-    titleHighlight: "momentos únicos",
-    subtitle: "Anillos de compromiso y argollas con Garantía por Gusto.",
+    eyebrow: "ORO 18K · PLATINO · DIAMANTES CERTIFICADOS",
+    title: "Joyas pensadas para durar más que el momento.",
+    subtitle: "Diseño y manufactura a medida en Chile. Anillos, argollas y piezas que acompañan toda una vida.",
   },
   {
     type: "image",
     src: heroDsc5775,
     alt: "Anillo tricillo con marco dorado",
-    eyebrow: "Diseño a medida",
-    title: "Diseñamos la pieza",
-    titleHighlight: "contigo",
-    subtitle: "Bocetos, materiales y diamantes elegidos en conjunto.",
+    eyebrow: "ORO 18K · PLATINO · DIAMANTES CERTIFICADOS",
+    title: "Joyas pensadas para durar más que el momento.",
+    subtitle: "Diseño y manufactura a medida en Chile. Anillos, argollas y piezas que acompañan toda una vida.",
   },
   {
     type: "image",
     src: heroDsc5803,
     alt: "Anillo tricillo en cofre de terciopelo",
-    eyebrow: "Materiales certificados",
-    title: "Oro 18k, platino y",
-    titleHighlight: "diamantes certificados",
-    subtitle: "Materiales nobles y trazabilidad completa.",
+    eyebrow: "ORO 18K · PLATINO · DIAMANTES CERTIFICADOS",
+    title: "Joyas pensadas para durar más que el momento.",
+    subtitle: "Diseño y manufactura a medida en Chile. Anillos, argollas y piezas que acompañan toda una vida.",
   },
 ];
 
@@ -91,7 +88,7 @@ const Hero = () => {
       </AnimatePresence>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/50 to-transparent z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/65 to-transparent z-[1]" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 pt-[90px] pb-[120px] sm:pt-0 sm:pb-0">
