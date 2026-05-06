@@ -45,6 +45,10 @@ import cincoPiedrasPlatino01 from "@/assets/joyas/cinco-piedras-platino-01.jpg";
 import argollaEternityDiamantes01 from "@/assets/joyas/argolla-eternity-diamantes-01.jpg";
 import esclavaOro01 from "@/assets/joyas/esclava-oro-01.jpg";
 import pulseraOroBroche01 from "@/assets/joyas/pulsera-oro-broche-01.jpg";
+import anilloFelisa01 from "@/assets/joyas/anillo-felisa-01.png";
+import anilloFelisa02 from "@/assets/joyas/anillo-felisa-02.jpg";
+import anilloIsabel01 from "@/assets/joyas/anillo-isabel-01.png";
+import anilloIsabel02 from "@/assets/joyas/anillo-isabel-02.png";
 
 export type Joya = {
   /** URL slug, kebab-case, único. Ej: "halo-zafiro-azul" */
@@ -301,6 +305,30 @@ export const JOYAS: Joya[] = [
       "Inspirado en uno de los anillos de compromiso más icónicos del siglo: zafiro azul oval central enmarcado en un engaste bezel y rodeado por un halo de diamantes brillantes, sobre oro 18k blanco. Una pieza con historia, ahora en versión Gia Solari. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
     imagenes: [anilloLadyDiZafiro01, anilloLadyDiZafiro02],
+    isPlaceholder: false,
+  },
+  {
+    slug: "anillo-felisa",
+    nombre: "Anillo Felisa",
+    material: "Oro 18k blanco · Diamantes · Halo",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Editorial",
+    descripcion:
+      "Anillo con halo y detalles delicados — pieza editorial.",
+    categoria: "Anillo de compromiso",
+    imagenes: [anilloFelisa01, anilloFelisa02],
+    isPlaceholder: false,
+  },
+  {
+    slug: "anillo-isabel",
+    nombre: "Anillo Isabel",
+    material: "Oro 18k blanco · Zafiro azul corte Emerald · Bezel",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Color",
+    descripcion:
+      "Zafiro azul corte emerald cut con bezel en oro blanco.",
+    categoria: "Anillo de compromiso",
+    imagenes: [anilloIsabel01, anilloIsabel02],
     isPlaceholder: false,
   },
   {
