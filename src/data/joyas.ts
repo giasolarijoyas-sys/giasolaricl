@@ -131,10 +131,10 @@ export const JOYAS: Joya[] = [
   {
     slug: "cinco-piedras-platino",
     nombre: "Cinco Piedras · Platino",
-    material: "Platino · Diamante brillante redondo · 5 piedras alineadas",
+    material: "Platino · Diamante brillante redondo · Halo de diamantes pequeños · Banda fina",
     metalPrincipal: "Platino",
     estilo: "Atemporal",
-    descripcion: "Anillo con cinco piedras en línea, montado en platino. Presentación sobre cofre verde oliva.",
+    descripcion: "Solitario con halo de diamantes pequeños sobre banda fina, montado en platino. Presentación sobre cofre oscuro.",
     descripcionLarga:
       "Cinco piedras en línea sobre platino, presentadas en cofre de terciopelo verde oliva. La fuerza del platino y la simetría de las piedras le dan a la pieza un aire de joyería heredada. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
@@ -174,7 +174,7 @@ export const JOYAS: Joya[] = [
     metalPrincipal: "Oro 18k blanco",
     estilo: "Editorial",
     descripcion:
-      "Zafiro azul oval central rodeado por un halo cluster asimétrico de diamantes estilo starburst, oro 18k blanco sobre cofre verde oliva.",
+      "Zafiro azul oval central rodeado por un halo de diamantes, oro 18k blanco. Presentación sobre cofre verde oliva.",
     descripcionLarga:
       "Un zafiro azul oval al centro, rodeado por un halo cluster que no se cierra: los diamantes se abren como rayos desde la piedra, formando un starburst asimétrico de inspiración art déco. Presentado sobre cofre de terciopelo verde oliva — firma visual de la casa. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
@@ -240,11 +240,11 @@ export const JOYAS: Joya[] = [
   {
     slug: "halo-cushion-pave-platino",
     nombre: "Halo Cushion Pavé · Platino",
-    material: "Platino · Diamante natural cojín · Halo de diamantes + banda pavé + milgrain · Certificación GIA",
+    material: "Platino · Diamante natural corte emerald · Halo de diamantes + banda pavé + milgrain · Certificación GIA",
     metalPrincipal: "Platino",
     estilo: "Editorial",
     descripcion:
-      "Diamante cushion cut con halo de diamantes, banda pavé y detalle milgrain. Platino.",
+      "Diamante emerald cut con halo de diamantes, banda pavé y detalle milgrain. Platino.",
     descripcionLarga:
       "Diamante cushion con certificación GIA, rodeado por un halo de brillantes y una banda en pavé con detalle milgrain. El platino aporta temperatura fría y la milgrain suma un guiño vintage. Editorial sin perder uso diario. Cada anillo incluye Certificado Gia Solari, además del certificado GIA del diamante.",
     categoria: "Anillo de compromiso",
@@ -296,11 +296,11 @@ export const JOYAS: Joya[] = [
   {
     slug: "anillo-felisa",
     nombre: "Anillo Felisa",
-    material: "Oro 18k blanco · Diamantes · Halo",
+    material: "Oro 18k blanco · 3 diamantes brillantes redondos en disposición vertical · Bezel + halo de diamantes pequeños",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Editorial",
     descripcion:
-      "Anillo con halo y detalles delicados — pieza editorial.",
+      "Anillo art-déco con tres diamantes redondos en disposición vertical, rodeados de halo de diamantes pequeños. Estilo escalonado vintage.",
     categoria: "Anillo de compromiso",
     imagenes: [anilloFelisa01, anilloFelisa02],
     isPlaceholder: false,
@@ -308,11 +308,11 @@ export const JOYAS: Joya[] = [
   {
     slug: "anillo-isabel",
     nombre: "Anillo Isabel",
-    material: "Oro 18k blanco · Zafiro azul corte Emerald · Bezel",
+    material: "Oro 18k blanco · Zafiro azul corte Emerald · Halo de diamantes · Detalles vintage",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
     descripcion:
-      "Zafiro azul corte emerald cut con bezel en oro blanco.",
+      "Zafiro azul corte emerald cut con halo de diamantes, oro 18k blanco. Detalles vintage.",
     categoria: "Anillo de compromiso",
     imagenes: [anilloIsabel01, anilloIsabel02],
     isPlaceholder: false,
