@@ -19,7 +19,7 @@
  *   leyendo este archivo y añadiendo cada slug con isPlaceholder:false.
  * ===================================================================== */
 
-import galBrazaleteOro from "@/assets/gal-brazalete-oro.png";
+// (no shared gal-* assets in use after catalog cleanup)
 import anilloCupula01 from "@/assets/joyas/anillo-cupula-01.png";
 import anilloCupula02 from "@/assets/joyas/anillo-cupula-02.png";
 import anilloLadyDiZafiro01 from "@/assets/joyas/anillo-lady-di-01.png";
