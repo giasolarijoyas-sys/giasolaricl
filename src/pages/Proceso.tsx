@@ -13,33 +13,33 @@ import paso5 from "@/assets/proceso-5.jpg";
 const pasos = [
   {
     n: "01",
-    titulo: "Consulta",
+    titulo: "Conversamos",
     img: paso1,
-    texto: "Conversamos sobre tu historia, tu estilo y tu presupuesto. Por WhatsApp, video o en el showroom.",
+    texto: "Cuéntanos lo que tienes en mente: ella, el estilo, el presupuesto. No necesitas saber de joyas; nosotros te guiamos. Por WhatsApp, videollamada o en el atelier.",
   },
   {
     n: "02",
-    titulo: "Diseño",
+    titulo: "Diseñamos",
     img: paso2,
-    texto: "Te enviamos un boceto con las opciones de metal, piedra y proporciones. Iteramos hasta que sea exactamente lo que imaginas.",
+    texto: "Te enviamos un boceto con opciones claras de metal, piedra y proporciones. Iteramos las veces que haga falta hasta que sea exactamente lo que tienes en mente.",
   },
   {
     n: "03",
-    titulo: "Aprobación",
+    titulo: "Confirmas",
     img: paso3,
-    texto: "Confirmas el diseño final y haces el abono del 70%. Empezamos a fabricar.",
+    texto: "Cuando el diseño está listo, confirmas y abonas el 70%. Ahí empezamos a fabricar.",
   },
   {
     n: "04",
-    titulo: "Fabricación",
+    titulo: "Fabricamos",
     img: paso4,
-    texto: "Cada pieza se hace a mano en nuestro taller en Santiago. 4 a 6 semanas, una a la vez.",
+    texto: "Cada pieza se hace a mano en nuestro taller de Santiago. Una pieza a la vez. Entre 4 y 6 semanas.",
   },
   {
     n: "05",
-    titulo: "Entrega",
+    titulo: "Recibes",
     img: paso5,
-    texto: "Recibes tu pieza con su empaque, certificado de la piedra y la Garantía por Gusto activa por 30 días.",
+    texto: "Te entregamos la pieza lista para el momento, con su empaque, el certificado de la piedra y la Garantía por Gusto activa por 30 días.",
   },
 ];
 
@@ -47,8 +47,8 @@ const Proceso = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Nuestro Proceso | De la idea a la joya"
-        description="Cómo trabajamos: desde la conversación inicial por WhatsApp hasta la entrega de tu joya, paso a paso."
+        title="El Proceso | De la conversación a la joya"
+        description="Cinco pasos sin sorpresas: desde la primera conversación hasta que recibes tu joya hecha a medida en Santiago."
         path="/proceso"
       />
       <Navbar />
@@ -60,12 +60,12 @@ const Proceso = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <p className="text-gold tracking-[0.3em] uppercase text-xs mb-4">El Proceso</p>
+            <p className="text-gold tracking-[0.3em] uppercase text-xs mb-4">EL PROCESO</p>
             <h1 className="text-3xl md:text-5xl font-display text-charcoal mb-4">
-              Nuestro proceso: de la idea a la joya
+              De la conversación a la joya.
             </h1>
-            <p className="text-charcoal/70 leading-relaxed">
-              Cinco pasos simples. Cada pieza, una conversación.
+            <p className="text-charcoal/70 leading-relaxed italic">
+              Cinco pasos. Sin sorpresas, sin presión.
             </p>
           </motion.div>
 
