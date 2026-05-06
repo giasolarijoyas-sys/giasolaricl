@@ -88,7 +88,7 @@ const Footer = () => {
               >
                 Email: giasolarijoyas@gmail.com
               </a>
-              <p>Atención con cita previa · El Golf, Las Condes · Vitacura · Santiago</p>
+              <p>Atención con cita previa · Las Condes · Santiago</p>
             </div>
           </div>
         </div>

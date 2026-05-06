@@ -199,7 +199,7 @@ const Terminos = () => {
               <ul className="space-y-1">
                 <li>• <strong>WhatsApp:</strong> +56 9 8404 9502</li>
                 <li>• <strong>Instagram:</strong> @giasolari.cl</li>
-                <li>• <strong>Showroom:</strong> Atención con cita previa · El Golf, Las Condes · Vitacura · Santiago</li>
+                <li>• <strong>Showroom:</strong> Atención con cita previa · Las Condes · Santiago</li>
               </ul>
             </section>
           </div>

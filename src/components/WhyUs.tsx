@@ -7,7 +7,7 @@ const reasons = [
   { icon: Gem, title: "Piedras Certificadas", desc: "Solo piedras con certificado GIA o IGI. Transparencia total." },
   { icon: Leaf, title: "Transparencia en Todo", desc: "Te explicamos cada material y proceso. Quiero que entiendas exactamente lo que estás eligiendo." },
   { icon: Users, title: "Atención Personalizada", desc: "La Maca te acompaña personalmente en todo el proceso." },
-  { icon: MapPin, title: "Atención con cita previa", desc: "El Golf, Las Condes · Vitacura · Santiago." },
+  { icon: MapPin, title: "Atención con cita previa", desc: "Las Condes · Santiago." },
 ];
 
 const WhyUs = () => {
