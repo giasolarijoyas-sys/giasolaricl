@@ -15,20 +15,19 @@ const Joyas = () => {
   const categoryFilter = searchParams.get("categoria") ?? "todas";
   const metalFilter = searchParams.get("metal") ?? "todos";
   const styleFilter = searchParams.get("estilo") ?? "todos";
-  const baseJoyas = showPlaceholders
+  const baseJoyas = (showPlaceholders
     ? JOYAS
-    : JOYAS.filter((j) => !j.isPlaceholder);
+    : JOYAS.filter((j) => !j.isPlaceholder)
+  ).filter((j) => j.categoria !== "Argolla");
   const categories = ["todas", ...Array.from(new Set(baseJoyas.map((j) => j.categoria)))]
   const metals = ["todos", ...Array.from(new Set(baseJoyas.map((j) => j.metalPrincipal ?? j.material.split(" · ")[0])))]
-  const styles = ["todos", ...Array.from(new Set(baseJoyas.map((j) => j.estilo).filter(Boolean)))] as string[];
   const visibleJoyas = baseJoyas.filter((j) => {
     if (categoryFilter !== "todas" && j.categoria !== categoryFilter) return false;
     if (metalFilter !== "todos" && (j.metalPrincipal ?? j.material.split(" · ")[0]) !== metalFilter) return false;
-    if (styleFilter !== "todos" && j.estilo !== styleFilter) return false;
     return true;
   });
 
-  const updateFilter = (key: "categoria" | "metal" | "estilo", value: string) => {
+  const updateFilter = (key: "categoria" | "metal", value: string) => {
     const next = new URLSearchParams(searchParams);
     if (["todas", "todos"].includes(value)) next.delete(key);
     else next.set(key, value);
