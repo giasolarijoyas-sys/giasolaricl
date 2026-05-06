@@ -550,7 +550,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-001",
     nombre: "Vintage 1",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -563,7 +563,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-002",
     nombre: "Vintage 2",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -576,7 +576,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-003",
     nombre: "Vintage 3",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -589,7 +589,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-004",
     nombre: "Vintage 4",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -602,7 +602,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-005",
     nombre: "Vintage 5",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -615,7 +615,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-006",
     nombre: "Vintage 6",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -628,7 +628,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-007",
     nombre: "Vintage 7",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -641,7 +641,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-008",
     nombre: "Vintage 8",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -654,7 +654,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-009",
     nombre: "Vintage 9",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -667,7 +667,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-010",
     nombre: "Vintage 10",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -680,7 +680,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-011",
     nombre: "Vintage 11",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -693,7 +693,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-012",
     nombre: "Vintage 12",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -706,7 +706,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-013",
     nombre: "Vintage 13",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -719,7 +719,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-014",
     nombre: "Vintage 14",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -732,7 +732,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-015",
     nombre: "Vintage 15",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -745,7 +745,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-016",
     nombre: "Vintage 16",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -758,7 +758,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-017",
     nombre: "Vintage 17",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -771,7 +771,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-018",
     nombre: "Vintage 18",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -784,7 +784,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-019",
     nombre: "Vintage 19",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -797,7 +797,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-020",
     nombre: "Vintage 20",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -810,7 +810,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-021",
     nombre: "Vintage 21",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -823,7 +823,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-022",
     nombre: "Vintage 22",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -836,7 +836,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-023",
     nombre: "Vintage 23",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -849,7 +849,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-024",
     nombre: "Vintage 24",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -862,7 +862,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-025",
     nombre: "Vintage 25",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -875,7 +875,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-026",
     nombre: "Vintage 26",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -888,7 +888,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-027",
     nombre: "Vintage 27",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -901,7 +901,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-028",
     nombre: "Vintage 28",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -914,7 +914,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-029",
     nombre: "Vintage 29",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -927,7 +927,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-030",
     nombre: "Vintage 30",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -940,7 +940,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-031",
     nombre: "Vintage 31",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -953,7 +953,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-032",
     nombre: "Vintage 32",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -966,7 +966,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-033",
     nombre: "Vintage 33",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -979,7 +979,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-034",
     nombre: "Vintage 34",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -992,7 +992,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-035",
     nombre: "Vintage 35",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1005,7 +1005,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-036",
     nombre: "Vintage 36",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1018,7 +1018,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-037",
     nombre: "Vintage 37",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1031,7 +1031,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-038",
     nombre: "Vintage 38",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1044,7 +1044,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-039",
     nombre: "Vintage 39",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1057,7 +1057,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-049",
     nombre: "Vintage 49",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1070,7 +1070,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-050",
     nombre: "Vintage 50",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1083,7 +1083,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-051",
     nombre: "Vintage 51",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1096,7 +1096,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-052",
     nombre: "Vintage 52",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1109,7 +1109,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-053",
     nombre: "Vintage 53",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1122,7 +1122,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-054",
     nombre: "Vintage 54",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1135,7 +1135,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-055",
     nombre: "Vintage 55",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1148,7 +1148,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-056",
     nombre: "Vintage 56",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1161,7 +1161,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-057",
     nombre: "Vintage 57",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1174,7 +1174,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-058",
     nombre: "Vintage 58",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1187,7 +1187,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-059",
     nombre: "Vintage 59",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1200,7 +1200,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-060",
     nombre: "Vintage 60",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1213,7 +1213,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-061",
     nombre: "Vintage 61",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1226,7 +1226,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-062",
     nombre: "Vintage 62",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1239,7 +1239,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-063",
     nombre: "Vintage 63",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1252,7 +1252,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-064",
     nombre: "Vintage 64",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1265,7 +1265,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-065",
     nombre: "Vintage 65",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1278,7 +1278,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-066",
     nombre: "Vintage 66",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1291,7 +1291,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-067",
     nombre: "Vintage 67",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1304,7 +1304,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-068",
     nombre: "Vintage 68",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1317,7 +1317,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-069",
     nombre: "Vintage 69",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1330,7 +1330,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-070",
     nombre: "Vintage 70",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1343,7 +1343,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-071",
     nombre: "Vintage 71",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1356,7 +1356,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-072",
     nombre: "Vintage 72",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1369,7 +1369,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-073",
     nombre: "Vintage 73",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1382,7 +1382,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-074",
     nombre: "Vintage 74",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1395,7 +1395,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-075",
     nombre: "Vintage 75",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1408,7 +1408,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-076",
     nombre: "Vintage 76",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1421,7 +1421,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-077",
     nombre: "Vintage 77",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1434,7 +1434,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-078",
     nombre: "Vintage 78",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1447,7 +1447,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-079",
     nombre: "Vintage 79",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1460,7 +1460,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-080",
     nombre: "Vintage 80",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1473,7 +1473,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-081",
     nombre: "Vintage 81",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1486,7 +1486,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-085",
     nombre: "Vintage 85",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1499,7 +1499,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-086",
     nombre: "Vintage 86",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1512,7 +1512,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-090",
     nombre: "Vintage 90",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1525,7 +1525,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-091",
     nombre: "Vintage 91",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1538,7 +1538,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-092",
     nombre: "Vintage 92",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1551,7 +1551,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-093",
     nombre: "Vintage 93",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1564,7 +1564,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-094",
     nombre: "Vintage 94",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1577,7 +1577,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-095",
     nombre: "Vintage 95",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1590,7 +1590,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-096",
     nombre: "Vintage 96",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
@@ -1603,7 +1603,7 @@ export const JOYAS: Joya[] = [
   {
     slug: "vintage-097",
     nombre: "Vintage 97",
-    categoria: "Anillo de Compromiso",
+    categoria: "Anillo de compromiso",
     material: "A definir",
     metalPrincipal: "A definir",
     estilo: "Vintage",
