@@ -1,13 +1,10 @@
 import { motion } from "framer-motion";
-import { Pen, Heart, Gem, Leaf, Users, MapPin, ShieldCheck } from "lucide-react";
+import { MapPin, Gem, Users } from "lucide-react";
 
 const reasons = [
-  { icon: Pen, title: "100% a Pedido", desc: "Ninguna pieza es igual. Cada joya nace de tu historia." },
-  { icon: Heart, title: "Especialistas en Platino", desc: "De las pocas joyerías en Chile que trabaja el platino con verdadera maestría." },
-  { icon: Gem, title: "Piedras Certificadas", desc: "Solo piedras con certificado GIA o IGI. Transparencia total." },
-  { icon: Leaf, title: "Transparencia en Todo", desc: "Te explicamos cada material y proceso. Quiero que entiendas exactamente lo que estás eligiendo." },
-  { icon: Users, title: "Atención Personalizada", desc: "La Maca te acompaña personalmente en todo el proceso." },
-  { icon: MapPin, title: "Atención con cita previa", desc: "Las Condes · Santiago." },
+  { icon: MapPin, title: "Atelier propio en Santiago", desc: "Cada pieza se hace a mano en nuestro taller, una a la vez." },
+  { icon: Gem, title: "Diamantes certificados GIA o IGI", desc: "Solo trabajamos con piedras certificadas, sin excepciones." },
+  { icon: Users, title: "Atención personalizada de principio a fin", desc: "Te acompañamos desde la primera conversación hasta la entrega, no delegamos tu proyecto." },
 ];
 
 const WhyUs = () => {
