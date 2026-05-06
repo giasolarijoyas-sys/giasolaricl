@@ -31,7 +31,7 @@ const SobreGia = () => (
           <div className="aspect-[4/5] overflow-hidden rounded-lg">
             <img
               src={heroImg}
-              alt="Detalle de joyería artesanal Gia Solari"
+              alt="Gia Solari, joyera y diseñadora de la marca"
               loading="eager"
               className="w-full h-full object-cover"
             />
