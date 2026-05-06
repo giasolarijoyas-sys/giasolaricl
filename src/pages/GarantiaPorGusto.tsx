@@ -69,7 +69,7 @@ const GarantiaPorGusto = () => (
               La Garantía por Gusto nace de algo simple: creemos que una joya que vas a usar toda la vida tiene que empezar por gustarte de verdad. No la mitad. No "está bonita". Tiene que enamorarte. Y como diseñar una pieza de autor es un proceso íntimo, donde a veces lo que imaginas y lo que terminas recibiendo necesitan un último ajuste, te damos espacio real para confirmarlo.
             </p>
             <p>
-              No somos una joyería industrial que produce en masa y se desentiende. Cada pieza que sale del taller es una conversación que tuvimos con vos, y queremos que esa conversación termine bien. Por eso, si al recibirla algo no se siente tuyo, la rehacemos. No es un favor ni una excepción: es parte de cómo trabajamos. Tu tranquilidad es la base de nuestra relación.
+              No somos una joyería industrial que produce en masa y se desentiende. Cada pieza que sale del taller es una conversación que tuvimos contigo, y queremos que esa conversación termine bien. Por eso, si al recibirla algo no se siente tuyo, la rehacemos. No es un favor ni una excepción: es parte de cómo trabajamos. Tu tranquilidad es la base de nuestra relación.
             </p>
           </motion.div>
 

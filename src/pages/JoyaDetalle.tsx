@@ -201,13 +201,13 @@ const JoyaDetalle = () => {
                   Icon: MessageCircle,
                   titulo: "Conversamos",
                   texto:
-                    "Nos contás qué imaginás. Te asesoramos sobre piedras, metales y formato sin compromiso.",
+                    "Nos cuentas qué imaginas. Te asesoramos sobre piedras, metales y formato sin compromiso.",
                 },
                 {
                   Icon: Pencil,
                   titulo: "Diseñamos",
                   texto:
-                    "Hacemos un boceto a mano y lo ajustamos hasta que la pieza sea exactamente lo que querés.",
+                    "Hacemos un boceto a mano y lo ajustamos hasta que la pieza sea exactamente lo que quieres.",
                 },
                 {
                   Icon: Hammer,
