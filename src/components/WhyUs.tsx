@@ -25,7 +25,7 @@ const WhyUs = () => {
 
 
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {reasons.map((r, i) => (
             <motion.div
               key={r.title}
