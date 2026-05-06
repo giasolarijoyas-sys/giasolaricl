@@ -110,6 +110,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
                 className="text-[28px] leading-[1.1] sm:text-4xl md:text-6xl lg:text-7xl font-display text-cream mb-5"
+                style={{ textShadow: "0 2px 16px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4)" }}
               >
                 {slides[current].title}
                 {slides[current].titleHighlight && (
@@ -126,7 +127,8 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.45 }}
-                className="text-cream/80 text-base md:text-xl mb-8 max-w-lg font-light leading-relaxed"
+                className="text-cream/95 text-base md:text-xl mb-8 max-w-lg font-light leading-relaxed"
+                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
               >
                 {slides[current].subtitle}
               </motion.p>
