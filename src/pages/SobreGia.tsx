@@ -29,9 +29,9 @@ const SobreGia = () => (
         <div className="container mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
           <div className="aspect-[4/5] bg-muted rounded-lg" />
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">Sobre mí</p>
-            <h1 className="text-4xl md:text-5xl font-display text-foreground mb-4">Sobre Gia Solari: joyería artesanal en Santiago</h1>
-            <p className="text-muted-foreground text-lg">Diseño joyas a medida en Santiago desde 2019.</p>
+            <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">ATELIER GIA SOLARI</p>
+            <h1 className="text-4xl md:text-5xl font-display text-foreground mb-4">La joya como herencia.</h1>
+            <p className="text-muted-foreground text-lg italic">Soy Macarena González Solari. Diseño joyas a medida en Santiago desde 2019.</p>
           </motion.div>
         </div>
       </section>
@@ -40,12 +40,11 @@ const SobreGia = () => (
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="space-y-5 text-muted-foreground leading-relaxed">
-            <p>Yo, Macarena González Solari, fundé Gia Solari en 2019. Trabajo junto a mi mamá y socia Gianna, y con orfebres especialistas, pero cada pieza pasa por mis manos.</p>
-            <p>Todo empezó con mi mamá. Ella me enseñó que una joya no es solo un objeto bonito — es una historia que se hereda, un momento que se guarda para siempre. Crecí viendo cómo las joyas de mi abuela pasaban de mano en mano, cada una con su propia historia.</p>
-            <p>Estudié gemología en el GIA (Gemological Institute of America) porque quería entender cada piedra, cada metal, cada detalle técnico. Me especialicé en platino y diamantes certificados porque creo que quien invierte en una joya merece saber exactamente qué está comprando.</p>
-            <p>Mi misión es simple: que mandar a hacer una joya sea una experiencia extraordinaria. Trabajo desde mi taller en Santiago, y cada pieza pasa por mis manos antes de llegar a las tuyas.</p>
-            <p>No tengo vitrina ni stock. Cada joya la diseño contigo, para ti. Porque creo que algo tan importante como un anillo de compromiso o una argolla de matrimonio merece ser pensado, conversado y creado con cariño.</p>
-            <p className="italic text-foreground font-display text-lg">"Tú me cuentas tu historia, yo la convierto en joya."</p>
+            <p><strong className="text-foreground">Aprendí a mirar las joyas con mi mamá.</strong> En su cómoda guardaba las piezas que habían sido de mi abuela —cada una con un nombre, una fecha, una historia que volvía cada vez que alguien las usaba. Esa fue mi primera lección: <em>una joya no se compra, se hereda</em>.</p>
+            <p>Hoy diseño junto a Gianna —mi mamá y socia— en un taller pequeño en Santiago. Trabajamos con orfebres que nos acompañan hace años, y cada pieza pasa por mis manos antes de llegar a las tuyas.</p>
+            <p>Estudié gemología en el <strong className="text-foreground">GIA</strong> (Gemological Institute of America) para entender, una a una, las piedras que elijo. Me especialicé en platino y diamantes certificados porque creo que quien invierte en una joya merece saber exactamente qué está comprando.</p>
+            <p>No tengo vitrina ni stock. Tampoco hago dos piezas iguales. Cada anillo, cada argolla, cada joya nace de una conversación: <strong className="text-foreground">vos me contás tu historia, yo la traduzco en metal y piedra.</strong></p>
+            <p className="italic text-foreground font-display text-lg">"Vos me contás tu historia. Yo la convierto en joya."</p>
           </motion.div>
         </div>
       </section>
