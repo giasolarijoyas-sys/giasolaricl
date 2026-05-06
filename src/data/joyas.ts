@@ -19,25 +19,7 @@
  *   leyendo este archivo y añadiendo cada slug con isPlaceholder:false.
  * ===================================================================== */
 
-import galZafiro from "@/assets/gal-zafiro.jpeg";
-import galArgolla from "@/assets/gal-argolla.jpeg";
-import galTricillo from "@/assets/gal-tricillo.jpeg";
-import galTricillo2 from "@/assets/gal-tricillo2.jpeg";
-import galPrincesa from "@/assets/gal-princesa.jpeg";
-import galHaloZafiro from "@/assets/gal-halo-zafiro.jpeg";
-import galEsmeraldaHalo from "@/assets/gal-esmeralda-halo.png";
-import galZafirosBanda from "@/assets/gal-zafiros-banda.png";
-import galArtDeco from "@/assets/gal-art-deco.png";
-import galOvalPave from "@/assets/gal-oval-pave.jpg";
-import galSolitarioChevron from "@/assets/gal-solitario-chevron.jpg";
-import galCincoPiedras from "@/assets/gal-cinco-piedras.jpeg";
-import galBrazaleteOro from "@/assets/gal-brazalete-oro.png";
-import galHaloOvalCaja from "@/assets/gal-halo-oval-caja.jpg";
-import galSolitarioCaja from "@/assets/gal-solitario-caja.jpg";
-import joyaHaloFloralTanzanita from "@/assets/joya-halo-floral-tanzanita.png";
-import joyaEternityEsmeralda from "@/assets/joya-eternity-esmeralda.png";
-import joyaHaloMarquise from "@/assets/joya-halo-marquise.png";
-import joyaSolitarioEmeraldPlatino from "@/assets/joya-solitario-emerald-platino.png";
+// (no shared gal-* assets in use after catalog cleanup)
 import anilloCupula01 from "@/assets/joyas/anillo-cupula-01.png";
 import anilloCupula02 from "@/assets/joyas/anillo-cupula-02.png";
 import anilloLadyDiZafiro01 from "@/assets/joyas/anillo-lady-di-01.png";
@@ -266,46 +248,6 @@ export const JOYAS: Joya[] = [
     isPlaceholder: false,
   },
   {
-    slug: "halo-floral-tanzanita",
-    nombre: "Halo Floral Tanzanita",
-    material: "Oro 18k amarillo · Tanzanita oval · Diamantes",
-    descripcion:
-      "Tanzanita oval rodeada por un halo de diamantes en forma de flor. Hecha a mano en oro 18k amarillo.",
-    categoria: "Anillo de compromiso",
-    imagenes: [joyaHaloFloralTanzanita],
-    isPlaceholder: false,
-  },
-  {
-    slug: "eternity-esmeralda-diamante",
-    nombre: "Eternity Esmeralda & Diamante",
-    material: "Oro 18k blanco · Esmeraldas · Diamantes",
-    descripcion:
-      "Banda eternity con esmeraldas alternadas con diamantes brillantes. Bezel setting, diseño minimalista.",
-    categoria: "Anillo",
-    imagenes: [joyaEternityEsmeralda],
-    isPlaceholder: false,
-  },
-  {
-    slug: "halo-marquise-diamante",
-    nombre: "Halo Marquise Diamante",
-    material: "Oro 18k · Diamante marquise · Diamantes",
-    descripcion:
-      "Diamante corte marquise con halo de diamantes y banda en pavé. Hecha a mano por encargo.",
-    categoria: "Anillo de compromiso",
-    imagenes: [joyaHaloMarquise],
-    isPlaceholder: false,
-  },
-  {
-    slug: "solitario-emerald-cut-platino",
-    nombre: "Solitario Emerald Cut Platino",
-    material: "Platino · Diamante emerald cut",
-    descripcion:
-      "Diamante corte esmeralda en platino con cathedral setting de inspiración art deco.",
-    categoria: "Anillo de compromiso",
-    imagenes: [joyaSolitarioEmeraldPlatino],
-    isPlaceholder: false,
-  },
-  {
     slug: "halo-cushion-pave-platino",
     nombre: "Halo Cushion Pavé · Platino",
     material: "Platino · Diamante natural cojín · Halo de diamantes + banda pavé + milgrain · Certificación GIA",
@@ -345,66 +287,6 @@ export const JOYAS: Joya[] = [
       "Una cúpula de diamantes que se eleva sobre la mano: el brillante central queda contenido en una arquitectura de piedras que lo sostienen como una flor escultórica. La banda ancha con pavé y la filigrana calada en el perfil lateral le dan volumen y aire de joyería heredada. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
     imagenes: [anilloCupula01, anilloCupula02],
-    isPlaceholder: false,
-  },
-  {
-    slug: "halo-zafiro-azul",
-    nombre: "Anillo Halo Zafiro Azul",
-    material: "Oro 18k blanco · Zafiro azul · Diamantes",
-    descripcion:
-      "Halo de diamantes pequeños rodeando un zafiro azul central. Pieza hecha a mano en Santiago.",
-    categoria: "Anillo de compromiso",
-    imagenes: [galHaloZafiro, galZafiro, galZafirosBanda],
-    isPlaceholder: false,
-  },
-  {
-    slug: "solitario-oval-pave",
-    nombre: "Solitario Oval Pavé",
-    material: "Platino · Diamante natural certificado",
-    descripcion:
-      "Diamante oval con banda en pavé de diamantes. Diseño contemporáneo y luminoso.",
-    categoria: "Anillo de compromiso",
-    imagenes: [galOvalPave, galHaloOvalCaja, galSolitarioChevron],
-    isPlaceholder: false,
-  },
-  {
-    slug: "esmeralda-halo",
-    nombre: "Esmeralda con Halo",
-    material: "Oro 18k amarillo · Esmeralda · Diamantes",
-    descripcion:
-      "Esmeralda corte esmeralda rodeada de halo de diamantes. Para quien busca color y carácter.",
-    categoria: "Anillo de compromiso",
-    imagenes: [galEsmeraldaHalo, galArtDeco, galCincoPiedras],
-    isPlaceholder: false,
-  },
-  {
-    slug: "tricillo",
-    nombre: "Tricillo",
-    material: "Oro 18k · Diamantes",
-    descripcion:
-      "Tres cintillos entrelazados con detalles de diamantes. Un clásico moderno de Gia Solari.",
-    categoria: "Anillo de compromiso",
-    imagenes: [galTricillo, galTricillo2, galPrincesa],
-    isPlaceholder: false,
-  },
-  {
-    slug: "solitario-clasico",
-    nombre: "Solitario Clásico",
-    material: "Oro 18k · Diamante",
-    descripcion:
-      "Diamante central con caja Gia Solari. La elegancia atemporal del solitario.",
-    categoria: "Anillo de compromiso",
-    imagenes: [galSolitarioCaja, galHaloOvalCaja, galPrincesa],
-    isPlaceholder: false,
-  },
-  {
-    slug: "argolla-clasica",
-    nombre: "Argolla Clásica",
-    material: "Oro 18k amarillo",
-    descripcion:
-      "Argolla pulida tradicional, ancho personalizable. Hecha a medida para los dos.",
-    categoria: "Argolla de matrimonio",
-    imagenes: [galArgolla, galArgolla, galArgolla],
     isPlaceholder: false,
   },
   {
