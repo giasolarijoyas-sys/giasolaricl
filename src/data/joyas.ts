@@ -401,7 +401,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-pera",
-    nombre: "Halo · Pera",
+    nombre: "Halo Pera · Diamantes",
     material: "Oro 18k blanco · Diamante natural corte pera · Halo de diamantes",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Editorial",
@@ -414,7 +414,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-marquise",
-    nombre: "Halo · Marquise",
+    nombre: "Halo Marquise · Diamantes",
     material: "Oro 18k blanco · Diamante natural corte marquise · Halo de diamantes",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Editorial",
@@ -440,7 +440,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "trilogia-color-oro",
-    nombre: "Trilogía Color · Oro",
+    nombre: "Trilogía Color · Oro Amarillo",
     material: "Oro 18k · Diamante central + dos piedras de color laterales",
     metalPrincipal: "Oro 18k",
     estilo: "Color",
@@ -453,7 +453,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "art-deco-baguette",
-    nombre: "Art Déco · Baguette",
+    nombre: "Art Decó Baguette · Platino",
     material: "Platino · Diamante central · Diamantes baguette laterales · Líneas geométricas art déco",
     metalPrincipal: "Platino",
     estilo: "Editorial",
