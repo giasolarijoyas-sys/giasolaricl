@@ -20,7 +20,7 @@ const Joyas = () => {
     : JOYAS.filter((j) => !j.isPlaceholder)
   ).filter((j) => j.categoria !== "Argolla");
   const categories = ["todas", ...Array.from(new Set(baseJoyas.map((j) => j.categoria)))]
-  const metals = ["todos", ...Array.from(new Set(baseJoyas.map((j) => j.metalPrincipal ?? j.material.split(" · ")[0])))]
+  const metals = ["todos", ...Array.from(new Set(baseJoyas.map((j) => j.metalPrincipal ?? j.material.split(" · ")[0]))).filter((m) => m && m.trim() !== "" && m.toLowerCase() !== "a definir")]
   const visibleJoyas = baseJoyas.filter((j) => {
     if (categoryFilter !== "todas" && j.categoria !== categoryFilter) return false;
     if (metalFilter !== "todos" && (j.metalPrincipal ?? j.material.split(" · ")[0]) !== metalFilter) return false;
