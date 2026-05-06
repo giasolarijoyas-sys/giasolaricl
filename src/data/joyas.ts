@@ -50,13 +50,13 @@ import anilloFelisa02 from "@/assets/joyas/anillo-felisa-02.jpg";
 import anilloIsabel01 from "@/assets/joyas/anillo-isabel-01.png";
 import anilloIsabel02 from "@/assets/joyas/anillo-isabel-02.png";
 import artDecoBaguette01 from "@/assets/joyas/art-deco-baguette-01.jpg";
-import cincoPiedrasPlatino01 from "@/assets/joyas/cinco-piedras-platino-01.jpg";
+
 import eternityDiamantesPlatino01 from "@/assets/joyas/eternity-diamantes-platino-01.jpg";
 import haloBrillantePlatino01 from "@/assets/joyas/halo-brillante-platino-01.jpg";
 import haloCushionClasico01 from "@/assets/joyas/halo-cushion-clasico-01.jpg";
 import haloMarquise01 from "@/assets/joyas/halo-marquise-01.jpg";
 import haloPera01 from "@/assets/joyas/halo-pera-01.jpg";
-import solitarioBezelOroAmarillo01 from "@/assets/joyas/solitario-bezel-oro-amarillo-01.jpg";
+
 import solitarioEmeraldCutPlatino01 from "@/assets/joyas/solitario-emerald-cut-platino-01.jpg";
 import solitarioOvalPlatino01 from "@/assets/joyas/solitario-oval-platino-01.jpg";
 import trilogiaColorOro01 from "@/assets/joyas/trilogia-color-oro-01.jpg";
@@ -361,19 +361,6 @@ export const JOYAS: Joya[] = [
     isPlaceholder: false,
   },
   {
-    slug: "solitario-bezel-oro-amarillo",
-    nombre: "Solitario Bezel · Oro Amarillo",
-    material: "Oro 18k amarillo · Diamante natural brillante redondo · Engaste bezel",
-    metalPrincipal: "Oro 18k amarillo",
-    estilo: "Atemporal",
-    descripcion: "Diamante redondo en bezel sobre banda lisa de oro amarillo. Pieza minimalista y cálida.",
-    descripcionLarga:
-      "Diamante brillante redondo enmarcado en bezel sobre banda lisa de oro 18k amarillo. Una pieza minimalista, cálida y de uso diario — el solitario para quienes prefieren la línea limpia y el oro amarillo. Cada anillo incluye Certificado Gia Solari.",
-    categoria: "Anillo de compromiso",
-    imagenes: [solitarioBezelOroAmarillo01],
-    isPlaceholder: false,
-  },
-  {
     slug: "halo-brillante-platino",
     nombre: "Halo Brillante · Platino",
     material: "Platino · Diamante natural brillante redondo · Halo de diamantes",
@@ -475,19 +462,6 @@ export const JOYAS: Joya[] = [
       "Diamantes brillantes engastados en microgrifa rodeando toda la circunferencia de la banda — una eternity completa en platino. Pieza versátil: argolla de matrimonio, banda de aniversario o anillo de uso diario que multiplica la luz. Incluye Certificado Gia Solari.",
     categoria: "Argolla",
     imagenes: [eternityDiamantesPlatino01],
-    isPlaceholder: false,
-  },
-  {
-    slug: "cinco-piedras-platino",
-    nombre: "Cinco Piedras · Platino",
-    material: "Platino · 5 diamantes naturales redondos a grifas",
-    metalPrincipal: "Platino",
-    estilo: "Atemporal",
-    descripcion: "Banda con cinco diamantes redondos en línea sobre platino. Pieza luminosa y simétrica.",
-    descripcionLarga:
-      "Cinco diamantes brillantes redondos alineados a grifas sobre banda fina de platino. Una pieza limpia y simétrica que funciona como argolla de compromiso, banda de aniversario o acompañamiento de un solitario. Cada anillo incluye Certificado Gia Solari.",
-    categoria: "Anillo de compromiso",
-    imagenes: [cincoPiedrasPlatino01],
     isPlaceholder: false,
   },
 ];
