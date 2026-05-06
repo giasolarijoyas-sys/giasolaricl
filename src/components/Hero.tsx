@@ -88,7 +88,7 @@ const Hero = () => {
       </AnimatePresence>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/50 to-transparent z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/65 to-transparent z-[1]" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 pt-[90px] pb-[120px] sm:pt-0 sm:pb-0">
