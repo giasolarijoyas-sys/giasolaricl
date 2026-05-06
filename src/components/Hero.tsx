@@ -87,8 +87,9 @@ const Hero = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/65 to-transparent z-[1]" />
+      {/* Overlay — gradient oscuro para legibilidad sobre imágenes claras */}
+      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/85 via-charcoal/70 to-charcoal/30 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-transparent to-charcoal/50 z-[1]" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 pt-[90px] pb-[120px] sm:pt-0 sm:pb-0">
@@ -109,6 +110,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
                 className="text-[28px] leading-[1.1] sm:text-4xl md:text-6xl lg:text-7xl font-display text-cream mb-5"
+                style={{ textShadow: "0 2px 16px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4)" }}
               >
                 {slides[current].title}
                 {slides[current].titleHighlight && (
@@ -125,7 +127,8 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.45 }}
-                className="text-cream/80 text-base md:text-xl mb-8 max-w-lg font-light leading-relaxed"
+                className="text-cream/95 text-base md:text-xl mb-8 max-w-lg font-light leading-relaxed"
+                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
               >
                 {slides[current].subtitle}
               </motion.p>
