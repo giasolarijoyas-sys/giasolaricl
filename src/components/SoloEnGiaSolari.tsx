@@ -1,16 +1,11 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Gem, PenLine } from "lucide-react";
+import { ShieldCheck, PenLine } from "lucide-react";
 
 const cards = [
   {
     icon: ShieldCheck,
     title: "Garantía por Gusto — Únicos en Chile",
     desc: "Si la pieza no te encanta al recibirla, la ajustamos o reemplazamos. Somos la única joyería chilena que ofrece esta garantía.",
-  },
-  {
-    icon: Gem,
-    title: "Réplica — GRATIS",
-    desc: "Junto a tu anillo de compromiso entregamos una réplica en plata y moissanite, sin costo. Para viaje, uso diario o para usar sin preocuparte.",
   },
   {
     icon: PenLine,
@@ -37,7 +32,7 @@ const SoloEnGiaSolari = () => (
         </h2>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {cards.map((c, i) => (
           <motion.div
             key={c.title}
