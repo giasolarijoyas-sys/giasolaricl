@@ -62,7 +62,7 @@ import bandaCincoDiamantes01 from "@/assets/joyas/banda-cinco-diamantes-01.jpg";
 import cincoPiedrasPlatino01 from "@/assets/joyas/cinco-piedras-platino-01.jpg";
 import argollaEternityDiamantes01 from "@/assets/joyas/argolla-eternity-diamantes-01.jpg";
 import esclavaOro01 from "@/assets/joyas/esclava-oro-01.jpg";
-import pulseraOroBroche01 from "@/assets/joyas/pulsera-oro-con-broche-01.jpg";
+import pulseraOroBroche01 from "@/assets/joyas/pulsera-oro-broche-01.jpg";
 
 export type Joya = {
   /** URL slug, kebab-case, único. Ej: "halo-zafiro-azul" */
