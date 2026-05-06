@@ -19,8 +19,7 @@ const faqs = [
   { q: "¿Puedo pagar en cuotas?", a: "Sí, ofrezco facilidades de pago. Conversemos tu caso particular y encontramos la mejor opción para ti." },
   { q: "¿Hacen entregas urgentes?", a: "En algunos casos puedo acelerar el proceso, pero depende del diseño y la disponibilidad de materiales. Escríbeme y evaluamos juntos si es posible." },
   { q: "¿Tienen descuento en argollas si hice mi anillo de compromiso con ustedes?", a: "¡Sí! Las parejas que hacen su anillo de compromiso conmigo tienen un 20% de descuento en la hechura de las argollas de matrimonio." },
-  { q: "¿Qué es La Hermana?", a: "La Hermana es una réplica de tu anillo de compromiso, hecha en plata y moissanita, pensada para los días cotidianos. Viene incluida sin costo adicional con todo anillo de compromiso. Así podés usar el original para ocasiones y La Hermana para viajar, ir al gimnasio, cocinar, o simplemente para los días en que no querés llevarte el bueno. No es 100% idéntica al original — es lo más parecida posible con otros materiales — pero conserva el mismo estilo y diseño. No lleva grabado: el grabado es íntimo y va solo en el anillo original." },
-  { q: "¿Tiene costo el grabado personalizado?", a: "No. Todo anillo de compromiso Gia Solari incluye un grabado personalizado gratis en el interior — nombres, fecha, una frase especial, una pequeña coordenada. El grabado va solo en el anillo original, no en La Hermana, porque creemos que esa dedicatoria es íntima y se cuida con el original." },
+  { q: "¿Tiene costo el grabado personalizado?", a: "No. Todo anillo de compromiso Gia Solari incluye un grabado personalizado gratis en el interior — nombres, fecha, una frase especial, una pequeña coordenada." },
 ];
 
 const PreguntasFrecuentes = () => (

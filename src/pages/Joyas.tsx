@@ -66,11 +66,7 @@ const Joyas = () => {
             </p>
             <p className="mt-3 text-[12px] text-charcoal/70 max-w-md mx-auto leading-relaxed">
               Todo anillo de compromiso incluye{" "}
-              <strong>grabado personalizado</strong> y{" "}
-              <Link to="/la-hermana" className="underline hover:text-gold">
-                La Hermana
-              </Link>{" "}
-              — sin costo adicional.
+              <strong>grabado personalizado</strong> sin costo adicional.
             </p>
           </motion.div>
 

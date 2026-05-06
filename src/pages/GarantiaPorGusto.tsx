@@ -147,7 +147,7 @@ const GarantiaPorGusto = () => (
               Todo anillo de compromiso incluye
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-1 gap-4">
             <div className="flex gap-4 p-6 bg-card border border-border rounded-lg">
               <Gift className="w-6 h-6 text-primary shrink-0 mt-1" strokeWidth={1.4} />
               <div>
@@ -157,18 +157,6 @@ const GarantiaPorGusto = () => (
                 </p>
               </div>
             </div>
-            <Link
-              to="/la-hermana"
-              className="flex gap-4 p-6 bg-card border border-border rounded-lg hover:border-primary/40 transition-colors"
-            >
-              <Gift className="w-6 h-6 text-primary shrink-0 mt-1" strokeWidth={1.4} />
-              <div>
-                <h3 className="font-display text-lg text-foreground mb-1">La Hermana</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Réplica en plata y moissanita para el día a día. Incluida sin costo.
-                </p>
-              </div>
-            </Link>
           </div>
         </div>
       </section>
