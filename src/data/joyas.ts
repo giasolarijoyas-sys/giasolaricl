@@ -115,7 +115,7 @@ export type Joya = {
 export const JOYAS: Joya[] = [
   {
     slug: "bruma-dorada",
-    nombre: "Bruma Dorada",
+    nombre: "Bruma Dorada · Esmeralda",
     material: "Oro 18k amarillo · Esmeralda oval · 2 diamantes laterales en bezel + halo de diamantes pequeños",
     metalPrincipal: "Oro 18k amarillo",
     estilo: "Color",
@@ -142,7 +142,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "argolla-eternity-diamantes",
-    nombre: "Argolla Eternity · Diamantes",
+    nombre: "Argolla Eternity · Oro Blanco",
     material: "Oro 18k blanco · Diamantes brillantes · Media eternity en microgrifa",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Atemporal",
@@ -182,7 +182,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-aguamarina-cushion",
-    nombre: "Halo Aguamarina · Cushion",
+    nombre: "Aguamarina · Halo Cushion",
     material: "Oro 18k blanco · Aguamarina cushion · Halo de diamantes",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
@@ -196,7 +196,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "aguamarina-rectangular-atelier",
-    nombre: "Aguamarina Rectangular · Atelier",
+    nombre: "Aguamarina · Atelier Rectangular",
     material: "Oro 18k blanco · Aguamarina corte emerald · Halo octogonal de diamantes con milgrain",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
@@ -210,7 +210,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "mandala-flor-de-luz",
-    nombre: "Mandala Vintage · Flor de Luz",
+    nombre: "Mandala · Flor de Luz",
     material: "Oro 18k blanco · Diamante brillante redondo · Rosetón/mandala de diamantes pavé con milgrain",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Editorial",
@@ -224,7 +224,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "onix-halo",
-    nombre: "Onix · Halo",
+    nombre: "Ónix · Halo",
     material: "Oro 18k blanco · Ónix oval · Halo de diamantes + banda pavé",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
@@ -238,7 +238,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-cushion-pave-platino",
-    nombre: "Halo Cushion Pavé · Platino",
+    nombre: "Halo Cushion Pavé",
     material: "Platino · Diamante natural corte emerald · Halo de diamantes + banda pavé + milgrain · Certificación GIA",
     metalPrincipal: "Platino",
     estilo: "Editorial",
@@ -252,7 +252,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "solitario-aguamarina-oval",
-    nombre: "Solitario Aguamarina · Oval",
+    nombre: "Aguamarina · Solitario Oval",
     material: "Oro 18k blanco · Aguamarina oval · Banda pavé de diamantes · Grifas",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
@@ -266,7 +266,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "anillo-cupula",
-    nombre: "Anillo Cúpula",
+    nombre: "Cúpula",
     material: "Oro 18k blanco · Diamante natural brillante redondo · Halo de diamantes grandes + pavé lateral · Grifas",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Editorial",
@@ -280,7 +280,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "anillo-lady-di",
-    nombre: "Anillo Lady Di · Zafiro",
+    nombre: "Lady Di · Zafiro",
     material: "Oro 18k blanco · Zafiro oval · Halo de diamantes · Bezel",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
@@ -294,7 +294,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "anillo-felisa",
-    nombre: "Anillo Felisa",
+    nombre: "Felisa",
     material: "Oro 18k blanco · 3 diamantes brillantes redondos en disposición vertical · Bezel + halo de diamantes pequeños",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Editorial",
@@ -308,7 +308,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "anillo-isabel",
-    nombre: "Anillo Isabel",
+    nombre: "Isabel",
     material: "Oro 18k blanco · Zafiro azul corte Emerald · Halo de diamantes · Detalles vintage",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
@@ -453,7 +453,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "eternity-diamantes-platino",
-    nombre: "Eternity Diamantes · Platino",
+    nombre: "Eternity · Platino",
     material: "Platino · Diamantes brillantes · Eternity completa en microgrifa",
     metalPrincipal: "Platino",
     estilo: "Atemporal",
