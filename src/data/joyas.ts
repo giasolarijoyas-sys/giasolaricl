@@ -490,6 +490,7 @@ export const JOYAS: Joya[] = [
     imagenes: [cincoPiedrasPlatino01],
     isPlaceholder: false,
   },
+];
 
 /** True si hay al menos una pieza real cargada (no placeholder). */
 export const HAS_REAL_JOYAS = JOYAS.some((j) => !j.isPlaceholder);
