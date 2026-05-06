@@ -6,6 +6,7 @@ import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 import { motion } from "framer-motion";
 import { ShieldCheck, Gem, Users, Heart } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import heroImg from "@/assets/gal-halo-vintage-caja.png";
 
 const valores = [
   { icon: Gem, title: "Certificación real", desc: "Solo piedras con certificado GIA o IGI. Sin excepciones." },
@@ -27,19 +28,26 @@ const SobreGia = () => (
       {/* Hero */}
       <section className="pt-20 pb-16 md:pt-28 md:pb-24 bg-card">
         <div className="container mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
-          <div className="aspect-[4/5] bg-muted rounded-lg" />
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <div className="aspect-[4/5] overflow-hidden rounded-lg">
+            <img
+              src={heroImg}
+              alt="Detalle de joyería artesanal Gia Solari"
+              loading="eager"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div>
             <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">ATELIER GIA SOLARI</p>
             <h1 className="text-4xl md:text-5xl font-display text-foreground mb-4">La joya como herencia.</h1>
-            <p className="text-muted-foreground text-lg italic">Soy Macarena González Solari. Diseño joyas a medida en Santiago desde 2019.</p>
-          </motion.div>
+            <p className="text-foreground/90 text-lg italic">Soy Macarena González Solari. Diseño joyas a medida en Santiago desde 2019.</p>
+          </div>
         </div>
       </section>
 
       {/* Manifiesto */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="space-y-5 text-muted-foreground leading-relaxed">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="space-y-5 text-foreground leading-relaxed">
             <p><strong className="text-foreground">Aprendí a mirar las joyas con mi mamá.</strong> En su cómoda guardaba las piezas que habían sido de mi abuela —cada una con un nombre, una fecha, una historia que volvía cada vez que alguien las usaba. Esa fue mi primera lección: <em>una joya no se compra, se hereda</em>.</p>
             <p>Hoy diseño junto a Gianna —mi mamá y socia— en un taller pequeño en Santiago. Trabajamos con orfebres que nos acompañan hace años, y cada pieza pasa por mis manos antes de llegar a las tuyas.</p>
             <p>Estudié gemología en el <strong className="text-foreground">GIA</strong> (Gemological Institute of America) para entender, una a una, las piedras que elijo. Me especialicé en platino y diamantes certificados porque creo que quien invierte en una joya merece saber exactamente qué está comprando.</p>
