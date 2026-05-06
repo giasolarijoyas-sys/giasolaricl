@@ -49,6 +49,18 @@ import anilloFelisa01 from "@/assets/joyas/anillo-felisa-01.png";
 import anilloFelisa02 from "@/assets/joyas/anillo-felisa-02.jpg";
 import anilloIsabel01 from "@/assets/joyas/anillo-isabel-01.png";
 import anilloIsabel02 from "@/assets/joyas/anillo-isabel-02.png";
+import artDecoBaguette01 from "@/assets/joyas/art-deco-baguette-01.jpg";
+import cincoPiedrasPlatino01 from "@/assets/joyas/cinco-piedras-platino-01.jpg";
+import eternityDiamantesPlatino01 from "@/assets/joyas/eternity-diamantes-platino-01.jpg";
+import haloBrillantePlatino01 from "@/assets/joyas/halo-brillante-platino-01.jpg";
+import haloCushionClasico01 from "@/assets/joyas/halo-cushion-clasico-01.jpg";
+import haloMarquise01 from "@/assets/joyas/halo-marquise-01.jpg";
+import haloPera01 from "@/assets/joyas/halo-pera-01.jpg";
+import solitarioBezelOroAmarillo01 from "@/assets/joyas/solitario-bezel-oro-amarillo-01.jpg";
+import solitarioEmeraldCutPlatino01 from "@/assets/joyas/solitario-emerald-cut-platino-01.jpg";
+import solitarioOvalPlatino01 from "@/assets/joyas/solitario-oval-platino-01.jpg";
+import trilogiaColorOro01 from "@/assets/joyas/trilogia-color-oro-01.jpg";
+import trilogiaVintagePlatino01 from "@/assets/joyas/trilogia-vintage-platino-01.jpg";
 
 export type Joya = {
   /** URL slug, kebab-case, único. Ej: "halo-zafiro-azul" */
