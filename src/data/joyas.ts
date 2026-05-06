@@ -39,7 +39,7 @@ import mandalaVintageFlorDeLuz02 from "@/assets/joyas/mandala-flor-de-luz-02.png
 import onixHalo01 from "@/assets/joyas/onix-halo-01.png";
 import onixHalo02 from "@/assets/joyas/onix-halo-02.png";
 import brumaDorada01 from "@/assets/joyas/bruma-dorada-01.jpg";
-import solitarioBezelOroAmarillo01 from "@/assets/joyas/solitario-bezel-oro-amarillo-01.jpg";
+
 import bandaCincoDiamantes01 from "@/assets/joyas/banda-cinco-diamantes-01.jpg";
 import cincoPiedrasPlatino01 from "@/assets/joyas/cinco-piedras-platino-01.jpg";
 import argollaEternityDiamantes01 from "@/assets/joyas/argolla-eternity-diamantes-01.jpg";
@@ -113,20 +113,6 @@ export const JOYAS: Joya[] = [
       "Una esmeralda oval, verde profundo, enmarcada en un bezel dorado que la protege como un pequeño relicario. A los costados, dos diamantes en bezel acompañan como guardianes. El oro amarillo le aporta la calidez de una pieza vintage, recuperada. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
     imagenes: [brumaDorada01],
-    isPlaceholder: false,
-  },
-  {
-    slug: "solitario-bezel-oro-amarillo",
-    nombre: "Solitario Bezel · Oro Amarillo",
-    material: "Oro 18k amarillo · Diamante brillante redondo · Bezel",
-    metalPrincipal: "Oro 18k amarillo",
-    estilo: "Atemporal",
-    descripcion:
-      "Solitario con diamante redondo en engaste bezel. Oro 18k amarillo, diseño minimalista.",
-    descripcionLarga:
-      "Solitario con diamante en engaste bezel — el aro de oro abraza completamente la piedra, dándole una silueta minimalista y moderna. Sobre oro 18k amarillo para un acabado cálido y editorial. Cada anillo incluye Certificado Gia Solari.",
-    categoria: "Anillo de compromiso",
-    imagenes: [solitarioBezelOroAmarillo01],
     isPlaceholder: false,
   },
   {
