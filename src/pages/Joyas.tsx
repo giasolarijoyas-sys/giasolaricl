@@ -44,7 +44,7 @@ const Joyas = () => {
       <Navbar />
 
       <main className="pt-24 pb-32">
-        <div className="max-w-xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-4">
           <motion.div
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-10"
@@ -55,7 +55,7 @@ const Joyas = () => {
             <h1 className="text-3xl md:text-4xl font-display text-charcoal mb-3">
               Colección de joyas a medida
             </h1>
-            <p className="text-charcoal/70 text-sm leading-relaxed">
+            <p className="text-charcoal/70 text-sm leading-relaxed max-w-xl mx-auto">
               Cada pieza es única, hecha a mano en Santiago. Pieza única — cotiza
               a medida.
             </p>
@@ -69,7 +69,7 @@ const Joyas = () => {
             </p>
           </motion.div>
 
-          <div className="mb-10 space-y-4">
+          <div className="mb-10 space-y-4 max-w-3xl mx-auto">
             {[
               { label: "Categoría", key: "categoria" as const, value: categoryFilter, options: categories },
               { label: "Metal", key: "metal" as const, value: metalFilter, options: metals },
@@ -99,7 +99,7 @@ const Joyas = () => {
 
           {/* Mensaje "preparando fotos" SOLO si no hay ninguna pieza real cargada */}
           {visibleJoyas.length === 0 && !HAS_REAL_JOYAS && (
-            <div className="text-center py-16 border border-gold/20 rounded-[4px] bg-cream/30">
+            <div className="text-center py-16 border border-gold/20 rounded-[4px] bg-cream/30 max-w-xl mx-auto">
               <p className="text-charcoal/70 text-sm leading-relaxed mb-4">
                 Estamos preparando las fotos de nuestras piezas. Mientras tanto,
                 podemos cotizar tu joya por WhatsApp.
@@ -115,42 +115,31 @@ const Joyas = () => {
             </div>
           )}
 
-          <div className="space-y-7 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
             {visibleJoyas.map((p, i) => (
               <motion.article
                 key={p.slug}
-                transition={{ delay: Math.min(i, 5) * 0.05 }}
+                transition={{ delay: Math.min(i, 5) * 0.03 }}
                 className="bg-cream/40"
               >
-                <Link to={`/joyas/${p.slug}`} className="block">
-                  <div className="aspect-[4/5] overflow-hidden bg-cream rounded-[4px]">
+                <Link to={`/joyas/${p.slug}`} className="block group">
+                  <div className="aspect-square overflow-hidden bg-cream rounded-[4px]">
                     <img
                       src={p.imagenes[0]}
                       alt={p.nombre}
-                      loading={i < 2 ? "eager" : "lazy"}
-                      className="w-full h-full object-cover"
+                      loading={i < 4 ? "eager" : "lazy"}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
+                  <div className="pt-2 px-0.5 pb-2">
+                    <h2 className="font-display text-[14px] md:text-[16px] text-charcoal leading-tight truncate">
+                      {p.nombre}
+                    </h2>
+                    <p className="text-[11px] md:text-[12px] text-gold mt-0.5 tracking-widest uppercase">
+                      Cotizar
+                    </p>
+                  </div>
                 </Link>
-                <div className="pt-3 px-1">
-                  <h2 className="font-display text-[18px] text-charcoal leading-tight">
-                    {p.nombre}
-                  </h2>
-                  <p className="text-[13px] text-charcoal/60 mt-1 mb-3">
-                    {p.material}
-                  </p>
-                  <p className="text-[12px] text-charcoal/50 italic mb-3">
-                    Pieza única — cotiza a medida
-                  </p>
-                  <a
-                    href={waUrl(p.nombre)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-full min-h-[44px] px-4 py-3 bg-charcoal text-cream text-xs tracking-widest uppercase hover:bg-gold hover:text-charcoal transition-colors"
-                  >
-                    Cotizar por WhatsApp
-                  </a>
-                </div>
               </motion.article>
             ))}
           </div>

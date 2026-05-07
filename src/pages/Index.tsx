@@ -23,7 +23,7 @@ import SectionBanner from "@/components/SectionBanner";
 import RangoInversion from "@/components/RangoInversion";
 import IncluyeAnillo from "@/components/IncluyeAnillo";
 import TestimoniosDestacados from "@/components/TestimoniosDestacados";
-import SoloEnGiaSolari from "@/components/SoloEnGiaSolari";
+
 import SoloEnGiaSolariCompact from "@/components/SoloEnGiaSolariCompact";
 import InstagramFeed from "@/components/InstagramFeed";
 
@@ -65,8 +65,7 @@ const Index = () => {
         subtext="Diseño artesanal con piedras certificadas"
       />
 
-      {/* Lo que solo encontrás en Gia Solari */}
-      <SoloEnGiaSolari />
+      {/* Lo que solo encontrás en Gia Solari (compacto arriba; sección expandida removida para evitar duplicación) */}
 
       {/* 5. Diferenciadores / por qué elegirnos */}
       <WhyUs />

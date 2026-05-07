@@ -39,7 +39,10 @@ const SobreGia = () => (
           <div>
             <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">ATELIER GIA SOLARI</p>
             <h1 className="text-4xl md:text-5xl font-display text-foreground mb-4">La joya como herencia.</h1>
-            <p className="text-foreground/90 text-lg italic">Soy Macarena González Solari. Diseño joyas a medida en Santiago desde 2019.</p>
+            <p className="text-foreground/90 text-lg italic mb-6">Soy Macarena González Solari. Diseño joyas a medida en Santiago desde 2019.</p>
+            <p className="text-foreground/85 leading-relaxed font-light">
+              Aprendí a mirar las joyas con mi mamá. En su cómoda las guardaba, cada joya tenía una historia, un significado o un momento a recordar. Esa fue mi primera lección: cada joya es una historia, un recuerdo.
+            </p>
           </div>
         </div>
       </section>

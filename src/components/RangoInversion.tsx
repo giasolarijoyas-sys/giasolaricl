@@ -2,11 +2,6 @@ import { motion } from "framer-motion";
 
 const tarjetas = [
   {
-    precio: "Desde $800.000 CLP",
-    titulo: "Anillo con diamante de laboratorio 0.5ct + oro 18k",
-    subtitulo: "La opción más accesible sin resignar brillo.",
-  },
-  {
     precio: "Desde $1.500.000 CLP",
     titulo: "Anillo con diamante natural 0.5ct + oro 18k",
     subtitulo: "La opción clásica, con certificación GIA.",
@@ -26,7 +21,7 @@ const RangoInversion = () => (
         <h2 className="font-display text-3xl md:text-4xl text-foreground">Rango de inversión</h2>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {tarjetas.map((t, i) => (
           <motion.div
             key={t.precio}

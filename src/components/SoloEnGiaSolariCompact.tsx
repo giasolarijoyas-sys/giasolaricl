@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, PenLine, ArrowRight } from "lucide-react";
+import { PenLine, Award, Diamond } from "lucide-react";
 
 const items = [
-  { icon: ShieldCheck, text: "Garantía por Gusto — únicos en Chile" },
   { icon: PenLine, text: "Grabado interior personalizado — gratis" },
+  { icon: Award, text: "Certificación Gia Solari incluida" },
+  { icon: Diamond, text: "Diamantes y piedras certificadas" },
 ];
 
 const SoloEnGiaSolariCompact = () => (
@@ -13,7 +14,7 @@ const SoloEnGiaSolariCompact = () => (
         <p className="text-center text-primary tracking-[0.3em] uppercase text-xs mb-6">
           Lo que solo encontrás en Gia Solari
         </p>
-        <ul className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8">
+        <ul className="grid sm:grid-cols-3 gap-4 md:gap-6">
           {items.map((it, i) => (
             <motion.li
               key={it.text}
@@ -25,15 +26,6 @@ const SoloEnGiaSolariCompact = () => (
             </motion.li>
           ))}
         </ul>
-        <div className="text-center">
-          <a
-            href="/garantia-por-gusto"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary text-sm tracking-widest uppercase hover:bg-primary hover:text-primary-foreground transition-colors"
-          >
-            Conocé nuestra Garantía por Gusto
-            <ArrowRight size={16} />
-          </a>
-        </div>
       </div>
     </div>
   </section>

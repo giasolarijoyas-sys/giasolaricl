@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Diamond, CircleDot, ShieldCheck } from "lucide-react";
+import { Diamond, CircleDot, Award } from "lucide-react";
 
 const badges = [
   {
@@ -13,9 +13,9 @@ const badges = [
     subtitle: "Cada pieza se diseña y fabrica especialmente para ti",
   },
   {
-    icon: ShieldCheck,
-    title: "Garantía por gusto",
-    subtitle: "Si no te encanta, lo cambiamos",
+    icon: Award,
+    title: "Certificación Gia Solari",
+    subtitle: "Cada pieza incluye su certificado de autenticidad",
   },
 ];
 
