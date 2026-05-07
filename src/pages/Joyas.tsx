@@ -76,8 +76,7 @@ const Joyas = () => {
             {[
               { label: "Categoría", key: "categoria" as const, value: categoryFilter, options: categories },
               { label: "Metal", key: "metal" as const, value: metalFilter, options: metals },
-              
-            ].map((filter) => (
+              { label: "Piedra", key: "piedra" as const, value: piedraFilter, options: piedras },
               <div key={filter.key} className="flex flex-wrap items-center justify-center gap-2">
                 <span className="mr-1 text-[11px] uppercase tracking-widest text-charcoal/50">
                   {filter.label}
