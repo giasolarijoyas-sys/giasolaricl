@@ -11,8 +11,7 @@ const CARAMEL = "#C9A87C";
 const MUTED_TXT = "#6B7752";
 const MUTED = "#6B7752";
 
-const HERO_IMG =
-  "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=80";
+const HERO_IMG = heroImg;
 
 // Pinterest icon (lineal)
 const PinterestIcon = (props: React.SVGProps<SVGSVGElement>) => (
