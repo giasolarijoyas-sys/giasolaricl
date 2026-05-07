@@ -2,11 +2,6 @@ import { motion } from "framer-motion";
 
 const tarjetas = [
   {
-    precio: "Desde $800.000 CLP",
-    titulo: "Anillo con diamante de laboratorio 0.5ct + oro 18k",
-    subtitulo: "La opción más accesible sin resignar brillo.",
-  },
-  {
     precio: "Desde $1.500.000 CLP",
     titulo: "Anillo con diamante natural 0.5ct + oro 18k",
     subtitulo: "La opción clásica, con certificación GIA.",
