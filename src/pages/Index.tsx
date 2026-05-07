@@ -23,7 +23,7 @@ import SectionBanner from "@/components/SectionBanner";
 import RangoInversion from "@/components/RangoInversion";
 import IncluyeAnillo from "@/components/IncluyeAnillo";
 import TestimoniosDestacados from "@/components/TestimoniosDestacados";
-import SoloEnGiaSolari from "@/components/SoloEnGiaSolari";
+
 import SoloEnGiaSolariCompact from "@/components/SoloEnGiaSolariCompact";
 import InstagramFeed from "@/components/InstagramFeed";
 
