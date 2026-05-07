@@ -97,19 +97,6 @@ const Hero = () => {
           style={{ padding: "32px" }}
         >
           <div className="md:p-[80px] md:pl-[64px] p-0 max-w-[560px]">
-            <p
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: "12px",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: CARAMEL,
-                marginBottom: "24px",
-                fontWeight: 500,
-              }}
-            >
-              Joyería de autor — Santiago
-            </p>
 
             <h1
               style={{
