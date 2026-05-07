@@ -143,18 +143,20 @@ function calcularRango(tipo: string, metal: string, piedra: string, tamano: stri
   const grupo = RANGOS_BASE[tipo];
   if (!grupo) return null;
   const piedraKey = piedra && piedra !== "a_definir" ? piedra : PIEDRA_DEFAULT[tipo];
-  let base: RangoNode | undefined = grupo[piedraKey] ?? Object.values(grupo)[0];
-  if (!base) return null;
+  const raw: RangoNode | undefined = grupo[piedraKey] ?? Object.values(grupo)[0];
+  if (!raw) return null;
 
-  // Sub-niveles por quilataje
-  if (!("min" in base)) {
-    const sub = base as Record<string, RangoLeaf>;
+  let leaf: RangoLeaf;
+  if ("min" in raw) {
+    leaf = raw;
+  } else {
+    const sub = raw as Record<string, RangoLeaf>;
     const tKey = tamano && sub[tamano] ? tamano : "a_definir";
-    base = sub[tKey] ?? Object.values(sub)[0];
+    leaf = sub[tKey] ?? Object.values(sub)[0];
   }
-  if (!base || !("min" in base)) return null;
+  if (!leaf) return null;
 
-  let { min, max } = base;
+  let { min, max } = leaf;
   if (metal === "platino") {
     min = Math.round((min * 1.3) / 100000) * 100000;
     max = Math.round((max * 1.3) / 100000) * 100000;
