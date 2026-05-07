@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Instagram } from "lucide-react";
+import heroImg from "@/assets/hero-halo-cushion.png";
 
 const OLIVE = "#4A5536";
 const OLIVE_DARK = "#3A4429";
