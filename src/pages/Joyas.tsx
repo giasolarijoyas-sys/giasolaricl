@@ -40,8 +40,8 @@ const Joyas = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Colección de Joyas | Gia Solari"
-        description="Piezas únicas diseñadas y fabricadas a mano: anillos de compromiso, argollas de matrimonio, collares y aros en oro 18k y platino."
+        title="Catálogo de joyas a medida — anillos, argollas, pulseras | Gia Solari"
+        description="Explorá nuestra colección: anillos de compromiso, argollas de matrimonio y joyería de autor en oro 18k, platino y diamantes certificados. Hechas a mano en Santiago."
         path="/joyas"
       />
       <Navbar />
@@ -129,7 +129,7 @@ const Joyas = () => {
                   <div className="aspect-square overflow-hidden bg-cream rounded-[4px]">
                     <img
                       src={p.imagenes[0]}
-                      alt={p.nombre}
+                      alt={`${p.nombre} — ${p.material}. ${p.categoria} Gia Solari Joyas`}
                       loading={i < 4 ? "eager" : "lazy"}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />

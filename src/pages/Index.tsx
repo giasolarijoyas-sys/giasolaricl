@@ -34,8 +34,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Gia Solari Joyas | Anillos de compromiso a medida en Santiago"
-        description="Joyería fina artesanal en Las Condes. Anillos de compromiso únicos con piedras reales y certificación GIA. Garantía por Gusto."
+        title="Gia Solari Joyas | Anillos de compromiso a medida en Santiago de Chile"
+        description="Atelier de joyería de autor en Las Condes, Santiago. Anillos de compromiso, argollas y joyas en oro 18k, platino y diamantes certificados. Garantía por Gusto."
         path="/"
       />
       {/* 1. Navegación fija */}

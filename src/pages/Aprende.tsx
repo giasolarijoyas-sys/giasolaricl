@@ -40,8 +40,8 @@ const articles = [
 const Aprende = () => (
   <>
     <SEO
-      title="Aprende | Guías sobre diamantes, oro y joyería fina"
-      description="Guías completas para elegir tu joya: Las 4C del diamante, oro 18k vs platino, diamantes naturales vs de laboratorio y más."
+      title="Aprende sobre diamantes, oro 18k y joyería fina | Gia Solari"
+      description="Guías honestas para elegir tu joya: las 4C del diamante, oro 18k vs platino, diamantes naturales vs de laboratorio y cómo elegir tu anillo de compromiso."
       path="/aprende"
     />
     

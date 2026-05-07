@@ -63,8 +63,8 @@ const Agenda = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Agendar Visita al Showroom | Gia Solari Joyas"
-        description="Reserva tu cita en nuestro showroom de Las Condes, Santiago. Asesoría personalizada para tu anillo de compromiso, argollas o joya a medida."
+        title="Agendar visita al atelier | Cotizar tu joya — Gia Solari"
+        description="Reservá tu cita en nuestro atelier de Las Condes, Santiago. Asesoría personalizada para anillos de compromiso, argollas y joyería a medida."
         path="/agenda"
       />
       <Navbar />
