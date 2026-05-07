@@ -46,8 +46,8 @@ const faqs = [
 const GarantiaPorGusto = () => (
   <>
     <SEO
-      title="Garantía por Gusto | Gia Solari"
-      description="Si no te encanta, te ayudamos a modificarla o devolverla. Nuestra garantía por gusto te da tranquilidad al invertir en tu joya."
+      title="Garantía por Gusto y certificación | Gia Solari"
+      description="Si no te encanta tu joya, la rehacemos. Garantía por Gusto, certificación Gia Solari y diamantes con certificado GIA opcional. Tranquilidad para invertir."
       path="/garantia-por-gusto"
     />
     <div className="min-h-screen">
