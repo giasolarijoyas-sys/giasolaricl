@@ -5,6 +5,7 @@ const beneficios = [
   "Grabado interior personalizado (gratis)",
   "Garantía por Gusto",
   "Certificado GIA",
+  "Certificación Gia Solari",
 ];
 
 const IncluyeAnillo = () => (
