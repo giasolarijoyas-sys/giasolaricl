@@ -117,6 +117,12 @@ const JoyaDetalle = () => {
                 Cotizar esta pieza por WhatsApp
               </a>
               <Link
+                to="/cotizar"
+                className="inline-flex items-center justify-center w-full min-h-[48px] px-6 py-3 border border-charcoal/40 text-charcoal font-semibold tracking-widest uppercase text-xs hover:border-gold hover:text-gold transition-colors mb-3"
+              >
+                Cotizar pieza similar
+              </Link>
+              <Link
                 to="/garantia-por-gusto"
                 className="block text-center text-xs tracking-widest uppercase text-charcoal/60 hover:text-gold"
               >
