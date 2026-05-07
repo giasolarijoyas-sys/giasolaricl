@@ -816,20 +816,6 @@ export const JOYAS: Joya[] = [
     isPlaceholder: false,
   },
   {
-    slug: "vintage-021",
-    nombre: "Trío Michela",
-    categoria: "Anillo de compromiso",
-    material: "Oro 18k blanco · Diamante",
-    metalPrincipal: "Oro 18k blanco",
-    estilo: "Vintage",
-    piedraCentral: "Diamante",
-    descripcion: "Set de tres anillos vintage en oro 18k blanco.",
-    descripcionLarga:
-      "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: [pendiente021],
-    isPlaceholder: false,
-  },
-  {
     slug: "vintage-022",
     nombre: "Esmeralda Miranda",
     categoria: "Anillo de compromiso",
