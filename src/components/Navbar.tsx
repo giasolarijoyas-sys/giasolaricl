@@ -15,7 +15,7 @@ const navLinks = [
   { label: "Garantía", href: "/garantia-por-gusto" },
   { label: "Aprende", href: "/aprende" },
   { label: "Agenda", href: "/agenda" },
-  { label: "Cotizar", href: "/#cotizador" },
+  { label: "Cotizar tu pieza", href: "/cotizar" },
 ];
 
 const mobileGroups = [
@@ -23,7 +23,7 @@ const mobileGroups = [
     title: "Catálogo",
     links: [
       { label: "Joyas", href: "/joyas" },
-      { label: "Cotizar", href: "/#cotizador" },
+      { label: "Cotizar tu pieza", href: "/cotizar" },
       { label: "Agenda", href: "/agenda" },
     ],
   },

@@ -42,17 +42,23 @@ const Hero = () => {
                 href="/joyas"
                 className="min-h-[48px] px-7 py-3 bg-charcoal text-cream font-semibold tracking-[0.2em] uppercase text-xs text-center hover:bg-charcoal/90 transition-colors flex items-center justify-center"
               >
-                Ver piezas
+                Ver catálogo
               </a>
               <a
-                href={buildWhatsAppUrl("home_hero")}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/cotizar"
                 className="min-h-[48px] px-7 py-3 border border-charcoal/40 text-charcoal tracking-[0.2em] uppercase text-xs text-center hover:border-gold hover:text-gold transition-colors flex items-center justify-center"
               >
-                Cotizar por WhatsApp
+                Cotizar tu pieza
               </a>
             </div>
+            <a
+              href={buildWhatsAppUrl("home_hero")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-block text-[11px] tracking-[0.2em] uppercase text-charcoal/60 hover:text-gold transition-colors"
+            >
+              o escribime por WhatsApp →
+            </a>
           </motion.div>
         </div>
       </div>
