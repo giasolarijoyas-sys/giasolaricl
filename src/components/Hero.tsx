@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Instagram } from "lucide-react";
+import heroImg from "@/assets/hero-halo-cushion.png";
 
 const OLIVE = "#4A5536";
 const OLIVE_DARK = "#3A4429";
@@ -10,8 +11,7 @@ const CARAMEL = "#C9A87C";
 const MUTED_TXT = "#6B7752";
 const MUTED = "#6B7752";
 
-const HERO_IMG =
-  "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=80";
+const HERO_IMG = heroImg;
 
 // Pinterest icon (lineal)
 const PinterestIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -52,7 +52,7 @@ const Hero = () => {
 
   return (
     <section
-      className="w-full flex flex-col md:flex-row pt-[60px] md:pt-[72px]"
+      className="w-full flex flex-col md:flex-row-reverse pt-[60px] md:pt-[72px]"
       style={{ minHeight: "88vh" }}
     >
       {/* Imagen */}
@@ -97,19 +97,6 @@ const Hero = () => {
           style={{ padding: "32px" }}
         >
           <div className="md:p-[80px] md:pl-[64px] p-0 max-w-[560px]">
-            <p
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: "12px",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: CARAMEL,
-                marginBottom: "24px",
-                fontWeight: 500,
-              }}
-            >
-              Joyería de autor — Santiago
-            </p>
 
             <h1
               style={{
