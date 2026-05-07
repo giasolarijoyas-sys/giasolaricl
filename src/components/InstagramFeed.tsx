@@ -1,10 +1,30 @@
 import { Instagram } from "lucide-react";
+import { useEffect } from "react";
 
 const IG_HANDLE = "giasolarijoyas";
 const IG_URL = `https://instagram.com/${IG_HANDLE}`;
+const BEHOLD_SCRIPT_ID = "behold-widget-script";
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "behold-widget": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement> & { "feed-id"?: string },
+        HTMLElement
+      >;
+    }
+  }
+}
 
 const InstagramFeed = () => {
-  const placeholders = Array.from({ length: 9 });
+  useEffect(() => {
+    if (document.getElementById(BEHOLD_SCRIPT_ID)) return;
+    const s = document.createElement("script");
+    s.id = BEHOLD_SCRIPT_ID;
+    s.type = "module";
+    s.src = "https://w.behold.so/widget.js";
+    document.head.append(s);
+  }, []);
 
   return (
     <section className="py-20 bg-cream">
@@ -18,26 +38,8 @@ const InstagramFeed = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-3 max-w-4xl mx-auto">
-          {placeholders.map((_, i) => (
-            <a
-              key={i}
-              href={IG_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Ver post ${i + 1} en Instagram`}
-              className="group relative aspect-square overflow-hidden bg-gradient-to-br from-accent via-secondary to-accent border border-border/40"
-            >
-              <div className="absolute inset-0 flex items-center justify-center text-charcoal/40 group-hover:text-charcoal/70 transition-colors">
-                <Instagram size={32} strokeWidth={1.5} />
-              </div>
-              <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-colors flex items-center justify-center">
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity text-cream text-xs tracking-widest uppercase">
-                  Ver en Instagram
-                </span>
-              </div>
-            </a>
-          ))}
+        <div className="max-w-4xl mx-auto">
+          <behold-widget feed-id="HF1Fu8gFoZwm7As61tWV"></behold-widget>
         </div>
 
         <div className="text-center mt-10">
