@@ -98,10 +98,19 @@ const RANGOS_BASE: Record<string, Record<string, { min: number; max: number }>> 
 
 const formatCLP = (n: number) => "$" + n.toLocaleString("es-CL");
 
+const PIEDRA_DEFAULT: Record<string, string> = {
+  anillo_compromiso: "diamante_lab",
+  alianza: "sin_piedras",
+  aros: "sin_piedras",
+  colgante: "sin_piedras",
+  pulsera_esclava: "sin_piedras",
+};
+
 function calcularRango(tipo: string, metal: string, piedra: string) {
   const grupo = RANGOS_BASE[tipo];
   if (!grupo) return null;
-  const base = grupo[piedra];
+  const piedraKey = piedra && piedra !== "a_definir" ? piedra : PIEDRA_DEFAULT[tipo];
+  const base = grupo[piedraKey] ?? Object.values(grupo)[0];
   if (!base) return null;
   let { min, max } = base;
   if (metal === "platino") {
@@ -131,8 +140,7 @@ const Cotizar = () => {
   const presupuestoLabel = PRESUPUESTOS.find((p) => p.key === presupuesto)?.label ?? "";
 
   const rango = calcularRango(tipo, metal, piedra);
-  const showRango =
-    rango && metal !== "a_definir" && piedra !== "a_definir" && presupuesto !== "conversar";
+  const showRango = !!rango;
 
   const buildWaUrl = () => {
     const rangoText = showRango && rango
