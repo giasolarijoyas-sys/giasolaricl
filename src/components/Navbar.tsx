@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import { Menu, X, Heart, ChevronDown, Gem, CircleDot, Sparkles, Crown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const OLIVE = "#3F4A2A";
-const OLIVE_DARK = "#2E371F";
-const CREAM = "#FBF8F2";
-const CREAM_WARM = "#F4EAD9";
-const BORDER = "#E8DFD0";
-const INK = "#1F2417";
-const CARAMEL = "#A8773F";
-const MUTED = "#6B6B5A";
+const OLIVE = "#4A5536";
+const OLIVE_DARK = "#3A4429";
+const CREAM = "#F5EFE6";
+const CREAM_WARM = "#F5EFE6";
+const BORDER = "#D9D2C4";
+const INK = "#1A1A18";
+const CARAMEL = "#C9A87C";
+const MUTED = "#6B7752";
 
 const WHATSAPP_URL = "https://wa.me/56984049502";
 
@@ -55,18 +55,19 @@ const Navbar = () => {
           {/* Logo */}
           <a
             href="/"
-            aria-label="Gia Solari - Inicio"
-            className="font-medium leading-none focus-visible:outline-2 focus-visible:outline focus-visible:outline-offset-4"
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontWeight: 500,
-              color: INK,
-              fontSize: "22px",
-              letterSpacing: "0.02em",
-              outlineColor: CARAMEL,
-            }}
+            aria-label="Gia Solari Joyas - Inicio"
+            className="block focus-visible:outline-2 focus-visible:outline focus-visible:outline-offset-4 shrink-0"
+            style={{ outlineColor: CARAMEL, paddingRight: "16px" }}
           >
-            <span className="md:text-[22px] text-[18px]">Gia Solari</span>
+            <picture>
+              <source media="(max-width: 480px)" srcSet="/monograma-oliva.svg" />
+              <img
+                src="/wordmark-oliva.svg"
+                alt="Gia Solari Joyas"
+                className="block w-[140px] md:w-[180px] max-[480px]:w-auto max-[480px]:h-9"
+                style={{ minWidth: "120px" }}
+              />
+            </picture>
           </a>
 
           {/* Center links - desktop */}
@@ -88,7 +89,7 @@ const Navbar = () => {
                   fontSize: "14px",
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
-                  color: joyasOpen ? CARAMEL : "#3F4A2A",
+                  color: joyasOpen ? CARAMEL : "#4A5536",
                 }}
               >
                 <span className="nav-underline">Joyas</span>
@@ -125,7 +126,7 @@ const Navbar = () => {
                                 fontSize: "13.5px",
                                 fontWeight: 500,
                               }}
-                              className="group-hover:text-[#A8773F] transition-colors"
+                              className="group-hover:text-[#C9A87C] transition-colors"
                             >
                               {label}
                             </span>
@@ -149,7 +150,7 @@ const Navbar = () => {
                   fontSize: "14px",
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
-                  color: "#3F4A2A",
+                  color: "#4A5536",
                 }}
               >
                 {l.label}
@@ -200,7 +201,7 @@ const Navbar = () => {
               href="/lista-de-deseos"
               aria-label="Mis favoritas"
               title="Mis favoritas"
-              className="p-2 rounded-full hover:bg-[#F4EAD9] transition-colors"
+              className="p-2 rounded-full hover:bg-[#F5EFE6] transition-colors"
             >
               <Heart size={20} strokeWidth={1.5} style={{ color: INK }} />
             </a>
@@ -244,7 +245,7 @@ const Navbar = () => {
               <a
                 href="/joyas"
                 onClick={() => setOpen(false)}
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontSize: "28px", color: INK }}
+                style={{ fontFamily: "'Bodoni Moda', serif", fontStyle: "italic", fontSize: "28px", color: INK }}
               >
                 Joyas
               </a>
@@ -253,7 +254,7 @@ const Navbar = () => {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontSize: "28px", color: INK }}
+                  style={{ fontFamily: "'Bodoni Moda', serif", fontStyle: "italic", fontSize: "28px", color: INK }}
                 >
                   {l.label}
                 </a>
@@ -261,7 +262,7 @@ const Navbar = () => {
               <a
                 href="/lista-de-deseos"
                 onClick={() => setOpen(false)}
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontSize: "22px", color: MUTED }}
+                style={{ fontFamily: "'Bodoni Moda', serif", fontStyle: "italic", fontSize: "22px", color: MUTED }}
               >
                 Mis favoritas
               </a>

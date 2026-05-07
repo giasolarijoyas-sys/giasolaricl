@@ -1,14 +1,15 @@
-import logoCrema from "@/assets/logo-icon-cream.png";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const Footer = () => {
   return (
-    <footer className="bg-charcoal text-cream/70 py-16">
+    <footer style={{ background: "#4A5536", color: "#C9A87C" }} className="py-16">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
+        <div className="flex justify-center mb-10">
+          <img src="/wordmark-champan.svg" alt="Gia Solari Joyas" style={{ width: "200px" }} />
+        </div>
+        <div className="grid md:grid-cols-4 gap-10 mb-12" style={{ fontFamily: "Inter, sans-serif", fontSize: "13px" }}>
           <div>
-            <img src={logoCrema} alt="Gia Solari" className="h-14 mb-4" />
-            <p className="text-sm leading-relaxed">
+            <p className="leading-relaxed">
               Joyería de autor en Santiago, Chile. Anillos de compromiso, argollas
               de matrimonio y joyas personalizadas en oro 18k, platino y piedras
               preciosas certificadas.

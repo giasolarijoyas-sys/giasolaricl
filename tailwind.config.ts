@@ -14,8 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
-        body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Bodoni Moda"', 'serif'],
+        body: ['Inter', 'sans-serif'],
+        serif: ['"Bodoni Moda"', 'serif'],
+        sans: ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,18 +53,28 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
+        olive: {
+          DEFAULT: '#4A5536',
+          deep: '#3A4429',
+          soft: '#6B7752',
         },
+        champagne: '#C9A87C',
+        terracota: '#B5765A',
         cream: {
-          DEFAULT: "hsl(var(--cream))",
-          dark: "hsl(var(--cream-dark))",
+          DEFAULT: '#F5EFE6',
+          warm: '#EBE2D2',
+          dark: 'hsl(var(--cream-dark))',
+        },
+        ink: '#1A1A18',
+        line: '#D9D2C4',
+        gold: {
+          DEFAULT: '#C9A87C',
+          light: '#D9C09A',
+          dark: '#A8884A',
         },
         charcoal: {
-          DEFAULT: "hsl(var(--charcoal))",
-          light: "hsl(var(--charcoal-light))",
+          DEFAULT: '#1A1A18',
+          light: '#3A3A36',
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
