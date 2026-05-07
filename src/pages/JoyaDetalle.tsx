@@ -255,7 +255,20 @@ const JoyaDetalle = () => {
       </main>
 
       <Footer />
-      <WhatsAppButton />
+      <WhatsAppButton hideOnMobile />
+
+      {/* Sticky CTA mobile */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-[998] bg-background/95 backdrop-blur-md border-t border-gold/20 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+        <a
+          href={waUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 w-full min-h-[48px] px-4 py-3 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-xs"
+        >
+          <MessageCircle className="w-4 h-4" />
+          Cotizar por WhatsApp
+        </a>
+      </div>
     </div>
   );
 };

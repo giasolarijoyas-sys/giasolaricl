@@ -14,20 +14,23 @@ const Joyas = () => {
   const showPlaceholders = searchParams.get("preview") === "1";
   const categoryFilter = searchParams.get("categoria") ?? "todas";
   const metalFilter = searchParams.get("metal") ?? "todos";
-  
+  const piedraFilter = searchParams.get("piedra") ?? "todas";
+
   const baseJoyas = (showPlaceholders
     ? JOYAS
     : JOYAS.filter((j) => !j.isPlaceholder)
   ).filter((j) => j.categoria !== "Argolla");
   const categories = ["todas", ...Array.from(new Set(baseJoyas.map((j) => j.categoria)))]
   const metals = ["todos", ...Array.from(new Set(baseJoyas.map((j) => j.metalPrincipal ?? j.material.split(" · ")[0]))).filter((m) => m && m.trim() !== "" && m.toLowerCase() !== "a definir")]
+  const piedras = ["todas", ...Array.from(new Set(baseJoyas.map((j) => j.piedraCentral ?? "").map((p) => p.trim()))).filter((p) => p && !["ninguna", "a definir", "sin piedra"].includes(p.toLowerCase()))]
   const visibleJoyas = baseJoyas.filter((j) => {
     if (categoryFilter !== "todas" && j.categoria !== categoryFilter) return false;
     if (metalFilter !== "todos" && (j.metalPrincipal ?? j.material.split(" · ")[0]) !== metalFilter) return false;
+    if (piedraFilter !== "todas" && (j.piedraCentral ?? "").trim().toLowerCase() !== piedraFilter.toLowerCase()) return false;
     return true;
   });
 
-  const updateFilter = (key: "categoria" | "metal", value: string) => {
+  const updateFilter = (key: "categoria" | "metal" | "piedra", value: string) => {
     const next = new URLSearchParams(searchParams);
     if (["todas", "todos"].includes(value)) next.delete(key);
     else next.set(key, value);
@@ -73,7 +76,7 @@ const Joyas = () => {
             {[
               { label: "Categoría", key: "categoria" as const, value: categoryFilter, options: categories },
               { label: "Metal", key: "metal" as const, value: metalFilter, options: metals },
-              
+              { label: "Piedra", key: "piedra" as const, value: piedraFilter, options: piedras },
             ].map((filter) => (
               <div key={filter.key} className="flex flex-wrap items-center justify-center gap-2">
                 <span className="mr-1 text-[11px] uppercase tracking-widest text-charcoal/50">
@@ -115,7 +118,7 @@ const Joyas = () => {
             </div>
           )}
 
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 md:gap-6">
             {visibleJoyas.map((p, i) => (
               <motion.article
                 key={p.slug}

@@ -18,6 +18,26 @@ const navLinks = [
   { label: "Cotizar", href: "/#cotizador" },
 ];
 
+const mobileGroups = [
+  {
+    title: "Catálogo",
+    links: [
+      { label: "Joyas", href: "/joyas" },
+      { label: "Cotizar", href: "/#cotizador" },
+      { label: "Agenda", href: "/agenda" },
+    ],
+  },
+  {
+    title: "Marca",
+    links: [
+      { label: "Sobre Gia", href: "/sobre-gia" },
+      { label: "Proceso", href: "/proceso" },
+      { label: "Garantía", href: "/garantia-por-gusto" },
+      { label: "Aprende", href: "/aprende" },
+    ],
+  },
+];
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
@@ -64,22 +84,32 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background border-b border-border overflow-hidden"
           >
-            <div className="flex flex-col items-center gap-4 py-6">
-              {navLinks.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="text-sm tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {l.label}
-                </a>
+            <div className="flex flex-col px-6 py-6 gap-6">
+              {mobileGroups.map((group) => (
+                <div key={group.title} className="flex flex-col gap-3">
+                  <p className="text-[10px] tracking-[0.3em] uppercase text-gold/70">
+                    {group.title}
+                  </p>
+                  <div className="flex flex-col gap-3 pl-1">
+                    {group.links.map((l) => (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        onClick={() => setOpen(false)}
+                        className="text-base font-display text-charcoal hover:text-gold transition-colors"
+                      >
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               ))}
               <a
                 href={WHATSAPP_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2 text-sm tracking-widest uppercase border border-primary text-primary"
+                onClick={() => setOpen(false)}
+                className="mt-2 w-full text-center px-5 py-3 text-sm tracking-widest uppercase bg-gradient-gold text-charcoal font-semibold"
               >
                 Contactar
               </a>
