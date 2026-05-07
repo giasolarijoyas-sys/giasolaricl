@@ -1,7 +1,7 @@
 import { Instagram } from "lucide-react";
 import { useEffect } from "react";
 
-const IG_HANDLE = "giasolarijoyas";
+const IG_HANDLE = "giasolari.cl";
 const IG_URL = `https://instagram.com/${IG_HANDLE}`;
 const BEHOLD_SCRIPT_ID = "behold-widget-script";
 
