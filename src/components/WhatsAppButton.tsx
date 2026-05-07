@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { buildWhatsAppUrl, type WhatsAppContext } from "@/lib/whatsapp";
+import InstagramButton from "./InstagramButton";
 
 const pathToContext = (pathname: string): WhatsAppContext => {
   if (pathname === "/") return "home_hero";
