@@ -158,6 +158,8 @@ export type Joya = {
   metalPrincipal?: string;
   /** Estilo/colección para filtros del catálogo. */
   estilo?: string;
+  /** Piedra central, opcional. */
+  piedraCentral?: string;
   /** Descripción corta (1-2 líneas) para grilla y meta description */
   descripcion: string;
   /** Descripción larga (opcional) para la ficha. Si falta, usa `descripcion`. */
