@@ -19,7 +19,7 @@ const SoloEnGiaSolari = () => (
           Diferenciadores exclusivos
         </p>
         <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground">
-          Lo que solo encontrás en{" "}
+          Lo que solo encuentras en{" "}
           <em className="text-primary not-italic">Gia Solari</em>
         </h2>
       </motion.div>

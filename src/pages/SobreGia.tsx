@@ -54,8 +54,8 @@ const SobreGia = () => (
             <p><strong className="text-foreground">Aprendí a mirar las joyas con mi mamá.</strong> En su cómoda guardaba las piezas que habían sido de mi abuela —cada una con un nombre, una fecha, una historia que volvía cada vez que alguien las usaba. Esa fue mi primera lección: <em>una joya no se compra, se hereda</em>.</p>
             <p>Hoy diseño junto a Gianna —mi mamá y socia— en un taller pequeño en Santiago. Trabajamos con orfebres que nos acompañan hace años, y cada pieza pasa por mis manos antes de llegar a las tuyas.</p>
             <p>Estudié gemología en el <strong className="text-foreground">GIA</strong> (Gemological Institute of America) para entender, una a una, las piedras que elijo. Me especialicé en platino y diamantes certificados porque creo que quien invierte en una joya merece saber exactamente qué está comprando.</p>
-            <p>No tengo vitrina ni stock. Tampoco hago dos piezas iguales. Cada anillo, cada argolla, cada joya nace de una conversación: <strong className="text-foreground">vos me contás tu historia, yo la traduzco en metal y piedra.</strong></p>
-            <p className="italic text-foreground font-display text-lg">"Vos me contás tu historia. Yo la convierto en joya."</p>
+            <p>No tengo vitrina ni stock. Tampoco hago dos piezas iguales. Cada anillo, cada argolla, cada joya nace de una conversación: <strong className="text-foreground">me cuentas tu historia, yo la traduzco en metal y piedra.</strong></p>
+            <p className="italic text-foreground font-display text-lg">"Me cuentas tu historia. Yo la convierto en joya."</p>
           </motion.div>
         </div>
       </section>
