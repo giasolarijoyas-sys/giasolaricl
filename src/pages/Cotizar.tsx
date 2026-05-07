@@ -60,11 +60,11 @@ const PIEDRAS_OTROS = [
 ];
 
 const PRESUPUESTOS = [
-  { key: "hasta_1.5", label: "Hasta $1.500.000" },
-  { key: "1.5_3", label: "$1.500.000 – $3.000.000" },
-  { key: "3_5", label: "$3.000.000 – $5.000.000" },
-  { key: "5_8", label: "$5.000.000 – $8.000.000" },
-  { key: "8_mas", label: "$8.000.000+" },
+  { key: "hasta_1.8", label: "Hasta $1.800.000" },
+  { key: "1.8_2.8", label: "$1.800.000 – $2.800.000" },
+  { key: "2.8_3.5", label: "$2.800.000 – $3.500.000" },
+  { key: "3.5_4.5", label: "$3.500.000 – $4.500.000" },
+  { key: "5_mas", label: "Más de $5.000.000" },
   { key: "conversar", label: "Prefiero conversarlo" },
 ];
 
