@@ -55,18 +55,19 @@ const Navbar = () => {
           {/* Logo */}
           <a
             href="/"
-            aria-label="Gia Solari - Inicio"
-            className="font-medium leading-none focus-visible:outline-2 focus-visible:outline focus-visible:outline-offset-4"
-            style={{
-              fontFamily: "'Bodoni Moda', serif",
-              fontWeight: 500,
-              color: INK,
-              fontSize: "22px",
-              letterSpacing: "0.02em",
-              outlineColor: CARAMEL,
-            }}
+            aria-label="Gia Solari Joyas - Inicio"
+            className="block focus-visible:outline-2 focus-visible:outline focus-visible:outline-offset-4 shrink-0"
+            style={{ outlineColor: CARAMEL, paddingRight: "16px" }}
           >
-            <span className="md:text-[22px] text-[18px]">Gia Solari</span>
+            <picture>
+              <source media="(max-width: 480px)" srcSet="/monograma-oliva.svg" />
+              <img
+                src="/wordmark-oliva.svg"
+                alt="Gia Solari Joyas"
+                className="block w-[140px] md:w-[180px] max-[480px]:w-auto max-[480px]:h-9"
+                style={{ minWidth: "120px" }}
+              />
+            </picture>
           </a>
 
           {/* Center links - desktop */}
