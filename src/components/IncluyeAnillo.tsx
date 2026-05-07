@@ -5,6 +5,7 @@ const incluidos = [
   "Grabado interior personalizado (gratis)",
   "Garantía por Gusto",
   "Certificación Gia Solari",
+  "Revisión anual de la pieza (limpieza, pulido y chequeo de engastes)",
 ];
 
 const opcionales = [
