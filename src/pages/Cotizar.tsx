@@ -117,6 +117,11 @@ function calcularRango(tipo: string, metal: string, piedra: string) {
     min = Math.round((min * 1.3) / 100000) * 100000;
     max = Math.round((max * 1.3) / 100000) * 100000;
   }
+  // Cap: anillos de compromiso no superan los $9.000.000 (cualquier estilo)
+  if (tipo === "anillo_compromiso") {
+    max = Math.min(max, 9000000);
+    min = Math.min(min, max);
+  }
   return { min, max };
 }
 
