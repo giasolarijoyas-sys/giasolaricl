@@ -161,7 +161,7 @@ const Joyas = () => {
               rel="noopener noreferrer"
               className="inline-block min-h-[48px] px-8 py-4 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm"
             >
-              Cotizá por WhatsApp
+              Cotiza por WhatsApp
             </a>
           </div>
         </div>

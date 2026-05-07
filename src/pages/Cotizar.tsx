@@ -205,7 +205,7 @@ Gracias!`;
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
-        title="Cotizá tu pieza · Gia Solari Joyas"
+        title="Cotiza tu pieza · Gia Solari Joyas"
         description="Cotizador online: armá tu anillo o joya en 4 pasos y recibí un presupuesto aproximado al instante. Joyería hecha a mano en Santiago."
         path="/cotizar"
       />
@@ -218,7 +218,7 @@ Gracias!`;
               Cotizador
             </p>
             <h1 className="font-display text-3xl md:text-4xl text-charcoal mb-3">
-              Cotizá tu pieza
+              Cotiza tu pieza
             </h1>
             <p className="text-charcoal/70 text-sm md:text-base">
               4 preguntas y armamos el presupuesto aproximado en menos de un minuto.
