@@ -47,8 +47,8 @@ const Proceso = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="El Proceso | De la conversación a la joya"
-        description="Cinco pasos sin sorpresas: desde la primera conversación hasta que recibes tu joya hecha a medida en Santiago."
+        title="Cómo diseñamos tu anillo a medida | Proceso Gia Solari"
+        description="De la conversación a la joya en cinco pasos: diseño, aprobación, fabricación artesanal y entrega de tu anillo de compromiso o argolla en Santiago."
         path="/proceso"
       />
       <Navbar />
