@@ -25,6 +25,7 @@ import IncluyeAnillo from "@/components/IncluyeAnillo";
 import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 import SoloEnGiaSolari from "@/components/SoloEnGiaSolari";
 import SoloEnGiaSolariCompact from "@/components/SoloEnGiaSolariCompact";
+import InstagramFeed from "@/components/InstagramFeed";
 
 import bannerNusa from "@/assets/banner-anillo-nusa.png";
 import bannerHalo from "@/assets/banner-halo-oval.png";
