@@ -24,7 +24,7 @@ const SoloEnGiaSolari = () => (
         </h2>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div className="grid gap-6 max-w-2xl mx-auto">
         {cards.map((c, i) => (
           <motion.div
             key={c.title}
