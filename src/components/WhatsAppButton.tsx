@@ -12,7 +12,7 @@ const pathToContext = (pathname: string): WhatsAppContext => {
   return "generico";
 };
 
-const WhatsAppButton = () => {
+const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) => {
   const [pulse, setPulse] = useState(false);
   const location = useLocation();
   const href = buildWhatsAppUrl(pathToContext(location.pathname));
@@ -32,7 +32,7 @@ const WhatsAppButton = () => {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed z-[999] flex items-center justify-center rounded-full bottom-[88px] right-5 sm:bottom-6 sm:right-6 w-14 h-14"
+        className={`fixed z-[999] items-center justify-center rounded-full bottom-[88px] right-5 sm:bottom-6 sm:right-6 w-14 h-14 ${hideOnMobile ? "hidden sm:flex" : "flex"}`}
         style={{
           backgroundColor: "#25D366",
           boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
