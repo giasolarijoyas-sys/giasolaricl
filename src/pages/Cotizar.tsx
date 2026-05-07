@@ -147,8 +147,8 @@ function calcularRango(tipo: string, metal: string, piedra: string, tamano: stri
   if (!raw) return null;
 
   let leaf: RangoLeaf;
-  if ("min" in raw) {
-    leaf = raw;
+  if (typeof (raw as RangoLeaf).min === "number") {
+    leaf = raw as RangoLeaf;
   } else {
     const sub = raw as Record<string, RangoLeaf>;
     const tKey = tamano && sub[tamano] ? tamano : "a_definir";
