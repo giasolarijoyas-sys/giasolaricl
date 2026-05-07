@@ -3,11 +3,6 @@ import { ShieldCheck, PenLine } from "lucide-react";
 
 const cards = [
   {
-    icon: ShieldCheck,
-    title: "Garantía por Gusto — Únicos en Chile",
-    desc: "Si la pieza no te encanta al recibirla, la ajustamos o reemplazamos. Somos la única joyería chilena que ofrece esta garantía.",
-  },
-  {
     icon: PenLine,
     title: "Grabado — GRATIS",
     desc: "Grabamos por dentro de tu anillo lo que quieras: una frase, una fecha o un dibujo simple. Un detalle que solo ustedes dos conocen.",
