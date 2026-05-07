@@ -65,8 +65,7 @@ const Index = () => {
         subtext="Diseño artesanal con piedras certificadas"
       />
 
-      {/* Lo que solo encontrás en Gia Solari */}
-      <SoloEnGiaSolari />
+      {/* Lo que solo encontrás en Gia Solari (compacto arriba; sección expandida removida para evitar duplicación) */}
 
       {/* 5. Diferenciadores / por qué elegirnos */}
       <WhyUs />
