@@ -1,67 +1,251 @@
-import { motion } from "framer-motion";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
-import heroImage from "@/assets/joyas/halo-brillante-platino-01.jpg";
+import { useEffect, useRef, useState } from "react";
+import { Instagram } from "lucide-react";
+
+const OLIVE = "#3F4A2A";
+const OLIVE_DARK = "#2E371F";
+const CREAM = "#FBF8F2";
+const CHAMPAGNE = "#F4EAD9";
+const INK = "#1F2417";
+const CARAMEL = "#A8773F";
+const MUTED_TXT = "#5A5A4A";
+const MUTED = "#6B6B5A";
+
+const HERO_IMG =
+  "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=80";
+
+// Pinterest icon (lineal)
+const PinterestIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <circle cx="12" cy="12" r="10" />
+    <path d="M11 7c2.5-.5 5 1 5 3.5S14 15 12 14.5c-.7-.2-1-.8-.8-1.5l1.3-5.5" />
+    <path d="M11 14l-1.5 6" />
+  </svg>
+);
+
+// TikTok icon (lineal)
+const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 
 const Hero = () => {
-  return (
-    <section className="relative bg-background pt-[72px] md:pt-0 md:min-h-screen">
-      <div className="md:grid md:grid-cols-12 md:min-h-screen">
-        {/* Imagen — derecha en desktop, arriba en mobile */}
-        <div className="order-1 md:order-2 md:col-span-7 relative overflow-hidden">
-          <div className="h-[42vh] sm:h-[50vh] md:h-screen">
-            <img
-              src={heroImage}
-              alt="Anillo Halo Brillante en platino — Atelier Gia Solari, Santiago de Chile"
-              loading="eager"
-              fetchPriority="high"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+  const imgRef = useRef<HTMLDivElement>(null);
+  const [offset, setOffset] = useState(0);
 
-        {/* Panel de texto — izquierda en desktop, abajo en mobile */}
-        <div className="order-2 md:order-1 md:col-span-5 bg-cream flex items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="px-6 py-12 md:px-12 lg:px-16 md:py-20 max-w-xl mx-auto md:mx-0"
-          >
-            <p className="text-gold tracking-[0.32em] uppercase text-[11px] md:text-xs mb-5">
-              Atelier Gia Solari
-            </p>
-            <h1 className="font-display text-[30px] leading-[1.08] sm:text-4xl md:text-5xl lg:text-[56px] text-charcoal mb-5">
-              Anillos de compromiso, hechos a mano en Santiago.
-            </h1>
-            <p className="text-charcoal/75 text-[15px] md:text-base leading-relaxed mb-8 max-w-md">
-              Cada pieza nace en conversación contigo. Diseñamos en oro 18k y
-              platino, con diamantes y piedras de color certificadas.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="/joyas"
-                className="min-h-[48px] px-7 py-3 bg-charcoal text-cream font-semibold tracking-[0.2em] uppercase text-xs text-center hover:bg-charcoal/90 transition-colors flex items-center justify-center"
-              >
-                Ver catálogo
-              </a>
-              <a
-                href="/cotizar"
-                className="min-h-[48px] px-7 py-3 border border-charcoal/40 text-charcoal tracking-[0.2em] uppercase text-xs text-center hover:border-gold hover:text-gold transition-colors flex items-center justify-center"
-              >
-                Cotizar tu pieza
-              </a>
-            </div>
-            <a
-              href={buildWhatsAppUrl("home_hero")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-block text-[11px] tracking-[0.2em] uppercase text-charcoal/60 hover:text-gold transition-colors"
-            >
-              o escribime por WhatsApp →
-            </a>
-          </motion.div>
+  useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      raf && cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        // 0.92x scroll => translate up by 0.08x
+        setOffset(y * -0.08);
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      raf && cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  return (
+    <section
+      className="w-full flex flex-col md:flex-row"
+      style={{ minHeight: "88vh" }}
+    >
+      {/* Imagen */}
+      <div
+        ref={imgRef}
+        className="relative overflow-hidden md:w-[60%] w-full"
+        style={{ height: "60vh" }}
+      >
+        <div className="absolute inset-0 md:hidden">
+          <img
+            src={HERO_IMG}
+            alt="Anillo de compromiso sobre lino nude con rama de olivo y caja de terciopelo verde oliva"
+            loading="eager"
+            fetchPriority="high"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: "center", transform: `translateY(${offset}px)` }}
+          />
+        </div>
+        <div className="hidden md:block absolute inset-0">
+          <img
+            src={HERO_IMG}
+            alt="Anillo de compromiso sobre lino nude con rama de olivo y caja de terciopelo verde oliva"
+            loading="eager"
+            fetchPriority="high"
+            className="w-full h-full object-cover"
+            style={{
+              objectPosition: "center",
+              aspectRatio: "4 / 5",
+              transform: `translateY(${offset}px)`,
+            }}
+          />
         </div>
       </div>
+
+      {/* Texto */}
+      <div
+        className="md:w-[40%] flex items-center"
+        style={{ background: CHAMPAGNE, minHeight: "32vh" }}
+      >
+        <div
+          className="w-full"
+          style={{ padding: "32px" }}
+        >
+          <div className="md:p-[80px] md:pl-[64px] p-0 max-w-[560px]">
+            <p
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "12px",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: CARAMEL,
+                marginBottom: "24px",
+                fontWeight: 500,
+              }}
+            >
+              Joyería de autor — Santiago
+            </p>
+
+            <h1
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 400,
+                fontSize: "clamp(36px, 5vw, 64px)",
+                lineHeight: 1.1,
+                color: INK,
+                marginBottom: "20px",
+              }}
+              dangerouslySetInnerHTML={{
+                __html: "Cada pieza, una historia. Cada historia, la <em>tuya</em>.",
+              }}
+            />
+
+            <p
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "16px",
+                fontWeight: 400,
+                color: MUTED_TXT,
+                lineHeight: 1.6,
+                maxWidth: "460px",
+                marginBottom: "36px",
+              }}
+            >
+              Atelier en Las Condes. Oro 18k, platino y diamantes certificados GIA/IGI.
+              Diseño a medida con Garantía por Gusto.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="/cotizar"
+                className="text-center transition-all"
+                style={{
+                  background: OLIVE,
+                  color: CREAM,
+                  padding: "14px 32px",
+                  borderRadius: "999px",
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = OLIVE_DARK;
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = OLIVE;
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                Cotizar mi pieza
+              </a>
+              <a
+                href="/joyas"
+                className="text-center transition-colors"
+                style={{
+                  border: `1px solid ${INK}`,
+                  color: INK,
+                  padding: "14px 32px",
+                  borderRadius: "999px",
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  background: "transparent",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = INK;
+                  e.currentTarget.style.color = CREAM;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "transparent";
+                  e.currentTarget.style.color = INK;
+                }}
+              >
+                Ver el catálogo
+              </a>
+            </div>
+
+            <p
+              style={{
+                marginTop: "48px",
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "12px",
+                letterSpacing: "0.05em",
+                color: MUTED,
+              }}
+            >
+              Garantía por Gusto · Diamantes certificados · Atelier solo con cita previa
+            </p>
+
+            <div className="flex items-center gap-4" style={{ marginTop: "16px", color: MUTED }}>
+              <a
+                href="https://instagram.com/giasolari.cl"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="hero-social"
+              >
+                <Instagram size={18} strokeWidth={1.5} />
+              </a>
+              <a
+                href="https://pinterest.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pinterest"
+                className="hero-social"
+              >
+                <PinterestIcon width={18} height={18} />
+              </a>
+              <a
+                href="https://tiktok.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="hero-social"
+              >
+                <TikTokIcon width={18} height={18} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        @media (min-width: 768px) {
+          section[class*="flex-row"] > div:first-child { height: auto; min-height: 88vh; }
+        }
+        .hero-social { color: ${MUTED}; transition: color .2s; }
+        .hero-social:hover { color: ${CARAMEL}; }
+      `}</style>
     </section>
   );
 };
