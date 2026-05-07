@@ -579,7 +579,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "vintage-003",
-    nombre: "Eleonora",
+    nombre: "Halo Vintage · Eleonora",
     categoria: "Anillo de compromiso",
     material: "Oro 18k amarillo · Diamante",
     metalPrincipal: "Oro 18k amarillo",
@@ -621,7 +621,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "vintage-006",
-    nombre: "Francesca",
+    nombre: "Princess · Francesca",
     categoria: "Anillo de compromiso",
     material: "Oro 18k blanco · Diamante",
     metalPrincipal: "Oro 18k blanco",
@@ -705,7 +705,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "vintage-012",
-    nombre: "Lavinia",
+    nombre: "Solitario · Lavinia",
     categoria: "Anillo de compromiso",
     material: "Oro 18k blanco · Diamante",
     metalPrincipal: "Oro 18k blanco",
@@ -845,7 +845,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "vintage-023",
-    nombre: "Nicoletta",
+    nombre: "Solitario · Nicoletta",
     categoria: "Anillo de compromiso",
     material: "Oro 18k blanco · Diamante",
     metalPrincipal: "Oro 18k blanco",
@@ -887,7 +887,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "vintage-027",
-    nombre: "Paola",
+    nombre: "Solitario · Paola",
     categoria: "Anillo de compromiso",
     material: "Oro 18k blanco · Diamante",
     metalPrincipal: "Oro 18k blanco",
@@ -1013,7 +1013,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "vintage-037",
-    nombre: "Simonetta",
+    nombre: "Solitario · Simonetta",
     categoria: "Anillo de compromiso",
     material: "Oro 18k blanco · Diamante",
     metalPrincipal: "Oro 18k blanco",
@@ -1069,7 +1069,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "vintage-050",
-    nombre: "Valeria",
+    nombre: "Art Decó · Valeria",
     categoria: "Anillo de compromiso",
     material: "Oro 18k blanco · Diamante",
     metalPrincipal: "Oro 18k blanco",
@@ -1265,7 +1265,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "vintage-076",
-    nombre: "Mireia",
+    nombre: "Navette · Mireia",
     categoria: "Anillo de compromiso",
     material: "Oro 18k blanco · Diamante",
     metalPrincipal: "Oro 18k blanco",
@@ -1279,7 +1279,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "vintage-077",
-    nombre: "Montserrat",
+    nombre: "Solitario Baguettes · Montserrat",
     categoria: "Anillo de compromiso",
     material: "Oro 18k blanco · Diamante",
     metalPrincipal: "Oro 18k blanco",
@@ -1307,7 +1307,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "vintage-085",
-    nombre: "Remedios",
+    nombre: "Solitario Vintage · Remedios",
     categoria: "Anillo de compromiso",
     material: "Oro 18k blanco · Diamante",
     metalPrincipal: "Oro 18k blanco",
@@ -1335,7 +1335,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "vintage-090",
-    nombre: "Ambra",
+    nombre: "Solitario Pavé · Ambra",
     categoria: "Anillo de compromiso",
     material: "Oro 18k blanco · Diamante",
     metalPrincipal: "Oro 18k blanco",
@@ -1363,7 +1363,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "vintage-092",
-    nombre: "Donatella",
+    nombre: "Solitario · Donatella",
     categoria: "Anillo de compromiso",
     material: "Oro 18k blanco · Diamante",
     metalPrincipal: "Oro 18k blanco",
@@ -1377,7 +1377,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "vintage-093",
-    nombre: "Fiammetta",
+    nombre: "Solitario Art Decó · Fiammetta",
     categoria: "Anillo de compromiso",
     material: "Oro 18k blanco · Diamante",
     metalPrincipal: "Oro 18k blanco",
