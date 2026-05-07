@@ -18,8 +18,8 @@ const valores = [
 const SobreGia = () => (
   <>
     <SEO
-      title="Sobre Gia Solari | Joyería artesanal en Santiago"
-      description="Conocé a Macarena, diseñadora detrás de Gia Solari Joyas. Joyería hecha a mano en Las Condes, con piedras reales y certificación."
+      title="Sobre Gia Solari — diseñadora y atelier en Santiago"
+      description="Conocé a Macarena González Solari, diseñadora detrás del atelier. Joyería hecha a mano en Las Condes con piedras certificadas y atención personalizada."
       path="/sobre-gia"
     />
     <div className="min-h-screen">
