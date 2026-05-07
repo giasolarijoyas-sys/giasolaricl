@@ -74,7 +74,6 @@ import pendiente009 from "@/assets/joyas/pendiente-009.jpg";
 import pendiente010 from "@/assets/joyas/pendiente-010.jpg";
 import pendiente011 from "@/assets/joyas/pendiente-011.jpg";
 import pendiente012 from "@/assets/joyas/pendiente-012.jpg";
-import pendiente013 from "@/assets/joyas/pendiente-013.jpg";
 import pendiente014 from "@/assets/joyas/pendiente-014.jpg";
 import pendiente015 from "@/assets/joyas/pendiente-015.jpg";
 import pendiente016 from "@/assets/joyas/pendiente-016.jpg";
@@ -87,12 +86,9 @@ import pendiente022 from "@/assets/joyas/pendiente-022.jpg";
 import pendiente023 from "@/assets/joyas/pendiente-023.jpg";
 import pendiente024 from "@/assets/joyas/pendiente-024.jpg";
 import pendiente025 from "@/assets/joyas/pendiente-025.jpg";
-import pendiente026 from "@/assets/joyas/pendiente-026.jpg";
-import pendiente027 from "@/assets/joyas/pendiente-027.jpg";
 import pendiente028 from "@/assets/joyas/pendiente-028.jpg";
 import pendiente029 from "@/assets/joyas/pendiente-029.jpg";
 import pendiente030 from "@/assets/joyas/pendiente-030.jpg";
-import pendiente031 from "@/assets/joyas/pendiente-031.jpg";
 import pendiente032 from "@/assets/joyas/pendiente-032.jpg";
 import pendiente033 from "@/assets/joyas/pendiente-033.jpg";
 import pendiente034 from "@/assets/joyas/pendiente-034.jpg";
@@ -102,7 +98,6 @@ import pendiente037 from "@/assets/joyas/pendiente-037.jpg";
 import pendiente038 from "@/assets/joyas/pendiente-038.jpg";
 import pendiente039 from "@/assets/joyas/pendiente-039.jpg";
 import pendiente049 from "@/assets/joyas/pendiente-049.jpg";
-import pendiente050 from "@/assets/joyas/pendiente-050.jpg";
 import pendiente051 from "@/assets/joyas/pendiente-051.jpg";
 import pendiente052 from "@/assets/joyas/pendiente-052.jpg";
 import pendiente053 from "@/assets/joyas/pendiente-053.jpg";
@@ -124,12 +119,10 @@ import pendiente068 from "@/assets/joyas/pendiente-068.jpg";
 import pendiente069 from "@/assets/joyas/pendiente-069.jpg";
 import pendiente070 from "@/assets/joyas/pendiente-070.jpg";
 import pendiente071 from "@/assets/joyas/pendiente-071.jpg";
-import pendiente072 from "@/assets/joyas/pendiente-072.jpg";
 import pendiente073 from "@/assets/joyas/pendiente-073.jpg";
 import pendiente074 from "@/assets/joyas/pendiente-074.jpg";
 import pendiente075 from "@/assets/joyas/pendiente-075.jpg";
 import pendiente076 from "@/assets/joyas/pendiente-076.jpg";
-import pendiente077 from "@/assets/joyas/pendiente-077.jpg";
 import pendiente078 from "@/assets/joyas/pendiente-078.jpg";
 import pendiente079 from "@/assets/joyas/pendiente-079.jpg";
 import pendiente080 from "@/assets/joyas/pendiente-080.jpg";
@@ -138,7 +131,6 @@ import pendiente085 from "@/assets/joyas/pendiente-085.jpg";
 import pendiente086 from "@/assets/joyas/pendiente-086.jpg";
 import pendiente090 from "@/assets/joyas/pendiente-090.jpg";
 import pendiente091 from "@/assets/joyas/pendiente-091.jpg";
-import pendiente092 from "@/assets/joyas/pendiente-092.jpg";
 import pendiente093 from "@/assets/joyas/pendiente-093.jpg";
 import pendiente094 from "@/assets/joyas/pendiente-094.jpg";
 import pendiente095 from "@/assets/joyas/pendiente-095.jpg";
@@ -718,20 +710,6 @@ export const JOYAS: Joya[] = [
     isPlaceholder: false,
   },
   {
-    slug: "vintage-013",
-    nombre: "Trilogía Letizia",
-    categoria: "Anillo de compromiso",
-    material: "Oro 18k blanco · Diamante",
-    metalPrincipal: "Oro 18k blanco",
-    estilo: "Vintage",
-    piedraCentral: "Diamante",
-    descripcion: "Trilogía con diamante central y dos laterales pequeños, oro 18k blanco.",
-    descripcionLarga:
-      "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: [pendiente013],
-    isPlaceholder: false,
-  },
-  {
     slug: "vintage-014",
     nombre: "Zafiro Livia",
     categoria: "Anillo de compromiso",
@@ -858,34 +836,6 @@ export const JOYAS: Joya[] = [
     isPlaceholder: false,
   },
   {
-    slug: "vintage-026",
-    nombre: "Aros Ornella",
-    categoria: "Aros",
-    material: "Oro 18k amarillo · Diamante",
-    metalPrincipal: "Oro 18k amarillo",
-    estilo: "Vintage",
-    piedraCentral: "Diamante",
-    descripcion: "Aros pequeños cuadrados con diamantes en oro 18k amarillo.",
-    descripcionLarga:
-      "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: [pendiente026],
-    isPlaceholder: false,
-  },
-  {
-    slug: "vintage-027",
-    nombre: "Solitario · Paola",
-    categoria: "Anillo de compromiso",
-    material: "Oro 18k blanco · Diamante",
-    metalPrincipal: "Oro 18k blanco",
-    estilo: "Vintage",
-    piedraCentral: "Diamante",
-    descripcion: "Solitario diamante redondo a grifas, oro 18k blanco.",
-    descripcionLarga:
-      "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: [pendiente027],
-    isPlaceholder: false,
-  },
-  {
     slug: "vintage-029",
     nombre: "Trilogía Patrizia",
     categoria: "Anillo de compromiso",
@@ -911,20 +861,6 @@ export const JOYAS: Joya[] = [
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente030],
-    isPlaceholder: false,
-  },
-  {
-    slug: "vintage-031",
-    nombre: "Zafiro Roberta",
-    categoria: "Anillo de compromiso",
-    material: "Oro 18k blanco · Zafiro",
-    metalPrincipal: "Oro 18k blanco",
-    estilo: "Vintage",
-    piedraCentral: "Zafiro",
-    descripcion: "Set zafiro con halo de diamantes y banda eternity, oro 18k blanco.",
-    descripcionLarga:
-      "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: [pendiente031],
     isPlaceholder: false,
   },
   {
@@ -1051,20 +987,6 @@ export const JOYAS: Joya[] = [
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente049],
-    isPlaceholder: false,
-  },
-  {
-    slug: "vintage-050",
-    nombre: "Art Decó · Valeria",
-    categoria: "Anillo de compromiso",
-    material: "Oro 18k blanco · Diamante",
-    metalPrincipal: "Oro 18k blanco",
-    estilo: "Vintage",
-    piedraCentral: "Diamante",
-    descripcion: "Anillo art decó con cuatro princess centrales y halo octogonal, oro 18k blanco.",
-    descripcionLarga:
-      "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: [pendiente050],
     isPlaceholder: false,
   },
   {
@@ -1222,20 +1144,6 @@ export const JOYAS: Joya[] = [
     isPlaceholder: false,
   },
   {
-    slug: "vintage-072",
-    nombre: "Trilogía Imelda",
-    categoria: "Anillo de compromiso",
-    material: "Oro 18k blanco · Diamante",
-    metalPrincipal: "Oro 18k blanco",
-    estilo: "Vintage",
-    piedraCentral: "Diamante",
-    descripcion: "Trilogía con tres diamantes redondos en oro 18k blanco.",
-    descripcionLarga:
-      "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: [pendiente072],
-    isPlaceholder: false,
-  },
-  {
     slug: "vintage-073",
     nombre: "Esmeralda Macarena",
     categoria: "Anillo de compromiso",
@@ -1261,20 +1169,6 @@ export const JOYAS: Joya[] = [
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente076],
-    isPlaceholder: false,
-  },
-  {
-    slug: "vintage-077",
-    nombre: "Solitario Baguettes · Montserrat",
-    categoria: "Anillo de compromiso",
-    material: "Oro 18k blanco · Diamante",
-    metalPrincipal: "Oro 18k blanco",
-    estilo: "Vintage",
-    piedraCentral: "Diamante",
-    descripcion: "Solitario diamante con baguettes laterales, oro 18k blanco.",
-    descripcionLarga:
-      "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: [pendiente077],
     isPlaceholder: false,
   },
   {
@@ -1345,20 +1239,6 @@ export const JOYAS: Joya[] = [
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente091],
-    isPlaceholder: false,
-  },
-  {
-    slug: "vintage-092",
-    nombre: "Solitario · Donatella",
-    categoria: "Anillo de compromiso",
-    material: "Oro 18k blanco · Diamante",
-    metalPrincipal: "Oro 18k blanco",
-    estilo: "Vintage",
-    piedraCentral: "Diamante",
-    descripcion: "Solitario diamante redondo con detalles vintage en banda, oro 18k blanco.",
-    descripcionLarga:
-      "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: [pendiente092],
     isPlaceholder: false,
   },
   {
