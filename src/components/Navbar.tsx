@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import { Menu, X, Heart, ChevronDown, Gem, CircleDot, Sparkles, Crown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const OLIVE = "#3F4A2A";
-const OLIVE_DARK = "#2E371F";
-const CREAM = "#FBF8F2";
-const CREAM_WARM = "#F4EAD9";
-const BORDER = "#E8DFD0";
-const INK = "#1F2417";
-const CARAMEL = "#A8773F";
-const MUTED = "#6B6B5A";
+const OLIVE = "#4A5536";
+const OLIVE_DARK = "#3A4429";
+const CREAM = "#F5EFE6";
+const CREAM_WARM = "#F5EFE6";
+const BORDER = "#D9D2C4";
+const INK = "#1A1A18";
+const CARAMEL = "#C9A87C";
+const MUTED = "#6B7752";
 
 const WHATSAPP_URL = "https://wa.me/56984049502";
 
@@ -88,7 +88,7 @@ const Navbar = () => {
                   fontSize: "14px",
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
-                  color: joyasOpen ? CARAMEL : "#3F4A2A",
+                  color: joyasOpen ? CARAMEL : "#4A5536",
                 }}
               >
                 <span className="nav-underline">Joyas</span>
@@ -125,7 +125,7 @@ const Navbar = () => {
                                 fontSize: "13.5px",
                                 fontWeight: 500,
                               }}
-                              className="group-hover:text-[#A8773F] transition-colors"
+                              className="group-hover:text-[#C9A87C] transition-colors"
                             >
                               {label}
                             </span>
@@ -149,7 +149,7 @@ const Navbar = () => {
                   fontSize: "14px",
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
-                  color: "#3F4A2A",
+                  color: "#4A5536",
                 }}
               >
                 {l.label}
@@ -200,7 +200,7 @@ const Navbar = () => {
               href="/lista-de-deseos"
               aria-label="Mis favoritas"
               title="Mis favoritas"
-              className="p-2 rounded-full hover:bg-[#F4EAD9] transition-colors"
+              className="p-2 rounded-full hover:bg-[#F5EFE6] transition-colors"
             >
               <Heart size={20} strokeWidth={1.5} style={{ color: INK }} />
             </a>

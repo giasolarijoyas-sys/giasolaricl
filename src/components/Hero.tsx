@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Instagram } from "lucide-react";
 
-const OLIVE = "#3F4A2A";
-const OLIVE_DARK = "#2E371F";
-const CREAM = "#FBF8F2";
-const CHAMPAGNE = "#F4EAD9";
-const INK = "#1F2417";
-const CARAMEL = "#A8773F";
-const MUTED_TXT = "#5A5A4A";
-const MUTED = "#6B6B5A";
+const OLIVE = "#4A5536";
+const OLIVE_DARK = "#3A4429";
+const CREAM = "#F5EFE6";
+const CHAMPAGNE = "#F5EFE6";
+const INK = "#1A1A18";
+const CARAMEL = "#C9A87C";
+const MUTED_TXT = "#6B7752";
+const MUTED = "#6B7752";
 
 const HERO_IMG =
   "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=80";
