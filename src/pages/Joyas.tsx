@@ -129,7 +129,7 @@ const Joyas = () => {
                   <div className="aspect-square overflow-hidden bg-cream rounded-[4px]">
                     <img
                       src={p.imagenes[0]}
-                      alt={p.nombre}
+                      alt={`${p.nombre} — ${p.material}. ${p.categoria} Gia Solari Joyas`}
                       loading={i < 4 ? "eager" : "lazy"}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
