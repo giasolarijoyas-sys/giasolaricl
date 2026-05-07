@@ -22,18 +22,18 @@ type MetalKey =
 
 const TIPOS: { key: TipoKey; label: string }[] = [
   { key: "anillo_compromiso", label: "Anillo de compromiso" },
-  { key: "alianza", label: "Alianza / Argolla de matrimonio" },
+  { key: "alianza", label: "Argollas de matrimonio" },
   { key: "aros", label: "Aros" },
-  { key: "colgante", label: "Colgante" },
+  { key: "colgante", label: "Collar" },
   { key: "pulsera_esclava", label: "Pulsera / Esclava" },
 ];
 
-const METALES: { key: MetalKey; label: string; sub: string; swatch: string }[] = [
-  { key: "oro_amarillo", label: "Oro 18k amarillo", sub: "Cálido, clásico", swatch: "#D4AF37" },
-  { key: "oro_rosado", label: "Oro 18k rosado", sub: "Suave, romántico", swatch: "#E0BFB8" },
-  { key: "oro_blanco", label: "Oro 18k blanco", sub: "Frío, contemporáneo", swatch: "#E8E8E8" },
-  { key: "platino", label: "Platino", sub: "Premium, durabilidad superior", swatch: "#CFCFCF" },
-  { key: "a_definir", label: "No sé, me ayudás a decidir", sub: "Conversamos juntas", swatch: "transparent" },
+const METALES: { key: MetalKey; label: string; swatch: string }[] = [
+  { key: "oro_amarillo", label: "Oro 18k amarillo", swatch: "#D4AF37" },
+  { key: "oro_rosado", label: "Oro 18k rosado", swatch: "#E0BFB8" },
+  { key: "oro_blanco", label: "Oro 18k blanco", swatch: "#E8E8E8" },
+  { key: "platino", label: "Platino", swatch: "#CFCFCF" },
+  { key: "a_definir", label: "No sé, me ayudás a decidir", swatch: "transparent" },
 ];
 
 const PIEDRAS_COMPROMISO = [
