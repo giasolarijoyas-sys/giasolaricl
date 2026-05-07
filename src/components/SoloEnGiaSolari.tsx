@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, PenLine } from "lucide-react";
+import { PenLine } from "lucide-react";
 
 const cards = [
   {
