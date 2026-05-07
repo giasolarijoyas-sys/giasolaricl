@@ -7,8 +7,6 @@ import Gallery from "@/components/Gallery";
 import WhyUs from "@/components/WhyUs";
 import ProcessSteps from "@/components/ProcessSteps";
 import VideoSection from "@/components/VideoSection";
-import Testimonials from "@/components/Testimonials";
-import TestimoniosHome from "@/components/TestimoniosHome";
 import Historia from "@/components/Historia";
 import ElTaller from "@/components/ElTaller";
 import QuoteWizard from "@/components/QuoteWizard";
@@ -92,8 +90,6 @@ const Index = () => {
         subtext="100% personalizado, 100% único"
       />
 
-      {/* 7. Testimonios */}
-      <Testimonials />
 
       {/* 8. Historia de la marca */}
       <Historia />
@@ -127,8 +123,6 @@ const Index = () => {
       {/* Newsletter */}
       <Newsletter />
 
-      {/* Testimonios simples (3 tarjetas) — entre Gallery/secciones intermedias y FAQ */}
-      <TestimoniosHome />
 
       {/* 11. Acordeón de términos y condiciones */}
       <FAQAccordion />

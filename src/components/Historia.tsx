@@ -47,24 +47,15 @@ const Historia = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Gia Solari nace de dos cosas que amamos profundamente:{" "}
-                <strong className="text-foreground">Gianna</strong>, mi mamá y socia, quien me enseñó que una joya es una historia que se hereda — y{" "}
-                <strong className="text-foreground">GIA</strong>, el Gemological Institute of America, la institución de gemología más reconocida del mundo, que respalda cada piedra que elegimos.
+                Soy Macarena González Solari. Diseño joyas hechas a mano en Santiago desde 2019. Cada pieza es única, conversada con quien la va a usar.
               </p>
               <p>
-                Yo soy <strong className="text-foreground">Maca</strong>, diseñadora y gemóloga. Juntas formamos Gia Solari Joyas.
-              </p>
-              <p>
-                Soy Macarena González Solari, y junto a mi mamá y socia Gianna diseño y fabrico cada pieza de Gia Solari. Asesoro, diseño y creo pulseras, argollas, aros, collares y mi especialidad:{" "}
+                Asesoro, diseño y creo pulseras, argollas, aros, collares y mi especialidad:{" "}
                 <strong className="text-foreground">anillos de compromiso</strong>.
               </p>
               <p>
                 Mi misión es dar una atención personalizada y dedicada, para que mandar a hacer una joya sea una{" "}
                 <strong className="text-foreground">experiencia extraordinaria</strong> — tanto para quien la compra como para quien la recibe.
-              </p>
-              <p>
-                Trabajo en oro 18k, diamantes certificados, diamantes de laboratorio y{" "}
-                <strong className="text-foreground">platino, trabajado con verdadera maestría</strong>. Mi compromiso de transparencia técnica hace que tu joya sea auténtica y única, igual que tu historia.
               </p>
               <p className="italic text-foreground font-display text-lg pt-2">
                 "Tú me cuentas tu historia, yo la convierto en joya."
