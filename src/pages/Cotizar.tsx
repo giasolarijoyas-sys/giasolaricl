@@ -22,18 +22,18 @@ type MetalKey =
 
 const TIPOS: { key: TipoKey; label: string }[] = [
   { key: "anillo_compromiso", label: "Anillo de compromiso" },
-  { key: "alianza", label: "Alianza / Argolla de matrimonio" },
+  { key: "alianza", label: "Argollas de matrimonio" },
   { key: "aros", label: "Aros" },
-  { key: "colgante", label: "Colgante" },
+  { key: "colgante", label: "Collar" },
   { key: "pulsera_esclava", label: "Pulsera / Esclava" },
 ];
 
-const METALES: { key: MetalKey; label: string; sub: string; swatch: string }[] = [
-  { key: "oro_amarillo", label: "Oro 18k amarillo", sub: "Cálido, clásico", swatch: "#D4AF37" },
-  { key: "oro_rosado", label: "Oro 18k rosado", sub: "Suave, romántico", swatch: "#E0BFB8" },
-  { key: "oro_blanco", label: "Oro 18k blanco", sub: "Frío, contemporáneo", swatch: "#E8E8E8" },
-  { key: "platino", label: "Platino", sub: "Premium, durabilidad superior", swatch: "#CFCFCF" },
-  { key: "a_definir", label: "No sé, me ayudás a decidir", sub: "Conversamos juntas", swatch: "transparent" },
+const METALES: { key: MetalKey; label: string; swatch: string }[] = [
+  { key: "oro_amarillo", label: "Oro 18k amarillo", swatch: "#D4AF37" },
+  { key: "oro_rosado", label: "Oro 18k rosado", swatch: "#E0BFB8" },
+  { key: "oro_blanco", label: "Oro 18k blanco", swatch: "#E8E8E8" },
+  { key: "platino", label: "Platino", swatch: "#CFCFCF" },
+  { key: "a_definir", label: "No sé, me ayudás a decidir", swatch: "transparent" },
 ];
 
 const PIEDRAS_COMPROMISO = [
@@ -60,11 +60,11 @@ const PIEDRAS_OTROS = [
 ];
 
 const PRESUPUESTOS = [
-  { key: "hasta_1.5", label: "Hasta $1.500.000" },
-  { key: "1.5_3", label: "$1.500.000 – $3.000.000" },
-  { key: "3_5", label: "$3.000.000 – $5.000.000" },
-  { key: "5_8", label: "$5.000.000 – $8.000.000" },
-  { key: "8_mas", label: "$8.000.000+" },
+  { key: "hasta_1.8", label: "Hasta $1.800.000" },
+  { key: "1.8_2.8", label: "$1.800.000 – $2.800.000" },
+  { key: "2.8_3.5", label: "$2.800.000 – $3.500.000" },
+  { key: "3.5_4.5", label: "$3.500.000 – $4.500.000" },
+  { key: "5_mas", label: "Más de $5.000.000" },
   { key: "conversar", label: "Prefiero conversarlo" },
 ];
 
@@ -98,10 +98,19 @@ const RANGOS_BASE: Record<string, Record<string, { min: number; max: number }>> 
 
 const formatCLP = (n: number) => "$" + n.toLocaleString("es-CL");
 
+const PIEDRA_DEFAULT: Record<string, string> = {
+  anillo_compromiso: "diamante_lab",
+  alianza: "sin_piedras",
+  aros: "sin_piedras",
+  colgante: "sin_piedras",
+  pulsera_esclava: "sin_piedras",
+};
+
 function calcularRango(tipo: string, metal: string, piedra: string) {
   const grupo = RANGOS_BASE[tipo];
   if (!grupo) return null;
-  const base = grupo[piedra];
+  const piedraKey = piedra && piedra !== "a_definir" ? piedra : PIEDRA_DEFAULT[tipo];
+  const base = grupo[piedraKey] ?? Object.values(grupo)[0];
   if (!base) return null;
   let { min, max } = base;
   if (metal === "platino") {
@@ -131,8 +140,7 @@ const Cotizar = () => {
   const presupuestoLabel = PRESUPUESTOS.find((p) => p.key === presupuesto)?.label ?? "";
 
   const rango = calcularRango(tipo, metal, piedra);
-  const showRango =
-    rango && metal !== "a_definir" && piedra !== "a_definir" && presupuesto !== "conversar";
+  const showRango = !!rango;
 
   const buildWaUrl = () => {
     const rangoText = showRango && rango
@@ -205,7 +213,7 @@ Gracias!`;
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
-        title="Cotizá tu pieza · Gia Solari Joyas"
+        title="Cotiza tu pieza · Gia Solari Joyas"
         description="Cotizador online: armá tu anillo o joya en 4 pasos y recibí un presupuesto aproximado al instante. Joyería hecha a mano en Santiago."
         path="/cotizar"
       />
@@ -218,7 +226,7 @@ Gracias!`;
               Cotizador
             </p>
             <h1 className="font-display text-3xl md:text-4xl text-charcoal mb-3">
-              Cotizá tu pieza
+              Cotiza tu pieza
             </h1>
             <p className="text-charcoal/70 text-sm md:text-base">
               4 preguntas y armamos el presupuesto aproximado en menos de un minuto.
@@ -284,7 +292,6 @@ Gracias!`;
                             />
                             <div>
                               <p className="font-medium text-sm">{m.label}</p>
-                              <p className="text-xs text-charcoal/60">{m.sub}</p>
                             </div>
                           </div>
                         </Card>

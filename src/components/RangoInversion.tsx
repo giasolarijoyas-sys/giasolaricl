@@ -14,7 +14,7 @@ const RangoInversion = () => (
         </p>
         <p className="text-muted-foreground text-sm leading-relaxed">
           El precio final depende del metal, la piedra central y la complejidad del
-          diseño. Cotizá tu pieza por WhatsApp para un valor exacto.
+          diseño. Cotiza tu pieza por WhatsApp para un valor exacto.
         </p>
       </div>
 
