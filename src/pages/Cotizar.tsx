@@ -284,7 +284,6 @@ Gracias!`;
                             />
                             <div>
                               <p className="font-medium text-sm">{m.label}</p>
-                              <p className="text-xs text-charcoal/60">{m.sub}</p>
                             </div>
                           </div>
                         </Card>
