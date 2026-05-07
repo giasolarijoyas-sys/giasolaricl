@@ -107,17 +107,27 @@ export default {
 
       try {
         const response = await fetch(prerenderRequest);
-        // Cache 10 min en Cloudflare edge
-        const headers = new Headers(response.headers);
-        headers.set("X-Prerendered", "true");
-        headers.set("Cache-Control", "public, max-age=600");
-        return new Response(response.body, {
-          status: response.status,
-          statusText: response.statusText,
-          headers,
-        });
+
+        // Si Prerender devuelve un error (401 token inválido, 403, 5xx, etc.)
+        // caemos al origen para que el bot al menos reciba el SPA y no un error.
+        if (!response.ok || response.status >= 400) {
+          const rejectReason = response.headers.get("x-prerender-reject-reason");
+          console.error(
+            `Prerender returned ${response.status} (${rejectReason || "no reason"}), falling back to origin`
+          );
+        } else {
+          // Cache 10 min en Cloudflare edge
+          const headers = new Headers(response.headers);
+          headers.set("X-Prerendered", "true");
+          headers.set("Cache-Control", "public, max-age=600");
+          return new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers,
+          });
+        }
       } catch (err) {
-        // Si Prerender falla, caer al origen sin romper
+        // Si Prerender falla por excepción de red, caer al origen sin romper
         console.error("Prerender failed, falling back to origin:", err);
       }
     }
