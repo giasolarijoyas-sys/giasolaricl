@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, MessageCircle } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -59,6 +59,24 @@ const PIEDRAS_OTROS = [
   { key: "a_definir", label: "No sé, me ayudás a decidir" },
 ];
 
+const ESTILOS = [
+  { key: "solitario", label: "Solitario", desc: "Una sola piedra central, banda limpia" },
+  { key: "halo", label: "Halo", desc: "Piedra central + halo de diamantes alrededor" },
+  { key: "tricillo", label: "Tricillo", desc: "Tres piedras (pasado, presente, futuro)" },
+  { key: "cuatricillo", label: "Cuatricillo", desc: "Cuatro piedras alineadas" },
+  { key: "cintillo_pave", label: "Cintillo / Pavé", desc: "Banda con diamantes pequeños" },
+  { key: "vintage_editorial", label: "Vintage / Editorial", desc: "Art déco, mandala, milgrain" },
+  { key: "a_definir", label: "No sé, ayudame a decidir", desc: "" },
+];
+
+const TAMANOS = [
+  { key: "pequena", label: "Pequeña (0.20 – 0.40 ct)", desc: "Discreta, brilla mucho" },
+  { key: "mediana", label: "Mediana (0.50 – 0.80 ct)", desc: "El clásico, presencia equilibrada" },
+  { key: "grande", label: "Grande (0.90 – 1.20 ct)", desc: "Protagonista" },
+  { key: "extra_grande", label: "Extra grande (1.50 ct+)", desc: "Pieza de declaración" },
+  { key: "a_definir", label: "Confío en lo que me recomiende Gia", desc: "" },
+];
+
 const PRESUPUESTOS = [
   { key: "hasta_1.8", label: "Hasta $1.800.000" },
   { key: "1.8_2.8", label: "$1.800.000 – $2.800.000" },
@@ -68,15 +86,30 @@ const PRESUPUESTOS = [
   { key: "conversar", label: "Prefiero conversarlo" },
 ];
 
-const RANGOS_BASE: Record<string, Record<string, { min: number; max: number }>> = {
+type RangoLeaf = { min: number; max: number };
+type RangoNode = RangoLeaf | Record<string, RangoLeaf>;
+
+const RANGOS_BASE: Record<string, Record<string, RangoNode>> = {
   anillo_compromiso: {
     sin_piedra: { min: 1500000, max: 2200000 },
     aguamarina: { min: 1500000, max: 3000000 },
     zafiro: { min: 1500000, max: 3000000 },
     esmeralda: { min: 1500000, max: 3000000 },
     otra_color: { min: 1500000, max: 3000000 },
-    diamante_lab: { min: 1800000, max: 4000000 },
-    diamante_natural: { min: 2500000, max: 9000000 },
+    diamante_lab: {
+      pequena: { min: 1800000, max: 2500000 },
+      mediana: { min: 2500000, max: 4000000 },
+      grande: { min: 4000000, max: 6000000 },
+      extra_grande: { min: 6000000, max: 9000000 },
+      a_definir: { min: 1800000, max: 9000000 },
+    },
+    diamante_natural: {
+      pequena: { min: 2500000, max: 4000000 },
+      mediana: { min: 4000000, max: 7000000 },
+      grande: { min: 7000000, max: 12000000 },
+      extra_grande: { min: 12000000, max: 20000000 },
+      a_definir: { min: 2500000, max: 12000000 },
+    },
   },
   alianza: {
     sin_piedras: { min: 600000, max: 1300000 },
@@ -96,8 +129,6 @@ const RANGOS_BASE: Record<string, Record<string, { min: number; max: number }>> 
   },
 };
 
-const formatCLP = (n: number) => "$" + n.toLocaleString("es-CL");
-
 const PIEDRA_DEFAULT: Record<string, string> = {
   anillo_compromiso: "diamante_lab",
   alianza: "sin_piedras",
@@ -106,21 +137,29 @@ const PIEDRA_DEFAULT: Record<string, string> = {
   pulsera_esclava: "sin_piedras",
 };
 
-function calcularRango(tipo: string, metal: string, piedra: string) {
+const formatCLP = (n: number) => "$" + n.toLocaleString("es-CL");
+
+function calcularRango(tipo: string, metal: string, piedra: string, tamano: string) {
   const grupo = RANGOS_BASE[tipo];
   if (!grupo) return null;
   const piedraKey = piedra && piedra !== "a_definir" ? piedra : PIEDRA_DEFAULT[tipo];
-  const base = grupo[piedraKey] ?? Object.values(grupo)[0];
-  if (!base) return null;
-  let { min, max } = base;
+  const raw: RangoNode | undefined = grupo[piedraKey] ?? Object.values(grupo)[0];
+  if (!raw) return null;
+
+  let leaf: RangoLeaf;
+  if (typeof (raw as RangoLeaf).min === "number") {
+    leaf = raw as RangoLeaf;
+  } else {
+    const sub = raw as Record<string, RangoLeaf>;
+    const tKey = tamano && sub[tamano] ? tamano : "a_definir";
+    leaf = sub[tKey] ?? Object.values(sub)[0];
+  }
+  if (!leaf) return null;
+
+  let { min, max } = leaf;
   if (metal === "platino") {
     min = Math.round((min * 1.3) / 100000) * 100000;
     max = Math.round((max * 1.3) / 100000) * 100000;
-  }
-  // Cap: anillos de compromiso no superan los $9.000.000 (cualquier estilo)
-  if (tipo === "anillo_compromiso") {
-    max = Math.min(max, 9000000);
-    min = Math.min(min, max);
   }
   return { min, max };
 }
@@ -130,7 +169,25 @@ const Cotizar = () => {
   const [tipo, setTipo] = useState<string>("");
   const [metal, setMetal] = useState<string>("");
   const [piedra, setPiedra] = useState<string>("");
+  const [estilo, setEstilo] = useState<string>("");
+  const [tamano, setTamano] = useState<string>("");
   const [presupuesto, setPresupuesto] = useState<string>("");
+
+  const isCompromiso = tipo === "anillo_compromiso";
+  const isDiamante = piedra === "diamante_natural" || piedra === "diamante_lab";
+
+  // Pasos dinámicos: 1 Tipo, 2 Metal, 3 Piedra, [4 Estilo si compromiso], [Tamaño si diamante], Presupuesto, Resultado
+  const stepsList = useMemo(() => {
+    const arr: string[] = ["tipo", "metal", "piedra"];
+    if (isCompromiso) arr.push("estilo");
+    if (isCompromiso && isDiamante) arr.push("tamano");
+    arr.push("presupuesto");
+    return arr;
+  }, [isCompromiso, isDiamante]);
+
+  const totalSteps = stepsList.length;
+  const currentKey = step <= totalSteps ? stepsList[step - 1] : "resultado";
+  const isResult = step > totalSteps;
 
   const piedrasOptions =
     tipo === "anillo_compromiso"
@@ -142,26 +199,39 @@ const Cotizar = () => {
   const tipoLabel = TIPOS.find((t) => t.key === tipo)?.label ?? "";
   const metalLabel = METALES.find((m) => m.key === metal)?.label ?? "";
   const piedraLabel = piedrasOptions.find((p) => p.key === piedra)?.label ?? "";
+  const estiloLabel = ESTILOS.find((e) => e.key === estilo)?.label ?? "";
+  const tamanoLabel = TAMANOS.find((t) => t.key === tamano)?.label ?? "";
   const presupuestoLabel = PRESUPUESTOS.find((p) => p.key === presupuesto)?.label ?? "";
 
-  const rango = calcularRango(tipo, metal, piedra);
+  const rango = calcularRango(tipo, metal, piedra, tamano);
   const showRango = !!rango;
+  const showPlus =
+    !!rango &&
+    isCompromiso &&
+    isDiamante &&
+    (tamano === "extra_grande" || (piedra === "diamante_natural" && tamano === "a_definir")) &&
+    rango.max > 12000000;
 
   const buildWaUrl = () => {
-    const rangoText = showRango && rango
-      ? `El cotizador me mostró un rango de ${formatCLP(rango.min)} – ${formatCLP(rango.max)}. Me gustaría conversar los detalles.`
+    const rangoMaxText = showRango && rango
+      ? showPlus
+        ? `${formatCLP(rango.min)} – $12.000.000+`
+        : `${formatCLP(rango.min)} – ${formatCLP(rango.max)}`
+      : "";
+    const rangoText = showRango
+      ? `El cotizador me mostró un rango de ${rangoMaxText}. Me gustaría conversar los detalles.`
       : `Me gustaría que me ayudes a definir los detalles.`;
-    const text = `Hola Gia! Vengo del cotizador del sitio.
-
-🎁 Pieza: ${tipoLabel}
-✨ Metal: ${metalLabel}
-💎 Piedra: ${piedraLabel}
-💰 Presupuesto: ${presupuestoLabel}
-
-${rangoText}
-
-Gracias!`;
-    return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+    const lines = [
+      "Hola Gia! Vengo del cotizador del sitio.",
+      "",
+      `🎁 Pieza: ${tipoLabel}`,
+      `✨ Metal: ${metalLabel}`,
+      `💎 Piedra: ${piedraLabel}`,
+    ];
+    if (isCompromiso && estiloLabel) lines.push(`🎨 Estilo: ${estiloLabel}`);
+    if (isCompromiso && isDiamante && tamanoLabel) lines.push(`📏 Tamaño piedra: ${tamanoLabel}`);
+    lines.push(`💰 Presupuesto: ${presupuestoLabel}`, "", rangoText, "", "Gracias!");
+    return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(lines.join("\n"))}`;
   };
 
   const reset = () => {
@@ -169,27 +239,34 @@ Gracias!`;
     setTipo("");
     setMetal("");
     setPiedra("");
+    setEstilo("");
+    setTamano("");
     setPresupuesto("");
   };
 
   const canNext =
-    (step === 1 && tipo) ||
-    (step === 2 && metal) ||
-    (step === 3 && piedra) ||
-    (step === 4 && presupuesto);
+    (currentKey === "tipo" && tipo) ||
+    (currentKey === "metal" && metal) ||
+    (currentKey === "piedra" && piedra) ||
+    (currentKey === "estilo" && estilo) ||
+    (currentKey === "tamano" && tamano) ||
+    (currentKey === "presupuesto" && presupuesto);
 
-  const next = () => {
-    if (step === 3 && tipo) {
-      // ensure piedra valid for the tipo group; if user changed tipo earlier, reset
-    }
-    setStep((s) => Math.min(5, s + 1));
-  };
+  const next = () => setStep((s) => Math.min(totalSteps + 1, s + 1));
   const back = () => setStep((s) => Math.max(1, s - 1));
 
-  // when tipo changes, reset piedra
   const selectTipo = (k: string) => {
-    if (k !== tipo) setPiedra("");
+    if (k !== tipo) {
+      setPiedra("");
+      setEstilo("");
+      setTamano("");
+    }
     setTipo(k);
+  };
+
+  const selectPiedra = (k: string) => {
+    if (k !== piedra) setTamano("");
+    setPiedra(k);
   };
 
   const Card = ({
@@ -219,7 +296,7 @@ Gracias!`;
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
         title="Cotiza tu pieza · Gia Solari Joyas"
-        description="Cotizador online: armá tu anillo o joya en 4 pasos y recibí un presupuesto aproximado al instante. Joyería hecha a mano en Santiago."
+        description="Cotizador online: armá tu anillo o joya en pocos pasos y recibí un presupuesto aproximado al instante. Joyería hecha a mano en Santiago."
         path="/cotizar"
       />
       <Navbar />
@@ -227,30 +304,30 @@ Gracias!`;
       <main className="flex-1 pt-28 pb-32 md:pb-20">
         <div className="container mx-auto px-4 md:px-8 max-w-2xl">
           <header className="text-center mb-8">
-            <p className="text-[11px] tracking-[0.3em] uppercase text-gold mb-3">
-              Cotizador
-            </p>
+            <p className="text-[11px] tracking-[0.3em] uppercase text-gold mb-3">Cotizador</p>
             <h1 className="font-display text-3xl md:text-4xl text-charcoal mb-3">
               Cotiza tu pieza
             </h1>
             <p className="text-charcoal/70 text-sm md:text-base">
-              4 preguntas y armamos el presupuesto aproximado en menos de un minuto.
+              Pocas preguntas y armamos el presupuesto aproximado en menos de un minuto.
             </p>
           </header>
 
-          {step <= 4 && (
-            <div className="mb-8" aria-label={`Paso ${step} de 4`}>
+          {!isResult && (
+            <div className="mb-8" aria-label={`Paso ${step} de ${totalSteps}`}>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs tracking-widest uppercase text-charcoal/60">
-                  Paso {step} de 4
+                  Paso {step} de {totalSteps}
                 </span>
-                <span className="text-xs text-charcoal/60">{Math.round((step / 4) * 100)}%</span>
+                <span className="text-xs text-charcoal/60">
+                  {Math.round((step / totalSteps) * 100)}%
+                </span>
               </div>
               <div className="h-1 bg-charcoal/10 rounded-full overflow-hidden">
                 <motion.div
                   className="h-full bg-gold"
                   initial={false}
-                  animate={{ width: `${(step / 4) * 100}%` }}
+                  animate={{ width: `${(step / totalSteps) * 100}%` }}
                   transition={{ duration: 0.4 }}
                 />
               </div>
@@ -260,13 +337,13 @@ Gracias!`;
           <div className="bg-cream/40 border border-gold/15 rounded-lg p-5 md:p-8 min-h-[360px]">
             <AnimatePresence mode="wait">
               <motion.div
-                key={step}
+                key={`${step}-${currentKey}`}
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
               >
-                {step === 1 && (
+                {currentKey === "tipo" && (
                   <div>
                     <h2 className="font-display text-xl md:text-2xl text-charcoal mb-5">
                       ¿Qué pieza tenés en mente?
@@ -281,7 +358,7 @@ Gracias!`;
                   </div>
                 )}
 
-                {step === 2 && (
+                {currentKey === "metal" && (
                   <div>
                     <h2 className="font-display text-xl md:text-2xl text-charcoal mb-5">
                       ¿En qué metal la imaginás?
@@ -295,9 +372,7 @@ Gracias!`;
                               className="inline-block w-6 h-6 rounded-full border border-charcoal/20"
                               style={{ background: m.swatch }}
                             />
-                            <div>
-                              <p className="font-medium text-sm">{m.label}</p>
-                            </div>
+                            <p className="font-medium text-sm">{m.label}</p>
                           </div>
                         </Card>
                       ))}
@@ -305,14 +380,14 @@ Gracias!`;
                   </div>
                 )}
 
-                {step === 3 && (
+                {currentKey === "piedra" && (
                   <div>
                     <h2 className="font-display text-xl md:text-2xl text-charcoal mb-5">
                       ¿Qué piedra te gustaría?
                     </h2>
                     <div className="grid sm:grid-cols-2 gap-3">
                       {piedrasOptions.map((p) => (
-                        <Card key={p.key} selected={piedra === p.key} onClick={() => setPiedra(p.key)}>
+                        <Card key={p.key} selected={piedra === p.key} onClick={() => selectPiedra(p.key)}>
                           <span className="font-medium text-sm md:text-base">{p.label}</span>
                         </Card>
                       ))}
@@ -320,7 +395,44 @@ Gracias!`;
                   </div>
                 )}
 
-                {step === 4 && (
+                {currentKey === "estilo" && (
+                  <div>
+                    <h2 className="font-display text-xl md:text-2xl text-charcoal mb-5">
+                      ¿Qué estilo te gusta más?
+                    </h2>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {ESTILOS.map((e) => (
+                        <Card key={e.key} selected={estilo === e.key} onClick={() => setEstilo(e.key)}>
+                          <p className="font-medium text-sm md:text-base">{e.label}</p>
+                          {e.desc && (
+                            <p className="text-xs text-charcoal/60 mt-1">{e.desc}</p>
+                          )}
+                        </Card>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {currentKey === "tamano" && (
+                  <div>
+                    <h2 className="font-display text-xl md:text-2xl text-charcoal mb-2">
+                      ¿Qué tamaño de piedra central imaginás?
+                    </h2>
+                    <p className="text-sm text-charcoal/60 mb-5">
+                      El quilataje es lo que más afecta el precio.
+                    </p>
+                    <div className="space-y-3">
+                      {TAMANOS.map((t) => (
+                        <Card key={t.key} selected={tamano === t.key} onClick={() => setTamano(t.key)}>
+                          <p className="font-medium text-sm md:text-base">{t.label}</p>
+                          {t.desc && <p className="text-xs text-charcoal/60 mt-1">{t.desc}</p>}
+                        </Card>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {currentKey === "presupuesto" && (
                   <div>
                     <h2 className="font-display text-xl md:text-2xl text-charcoal mb-2">
                       ¿Qué presupuesto manejás aproximadamente?
@@ -342,7 +454,7 @@ Gracias!`;
                   </div>
                 )}
 
-                {step === 5 && (
+                {isResult && (
                   <div className="text-center py-4">
                     {showRango && rango ? (
                       <>
@@ -353,7 +465,8 @@ Gracias!`;
                           Tu pieza estaría aproximadamente entre
                           <br />
                           <span className="text-gold">
-                            {formatCLP(rango.min)} – {formatCLP(rango.max)}
+                            {formatCLP(rango.min)} –{" "}
+                            {showPlus ? "$12.000.000+" : formatCLP(rango.max)}
                           </span>
                         </h2>
                         <p className="text-sm text-charcoal/70 mb-8 max-w-md mx-auto leading-relaxed">
@@ -398,8 +511,7 @@ Gracias!`;
             </AnimatePresence>
           </div>
 
-          {/* Nav buttons (desktop / inline) */}
-          {step <= 4 && (
+          {!isResult && (
             <div className="hidden md:flex items-center justify-between mt-6">
               <button
                 onClick={back}
@@ -413,15 +525,14 @@ Gracias!`;
                 disabled={!canNext}
                 className="px-7 py-3 bg-charcoal text-cream tracking-widest uppercase text-xs font-semibold hover:bg-gold hover:text-charcoal transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                {step === 4 ? "Ver resultado" : "Siguiente"}
+                {step === totalSteps ? "Ver resultado" : "Siguiente"}
               </button>
             </div>
           )}
         </div>
       </main>
 
-      {/* Sticky bottom (mobile) */}
-      {step <= 4 && (
+      {!isResult && (
         <div className="md:hidden fixed bottom-0 left-0 right-0 z-[998] bg-background/95 backdrop-blur-md border-t border-gold/20 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
           <div className="flex items-center gap-2">
             {step > 1 && (
@@ -437,7 +548,7 @@ Gracias!`;
               disabled={!canNext}
               className="flex-1 min-h-[48px] px-6 bg-charcoal text-cream tracking-widest uppercase text-xs font-semibold disabled:opacity-40"
             >
-              {step === 4 ? "Ver resultado" : "Siguiente"}
+              {step === totalSteps ? "Ver resultado" : "Siguiente"}
             </button>
           </div>
         </div>
