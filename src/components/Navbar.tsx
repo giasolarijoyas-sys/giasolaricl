@@ -18,6 +18,26 @@ const navLinks = [
   { label: "Cotizar", href: "/#cotizador" },
 ];
 
+const mobileGroups = [
+  {
+    title: "Catálogo",
+    links: [
+      { label: "Joyas", href: "/joyas" },
+      { label: "Cotizar", href: "/#cotizador" },
+      { label: "Agenda", href: "/agenda" },
+    ],
+  },
+  {
+    title: "Marca",
+    links: [
+      { label: "Sobre Gia", href: "/sobre-gia" },
+      { label: "Proceso", href: "/proceso" },
+      { label: "Garantía", href: "/garantia-por-gusto" },
+      { label: "Aprende", href: "/aprende" },
+    ],
+  },
+];
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
