@@ -52,7 +52,7 @@ const Hero = () => {
 
   return (
     <section
-      className="w-full flex flex-col md:flex-row pt-[60px] md:pt-[72px]"
+      className="w-full flex flex-col md:flex-row-reverse pt-[60px] md:pt-[72px]"
       style={{ minHeight: "88vh" }}
     >
       {/* Imagen */}
