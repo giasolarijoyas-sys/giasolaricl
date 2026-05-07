@@ -118,7 +118,7 @@ const Joyas = () => {
             </div>
           )}
 
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 md:gap-6">
             {visibleJoyas.map((p, i) => (
               <motion.article
                 key={p.slug}
