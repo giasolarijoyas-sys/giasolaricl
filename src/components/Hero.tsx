@@ -95,7 +95,7 @@ const Hero = () => {
         <div className="max-w-2xl">
           <div key={`copy-${current}`}>
             <p
-              className="text-gold-light tracking-[0.3em] uppercase text-xs md:text-sm mb-6"
+              className="hidden sm:block text-gold-light tracking-[0.3em] uppercase text-xs md:text-sm mb-6"
             >
               {slides[current].eyebrow}
             </p>
@@ -116,7 +116,7 @@ const Hero = () => {
             </h1>
 
             <p
-              className="text-cream/95 text-base md:text-xl mb-8 max-w-lg font-light leading-relaxed"
+              className="hidden sm:block text-cream/95 text-base md:text-xl mb-8 max-w-lg font-light leading-relaxed"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
             >
               {slides[current].subtitle}
