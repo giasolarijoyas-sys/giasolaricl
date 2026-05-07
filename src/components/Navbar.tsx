@@ -58,7 +58,7 @@ const Navbar = () => {
             aria-label="Gia Solari - Inicio"
             className="font-medium leading-none focus-visible:outline-2 focus-visible:outline focus-visible:outline-offset-4"
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Bodoni Moda', serif",
               fontWeight: 500,
               color: INK,
               fontSize: "22px",
@@ -244,7 +244,7 @@ const Navbar = () => {
               <a
                 href="/joyas"
                 onClick={() => setOpen(false)}
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontSize: "28px", color: INK }}
+                style={{ fontFamily: "'Bodoni Moda', serif", fontStyle: "italic", fontSize: "28px", color: INK }}
               >
                 Joyas
               </a>
@@ -253,7 +253,7 @@ const Navbar = () => {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontSize: "28px", color: INK }}
+                  style={{ fontFamily: "'Bodoni Moda', serif", fontStyle: "italic", fontSize: "28px", color: INK }}
                 >
                   {l.label}
                 </a>
@@ -261,7 +261,7 @@ const Navbar = () => {
               <a
                 href="/lista-de-deseos"
                 onClick={() => setOpen(false)}
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontSize: "22px", color: MUTED }}
+                style={{ fontFamily: "'Bodoni Moda', serif", fontStyle: "italic", fontSize: "22px", color: MUTED }}
               >
                 Mis favoritas
               </a>
