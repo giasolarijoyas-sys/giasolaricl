@@ -1390,20 +1390,6 @@ export const JOYAS: Joya[] = [
     isPlaceholder: false,
   },
   {
-    slug: "vintage-094",
-    nombre: "Zafiro Liliana",
-    categoria: "Anillo de compromiso",
-    material: "Oro 18k blanco · Zafiro",
-    metalPrincipal: "Oro 18k blanco",
-    estilo: "Vintage",
-    piedraCentral: "Zafiro",
-    descripcion: "Zafiro oval con bezel y halo de diamantes, oro 18k blanco.",
-    descripcionLarga:
-      "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: [pendiente094],
-    isPlaceholder: false,
-  },
-  {
     slug: "vintage-095",
     nombre: "Aguamarina Renata",
     categoria: "Anillo de compromiso",
@@ -1415,20 +1401,6 @@ export const JOYAS: Joya[] = [
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente095],
-    isPlaceholder: false,
-  },
-  {
-    slug: "vintage-096",
-    nombre: "Aguamarina Mercedes",
-    categoria: "Anillo de compromiso",
-    material: "Oro 18k blanco · Aguamarina",
-    metalPrincipal: "Oro 18k blanco",
-    estilo: "Vintage",
-    piedraCentral: "Aguamarina",
-    descripcion: "Aguamarina emerald cut con halo art decó filigrana, oro 18k blanco.",
-    descripcionLarga:
-      "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: [pendiente096],
     isPlaceholder: false,
   },
 ];
