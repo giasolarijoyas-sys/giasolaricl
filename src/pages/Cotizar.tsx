@@ -33,7 +33,7 @@ const METALES: { key: MetalKey; label: string; swatch: string }[] = [
   { key: "oro_rosado", label: "Oro 18k rosado", swatch: "#E0BFB8" },
   { key: "oro_blanco", label: "Oro 18k blanco", swatch: "#E8E8E8" },
   { key: "platino", label: "Platino", swatch: "#CFCFCF" },
-  { key: "a_definir", label: "No sé, me ayudás a decidir", swatch: "transparent" },
+  { key: "a_definir", label: "No sé, ayúdame a decidir", swatch: "transparent" },
 ];
 
 const PIEDRAS_COMPROMISO = [
@@ -44,19 +44,19 @@ const PIEDRAS_COMPROMISO = [
   { key: "esmeralda", label: "Esmeralda" },
   { key: "otra_color", label: "Otra piedra de color (rubí, ónix, etc.)" },
   { key: "sin_piedra", label: "Sin piedra principal grande" },
-  { key: "a_definir", label: "No sé, me ayudás a decidir" },
+  { key: "a_definir", label: "No sé, ayúdame a decidir" },
 ];
 
 const PIEDRAS_ALIANZA = [
   { key: "sin_piedras", label: "Sin piedras" },
   { key: "con_diamantes", label: "Con diamantes (eternity, cinco diamantes, etc.)" },
-  { key: "a_definir", label: "No sé, me ayudás a decidir" },
+  { key: "a_definir", label: "No sé, ayúdame a decidir" },
 ];
 
 const PIEDRAS_OTROS = [
   { key: "sin_piedras", label: "Sin piedras" },
   { key: "con_piedras", label: "Con piedras (diamantes o color)" },
-  { key: "a_definir", label: "No sé, me ayudás a decidir" },
+  { key: "a_definir", label: "No sé, ayúdame a decidir" },
 ];
 
 const ESTILOS = [
@@ -346,7 +346,7 @@ const Cotizar = () => {
                 {currentKey === "tipo" && (
                   <div>
                     <h2 className="font-display text-xl md:text-2xl text-charcoal mb-5">
-                      ¿Qué pieza tenés en mente?
+                      ¿Qué pieza tienes en mente?
                     </h2>
                     <div className="grid sm:grid-cols-2 gap-3">
                       {TIPOS.map((t) => (
@@ -361,7 +361,7 @@ const Cotizar = () => {
                 {currentKey === "metal" && (
                   <div>
                     <h2 className="font-display text-xl md:text-2xl text-charcoal mb-5">
-                      ¿En qué metal la imaginás?
+                      ¿En qué metal la imaginas?
                     </h2>
                     <div className="grid sm:grid-cols-2 gap-3">
                       {METALES.map((m) => (
@@ -416,7 +416,7 @@ const Cotizar = () => {
                 {currentKey === "tamano" && (
                   <div>
                     <h2 className="font-display text-xl md:text-2xl text-charcoal mb-2">
-                      ¿Qué tamaño de piedra central imaginás?
+                      ¿Qué tamaño de piedra central imaginas?
                     </h2>
                     <p className="text-sm text-charcoal/60 mb-5">
                       El quilataje es lo que más afecta el precio.
@@ -435,7 +435,7 @@ const Cotizar = () => {
                 {currentKey === "presupuesto" && (
                   <div>
                     <h2 className="font-display text-xl md:text-2xl text-charcoal mb-2">
-                      ¿Qué presupuesto manejás aproximadamente?
+                      ¿Qué presupuesto manejas aproximadamente?
                     </h2>
                     <p className="text-sm text-charcoal/60 mb-5">
                       No tiene que ser exacto, sirve para orientarnos.

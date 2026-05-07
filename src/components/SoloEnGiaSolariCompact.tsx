@@ -12,7 +12,7 @@ const SoloEnGiaSolariCompact = () => (
     <div className="container mx-auto px-4 md:px-8">
       <div className="max-w-5xl mx-auto">
         <p className="text-center text-primary tracking-[0.3em] uppercase text-xs mb-6">
-          Lo que solo encontrás en Gia Solari
+          Lo que solo encuentras en Gia Solari
         </p>
         <ul className="grid sm:grid-cols-3 gap-4 md:gap-6">
           {items.map((it, i) => (

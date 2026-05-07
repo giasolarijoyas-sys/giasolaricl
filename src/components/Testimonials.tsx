@@ -50,7 +50,7 @@ const testimonials = [
     name: "Cristóbal L.",
     city: "Santiago",
     piece: "Solitario · Oro 18k amarillo",
-    text: "Le describí el estilo de mi polola — piola pero con su toque — y la Maca lo pilló al tiro. La cara que puso cuando se lo di, no tiene precio.",
+    text: "Le describí el estilo de mi polola — bacán pero con su toque — y la Maca lo pilló al tiro. La cara que puso cuando se lo di, no tiene precio.",
   },
   {
     name: "Valentina P.",
