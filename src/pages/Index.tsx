@@ -134,6 +134,9 @@ const Index = () => {
       {/* 11. Acordeón de términos y condiciones */}
       <FAQAccordion />
 
+      {/* Instagram feed antes del footer */}
+      <InstagramFeed />
+
       {/* 12. Footer */}
       <Footer />
 
