@@ -1,162 +1,60 @@
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
-
-import heroImage from "@/assets/maca-hero.jpeg";
-import heroDsc5775 from "@/assets/hero-dsc-5775.jpg";
-import heroDsc5803 from "@/assets/hero-dsc-5803.jpg";
-
-type Slide = {
-  type: "image";
-  src: string;
-  alt?: string;
-  eyebrow: string;
-  title: string;
-  titleHighlight?: string;
-  subtitle: string;
-};
-
-const slides: Slide[] = [
-  {
-    type: "image",
-    src: heroImage,
-    alt: "Macarena González Solari, fundadora de Gia Solari",
-    eyebrow: "ORO 18K · PLATINO · DIAMANTES CERTIFICADOS",
-    title: "Joyas pensadas para durar más que el momento.",
-    subtitle: "Diseño y manufactura a medida en Chile. Anillos, argollas y piezas que acompañan toda una vida.",
-  },
-  {
-    type: "image",
-    src: heroDsc5775,
-    alt: "Anillo tricillo con marco dorado",
-    eyebrow: "ORO 18K · PLATINO · DIAMANTES CERTIFICADOS",
-    title: "Joyas pensadas para durar más que el momento.",
-    subtitle: "Diseño y manufactura a medida en Chile. Anillos, argollas y piezas que acompañan toda una vida.",
-  },
-  {
-    type: "image",
-    src: heroDsc5803,
-    alt: "Anillo tricillo en cofre de terciopelo",
-    eyebrow: "ORO 18K · PLATINO · DIAMANTES CERTIFICADOS",
-    title: "Joyas pensadas para durar más que el momento.",
-    subtitle: "Diseño y manufactura a medida en Chile. Anillos, argollas y piezas que acompañan toda una vida.",
-  },
-];
-
-const INTERVAL_IMAGE = 7000;
+import heroImage from "@/assets/joyas/halo-brillante-platino-01.jpg";
 
 const Hero = () => {
-  const [current, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  const next = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  }, []);
-
-  useEffect(() => {
-    if (paused) return;
-    const timer = setTimeout(next, INTERVAL_IMAGE);
-    return () => clearTimeout(timer);
-  }, [current, paused, next]);
-
-  const goTo = (i: number) => setCurrent(i);
-
   return (
-    <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
-      {/* Slides */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={current}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.6 }}
-          className="absolute inset-0"
-        >
-          <img
-            src={slides[current].src}
-            alt={slides[current].alt || "Gia Solari"}
-            loading={current === 0 ? "eager" : "lazy"}
-            fetchPriority={current === 0 ? "high" : "auto"}
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Overlay — gradient oscuro para legibilidad sobre imágenes claras */}
-      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/85 via-charcoal/70 to-charcoal/30 z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-transparent to-charcoal/50 z-[1]" />
-
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 md:px-8 pt-[90px] pb-[120px] sm:pt-0 sm:pb-0">
-        <div className="max-w-2xl">
-          <div key={`copy-${current}`}>
-            <p
-              className="hidden sm:block text-gold-light tracking-[0.3em] uppercase text-xs md:text-sm mb-6"
-            >
-              {slides[current].eyebrow}
-            </p>
-
-            <h1
-              className="text-[28px] leading-[1.1] sm:text-4xl md:text-6xl lg:text-7xl font-display text-cream mb-5"
-              style={{ textShadow: "0 2px 16px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4)" }}
-            >
-              {slides[current].title}
-              {slides[current].titleHighlight && (
-                <>
-                  {" "}
-                  <em className="text-gold-light not-italic">
-                    {slides[current].titleHighlight}
-                  </em>
-                </>
-              )}
-            </h1>
-
-            <p
-              className="hidden sm:block text-cream/95 text-base md:text-xl mb-8 max-w-lg font-light leading-relaxed"
-              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
-            >
-              {slides[current].subtitle}
-            </p>
+    <section className="relative bg-background pt-[72px] md:pt-0 md:min-h-screen">
+      <div className="md:grid md:grid-cols-12 md:min-h-screen">
+        {/* Imagen — derecha en desktop, arriba en mobile */}
+        <div className="order-1 md:order-2 md:col-span-7 relative overflow-hidden">
+          <div className="h-[42vh] sm:h-[50vh] md:h-screen">
+            <img
+              src={heroImage}
+              alt="Anillo Halo Brillante en platino — Atelier Gia Solari, Santiago de Chile"
+              loading="eager"
+              fetchPriority="high"
+              className="w-full h-full object-cover"
+            />
           </div>
-
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a
-              href="/joyas"
-              className="min-h-[48px] px-6 py-3 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm text-center hover:opacity-90 transition-opacity flex items-center justify-center"
-            >
-              Ver piezas
-            </a>
-            <a
-              href={buildWhatsAppUrl("home_hero")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="min-h-[48px] px-6 py-3 border border-cream/40 text-cream tracking-widest uppercase text-sm text-center hover:border-gold-light hover:text-gold-light transition-colors flex items-center justify-center"
-            >
-              Cotizar por WhatsApp
-            </a>
-          </div>
-
         </div>
-      </div>
 
-      {/* Dots indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-1.5">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i)}
-            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-              i === current
-                ? "bg-gold w-5"
-                : "bg-cream/40 hover:bg-cream/60"
-            }`}
-            aria-label={`Ir a slide ${i + 1}`}
-          />
-        ))}
+        {/* Panel de texto — izquierda en desktop, abajo en mobile */}
+        <div className="order-2 md:order-1 md:col-span-5 bg-cream flex items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="px-6 py-12 md:px-12 lg:px-16 md:py-20 max-w-xl mx-auto md:mx-0"
+          >
+            <p className="text-gold tracking-[0.32em] uppercase text-[11px] md:text-xs mb-5">
+              Atelier Gia Solari
+            </p>
+            <h1 className="font-display text-[30px] leading-[1.08] sm:text-4xl md:text-5xl lg:text-[56px] text-charcoal mb-5">
+              Anillos de compromiso, hechos a mano en Santiago.
+            </h1>
+            <p className="text-charcoal/75 text-[15px] md:text-base leading-relaxed mb-8 max-w-md">
+              Cada pieza nace en conversación contigo. Diseñamos en oro 18k y
+              platino, con diamantes y piedras de color certificadas.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="/joyas"
+                className="min-h-[48px] px-7 py-3 bg-charcoal text-cream font-semibold tracking-[0.2em] uppercase text-xs text-center hover:bg-charcoal/90 transition-colors flex items-center justify-center"
+              >
+                Ver piezas
+              </a>
+              <a
+                href={buildWhatsAppUrl("home_hero")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="min-h-[48px] px-7 py-3 border border-charcoal/40 text-charcoal tracking-[0.2em] uppercase text-xs text-center hover:border-gold hover:text-gold transition-colors flex items-center justify-center"
+              >
+                Cotizar por WhatsApp
+              </a>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
