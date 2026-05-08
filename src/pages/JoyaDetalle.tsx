@@ -28,12 +28,12 @@ const JoyaDetalle = () => {
     material: item.material,
     offers: {
       "@type": "Offer",
-      availability: "https://schema.org/MadeToOrder",
-      seller: { "@type": "Organization", name: "Gia Solari Joyas" },
       url: `https://www.giasolari.cl/joyas/${item.slug}`,
-      ...(item.precioDesde
-        ? { price: item.precioDesde, priceCurrency: "CLP" }
-        : {}),
+      priceCurrency: "CLP",
+      price: item.precioDesde ?? 1500000,
+      priceValidUntil: "2027-12-31",
+      availability: "https://schema.org/PreOrder",
+      seller: { "@type": "Organization", name: "Gia Solari Joyas" },
     },
   };
 
