@@ -8,7 +8,6 @@ import WhyUs from "@/components/WhyUs";
 import ProcessSteps from "@/components/ProcessSteps";
 import VideoSection from "@/components/VideoSection";
 import Historia from "@/components/Historia";
-import ElTaller from "@/components/ElTaller";
 import QuoteWizard from "@/components/QuoteWizard";
 import FAQAccordion from "@/components/FAQAccordion";
 import EnTusManos from "@/components/EnTusManos";
