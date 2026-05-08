@@ -60,18 +60,6 @@ const SobreGia = () => (
         </div>
       </section>
 
-      {/* Galería del taller */}
-      <section className="py-16 md:py-24 bg-card">
-        <div className="container mx-auto px-4 md:px-8">
-          <p className="text-primary tracking-[0.3em] uppercase text-xs mb-8 text-center">El Taller</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="aspect-square bg-muted rounded-lg" />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Valores */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-8">

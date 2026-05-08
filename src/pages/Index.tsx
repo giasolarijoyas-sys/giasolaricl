@@ -8,7 +8,6 @@ import WhyUs from "@/components/WhyUs";
 import ProcessSteps from "@/components/ProcessSteps";
 import VideoSection from "@/components/VideoSection";
 import Historia from "@/components/Historia";
-import ElTaller from "@/components/ElTaller";
 import QuoteWizard from "@/components/QuoteWizard";
 import FAQAccordion from "@/components/FAQAccordion";
 import EnTusManos from "@/components/EnTusManos";
@@ -93,9 +92,6 @@ const Index = () => {
 
       {/* 8. Historia de la marca */}
       <Historia />
-
-      {/* El Taller — proceso artesanal */}
-      <ElTaller />
       <SectionBanner
         image={bannerDetail}
         alt="Detalle de anillo Gia Solari"
