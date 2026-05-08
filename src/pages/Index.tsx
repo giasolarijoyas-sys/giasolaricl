@@ -92,9 +92,6 @@ const Index = () => {
 
       {/* 8. Historia de la marca */}
       <Historia />
-
-      {/* El Taller — proceso artesanal */}
-      <ElTaller />
       <SectionBanner
         image={bannerDetail}
         alt="Detalle de anillo Gia Solari"
