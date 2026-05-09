@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import ArticleSchema from "@/components/ArticleSchema";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,15 +10,18 @@ import { Link } from "react-router-dom";
 
 const AprendeDiamantes4C = () => (
   <>
-    <Helmet>
-      <title>Las 4C del Diamante — Guía Completa | Gia Solari</title>
-      <meta name="description" content="Aprende sobre Corte, Color, Claridad y Quilates. Guía completa para elegir el diamante perfecto." />
-    </Helmet>
+    <SEO
+      title="Las 4C del diamante explicadas simple · Gia Solari Joyas"
+      description="Corte, color, claridad y quilates: cómo evaluar un diamante sin depender del vendedor. Guía honesta de Gia Solari, Santiago de Chile."
+      path="/aprende/diamantes-4c"
+      type="article"
+    />
     <ArticleSchema
-      headline="Las 4C del Diamante — Guía Completa"
-      description="Aprende sobre Corte, Color, Claridad y Quilates. Guía completa para elegir el diamante perfecto."
+      headline="Las 4C del diamante explicadas simple"
+      description="Corte, color, claridad y quilates: cómo evaluar un diamante sin depender del vendedor."
       path="/aprende/diamantes-4c"
       datePublished="2025-01-15"
+      dateModified="2026-05-09"
     />
     <div className="min-h-screen">
       <Navbar />
