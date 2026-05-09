@@ -67,6 +67,9 @@ const App = () => (
             <Route path="/aprende/oro-vs-platino" element={<OroVsPlatino />} />
             <Route path="/aprende/diamante-natural-vs-laboratorio" element={<NaturalVsLab />} />
             <Route path="/aprende/como-elegir-anillo-compromiso" element={<ComoElegirAnillo />} />
+            <Route path="/aprende/cuanto-cuesta-anillo-compromiso-chile" element={<CuantoCuestaAnillo />} />
+            <Route path="/aprende/anillo-compromiso-zafiro" element={<AnilloZafiro />} />
+            <Route path="/aprende/argollas-matrimonio-personalizadas" element={<ArgollasMatrimonio />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<Dashboard />} />
             <Route path="/admin/cotizacion/:id" element={<QuoteDetail />} />
