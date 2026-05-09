@@ -31,16 +31,16 @@ const ArticleSchema = ({
     datePublished,
     dateModified: dateModified || datePublished,
     author: {
-      "@type": "Person",
-      name: "Macarena González Solari",
-      url: `${BASE_URL}/sobre-gia`,
+      "@type": "Organization",
+      name: "Gia Solari Joyas",
+      url: BASE_URL,
     },
     publisher: {
       "@type": "Organization",
       name: "Gia Solari Joyas",
       logo: {
         "@type": "ImageObject",
-        url: `${BASE_URL}/logo.png`,
+        url: `${BASE_URL}/wordmark-oliva.svg`,
       },
     },
     mainEntityOfPage: {
