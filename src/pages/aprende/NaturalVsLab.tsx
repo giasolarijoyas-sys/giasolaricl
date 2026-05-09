@@ -75,7 +75,7 @@ const NaturalVsLab = () => (
               </section>
 
               <section>
-                <h2 className="font-display text-2xl text-foreground mb-4">Mi posición como gemóloga</h2>
+                <h2 className="font-display text-2xl text-foreground mb-4">Mi mirada como diseñadora</h2>
                 <p>No tengo preferencia por uno u otro. Lo que me importa es que entiendas exactamente qué estás comprando y por qué.</p>
                 <p className="mt-3">Si el simbolismo y la tradición son importantes para ti, el natural es la elección. Si prefieres maximizar tamaño y brillo dentro de tu presupuesto, el de laboratorio es excelente.</p>
                 <p className="mt-3 text-foreground font-medium">Ambos brillan igual. La decisión es tuya.</p>
