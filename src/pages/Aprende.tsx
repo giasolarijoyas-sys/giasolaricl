@@ -4,36 +4,57 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Gem, CircleDot, FlaskConical, Heart } from "lucide-react";
+import { Gem, CircleDot, FlaskConical, Heart, Wallet, Sparkles, Infinity as InfinityIcon } from "lucide-react";
 
 const articles = [
+  {
+    icon: Heart,
+    tag: "Guía",
+    title: "Cómo elegir tu anillo de compromiso",
+    desc: "Paso a paso: presupuesto, estilo, talla y la gran pregunta.",
+    href: "/aprende/como-elegir-anillo-compromiso",
+  },
   {
     icon: Gem,
     tag: "Diamantes",
     title: "Las 4C del Diamante",
-    desc: "Guía completa de Corte, Color, Claridad y Quilates con tabla comparativa.",
+    desc: "Corte, color, claridad y quilates explicados sin tecnicismos.",
     href: "/aprende/diamantes-4c",
+  },
+  {
+    icon: Wallet,
+    tag: "Precios",
+    title: "¿Cuánto cuesta un anillo de compromiso en Chile?",
+    desc: "Rangos reales por presupuesto y qué influye en el precio.",
+    href: "/aprende/cuanto-cuesta-anillo-compromiso-chile",
   },
   {
     icon: CircleDot,
     tag: "Metales",
     title: "Oro 18k vs Platino",
-    desc: "Comparación detallada de materiales: precios, durabilidad, color y mantenimiento.",
+    desc: "Comparación detallada: precios, durabilidad, color y mantenimiento.",
     href: "/aprende/oro-vs-platino",
   },
   {
     icon: FlaskConical,
     tag: "Piedras Preciosas",
     title: "Diamantes naturales vs de laboratorio",
-    desc: "Explicación honesta con pros, contras y diferencias de precio.",
+    desc: "Pros, contras y diferencias de precio sin medias tintas.",
     href: "/aprende/diamante-natural-vs-laboratorio",
   },
   {
-    icon: Heart,
-    tag: "Guía",
-    title: "Guía de Anillos de Compromiso",
-    desc: "Paso a paso: presupuesto, estilo, talla y la gran pregunta.",
-    href: "/aprende/como-elegir-anillo-compromiso",
+    icon: Sparkles,
+    tag: "Zafiro",
+    title: "Anillo de compromiso con zafiro",
+    desc: "Por qué elegir zafiro: durabilidad, color, simbolismo y precio.",
+    href: "/aprende/anillo-compromiso-zafiro",
+  },
+  {
+    icon: InfinityIcon,
+    tag: "Argollas",
+    title: "Argollas de matrimonio personalizadas",
+    desc: "Metales, anchos, perfiles y proceso para diseñar las suyas.",
+    href: "/aprende/argollas-matrimonio-personalizadas",
   },
 ];
 

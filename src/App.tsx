@@ -26,6 +26,9 @@ import AprendeDiamantes4C from "./pages/aprende/Diamantes4C.tsx";
 import OroVsPlatino from "./pages/aprende/OroVsPlatino.tsx";
 import NaturalVsLab from "./pages/aprende/NaturalVsLab.tsx";
 import ComoElegirAnillo from "./pages/aprende/ComoElegirAnillo.tsx";
+import CuantoCuestaAnillo from "./pages/aprende/CuantoCuestaAnillo.tsx";
+import AnilloZafiro from "./pages/aprende/AnilloZafiro.tsx";
+import ArgollasMatrimonio from "./pages/aprende/ArgollasMatrimonio.tsx";
 import Joyas from "./pages/Joyas.tsx";
 import JoyaDetalle from "./pages/JoyaDetalle.tsx";
 import Agenda from "./pages/Agenda.tsx";
@@ -64,6 +67,9 @@ const App = () => (
             <Route path="/aprende/oro-vs-platino" element={<OroVsPlatino />} />
             <Route path="/aprende/diamante-natural-vs-laboratorio" element={<NaturalVsLab />} />
             <Route path="/aprende/como-elegir-anillo-compromiso" element={<ComoElegirAnillo />} />
+            <Route path="/aprende/cuanto-cuesta-anillo-compromiso-chile" element={<CuantoCuestaAnillo />} />
+            <Route path="/aprende/anillo-compromiso-zafiro" element={<AnilloZafiro />} />
+            <Route path="/aprende/argollas-matrimonio-personalizadas" element={<ArgollasMatrimonio />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<Dashboard />} />
             <Route path="/admin/cotizacion/:id" element={<QuoteDetail />} />

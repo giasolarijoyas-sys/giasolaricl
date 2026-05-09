@@ -11,15 +11,17 @@ import { Link } from "react-router-dom";
 const OroVsPlatino = () => (
   <>
     <SEO
-      title="Oro 18k vs Platino | Comparación Completa — Gia Solari"
-      description="Cuál es mejor para tu anillo de compromiso o argolla: oro 18k o platino. Durabilidad, color, precio y mantenimiento comparados por una joyera chilena."
-      path="/aprende/oro-18k-vs-platino"
+      title="Oro 18k vs platino para anillos: guía completa 2026 · Gia Solari"
+      description="Diferencias entre oro 18k (amarillo, blanco, rosado) y platino: precio, durabilidad, mantenimiento e hipoalergenia. Cuál elegir para tu anillo."
+      path="/aprende/oro-vs-platino"
+      type="article"
     />
     <ArticleSchema
-      headline="Oro 18k vs Platino — Comparación Completa"
-      description="Cuál es mejor para tu anillo de compromiso o argolla: oro 18k o platino. Durabilidad, color, precio y mantenimiento."
-      path="/aprende/oro-18k-vs-platino"
+      headline="Oro 18k vs platino para anillos: guía completa 2026"
+      description="Diferencias entre oro 18k y platino: precio, durabilidad, mantenimiento e hipoalergenia."
+      path="/aprende/oro-vs-platino"
       datePublished="2025-01-15"
+      dateModified="2026-05-09"
     />
     <div className="min-h-screen">
       <Navbar />
