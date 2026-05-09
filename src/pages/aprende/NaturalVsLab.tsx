@@ -11,15 +11,17 @@ import { Link } from "react-router-dom";
 const NaturalVsLab = () => (
   <>
     <SEO
-      title="Diamante Natural vs Laboratorio | Guía Honesta — Gia Solari"
-      description="Comparación sincera entre diamantes naturales y de laboratorio: precio, calidad, durabilidad, ética y valor de reventa. Escrito por una gemóloga."
+      title="Diamante natural vs laboratorio: cuál elegir en 2026 · Gia Solari"
+      description="Comparación honesta entre diamante natural y de laboratorio: precio, brillo, durabilidad e impacto ambiental. Cuál conviene según tu caso."
       path="/aprende/diamante-natural-vs-laboratorio"
+      type="article"
     />
     <ArticleSchema
-      headline="Diamante Natural vs Laboratorio — Guía Honesta"
-      description="Comparación sincera entre diamantes naturales y de laboratorio: precio, calidad, durabilidad, ética y valor de reventa."
+      headline="Diamante natural vs laboratorio: cuál elegir en 2026"
+      description="Comparación honesta entre diamante natural y de laboratorio: precio, brillo, durabilidad e impacto ambiental."
       path="/aprende/diamante-natural-vs-laboratorio"
       datePublished="2025-01-15"
+      dateModified="2026-05-09"
     />
     <div className="min-h-screen">
       <Navbar />
