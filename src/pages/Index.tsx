@@ -70,6 +70,15 @@ const Index = () => {
       {/* 5. Diferenciadores / por qué elegirnos */}
       <WhyUs />
 
+      {/* ¿Cómo te ayudo? — atención personal */}
+      <ComoTeAyudo />
+
+      {/* Vitrina de categorías */}
+      <VitrinaCategorias />
+
+      {/* New In — recién salido del taller */}
+      <NewIn />
+
       {/* 6. Proceso paso a paso */}
       <ProcessSteps />
 
