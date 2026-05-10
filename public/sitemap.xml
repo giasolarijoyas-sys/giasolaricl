@@ -20,6 +20,15 @@
   <url><loc>https://www.giasolari.cl/guia-de-tallas</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.giasolari.cl/cuidado-de-la-joya</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.giasolari.cl/blog</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/new</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.giasolari.cl/diario</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.giasolari.cl/lookbook</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.giasolari.cl/diario/catalina-m</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.giasolari.cl/diario/trinidad-v</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.giasolari.cl/diario/florencia-a</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.giasolari.cl/diario/antonia-r</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.giasolari.cl/diario/magdalena-s</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.giasolari.cl/diario/pilar-o</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.giasolari.cl/joyas/bruma-dorada</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.giasolari.cl/joyas/banda-cinco-diamantes</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.giasolari.cl/joyas/argolla-eternity-diamantes</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
