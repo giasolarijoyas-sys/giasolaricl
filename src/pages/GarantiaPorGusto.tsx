@@ -163,7 +163,7 @@ const GarantiaPorGusto = () => (
               ¿Tienes dudas sobre tu pieza?
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Escribinos por WhatsApp y conversamos. Sin compromiso, sin apuro.
+              Escríbenos por WhatsApp y conversamos. Sin compromiso, sin apuro.
             </p>
             <a
               href={buildWhatsAppUrl("garantia")}
