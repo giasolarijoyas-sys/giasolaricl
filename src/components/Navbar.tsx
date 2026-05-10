@@ -126,7 +126,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 6 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[280px] p-6"
+                    className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[640px] p-8"
                     style={{
                       background: CREAM,
                       boxShadow: "0 12px 32px -8px rgba(31, 36, 23, 0.18)",
@@ -134,29 +134,42 @@ const Navbar = () => {
                       border: `1px solid ${BORDER}`,
                     }}
                   >
-                    <ul className="flex flex-col gap-1">
-                      {joyasSubmenu.map(({ label, href, Icon }) => (
-                        <li key={href}>
-                          <a
-                            href={href}
-                            className="flex items-center gap-3 px-2 py-2.5 rounded-md transition-colors group"
-                            style={{ color: INK }}
+                    <div className="grid grid-cols-2 gap-8">
+                      {joyasMenuCols.map((col) => (
+                        <div key={col.title}>
+                          <p
+                            className="mb-3"
+                            style={{
+                              fontFamily: "Inter, sans-serif",
+                              fontSize: "10.5px",
+                              letterSpacing: "0.22em",
+                              textTransform: "uppercase",
+                              color: MUTED,
+                            }}
                           >
-                            <Icon size={16} strokeWidth={1.4} style={{ color: CARAMEL }} />
-                            <span
-                              style={{
-                                fontFamily: "'Inter', sans-serif",
-                                fontSize: "13.5px",
-                                fontWeight: 500,
-                              }}
-                              className="group-hover:text-[#C9A87C] transition-colors"
-                            >
-                              {label}
-                            </span>
-                          </a>
-                        </li>
+                            {col.title}
+                          </p>
+                          <ul className="flex flex-col gap-1.5">
+                            {col.items.map((it) => (
+                              <li key={it.label}>
+                                <a
+                                  href={it.href}
+                                  className="block py-1 transition-colors hover:text-[#C9A87C]"
+                                  style={{
+                                    fontFamily: "Inter, sans-serif",
+                                    fontSize: "13.5px",
+                                    fontWeight: 400,
+                                    color: INK,
+                                  }}
+                                >
+                                  {it.label}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
