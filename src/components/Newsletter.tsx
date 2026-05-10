@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import { Send, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
@@ -20,63 +20,114 @@ const Newsletter = () => {
 
       if (error) {
         if (error.code === "23505") {
-          toast({ title: "Ya estás suscrito/a", description: "Este email ya está en nuestra lista. ¡Gracias!" });
+          toast({ title: "Ya estás en el círculo", description: "Este correo ya está suscrito. ¡Gracias!" });
         } else {
           throw error;
         }
       } else {
         setSubscribed(true);
-        toast({ title: "¡Suscripción exitosa!", description: "Te avisaremos de novedades y lanzamientos." });
+        toast({ title: "Bienvenida al círculo", description: "Te llegará la próxima carta del atelier." });
       }
       setEmail("");
     } catch {
-      toast({ title: "Error", description: "No pudimos registrar tu email. Inténtalo de nuevo." });
+      toast({ title: "Algo falló", description: "No pudimos registrar tu correo. Intenta de nuevo." });
     } finally {
       setSubmitting(false);
     }
   };
 
-  if (subscribed) {
-    return (
-      <section className="py-16 bg-primary/5">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-primary text-lg font-display">✓ ¡Gracias por suscribirte!</p>
-          <p className="text-muted-foreground text-sm mt-2">Te mantendremos al tanto de novedades y lanzamientos.</p>
-        </div>
-      </section>
-    );
-  }
-
   return (
-    <section className="py-16 bg-primary/5">
-      <div className="container mx-auto px-4 max-w-xl text-center">
-        <h3 className="font-display text-2xl md:text-3xl text-foreground mb-2">
-          Recibe novedades
-        </h3>
-        <p className="text-muted-foreground text-sm mb-6">
-          Suscríbete para enterarte de nuevos diseños, lanzamientos y tips de joyería.
+    <section
+      className="py-24 md:py-28 px-4 md:px-8"
+      style={{ background: "#3A4429", color: "#F5EFE6" }}
+    >
+      <div className="container mx-auto max-w-2xl text-center">
+        <p
+          className="mb-4"
+          style={{
+            fontFamily: "Inter, sans-serif",
+            fontSize: "11px",
+            letterSpacing: "0.25em",
+            textTransform: "uppercase",
+            color: "#C9A87C",
+          }}
+        >
+          Círculo Gia
         </p>
-        <form onSubmit={handleSubmit} className="flex gap-2">
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="tu@email.com"
-            className="flex-1 p-3 border border-border rounded-lg bg-background text-foreground text-sm"
-          />
-          <button
-            type="submit"
-            disabled={submitting || !email}
-            className="px-6 py-3 bg-primary text-primary-foreground font-medium text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors disabled:opacity-50 flex items-center gap-2"
+        <h2
+          style={{
+            fontFamily: "'Bodoni Moda', serif",
+            fontWeight: 400,
+            fontSize: "clamp(32px, 3.5vw, 48px)",
+            lineHeight: 1.1,
+            color: "#F5EFE6",
+          }}
+        >
+          Súmate al círculo.
+        </h2>
+        <p
+          className="mt-5 mb-10"
+          style={{
+            fontFamily: "Inter, sans-serif",
+            fontSize: "16px",
+            lineHeight: 1.6,
+            color: "rgba(245,239,230,0.8)",
+            maxWidth: "520px",
+            margin: "20px auto 40px",
+          }}
+        >
+          Una vez al mes te mando piezas nuevas, novias reales y el detrás de
+          escena del atelier. Sin spam, sin venta agresiva.
+        </p>
+
+        {subscribed ? (
+          <p
+            style={{
+              fontFamily: "'Bodoni Moda', serif",
+              fontStyle: "italic",
+              fontSize: "22px",
+              color: "#C9A87C",
+            }}
           >
-            {submitting ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
-            Suscribir
-          </button>
-        </form>
-        <p className="text-xs text-muted-foreground mt-3">
-          Sin spam. Solo cosas lindas. ✨
-        </p>
+            Gracias por sumarte. Nos vemos por correo.
+          </p>
+        ) : (
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="tu correo"
+              className="flex-1 px-5 py-3.5 outline-none placeholder:text-cream/40"
+              style={{
+                background: "transparent",
+                border: "1px solid #C9A87C",
+                color: "#F5EFE6",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                borderRadius: "999px",
+              }}
+            />
+            <button
+              type="submit"
+              disabled={submitting || !email}
+              className="px-7 py-3.5 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
+              style={{
+                background: "#C9A87C",
+                color: "#3A4429",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "13px",
+                fontWeight: 500,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                borderRadius: "999px",
+              }}
+            >
+              {submitting ? <Loader2 size={14} className="animate-spin" /> : "Sumarme →"}
+            </button>
+          </form>
+        )}
       </div>
     </section>
   );
