@@ -50,7 +50,7 @@ const InstagramFeed = () => {
             className="inline-flex items-center gap-2 px-6 py-3 text-sm tracking-widest uppercase border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
           >
             <Instagram size={16} />
-            Seguinos
+            Síguenos
           </a>
         </div>
       </div>
