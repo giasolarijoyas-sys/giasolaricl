@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Heart, ChevronDown, Gem, CircleDot, Sparkles, Crown } from "lucide-react";
+import { Menu, X, Heart, ChevronDown, Instagram } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const OLIVE = "#4A5536";
 const OLIVE_DARK = "#3A4429";
 const CREAM = "#F5EFE6";
-const CREAM_WARM = "#F5EFE6";
+const CREAM_WARM = "#EBE2D2";
 const BORDER = "#D9D2C4";
 const INK = "#1A1A18";
 const CARAMEL = "#C9A87C";
@@ -13,17 +13,40 @@ const MUTED = "#6B7752";
 
 const WHATSAPP_URL = "https://wa.me/56984049502";
 
-const joyasSubmenu = [
-  { label: "Anillos de compromiso", href: "/joyas?cat=compromiso", Icon: Gem },
-  { label: "Argollas de matrimonio", href: "/joyas?cat=argollas", Icon: CircleDot },
-  { label: "Joyas (aros, collares, pulseras)", href: "/joyas?cat=joyas", Icon: Sparkles },
-  { label: "Colección Vintage", href: "/joyas?cat=vintage", Icon: Crown },
+type SubItem = { label: string; href: string };
+const joyasMenuCols: { title: string; items: SubItem[] }[] = [
+  {
+    title: "Anillos de compromiso",
+    items: [
+      { label: "Halos", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Solitarios", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Tres y cinco piedras", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Pavé", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Cintillos", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Eternity", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Color (zafiro, aguamarina, esmeralda)", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Ver todos →", href: "/joyas?categoria=Anillo+de+compromiso" },
+    ],
+  },
+  {
+    title: "Por pieza",
+    items: [
+      { label: "Argollas de matrimonio", href: "/joyas?categoria=Argolla" },
+      { label: "Aros", href: "/joyas?categoria=Aros" },
+      { label: "Collares", href: "/joyas?categoria=Collar" },
+      { label: "Pulseras y esclavas", href: "/joyas" },
+      { label: "Joyas de familia", href: "/joyas" },
+      { label: "Vintage", href: "/joyas?categoria=Vintage" },
+    ],
+  },
 ];
 
 const mainLinks = [
-  { label: "Sobre Gia", href: "/sobre-gia" },
-  { label: "Proceso", href: "/proceso" },
+  { label: "New In", href: "/new" },
+  { label: "Diario", href: "/diario" },
+  { label: "Lookbook", href: "/lookbook" },
   { label: "Aprende", href: "/aprende" },
+  { label: "Sobre Gia", href: "/sobre-gia" },
 ];
 
 // WhatsApp icon (brand)
