@@ -34,6 +34,10 @@ import JoyaDetalle from "./pages/JoyaDetalle.tsx";
 import Agenda from "./pages/Agenda.tsx";
 import Proceso from "./pages/Proceso.tsx";
 import Cotizar from "./pages/Cotizar.tsx";
+import Diario from "./pages/Diario.tsx";
+import DiarioDetalle from "./pages/DiarioDetalle.tsx";
+import Lookbook from "./pages/Lookbook.tsx";
+import NewIn from "./pages/NewIn.tsx";
 
 
 const queryClient = new QueryClient();
