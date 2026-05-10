@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Heart, ChevronDown, Gem, CircleDot, Sparkles, Crown } from "lucide-react";
+import { Menu, X, Heart, ChevronDown, Instagram } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const OLIVE = "#4A5536";
 const OLIVE_DARK = "#3A4429";
 const CREAM = "#F5EFE6";
-const CREAM_WARM = "#F5EFE6";
+const CREAM_WARM = "#EBE2D2";
 const BORDER = "#D9D2C4";
 const INK = "#1A1A18";
 const CARAMEL = "#C9A87C";
@@ -13,17 +13,40 @@ const MUTED = "#6B7752";
 
 const WHATSAPP_URL = "https://wa.me/56984049502";
 
-const joyasSubmenu = [
-  { label: "Anillos de compromiso", href: "/joyas?cat=compromiso", Icon: Gem },
-  { label: "Argollas de matrimonio", href: "/joyas?cat=argollas", Icon: CircleDot },
-  { label: "Joyas (aros, collares, pulseras)", href: "/joyas?cat=joyas", Icon: Sparkles },
-  { label: "Colección Vintage", href: "/joyas?cat=vintage", Icon: Crown },
+type SubItem = { label: string; href: string };
+const joyasMenuCols: { title: string; items: SubItem[] }[] = [
+  {
+    title: "Anillos de compromiso",
+    items: [
+      { label: "Halos", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Solitarios", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Tres y cinco piedras", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Pavé", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Cintillos", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Eternity", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Color (zafiro, aguamarina, esmeralda)", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Ver todos →", href: "/joyas?categoria=Anillo+de+compromiso" },
+    ],
+  },
+  {
+    title: "Por pieza",
+    items: [
+      { label: "Argollas de matrimonio", href: "/joyas?categoria=Argolla" },
+      { label: "Aros", href: "/joyas?categoria=Aros" },
+      { label: "Collares", href: "/joyas?categoria=Collar" },
+      { label: "Pulseras y esclavas", href: "/joyas" },
+      { label: "Joyas de familia", href: "/joyas" },
+      { label: "Vintage", href: "/joyas?categoria=Vintage" },
+    ],
+  },
 ];
 
 const mainLinks = [
-  { label: "Sobre Gia", href: "/sobre-gia" },
-  { label: "Proceso", href: "/proceso" },
+  { label: "New In", href: "/new" },
+  { label: "Diario", href: "/diario" },
+  { label: "Lookbook", href: "/lookbook" },
   { label: "Aprende", href: "/aprende" },
+  { label: "Sobre Gia", href: "/sobre-gia" },
 ];
 
 // WhatsApp icon (brand)
@@ -44,8 +67,41 @@ const Navbar = () => {
 
   return (
     <>
+      <div className="fixed top-0 left-0 right-0 z-[60] flex flex-col">
+        {/* Top bar — sociales y atelier */}
+        <div
+          className="hidden md:flex h-10 items-center justify-between px-4 md:px-8"
+          style={{ background: OLIVE_DARK, color: CARAMEL }}
+        >
+          <p
+            className="flex-1 text-center"
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "11px",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+            }}
+          >
+            Atelier en Las Condes · Solo con cita previa
+          </p>
+          <div className="flex items-center gap-4 absolute right-4 md:right-8">
+            <a href="https://www.instagram.com/giasolari.cl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-70">
+              <Instagram size={14} strokeWidth={1.5} />
+            </a>
+            <a href="https://cl.pinterest.com/giasolarijoyas/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className="hover:opacity-70">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M11 7c2.5-.5 5 1 5 3.5S14 15 12 14.5c-.7-.2-1-.8-.8-1.5l1.3-5.5"/><path d="M11 14l-1.5 6"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@giasolari.cl" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:opacity-70">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+            </a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:opacity-70">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+            </a>
+          </div>
+        </div>
+
       <nav
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
+        className="backdrop-blur-md"
         style={{
           background: `${CREAM}E0`,
           borderBottom: `1px solid ${BORDER}`,
@@ -103,7 +159,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 6 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[280px] p-6"
+                    className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[640px] p-8"
                     style={{
                       background: CREAM,
                       boxShadow: "0 12px 32px -8px rgba(31, 36, 23, 0.18)",
@@ -111,29 +167,42 @@ const Navbar = () => {
                       border: `1px solid ${BORDER}`,
                     }}
                   >
-                    <ul className="flex flex-col gap-1">
-                      {joyasSubmenu.map(({ label, href, Icon }) => (
-                        <li key={href}>
-                          <a
-                            href={href}
-                            className="flex items-center gap-3 px-2 py-2.5 rounded-md transition-colors group"
-                            style={{ color: INK }}
+                    <div className="grid grid-cols-2 gap-8">
+                      {joyasMenuCols.map((col) => (
+                        <div key={col.title}>
+                          <p
+                            className="mb-3"
+                            style={{
+                              fontFamily: "Inter, sans-serif",
+                              fontSize: "10.5px",
+                              letterSpacing: "0.22em",
+                              textTransform: "uppercase",
+                              color: MUTED,
+                            }}
                           >
-                            <Icon size={16} strokeWidth={1.4} style={{ color: CARAMEL }} />
-                            <span
-                              style={{
-                                fontFamily: "'Inter', sans-serif",
-                                fontSize: "13.5px",
-                                fontWeight: 500,
-                              }}
-                              className="group-hover:text-[#C9A87C] transition-colors"
-                            >
-                              {label}
-                            </span>
-                          </a>
-                        </li>
+                            {col.title}
+                          </p>
+                          <ul className="flex flex-col gap-1.5">
+                            {col.items.map((it) => (
+                              <li key={it.label}>
+                                <a
+                                  href={it.href}
+                                  className="block py-1 transition-colors hover:text-[#C9A87C]"
+                                  style={{
+                                    fontFamily: "Inter, sans-serif",
+                                    fontSize: "13.5px",
+                                    fontWeight: 400,
+                                    color: INK,
+                                  }}
+                                >
+                                  {it.label}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -229,6 +298,7 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
+      </div>
 
       {/* Mobile full-screen overlay */}
       <AnimatePresence>

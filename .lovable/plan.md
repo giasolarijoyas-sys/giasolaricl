@@ -1,73 +1,67 @@
+# Reestructura completa Gia Solari Joyas — v1.0
 
+Es un trabajo extenso (17 secciones, ~25-30 archivos tocados, 3 rutas nuevas). Antes de implementar quiero confirmar alcance y orden para no romper lo que ya funciona y para que el resultado se parezca a lo que tenés en la cabeza.
 
-## Plan: Logos transparentes + Panel Admin + Banners visuales
+## Lo que voy a hacer
 
-### Resumen
+### Fase 1 — Cimientos (design system)
+1. **`tailwind.config.ts`** — agregar tokens nuevos: `olive` (DEFAULT/deep/soft), `champagne`, `terracota`, `cream` (DEFAULT/warm), `ink`, `line`. Mantener tokens existentes para no romper el resto.
+2. **`src/index.css`** — actualizar variables HSL: background → cream, primary → olive, accent → champagne. Eyebrow utility class. Quitar blanco puro como fondo en componentes globales.
+3. **`index.html`** — `<title>` y `<meta>` por defecto + preconnect fonts.
 
-Tres cambios principales: (1) reemplazar los logos con las nuevas versiones de fondo transparente que subas, (2) crear un panel de administracion protegido con login en `/admin`, y (3) agregar banners/separadores visuales con fotos de joyeria entre las secciones de la pagina principal.
+### Fase 2 — Layout global
+4. **`Navbar.tsx`** — top bar oliva profundo con sociales, navbar sticky con dropdown JOYAS de 3 columnas, links nuevos (NEW IN, VINTAGE, DIARIO, LOOKBOOK), CTAs Agendar/Cotizar, mobile overlay full-screen.
+5. **`Footer.tsx`** — fondo ink, 4 columnas reorganizadas según copy entregado, tira inferior con sociales en champagne.
+6. **`Newsletter.tsx`** — rediseño "Círculo Gia" fondo olive.deep + champagne (mantengo lógica Supabase existente).
+7. **`WhatsAppButton.tsx`** — circular champagne 56px, aparece tras 600px de scroll, copy prefilled chileno.
 
----
+### Fase 3 — Home (`Index.tsx`)
+8. **`Hero.tsx`** — split 60/40, izquierda foto editorial (placeholder Unsplash hasta que suba real), derecha eyebrow + headline Bodoni con "tuya" italic + subheadline + 2 CTAs + tira confianza.
+9. **`WhyUs.tsx`** — refactor a 4 columnas con copy nuevo y tono chileno cercano-formal.
+10. **`ComoTeAyudo.tsx`** (nuevo) — 3 tarjetas WhatsApp / Agenda / Email.
+11. **`VitrinaCategorias.tsx`** (nuevo) — 6 cards 4:5 con overlay oliva.
+12. **`NewIn.tsx`** (nuevo) — carrusel de piezas creadas en últimos 60 días.
+13. Reordenar `Index.tsx` con la nueva secuencia y remover bloques que no van.
 
-### 1. Logos con fondo transparente
+### Fase 4 — Catálogo y ficha
+14. **`Joyas.tsx`** — header con eyebrow/H1/subtítulo, sidebar de filtros (Tipo, Estilo cuando Tipo=Compromiso, Metal, Piedra, Precio), grid 3 cols con corazón flotante.
+15. **`JoyaDetalle.tsx`** — galería izquierda (principal + miniaturas), columna derecha sticky con descripción narrativa (primer párrafo Bodoni italic), specs en acordeón, CTAs primario/secundario, sección "Piezas relacionadas" + "El proceso de Gia".
 
-**Pendiente de ti**: necesito que subas los logos con fondo transparente (PNG). Cuando los tengas, reemplazo `src/assets/logo-horizontal.png` y `src/assets/logo-icon.png`. En el Footer se quita el filtro `brightness-0 invert` para que se vea el logo tal cual.
+### Fase 5 — Páginas de marca
+16. **`SobreGia.tsx`** — hero foto Macarena, copy en primera persona entregado, bloque "Detrás de cada pieza".
+17. **`Proceso.tsx`** — stepper vertical 4 pasos con número Bodoni 80px champagne.
+18. **`Aprende.tsx`** + 7 sub-páginas — solo rediseño envolvente (header eyebrow/H1, body Inter 17px max-w 680px, CTA final). **No toco el contenido textual** de las guías.
 
----
+### Fase 6 — Rutas nuevas
+19. **`/diario`** y **`/diario/[slug]`** — hub + 6 placeholders ("Catalina M.", "Trinidad V.", etc.) con foto, frase italic, link.
+20. **`/lookbook`** — masonry de 12 fotos Unsplash con queries entregadas, 1 quote italic cada 5.
+21. **`/new`** — reusa `Joyas.tsx` con filtro `created_at >= now() - 60 días`.
+22. Registrar rutas en `App.tsx` y agregarlas al `sitemap.xml`.
 
-### 2. Panel de administracion (`/admin`) con login
+### Fase 7 — SEO
+23. `<SEO>` específico en cada ruta nueva con templates entregados. Schema `Product` ya existe en ficha; agregar `BlogPosting` en entradas de diario.
 
-**Base de datos:**
-- Crear tabla `user_roles` con columnas `id`, `user_id` (ref auth.users), `role` (enum: admin, staff).
-- Crear funcion `has_role()` security definer para verificar roles sin recursion RLS.
-- Agregar politicas RLS en `quotes` para que admin/staff puedan SELECT y UPDATE.
-- Agregar politicas RLS en `wish_list` y `newsletter_subscribers` para SELECT por admin.
+## Lo que NO voy a tocar
+- Lógica de cotizar, wishlist, checkout, admin, auth, edge functions.
+- Contenido textual de las 7 guías de `/aprende` (solo el envoltorio visual).
+- `supabase/*`, `src/integrations/*`.
 
-**Autenticacion:**
-- Pagina `/admin/login` con formulario email + contrasena usando Supabase Auth (`signInWithPassword`).
-- Layout protegido que verifica sesion + rol admin antes de mostrar contenido.
-- Boton de cerrar sesion.
+## Notas de tono y copy
+- Tuteo chileno suave ("te mando", "cuéntame", "acá en Las Condes"). El brief incluye un par de vos ("contigo/contigo" mezclado con "vos contás") — voy a **uniformar a tuteo chileno** ("tú/contigo/cuéntame") salvo que me digas lo contrario, porque mezclar voseo argentino con chileno suena raro y la memoria del proyecto pide registro chileno.
+- Cero emojis, cero 3D renders (usar "boceto" cuando aplique).
 
-**Panel principal (`/admin`):**
-- Sidebar con secciones: Cotizaciones, Lista de Deseos, Newsletter, Estadisticas.
-- **Cotizaciones**: tabla con filtros por estado (nueva, en proceso, completada). Cada fila muestra nombre, pieza, metal, piedra, fecha, estado. Click para ver detalle completo con imagenes, respuestas del quiz y recomendacion.
-- **Detalle de cotizacion**: boton "Generar Propuesta PDF" que crea un PDF profesional con logo, datos del cliente, especificaciones de la joya, rango de precio estimado, y condiciones. Se genera en el navegador con una libreria como jsPDF o react-pdf.
-- **Lista de Deseos**: tabla con los registros de wish_list.
-- **Newsletter**: lista de suscriptores.
-- **Estadisticas basicas**: total cotizaciones, cotizaciones del mes, piezas mas solicitadas.
+## Detalles técnicos
+- Tokens nuevos en `tailwind.config.ts` extendiendo el theme — no rompo clases existentes.
+- Imágenes placeholder via `https://images.unsplash.com/...` con queries del brief, marcadas con `TODO: reemplazar con foto real` en comentarios.
+- "NEW IN" lee de `src/data/joyas.ts` (tu fuente actual). Si las piezas no tienen `createdAt`, agrego un campo opcional y por ahora muestro las primeras 6 — avisame si querés que agregue fecha real a cada pieza.
+- Dropdown del navbar: usaré Radix `NavigationMenu` (ya está en shadcn) para accesibilidad y mobile.
+- Schema markup: extiendo `ArticleSchema` existente para diario.
 
-**Footer:**
-- Agregar link discreto "Administracion" en la columna Informacion del footer que lleve a `/admin`.
+## Confirmaciones que necesito antes de arrancar
 
----
+1. **Tuteo uniforme chileno** (tú/contigo/cuéntame) en lugar de mezclar con voseo del brief — ¿OK?
+2. **Placeholders Unsplash** para todas las fotos editoriales que no tenés aún (Hero, Sobre Gia, Diario, Lookbook, Vitrina Categorías) — ¿OK arrancar así o preferís que deje los slots vacíos con un fondo neutro?
+3. **Campo `createdAt` en piezas** para "NEW IN" — ¿agrego con fechas dummy escalonadas o muestro las 6 primeras del array como "recién salidas" hasta que vos definas?
+4. **Screenshots finales** — voy a sacar las 6 que pediste (Home, /joyas, ficha, /diario, /lookbook, footer) al cierre.
 
-### 3. Banners visuales entre secciones (homepage)
-
-Inspirado en Ninito Coronal y las fotos que subiste (anillos con zafiro, halo, manos con joyas):
-
-- Crear componente `SectionBanner` reutilizable: imagen de fondo a ancho completo con overlay oscuro y texto opcional (frase corta o CTA). Altura ~40-50vh. Efecto parallax sutil opcional.
-- Agregar las fotos subidas como assets del proyecto (convertir HEIF a JPG).
-- Insertar banners en `Index.tsx` entre secciones:
-  - Entre WhyUs y QuizContainer: banner con foto del anillo halo zafiro en caja + texto "Cada detalle cuenta"
-  - Entre Gallery y Historia: banner con foto de manos con joyas + texto "Hecho a tu medida"
-  - Entre Testimonials y WishListForm: banner con foto del solitario halo + CTA "Cotiza tu joya"
-- Variar fondos de algunas secciones existentes (alternar entre `bg-background` y `bg-card` o un tono crema suave) para romper la monotonia visual.
-
----
-
-### Archivos principales a crear/modificar
-
-| Archivo | Accion |
-|---------|--------|
-| `src/assets/logo-*` | Reemplazar con logos transparentes |
-| `src/components/Footer.tsx` | Quitar filtro invert, agregar link Admin |
-| `src/components/SectionBanner.tsx` | Nuevo componente de banner visual |
-| `src/pages/Index.tsx` | Insertar banners entre secciones |
-| `src/pages/admin/Login.tsx` | Pagina de login admin |
-| `src/pages/admin/Dashboard.tsx` | Panel principal |
-| `src/pages/admin/QuoteDetail.tsx` | Detalle de cotizacion + generacion PDF |
-| `src/components/admin/AdminLayout.tsx` | Layout con sidebar y proteccion de ruta |
-| `src/components/admin/AdminSidebar.tsx` | Sidebar de navegacion |
-| `src/App.tsx` | Agregar rutas /admin/* |
-| Migration SQL | Tabla user_roles, funcion has_role, politicas RLS |
-| Assets nuevos | Fotos subidas convertidas a JPG |
-
+Dame el visto bueno (o ajustes) sobre estos 4 puntos y arranco con la Fase 1.

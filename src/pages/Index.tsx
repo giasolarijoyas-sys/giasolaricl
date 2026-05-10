@@ -23,6 +23,9 @@ import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 
 import SoloEnGiaSolariCompact from "@/components/SoloEnGiaSolariCompact";
 import InstagramFeed from "@/components/InstagramFeed";
+import ComoTeAyudo from "@/components/ComoTeAyudo";
+import VitrinaCategorias from "@/components/VitrinaCategorias";
+import NewIn from "@/components/NewIn";
 
 import bannerNusa from "@/assets/banner-anillo-nusa.png";
 import bannerHalo from "@/assets/banner-halo-oval.png";
@@ -66,6 +69,15 @@ const Index = () => {
 
       {/* 5. Diferenciadores / por qué elegirnos */}
       <WhyUs />
+
+      {/* ¿Cómo te ayudo? — atención personal */}
+      <ComoTeAyudo />
+
+      {/* Vitrina de categorías */}
+      <VitrinaCategorias />
+
+      {/* New In — recién salido del taller */}
+      <NewIn />
 
       {/* 6. Proceso paso a paso */}
       <ProcessSteps />
