@@ -298,6 +298,7 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
+      </div>
 
       {/* Mobile full-screen overlay */}
       <AnimatePresence>
