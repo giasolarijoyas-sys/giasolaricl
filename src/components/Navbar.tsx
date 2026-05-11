@@ -43,8 +43,6 @@ const joyasMenuCols: { title: string; items: SubItem[] }[] = [
 
 const mainLinks = [
   { label: "New In", href: "/new" },
-  { label: "Diario", href: "/diario" },
-  { label: "Lookbook", href: "/lookbook" },
   { label: "Aprende", href: "/aprende" },
   { label: "Sobre Gia", href: "/sobre-gia" },
 ];

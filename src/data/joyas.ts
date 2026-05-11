@@ -118,6 +118,11 @@ import pendiente067 from "@/assets/joyas/pendiente-067.jpg";
 import pendiente068 from "@/assets/joyas/pendiente-068.jpg";
 import pendiente069 from "@/assets/joyas/pendiente-069.jpg";
 import pendiente070 from "@/assets/joyas/pendiente-070.jpg";
+
+// Nuevas piezas — fotos editoriales tanda 2
+import solitarioHaloPave01 from "@/assets/joyas/solitario-halo-pave-01.png";
+import trilogiaClasica01 from "@/assets/joyas/trilogia-clasica-01.png";
+import trilogiaClasica02 from "@/assets/joyas/trilogia-clasica-02.png";
 import pendiente071 from "@/assets/joyas/pendiente-071.jpg";
 import pendiente073 from "@/assets/joyas/pendiente-073.jpg";
 import pendiente074 from "@/assets/joyas/pendiente-074.jpg";
@@ -1267,6 +1272,36 @@ export const JOYAS: Joya[] = [
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente095],
+    isPlaceholder: false,
+  },
+  {
+    slug: "halo-pave-clasico",
+    nombre: "Halo Pavé Clásico",
+    categoria: "Anillo de compromiso",
+    material: "Oro 18k blanco · Diamante natural redondo · Halo pavé · Banda pavé",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Halo",
+    piedraCentral: "Diamante natural",
+    descripcion: "Diamante redondo central rodeado de un halo pavé y banda con pavé continuo.",
+    descripcionLarga:
+      "Un brillante redondo en el centro, abrazado por un halo pavé que multiplica la luz. La banda continúa con pavé fino, hecho a mano una piedra a la vez. Es la versión más luminosa del halo clásico, en oro 18k blanco o platino. Cada anillo incluye Certificado Gia Solari.",
+    imagenes: [solitarioHaloPave01],
+    precioDesde: 2400000,
+    isPlaceholder: false,
+  },
+  {
+    slug: "trilogia-clasica",
+    nombre: "Trilogía Clásica",
+    categoria: "Anillo de compromiso",
+    material: "Oro 18k blanco · Tres diamantes redondos · Banda pavé",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Tres y cinco piedras",
+    piedraCentral: "Diamante natural",
+    descripcion: "Tres diamantes redondos en línea sobre banda pavé. Pasado, presente y futuro.",
+    descripcionLarga:
+      "La trilogía representa el pasado, el presente y el futuro. Tres diamantes redondos alineados sobre una banda pavé que continúa el brillo a lo largo del dedo. Liviano y delicado, pensado para usarse todos los días. Cada anillo incluye Certificado Gia Solari.",
+    imagenes: [trilogiaClasica01, trilogiaClasica02],
+    precioDesde: 2200000,
     isPlaceholder: false,
   },
 ];
