@@ -34,9 +34,6 @@ import JoyaDetalle from "./pages/JoyaDetalle.tsx";
 import Agenda from "./pages/Agenda.tsx";
 import Proceso from "./pages/Proceso.tsx";
 import Cotizar from "./pages/Cotizar.tsx";
-import Diario from "./pages/Diario.tsx";
-import DiarioDetalle from "./pages/DiarioDetalle.tsx";
-import Lookbook from "./pages/Lookbook.tsx";
 import NewIn from "./pages/NewIn.tsx";
 
 
@@ -85,9 +82,6 @@ const App = () => (
             <Route path="/agenda" element={<Agenda />} />
             <Route path="/proceso" element={<Proceso />} />
             <Route path="/cotizar" element={<Cotizar />} />
-            <Route path="/diario" element={<Diario />} />
-            <Route path="/diario/:slug" element={<DiarioDetalle />} />
-            <Route path="/lookbook" element={<Lookbook />} />
             <Route path="/new" element={<NewIn />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

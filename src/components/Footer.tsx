@@ -133,8 +133,6 @@ const Footer = () => {
             <div className="flex flex-col gap-2">
               <a href="/sobre-gia" className="hover:text-[#C9A87C] transition-colors">Sobre Gia</a>
               <a href="/proceso" className="hover:text-[#C9A87C] transition-colors">Proceso</a>
-              <a href="/diario" className="hover:text-[#C9A87C] transition-colors">Diario de Atelier</a>
-              <a href="/lookbook" className="hover:text-[#C9A87C] transition-colors">Lookbook</a>
               <a href="/aprende" className="hover:text-[#C9A87C] transition-colors">Aprende</a>
               <a href="/guia-de-tallas" className="hover:text-[#C9A87C] transition-colors">Guía de tallas</a>
               <a href="/cuidado-de-la-joya" className="hover:text-[#C9A87C] transition-colors">Cuidado de la joya</a>
