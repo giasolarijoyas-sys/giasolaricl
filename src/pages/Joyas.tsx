@@ -1,171 +1,618 @@
+import { useMemo, useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { motion, AnimatePresence } from "framer-motion";
+import { Heart, X, SearchX, SlidersHorizontal } from "lucide-react";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { motion } from "framer-motion";
-import { JOYAS, HAS_REAL_JOYAS } from "@/data/joyas";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { JOYAS, formatPrecioDesde } from "@/data/joyas";
 
-const waUrl = (nombre: string) => buildWhatsAppUrl("pieza_especifica", { nombre });
+const OLIVE = "#4A5536";
+const OLIVE_DEEP = "#3A4429";
+const OLIVE_SOFT = "#6B7752";
+const CHAMPAGNE = "#C9A87C";
+const CREAM = "#F5EFE6";
+const CREAM_WARM = "#EBE2D2";
+const TERRACOTA = "#B5704A";
+const INK = "#1A1A18";
+const LINE = "#D9D2C4";
+
+// === FILTER OPTIONS ===
+const TIPOS = [
+  { id: "todos", label: "Ver todo", match: null as null | ((c: string) => boolean) },
+  { id: "compromiso", label: "Anillos de compromiso", match: (c: string) => c === "Anillo de compromiso" },
+  { id: "argollas", label: "Argollas de matrimonio", match: (c: string) => c === "Argolla" },
+  { id: "aros", label: "Aros", match: (c: string) => c === "Aros" },
+  { id: "collares", label: "Collares", match: (c: string) => c === "Collar" },
+  { id: "pulseras", label: "Pulseras y esclavas", match: (c: string) => c === "Pulsera" },
+  { id: "familia", label: "Joyas de familia", match: (c: string) => c.toLowerCase().includes("familia") },
+  { id: "vintage", label: "Vintage (piezas únicas)", match: (c: string) => c === "Vintage" },
+];
+
+const ESTILOS = [
+  "Halo",
+  "Solitarios",
+  "Tres y cinco piedras",
+  "Pavé",
+  "Cintillos",
+  "Eternity",
+  "Color",
+];
+
+const METALES = [
+  "Oro 18k amarillo",
+  "Oro 18k blanco",
+  "Oro 18k rosa",
+  "Platino",
+];
+
+const PIEDRAS = [
+  "Diamante natural",
+  "Diamante de laboratorio",
+  "Zafiro",
+  "Aguamarina",
+  "Esmeralda",
+  "Ónix",
+  "Sin piedra",
+];
+
+const PRECIOS = [
+  { id: "all", label: "Todos los rangos", min: 0, max: Infinity },
+  { id: "p1", label: "Hasta $1.000.000", min: 0, max: 1000000 },
+  { id: "p2", label: "$1.000.000 — $2.000.000", min: 1000000, max: 2000000 },
+  { id: "p3", label: "$2.000.000 — $3.000.000", min: 2000000, max: 3000000 },
+  { id: "p4", label: "$3.000.000+", min: 3000000, max: Infinity },
+  { id: "consultar", label: "A consultar", min: -1, max: -1 },
+];
+
+const PAGE_SIZE = 12;
+
+// Estilo del item: matchea estilo de la pieza con label de filtro
+const matchEstilo = (joyaEstilo: string | undefined, filtro: string) => {
+  if (!joyaEstilo) return false;
+  const e = joyaEstilo.toLowerCase();
+  const f = filtro.toLowerCase();
+  if (f === "halo") return e.includes("halo") || e.includes("color");
+  if (f === "solitarios") return e.includes("solitar") || e.includes("atemporal");
+  if (f === "tres y cinco piedras") return e.includes("tres") || e.includes("cinco") || e.includes("trilog");
+  if (f === "pavé") return e.includes("pavé") || e.includes("pave");
+  return e.includes(f);
+};
+
+const matchPiedra = (joyaPiedra: string | undefined, filtro: string) => {
+  if (filtro === "Sin piedra") return !joyaPiedra || joyaPiedra.toLowerCase().includes("sin piedra");
+  if (!joyaPiedra) return false;
+  return joyaPiedra.toLowerCase().includes(filtro.toLowerCase().split(" ")[0]);
+};
+
+const Eyebrow = ({ children }: { children: React.ReactNode }) => (
+  <p style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.22em", textTransform: "uppercase", color: OLIVE_SOFT }}>{children}</p>
+);
+
+type FilterState = {
+  tipo: string;
+  estilo: string[];
+  metal: string[];
+  piedra: string[];
+  precio: string;
+};
 
 const Joyas = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const showPlaceholders = searchParams.get("preview") === "1";
-  const categoryFilter = searchParams.get("categoria") ?? "todas";
-  const metalFilter = searchParams.get("metal") ?? "todos";
-  const piedraFilter = searchParams.get("piedra") ?? "todas";
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  const baseJoyas = (showPlaceholders
-    ? JOYAS
-    : JOYAS.filter((j) => !j.isPlaceholder)
-  ).filter((j) => j.categoria !== "Argolla");
-  const categories = ["todas", ...Array.from(new Set(baseJoyas.map((j) => j.categoria)))]
-  const metals = ["todos", ...Array.from(new Set(baseJoyas.map((j) => j.metalPrincipal ?? j.material.split(" · ")[0]))).filter((m) => m && m.trim() !== "" && m.toLowerCase() !== "a definir")]
-  const piedras = ["todas", ...Array.from(new Set(baseJoyas.map((j) => j.piedraCentral ?? "").map((p) => p.trim()))).filter((p) => p && !["ninguna", "a definir", "sin piedra"].includes(p.toLowerCase()))]
-  const visibleJoyas = baseJoyas.filter((j) => {
-    if (categoryFilter !== "todas" && j.categoria !== categoryFilter) return false;
-    if (metalFilter !== "todos" && (j.metalPrincipal ?? j.material.split(" · ")[0]) !== metalFilter) return false;
-    if (piedraFilter !== "todas" && (j.piedraCentral ?? "").trim().toLowerCase() !== piedraFilter.toLowerCase()) return false;
-    return true;
-  });
+  // === read filters from URL ===
+  const filters: FilterState = useMemo(() => {
+    const tipo = searchParams.get("tipo") ?? "todos";
+    const estilo = (searchParams.get("estilo") ?? "").split(",").filter(Boolean);
+    const metal = (searchParams.get("metal") ?? "").split(",").filter(Boolean);
+    const piedra = (searchParams.get("piedra") ?? "").split(",").filter(Boolean);
+    const precio = searchParams.get("precio") ?? "all";
+    return { tipo, estilo, metal, piedra, precio };
+  }, [searchParams]);
 
-  const updateFilter = (key: "categoria" | "metal" | "piedra", value: string) => {
-    const next = new URLSearchParams(searchParams);
-    if (["todas", "todos"].includes(value)) next.delete(key);
-    else next.set(key, value);
-    setSearchParams(next);
+  const updateFilters = (next: Partial<FilterState>) => {
+    const merged = { ...filters, ...next };
+    const params = new URLSearchParams();
+    if (merged.tipo !== "todos") params.set("tipo", merged.tipo);
+    if (merged.estilo.length) params.set("estilo", merged.estilo.join(","));
+    if (merged.metal.length) params.set("metal", merged.metal.join(","));
+    if (merged.piedra.length) params.set("piedra", merged.piedra.join(","));
+    if (merged.precio !== "all") params.set("precio", merged.precio);
+    setSearchParams(params, { replace: true });
+    setVisibleCount(PAGE_SIZE);
   };
 
+  const toggleArray = (key: "estilo" | "metal" | "piedra", val: string) => {
+    const arr = filters[key];
+    updateFilters({ [key]: arr.includes(val) ? arr.filter((v) => v !== val) : [...arr, val] } as Partial<FilterState>);
+  };
+
+  const clearAll = () => {
+    setSearchParams(new URLSearchParams(), { replace: true });
+    setVisibleCount(PAGE_SIZE);
+  };
+
+  // Active filter count
+  const activeCount =
+    (filters.tipo !== "todos" ? 1 : 0) +
+    filters.estilo.length +
+    filters.metal.length +
+    filters.piedra.length +
+    (filters.precio !== "all" ? 1 : 0);
+
+  // === Filter joyas ===
+  const baseJoyas = useMemo(() => JOYAS.filter((j) => !j.isPlaceholder), []);
+  const filtered = useMemo(() => {
+    return baseJoyas.filter((j) => {
+      const tipoOpt = TIPOS.find((t) => t.id === filters.tipo);
+      if (tipoOpt?.match && !tipoOpt.match(j.categoria)) return false;
+      if (filters.estilo.length && !filters.estilo.some((e) => matchEstilo(j.estilo, e))) return false;
+      if (filters.metal.length && !filters.metal.some((m) => (j.metalPrincipal ?? "").toLowerCase() === m.toLowerCase())) return false;
+      if (filters.piedra.length && !filters.piedra.some((p) => matchPiedra(j.piedraCentral, p))) return false;
+      if (filters.precio !== "all") {
+        const range = PRECIOS.find((p) => p.id === filters.precio);
+        if (range) {
+          if (range.id === "consultar") {
+            if (typeof j.precioDesde === "number") return false;
+          } else if (typeof j.precioDesde !== "number" || j.precioDesde < range.min || j.precioDesde >= range.max) {
+            return false;
+          }
+        }
+      }
+      return true;
+    });
+  }, [baseJoyas, filters]);
+
+  const visible = filtered.slice(0, visibleCount);
+  const hasMore = visibleCount < filtered.length;
+
+  // === SEO dynamic title ===
+  const dynamicTitle = useMemo(() => {
+    const parts: string[] = [];
+    const tipoOpt = TIPOS.find((t) => t.id === filters.tipo);
+    if (tipoOpt && tipoOpt.id !== "todos") parts.push(tipoOpt.label);
+    else parts.push("Joyas");
+    if (filters.estilo.length) parts.push(filters.estilo.join(" / "));
+    if (filters.metal.length) parts.push(`en ${filters.metal.join(" / ")}`);
+    return `${parts.join(" ")} | Gia Solari Joyas`;
+  }, [filters]);
+
+  const dynamicDesc = useMemo(() => {
+    const tipoOpt = TIPOS.find((t) => t.id === filters.tipo);
+    const tipoLabel = tipoOpt && tipoOpt.id !== "todos" ? tipoOpt.label.toLowerCase() : "joyas a medida";
+    const filtros = [...filters.estilo, ...filters.metal, ...filters.piedra].join(", ");
+    return `Catálogo de ${tipoLabel}${filtros ? ` (${filtros})` : ""} hechas a mano en Santiago en oro 18k, platino y diamantes certificados.`;
+  }, [filters]);
+
+  // === Chips ===
+  type Chip = { label: string; onRemove: () => void };
+  const chips: Chip[] = [];
+  if (filters.tipo !== "todos") {
+    const lbl = TIPOS.find((t) => t.id === filters.tipo)?.label;
+    if (lbl) chips.push({ label: lbl, onRemove: () => updateFilters({ tipo: "todos" }) });
+  }
+  filters.estilo.forEach((e) => chips.push({ label: e, onRemove: () => toggleArray("estilo", e) }));
+  filters.metal.forEach((m) => chips.push({ label: m, onRemove: () => toggleArray("metal", m) }));
+  filters.piedra.forEach((p) => chips.push({ label: p, onRemove: () => toggleArray("piedra", p) }));
+  if (filters.precio !== "all") {
+    const lbl = PRECIOS.find((p) => p.id === filters.precio)?.label;
+    if (lbl) chips.push({ label: lbl, onRemove: () => updateFilters({ precio: "all" }) });
+  }
+
+  // Lock body scroll on drawer
+  useEffect(() => {
+    document.body.style.overflow = drawerOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [drawerOpen]);
+
+  const showEstilo = filters.tipo === "compromiso";
+
+  // === SIDEBAR CONTENT ===
+  const Sidebar = () => (
+    <aside className="space-y-8">
+      <div className="flex items-center justify-between">
+        <Eyebrow>Filtros</Eyebrow>
+        {activeCount > 0 && (
+          <button onClick={clearAll} className="text-[12px] underline" style={{ color: OLIVE_DEEP, fontFamily: "Inter, sans-serif" }}>
+            Limpiar todo
+          </button>
+        )}
+      </div>
+
+      {/* TIPO */}
+      <div className="pb-8" style={{ borderBottom: `1px solid ${LINE}` }}>
+        <p className="mb-4" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: OLIVE_SOFT }}>Tipo</p>
+        <div className="flex flex-col gap-2.5">
+          {TIPOS.map((t) => (
+            <label key={t.id} className="flex items-center gap-3 cursor-pointer group">
+              <input
+                type="radio"
+                name="tipo"
+                checked={filters.tipo === t.id}
+                onChange={() => updateFilters({ tipo: t.id, estilo: [] })}
+                className="sr-only"
+              />
+              <span
+                className="inline-block rounded-full"
+                style={{
+                  width: 14, height: 14,
+                  border: `1px solid ${filters.tipo === t.id ? OLIVE : LINE}`,
+                  background: filters.tipo === t.id ? OLIVE : "transparent",
+                  boxShadow: filters.tipo === t.id ? `inset 0 0 0 3px ${CREAM}` : "none",
+                  flexShrink: 0,
+                }}
+              />
+              <span style={{ fontFamily: "Inter, sans-serif", fontSize: "13.5px", color: INK }}>{t.label}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* ESTILO (only if compromiso) */}
+      {showEstilo && (
+        <div className="pb-8" style={{ borderBottom: `1px solid ${LINE}` }}>
+          <p className="mb-4" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: OLIVE_SOFT }}>Estilo</p>
+          <div className="flex flex-col gap-2.5">
+            {ESTILOS.map((e) => {
+              const active = filters.estilo.includes(e);
+              return (
+                <label key={e} className="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" checked={active} onChange={() => toggleArray("estilo", e)} className="sr-only" />
+                  <span
+                    className="inline-flex items-center justify-center"
+                    style={{
+                      width: 14, height: 14,
+                      border: `1px solid ${active ? OLIVE : LINE}`,
+                      background: active ? OLIVE : "transparent",
+                      flexShrink: 0,
+                    }}
+                  >
+                    {active && <span style={{ color: CREAM, fontSize: 10, lineHeight: 1 }}>✓</span>}
+                  </span>
+                  <span style={{ fontFamily: "Inter, sans-serif", fontSize: "13.5px", color: INK }}>{e}</span>
+                </label>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* METAL */}
+      <div className="pb-8" style={{ borderBottom: `1px solid ${LINE}` }}>
+        <p className="mb-4" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: OLIVE_SOFT }}>Metal</p>
+        <div className="flex flex-col gap-2.5">
+          {METALES.map((m) => {
+            const active = filters.metal.includes(m);
+            return (
+              <label key={m} className="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" checked={active} onChange={() => toggleArray("metal", m)} className="sr-only" />
+                <span
+                  className="inline-flex items-center justify-center"
+                  style={{
+                    width: 14, height: 14,
+                    border: `1px solid ${active ? OLIVE : LINE}`,
+                    background: active ? OLIVE : "transparent",
+                    flexShrink: 0,
+                  }}
+                >
+                  {active && <span style={{ color: CREAM, fontSize: 10, lineHeight: 1 }}>✓</span>}
+                </span>
+                <span style={{ fontFamily: "Inter, sans-serif", fontSize: "13.5px", color: INK }}>{m}</span>
+              </label>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* PIEDRA */}
+      <div className="pb-8" style={{ borderBottom: `1px solid ${LINE}` }}>
+        <p className="mb-4" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: OLIVE_SOFT }}>Piedra</p>
+        <div className="flex flex-col gap-2.5">
+          {PIEDRAS.map((p) => {
+            const active = filters.piedra.includes(p);
+            return (
+              <label key={p} className="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" checked={active} onChange={() => toggleArray("piedra", p)} className="sr-only" />
+                <span
+                  className="inline-flex items-center justify-center"
+                  style={{
+                    width: 14, height: 14,
+                    border: `1px solid ${active ? OLIVE : LINE}`,
+                    background: active ? OLIVE : "transparent",
+                    flexShrink: 0,
+                  }}
+                >
+                  {active && <span style={{ color: CREAM, fontSize: 10, lineHeight: 1 }}>✓</span>}
+                </span>
+                <span style={{ fontFamily: "Inter, sans-serif", fontSize: "13.5px", color: INK }}>{p}</span>
+              </label>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* PRECIO */}
+      <div className="pb-8">
+        <p className="mb-4" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: OLIVE_SOFT }}>Precio</p>
+        <div className="flex flex-col gap-2.5">
+          {PRECIOS.map((p) => (
+            <label key={p.id} className="flex items-center gap-3 cursor-pointer">
+              <input
+                type="radio"
+                name="precio"
+                checked={filters.precio === p.id}
+                onChange={() => updateFilters({ precio: p.id })}
+                className="sr-only"
+              />
+              <span
+                className="inline-block rounded-full"
+                style={{
+                  width: 14, height: 14,
+                  border: `1px solid ${filters.precio === p.id ? OLIVE : LINE}`,
+                  background: filters.precio === p.id ? OLIVE : "transparent",
+                  boxShadow: filters.precio === p.id ? `inset 0 0 0 3px ${CREAM}` : "none",
+                  flexShrink: 0,
+                }}
+              />
+              <span style={{ fontFamily: "Inter, sans-serif", fontSize: "13.5px", color: INK }}>{p.label}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+    </aside>
+  );
+
   return (
-    <div className="min-h-screen bg-background">
-      <SEO
-        title="Catálogo de joyas a medida — anillos, argollas, pulseras | Gia Solari"
-        description="Explorá nuestra colección: anillos de compromiso, argollas de matrimonio y joyería de autor en oro 18k, platino y diamantes certificados. Hechas a mano en Santiago."
-        path="/joyas"
-      />
+    <div className="min-h-screen" style={{ background: CREAM }}>
+      <SEO title={dynamicTitle} description={dynamicDesc} path="/joyas" />
+      <Helmet>
+        <link rel="canonical" href="https://www.giasolari.cl/joyas" />
+      </Helmet>
       <Navbar />
 
-      <main className="pt-24 pb-32">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-10"
+      <main className="pt-28 md:pt-36 pb-32">
+        {/* HEADER */}
+        <header className="container mx-auto px-4 md:px-8 text-center mb-14 md:mb-20">
+          <Eyebrow>Catálogo</Eyebrow>
+          <h1
+            className="mt-4 mb-5"
+            style={{
+              fontFamily: "'Bodoni Moda', serif",
+              fontWeight: 400,
+              fontSize: "clamp(40px, 5vw, 64px)",
+              lineHeight: 1.05,
+              color: OLIVE_DEEP,
+            }}
           >
-            <p className="text-gold tracking-[0.3em] uppercase text-xs mb-4">
-              Nuestra Colección
-            </p>
-            <h1 className="text-3xl md:text-4xl font-display text-charcoal mb-3">
-              Colección de joyas a medida
-            </h1>
-            <p className="text-charcoal/70 text-sm leading-relaxed max-w-xl mx-auto">
-              Cada pieza es única, hecha a mano en Santiago. Pieza única — cotiza
-              a medida.
-            </p>
-            <p className="mt-4 text-[12px] text-charcoal/60 italic max-w-md mx-auto leading-relaxed">
-              Cada pieza de Gia Solari se fabrica a mano, una por una. El resultado
-              final puede variar levemente de la imagen de referencia.
-            </p>
-            <p className="mt-3 text-[12px] text-charcoal/70 max-w-md mx-auto leading-relaxed">
-              Todo anillo de compromiso incluye{" "}
-              <strong>grabado personalizado</strong> sin costo adicional.
-            </p>
-          </motion.div>
+            Joyas Gia Solari
+          </h1>
+          <p
+            className="mx-auto"
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "17px",
+              lineHeight: 1.6,
+              color: OLIVE_SOFT,
+              maxWidth: "600px",
+            }}
+          >
+            Encuentra tu pieza o pídeme una a medida. Cada joya está hecha en el atelier, en oro 18k, platino y diamantes certificados.
+          </p>
+        </header>
 
-          <div className="mb-10 space-y-4 max-w-3xl mx-auto">
-            {[
-              { label: "Categoría", key: "categoria" as const, value: categoryFilter, options: categories },
-              { label: "Metal", key: "metal" as const, value: metalFilter, options: metals },
-              { label: "Piedra", key: "piedra" as const, value: piedraFilter, options: piedras },
-            ].map((filter) => (
-              <div key={filter.key} className="flex flex-wrap items-center justify-center gap-2">
-                <span className="mr-1 text-[11px] uppercase tracking-widest text-charcoal/50">
-                  {filter.label}
-                </span>
-                {filter.options.map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    onClick={() => updateFilter(filter.key, option)}
-                    className={`min-h-[34px] px-3 border text-[11px] uppercase tracking-widest transition-colors ${
-                      filter.value === option
-                        ? "border-gold bg-gold/10 text-charcoal"
-                        : "border-gold/20 text-charcoal/60 hover:border-gold/60"
-                    }`}
-                  >
-                    {option}
-                  </button>
-                ))}
+        {/* MOBILE FILTER BUTTON */}
+        <div className="lg:hidden container mx-auto px-4 mb-6 sticky top-[72px] z-30">
+          <button
+            onClick={() => setDrawerOpen(true)}
+            className="w-full flex items-center justify-center gap-2 py-3 rounded-full"
+            style={{
+              background: OLIVE,
+              color: CREAM,
+              fontFamily: "Inter, sans-serif",
+              fontSize: "13px",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+            }}
+          >
+            <SlidersHorizontal size={16} strokeWidth={1.5} />
+            Filtros {activeCount > 0 && `(${activeCount})`}
+          </button>
+        </div>
+
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="lg:grid lg:gap-12" style={{ gridTemplateColumns: "280px 1fr" }}>
+            {/* DESKTOP SIDEBAR */}
+            <div className="hidden lg:block">
+              <div className="sticky" style={{ top: "140px" }}>
+                <Sidebar />
               </div>
-            ))}
-          </div>
-
-          {/* Mensaje "preparando fotos" SOLO si no hay ninguna pieza real cargada */}
-          {visibleJoyas.length === 0 && !HAS_REAL_JOYAS && (
-            <div className="text-center py-16 border border-gold/20 rounded-[4px] bg-cream/30 max-w-xl mx-auto">
-              <p className="text-charcoal/70 text-sm leading-relaxed mb-4">
-                Estamos preparando las fotos de nuestras piezas. Mientras tanto,
-                podemos cotizar tu joya por WhatsApp.
-              </p>
-              <a
-                href={buildWhatsAppUrl("pieza_custom")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block min-h-[44px] px-6 py-3 bg-gradient-gold text-charcoal text-xs tracking-widest uppercase font-semibold"
-              >
-                Cotizar por WhatsApp
-              </a>
             </div>
-          )}
 
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 md:gap-6">
-            {visibleJoyas.map((p, i) => (
-              <motion.article
-                key={p.slug}
-                transition={{ delay: Math.min(i, 5) * 0.03 }}
-                className="bg-cream/40"
-              >
-                <Link to={`/joyas/${p.slug}`} className="block group">
-                  <div className="aspect-square overflow-hidden bg-cream rounded-[4px]">
-                    <img
-                      src={p.imagenes[0]}
-                      alt={`${p.nombre} — ${p.material}. ${p.categoria} Gia Solari Joyas`}
-                      loading={i < 4 ? "eager" : "lazy"}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="pt-2 px-0.5 pb-2">
-                    <h2 className="font-display text-[14px] md:text-[16px] text-charcoal leading-tight truncate">
-                      {p.nombre}
-                    </h2>
-                    <p className="text-[11px] md:text-[12px] text-gold mt-0.5 tracking-widest uppercase">
-                      Cotizar
-                    </p>
-                  </div>
-                </Link>
-              </motion.article>
-            ))}
-          </div>
+            {/* RIGHT — CHIPS + GRID */}
+            <div>
+              {chips.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {chips.map((c, i) => (
+                    <button
+                      key={i}
+                      onClick={c.onRemove}
+                      className="inline-flex items-center gap-2 transition-colors hover:opacity-70"
+                      style={{
+                        background: CREAM_WARM,
+                        color: OLIVE_DEEP,
+                        padding: "6px 14px",
+                        borderRadius: "999px",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: "12px",
+                      }}
+                    >
+                      {c.label}
+                      <X size={12} strokeWidth={1.8} />
+                    </button>
+                  ))}
+                </div>
+              )}
 
-          {/* CTA final */}
-          <div className="mt-16 text-center border-t border-gold/20 pt-12">
-            <h2 className="font-display text-2xl text-charcoal mb-4">
-              ¿Quieres algo a tu medida?
-            </h2>
-            <p className="text-charcoal/70 text-sm mb-6 max-w-md mx-auto">
-              Diseñamos cada pieza desde cero según tu historia. Conversemos.
-            </p>
-            <a
-              href={buildWhatsAppUrl("home_hero")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block min-h-[48px] px-8 py-4 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm"
-            >
-              Cotiza por WhatsApp
-            </a>
+              {/* EMPTY STATE */}
+              {filtered.length === 0 ? (
+                <div className="text-center py-24 md:py-32">
+                  <SearchX size={40} strokeWidth={1.2} style={{ color: OLIVE_SOFT, margin: "0 auto 24px" }} />
+                  <h3 className="mb-3" style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "28px", color: OLIVE_DEEP }}>
+                    No encontré piezas con esos filtros.
+                  </h3>
+                  <p className="mb-7" style={{ fontFamily: "Inter, sans-serif", fontSize: "15px", color: OLIVE_SOFT }}>
+                    Si tienes algo concreto en mente, lo diseñamos juntas.
+                  </p>
+                  <Link
+                    to="/cotizar"
+                    className="inline-block rounded-full transition-colors"
+                    style={{
+                      background: OLIVE,
+                      color: CREAM,
+                      padding: "14px 32px",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "13px",
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    Cotizar pieza única →
+                  </Link>
+                </div>
+              ) : (
+                <>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-10 md:gap-x-6 md:gap-y-14">
+                    {visible.map((p, i) => (
+                      <motion.article
+                        key={p.slug}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: Math.min(i, 5) * 0.04 }}
+                        className="group"
+                      >
+                        <Link to={`/joyas/${p.slug}`} className="block">
+                          <div className="relative overflow-hidden" style={{ aspectRatio: "4 / 5", background: CREAM_WARM }}>
+                            <img
+                              src={p.imagenes[0]}
+                              alt={`${p.nombre} — ${p.material}`}
+                              loading={i < 6 ? "eager" : "lazy"}
+                              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            {p.categoria === "Vintage" && (
+                              <span
+                                className="absolute top-3 left-3"
+                                style={{
+                                  background: TERRACOTA,
+                                  color: CREAM,
+                                  fontFamily: "Inter, sans-serif",
+                                  fontSize: "10px",
+                                  letterSpacing: "0.18em",
+                                  textTransform: "uppercase",
+                                  padding: "4px 10px",
+                                }}
+                              >
+                                Vintage · Único
+                              </span>
+                            )}
+                            <button
+                              type="button"
+                              aria-label="Guardar en favoritos"
+                              onClick={(e) => { e.preventDefault(); }}
+                              className="absolute top-3 right-3 rounded-full transition-transform hover:scale-110"
+                              style={{
+                                width: 32, height: 32,
+                                background: "rgba(245,239,230,0.85)",
+                                backdropFilter: "blur(8px)",
+                                display: "flex", alignItems: "center", justifyContent: "center",
+                              }}
+                            >
+                              <Heart size={14} strokeWidth={1.5} style={{ color: INK }} />
+                            </button>
+                          </div>
+                          <div className="pt-4 px-1">
+                            <p style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: OLIVE_SOFT }}>
+                              {p.categoria}{p.estilo ? ` · ${p.estilo}` : ""}
+                            </p>
+                            <h2 className="mt-1.5" style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "18px", color: OLIVE_DEEP, lineHeight: 1.2 }}>
+                              {p.nombre}
+                            </h2>
+                            <p className="mt-1.5" style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", color: CHAMPAGNE, fontWeight: 500 }}>
+                              {formatPrecioDesde(p.precioDesde) ?? "Precio a consultar"}
+                            </p>
+                          </div>
+                        </Link>
+                      </motion.article>
+                    ))}
+                  </div>
+
+                  {hasMore && (
+                    <div className="text-center mt-16">
+                      <button
+                        onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
+                        className="rounded-full transition-colors"
+                        style={{
+                          border: `1px solid ${OLIVE}`,
+                          color: OLIVE,
+                          padding: "14px 32px",
+                          fontFamily: "Inter, sans-serif",
+                          fontSize: "13px",
+                          letterSpacing: "0.08em",
+                          textTransform: "uppercase",
+                          background: "transparent",
+                        }}
+                      >
+                        Ver más piezas →
+                      </button>
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
           </div>
         </div>
       </main>
+
+      {/* MOBILE DRAWER */}
+      <AnimatePresence>
+        {drawerOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              onClick={() => setDrawerOpen(false)}
+              className="fixed inset-0 z-[80] lg:hidden"
+              style={{ background: "rgba(26,26,24,0.4)" }}
+            />
+            <motion.aside
+              initial={{ x: "-100%" }} animate={{ x: 0 }} exit={{ x: "-100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+              className="fixed top-0 left-0 bottom-0 w-[85%] max-w-sm z-[81] overflow-y-auto lg:hidden"
+              style={{ background: CREAM, padding: "24px 24px 80px" }}
+            >
+              <div className="flex items-center justify-between mb-8">
+                <p style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "22px", color: OLIVE_DEEP }}>Filtros</p>
+                <button onClick={() => setDrawerOpen(false)} aria-label="Cerrar"><X size={22} style={{ color: INK }} /></button>
+              </div>
+              <Sidebar />
+              <button
+                onClick={() => setDrawerOpen(false)}
+                className="fixed bottom-4 left-4 right-4 rounded-full"
+                style={{
+                  background: OLIVE, color: CREAM, padding: "14px",
+                  fontFamily: "Inter, sans-serif", fontSize: "13px",
+                  letterSpacing: "0.08em", textTransform: "uppercase",
+                  width: "calc(85% - 32px)", maxWidth: "calc(384px - 32px)",
+                }}
+              >
+                Ver {filtered.length} pieza{filtered.length === 1 ? "" : "s"}
+              </button>
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
 
       <Footer />
       <WhatsAppButton />

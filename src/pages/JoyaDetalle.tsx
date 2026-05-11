@@ -1,280 +1,442 @@
+import { useState, useMemo, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { MessageCircle, Pencil, Hammer, Calendar } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Heart, ChevronDown, ChevronLeft, ChevronRight, X, Check, ShieldCheck, Award, Sparkles } from "lucide-react";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import { JOYAS, formatPrecioDesde } from "@/data/joyas";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
+
+const OLIVE = "#4A5536";
+const OLIVE_DEEP = "#3A4429";
+const OLIVE_SOFT = "#6B7752";
+const CHAMPAGNE = "#C9A87C";
+const CREAM = "#F5EFE6";
+const CREAM_WARM = "#EBE2D2";
+const INK = "#1A1A18";
+const LINE = "#D9D2C4";
+
+const Eyebrow: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => (
+  <p className={className} style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.22em", textTransform: "uppercase", color: OLIVE_SOFT }}>{children}</p>
+);
 
 const JoyaDetalle = () => {
   const { slug } = useParams<{ slug: string }>();
   const item = JOYAS.find((p) => p.slug === slug);
 
+  const [activeImg, setActiveImg] = useState(0);
+  const [lightbox, setLightbox] = useState(false);
+  const [specsOpen, setSpecsOpen] = useState(false);
+
+  // Related pieces (same tipo, exclude current)
+  const related = useMemo(() => {
+    if (!item) return [];
+    const sameStyle = JOYAS.filter((j) => !j.isPlaceholder && j.slug !== item.slug && j.categoria === item.categoria && j.estilo === item.estilo);
+    const sameTipo = JOYAS.filter((j) => !j.isPlaceholder && j.slug !== item.slug && j.categoria === item.categoria && j.estilo !== item.estilo);
+    return [...sameStyle, ...sameTipo].slice(0, 4);
+  }, [item]);
+
+  useEffect(() => {
+    document.body.style.overflow = lightbox ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [lightbox]);
+
   if (!item) return <Navigate to="/joyas" replace />;
 
-  const waUrl = buildWhatsAppUrl("pieza_especifica", { nombre: item.nombre });
+  const imgs = item.imagenes;
+  const tipoEstilo = `${item.categoria}${item.estilo ? ` · ${item.estilo}` : ""}`;
   const precioLabel = formatPrecioDesde(item.precioDesde);
 
-  const productJsonLd = {
+  // Split description into emotional + body paragraphs
+  const longDesc = item.descripcionLarga ?? item.descripcion;
+  const paragraphs = longDesc.split(/\n+/).filter(Boolean);
+  const emotional = paragraphs[0] ?? item.descripcion;
+  const bodyParas = paragraphs.slice(1);
+
+  // SEO
+  const seoTitle = `${item.nombre} — ${tipoEstilo} | Gia Solari Joyas`;
+  const seoDesc = emotional.slice(0, 155);
+
+  const productJsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: item.nombre,
-    description: item.descripcion,
-    image: item.imagenes.map((i) => `https://www.giasolari.cl${i}`),
-    brand: { "@type": "Brand", name: "Gia Solari" },
-    category: item.categoria,
-    material: item.material,
+    image: `https://www.giasolari.cl${imgs[0]}`,
+    description: emotional,
+    brand: { "@type": "Brand", name: "Gia Solari Joyas" },
+    sku: item.slug,
+    category: tipoEstilo,
     offers: {
       "@type": "Offer",
-      url: `https://www.giasolari.cl/joyas/${item.slug}`,
       priceCurrency: "CLP",
-      price: item.precioDesde ?? 1500000,
-      priceValidUntil: "2027-12-31",
-      availability: "https://schema.org/PreOrder",
+      ...(item.precioDesde ? { price: item.precioDesde } : {}),
+      availability: "https://schema.org/MadeToOrder",
       seller: { "@type": "Organization", name: "Gia Solari Joyas" },
     },
   };
 
-  const [foto, ...galeria] = item.imagenes;
+  const goPrev = () => setActiveImg((i) => (i - 1 + imgs.length) % imgs.length);
+  const goNext = () => setActiveImg((i) => (i + 1) % imgs.length);
+
+  // Build specs
+  const specsRows: { label: string; value: string }[] = [
+    { label: "Metal", value: item.metalPrincipal ?? item.material.split(" · ")[0] ?? "A definir" },
+  ];
+  if (item.piedraCentral) specsRows.push({ label: "Centro", value: item.piedraCentral });
+  if (item.estilo) specsRows.push({ label: "Estilo", value: item.estilo });
+  specsRows.push({ label: "Talla", value: "A medida" });
+  specsRows.push({ label: "Hechura", value: "Engaste a mano en taller" });
+  specsRows.push({ label: "Materiales", value: item.material });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{ background: CREAM }}>
       <SEO
-        title={`${item.nombre} | ${item.categoria} — Gia Solari`}
-        description={`${item.nombre}. ${item.descripcion} ${item.material}. Pieza única, hecha a medida.`}
+        title={seoTitle}
+        description={seoDesc}
         path={`/joyas/${item.slug}`}
-        image={item.imagenes[0]}
+        image={imgs[0]}
         noindex={item.isPlaceholder}
       />
       <Helmet>
+        <link rel="canonical" href={`https://www.giasolari.cl/joyas/${item.slug}`} />
         {!item.isPlaceholder && (
           <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>
         )}
       </Helmet>
       <Navbar />
 
-      <main className="pt-24 pb-32">
-        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
-          <nav className="text-xs tracking-widest uppercase text-charcoal/60 mb-6">
-            <Link to="/joyas" className="hover:text-gold">
-              ← Joyas
-            </Link>
+      <main className="pt-28 md:pt-36 pb-32 md:pb-32">
+        <div className="container mx-auto px-4 md:px-8 max-w-[1200px]">
+          {/* BREADCRUMB */}
+          <nav className="mb-8 md:mb-10" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.1em", color: OLIVE_SOFT }}>
+            <Link to="/" className="hover:underline">Inicio</Link>
+            <span className="mx-2">·</span>
+            <Link to="/joyas" className="hover:underline">Joyas</Link>
+            <span className="mx-2">·</span>
+            <Link to={`/joyas?tipo=compromiso`} className="hover:underline">{item.categoria}</Link>
+            {item.estilo && (
+              <>
+                <span className="mx-2">·</span>
+                <span>{item.estilo}</span>
+              </>
+            )}
+            <span className="mx-2">·</span>
+            <span style={{ color: OLIVE_DEEP, fontWeight: 500 }}>{item.nombre}</span>
           </nav>
 
-          {/* HERO: foto principal + datos */}
-          <div className="grid lg:grid-cols-2 gap-10 mb-16">
-            <div className="aspect-[4/5] overflow-hidden bg-cream rounded-[4px]">
-              <img
-                src={foto}
-                alt={`${item.nombre} — ${item.material}`}
-                loading="eager"
-                className="w-full h-full object-cover"
-              />
+          {/* MAIN GRID */}
+          <div className="grid lg:grid-cols-[58fr_42fr] gap-8 lg:gap-20">
+            {/* LEFT — GALERÍA */}
+            <div>
+              <button
+                type="button"
+                onClick={() => setLightbox(true)}
+                className="block w-full overflow-hidden cursor-zoom-in"
+                style={{ aspectRatio: "4 / 5", background: CREAM_WARM }}
+              >
+                <img
+                  src={imgs[activeImg]}
+                  alt={`${item.nombre} — vista ${activeImg + 1}`}
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+              </button>
+
+              {imgs.length > 1 && (
+                <div className="hidden md:flex gap-2 mt-3">
+                  {imgs.map((src, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveImg(i)}
+                      className="overflow-hidden transition-all"
+                      style={{
+                        width: 80, height: 100,
+                        border: `${activeImg === i ? "2px" : "1px"} solid ${activeImg === i ? OLIVE : LINE}`,
+                        background: CREAM_WARM,
+                      }}
+                    >
+                      <img src={src} alt={`Miniatura ${i + 1}`} className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {imgs.length > 1 && (
+                <div className="md:hidden flex justify-center gap-1.5 mt-3">
+                  {imgs.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveImg(i)}
+                      aria-label={`Ver foto ${i + 1}`}
+                      className="rounded-full"
+                      style={{
+                        width: 6, height: 6,
+                        background: activeImg === i ? CHAMPAGNE : LINE,
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
 
-            <div className="lg:sticky lg:top-24 self-start">
-              <p className="text-xs uppercase tracking-widest text-gold mb-2">
-                {item.categoria}
-              </p>
-              <h1 className="text-3xl md:text-4xl font-display text-charcoal mb-3">
+            {/* RIGHT — INFO */}
+            <div className="lg:sticky lg:self-start" style={{ top: "140px" }}>
+              <Eyebrow>{tipoEstilo}</Eyebrow>
+              <h1
+                className="mt-3"
+                style={{
+                  fontFamily: "'Bodoni Moda', serif",
+                  fontWeight: 400,
+                  fontSize: "clamp(36px, 4vw, 48px)",
+                  lineHeight: 1.05,
+                  color: OLIVE_DEEP,
+                }}
+              >
                 {item.nombre}
               </h1>
-              <p className="text-sm uppercase tracking-wider text-charcoal/70 mb-5">
-                {item.material}
-              </p>
-              {precioLabel && (
-                <p className="text-base text-charcoal mb-5 font-medium">
-                  {precioLabel}{" "}
-                  <span className="text-charcoal/50 text-xs uppercase tracking-wider">
-                    · referencial
-                  </span>
-                </p>
-              )}
-              <p className="text-charcoal/80 leading-relaxed mb-6">
-                {item.descripcion}
-              </p>
 
-              <div className="border-t border-b border-gold/20 py-5 mb-6">
-                <p className="text-sm text-charcoal/70 leading-relaxed italic">
-                  Pieza única — cotiza a medida. Cada joya se fabrica especialmente
-                  para ti, según el metal, las piedras y los detalles que elijas.
+              {/* Description */}
+              <div className="mt-6 space-y-4">
+                <p style={{ fontFamily: "'Bodoni Moda', serif", fontStyle: "italic", fontWeight: 400, fontSize: "19px", lineHeight: 1.5, color: OLIVE_DEEP }}>
+                  {emotional}
                 </p>
-                <p className="mt-3 text-[12px] text-charcoal/60 italic leading-relaxed">
-                  Cada pieza de Gia Solari se fabrica a mano, una por una. El
-                  resultado final puede variar levemente de la imagen de referencia.
+                {bodyParas.map((p, i) => (
+                  <p key={i} style={{ fontFamily: "Inter, sans-serif", fontSize: "15px", lineHeight: 1.7, color: INK }}>{p}</p>
+                ))}
+              </div>
+
+              {/* Price block */}
+              <div className="mt-8">
+                <p style={{ fontFamily: "Inter, sans-serif", fontSize: "22px", fontWeight: 500, color: OLIVE_DEEP }}>
+                  {precioLabel ?? "Precio a consultar"}
+                </p>
+                <p className="mt-1" style={{ fontFamily: "Inter, sans-serif", fontSize: "12px", color: OLIVE_SOFT }}>
+                  {precioLabel ? "Variable según centro y kilataje" : "El valor depende del diseño final que conversemos"}
                 </p>
               </div>
 
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full min-h-[48px] px-6 py-4 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm mb-3"
+              {/* Specs accordion */}
+              <button
+                type="button"
+                onClick={() => setSpecsOpen((v) => !v)}
+                className="mt-8 w-full flex items-center justify-between py-4"
+                style={{ borderTop: `1px solid ${LINE}`, borderBottom: `1px solid ${LINE}`, fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 500, color: OLIVE_DEEP }}
               >
-                <MessageCircle className="w-4 h-4" />
-                Cotizar esta pieza por WhatsApp
-              </a>
-              <Link
-                to="/cotizar"
-                className="inline-flex items-center justify-center w-full min-h-[48px] px-6 py-3 border border-charcoal/40 text-charcoal font-semibold tracking-widest uppercase text-xs hover:border-gold hover:text-gold transition-colors mb-3"
-              >
-                Cotizar pieza similar
-              </Link>
-              <Link
-                to="/garantia-por-gusto"
-                className="block text-center text-xs tracking-widest uppercase text-charcoal/60 hover:text-gold"
-              >
-                Incluye Garantía por Gusto
-              </Link>
+                <span>Especificaciones técnicas</span>
+                <ChevronDown size={16} strokeWidth={1.5} style={{ transform: specsOpen ? "rotate(180deg)" : "none", transition: "transform 200ms" }} />
+              </button>
+              <AnimatePresence initial={false}>
+                {specsOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <dl className="py-5 grid sm:grid-cols-2 gap-y-3 gap-x-6">
+                      {specsRows.map((s) => (
+                        <div key={s.label}>
+                          <dt style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: OLIVE_SOFT, marginBottom: "2px" }}>{s.label}</dt>
+                          <dd style={{ fontFamily: "Inter, sans-serif", fontSize: "14px", color: INK }}>{s.value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* CTAs (desktop / inline) */}
+              <div className="hidden md:block mt-8 space-y-3">
+                <Link
+                  to={`/cotizar?pieza=${item.slug}`}
+                  className="block text-center rounded-full transition-all hover:-translate-y-0.5"
+                  style={{ background: OLIVE, color: CREAM, padding: "16px", fontFamily: "Inter, sans-serif", fontSize: "14px", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = OLIVE_DEEP)}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = OLIVE)}
+                >
+                  Cotizar {item.nombre}
+                </Link>
+                <button
+                  type="button"
+                  className="w-full text-center rounded-full transition-colors flex items-center justify-center gap-2"
+                  style={{ border: `1px solid ${OLIVE}`, color: OLIVE, padding: "15px", background: "transparent", fontFamily: "Inter, sans-serif", fontSize: "14px", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}
+                >
+                  <Heart size={14} strokeWidth={1.5} />
+                  Guardar en wishlist
+                </button>
+              </div>
+
+              {/* Trust strip */}
+              <ul className="mt-7 space-y-2">
+                {[
+                  { Icon: ShieldCheck, t: "Garantía por Gusto incluida" },
+                  { Icon: Award, t: "Certificado del centro" },
+                  { Icon: Sparkles, t: "Diseño a medida sobre esta pieza" },
+                ].map(({ Icon, t }) => (
+                  <li key={t} className="flex items-center gap-2" style={{ fontFamily: "Inter, sans-serif", fontSize: "12px", color: OLIVE_SOFT }}>
+                    <Icon size={14} strokeWidth={1.5} style={{ color: OLIVE_SOFT }} />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Personalizar block */}
+              <div className="mt-8 p-6 rounded-lg" style={{ background: CREAM_WARM }}>
+                <p style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 500, color: OLIVE_DEEP }}>
+                  ¿Te gusta {item.nombre.split("·")[0].trim()} pero quieres cambiar algo?
+                </p>
+                <p className="mt-2" style={{ fontFamily: "Inter, sans-serif", fontSize: "14px", lineHeight: 1.6, color: INK }}>
+                  Cambiamos centro, kilates, metal o forma del halo. Cotiza y te paso opciones a medida.
+                </p>
+                <Link
+                  to={`/cotizar?pieza=${item.slug}&modificada=true`}
+                  className="inline-flex items-center gap-1 mt-3 group"
+                  style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 500, color: OLIVE }}
+                >
+                  Pedir modificaciones
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* SOBRE ESTA PIEZA */}
-          <section className="mb-16 max-w-3xl">
-            <p className="text-xs tracking-[0.3em] uppercase text-gold mb-3">
-              Sobre esta pieza
-            </p>
-            <h2 className="font-display text-2xl md:text-3xl text-charcoal mb-5">
-              {item.nombre}
-            </h2>
-            <p className="text-charcoal/80 leading-relaxed mb-5 whitespace-pre-line">
-              {item.descripcionLarga ?? item.descripcion}
-            </p>
-            <dl className="grid sm:grid-cols-2 gap-y-3 gap-x-8 border-t border-gold/20 pt-5">
-              <div>
-                <dt className="text-[11px] tracking-widest uppercase text-charcoal/50 mb-1">
-                  Materiales
-                </dt>
-                <dd className="text-sm text-charcoal/80">{item.material}</dd>
+          {/* RELATED PIECES */}
+          {related.length > 0 && (
+            <section className="mt-32">
+              <div className="text-center mb-12">
+                <Eyebrow>También te puede interesar</Eyebrow>
+                <h2
+                  className="mt-3"
+                  style={{ fontFamily: "'Bodoni Moda', serif", fontWeight: 400, fontSize: "clamp(28px, 3vw, 36px)", color: OLIVE_DEEP }}
+                >
+                  Otras piezas en este estilo
+                </h2>
               </div>
-              <div>
-                <dt className="text-[11px] tracking-widest uppercase text-charcoal/50 mb-1">
-                  Categoría
-                </dt>
-                <dd className="text-sm text-charcoal/80">{item.categoria}</dd>
-              </div>
-            </dl>
-
-            {item.historia && (
-              <div className="mt-8 p-6 bg-cream/50 border-l-2 border-gold">
-                <p className="text-[11px] tracking-widest uppercase text-gold mb-2">
-                  La historia
-                </p>
-                <p className="text-charcoal/80 leading-relaxed italic">
-                  {item.historia}
-                </p>
-              </div>
-            )}
-          </section>
-
-          {/* GALERÍA SCROLLEABLE */}
-          {galeria.length > 0 && (
-            <section className="mb-16 -mx-4 md:mx-0">
-              <p className="text-xs tracking-[0.3em] uppercase text-gold mb-4 px-4 md:px-0">
-                Galería
-              </p>
-              <div className="flex gap-3 md:gap-4 overflow-x-auto pb-2 px-4 md:px-0 snap-x snap-mandatory">
-                {galeria.map((src, i) => (
-                  <div
-                    key={i}
-                    className="flex-[0_0_80%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] snap-start aspect-[4/5] overflow-hidden bg-cream rounded-[4px]"
-                  >
-                    <img
-                      src={src}
-                      alt={`${item.nombre} — foto ${i + 2}`}
-                      loading="lazy"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-10 md:gap-6">
+                {related.map((r) => (
+                  <Link key={r.slug} to={`/joyas/${r.slug}`} className="block group">
+                    <div className="overflow-hidden" style={{ aspectRatio: "4/5", background: CREAM_WARM }}>
+                      <img src={r.imagenes[0]} alt={r.nombre} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    </div>
+                    <p className="mt-3" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: OLIVE_SOFT }}>
+                      {r.categoria}
+                    </p>
+                    <p className="mt-1" style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "16px", color: OLIVE_DEEP }}>
+                      {r.nombre}
+                    </p>
+                  </Link>
                 ))}
               </div>
             </section>
           )}
+        </div>
 
-          {/* CÓMO TRABAJAMOS */}
-          <section className="mb-16 border-t border-gold/20 pt-12">
-            <p className="text-xs tracking-[0.3em] uppercase text-gold mb-3 text-center">
-              Cómo trabajamos
-            </p>
-            <h2 className="font-display text-2xl md:text-3xl text-charcoal text-center mb-10">
-              De la conversación a tu joya
+        {/* PROCESO TEASER */}
+        <section className="mt-20 py-24 md:py-32" style={{ background: CREAM_WARM }}>
+          <div className="container mx-auto px-4 md:px-8 max-w-[1200px] text-center">
+            <Eyebrow>De la idea al dedo</Eyebrow>
+            <h2
+              className="mt-3"
+              style={{ fontFamily: "'Bodoni Moda', serif", fontWeight: 400, fontSize: "clamp(32px, 3.5vw, 40px)", color: OLIVE_DEEP }}
+            >
+              Cómo trabajamos juntos
             </h2>
-            <ol className="grid md:grid-cols-3 gap-8">
+            <p
+              className="mt-3 mx-auto"
+              style={{ fontFamily: "'Bodoni Moda', serif", fontStyle: "italic", fontSize: "18px", color: OLIVE_SOFT, maxWidth: "560px" }}
+            >
+              De la idea a tu pieza terminada en cuatro semanas.
+            </p>
+            <ol className="mt-16 grid md:grid-cols-4 gap-12 md:gap-8 text-center">
               {[
-                {
-                  Icon: MessageCircle,
-                  titulo: "Conversamos",
-                  texto:
-                    "Nos cuentas qué imaginas. Te asesoramos sobre piedras, metales y formato sin compromiso.",
-                },
-                {
-                  Icon: Pencil,
-                  titulo: "Diseñamos",
-                  texto:
-                    "Hacemos un boceto a mano y lo ajustamos hasta que la pieza sea exactamente lo que quieres.",
-                },
-                {
-                  Icon: Hammer,
-                  titulo: "Fabricamos a mano",
-                  texto:
-                    "Tu joya se hace una por una en nuestro taller en Santiago. 4 a 6 semanas desde la aprobación.",
-                },
-              ].map(({ Icon, titulo, texto }, i) => (
-                <li key={titulo} className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-cream border border-gold/30 mb-4">
-                    <Icon className="w-5 h-5 text-gold" strokeWidth={1.5} />
-                  </div>
-                  <p className="text-[11px] tracking-widest uppercase text-gold mb-2">
-                    Paso {i + 1}
-                  </p>
-                  <h3 className="font-display text-lg text-charcoal mb-2">
-                    {titulo}
-                  </h3>
-                  <p className="text-sm text-charcoal/70 leading-relaxed">
-                    {texto}
-                  </p>
+                { n: "01", t: "Conversación", w: "Semana 1" },
+                { n: "02", t: "Boceto", w: "Semana 2" },
+                { n: "03", t: "Atelier", w: "Semana 3" },
+                { n: "04", t: "Entrega", w: "Semana 4" },
+              ].map((s) => (
+                <li key={s.n}>
+                  <p style={{ fontFamily: "'Bodoni Moda', serif", fontWeight: 400, fontSize: "56px", color: CHAMPAGNE, lineHeight: 1 }}>{s.n}</p>
+                  <p className="mt-3" style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "22px", color: OLIVE_DEEP }}>{s.t}</p>
+                  <p className="mt-1" style={{ fontFamily: "Inter, sans-serif", fontSize: "12px", letterSpacing: "0.12em", textTransform: "uppercase", color: OLIVE_SOFT }}>{s.w}</p>
                 </li>
               ))}
             </ol>
-          </section>
-
-          {/* CTA FINAL */}
-          <section className="text-center border-t border-gold/20 pt-12">
-            <h2 className="font-display text-2xl md:text-3xl text-charcoal mb-4">
-              ¿Te gustaría verla en persona?
-            </h2>
-            <p className="text-charcoal/70 text-sm mb-6 max-w-md mx-auto">
-              Te recibimos en nuestro showroom en Las Condes con cita previa.
-              Conversamos sobre tu pieza, te mostramos materiales y muestras reales.
-            </p>
-            <Link
-              to="/agenda"
-              className="inline-flex items-center justify-center gap-2 min-h-[48px] px-8 py-4 bg-charcoal text-cream font-semibold tracking-widest uppercase text-sm hover:bg-gold hover:text-charcoal transition-colors"
-            >
-              <Calendar className="w-4 h-4" />
-              Agendar visita al showroom
-            </Link>
-          </section>
-        </div>
+            <div className="mt-16">
+              <Link to="/proceso" className="underline" style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 500, color: OLIVE_DEEP }}>
+                Ver el proceso completo →
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
-      <WhatsAppButton hideOnMobile />
 
-      {/* Sticky CTA mobile */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-[998] bg-background/95 backdrop-blur-md border-t border-gold/20 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
-        <a
-          href={waUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full min-h-[48px] px-4 py-3 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-xs"
+      {/* MOBILE STICKY CTAs */}
+      <div
+        className="md:hidden fixed bottom-0 left-0 right-0 z-[60] flex gap-2"
+        style={{ background: CREAM, padding: "12px 16px calc(12px + env(safe-area-inset-bottom))", boxShadow: "0 -8px 24px rgba(0,0,0,0.08)" }}
+      >
+        <button
+          type="button"
+          aria-label="Guardar"
+          className="rounded-full"
+          style={{ width: 48, height: 48, border: `1px solid ${OLIVE}`, color: OLIVE, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}
         >
-          <MessageCircle className="w-4 h-4" />
-          Cotizar por WhatsApp
-        </a>
+          <Heart size={18} strokeWidth={1.5} />
+        </button>
+        <Link
+          to={`/cotizar?pieza=${item.slug}`}
+          className="flex-1 text-center rounded-full"
+          style={{ background: OLIVE, color: CREAM, padding: "14px", fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}
+        >
+          Cotizar pieza
+        </Link>
       </div>
+
+      {/* LIGHTBOX */}
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center"
+            style={{ background: "rgba(26,26,24,0.95)" }}
+          >
+            <button
+              onClick={() => setLightbox(false)}
+              aria-label="Cerrar"
+              className="absolute top-5 right-5"
+              style={{ color: CHAMPAGNE }}
+            >
+              <X size={28} strokeWidth={1.5} />
+            </button>
+            {imgs.length > 1 && (
+              <>
+                <button onClick={goPrev} aria-label="Anterior" className="absolute left-3 md:left-8" style={{ color: CHAMPAGNE }}>
+                  <ChevronLeft size={32} strokeWidth={1.5} />
+                </button>
+                <button onClick={goNext} aria-label="Siguiente" className="absolute right-3 md:right-8" style={{ color: CHAMPAGNE }}>
+                  <ChevronRight size={32} strokeWidth={1.5} />
+                </button>
+              </>
+            )}
+            <img
+              src={imgs[activeImg]}
+              alt={item.nombre}
+              className="max-h-[90vh] max-w-[92vw] object-contain"
+            />
+            {imgs.length > 1 && (
+              <p
+                className="absolute bottom-6 left-0 right-0 text-center"
+                style={{ color: CHAMPAGNE, fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.2em" }}
+              >
+                {activeImg + 1} / {imgs.length}
+              </p>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
