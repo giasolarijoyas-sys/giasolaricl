@@ -213,6 +213,70 @@ const Navbar = () => {
               </AnimatePresence>
             </div>
 
+            {/* Significados dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setSigOpen(true)}
+              onMouseLeave={() => setSigOpen(false)}
+            >
+              <button
+                aria-haspopup="true"
+                aria-expanded={sigOpen}
+                onClick={() => setSigOpen((v) => !v)}
+                className="flex items-center gap-1 transition-colors"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  color: sigOpen ? CARAMEL : "#4A5536",
+                }}
+              >
+                <span className="nav-underline">Significados</span>
+                <ChevronDown size={14} className={`transition-transform ${sigOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              <AnimatePresence>
+                {sigOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[240px] p-5"
+                    style={{
+                      background: CREAM,
+                      boxShadow: "0 12px 32px -8px rgba(31, 36, 23, 0.18)",
+                      borderRadius: "8px",
+                      border: `1px solid ${BORDER}`,
+                    }}
+                  >
+                    <ul className="flex flex-col gap-1.5">
+                      {significadosItems.map((it) => (
+                        <li key={it.href}>
+                          <a
+                            href={it.href}
+                            className="block py-1.5 transition-colors hover:text-[#C9A87C]"
+                            style={{
+                              fontFamily: "Inter, sans-serif",
+                              fontSize: "13.5px",
+                              fontWeight: 400,
+                              color: INK,
+                            }}
+                          >
+                            {it.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+
+
             {mainLinks.map((l) => (
               <a
                 key={l.href}
