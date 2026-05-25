@@ -22,8 +22,7 @@ const LINE = "#D9D2C4";
 // === FILTER OPTIONS ===
 const TIPOS = [
   { id: "todos", label: "Ver todo", match: null as null | ((c: string) => boolean) },
-  { id: "compromiso", label: "Anillos de compromiso", match: (c: string) => c === "Anillo de compromiso" },
-  { id: "argollas", label: "Argollas de matrimonio", match: (c: string) => c === "Argolla" },
+  { id: "bodas", label: "Anillos de compromiso y argollas", match: (c: string) => c === "Anillo de compromiso" || c === "Argolla" },
   { id: "aros", label: "Aros", match: (c: string) => c === "Aros" },
   { id: "collares", label: "Collares", match: (c: string) => c === "Collar" },
   { id: "pulseras", label: "Pulseras y esclavas", match: (c: string) => c === "Pulsera" },
