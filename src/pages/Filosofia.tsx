@@ -5,15 +5,6 @@ import SEO from "@/components/SEO";
 import GoldenDivider from "@/components/significados/GoldenDivider";
 import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 
-const principios = [
-  { n: "01", t: "Cada piedra tiene historia", d: "Nunca vendemos una piedra solo por su belleza. Siempre compartimos de dónde viene, qué cultura la veneró, qué simboliza." },
-  { n: "02", t: "Cada diseño tiene nombre", d: "Una pieza sin nombre es un producto. Una pieza con nombre es una obra." },
-  { n: "03", t: "La clienta es co-creadora", d: "Preguntamos su historia, su personalidad, su vínculo. La pieza nace de ahí." },
-  { n: "04", t: "El packaging es el último capítulo", d: "La joya llega con su historia escrita." },
-  { n: "05", t: "Oro 18 quilates, sin excepción", d: "Si va a trascender generaciones, tiene que estar hecho para durarlas." },
-  { n: "06", t: "Estética mediterránea", d: "Nuestra firma visual: luz, sobriedad, calma." },
-  { n: "07", t: "Trascendemos generaciones", d: "Diseñamos para que una pieza pase de madre a hija." },
-];
 
 const Filosofia = () => (
   <>
@@ -110,81 +101,6 @@ const Filosofia = () => (
               diseño, el significado de su forma. Reciba un universo de narrativa que
               convierte su pieza en algo único e irrepetible.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <GoldenDivider />
-
-      {/* 7 PRINCIPIOS */}
-      <section className="py-16 md:py-24 px-6 md:px-12">
-        <div className="max-w-4xl mx-auto">
-          <p
-            style={{
-              fontFamily: SIG_FONTS.body,
-              fontSize: 11,
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-              color: SIG_TOKENS.gold,
-              marginBottom: 16,
-              textAlign: "center",
-            }}
-          >
-            Lo que nos guía
-          </p>
-          <h2
-            className="text-center mb-16"
-            style={{
-              fontFamily: SIG_FONTS.display,
-              fontWeight: 400,
-              fontSize: "clamp(28px, 4vw, 40px)",
-              lineHeight: 1.2,
-            }}
-          >
-            Los Siete Principios
-          </h2>
-
-          <div className="space-y-10 md:space-y-14">
-            {principios.map((p) => (
-              <div key={p.n} className="grid md:grid-cols-[120px_1fr] gap-6 md:gap-10">
-                <div
-                  style={{
-                    fontFamily: SIG_FONTS.italic,
-                    fontStyle: "italic",
-                    fontSize: 44,
-                    color: SIG_TOKENS.gold,
-                    lineHeight: 1,
-                  }}
-                >
-                  {p.n}
-                </div>
-                <div>
-                  <h3
-                    style={{
-                      fontFamily: SIG_FONTS.display,
-                      fontWeight: 400,
-                      fontSize: 24,
-                      marginBottom: 10,
-                      lineHeight: 1.25,
-                    }}
-                  >
-                    {p.t}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: SIG_FONTS.body,
-                      fontWeight: 300,
-                      fontSize: 15,
-                      lineHeight: 1.8,
-                      color: SIG_TOKENS.text,
-                      opacity: 0.85,
-                    }}
-                  >
-                    {p.d}
-                  </p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
