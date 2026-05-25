@@ -398,6 +398,16 @@ const Navbar = () => {
                   {l.label}
                 </a>
               ))}
+              {significadosItems.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  style={{ fontFamily: "'Bodoni Moda', serif", fontStyle: "italic", fontSize: "22px", color: MUTED }}
+                >
+                  {l.label}
+                </a>
+              ))}
               <a
                 href="/lista-de-deseos"
                 onClick={() => setOpen(false)}
