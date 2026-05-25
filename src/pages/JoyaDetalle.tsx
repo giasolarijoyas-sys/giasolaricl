@@ -209,7 +209,7 @@ const JoyaDetalle = () => {
               {/* Price block */}
               <div className="mt-8">
                 <p style={{ fontFamily: "Inter, sans-serif", fontSize: "22px", fontWeight: 500, color: OLIVE_DEEP }}>
-                  {precioLabel ?? "Precio a consultar"}
+                  {precioLabel ?? "Precio a cotizar"}
                 </p>
                 <p className="mt-1" style={{ fontFamily: "Inter, sans-serif", fontSize: "12px", color: OLIVE_SOFT }}>
                   {precioLabel ? "Variable según centro y kilataje" : "El valor depende del diseño final que conversemos"}

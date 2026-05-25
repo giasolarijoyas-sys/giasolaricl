@@ -63,6 +63,30 @@ const OroVsPlatino = () => (
               </section>
 
               <section>
+                <h2 className="font-display text-2xl text-foreground mb-4">Oro 18k vs Oro 14k</h2>
+                <p>Trabajamos los dos quilatajes y la pregunta más común es cuál conviene. La respuesta corta: <strong className="text-foreground">a simple vista se ven igual y duran igual</strong>. La diferencia está en la pureza, en el precio y en algunos detalles técnicos.</p>
+
+                <div className="overflow-x-auto mt-6">
+                  <table className="w-full text-sm">
+                    <thead><tr className="border-b border-border"><th className="py-3 px-3 text-left text-foreground">Característica</th><th className="py-3 px-3 text-left text-foreground">Oro 18k</th><th className="py-3 px-3 text-left text-foreground">Oro 14k</th></tr></thead>
+                    <tbody>
+                      <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground">Pureza</td><td className="py-2 px-3">75% oro puro</td><td className="py-2 px-3">58,5% oro puro</td></tr>
+                      <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground">Apariencia</td><td className="py-2 px-3">Igual al 14k a simple vista</td><td className="py-2 px-3">Igual al 18k a simple vista</td></tr>
+                      <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground">Durabilidad de uso diario</td><td className="py-2 px-3">Excelente</td><td className="py-2 px-3">Excelente (incluso un poco más duro)</td></tr>
+                      <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground">Precio</td><td className="py-2 px-3">Más alto</td><td className="py-2 px-3">Más accesible</td></tr>
+                      <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground">Hipoalergenia</td><td className="py-2 px-3">Mayor</td><td className="py-2 px-3">Buena (más aleación, puede irritar pieles muy sensibles)</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p className="mt-6"><strong className="text-foreground">Lo importante:</strong> los dos son oro de verdad, los dos llevan sello, los dos están pensados para durar generaciones. El 14k incluso es un poco más resistente al rayado por tener más aleación, por lo que para argollas de matrimonio que se usan todos los días es una opción muy válida.</p>
+                <p className="mt-3">El 18k tiene más oro puro, un color levemente más cálido y profundo, y es el estándar histórico de la joyería europea. El 14k es el estándar en EE.UU. y permite acceder a piezas hechas a mano con un presupuesto más acotado.</p>
+                <p className="mt-3">En Gia Solari cotizamos tu pieza en ambos quilatajes si quieres comparar. Ninguna de las dos opciones es "menos joya" — solo distinta proporción.</p>
+              </section>
+
+
+
+              <section>
                 <h2 className="font-display text-2xl text-foreground mb-4">Platino en detalle</h2>
                 <p>El platino es el metal más exclusivo usado en joyería. Es naturalmente blanco, extremadamente duradero y no pierde material con el uso — simplemente se desplaza.</p>
                 <p className="mt-3">Es perfecto para piedras valiosas porque sus garras son más seguras que las de oro. Y es la opción ideal para pieles sensibles por ser 100% hipoalergénico.</p>

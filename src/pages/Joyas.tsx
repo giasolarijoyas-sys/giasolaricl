@@ -63,7 +63,7 @@ const PRECIOS = [
   { id: "p2", label: "$1.000.000 — $2.000.000", min: 1000000, max: 2000000 },
   { id: "p3", label: "$2.000.000 — $3.000.000", min: 2000000, max: 3000000 },
   { id: "p4", label: "$3.000.000+", min: 3000000, max: Infinity },
-  { id: "consultar", label: "A consultar", min: -1, max: -1 },
+  { id: "consultar", label: "A cotizar", min: -1, max: -1 },
 ];
 
 const PAGE_SIZE = 12;
@@ -540,7 +540,7 @@ const Joyas = () => {
                               {p.nombre}
                             </h2>
                             <p className="mt-1.5" style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", color: CHAMPAGNE, fontWeight: 500 }}>
-                              {formatPrecioDesde(p.precioDesde) ?? "Precio a consultar"}
+                              {formatPrecioDesde(p.precioDesde) ?? "Precio a cotizar"}
                             </p>
                           </div>
                         </Link>
