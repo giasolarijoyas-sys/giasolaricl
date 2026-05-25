@@ -1,27 +1,18 @@
-import { MessageCircle, Calendar, Mail } from "lucide-react";
+import { Gem, Sparkles } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const cards = [
   {
-    Icon: MessageCircle,
-    title: "WhatsApp",
-    text: "+56 9 8404 9502",
-    href: buildWhatsAppUrl("generico"),
-    external: true,
+    Icon: Gem,
+    title: "Quiero un anillo de compromiso",
+    text: "Te ayudo a diseñar el anillo, elegir la piedra y el estilo.",
+    href: buildWhatsAppUrl("anillo_compromiso"),
   },
   {
-    Icon: Calendar,
-    title: "Agenda tu visita",
-    text: "Atelier Las Condes, una hora privada.",
-    href: "/agenda",
-    external: false,
-  },
-  {
-    Icon: Mail,
-    title: "Escríbeme",
-    text: "giasolarijoyas@gmail.com",
-    href: "mailto:giasolarijoyas@gmail.com",
-    external: false,
+    Icon: Sparkles,
+    title: "Quiero diseñar una joya a medida",
+    text: "Aros, colgantes, pulseras o argollas pensadas para ti.",
+    href: buildWhatsAppUrl("pieza_custom"),
   },
 ];
 
@@ -40,7 +31,7 @@ const ComoTeAyudo = () => {
               color: "#6B7752",
             }}
           >
-            Atención personal
+            Hablemos por WhatsApp
           </p>
           <h2
             style={{
@@ -62,16 +53,17 @@ const ComoTeAyudo = () => {
               lineHeight: 1.6,
             }}
           >
-            Elige el canal que te quede más cómodo. Te respondo personalmente.
+            Cuéntame qué tienes en mente. Te respondo personalmente.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-          {cards.map(({ Icon, title, text, href, external }) => (
+        <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+          {cards.map(({ Icon, title, text, href }) => (
             <a
               key={title}
               href={href}
-              {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              target="_blank"
+              rel="noopener noreferrer"
               className="block p-10 md:p-12 transition-all duration-200 group"
               style={{
                 background: "#FFFFFF",
@@ -91,8 +83,9 @@ const ComoTeAyudo = () => {
                 className="mt-6"
                 style={{
                   fontFamily: "'Bodoni Moda', serif",
-                  fontSize: "24px",
+                  fontSize: "22px",
                   color: "#3A4429",
+                  lineHeight: 1.25,
                 }}
               >
                 {title}
@@ -103,12 +96,23 @@ const ComoTeAyudo = () => {
                   fontFamily: "Inter, sans-serif",
                   fontSize: "14px",
                   color: "#6B7752",
+                  lineHeight: 1.6,
                 }}
               >
                 {text}
               </p>
             </a>
           ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <a
+            href="/agenda"
+            className="text-sm tracking-widest uppercase hover:underline underline-offset-4"
+            style={{ color: "#4A5536", fontFamily: "Inter, sans-serif" }}
+          >
+            Ver más opciones de contacto →
+          </a>
         </div>
       </div>
     </section>

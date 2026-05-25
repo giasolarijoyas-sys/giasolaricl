@@ -5,7 +5,8 @@ import TrustBadges from "@/components/TrustBadges";
 import Marquee from "@/components/Marquee";
 import Gallery from "@/components/Gallery";
 import WhyUs from "@/components/WhyUs";
-import ProcessSteps from "@/components/ProcessSteps";
+import ProcesoHome from "@/components/ProcesoHome";
+import TresPilares from "@/components/TresPilares";
 import VideoSection from "@/components/VideoSection";
 import Historia from "@/components/Historia";
 import QuoteWizard from "@/components/QuoteWizard";
@@ -50,8 +51,14 @@ const Index = () => {
       {/* Trust badges */}
       <TrustBadges />
 
+      {/* 3 Pilares — promesa de marca, post-hero */}
+      <TresPilares />
+
       {/* Compact diferenciadores con CTA a Garantía por Gusto */}
       <SoloEnGiaSolariCompact />
+
+      {/* Historia de Maca — conexión real, antes de la galería */}
+      <Historia />
 
       {/* 3. Barra marquee de keywords */}
       <Marquee />
@@ -66,8 +73,6 @@ const Index = () => {
         subtext="Diseño artesanal con piedras certificadas"
       />
 
-      {/* Lo que solo encuentras en Gia Solari (compacto arriba; sección expandida removida para evitar duplicación) */}
-
       {/* 5. Diferenciadores / por qué elegirnos */}
       <WhyUs />
 
@@ -80,8 +85,8 @@ const Index = () => {
       {/* New In — recién salido del taller */}
       <NewIn />
 
-      {/* 6. Proceso paso a paso */}
-      <ProcessSteps />
+      {/* 6. Proceso en 3 pasos */}
+      <ProcesoHome />
 
       {/* Video section */}
       <VideoSection />
@@ -101,10 +106,6 @@ const Index = () => {
         text="Hecho a Tu Medida"
         subtext="100% personalizado, 100% único"
       />
-
-
-      {/* 8. Historia de la marca */}
-      <Historia />
       <SectionBanner
         image={bannerDetail}
         alt="Detalle de anillo Gia Solari"

@@ -395,12 +395,14 @@ const Gallery = () => {
                             {piece.name}
                           </p>
                           <p className="text-cream/60 text-xs">{piece.desc}</p>
-                          {piece.priceFrom && (
-                            <p className="text-cream/50 text-xs mt-1">Desde {formatPrice(piece.priceFrom)}</p>
-                          )}
                         </div>
                       </div>
                     </div>
+                    {piece.priceFrom && (
+                      <p className="mt-2 text-xs tracking-wide text-muted-foreground">
+                        Desde {formatPrice(piece.priceFrom)}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
