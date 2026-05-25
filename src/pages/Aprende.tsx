@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Gem, CircleDot, FlaskConical, Heart, Wallet, Sparkles, Infinity as InfinityIcon } from "lucide-react";
+import { Gem, CircleDot, FlaskConical, Heart, Wallet, Sparkles, Infinity as InfinityIcon, Ruler } from "lucide-react";
 
 const articles = [
   {
