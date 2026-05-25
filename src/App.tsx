@@ -92,6 +92,11 @@ const App = () => (
             <Route path="/proceso" element={<Proceso />} />
             <Route path="/cotizar" element={<Cotizar />} />
             <Route path="/new" element={<NewIn />} />
+            <Route path="/filosofia" element={<Filosofia />} />
+            <Route path="/significados/piedras" element={<Piedras />} />
+            <Route path="/significados/piedras/:slug" element={<PiedraDetalle />} />
+            <Route path="/significados/disenos" element={<Disenos />} />
+            <Route path="/significados/disenos/:slug" element={<DisenoDetalle />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
