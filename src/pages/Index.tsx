@@ -133,6 +133,10 @@ const Index = () => {
       <Newsletter />
 
 
+
+      {/* Significados — cada joya tiene una historia */}
+      <SignificadosTeaser />
+
       {/* 11. Acordeón de términos y condiciones */}
       <FAQAccordion />
 
