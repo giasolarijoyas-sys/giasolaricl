@@ -1,9 +1,15 @@
+import imgBodas from "@/assets/gal-halo-olivo.png";
+import imgVintage from "@/assets/gal-vintage-detail.jpg";
+import imgAros from "@/assets/gal-prod-img_2104.jpg";
+import imgCollares from "@/assets/gal-prod-img_2147.jpg";
+import imgFamilia from "@/assets/banner-hands.jpg";
+
 const cards = [
-  { title: "Anillos de compromiso y argollas", href: "/joyas?tipo=bodas" },
-  { title: "Vintage", href: "/joyas?tipo=vintage" },
-  { title: "Aros", href: "/joyas?tipo=aros" },
-  { title: "Collares", href: "/joyas?tipo=collares" },
-  { title: "Joyas de familia", href: "/joyas?tipo=familia" },
+  { title: "Anillos de compromiso y argollas", href: "/joyas?tipo=bodas", img: imgBodas },
+  { title: "Vintage", href: "/joyas?tipo=vintage", img: imgVintage },
+  { title: "Aros", href: "/joyas?tipo=aros", img: imgAros },
+  { title: "Collares", href: "/joyas?tipo=collares", img: imgCollares },
+  { title: "Joyas de familia", href: "/joyas?tipo=familia", img: imgFamilia },
 ];
 
 const VitrinaCategorias = () => {
@@ -41,24 +47,36 @@ const VitrinaCategorias = () => {
             <a
               key={c.title}
               href={c.href}
-              className="relative block group transition-colors duration-500"
+              className="relative block group overflow-hidden"
               style={{
                 aspectRatio: "4 / 5",
                 border: "1px solid rgba(58,68,41,0.18)",
-                background: "transparent",
+                background: "#EBE2D2",
               }}
             >
+              <img
+                src={c.img}
+                alt={c.title}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              {/* Overlay para legibilidad del texto */}
               <div
-                className="absolute inset-0 transition-colors duration-500 group-hover:bg-[rgba(58,68,41,0.04)]"
+                className="absolute inset-0 transition-opacity duration-500"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(26,26,24,0.15) 0%, rgba(26,26,24,0.55) 100%)",
+                }}
               />
               <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
                 <h3
                   style={{
                     fontFamily: "'Bodoni Moda', serif",
                     fontSize: "clamp(20px, 2.2vw, 30px)",
-                    color: "#3A4429",
+                    color: "#F5EFE6",
                     fontWeight: 400,
                     lineHeight: 1.2,
+                    textShadow: "0 1px 12px rgba(0,0,0,0.35)",
                   }}
                 >
                   {c.title}
@@ -71,7 +89,7 @@ const VitrinaCategorias = () => {
                   fontSize: "10px",
                   letterSpacing: "0.3em",
                   textTransform: "uppercase",
-                  color: "#6B7752",
+                  color: "#F5EFE6",
                 }}
               >
                 Ver →
