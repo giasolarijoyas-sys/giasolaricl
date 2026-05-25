@@ -16,27 +16,26 @@ const WHATSAPP_URL = "https://wa.me/56984049502";
 type SubItem = { label: string; href: string };
 const joyasMenuCols: { title: string; items: SubItem[] }[] = [
   {
-    title: "Anillos de compromiso",
+    title: "Anillos de compromiso y argollas",
     items: [
-      { label: "Halos", href: "/joyas?categoria=Anillo+de+compromiso" },
-      { label: "Solitarios", href: "/joyas?categoria=Anillo+de+compromiso" },
-      { label: "Tres y cinco piedras", href: "/joyas?categoria=Anillo+de+compromiso" },
-      { label: "Pavé", href: "/joyas?categoria=Anillo+de+compromiso" },
-      { label: "Cintillos", href: "/joyas?categoria=Anillo+de+compromiso" },
-      { label: "Eternity", href: "/joyas?categoria=Anillo+de+compromiso" },
-      { label: "Color (zafiro, aguamarina, esmeralda)", href: "/joyas?categoria=Anillo+de+compromiso" },
-      { label: "Ver todos →", href: "/joyas?categoria=Anillo+de+compromiso" },
+      { label: "Halos", href: "/joyas?tipo=bodas&estilo=Halo" },
+      { label: "Solitarios", href: "/joyas?tipo=bodas&estilo=Solitarios" },
+      { label: "Tres y cinco piedras", href: "/joyas?tipo=bodas&estilo=Tres+y+cinco+piedras" },
+      { label: "Pavé", href: "/joyas?tipo=bodas&estilo=Pavé" },
+      { label: "Cintillos", href: "/joyas?tipo=bodas&estilo=Cintillos" },
+      { label: "Eternity", href: "/joyas?tipo=bodas&estilo=Eternity" },
+      { label: "Color (zafiro, aguamarina, esmeralda)", href: "/joyas?tipo=bodas&estilo=Color" },
+      { label: "Ver todos →", href: "/joyas?tipo=bodas" },
     ],
   },
   {
-    title: "Por pieza",
+    title: "Otras piezas",
     items: [
-      { label: "Argollas de matrimonio", href: "/joyas?categoria=Argolla" },
-      { label: "Aros", href: "/joyas?categoria=Aros" },
-      { label: "Collares", href: "/joyas?categoria=Collar" },
-      { label: "Pulseras y esclavas", href: "/joyas" },
-      { label: "Joyas de familia", href: "/joyas" },
-      { label: "Vintage", href: "/joyas?categoria=Vintage" },
+      { label: "Aros", href: "/joyas?tipo=aros" },
+      { label: "Collares", href: "/joyas?tipo=collares" },
+      { label: "Pulseras y esclavas", href: "/joyas?tipo=pulseras" },
+      { label: "Joyas de familia", href: "/joyas?tipo=familia" },
+      { label: "Vintage", href: "/joyas?tipo=vintage" },
     ],
   },
 ];

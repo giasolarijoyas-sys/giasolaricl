@@ -1,10 +1,9 @@
 const cards = [
-  { title: "Anillos de compromiso", href: "/joyas?categoria=Anillo+de+compromiso" },
-  { title: "Argollas de matrimonio", href: "/joyas?categoria=Argolla" },
-  { title: "Vintage", href: "/joyas?categoria=Vintage" },
-  { title: "Aros", href: "/joyas?categoria=Aros" },
-  { title: "Collares", href: "/joyas?categoria=Collar" },
-  { title: "Joyas de familia", href: "/joyas" },
+  { title: "Anillos de compromiso y argollas", href: "/joyas?tipo=bodas" },
+  { title: "Vintage", href: "/joyas?tipo=vintage" },
+  { title: "Aros", href: "/joyas?tipo=aros" },
+  { title: "Collares", href: "/joyas?tipo=collares" },
+  { title: "Joyas de familia", href: "/joyas?tipo=familia" },
 ];
 
 const VitrinaCategorias = () => {
