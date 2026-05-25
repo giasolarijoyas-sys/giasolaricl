@@ -7,6 +7,26 @@ import GoldenDivider from "@/components/significados/GoldenDivider";
 import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 import { PIEDRAS } from "@/data/significados";
 
+import imgDiamante from "@/assets/gal-solitario-caja.jpg";
+import imgZafiro from "@/assets/gal-halo-zafiro.jpeg";
+import imgAguamarina from "@/assets/gal-halo-zafiro-redondo.png";
+import imgEsmeralda from "@/assets/gal-esmeralda-halo.png";
+import imgRubi from "@/assets/gal-cinco-piedras.jpeg";
+import imgAmatista from "@/assets/gal-tricillo.jpeg";
+import imgMorganita from "@/assets/gal-halo-oval-caja.jpg";
+import imgPerla from "@/assets/gal-vintage-detail.jpg";
+
+const FOTOS: Record<string, string> = {
+  diamante: imgDiamante,
+  zafiro: imgZafiro,
+  aguamarina: imgAguamarina,
+  esmeralda: imgEsmeralda,
+  rubi: imgRubi,
+  amatista: imgAmatista,
+  morganita: imgMorganita,
+  perla: imgPerla,
+};
+
 const Piedras = () => (
   <>
     <SEO
@@ -67,6 +87,7 @@ const Piedras = () => (
               subtitulo={p.subtitulo}
               accent={p.color}
               kicker="Piedra"
+              img={FOTOS[p.slug]}
             />
           ))}
         </div>

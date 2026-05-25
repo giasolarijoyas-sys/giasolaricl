@@ -7,10 +7,25 @@ import GoldenDivider from "@/components/significados/GoldenDivider";
 import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 import { DISENOS } from "@/data/significados";
 
-const accents = [
-  "#E8E4DC", "#D9CFBE", "#C7B89E", "#1E3A6B",
-  "#B7C7BF", "#D8B8A4", "#7FB8C4", "#A8C3CE",
-];
+import imgEterno from "@/assets/gal-solitario-marco.png";
+import imgTres from "@/assets/gal-tricillo2.jpeg";
+import imgAlado from "@/assets/gal-halo-eucalipto.png";
+import imgReal from "@/assets/gal-art-deco.png";
+import imgTiempo from "@/assets/gal-halo-vintage-caja.png";
+import imgPilares from "@/assets/gal-princesa-marco.jpeg";
+import imgConstelacion from "@/assets/gal-zafiros-banda.png";
+import imgPrimero from "@/assets/joya-halo-floral-tanzanita.png";
+
+const FOTOS: Record<string, string> = {
+  "el-eterno": imgEterno,
+  "las-tres-promesas": imgTres,
+  "el-alado": imgAlado,
+  "el-real": imgReal,
+  "el-tiempo": imgTiempo,
+  "los-cuatro-pilares": imgPilares,
+  "la-constelacion": imgConstelacion,
+  "el-primer-amuleto": imgPrimero,
+};
 
 const Disenos = () => (
   <>
@@ -64,14 +79,15 @@ const Disenos = () => (
 
       <section className="pb-24 md:pb-32 px-6 md:px-12">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-12">
-          {DISENOS.map((d, i) => (
+          {DISENOS.map((d) => (
             <StoneCard
               key={d.slug}
               to={`/significados/disenos/${d.slug}`}
               nombre={d.nombre}
               subtitulo={d.subtitulo}
-              accent={accents[i % accents.length]}
+              accent="#EDE6DA"
               kicker="Diseño"
+              img={FOTOS[d.slug]}
             />
           ))}
         </div>
