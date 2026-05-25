@@ -63,6 +63,7 @@ const WhatsAppIcon = ({ className = "" }: { className?: string }) => (
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [joyasOpen, setJoyasOpen] = useState(false);
+  const [sigOpen, setSigOpen] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
