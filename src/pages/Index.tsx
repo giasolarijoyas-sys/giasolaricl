@@ -106,10 +106,6 @@ const Index = () => {
         text="Hecho a Tu Medida"
         subtext="100% personalizado, 100% único"
       />
-
-
-      {/* 8. Historia de la marca */}
-      <Historia />
       <SectionBanner
         image={bannerDetail}
         alt="Detalle de anillo Gia Solari"
