@@ -43,7 +43,7 @@ const joyasMenuCols: { title: string; items: SubItem[] }[] = [
 const significadosItems: SubItem[] = [
   { label: "Las Piedras", href: "/significados/piedras" },
   { label: "Los Diseños", href: "/significados/disenos" },
-  { label: "Filosofía", href: "/filosofia" },
+  // { label: "Filosofía", href: "/filosofia" }, // oculto temporalmente
 ];
 
 const mainLinks = [

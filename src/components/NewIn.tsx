@@ -75,7 +75,7 @@ const NewIn = () => {
                       color: "#C9A87C",
                     }}
                   >
-                    {precio || "A consultar"}
+                    {precio || "A cotizar"}
                   </p>
                 </Link>
               );
