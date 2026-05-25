@@ -6,36 +6,46 @@ type Props = {
   nombre: string;
   subtitulo: string;
   frase?: string;
-  accent?: string; // color del bloque visual
+  accent?: string; // fallback color del bloque visual
   kicker?: string; // ej "Piedra" o "Diseño"
+  img?: string; // foto real de Gia Solari
 };
 
-const StoneCard = ({ to, nombre, subtitulo, frase, accent = "#EDE6DA", kicker = "Piedra" }: Props) => (
+const StoneCard = ({ to, nombre, subtitulo, frase, accent = "#EDE6DA", kicker = "Piedra", img }: Props) => (
   <Link
     to={to}
     className="group block"
     style={{ color: SIG_TOKENS.text }}
   >
     <div
-      className="aspect-[4/5] w-full mb-5 overflow-hidden flex items-center justify-center"
+      className="aspect-[4/5] w-full mb-5 overflow-hidden flex items-center justify-center relative"
       style={{
-        background: `linear-gradient(135deg, ${accent} 0%, ${accent}cc 100%)`,
+        background: img ? "#f5efe6" : `linear-gradient(135deg, ${accent} 0%, ${accent}cc 100%)`,
         border: `1px solid ${SIG_TOKENS.border}`,
       }}
     >
-      <span
-        style={{
-          fontFamily: SIG_FONTS.italic,
-          fontStyle: "italic",
-          fontSize: "44px",
-          color: "#ffffff",
-          mixBlendMode: "soft-light",
-          opacity: 0.9,
-          letterSpacing: "0.02em",
-        }}
-      >
-        {nombre}
-      </span>
+      {img ? (
+        <img
+          src={img}
+          alt={nombre}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+      ) : (
+        <span
+          style={{
+            fontFamily: SIG_FONTS.italic,
+            fontStyle: "italic",
+            fontSize: "44px",
+            color: "#ffffff",
+            mixBlendMode: "soft-light",
+            opacity: 0.9,
+            letterSpacing: "0.02em",
+          }}
+        >
+          {nombre}
+        </span>
+      )}
     </div>
     <p
       style={{

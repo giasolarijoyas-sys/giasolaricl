@@ -1,34 +1,10 @@
 const cards = [
-  {
-    title: "Anillos de compromiso",
-    href: "/joyas?categoria=Anillo+de+compromiso",
-    img: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Argollas de matrimonio",
-    href: "/joyas?categoria=Argolla",
-    img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Vintage",
-    href: "/joyas?categoria=Vintage",
-    img: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Aros",
-    href: "/joyas?categoria=Aros",
-    img: "https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Collares",
-    href: "/joyas?categoria=Collar",
-    img: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Joyas de familia",
-    href: "/joyas",
-    img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80",
-  },
+  { title: "Anillos de compromiso", href: "/joyas?categoria=Anillo+de+compromiso" },
+  { title: "Argollas de matrimonio", href: "/joyas?categoria=Argolla" },
+  { title: "Vintage", href: "/joyas?categoria=Vintage" },
+  { title: "Aros", href: "/joyas?categoria=Aros" },
+  { title: "Collares", href: "/joyas?categoria=Collar" },
+  { title: "Joyas de familia", href: "/joyas" },
 ];
 
 const VitrinaCategorias = () => {
@@ -66,33 +42,41 @@ const VitrinaCategorias = () => {
             <a
               key={c.title}
               href={c.href}
-              className="relative block overflow-hidden group"
-              style={{ aspectRatio: "4 / 5" }}
+              className="relative block group transition-colors duration-500"
+              style={{
+                aspectRatio: "4 / 5",
+                border: "1px solid rgba(58,68,41,0.18)",
+                background: "transparent",
+              }}
             >
-              <img
-                src={c.img}
-                alt={c.title}
-                loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
               <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(to top, rgba(58,68,41,0.85) 0%, rgba(58,68,41,0.15) 55%, rgba(58,68,41,0) 100%)",
-                }}
+                className="absolute inset-0 transition-colors duration-500 group-hover:bg-[rgba(58,68,41,0.04)]"
               />
-              <h3
-                className="absolute left-0 right-0 bottom-0 p-5 md:p-7 text-center"
+              <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
+                <h3
+                  style={{
+                    fontFamily: "'Bodoni Moda', serif",
+                    fontSize: "clamp(20px, 2.2vw, 30px)",
+                    color: "#3A4429",
+                    fontWeight: 400,
+                    lineHeight: 1.2,
+                  }}
+                >
+                  {c.title}
+                </h3>
+              </div>
+              <span
+                className="absolute left-1/2 -translate-x-1/2 bottom-6 transition-all duration-500 group-hover:translate-y-[-2px]"
                 style={{
-                  fontFamily: "'Bodoni Moda', serif",
-                  fontSize: "clamp(20px, 2.2vw, 32px)",
-                  color: "#F5EFE6",
-                  fontWeight: 400,
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "10px",
+                  letterSpacing: "0.3em",
+                  textTransform: "uppercase",
+                  color: "#6B7752",
                 }}
               >
-                {c.title}
-              </h3>
+                Ver →
+              </span>
             </a>
           ))}
         </div>
