@@ -103,34 +103,34 @@ const Hero = () => {
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 400,
-                fontSize: "clamp(36px, 5vw, 64px)",
-                lineHeight: 1.1,
+                fontSize: "clamp(32px, 4.4vw, 56px)",
+                lineHeight: 1.15,
                 color: INK,
                 marginBottom: "20px",
               }}
-              dangerouslySetInnerHTML={{
-                __html: "Cada pieza, una historia. Cada historia, la <em>tuya</em>.",
-              }}
-            />
+            >
+              Una joya que se pasa de generación en generación empieza con una <em>conversación</em>
+            </h1>
 
             <p
               style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: "16px",
-                fontWeight: 400,
+                fontSize: "14px",
+                fontWeight: 300,
                 color: MUTED_TXT,
                 lineHeight: 1.6,
                 maxWidth: "460px",
                 marginBottom: "36px",
               }}
             >
-              Atelier en Las Condes. Oro 18k, platino y diamantes certificados GIA/IGI.
-              Diseño a medida con Garantía por Gusto.
+              Diseño a medida en oro 18k y platino · Diamantes certificados GIA/IGI · Atelier en Las Condes
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="/cotizar"
+                href={buildWhatsAppUrl("home_hero")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-center transition-all"
                 style={{
                   background: OLIVE,
@@ -152,33 +152,7 @@ const Hero = () => {
                   e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
-                Cotizar mi pieza
-              </a>
-              <a
-                href="/joyas"
-                className="text-center transition-colors"
-                style={{
-                  border: `1px solid ${INK}`,
-                  color: INK,
-                  padding: "14px 32px",
-                  borderRadius: "999px",
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: "14px",
-                  fontWeight: 500,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  background: "transparent",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = INK;
-                  e.currentTarget.style.color = CREAM;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "transparent";
-                  e.currentTarget.style.color = INK;
-                }}
-              >
-                Ver el catálogo
+                Cotiza tu pieza
               </a>
             </div>
 
