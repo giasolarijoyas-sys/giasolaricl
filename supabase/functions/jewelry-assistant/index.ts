@@ -1,10 +1,15 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.1";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
     "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
+
+const MAX_MESSAGES = 30;
+const MAX_TOTAL_CHARS = 12000;
+const MAX_SINGLE_MSG_CHARS = 6000;
 
 const SYSTEM_PROMPT = `Eres el asistente virtual de **Gia Solari**, joyería de autor en Santiago de Chile fundada en 2019 por Macarena González Solari.
 
@@ -125,11 +130,71 @@ serve(async (req) => {
   }
 
   try {
+    // Auth gate: require a valid Supabase JWT (anon key from the SDK is fine).
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader?.startsWith("Bearer ")) {
+      return new Response(
+        JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+    const token = authHeader.replace("Bearer ", "");
+    const supabase = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_ANON_KEY")!,
+    );
+    const { data: claimsData, error: claimsErr } = await supabase.auth.getClaims(token);
+    if (claimsErr || !claimsData?.claims) {
+      return new Response(
+        JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
     const { messages } = await req.json();
 
     if (!messages || !Array.isArray(messages)) {
       return new Response(
         JSON.stringify({ error: "Messages array is required" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // Hard caps to prevent cost-exhaustion abuse.
+    if (messages.length > MAX_MESSAGES) {
+      return new Response(
+        JSON.stringify({ error: "Demasiados mensajes en la conversación." }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+    let totalChars = 0;
+    for (const m of messages) {
+      if (!m || typeof m !== "object" || typeof m.role !== "string") {
+        return new Response(
+          JSON.stringify({ error: "Formato de mensajes inválido." }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+      if (!["user", "assistant", "system"].includes(m.role)) {
+        return new Response(
+          JSON.stringify({ error: "Rol de mensaje inválido." }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+      const contentStr = typeof m.content === "string"
+        ? m.content
+        : JSON.stringify(m.content ?? "");
+      if (contentStr.length > MAX_SINGLE_MSG_CHARS) {
+        return new Response(
+          JSON.stringify({ error: "Mensaje demasiado largo." }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+      totalChars += contentStr.length;
+    }
+    if (totalChars > MAX_TOTAL_CHARS) {
+      return new Response(
+        JSON.stringify({ error: "Conversación demasiado larga." }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
