@@ -1,10 +1,17 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.1";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
     "authorization, x-client-info, apikey, content-type",
 };
+
+const MAX_FIELD = 500;
+const MAX_NOTES = 2000;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+const HORA_RE = /^[\d:apmAPM\s.-]{1,10}$/;
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 const RESEND_API_URL = "https://api.resend.com/emails";
@@ -109,11 +116,63 @@ serve(async (req) => {
   }
 
   try {
+    // Require a valid Supabase JWT (anon key is fine) to block raw curl spam.
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader?.startsWith("Bearer ")) {
+      return new Response(
+        JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
+    const token = authHeader.replace("Bearer ", "");
+    const supa = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_ANON_KEY")!,
+    );
+    const { data: claimsData, error: claimsErr } = await supa.auth.getClaims(token);
+    if (claimsErr || !claimsData?.claims) {
+      return new Response(
+        JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
+
     const body = (await req.json()) as AgendaPayload;
 
     if (!body.nombre || !body.whatsapp || !body.fecha || !body.hora) {
       return new Response(
         JSON.stringify({ error: "Faltan campos obligatorios" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
+
+    // Length + format validation to prevent abuse/oversized payloads.
+    const checks: Array<[string, string | undefined, number]> = [
+      ["nombre", body.nombre, MAX_FIELD],
+      ["whatsapp", body.whatsapp, 40],
+      ["fecha", body.fecha, 20],
+      ["hora", body.hora, 10],
+      ["motivo", body.motivo, MAX_FIELD],
+      ["notas", body.notas, MAX_NOTES],
+      ["email", body.email, 254],
+    ];
+    for (const [field, val, max] of checks) {
+      if (val !== undefined && val !== null && String(val).length > max) {
+        return new Response(
+          JSON.stringify({ error: `Campo ${field} excede el largo máximo` }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+        );
+      }
+    }
+    if (body.email && !EMAIL_RE.test(body.email)) {
+      return new Response(
+        JSON.stringify({ error: "Email inválido" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
+    if (!DATE_RE.test(body.fecha) || !HORA_RE.test(body.hora)) {
+      return new Response(
+        JSON.stringify({ error: "Formato de fecha u hora inválido" }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
       );
     }
