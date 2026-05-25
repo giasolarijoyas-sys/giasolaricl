@@ -29,6 +29,7 @@ import ComoElegirAnillo from "./pages/aprende/ComoElegirAnillo.tsx";
 import CuantoCuestaAnillo from "./pages/aprende/CuantoCuestaAnillo.tsx";
 import AnilloZafiro from "./pages/aprende/AnilloZafiro.tsx";
 import ArgollasMatrimonio from "./pages/aprende/ArgollasMatrimonio.tsx";
+import TallaAnillo from "./pages/aprende/TallaAnillo.tsx";
 import Joyas from "./pages/Joyas.tsx";
 import JoyaDetalle from "./pages/JoyaDetalle.tsx";
 import Agenda from "./pages/Agenda.tsx";
@@ -71,6 +72,7 @@ const App = () => (
             <Route path="/aprende/cuanto-cuesta-anillo-compromiso-chile" element={<CuantoCuestaAnillo />} />
             <Route path="/aprende/anillo-compromiso-zafiro" element={<AnilloZafiro />} />
             <Route path="/aprende/argollas-matrimonio-personalizadas" element={<ArgollasMatrimonio />} />
+            <Route path="/aprende/talla-anillo" element={<TallaAnillo />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<Dashboard />} />
             <Route path="/admin/cotizacion/:id" element={<QuoteDetail />} />

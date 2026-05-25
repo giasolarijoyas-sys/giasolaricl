@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Gem, CircleDot, FlaskConical, Heart, Wallet, Sparkles, Infinity as InfinityIcon } from "lucide-react";
+import { Gem, CircleDot, FlaskConical, Heart, Wallet, Sparkles, Infinity as InfinityIcon, Ruler } from "lucide-react";
 
 const articles = [
   {
@@ -55,6 +55,13 @@ const articles = [
     title: "Argollas de matrimonio personalizadas",
     desc: "Metales, anchos, perfiles y proceso para diseñar las suyas.",
     href: "/aprende/argollas-matrimonio-personalizadas",
+  },
+  {
+    icon: Ruler,
+    tag: "Tallas",
+    title: "¿Cómo saber tu talla de anillo?",
+    desc: "Guía simple para medir desde la casa, sin equivocarte.",
+    href: "/aprende/talla-anillo",
   },
 ];
 
