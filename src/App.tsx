@@ -36,6 +36,13 @@ import Agenda from "./pages/Agenda.tsx";
 import Proceso from "./pages/Proceso.tsx";
 import Cotizar from "./pages/Cotizar.tsx";
 import NewIn from "./pages/NewIn.tsx";
+import Filosofia from "./pages/Filosofia.tsx";
+import Piedras from "./pages/significados/Piedras.tsx";
+import PiedraDetalle from "./pages/significados/PiedraDetalle.tsx";
+import Disenos from "./pages/significados/Disenos.tsx";
+import DisenoDetalle from "./pages/significados/DisenoDetalle.tsx";
+
+
 
 
 const queryClient = new QueryClient();
