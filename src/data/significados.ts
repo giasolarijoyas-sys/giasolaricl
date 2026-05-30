@@ -220,6 +220,7 @@ export const DISENOS: Diseno[] = [
       "Tres piedras principales, la central con halo. El diseño más completo y luminoso. Una historia de amor tan grande que ilumina como una constelación.",
     frase: "Cada estrella en una constelación es necesaria. Como cada momento en tu historia.",
     idealPara: "Las más románticas. Parejas con historia y ambición de futuro.",
+  },
 ];
 
 export const PHONE = "56984049502";
