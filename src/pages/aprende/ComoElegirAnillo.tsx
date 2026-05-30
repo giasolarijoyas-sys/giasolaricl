@@ -36,7 +36,7 @@ const ComoElegirAnillo = () => (
               <section>
                 <h2 className="font-display text-2xl text-foreground mb-4">Paso 1: Define tu presupuesto</h2>
                 <p>Olvida la regla de los "3 sueldos". Tu presupuesto debe ser lo que te haga sentir cómodo, sin endeudarte ni estresarte.</p>
-                <p className="mt-3">En Gia Solari trabajamos con rangos desde $800.000 CLP (con diamante de laboratorio) hasta piezas premium de varios millones. Sea cual sea tu presupuesto, vamos a encontrar algo hermoso.</p>
+                <p className="mt-3">En Gia Solari trabajamos con rangos desde $1.800.000 CLP hasta piezas premium de varios millones. Sea cual sea tu presupuesto, vamos a encontrar algo hermoso.</p>
                 <div className="mt-4 p-4 bg-card border border-border rounded-lg text-sm">
                   <p className="text-foreground font-medium mb-2">Rangos aproximados:</p>
                   <p>• Diamante lab 0.5ct en oro 18k: desde $800.000</p>

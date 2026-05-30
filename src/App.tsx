@@ -24,7 +24,7 @@ import BlogPost from "./pages/BlogPost.tsx";
 import Aprende from "./pages/Aprende.tsx";
 import AprendeDiamantes4C from "./pages/aprende/Diamantes4C.tsx";
 import OroVsPlatino from "./pages/aprende/OroVsPlatino.tsx";
-import NaturalVsLab from "./pages/aprende/NaturalVsLab.tsx";
+
 import ComoElegirAnillo from "./pages/aprende/ComoElegirAnillo.tsx";
 import CuantoCuestaAnillo from "./pages/aprende/CuantoCuestaAnillo.tsx";
 import AnilloZafiro from "./pages/aprende/AnilloZafiro.tsx";
@@ -69,13 +69,13 @@ const App = () => (
             {/* Redirects de /blog/* duplicadas a /aprende/* (deben matchear ANTES de /blog/:slug) */}
             <Route path="/blog/oro-18k-vs-platino" element={<Navigate to="/aprende/oro-vs-platino" replace />} />
             <Route path="/blog/las-4c-del-diamante" element={<Navigate to="/aprende/diamantes-4c" replace />} />
-            <Route path="/blog/diamante-natural-o-laboratorio" element={<Navigate to="/aprende/diamante-natural-vs-laboratorio" replace />} />
+            <Route path="/blog/diamante-natural-o-laboratorio" element={<Navigate to="/aprende" replace />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/aprende" element={<Aprende />} />
             <Route path="/aprende/diamantes-4c" element={<AprendeDiamantes4C />} />
             <Route path="/aprende/oro-vs-platino" element={<OroVsPlatino />} />
-            <Route path="/aprende/diamante-natural-vs-laboratorio" element={<NaturalVsLab />} />
+            <Route path="/aprende/diamante-natural-vs-laboratorio" element={<Navigate to="/aprende" replace />} />
             <Route path="/aprende/como-elegir-anillo-compromiso" element={<ComoElegirAnillo />} />
             <Route path="/aprende/cuanto-cuesta-anillo-compromiso-chile" element={<CuantoCuestaAnillo />} />
             <Route path="/aprende/anillo-compromiso-zafiro" element={<AnilloZafiro />} />

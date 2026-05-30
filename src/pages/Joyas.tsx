@@ -48,8 +48,7 @@ const METALES = [
 ];
 
 const PIEDRAS = [
-  "Diamante natural",
-  "Diamante de laboratorio",
+  "Diamante",
   "Zafiro",
   "Aguamarina",
   "Esmeralda",

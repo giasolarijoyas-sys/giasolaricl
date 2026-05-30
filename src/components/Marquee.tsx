@@ -3,7 +3,6 @@ const keywords = [
   "Oro 18k",
   "Platino",
   "Diamantes Certificados",
-  "Diamantes de Laboratorio",
   "Zafiros",
   "Esmeraldas",
   "Argollas de Matrimonio",

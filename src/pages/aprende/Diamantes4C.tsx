@@ -114,7 +114,7 @@ const AprendeDiamantes4C = () => (
 
             <div className="mt-10 flex gap-4 text-sm">
               <Link to="/aprende/oro-vs-platino" className="text-primary hover:underline">→ Oro 18k vs Platino</Link>
-              <Link to="/aprende/diamante-natural-vs-laboratorio" className="text-primary hover:underline">→ Natural vs Laboratorio</Link>
+              <Link to="/aprende/como-elegir-anillo-compromiso" className="text-primary hover:underline">→ Cómo elegir tu anillo</Link>
             </div>
           </motion.div>
         </div>

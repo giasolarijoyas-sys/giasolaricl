@@ -26,7 +26,7 @@ const testimonials = [
     name: "Felipe A.",
     city: "Santiago",
     piece: "Anillo de compromiso · Diamante lab · Oro 18k blanco",
-    text: "Quería algo especial sin gastar una locura y la Maca me mostró diamantes de laboratorio que brillan increíble. Mi polola está chocha y su anillo quedó espectacular.",
+    text: "Quería algo especial sin gastar una locura y la Maca me mostró opciones certificadas que brillan increíble. Mi polola está chocha y su anillo quedó espectacular.",
   },
   {
     name: "Martina G.",
