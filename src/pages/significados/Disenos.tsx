@@ -38,8 +38,8 @@ const ALT_TEXT: Record<string, string> = {
 const Disenos = () => (
   <>
     <SEO
-      title="Los Diseños · Cada anillo con su nombre | Gia Solari"
-      description="El Eterno, El Alado, El Tricillo, El Real. Conoce los diseños de Gia Solari, cada uno con nombre y narrativa propia."
+      title="Los Diseños · Anillos de Compromiso con Significado | Gia Solari"
+      description="Cada anillo tiene un nombre y una historia. Conocé los diseños de Gia Solari: solitario, halo, tres piedras, zafiro estilo Lady Di y más. A medida en Santiago."
       path="/significados/disenos"
     />
     <div style={{ background: SIG_TOKENS.bg, color: SIG_TOKENS.text }}>
