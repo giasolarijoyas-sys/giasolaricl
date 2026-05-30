@@ -7,6 +7,7 @@ import GoldenDivider from "@/components/significados/GoldenDivider";
 import StoryBox from "@/components/significados/StoryBox";
 import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 import { DISENOS, waDiseno } from "@/data/significados";
+import TrustMicrocopy from "@/components/TrustMicrocopy";
 
 type AprendeLink = { label: string; href: string };
 
