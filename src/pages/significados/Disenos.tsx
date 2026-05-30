@@ -7,24 +7,31 @@ import GoldenDivider from "@/components/significados/GoldenDivider";
 import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 import { DISENOS } from "@/data/significados";
 
-import imgEterno from "@/assets/gal-solitario-marco.png";
-import imgTres from "@/assets/gal-tricillo2.jpeg";
-import imgAlado from "@/assets/gal-halo-eucalipto.png";
-import imgReal from "@/assets/gal-art-deco.png";
-import imgTiempo from "@/assets/gal-halo-vintage-caja.png";
-import imgPilares from "@/assets/gal-princesa-marco.jpeg";
-import imgConstelacion from "@/assets/gal-zafiros-banda.png";
-import imgPrimero from "@/assets/joya-halo-floral-tanzanita.png";
+import imgAlado from "@/assets/diseno-el-alado.png";
+import imgReal from "@/assets/diseno-el-real.png";
+import imgTiempo from "@/assets/diseno-el-tiempo.png";
+import imgPilares from "@/assets/diseno-los-cuatro-pilares.png";
+import imgConstelacion from "@/assets/diseno-la-constelacion.png";
+import imgPrimero from "@/assets/diseno-el-primer-amuleto.png";
 
-const FOTOS: Record<string, string> = {
-  "el-eterno": imgEterno,
-  "las-tres-promesas": imgTres,
+const FOTOS: Partial<Record<string, string>> = {
   "el-alado": imgAlado,
   "el-real": imgReal,
   "el-tiempo": imgTiempo,
   "los-cuatro-pilares": imgPilares,
   "la-constelacion": imgConstelacion,
   "el-primer-amuleto": imgPrimero,
+};
+
+const ALT_TEXT: Record<string, string> = {
+  "el-eterno": "El Eterno — diseño solitario clásico de Gia Solari",
+  "las-tres-promesas": "Las Tres Promesas — diseño de tres piedras de Gia Solari",
+  "el-alado": "El Alado — anillo de halo redondo en oro blanco",
+  "el-real": "El Real — anillo con zafiro azul ovalado y cluster de diamantes",
+  "el-tiempo": "El Tiempo — solitario ovalado sobre piedra clara",
+  "los-cuatro-pilares": "Los Cuatro Pilares — anillo con cuatro diamantes redondos en fila",
+  "la-constelacion": "La Constelación — anillo de tres piedras con halo central",
+  "el-primer-amuleto": "El Primer Amuleto — dije de aguamarina en cadena",
 };
 
 const Disenos = () => (
@@ -85,9 +92,10 @@ const Disenos = () => (
               to={`/significados/disenos/${d.slug}`}
               nombre={d.nombre}
               subtitulo={d.subtitulo}
-              accent="#EDE6DA"
+              accent={SIG_TOKENS.cream}
               kicker="Diseño"
               img={FOTOS[d.slug]}
+              alt={ALT_TEXT[d.slug]}
             />
           ))}
         </div>
