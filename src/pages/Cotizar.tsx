@@ -1,9 +1,11 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TrustMicrocopy from "@/components/TrustMicrocopy";
 import { WHATSAPP_PHONE } from "@/lib/whatsapp";
 
 type TipoKey =
@@ -311,6 +313,16 @@ const Cotizar = () => {
             <p className="text-charcoal/70 text-sm md:text-base">
               Pocas preguntas y armamos el presupuesto aproximado en menos de un minuto.
             </p>
+            <p className="text-charcoal/60 text-xs md:text-sm mt-3">
+              ¿Tenés dudas de presupuesto?{" "}
+              <Link
+                to="/aprende/cuanto-cuesta-anillo-compromiso-chile"
+                className="text-gold underline underline-offset-2 hover:opacity-80"
+              >
+                Mirá nuestra guía de precios
+              </Link>
+              .
+            </p>
           </header>
 
           {!isResult && (
@@ -497,6 +509,7 @@ const Cotizar = () => {
                       <MessageCircle className="w-4 h-4" />
                       Conversar con Gia por WhatsApp
                     </a>
+                    <TrustMicrocopy marginTop={14} />
                     <div className="mt-6">
                       <button
                         onClick={reset}

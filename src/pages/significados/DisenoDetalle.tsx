@@ -7,6 +7,36 @@ import GoldenDivider from "@/components/significados/GoldenDivider";
 import StoryBox from "@/components/significados/StoryBox";
 import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 import { DISENOS, waDiseno } from "@/data/significados";
+import TrustMicrocopy from "@/components/TrustMicrocopy";
+
+type AprendeLink = { label: string; href: string };
+
+// Enlaces internos a artículos de /aprende por slug de diseño.
+const APRENDE_LINKS: Record<string, AprendeLink[]> = {
+  "el-eterno": [
+    { label: "Cómo elegir tu anillo de compromiso", href: "/aprende/como-elegir-anillo-compromiso" },
+    { label: "Las 4C del Diamante", href: "/aprende/diamantes-4c" },
+  ],
+  "el-tricillo": [
+    { label: "Cómo elegir tu anillo de compromiso", href: "/aprende/como-elegir-anillo-compromiso" },
+  ],
+  "el-alado": [
+    { label: "Cómo elegir tu anillo de compromiso", href: "/aprende/como-elegir-anillo-compromiso" },
+    { label: "Las 4C del Diamante", href: "/aprende/diamantes-4c" },
+  ],
+  "el-real": [
+    { label: "Anillo de compromiso con zafiro", href: "/aprende/anillo-compromiso-zafiro" },
+  ],
+  "el-tiempo": [
+    { label: "Las 4C del Diamante", href: "/aprende/diamantes-4c" },
+  ],
+  "los-cuatro-pilares": [
+    { label: "Oro 18k vs Platino", href: "/aprende/oro-vs-platino" },
+  ],
+  "la-constelacion": [
+    { label: "Las 4C del Diamante", href: "/aprende/diamantes-4c" },
+  ],
+};
 
 // SEO + extra SEO copy por slug. Las tres promesas usa el slug actual "el-tricillo".
 const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
@@ -120,6 +150,7 @@ const DisenoDetalle = () => {
 
   const seo = SEO_OVERRIDES[d.slug];
   const extra = EXTRA_COPY[d.slug];
+  const aprendeLinks = APRENDE_LINKS[d.slug];
 
   return (
     <>
@@ -273,6 +304,54 @@ const DisenoDetalle = () => {
           </div>
         </section>
 
+        {aprendeLinks && aprendeLinks.length > 0 && (
+          <>
+            <GoldenDivider />
+            <section className="py-10 md:py-14 px-6 md:px-12">
+              <div className="max-w-3xl mx-auto text-center">
+                <p
+                  style={{
+                    fontFamily: SIG_FONTS.body,
+                    fontSize: 11,
+                    letterSpacing: "0.28em",
+                    textTransform: "uppercase",
+                    color: SIG_TOKENS.gold,
+                    marginBottom: 12,
+                  }}
+                >
+                  ¿Querés saber más?
+                </p>
+                <p
+                  style={{
+                    fontFamily: SIG_FONTS.body,
+                    fontWeight: 300,
+                    fontSize: 15,
+                    lineHeight: 1.7,
+                  }}
+                >
+                  {aprendeLinks.map((link, i) => (
+                    <span key={link.href}>
+                      <Link
+                        to={link.href}
+                        style={{
+                          color: SIG_TOKENS.gold,
+                          textDecoration: "underline",
+                          textUnderlineOffset: 3,
+                        }}
+                      >
+                        {link.label}
+                      </Link>
+                      {i < aprendeLinks.length - 1 && (
+                        <span style={{ color: SIG_TOKENS.caramel }}>{"  ·  "}</span>
+                      )}
+                    </span>
+                  ))}
+                </p>
+              </div>
+            </section>
+          </>
+        )}
+
         <section className="py-20 md:py-28 px-6 md:px-12 text-center" style={{ background: SIG_TOKENS.cream }}>
           <h2
             style={{
@@ -314,7 +393,9 @@ const DisenoDetalle = () => {
           >
             Cotizar este diseño
           </a>
+          <TrustMicrocopy marginTop={16} color="rgba(26,22,20,0.6)" />
         </section>
+
 
         <Footer />
         <WhatsAppButton />

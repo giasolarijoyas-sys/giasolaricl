@@ -28,6 +28,7 @@ import ComoTeAyudo from "@/components/ComoTeAyudo";
 import VitrinaCategorias from "@/components/VitrinaCategorias";
 import NewIn from "@/components/NewIn";
 import SignificadosTeaser from "@/components/SignificadosTeaser";
+import LeadMagnetGuia from "@/components/LeadMagnetGuia";
 
 import bannerNusa from "@/assets/banner-anillo-nusa.png";
 import bannerHalo from "@/assets/banner-halo-oval.png";
@@ -143,6 +144,10 @@ const Index = () => {
 
       {/* Instagram feed antes del footer */}
       <InstagramFeed />
+
+      {/* Lead magnet — guía descargable */}
+      <LeadMagnetGuia variant="full" />
+
 
       {/* 12. Footer */}
       <Footer />
