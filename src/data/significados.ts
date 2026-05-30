@@ -167,8 +167,8 @@ export const DISENOS: Diseno[] = [
       "Parejas que creen en lo esencial. Que no necesitan adornos: se eligen a sí mismos.",
   },
   {
-    slug: "las-tres-promesas",
-    nombre: "Las Tres Promesas",
+    slug: "el-tricillo",
+    nombre: "El Tricillo",
     subtitulo: "Pasado, presente, futuro",
     descripcion:
       "Tres piedras en fila. La central más grande, las laterales la escoltan y la enmarcan. Tres piedras, tres promesas: quién eras, quién eres y quién serás — y yo elijo las tres. También representa los tres pilares del amor: respeto, confianza y pasión.",
