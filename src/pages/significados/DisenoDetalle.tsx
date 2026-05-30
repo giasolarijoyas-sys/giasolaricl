@@ -149,6 +149,7 @@ const DisenoDetalle = () => {
 
   const seo = SEO_OVERRIDES[d.slug];
   const extra = EXTRA_COPY[d.slug];
+  const aprendeLinks = APRENDE_LINKS[d.slug];
 
   return (
     <>
