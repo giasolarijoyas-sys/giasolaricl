@@ -145,6 +145,10 @@ const Index = () => {
       {/* Instagram feed antes del footer */}
       <InstagramFeed />
 
+      {/* Lead magnet — guía descargable */}
+      <LeadMagnetGuia variant="full" />
+
+
       {/* 12. Footer */}
       <Footer />
 
