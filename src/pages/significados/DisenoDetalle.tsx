@@ -75,6 +75,11 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     description:
       "Anillo de compromiso de tres piedras con halo central, el diseño más luminoso. A medida en platino u oro 18k. Atelier en Las Condes, Santiago.",
   },
+  "el-primer-amuleto": {
+    title: "El Primer Amuleto · Dije con piedra de nacimiento | Gia Solari",
+    description:
+      "Dije a medida en oro con la piedra de nacimiento del bebé. Regalo de bautizo y bienvenida al mundo. Joyería de autor en Santiago.",
+  },
 };
 
 // Cada entrada: dos párrafos. El segundo tiene el CTA con el texto entre [ ] que se renderiza como link a /cotizar.
