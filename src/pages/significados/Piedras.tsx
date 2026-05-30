@@ -11,10 +11,7 @@ import imgDiamante from "@/assets/gal-solitario-caja.jpg";
 import imgZafiro from "@/assets/gal-halo-zafiro.jpeg";
 import imgAguamarina from "@/assets/gal-halo-zafiro-redondo.png";
 import imgEsmeralda from "@/assets/gal-esmeralda-halo.png";
-import imgRubi from "@/assets/gal-cinco-piedras.jpeg";
-import imgAmatista from "@/assets/gal-tricillo.jpeg";
-import imgMorganita from "@/assets/gal-halo-oval-caja.jpg";
-import imgPerla from "@/assets/gal-vintage-detail.jpg";
+import imgRubi from "@/assets/gal-rubi-halo.png";
 
 const FOTOS: Record<string, string> = {
   diamante: imgDiamante,
@@ -22,9 +19,6 @@ const FOTOS: Record<string, string> = {
   aguamarina: imgAguamarina,
   esmeralda: imgEsmeralda,
   rubi: imgRubi,
-  amatista: imgAmatista,
-  morganita: imgMorganita,
-  perla: imgPerla,
 };
 
 const Piedras = () => (
