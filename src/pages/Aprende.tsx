@@ -5,7 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import LeadMagnetGuia from "@/components/LeadMagnetGuia";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Gem, CircleDot, FlaskConical, Heart, Wallet, Sparkles, Infinity as InfinityIcon, Ruler } from "lucide-react";
+import { Gem, CircleDot, Heart, Wallet, Sparkles, Infinity as InfinityIcon, Ruler } from "lucide-react";
 
 const articles = [
   {
