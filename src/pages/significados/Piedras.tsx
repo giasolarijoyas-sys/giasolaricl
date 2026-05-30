@@ -8,7 +8,7 @@ import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 import { PIEDRAS } from "@/data/significados";
 
 import imgDiamante from "@/assets/gal-diamante-halo.png";
-import imgZafiro from "@/assets/gal-halo-zafiro.jpeg";
+import imgZafiro from "@/assets/gal-zafiro-halo.png";
 import imgAguamarina from "@/assets/gal-aguamarina-halo.png";
 import imgEsmeralda from "@/assets/gal-esmeralda-halo.png";
 import imgRubi from "@/assets/gal-rubi-halo.png";
