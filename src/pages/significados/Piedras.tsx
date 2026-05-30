@@ -9,7 +9,7 @@ import { PIEDRAS } from "@/data/significados";
 
 import imgDiamante from "@/assets/gal-solitario-caja.jpg";
 import imgZafiro from "@/assets/gal-halo-zafiro.jpeg";
-import imgAguamarina from "@/assets/gal-halo-zafiro-redondo.png";
+import imgAguamarina from "@/assets/gal-aguamarina-halo.png";
 import imgEsmeralda from "@/assets/gal-esmeralda-halo.png";
 import imgRubi from "@/assets/gal-rubi-halo.png";
 
