@@ -8,6 +8,7 @@ import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 import { DISENOS } from "@/data/significados";
 
 import imgEterno from "@/assets/diseno-el-eterno.png";
+import imgTricillo from "@/assets/diseno-el-tricillo.png";
 import imgAlado from "@/assets/diseno-el-alado.png";
 import imgReal from "@/assets/diseno-el-real.png";
 import imgTiempo from "@/assets/diseno-el-tiempo.png";
@@ -16,6 +17,7 @@ import imgConstelacion from "@/assets/diseno-la-constelacion.png";
 
 const FOTOS: Partial<Record<string, string>> = {
   "el-eterno": imgEterno,
+  "el-tricillo": imgTricillo,
   "el-alado": imgAlado,
   "el-real": imgReal,
   "el-tiempo": imgTiempo,
@@ -25,7 +27,7 @@ const FOTOS: Partial<Record<string, string>> = {
 
 const ALT_TEXT: Record<string, string> = {
   "el-eterno": "El Eterno — anillo media alianza con diamantes redondos en oro blanco",
-  "las-tres-promesas": "Las Tres Promesas — diseño de tres piedras de Gia Solari",
+  "el-tricillo": "El Tricillo — anillo de tres diamantes redondos en oro blanco",
   "el-alado": "El Alado — anillo de halo redondo en oro blanco",
   "el-real": "El Real — anillo con zafiro azul ovalado y cluster de diamantes",
   "el-tiempo": "El Tiempo — solitario ovalado sobre piedra clara",
