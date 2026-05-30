@@ -200,6 +200,45 @@ const DisenoDetalle = () => {
               {d.descripcion}
             </p>
 
+            {extra && (
+              <>
+                <p
+                  style={{
+                    fontFamily: SIG_FONTS.body,
+                    fontWeight: 300,
+                    fontSize: 16,
+                    lineHeight: 1.9,
+                    marginTop: 20,
+                  }}
+                >
+                  {extra.p1}
+                </p>
+                <p
+                  style={{
+                    fontFamily: SIG_FONTS.body,
+                    fontWeight: 300,
+                    fontSize: 16,
+                    lineHeight: 1.9,
+                    marginTop: 20,
+                  }}
+                >
+                  {extra.p2.before}
+                  <Link
+                    to="/cotizar"
+                    style={{
+                      color: SIG_TOKENS.gold,
+                      textDecoration: "underline",
+                      textUnderlineOffset: 3,
+                    }}
+                  >
+                    {extra.p2.cta}
+                  </Link>
+                  {extra.p2.after}
+                </p>
+              </>
+            )}
+
+
             <StoryBox>«{d.frase}»</StoryBox>
           </div>
         </section>
