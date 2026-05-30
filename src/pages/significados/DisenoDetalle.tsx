@@ -8,6 +8,35 @@ import StoryBox from "@/components/significados/StoryBox";
 import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 import { DISENOS, waDiseno } from "@/data/significados";
 
+type AprendeLink = { label: string; href: string };
+
+// Enlaces internos a artículos de /aprende por slug de diseño.
+const APRENDE_LINKS: Record<string, AprendeLink[]> = {
+  "el-eterno": [
+    { label: "Cómo elegir tu anillo de compromiso", href: "/aprende/como-elegir-anillo-compromiso" },
+    { label: "Las 4C del Diamante", href: "/aprende/diamantes-4c" },
+  ],
+  "el-tricillo": [
+    { label: "Cómo elegir tu anillo de compromiso", href: "/aprende/como-elegir-anillo-compromiso" },
+  ],
+  "el-alado": [
+    { label: "Cómo elegir tu anillo de compromiso", href: "/aprende/como-elegir-anillo-compromiso" },
+    { label: "Las 4C del Diamante", href: "/aprende/diamantes-4c" },
+  ],
+  "el-real": [
+    { label: "Anillo de compromiso con zafiro", href: "/aprende/anillo-compromiso-zafiro" },
+  ],
+  "el-tiempo": [
+    { label: "Las 4C del Diamante", href: "/aprende/diamantes-4c" },
+  ],
+  "los-cuatro-pilares": [
+    { label: "Oro 18k vs Platino", href: "/aprende/oro-vs-platino" },
+  ],
+  "la-constelacion": [
+    { label: "Las 4C del Diamante", href: "/aprende/diamantes-4c" },
+  ],
+};
+
 // SEO + extra SEO copy por slug. Las tres promesas usa el slug actual "el-tricillo".
 const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
   "el-eterno": {
