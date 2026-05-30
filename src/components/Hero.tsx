@@ -158,6 +158,19 @@ const Hero = () => {
 
             <p
               style={{
+                marginTop: "12px",
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "12px",
+                lineHeight: 1.5,
+                color: MUTED,
+              }}
+            >
+              Te respondo personalmente en menos de 24h · Sin compromiso
+            </p>
+
+
+            <p
+              style={{
                 marginTop: "48px",
                 fontFamily: "'Inter', sans-serif",
                 fontSize: "12px",
