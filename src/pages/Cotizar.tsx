@@ -509,6 +509,7 @@ const Cotizar = () => {
                       <MessageCircle className="w-4 h-4" />
                       Conversar con Gia por WhatsApp
                     </a>
+                    <TrustMicrocopy marginTop={14} />
                     <div className="mt-6">
                       <button
                         onClick={reset}
