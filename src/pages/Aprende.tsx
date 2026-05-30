@@ -98,6 +98,7 @@ const Aprende = () => (
           </div>
         </div>
       </section>
+      <LeadMagnetGuia variant="compact" />
       <Footer />
       <WhatsAppButton />
     </div>
