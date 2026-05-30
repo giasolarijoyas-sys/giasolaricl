@@ -7,7 +7,7 @@ import GoldenDivider from "@/components/significados/GoldenDivider";
 import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 import { PIEDRAS } from "@/data/significados";
 
-import imgDiamante from "@/assets/gal-solitario-caja.jpg";
+import imgDiamante from "@/assets/gal-diamante-halo.png";
 import imgZafiro from "@/assets/gal-halo-zafiro.jpeg";
 import imgAguamarina from "@/assets/gal-aguamarina-halo.png";
 import imgEsmeralda from "@/assets/gal-esmeralda-halo.png";
