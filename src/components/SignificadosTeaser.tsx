@@ -3,11 +3,29 @@ import GoldenDivider from "@/components/significados/GoldenDivider";
 import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 import { PIEDRAS, DISENOS } from "@/data/significados";
 
+import imgDiamante from "@/assets/gal-diamante-halo.png";
+import imgZafiro from "@/assets/gal-zafiro-halo.png";
+import imgAguamarina from "@/assets/gal-aguamarina-halo.png";
+import imgEterno from "@/assets/diseno-el-eterno.png";
+import imgTricillo from "@/assets/diseno-el-tricillo.png";
+import imgAlado from "@/assets/diseno-el-alado.png";
+
+const PIEDRA_IMGS: Record<string, string> = {
+  diamante: imgDiamante,
+  zafiro: imgZafiro,
+  aguamarina: imgAguamarina,
+};
+
+const DISENO_IMGS: Record<string, string> = {
+  "el-eterno": imgEterno,
+  "el-tricillo": imgTricillo,
+  "el-alado": imgAlado,
+};
+
 // Sección home: "Cada joya tiene una historia"
 const SignificadosTeaser = () => {
   const piedrasHome = PIEDRAS.filter((p) => ["diamante", "zafiro", "aguamarina"].includes(p.slug));
   const disenosHome = DISENOS.filter((d) => ["el-eterno", "el-tricillo", "el-alado"].includes(d.slug));
-  const accents = ["#E8E4DC", "#D9CFBE", "#C7B89E"];
 
   return (
     <section className="py-24 md:py-32 px-6 md:px-12" style={{ background: SIG_TOKENS.bg }}>
@@ -40,7 +58,7 @@ const SignificadosTeaser = () => {
 
         {/* Piedras */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14 mb-20">
-          {piedrasHome.map((p, i) => (
+          {piedrasHome.map((p) => (
             <StoneCard
               key={p.slug}
               to={`/significados/piedras/${p.slug}`}
@@ -49,21 +67,24 @@ const SignificadosTeaser = () => {
               frase={p.frases[0]}
               accent={p.color}
               kicker="Piedra"
+              img={PIEDRA_IMGS[p.slug]}
+              alt={`${p.nombre} – ${p.subtitulo}`}
             />
           ))}
         </div>
 
         {/* Diseños */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14">
-          {disenosHome.map((d, i) => (
+          {disenosHome.map((d) => (
             <StoneCard
               key={d.slug}
               to={`/significados/disenos/${d.slug}`}
               nombre={d.nombre}
               subtitulo={d.subtitulo}
               frase={d.frase}
-              accent={accents[i]}
               kicker="Diseño"
+              img={DISENO_IMGS[d.slug]}
+              alt={`${d.nombre} – ${d.subtitulo}`}
             />
           ))}
         </div>
