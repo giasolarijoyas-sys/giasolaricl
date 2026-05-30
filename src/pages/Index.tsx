@@ -29,6 +29,7 @@ import VitrinaCategorias from "@/components/VitrinaCategorias";
 import NewIn from "@/components/NewIn";
 import SignificadosTeaser from "@/components/SignificadosTeaser";
 import LeadMagnetGuia from "@/components/LeadMagnetGuia";
+import ColeccionEsencial from "@/components/ColeccionEsencial";
 
 import bannerNusa from "@/assets/banner-anillo-nusa.png";
 import bannerHalo from "@/assets/banner-halo-oval.png";
@@ -82,6 +83,9 @@ const Index = () => {
 
       {/* Vitrina de categorías */}
       <VitrinaCategorias />
+
+      {/* Colección Esencial — solitarios a medida */}
+      <ColeccionEsencial />
 
       {/* New In — recién salido del taller */}
       <NewIn />
