@@ -313,6 +313,16 @@ const Cotizar = () => {
             <p className="text-charcoal/70 text-sm md:text-base">
               Pocas preguntas y armamos el presupuesto aproximado en menos de un minuto.
             </p>
+            <p className="text-charcoal/60 text-xs md:text-sm mt-3">
+              ¿Tenés dudas de presupuesto?{" "}
+              <Link
+                to="/aprende/cuanto-cuesta-anillo-compromiso-chile"
+                className="text-gold underline underline-offset-2 hover:opacity-80"
+              >
+                Mirá nuestra guía de precios
+              </Link>
+              .
+            </p>
           </header>
 
           {!isResult && (
