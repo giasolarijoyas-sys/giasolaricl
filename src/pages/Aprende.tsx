@@ -37,13 +37,6 @@ const articles = [
     href: "/aprende/oro-vs-platino",
   },
   {
-    icon: FlaskConical,
-    tag: "Piedras Preciosas",
-    title: "Diamantes naturales vs de laboratorio",
-    desc: "Pros, contras y diferencias de precio sin medias tintas.",
-    href: "/aprende/diamante-natural-vs-laboratorio",
-  },
-  {
     icon: Sparkles,
     tag: "Zafiro",
     title: "Anillo de compromiso con zafiro",
@@ -70,7 +63,7 @@ const Aprende = () => (
   <>
     <SEO
       title="Aprende sobre diamantes, oro 18k y joyería fina | Gia Solari"
-      description="Guías honestas para elegir tu joya: las 4C del diamante, oro 18k vs platino, diamantes naturales vs de laboratorio y cómo elegir tu anillo de compromiso."
+      description="Guías honestas para elegir tu joya: las 4C del diamante, oro 18k vs platino y cómo elegir tu anillo de compromiso."
       path="/aprende"
     />
     
