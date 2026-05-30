@@ -6,7 +6,7 @@ import { PIEDRAS, DISENOS } from "@/data/significados";
 // Sección home: "Cada joya tiene una historia"
 const SignificadosTeaser = () => {
   const piedrasHome = PIEDRAS.filter((p) => ["diamante", "zafiro", "aguamarina"].includes(p.slug));
-  const disenosHome = DISENOS.filter((d) => ["el-eterno", "las-tres-promesas", "el-alado"].includes(d.slug));
+  const disenosHome = DISENOS.filter((d) => ["el-eterno", "el-tricillo", "el-alado"].includes(d.slug));
   const accents = ["#E8E4DC", "#D9CFBE", "#C7B89E"];
 
   return (

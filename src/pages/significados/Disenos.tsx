@@ -39,7 +39,7 @@ const Disenos = () => (
   <>
     <SEO
       title="Los Diseños · Cada anillo con su nombre | Gia Solari"
-      description="El Eterno, El Alado, Las Tres Promesas, El Real. Conoce los diseños de Gia Solari, cada uno con nombre y narrativa propia."
+      description="El Eterno, El Alado, El Tricillo, El Real. Conoce los diseños de Gia Solari, cada uno con nombre y narrativa propia."
       path="/significados/disenos"
     />
     <div style={{ background: SIG_TOKENS.bg, color: SIG_TOKENS.text }}>
