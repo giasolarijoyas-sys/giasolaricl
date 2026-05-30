@@ -221,15 +221,6 @@ export const DISENOS: Diseno[] = [
     frase: "Cada estrella en una constelación es necesaria. Como cada momento en tu historia.",
     idealPara: "Las más románticas. Parejas con historia y ambición de futuro.",
   },
-  {
-    slug: "el-primer-amuleto",
-    nombre: "El Primer Amuleto",
-    subtitulo: "Para la guagua que llegó",
-    descripcion:
-      "La aguamarina fue históricamente la piedra que las madres regalaban a sus hijos para protegerlos en los viajes. El primer amuleto de protección de una vida.",
-    frase: "El primer amuleto que una persona lleva en la vida. Que sea del mar.",
-    idealPara: "Regalo de bienvenida al mundo. Bautizos. Recién nacidos.",
-  },
 ];
 
 export const PHONE = "56984049502";

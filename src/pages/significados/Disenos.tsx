@@ -7,31 +7,30 @@ import GoldenDivider from "@/components/significados/GoldenDivider";
 import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 import { DISENOS } from "@/data/significados";
 
+import imgEterno from "@/assets/diseno-el-eterno.png";
 import imgAlado from "@/assets/diseno-el-alado.png";
 import imgReal from "@/assets/diseno-el-real.png";
 import imgTiempo from "@/assets/diseno-el-tiempo.png";
 import imgPilares from "@/assets/diseno-los-cuatro-pilares.png";
 import imgConstelacion from "@/assets/diseno-la-constelacion.png";
-import imgPrimero from "@/assets/diseno-el-primer-amuleto.png";
 
 const FOTOS: Partial<Record<string, string>> = {
+  "el-eterno": imgEterno,
   "el-alado": imgAlado,
   "el-real": imgReal,
   "el-tiempo": imgTiempo,
   "los-cuatro-pilares": imgPilares,
   "la-constelacion": imgConstelacion,
-  "el-primer-amuleto": imgPrimero,
 };
 
 const ALT_TEXT: Record<string, string> = {
-  "el-eterno": "El Eterno — diseño solitario clásico de Gia Solari",
+  "el-eterno": "El Eterno — anillo media alianza con diamantes redondos en oro blanco",
   "las-tres-promesas": "Las Tres Promesas — diseño de tres piedras de Gia Solari",
   "el-alado": "El Alado — anillo de halo redondo en oro blanco",
   "el-real": "El Real — anillo con zafiro azul ovalado y cluster de diamantes",
   "el-tiempo": "El Tiempo — solitario ovalado sobre piedra clara",
   "los-cuatro-pilares": "Los Cuatro Pilares — anillo con cuatro diamantes redondos en fila",
   "la-constelacion": "La Constelación — anillo de tres piedras con halo central",
-  "el-primer-amuleto": "El Primer Amuleto — dije de aguamarina en cadena",
 };
 
 const Disenos = () => (
