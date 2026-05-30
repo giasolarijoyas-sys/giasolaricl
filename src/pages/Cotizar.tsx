@@ -1,9 +1,11 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TrustMicrocopy from "@/components/TrustMicrocopy";
 import { WHATSAPP_PHONE } from "@/lib/whatsapp";
 
 type TipoKey =
