@@ -5,7 +5,7 @@ const badges = [
   {
     icon: Diamond,
     title: "Diamantes certificados GIA/IGI",
-    subtitle: "Naturales y de laboratorio, con certificado incluido",
+    subtitle: "Con certificado gemológico incluido",
   },
   {
     icon: CircleDot,

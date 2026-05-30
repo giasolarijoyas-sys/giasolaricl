@@ -25,7 +25,7 @@ import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 import SoloEnGiaSolariCompact from "@/components/SoloEnGiaSolariCompact";
 import InstagramFeed from "@/components/InstagramFeed";
 import ComoTeAyudo from "@/components/ComoTeAyudo";
-import VitrinaCategorias from "@/components/VitrinaCategorias";
+
 import NewIn from "@/components/NewIn";
 import SignificadosTeaser from "@/components/SignificadosTeaser";
 import LeadMagnetGuia from "@/components/LeadMagnetGuia";
@@ -80,9 +80,6 @@ const Index = () => {
 
       {/* ¿Cómo te ayudo? — atención personal */}
       <ComoTeAyudo />
-
-      {/* Vitrina de categorías */}
-      <VitrinaCategorias />
 
       {/* Colección Esencial — solitarios a medida */}
       <ColeccionEsencial />

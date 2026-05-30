@@ -9,7 +9,7 @@ const Esencial = () => {
     <div className="min-h-screen" style={{ background: "#F5EFE6" }}>
       <SEO
         title="Colección Esencial · Solitarios a medida desde $2.250.000 | Gia Solari"
-        description="Colección Esencial de Gia Solari: solitarios con diamante de laboratorio certificado, oro 18k o platino, hechos a medida. Desde $2.250.000."
+        description="Colección Esencial de Gia Solari: solitarios con diamante certificado, oro 18k o platino, hechos a medida. Desde $2.250.000."
         path="/esencial"
       />
       <Navbar />

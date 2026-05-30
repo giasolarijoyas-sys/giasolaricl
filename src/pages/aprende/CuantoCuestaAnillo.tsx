@@ -42,7 +42,7 @@ const CuantoCuestaAnillo = () => (
                 <h2 className="font-display text-2xl text-foreground mb-4">Qué influye en el precio</h2>
                 <p>El precio final depende de cuatro factores principales:</p>
                 <h3 className="font-display text-lg text-foreground mt-6 mb-2">1. El diamante (o piedra central)</h3>
-                <p>Es lo que más mueve la aguja. Un diamante natural de 1ct puede costar 2 a 3 veces más que uno de laboratorio de la misma calidad. Tamaño, color, claridad y corte (las 4C) definen el rango.</p>
+                <p>Es lo que más mueve la aguja. Tamaño, color, claridad y corte (las 4C) definen el rango de precio del diamante certificado.</p>
                 <h3 className="font-display text-lg text-foreground mt-6 mb-2">2. El metal</h3>
                 <p>Platino cuesta entre 30% y 50% más que oro 18k por gramo. Y dentro del oro, los anillos más anchos o pesados suben el precio proporcionalmente.</p>
                 <h3 className="font-display text-lg text-foreground mt-6 mb-2">3. El diseño</h3>
@@ -57,7 +57,7 @@ const CuantoCuestaAnillo = () => (
                   <table className="w-full text-sm">
                     <thead><tr className="border-b border-border"><th className="py-3 px-3 text-left text-foreground">Presupuesto</th><th className="py-3 px-3 text-left text-foreground">Qué esperar</th></tr></thead>
                     <tbody>
-                      <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground align-top">$1.500.000 — $2.500.000</td><td className="py-2 px-3">Solitario en oro 18k con diamante de laboratorio 0,5–0,7ct, calidad muy buena. Diseño limpio.</td></tr>
+                      <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground align-top">$1.800.000 — $2.500.000</td><td className="py-2 px-3">Solitario en oro 18k con diamante certificado 0,25–0,35ct, calidad muy buena. Diseño limpio.</td></tr>
                       <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground align-top">$2.500.000 — $4.000.000</td><td className="py-2 px-3">Diamante natural 0,4–0,6ct en oro 18k, o lab 1ct en platino. Posibilidad de halo o detalles.</td></tr>
                       <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground align-top">$4.000.000 — $7.000.000</td><td className="py-2 px-3">Natural 0,7–1ct en platino, halo, pavé o diseño personalizado complejo.</td></tr>
                       <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground align-top">$8.000.000+</td><td className="py-2 px-3">Diamantes naturales sobre 1ct, certificación GIA, platino, diseños premium.</td></tr>

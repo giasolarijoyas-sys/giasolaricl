@@ -23,8 +23,7 @@ const METALS = [
 ];
 
 const STONES = [
-  "Diamante natural",
-  "Diamante de laboratorio",
+  "Diamante",
   "Zafiro",
   "Esmeralda",
   "Otra",

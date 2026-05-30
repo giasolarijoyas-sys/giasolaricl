@@ -109,7 +109,7 @@ const OroVsPlatino = () => (
 
             <div className="mt-10 flex gap-4 text-sm">
               <Link to="/aprende/diamantes-4c" className="text-primary hover:underline">→ Las 4C del Diamante</Link>
-              <Link to="/aprende/diamante-natural-vs-laboratorio" className="text-primary hover:underline">→ Natural vs Laboratorio</Link>
+              <Link to="/aprende/diamantes-4c" className="text-primary hover:underline">→ Las 4C del Diamante</Link>
             </div>
           </motion.div>
         </div>

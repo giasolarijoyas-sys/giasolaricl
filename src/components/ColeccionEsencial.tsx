@@ -1,3 +1,7 @@
+import esencial1 from "@/assets/esencial-1.jpg";
+import esencial2 from "@/assets/esencial-2.jpg";
+import esencial3 from "@/assets/esencial-3.jpg";
+
 const OLIVE = "#4A5536";
 const OLIVE_DARK = "#3A4429";
 const CREAM = "#F5EFE6";
@@ -17,18 +21,21 @@ type Modelo = {
 const modelos: Modelo[] = [
   {
     nombre: "Esencial",
-    detalle: "Solitario · diamante de laboratorio 0,25 ct · oro 18k o platino",
+    detalle: "Solitario · diamante certificado 0,25 ct · oro 18k o platino",
     precio: "Desde $2.250.000",
+    img: esencial1,
   },
   {
     nombre: "Esencial +",
-    detalle: "Solitario · diamante de laboratorio 0,30 ct · oro 18k o platino",
+    detalle: "Solitario · diamante certificado 0,30 ct · oro 18k o platino",
     precio: "Desde $2.600.000",
+    img: esencial2,
   },
   {
     nombre: "Clásico",
-    detalle: "Solitario · diamante de laboratorio 0,50 ct · oro 18k o platino",
+    detalle: "Solitario · diamante certificado 0,50 ct · oro 18k o platino",
     precio: "Desde $3.225.000",
+    img: esencial3,
   },
 ];
 
@@ -71,7 +78,7 @@ const ColeccionEsencial = ({ withContainer = true }: Props) => {
               color: OLIVE_DARK,
             }}
           >
-            El solitario de verdad, a medida
+            Solitarios a medida
           </h2>
           <p
             className="mt-5"
@@ -224,9 +231,8 @@ const ColeccionEsencial = ({ withContainer = true }: Props) => {
           }}
         >
           Todos los valores incluyen la piedra central certificada, el metal noble,
-          la hechura artesanal y el Certificado Gia Solari. Diamantes de laboratorio
-          certificados. El precio final varía según el tamaño y los detalles que
-          conversemos.
+          la hechura artesanal y el Certificado Gia Solari. El precio final varía
+          según el tamaño y los detalles que conversemos.
         </p>
       </div>
     </Wrapper>

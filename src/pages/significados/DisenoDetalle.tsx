@@ -85,7 +85,7 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
 // Cada entrada: dos párrafos. El segundo tiene el CTA con el texto entre [ ] que se renderiza como link a /cotizar.
 const EXTRA_COPY: Record<string, { p1: string; p2: { before: string; cta: string; after: string } }> = {
   "el-eterno": {
-    p1: "El solitario es el anillo de compromiso más clásico y atemporal: una sola piedra central elevada sobre la banda, sin nada que la distraiga. Es la elección de quienes buscan elegancia que no pasa de moda. En Gia Solari diseñamos cada Eterno a medida —elegís el diamante (natural o de laboratorio, certificado), la forma de la piedra, el alto del engaste y el grosor de la banda en platino u oro 18k.",
+    p1: "El solitario es el anillo de compromiso más clásico y atemporal: una sola piedra central elevada sobre la banda, sin nada que la distraiga. Es la elección de quienes buscan elegancia que no pasa de moda. En Gia Solari diseñamos cada Eterno a medida —elegís el diamante certificado, la forma de la piedra, el alto del engaste y el grosor de la banda en platino u oro 18k.",
     p2: {
       before:
         "Al ser un diseño tan limpio, todo el protagonismo es de la piedra: por eso te acompañamos a elegir bien proporción, brillo y presupuesto, sin presión. ¿Te imaginás tu Eterno? ",

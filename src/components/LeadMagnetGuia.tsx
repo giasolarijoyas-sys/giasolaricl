@@ -1,17 +1,9 @@
 import { useState } from "react";
 import { z } from "zod";
-import { Loader2 } from "lucide-react";
+import { Loader2, Download } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
-/**
- * Captura de email para la guía descargable.
- * - "full": versión hero con padding amplio (home).
- * - "compact": versión reducida (final de Aprende).
- *
- * Guarda el email en `newsletter_subscribers` con nombre "lead-magnet-guia"
- * para poder filtrar/exportar. El PDF se conecta después (paso configurable).
- */
 type Variant = "full" | "compact";
 
 const emailSchema = z
@@ -21,6 +13,7 @@ const emailSchema = z
   .max(255, { message: "Correo demasiado largo" });
 
 const LEAD_TAG = "lead-magnet-guia";
+const GUIDE_URL = "/guia-anillo-compromiso-gia-solari.pdf";
 
 const LeadMagnetGuia = ({ variant = "full" }: { variant?: Variant }) => {
   const [email, setEmail] = useState("");
@@ -44,7 +37,7 @@ const LeadMagnetGuia = ({ variant = "full" }: { variant?: Variant }) => {
       if (error && error.code !== "23505") throw error;
 
       setDone(true);
-      toast.success("¡Listo! Revisá tu correo.");
+      toast.success("¡Listo! Tu guía está lista para descargar.");
       setEmail("");
     } catch {
       toast.error("No pudimos registrar tu correo. Intentá de nuevo.");
@@ -95,20 +88,42 @@ const LeadMagnetGuia = ({ variant = "full" }: { variant?: Variant }) => {
             margin: "20px auto 32px",
           }}
         >
-          Presupuesto, estilos, tallas y la gran pregunta. Te la enviamos gratis a tu correo.
+          Presupuesto, estilos, tallas y la gran pregunta. Descargala gratis al
+          dejarnos tu correo.
         </p>
 
         {done ? (
-          <p
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontStyle: "italic",
-              fontSize: "20px",
-              color: "#4A5536",
-            }}
-          >
-            ¡Listo! Revisá tu correo.
-          </p>
+          <div className="flex flex-col items-center gap-4">
+            <p
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontStyle: "italic",
+                fontSize: "20px",
+                color: "#4A5536",
+              }}
+            >
+              ¡Gracias! Tu guía está lista.
+            </p>
+            <a
+              href={GUIDE_URL}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5"
+              style={{
+                background: "#4A5536",
+                color: "#F5EFE6",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "13px",
+                fontWeight: 500,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                borderRadius: "999px",
+              }}
+            >
+              <Download size={14} /> Descargar la guía
+            </a>
+          </div>
         ) : (
           <form
             onSubmit={handleSubmit}

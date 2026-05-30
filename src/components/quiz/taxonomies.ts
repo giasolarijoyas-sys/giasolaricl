@@ -14,8 +14,7 @@ export const RING_STYLES = [
 ] as const;
 
 export const CENTER_STONE_TYPES = [
-  { key: 'natural_diamond', label: 'Diamante Natural', desc: 'El clásico eterno' },
-  { key: 'lab_diamond', label: 'Diamante Lab', desc: 'Mismo brillo, creado en laboratorio' },
+  { key: 'natural_diamond', label: 'Diamante', desc: 'El clásico eterno, certificado' },
   { key: 'sapphire', label: 'Zafiro', desc: 'Azul intenso, elegancia real' },
   { key: 'aquamarine', label: 'Aguamarina', desc: 'Azul celeste, delicada' },
 ] as const;
