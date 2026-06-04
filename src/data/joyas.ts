@@ -32,8 +32,8 @@ import solitarioAguamarinaOval03 from "@/assets/joyas/solitario-aguamarina-oval-
 import zafiroHaloClusterVintage01 from "@/assets/joyas/zafiro-halo-cluster-vintage-01.jpeg";
 import haloAguamarinaCushion01 from "@/assets/joyas/halo-aguamarina-cushion-01.jpg";
 import haloAguamarinaCushion02 from "@/assets/joyas/halo-aguamarina-cushion-02.png";
-import aguamarinaRectangularShowroom01 from "@/assets/joyas/aguamarina-rectangular-showroom-01.png";
-import aguamarinaRectangularShowroom02 from "@/assets/joyas/aguamarina-rectangular-showroom-02.png";
+import aguamarinaRectangularShowroom01 from "@/assets/joyas/aguamarina-rectangular-atelier-01.png";
+import aguamarinaRectangularShowroom02 from "@/assets/joyas/aguamarina-rectangular-atelier-02.png";
 import mandalaVintageFlorDeLuz01 from "@/assets/joyas/mandala-flor-de-luz-01.png";
 import mandalaVintageFlorDeLuz02 from "@/assets/joyas/mandala-flor-de-luz-02.png";
 import onixHalo01 from "@/assets/joyas/onix-halo-01.png";
