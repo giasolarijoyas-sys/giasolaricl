@@ -149,7 +149,7 @@ const Index = () => {
       <Footer />
 
       <WhatsAppButton />
-      <JewelryChat />
+
     </div>
   );
 };
