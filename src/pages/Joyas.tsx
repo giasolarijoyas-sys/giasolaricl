@@ -539,7 +539,7 @@ const Joyas = () => {
                               {p.nombre}
                             </h2>
                             <p className="mt-1.5" style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", color: CHAMPAGNE, fontWeight: 500 }}>
-                              {formatPrecioDesde(p.precioDesde) ?? "Precio a cotizar"}
+                              {formatPrecioDesde(p.precioDesde) ?? (p.estilo === "Vintage" ? "Precio a cotizar" : "Desde $1.200.000")}
                             </p>
                           </div>
                         </Link>
