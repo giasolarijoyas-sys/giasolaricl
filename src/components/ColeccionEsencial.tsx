@@ -32,7 +32,7 @@ const modelos: Modelo[] = [
     img: esencial2,
   },
   {
-    nombre: "Clásico",
+    nombre: "Esencial Premium",
     detalle: "Solitario · diamante certificado 0,50 ct · oro 18k o platino",
     precio: "Desde $2.900.000",
     img: esencial3,
