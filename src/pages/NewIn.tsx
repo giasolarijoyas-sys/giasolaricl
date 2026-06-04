@@ -61,7 +61,6 @@ const NewIn = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {piezas.map((p) => {
-              const precio = formatPrecioDesde(p.precioDesde);
               return (
                 <Link key={p.slug} to={`/joyas/${p.slug}`} className="group block">
                   <div
@@ -92,7 +91,7 @@ const NewIn = () => {
                       color: "#C9A87C",
                     }}
                   >
-                    {precio || "A cotizar"}
+                    A cotizar
                   </p>
                 </Link>
               );
