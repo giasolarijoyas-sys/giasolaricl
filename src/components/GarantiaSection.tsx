@@ -69,7 +69,7 @@ const GarantiaSection = () => {
             className="font-display text-xl md:text-2xl italic max-w-2xl mx-auto"
             style={{ color: "#1A1614" }}
           >
-            Queremos que ames tu joya — no que te conformes.
+            Queremos que ames tu joya de verdad.
           </p>
           <p
             className="mt-8 font-body text-base md:text-[15px] leading-relaxed mx-auto"
