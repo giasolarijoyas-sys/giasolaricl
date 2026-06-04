@@ -16,7 +16,7 @@ import GarantiaSection from "@/components/GarantiaSection";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import JewelryChat from "@/components/JewelryChat";
+
 import SectionBanner from "@/components/SectionBanner";
 import RangoInversion from "@/components/RangoInversion";
 import IncluyeAnillo from "@/components/IncluyeAnillo";
