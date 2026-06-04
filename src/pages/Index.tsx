@@ -50,17 +50,12 @@ const Index = () => {
       {/* 2. Hero con slideshow */}
       <Hero />
 
-      {/* Trust badges */}
-      <TrustBadges />
-
-      {/* 3 Pilares — promesa de marca, post-hero */}
+      {/* 3 Pilares — promesa de marca unificada (reemplaza TrustBadges, TresPilares y SoloEnGiaSolari repetidos) */}
       <TresPilares />
-
-      {/* Compact diferenciadores con CTA a Garantía por Gusto */}
-      <SoloEnGiaSolariCompact />
 
       {/* Historia de Maca — conexión real, antes de la galería */}
       <Historia />
+
 
       {/* 3. Barra marquee de keywords */}
       <Marquee />
