@@ -178,7 +178,7 @@ const Hero = () => {
                 color: MUTED,
               }}
             >
-              Garantía por Gusto · Diamantes certificados · Showroom solo con cita previa
+              Garantía por Gusto, diamantes certificados, showroom solo con cita previa
             </p>
 
             <div className="flex items-center gap-4" style={{ marginTop: "16px", color: MUTED }}>
