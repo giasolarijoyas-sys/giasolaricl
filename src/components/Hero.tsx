@@ -123,7 +123,7 @@ const Hero = () => {
                 marginBottom: "36px",
               }}
             >
-              Diseño a medida en oro 18k y platino · Diamantes certificados GIA/IGI · Showroom en Vitacura
+              Diseño a medida en oro 18k y platino. Diamantes certificados GIA/IGI. Showroom en Vitacura.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
