@@ -40,7 +40,6 @@ const NewIn = () => {
         <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
           <div className="flex gap-4 md:gap-6 md:grid md:grid-cols-3 lg:grid-cols-6">
             {piezas.map((p) => {
-              const precio = formatPrecioDesde(p.precioDesde);
               return (
                 <Link
                   key={p.slug}
@@ -75,7 +74,7 @@ const NewIn = () => {
                       color: "#C9A87C",
                     }}
                   >
-                    {precio || "Desde $1.200.000"}
+                    A cotizar
                   </p>
                 </Link>
               );

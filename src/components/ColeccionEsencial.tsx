@@ -22,19 +22,19 @@ const modelos: Modelo[] = [
   {
     nombre: "Esencial",
     detalle: "Solitario, diamante certificado 0,25 ct, oro 18k o platino",
-    precio: "Desde $2.000.000",
+    precio: "A cotizar",
     img: esencial1,
   },
   {
     nombre: "Esencial +",
     detalle: "Solitario, diamante certificado 0,30 ct, oro 18k o platino",
-    precio: "Desde $2.400.000",
+    precio: "A cotizar",
     img: esencial2,
   },
   {
     nombre: "Esencial Premium",
     detalle: "Solitario, diamante certificado 0,50 ct, oro 18k o platino",
-    precio: "Desde $2.900.000",
+    precio: "A cotizar",
     img: esencial3,
   },
 ];
@@ -90,8 +90,8 @@ const ColeccionEsencial = ({ withContainer = true }: Props) => {
               fontWeight: 300,
             }}
           >
-            Una piedra central certificada, hecha a tu medida, desde $2.000.000.
-            No es una montura con piedritas: es tu solitario completo.
+            Una piedra central certificada, hecha a tu medida. Cada solitario
+            se cotiza según el tamaño de la piedra y el metal que elijas.
           </p>
         </div>
 

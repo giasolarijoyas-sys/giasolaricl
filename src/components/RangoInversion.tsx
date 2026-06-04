@@ -5,16 +5,13 @@ const RangoInversion = () => (
     <div className="container mx-auto px-4 md:px-8">
       <div className="text-center mb-10">
         <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">Inversión</p>
-        <h2 className="font-display text-3xl md:text-4xl text-foreground">Rango de inversión</h2>
+        <h2 className="font-display text-3xl md:text-4xl text-foreground">Cada pieza, su propio valor</h2>
       </div>
 
       <div className="max-w-2xl mx-auto border border-border rounded-lg p-10 bg-card text-center">
-        <p className="font-display text-3xl md:text-4xl text-foreground mb-4">
-          Desde $1.200.000 CLP
-        </p>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          El precio final depende del metal, la piedra central y la complejidad del
-          diseño. Cotiza tu pieza por WhatsApp para un valor exacto.
+          Cada pieza se cotiza según el diseño, el metal y la piedra que elijas.
+          Conversemos por WhatsApp y armamos juntas el valor de la tuya.
         </p>
       </div>
 
