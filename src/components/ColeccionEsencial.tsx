@@ -21,19 +21,19 @@ type Modelo = {
 const modelos: Modelo[] = [
   {
     nombre: "Esencial",
-    detalle: "Solitario · diamante certificado 0,25 ct · oro 18k o platino",
+    detalle: "Solitario, diamante certificado 0,25 ct, oro 18k o platino",
     precio: "Desde $2.000.000",
     img: esencial1,
   },
   {
     nombre: "Esencial +",
-    detalle: "Solitario · diamante certificado 0,30 ct · oro 18k o platino",
+    detalle: "Solitario, diamante certificado 0,30 ct, oro 18k o platino",
     precio: "Desde $2.400.000",
     img: esencial2,
   },
   {
     nombre: "Esencial Premium",
-    detalle: "Solitario · diamante certificado 0,50 ct · oro 18k o platino",
+    detalle: "Solitario, diamante certificado 0,50 ct, oro 18k o platino",
     precio: "Desde $2.900.000",
     img: esencial3,
   },
