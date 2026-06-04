@@ -1,7 +1,6 @@
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import TrustBadges from "@/components/TrustBadges";
 import Marquee from "@/components/Marquee";
 import Gallery from "@/components/Gallery";
 import WhyUs from "@/components/WhyUs";
@@ -22,7 +21,6 @@ import RangoInversion from "@/components/RangoInversion";
 import IncluyeAnillo from "@/components/IncluyeAnillo";
 import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 
-import SoloEnGiaSolariCompact from "@/components/SoloEnGiaSolariCompact";
 import InstagramFeed from "@/components/InstagramFeed";
 import ComoTeAyudo from "@/components/ComoTeAyudo";
 
@@ -50,7 +48,7 @@ const Index = () => {
       {/* 2. Hero con slideshow */}
       <Hero />
 
-      {/* 3 Pilares — promesa de marca unificada (reemplaza TrustBadges, TresPilares y SoloEnGiaSolari repetidos) */}
+      {/* 3 Pilares — promesa de marca unificada (promesa de marca) */}
       <TresPilares />
 
       {/* Historia de Maca — conexión real, antes de la galería */}
