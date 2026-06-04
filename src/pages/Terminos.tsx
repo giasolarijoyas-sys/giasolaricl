@@ -30,7 +30,7 @@ const Terminos = () => {
             <section>
               <h2 className="font-display text-xl text-foreground">1. Información general</h2>
               <p>
-                Gia Solari Joyas es una marca de joyería de autor operada por <strong>GIA SOLARI SpA</strong>, con domicilio en Santiago, Las Condes, Chile. Nos especializamos en joyería personalizada fabricada a pedido en oro 18k, platino y piedras preciosas certificadas.
+                Gia Solari Joyas es una marca de joyería de autor operada por <strong>GIA SOLARI SpA</strong>, con domicilio en Santiago, Vitacura, Chile. Nos especializamos en joyería personalizada fabricada a pedido en oro 18k, platino y piedras preciosas certificadas.
               </p>
               <p>
                 Al solicitar una cotización, realizar un pedido o utilizar nuestros servicios, aceptas los presentes términos y condiciones.
@@ -175,7 +175,7 @@ const Terminos = () => {
             <section>
               <h2 className="font-display text-xl text-foreground">11. Envíos</h2>
               <p>
-                La entrega se realiza de forma <strong>presencial</strong> en nuestro showroom en Las Condes, Santiago. Para envíos a regiones o fuera de Chile, se coordinará con el cliente el mejor medio de despacho. Los costos de envío corren por cuenta del cliente, salvo acuerdo en contrario.
+                La entrega se realiza de forma <strong>presencial</strong> en nuestro showroom en Vitacura, Santiago. Para envíos a regiones o fuera de Chile, se coordinará con el cliente el mejor medio de despacho. Los costos de envío corren por cuenta del cliente, salvo acuerdo en contrario.
               </p>
               <p>
                 Todas las joyas se entregan en su packaging exclusivo con certificación cuando corresponda.
@@ -199,7 +199,7 @@ const Terminos = () => {
               <ul className="space-y-1">
                 <li>• <strong>WhatsApp:</strong> +56 9 8404 9502</li>
                 <li>• <strong>Instagram:</strong> @giasolari.cl</li>
-                <li>• <strong>Showroom:</strong> Atención con cita previa · Las Condes · Santiago</li>
+                <li>• <strong>Showroom:</strong> Atención con cita previa · Vitacura · Santiago</li>
               </ul>
             </section>
           </div>

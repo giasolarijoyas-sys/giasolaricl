@@ -226,15 +226,15 @@ export const DISENOS: Diseno[] = [
 export const PHONE = "56984049502";
 
 export function waPiedra(nombre: string) {
-  const msg = `Hola Gia ✦ Vi ${nombre} en tu web y me encantaría conocer opciones de anillos con esta piedra.`;
+  const msg = `Hola Maca ✦ Vi ${nombre} en tu web y me encantaría conocer opciones de anillos con esta piedra.`;
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
 }
 
 export function waDiseno(nombre: string) {
-  const msg = `Hola Gia ✦ Vi ${nombre} en tu web y me gustaría cotizarlo.`;
+  const msg = `Hola Maca ✦ Vi ${nombre} en tu web y me gustaría cotizarlo.`;
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
 }
 
 export const WA_GENERAL = `https://wa.me/${PHONE}?text=${encodeURIComponent(
-  "Hola Gia ✦ Me gustaría agendar una conversación para diseñar mi anillo."
+  "Hola Maca ✦ Me gustaría agendar una conversación para diseñar mi anillo."
 )}`;

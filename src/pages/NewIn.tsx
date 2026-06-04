@@ -15,7 +15,7 @@ const NewIn = () => {
     <div className="min-h-screen" style={{ background: "#F5EFE6" }}>
       <SEO
         title="New In | Recién salido del taller · Gia Solari"
-        description="Las piezas más recientes del atelier. Anillos de compromiso, argollas y joyas de autor recién entregadas."
+        description="Las piezas más recientes del showroom. Anillos de compromiso, argollas y joyas de autor recién entregadas."
         path="/new"
       />
       <Navbar />
@@ -55,7 +55,7 @@ const NewIn = () => {
                 lineHeight: 1.6,
               }}
             >
-              Piezas terminadas hace poco en el atelier.
+              Piezas terminadas hace poco en el showroom.
             </p>
           </header>
 

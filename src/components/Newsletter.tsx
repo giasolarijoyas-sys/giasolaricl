@@ -26,7 +26,7 @@ const Newsletter = () => {
         }
       } else {
         setSubscribed(true);
-        toast({ title: "Bienvenida al círculo", description: "Te llegará la próxima carta del atelier." });
+        toast({ title: "Bienvenida al círculo", description: "Te llegará la próxima carta del showroom." });
       }
       setEmail("");
     } catch {
@@ -77,7 +77,7 @@ const Newsletter = () => {
           }}
         >
           Una vez al mes te mando piezas nuevas, novias reales y el detrás de
-          escena del atelier. Sin spam, sin venta agresiva.
+          escena del showroom. Sin spam, sin venta agresiva.
         </p>
 
         {subscribed ? (

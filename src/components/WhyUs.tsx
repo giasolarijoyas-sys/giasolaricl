@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { MapPin, Gem, Users } from "lucide-react";
 
 const reasons = [
-  { icon: MapPin, title: "Atelier propio en Santiago", desc: "Cada pieza se hace a mano en nuestro taller, una a la vez." },
+  { icon: MapPin, title: "Showroom propio en Santiago", desc: "Cada pieza se hace a mano en nuestro taller, una a la vez." },
   { icon: Gem, title: "Diamantes certificados GIA o IGI", desc: "Solo trabajamos con piedras certificadas, sin excepciones." },
   { icon: Users, title: "Atención personalizada de principio a fin", desc: "Te acompañamos desde la primera conversación hasta la entrega, no delegamos tu proyecto." },
 ];

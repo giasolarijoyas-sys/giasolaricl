@@ -61,7 +61,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* COL 3 - Atelier */}
+          {/* COL 3 - Showroom */}
           <div>
             <p
               className="mb-4"
@@ -72,10 +72,10 @@ const Footer = () => {
                 color: "#C9A87C",
               }}
             >
-              Atelier
+              Showroom
             </p>
             <div className="flex flex-col gap-2 mb-5">
-              <p>Las Condes, Santiago de Chile</p>
+              <p>Vitacura, Santiago de Chile</p>
               <p>Solo con cita previa</p>
               <a href="tel:+56984049502" className="hover:text-[#C9A87C] transition-colors">+56 9 8404 9502</a>
               <a href="mailto:giasolarijoyas@gmail.com" className="hover:text-[#C9A87C] transition-colors">giasolarijoyas@gmail.com</a>

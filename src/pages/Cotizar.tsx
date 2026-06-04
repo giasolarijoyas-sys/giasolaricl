@@ -224,7 +224,7 @@ const Cotizar = () => {
       ? `El cotizador me mostró un rango de ${rangoMaxText}. Me gustaría conversar los detalles.`
       : `Me gustaría que me ayudes a definir los detalles.`;
     const lines = [
-      "Hola Gia! Vengo del cotizador del sitio.",
+      "Hola Maca! Vengo del cotizador del sitio.",
       "",
       `🎁 Pieza: ${tipoLabel}`,
       `✨ Metal: ${metalLabel}`,

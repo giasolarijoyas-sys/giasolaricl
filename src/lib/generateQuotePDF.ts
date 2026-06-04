@@ -138,7 +138,7 @@ export function generateQuotePDF(quote: Quote) {
   y = doc.internal.pageSize.getHeight() - 15;
   doc.setFontSize(7);
   doc.setTextColor(160);
-  doc.text("GIA SOLARI SpA · Atención con cita previa · Las Condes · Santiago · giasolari.cl", w / 2, y, { align: "center" });
+  doc.text("GIA SOLARI SpA · Atención con cita previa · Vitacura · Santiago · giasolari.cl", w / 2, y, { align: "center" });
 
   doc.save(`Propuesta_GiaSolari_${quote.nombre.replace(/\s+/g, "_")}_${quote.id.slice(0, 8)}.pdf`);
 }

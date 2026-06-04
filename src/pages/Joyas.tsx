@@ -398,7 +398,7 @@ const Joyas = () => {
               maxWidth: "600px",
             }}
           >
-            Encuentra tu pieza o pídeme una a medida. Cada joya está hecha en el atelier, en oro 18k, platino y diamantes certificados.
+            Encuentra tu pieza o pídeme una a medida. Cada joya está hecha en el showroom, en oro 18k, platino y diamantes certificados.
           </p>
         </header>
 

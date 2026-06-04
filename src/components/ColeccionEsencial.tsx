@@ -41,7 +41,7 @@ const modelos: Modelo[] = [
 
 const waUrl = (nombre: string) =>
   `https://wa.me/56984049502?text=${encodeURIComponent(
-    `Hola Gia, me interesa el solitario ${nombre} de la Colección Esencial 💍`
+    `Hola Maca, me interesa el solitario ${nombre} de la Colección Esencial 💍`
   )}`;
 
 type Props = { withContainer?: boolean };

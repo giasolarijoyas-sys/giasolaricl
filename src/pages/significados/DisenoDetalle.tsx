@@ -43,7 +43,7 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
   "el-eterno": {
     title: "El Eterno · Anillo de compromiso solitario | Gia Solari",
     description:
-      "Anillo solitario de compromiso a medida en platino u oro 18k con diamante certificado. Una piedra, una promesa. Atelier en Las Condes, Santiago.",
+      "Anillo solitario de compromiso a medida en platino u oro 18k con diamante certificado. Una piedra, una promesa. Showroom en Vitacura, Santiago.",
   },
   "el-tricillo": {
     title: "Las Tres Promesas · Anillo de compromiso tres piedras | Gia Solari",
@@ -53,7 +53,7 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
   "el-alado": {
     title: "El Alado · Anillo de compromiso con halo de diamantes | Gia Solari",
     description:
-      "Anillo de compromiso con halo de diamantes a medida, inspirado en el estilo de Lady Di. Más brillo y presencia. Atelier en Las Condes, Santiago.",
+      "Anillo de compromiso con halo de diamantes a medida, inspirado en el estilo de Lady Di. Más brillo y presencia. Showroom en Vitacura, Santiago.",
   },
   "el-real": {
     title: "El Real · Anillo de zafiro azul estilo Lady Di | Gia Solari",
@@ -73,7 +73,7 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
   "la-constelacion": {
     title: "La Constelación · Anillo de tres piedras con halo | Gia Solari",
     description:
-      "Anillo de compromiso de tres piedras con halo central, el diseño más luminoso. A medida en platino u oro 18k. Atelier en Las Condes, Santiago.",
+      "Anillo de compromiso de tres piedras con halo central, el diseño más luminoso. A medida en platino u oro 18k. Showroom en Vitacura, Santiago.",
   },
   "el-primer-amuleto": {
     title: "El Primer Amuleto · Dije con piedra de nacimiento | Gia Solari",

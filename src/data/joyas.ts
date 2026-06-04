@@ -32,8 +32,8 @@ import solitarioAguamarinaOval03 from "@/assets/joyas/solitario-aguamarina-oval-
 import zafiroHaloClusterVintage01 from "@/assets/joyas/zafiro-halo-cluster-vintage-01.jpeg";
 import haloAguamarinaCushion01 from "@/assets/joyas/halo-aguamarina-cushion-01.jpg";
 import haloAguamarinaCushion02 from "@/assets/joyas/halo-aguamarina-cushion-02.png";
-import aguamarinaRectangularAtelier01 from "@/assets/joyas/aguamarina-rectangular-atelier-01.png";
-import aguamarinaRectangularAtelier02 from "@/assets/joyas/aguamarina-rectangular-atelier-02.png";
+import aguamarinaRectangularShowroom01 from "@/assets/joyas/aguamarina-rectangular-showroom-01.png";
+import aguamarinaRectangularShowroom02 from "@/assets/joyas/aguamarina-rectangular-showroom-02.png";
 import mandalaVintageFlorDeLuz01 from "@/assets/joyas/mandala-flor-de-luz-01.png";
 import mandalaVintageFlorDeLuz02 from "@/assets/joyas/mandala-flor-de-luz-02.png";
 import onixHalo01 from "@/assets/joyas/onix-halo-01.png";
@@ -277,17 +277,17 @@ export const JOYAS: Joya[] = [
     isPlaceholder: false,
   },
   {
-    slug: "aguamarina-rectangular-atelier",
-    nombre: "Aguamarina · Atelier Rectangular",
+    slug: "aguamarina-rectangular-showroom",
+    nombre: "Aguamarina · Showroom Rectangular",
     material: "Oro 18k blanco · Aguamarina corte emerald · Halo octogonal de diamantes con milgrain",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
     descripcion:
       "Aguamarina corte emerald rectangular con halo octogonal de diamantes, milgrain y banda con diamantes, oro 18k blanco.",
     descripcionLarga:
-      "Aguamarina corte emerald, rectangular y luminosa, enmarcada por un halo octogonal de diamantes con milgrain — un trabajo de atelier que se inclina al art déco. La banda acompaña con pequeños diamantes para continuar la línea de luz. Pieza estudiada al detalle. Cada anillo incluye Certificado Gia Solari.",
+      "Aguamarina corte emerald, rectangular y luminosa, enmarcada por un halo octogonal de diamantes con milgrain — un trabajo de showroom que se inclina al art déco. La banda acompaña con pequeños diamantes para continuar la línea de luz. Pieza estudiada al detalle. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
-    imagenes: [aguamarinaRectangularAtelier01, aguamarinaRectangularAtelier02],
+    imagenes: [aguamarinaRectangularShowroom01, aguamarinaRectangularShowroom02],
     isPlaceholder: false,
   },
   {

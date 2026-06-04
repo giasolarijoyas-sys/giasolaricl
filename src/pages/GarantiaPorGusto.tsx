@@ -126,7 +126,7 @@ const GarantiaPorGusto = () => (
               "Pedí un cambio y me lo resolvieron en días. Nunca me sentí presionada."
             </blockquote>
             <p className="text-muted-foreground tracking-[0.2em] uppercase text-xs">
-              Camila R. · Las Condes
+              Camila R. · Vitacura
             </p>
           </motion.div>
         </div>
