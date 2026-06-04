@@ -165,7 +165,7 @@ const Hero = () => {
                 color: MUTED,
               }}
             >
-              Te respondo personalmente en menos de 24h · Sin compromiso
+              Te respondo personalmente en menos de 24h hábiles, sin compromiso
             </p>
 
 
