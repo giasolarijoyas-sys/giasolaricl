@@ -109,7 +109,7 @@ const Hero = () => {
                 marginBottom: "20px",
               }}
             >
-              Una joya que se pasa de generación en generación empieza con una <em>conversación</em>
+              La joya que se hereda empieza con una <em>conversación</em>
             </h1>
 
             <p
