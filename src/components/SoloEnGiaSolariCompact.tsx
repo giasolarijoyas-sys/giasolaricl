@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { PenLine, Award, Diamond } from "lucide-react";
 
 const items = [
-  { icon: PenLine, text: "Grabado interior personalizado — gratis" },
+  { icon: PenLine, text: "Grabado interior personalizado, gratis" },
   { icon: Award, text: "Certificación Gia Solari incluida" },
   { icon: Diamond, text: "Diamantes y piedras certificadas" },
 ];

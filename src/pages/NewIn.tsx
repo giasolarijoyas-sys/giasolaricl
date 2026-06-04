@@ -14,7 +14,7 @@ const NewIn = () => {
   return (
     <div className="min-h-screen" style={{ background: "#F5EFE6" }}>
       <SEO
-        title="New In | Recién salido del taller · Gia Solari"
+        title="New In | Recién salido del taller, Gia Solari"
         description="Las piezas más recientes del showroom. Anillos de compromiso, argollas y joyas de autor recién entregadas."
         path="/new"
       />

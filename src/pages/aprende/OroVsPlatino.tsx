@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const OroVsPlatino = () => (
   <>
     <SEO
-      title="Oro 18k vs platino para anillos: guía completa 2026 · Gia Solari"
+      title="Oro 18k vs platino para anillos: guía completa 2026, Gia Solari"
       description="Diferencias entre oro 18k (amarillo, blanco, rosado) y platino: precio, durabilidad, mantenimiento e hipoalergenia. Cuál elegir para tu anillo."
       path="/aprende/oro-vs-platino"
       type="article"
@@ -81,14 +81,14 @@ const OroVsPlatino = () => (
 
                 <p className="mt-6"><strong className="text-foreground">Lo importante:</strong> los dos son oro de verdad, los dos llevan sello, los dos están pensados para durar generaciones. El 14k incluso es un poco más resistente al rayado por tener más aleación, por lo que para argollas de matrimonio que se usan todos los días es una opción muy válida.</p>
                 <p className="mt-3">El 18k tiene más oro puro, un color levemente más cálido y profundo, y es el estándar histórico de la joyería europea. El 14k es el estándar en EE.UU. y permite acceder a piezas hechas a mano con un presupuesto más acotado.</p>
-                <p className="mt-3">En Gia Solari cotizamos tu pieza en ambos quilatajes si quieres comparar. Ninguna de las dos opciones es "menos joya" — solo distinta proporción.</p>
+                <p className="mt-3">En Gia Solari cotizamos tu pieza en ambos quilatajes si quieres comparar. Ninguna de las dos opciones es "menos joya", solo distinta proporción.</p>
               </section>
 
 
 
               <section>
                 <h2 className="font-display text-2xl text-foreground mb-4">Platino en detalle</h2>
-                <p>El platino es el metal más exclusivo usado en joyería. Es naturalmente blanco, extremadamente duradero y no pierde material con el uso — simplemente se desplaza.</p>
+                <p>El platino es el metal más exclusivo usado en joyería. Es naturalmente blanco, extremadamente duradero y no pierde material con el uso, simplemente se desplaza.</p>
                 <p className="mt-3">Es perfecto para piedras valiosas porque sus garras son más seguras que las de oro. Y es la opción ideal para pieles sensibles por ser 100% hipoalergénico.</p>
                 <p className="mt-3">En Gia Solari somos una de las pocas joyerías en Chile que trabaja el platino con verdadera maestría. Es nuestro metal favorito.</p>
               </section>

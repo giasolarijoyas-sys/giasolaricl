@@ -31,7 +31,7 @@ const tabla = [
 const TallaAnillo = () => (
   <>
     <SEO
-      title="¿Cómo saber tu talla de anillo? Guía para medir en casa · Gia Solari"
+      title="¿Cómo saber tu talla de anillo? Guía para medir en casa, Gia Solari"
       description="Aprende a medir tu talla de anillo en casa con tres métodos simples. Tabla de equivalencias Chile, USA y UK incluida. Joyería de autor Gia Solari."
       path="/aprende/talla-anillo"
       type="article"
@@ -58,7 +58,7 @@ const TallaAnillo = () => (
               <section className="space-y-4">
                 <p>
                   Antes de elegir un anillo, lo primero es saber qué talla eres. Parece obvio, pero es el detalle
-                  que más se pasa por alto — y el que más importa: una joya hecha a medida tiene que entrar
+                  que más se pasa por alto, y el que más importa: una joya hecha a medida tiene que entrar
                   perfecto. Ni apretada, ni que se vaya a caer.
                 </p>
                 <p>
@@ -69,10 +69,10 @@ const TallaAnillo = () => (
               </section>
 
               <section>
-                <h2 className="font-display text-2xl text-foreground mb-4">Método 1 — Con un anillo que ya tengas</h2>
+                <h2 className="font-display text-2xl text-foreground mb-4">Método 1, Con un anillo que ya tengas</h2>
                 <p>
                   Es el más exacto. Busca un anillo que te quede perfecto en el dedo donde vas a usar la joya
-                  nueva (no necesariamente el mismo dedo de la otra mano — pueden ser distintos).
+                  nueva (no necesariamente el mismo dedo de la otra mano, pueden ser distintos).
                 </p>
                 <p className="mt-3">
                   Apóyalo sobre una regla con milímetros y mide el <strong className="text-foreground">diámetro interno</strong>,
@@ -84,14 +84,14 @@ const TallaAnillo = () => (
               </section>
 
               <section>
-                <h2 className="font-display text-2xl text-foreground mb-4">Método 2 — Con un hilo o tira de papel</h2>
+                <h2 className="font-display text-2xl text-foreground mb-4">Método 2, Con un hilo o tira de papel</h2>
                 <p>
                   Si no tienes ningún anillo a mano, este método también funciona.
                 </p>
                 <p className="mt-3">
                   Envuelve un hilo fino (o una tira de papel) alrededor de la base del dedo, sin apretar.
                   Marca con un lápiz el punto exacto donde se cruza. Estira el hilo sobre una regla y mide
-                  en milímetros — ese es el contorno de tu dedo.
+                  en milímetros, ese es el contorno de tu dedo.
                 </p>
                 <p className="mt-3">
                   Después divídelo por 3.14 (π) y te da el diámetro. Ejemplo: si el contorno es 50.3 mm,
@@ -100,7 +100,7 @@ const TallaAnillo = () => (
               </section>
 
               <section>
-                <h2 className="font-display text-2xl text-foreground mb-4">Método 3 — Te paso una plantilla</h2>
+                <h2 className="font-display text-2xl text-foreground mb-4">Método 3, Te paso una plantilla</h2>
                 <p>
                   Si quieres algo a prueba de errores, te mando por WhatsApp una hoja para imprimir con una
                   regla de tallas. Apoyas tu anillo encima y ves directo cuál es. Sin matemática.
@@ -128,7 +128,7 @@ const TallaAnillo = () => (
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                     <p>
                       <strong className="text-foreground">Mide al final del día.</strong> Los dedos se hinchan
-                      un poco con las horas y el calor — esa es tu talla real, la que vas a usar la mayor
+                      un poco con las horas y el calor, esa es tu talla real, la que vas a usar la mayor
                       parte del tiempo.
                     </p>
                   </li>
@@ -143,7 +143,7 @@ const TallaAnillo = () => (
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                     <p>
                       <strong className="text-foreground">Si estás justo entre dos tallas, quédate con la más grande.</strong>{" "}
-                      Es preferible que sobre un poquito a que apriete — un anillo apretado se vuelve incómodo
+                      Es preferible que sobre un poquito a que apriete, un anillo apretado se vuelve incómodo
                       y difícil de sacar.
                     </p>
                   </li>
@@ -187,8 +187,8 @@ const TallaAnillo = () => (
               <section>
                 <h2 className="font-display text-2xl text-foreground mb-4">¿Quieres que lo hagamos juntas?</h2>
                 <p>
-                  Si la pieza es importante — un anillo de compromiso, una argolla de matrimonio, una joya
-                  que vas a usar toda la vida — lo mejor es agendar una cita. Te mido la talla con un anillero
+                  Si la pieza es importante, un anillo de compromiso, una argolla de matrimonio, una joya
+                  que vas a usar toda la vida, lo mejor es agendar una cita. Te mido la talla con un anillero
                   profesional, conversamos del diseño y armamos la joya pensada para ti.
                 </p>
               </section>

@@ -66,7 +66,7 @@ const QuoteDetail = () => {
         </Button>
         <div className="flex-1">
           <h1 className="font-display text-2xl text-foreground">{quote.nombre}</h1>
-          <p className="text-sm text-muted-foreground">{quote.email} · {quote.whatsapp}</p>
+          <p className="text-sm text-muted-foreground">{quote.email}, {quote.whatsapp}</p>
         </div>
         <Select value={quote.status} onValueChange={updateStatus}>
           <SelectTrigger className="w-40">

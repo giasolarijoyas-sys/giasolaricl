@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const VideoSection = () => (
   <section className="relative w-full overflow-hidden">
-    {/* Placeholder — replace with real video */}
+    {/* Placeholder, replace with real video */}
     <div className="aspect-video md:aspect-[16/7] bg-charcoal relative flex items-center justify-center">
       <div className="absolute inset-0 bg-charcoal/50 z-10" />
       <div className="absolute inset-0 flex items-center justify-center">

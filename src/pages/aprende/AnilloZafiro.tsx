@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const AnilloZafiro = () => (
   <>
     <SEO
-      title="Anillo de compromiso con zafiro: guía completa · Gia Solari"
+      title="Anillo de compromiso con zafiro: guía completa, Gia Solari"
       description="Por qué elegir zafiro en tu anillo de compromiso: durabilidad, color, simbolismo y precio. Inspirado en Lady Di. Hecho a mano en Santiago."
       path="/aprende/anillo-compromiso-zafiro"
       type="article"
@@ -35,7 +35,7 @@ const AnilloZafiro = () => (
               <section>
                 <h2 className="font-display text-2xl text-foreground mb-4">Por qué elegir zafiro</h2>
                 <p>El zafiro es la segunda piedra más dura después del diamante: <strong className="text-foreground">9 en la escala de Mohs</strong>. Eso significa que aguanta el uso diario sin rayarse, igual que un diamante.</p>
-                <p className="mt-3">Su color azul profundo es único — no hay otra piedra preciosa con esa intensidad. Y simboliza fidelidad, sabiduría y nobleza desde la antigüedad.</p>
+                <p className="mt-3">Su color azul profundo es único, no hay otra piedra preciosa con esa intensidad. Y simboliza fidelidad, sabiduría y nobleza desde la antigüedad.</p>
               </section>
 
               <section>

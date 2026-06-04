@@ -17,7 +17,7 @@ const PiedraDetalle = () => {
   return (
     <>
       <SEO
-        title={`${piedra.nombre} · ${piedra.subtitulo} | Gia Solari`}
+        title={`${piedra.nombre}, ${piedra.subtitulo} | Gia Solari`}
         description={`${piedra.subtitulo}. ${piedra.historia.slice(0, 140)}…`}
         path={`/significados/piedras/${piedra.slug}`}
         type="article"

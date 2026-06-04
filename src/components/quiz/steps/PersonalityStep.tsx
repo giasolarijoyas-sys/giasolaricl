@@ -9,7 +9,7 @@ const PersonalityStep = ({ answers, onUpdate }: StepProps) => {
         <Heart size={20} className="text-primary" /> Cuéntanos de ella
       </h3>
       <p className="text-muted-foreground text-sm mb-6">
-        Responde lo que puedas — todo es opcional.
+        Responde lo que puedas, todo es opcional.
       </p>
 
       <div className="grid gap-4">

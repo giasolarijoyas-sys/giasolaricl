@@ -8,7 +8,7 @@ import tallerImg4 from "@/assets/gal-sesion-dsc_5948.jpg";
 import tallerImg5 from "@/assets/gal-sesion-dsc_5984.jpg";
 
 const photos = [
-  { src: tallerImg1, alt: "Proceso artesanal — detalle de engaste" },
+  { src: tallerImg1, alt: "Proceso artesanal, detalle de engaste" },
   { src: tallerImg2, alt: "Manos trabajando una pieza" },
   { src: tallerImg3, alt: "Soldando con precisión" },
   { src: tallerImg4, alt: "Inspección con lupa" },

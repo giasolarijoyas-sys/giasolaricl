@@ -1,4 +1,4 @@
-// Price estimator — based on real workshop costs (CLP)
+// Price estimator, based on real workshop costs (CLP)
 // Labor: $350k | Gold: ~7-11g × $100k/g | Platinum: ~8-14g × $100k/g
 // Lab diamonds: $10k/point | Natural: $20k/point | Precious stones: ~$500k/ct
 

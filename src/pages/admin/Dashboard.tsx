@@ -98,7 +98,7 @@ const Dashboard = () => {
                   <TableCell className="font-medium">{q.nombre}</TableCell>
                   <TableCell>{q.pieza}</TableCell>
                   <TableCell>{q.metal}</TableCell>
-                  <TableCell>{q.piedra || "—"}</TableCell>
+                  <TableCell>{q.piedra || ", "}</TableCell>
                   <TableCell>{new Date(q.created_at).toLocaleDateString("es-CL")}</TableCell>
                   <TableCell>
                     <Badge variant="secondary" className={statusColors[q.status] || ""}>

@@ -59,8 +59,8 @@ const PIEDRAS = [
 const PRECIOS = [
   { id: "all", label: "Todos los rangos", min: 0, max: Infinity },
   { id: "p1", label: "Hasta $1.000.000", min: 0, max: 1000000 },
-  { id: "p2", label: "$1.000.000 — $2.000.000", min: 1000000, max: 2000000 },
-  { id: "p3", label: "$2.000.000 — $3.000.000", min: 2000000, max: 3000000 },
+  { id: "p2", label: "$1.000.000, $2.000.000", min: 1000000, max: 2000000 },
+  { id: "p3", label: "$2.000.000, $3.000.000", min: 2000000, max: 3000000 },
   { id: "p4", label: "$3.000.000+", min: 3000000, max: Infinity },
   { id: "consultar", label: "A cotizar", min: -1, max: -1 },
 ];
@@ -430,7 +430,7 @@ const Joyas = () => {
               </div>
             </div>
 
-            {/* RIGHT — CHIPS + GRID */}
+            {/* RIGHT, CHIPS + GRID */}
             <div>
               {chips.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -496,7 +496,7 @@ const Joyas = () => {
                           <div className="relative overflow-hidden" style={{ aspectRatio: "4 / 5", background: CREAM_WARM }}>
                             <img
                               src={p.imagenes[0]}
-                              alt={`${p.nombre} — ${p.material}`}
+                              alt={`${p.nombre}, ${p.material}`}
                               loading={i < 6 ? "eager" : "lazy"}
                               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             />
@@ -513,7 +513,7 @@ const Joyas = () => {
                                   padding: "4px 10px",
                                 }}
                               >
-                                Vintage · Único
+                                Vintage, Único
                               </span>
                             )}
                             <button
@@ -533,7 +533,7 @@ const Joyas = () => {
                           </div>
                           <div className="pt-4 px-1">
                             <p style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: OLIVE_SOFT }}>
-                              {p.categoria}{p.estilo ? ` · ${p.estilo}` : ""}
+                              {p.categoria}{p.estilo ? `, ${p.estilo}` : ""}
                             </p>
                             <h2 className="mt-1.5" style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "18px", color: OLIVE_DEEP, lineHeight: 1.2 }}>
                               {p.nombre}

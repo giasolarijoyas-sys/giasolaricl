@@ -73,7 +73,7 @@ const Navbar = () => {
   return (
     <>
       <div className="fixed top-0 left-0 right-0 z-[60] flex flex-col">
-        {/* Top bar — sociales y showroom */}
+        {/* Top bar, sociales y showroom */}
         <div
           className="hidden md:flex h-10 items-center justify-between px-4 md:px-8"
           style={{ background: OLIVE_DARK, color: CARAMEL }}
@@ -87,7 +87,7 @@ const Navbar = () => {
               textTransform: "uppercase",
             }}
           >
-            Showroom en Vitacura · Solo con cita previa
+            Showroom en Vitacura, Solo con cita previa
           </p>
           <div className="flex items-center gap-4 absolute right-4 md:right-8">
             <a href="https://www.instagram.com/giasolari.cl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-70">

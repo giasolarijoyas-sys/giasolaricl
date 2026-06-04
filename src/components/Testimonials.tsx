@@ -7,7 +7,7 @@ const testimonials = [
   {
     name: "Roberto S.",
     city: "Santiago",
-    piece: "Collar con zafiro · Oro amarillo 18k",
+    piece: "Collar con zafiro, Oro amarillo 18k",
     text: "Quería algo especial pa nuestros 10 años de casado, no un regalo más. Cuando la Fran vio el collar, se emocionó tanto... como si alguien se hubiese metido nuestra historia en él.",
   },
   {
@@ -19,13 +19,13 @@ const testimonials = [
   {
     name: "Tomás R.",
     city: "Santiago",
-    piece: "Diamante natural GIA · Platino",
+    piece: "Diamante natural GIA, Platino",
     text: "Soy medio hinchador con los detalles y fui con mil preguntas técnicas... la Maca las respondió todas sin drama. El anillo quedó tal cual como me mostró que sería, cero improvisación.",
   },
   {
     name: "Felipe A.",
     city: "Santiago",
-    piece: "Anillo de compromiso · Diamante lab · Oro 18k blanco",
+    piece: "Anillo de compromiso, Diamante lab, Oro 18k blanco",
     text: "Quería algo especial sin gastar una locura y la Maca me mostró opciones certificadas que brillan increíble. Mi polola está chocha y su anillo quedó espectacular.",
   },
   {
@@ -37,43 +37,43 @@ const testimonials = [
   {
     name: "Diego M.",
     city: "Santiago",
-    piece: "Argollas grabadas · Oro 18k",
+    piece: "Argollas grabadas, Oro 18k",
     text: "A pesar que en argollas no hay muchos diseños, la Maca nos mostró alternativas y nos hizo sentir que cada detalle importaba. Quedaron exactamente como queríamos.",
   },
   {
     name: "Sebastián C.",
     city: "Santiago",
-    piece: "Solitario esmeralda · Oro 18k amarillo",
+    piece: "Solitario esmeralda, Oro 18k amarillo",
     text: "Mi señora siempre quiso una esmeralda. Le conté eso a la Maca y me ayudó a encontrar la piedra perfecta. El anillo quedó mucho más lindo de lo que imaginé. Su propuesta fue un éxito.",
   },
   {
     name: "Cristóbal L.",
     city: "Santiago",
-    piece: "Solitario · Oro 18k amarillo",
-    text: "Le describí el estilo de mi polola — bacán pero con su toque — y la Maca lo pilló al tiro. La cara que puso cuando se lo di, no tiene precio.",
+    piece: "Solitario, Oro 18k amarillo",
+    text: "Le describí el estilo de mi polola, bacán pero con su toque, y la Maca lo pilló al tiro. La cara que puso cuando se lo di, no tiene precio.",
   },
   {
     name: "Valentina P.",
     city: "Viña del Mar",
-    piece: "Anillo de compromiso · Diamante natural · Platino",
+    piece: "Anillo de compromiso, Diamante natural, Platino",
     text: "Desde la primera reunión sentí que estaba en buenas manos. La Maca me explicó todo con paciencia y me ayudó a elegir la piedra perfecta dentro de mi presupuesto.",
   },
   {
     name: "Andrés K.",
     city: "Santiago",
-    piece: "Argollas · Platino",
+    piece: "Argollas, Platino",
     text: "Queríamos algo simple pero especial. Las argollas en platino quedaron perfectas, y el grabado interior fue un detalle que mi señora amó.",
   },
   {
     name: "Camila R.",
     city: "Concepción",
-    piece: "Collar personalizado · Oro 18k",
+    piece: "Collar personalizado, Oro 18k",
     text: "Hice todo por WhatsApp y Zoom porque vivo en regiones. La Maca fue súper atenta y el collar llegó tal cual como lo imaginé. Servicio impecable.",
   },
   {
     name: "Francisco M.",
     city: "Santiago",
-    piece: "Anillo tres piedras · Oro blanco 18k",
+    piece: "Anillo tres piedras, Oro blanco 18k",
     text: "El proceso fue increíble. Ver los renders antes de fabricar me dio mucha confianza. El anillo superó todas mis expectativas.",
   },
 ];

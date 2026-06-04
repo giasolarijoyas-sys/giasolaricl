@@ -46,10 +46,10 @@ const WishListAdmin = () => {
                 <TableRow key={w.id}>
                   <TableCell className="font-medium">{w.nombre}</TableCell>
                   <TableCell>{w.nombre_pareja}</TableCell>
-                  <TableCell>{w.tipo_joya || "—"}</TableCell>
-                  <TableCell>{w.metal_preferido || "—"}</TableCell>
-                  <TableCell>{w.piedra_preferida || "—"}</TableCell>
-                  <TableCell>{w.presupuesto_aproximado || "—"}</TableCell>
+                  <TableCell>{w.tipo_joya || ", "}</TableCell>
+                  <TableCell>{w.metal_preferido || ", "}</TableCell>
+                  <TableCell>{w.piedra_preferida || ", "}</TableCell>
+                  <TableCell>{w.presupuesto_aproximado || ", "}</TableCell>
                   <TableCell>{new Date(w.created_at).toLocaleDateString("es-CL")}</TableCell>
                 </TableRow>
               ))}

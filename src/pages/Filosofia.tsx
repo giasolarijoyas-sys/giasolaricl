@@ -9,7 +9,7 @@ import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 const Filosofia = () => (
   <>
     <SEO
-      title="Filosofía · Joyas con alma que trascienden generaciones | Gia Solari"
+      title="Filosofía, Joyas con alma que trascienden generaciones | Gia Solari"
       description="Nuestro manifiesto: cada piedra con su historia, cada diseño con su nombre, cada pieza un amuleto. Joyería de autor en Santiago de Chile."
       path="/filosofia"
     />

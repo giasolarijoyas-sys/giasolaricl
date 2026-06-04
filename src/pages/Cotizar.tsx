@@ -297,7 +297,7 @@ const Cotizar = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
-        title="Cotiza tu pieza · Gia Solari Joyas"
+        title="Cotiza tu pieza, Gia Solari Joyas"
         description="Cotizador online: armá tu anillo o joya en pocos pasos y recibí un presupuesto aproximado al instante. Joyería hecha a mano en Santiago."
         path="/cotizar"
       />

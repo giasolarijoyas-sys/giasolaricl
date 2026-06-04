@@ -147,7 +147,7 @@ const Footer = () => {
           style={{ borderTop: "1px solid rgba(201,168,124,0.3)" }}
         >
           <p style={{ fontSize: "11px", color: "rgba(245,239,230,0.6)" }}>
-            © {new Date().getFullYear()} Gia Solari Joyas · GIA SOLARI SpA
+            © {new Date().getFullYear()} Gia Solari Joyas, GIA SOLARI SpA
           </p>
 
           <div className="flex items-center gap-5" style={{ color: "#C9A87C" }}>

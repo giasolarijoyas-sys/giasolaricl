@@ -48,10 +48,10 @@ const Index = () => {
       {/* 2. Hero con slideshow */}
       <Hero />
 
-      {/* 3 Pilares — promesa de marca unificada (promesa de marca) */}
+      {/* 3 Pilares, promesa de marca unificada (promesa de marca) */}
       <TresPilares />
 
-      {/* Historia de Maca — conexión real, antes de la galería */}
+      {/* Historia de Maca, conexión real, antes de la galería */}
       <Historia />
 
 
@@ -71,13 +71,13 @@ const Index = () => {
       {/* 5. Diferenciadores / por qué elegirnos */}
       <WhyUs />
 
-      {/* ¿Cómo te ayudo? — atención personal */}
+      {/* ¿Cómo te ayudo?, atención personal */}
       <ComoTeAyudo />
 
-      {/* Colección Esencial — solitarios a medida */}
+      {/* Colección Esencial, solitarios a medida */}
       <ColeccionEsencial />
 
-      {/* New In — recién salido del taller */}
+      {/* New In, recién salido del taller */}
       <NewIn />
 
       {/* 6. Proceso en 3 pasos */}
@@ -86,7 +86,7 @@ const Index = () => {
       {/* Video section */}
       <VideoSection />
 
-      {/* Rango de inversión — antes de testimonios */}
+      {/* Rango de inversión, antes de testimonios */}
       <RangoInversion />
 
       {/* Qué incluye tu anillo de compromiso */}
@@ -130,7 +130,7 @@ const Index = () => {
 
 
 
-      {/* Significados — cada joya tiene una historia */}
+      {/* Significados, cada joya tiene una historia */}
       <SignificadosTeaser />
 
       {/* 11. Acordeón de términos y condiciones */}
@@ -139,7 +139,7 @@ const Index = () => {
       {/* Instagram feed antes del footer */}
       <InstagramFeed />
 
-      {/* Lead magnet — guía descargable */}
+      {/* Lead magnet, guía descargable */}
       <LeadMagnetGuia variant="full" />
 
 

@@ -18,7 +18,7 @@ const valores = [
 const SobreGia = () => (
   <>
     <SEO
-      title="Sobre Gia Solari — diseñadora y showroom en Santiago"
+      title="Sobre Gia Solari, diseñadora y showroom en Santiago"
       description="Conocé a Macarena González Solari, diseñadora detrás del showroom. Joyería hecha a mano en Vitacura con piedras certificadas y atención personalizada."
       path="/sobre-gia"
     />
@@ -51,8 +51,8 @@ const SobreGia = () => (
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
           <motion.div className="space-y-5 text-foreground leading-relaxed">
-            <p><strong className="text-foreground">Aprendí a mirar las joyas con mi mamá.</strong> En su cómoda guardaba las piezas que habían sido de mi abuela —cada una con un nombre, una fecha, una historia que volvía cada vez que alguien las usaba. Esa fue mi primera lección: <em>una joya no se compra, se hereda</em>.</p>
-            <p>Hoy diseño junto a Gianna —mi mamá y socia— en un taller pequeño en Santiago. Trabajamos con orfebres que nos acompañan hace años, y cada pieza pasa por mis manos antes de llegar a las tuyas.</p>
+            <p><strong className="text-foreground">Aprendí a mirar las joyas con mi mamá.</strong> En su cómoda guardaba las piezas que habían sido de mi abuela , cada una con un nombre, una fecha, una historia que volvía cada vez que alguien las usaba. Esa fue mi primera lección: <em>una joya no se compra, se hereda</em>.</p>
+            <p>Hoy diseño junto a Gianna , mi mamá y socia,  en un taller pequeño en Santiago. Trabajamos con orfebres que nos acompañan hace años, y cada pieza pasa por mis manos antes de llegar a las tuyas.</p>
             <p>Estudié gemología en el <strong className="text-foreground">GIA</strong> (Gemological Institute of America) para entender, una a una, las piedras que elijo. Me especialicé en platino y diamantes certificados porque creo que quien invierte en una joya merece saber exactamente qué está comprando.</p>
             <p>No tengo vitrina ni stock. Tampoco hago dos piezas iguales. Cada anillo, cada argolla, cada joya nace de una conversación: <strong className="text-foreground">me cuentas tu historia, yo la traduzco en metal y piedra.</strong></p>
             <p className="italic text-foreground font-display text-lg">"Me cuentas tu historia. Yo la convierto en joya."</p>
