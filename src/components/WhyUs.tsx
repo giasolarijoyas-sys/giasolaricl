@@ -43,11 +43,11 @@ const WhyUs = () => {
           className="mt-16 text-center max-w-2xl mx-auto"
         >
           <p className="font-display text-lg md:text-xl italic text-foreground leading-relaxed">
-            "Una joya no es un gasto — es una historia que se hereda. La diseño
+            "Una joya es una historia que se hereda. La diseño
             para que la uses con orgullo hoy, y tu hija la use con orgullo mañana."
           </p>
           <p className="text-primary text-sm mt-4 tracking-wide">
-            — Macarena González Solari · Fundadora Gia Solari
+            Macarena González Solari, fundadora de Gia Solari
           </p>
         </motion.blockquote>
       </div>
