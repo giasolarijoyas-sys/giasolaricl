@@ -1,7 +1,6 @@
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import TrustBadges from "@/components/TrustBadges";
 import Marquee from "@/components/Marquee";
 import Gallery from "@/components/Gallery";
 import WhyUs from "@/components/WhyUs";
@@ -16,13 +15,12 @@ import GarantiaSection from "@/components/GarantiaSection";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import JewelryChat from "@/components/JewelryChat";
+
 import SectionBanner from "@/components/SectionBanner";
 import RangoInversion from "@/components/RangoInversion";
 import IncluyeAnillo from "@/components/IncluyeAnillo";
 import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 
-import SoloEnGiaSolariCompact from "@/components/SoloEnGiaSolariCompact";
 import InstagramFeed from "@/components/InstagramFeed";
 import ComoTeAyudo from "@/components/ComoTeAyudo";
 
@@ -41,7 +39,7 @@ const Index = () => {
     <div className="min-h-screen">
       <SEO
         title="Gia Solari Joyas | Anillos de compromiso a medida en Santiago de Chile"
-        description="Atelier de joyería de autor en Las Condes, Santiago. Anillos de compromiso, argollas y joyas en oro 18k, platino y diamantes certificados. Garantía por Gusto."
+        description="Showroom de joyería de autor en Vitacura, Santiago. Anillos de compromiso, argollas y joyas en oro 18k, platino y diamantes certificados. Garantía por Gusto."
         path="/"
       />
       {/* 1. Navegación fija */}
@@ -50,17 +48,12 @@ const Index = () => {
       {/* 2. Hero con slideshow */}
       <Hero />
 
-      {/* Trust badges */}
-      <TrustBadges />
-
-      {/* 3 Pilares — promesa de marca, post-hero */}
+      {/* 3 Pilares, promesa de marca unificada (promesa de marca) */}
       <TresPilares />
 
-      {/* Compact diferenciadores con CTA a Garantía por Gusto */}
-      <SoloEnGiaSolariCompact />
-
-      {/* Historia de Maca — conexión real, antes de la galería */}
+      {/* Historia de Maca, conexión real, antes de la galería */}
       <Historia />
+
 
       {/* 3. Barra marquee de keywords */}
       <Marquee />
@@ -78,13 +71,13 @@ const Index = () => {
       {/* 5. Diferenciadores / por qué elegirnos */}
       <WhyUs />
 
-      {/* ¿Cómo te ayudo? — atención personal */}
+      {/* ¿Cómo te ayudo?, atención personal */}
       <ComoTeAyudo />
 
-      {/* Colección Esencial — solitarios a medida */}
+      {/* Colección Esencial, solitarios a medida */}
       <ColeccionEsencial />
 
-      {/* New In — recién salido del taller */}
+      {/* New In, recién salido del taller */}
       <NewIn />
 
       {/* 6. Proceso en 3 pasos */}
@@ -93,7 +86,7 @@ const Index = () => {
       {/* Video section */}
       <VideoSection />
 
-      {/* Rango de inversión — antes de testimonios */}
+      {/* Rango de inversión, antes de testimonios */}
       <RangoInversion />
 
       {/* Qué incluye tu anillo de compromiso */}
@@ -137,7 +130,7 @@ const Index = () => {
 
 
 
-      {/* Significados — cada joya tiene una historia */}
+      {/* Significados, cada joya tiene una historia */}
       <SignificadosTeaser />
 
       {/* 11. Acordeón de términos y condiciones */}
@@ -146,7 +139,7 @@ const Index = () => {
       {/* Instagram feed antes del footer */}
       <InstagramFeed />
 
-      {/* Lead magnet — guía descargable */}
+      {/* Lead magnet, guía descargable */}
       <LeadMagnetGuia variant="full" />
 
 
@@ -154,7 +147,7 @@ const Index = () => {
       <Footer />
 
       <WhatsAppButton />
-      <JewelryChat />
+
     </div>
   );
 };

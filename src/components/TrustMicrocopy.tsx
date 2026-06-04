@@ -22,7 +22,7 @@ const TrustMicrocopy = ({
       marginTop,
     }}
   >
-    Te respondo personalmente en menos de 24h · Sin compromiso
+    Te respondo personalmente en menos de 24h, Sin compromiso
   </p>
 );
 

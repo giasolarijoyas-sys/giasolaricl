@@ -89,11 +89,11 @@ const engastes = [
 ];
 
 const tallaManos = [
-  { emoji: "🤏", label: "XS — Mano muy delgada", desc: "Talla 4–5 (aprox. 15mm)" },
-  { emoji: "✋", label: "S — Mano delgada", desc: "Talla 5–6 (aprox. 16mm)" },
-  { emoji: "🖐️", label: "M — Mano mediana", desc: "Talla 6–7 (aprox. 17mm)" },
-  { emoji: "🫲", label: "L — Mano ancha", desc: "Talla 7–8 (aprox. 18mm)" },
-  { emoji: "🤚", label: "XL — Mano grande", desc: "Talla 8+ (aprox. 19mm+)" },
+  { emoji: "🤏", label: "XS, Mano muy delgada", desc: "Talla 4–5 (aprox. 15mm)" },
+  { emoji: "✋", label: "S, Mano delgada", desc: "Talla 5–6 (aprox. 16mm)" },
+  { emoji: "🖐️", label: "M, Mano mediana", desc: "Talla 6–7 (aprox. 17mm)" },
+  { emoji: "🫲", label: "L, Mano ancha", desc: "Talla 7–8 (aprox. 18mm)" },
+  { emoji: "🤚", label: "XL, Mano grande", desc: "Talla 8+ (aprox. 19mm+)" },
   { emoji: "❓", label: "No lo sé", desc: "Te ayudamos a medir" },
 ];
 
@@ -277,7 +277,7 @@ const QuoteForm = () => {
               con una propuesta detallada.
             </p>
             <p className="text-muted-foreground text-sm">
-              — Macarena González Solari
+             , Macarena González Solari
             </p>
           </motion.div>
         </div>
@@ -298,7 +298,7 @@ const QuoteForm = () => {
             Diseña tu <em className="text-primary not-italic">joya ideal</em>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
-            Cuéntame tu visión paso a paso — o sáltate lo que no sepas y te ayudo.
+            Cuéntame tu visión paso a paso, o sáltate lo que no sepas y te ayudo.
             Te respondo con una propuesta personalizada en menos de 24 horas.
           </p>
         </motion.div>
@@ -493,7 +493,7 @@ const QuoteForm = () => {
                       type="text"
                       value={form.grabado}
                       onChange={(e) => set("grabado", e.target.value)}
-                      placeholder="Ej: M & C — 14.02.2025"
+                      placeholder="Ej: M & C, 14.02.2025"
                       className="w-full p-3 border border-border rounded-lg bg-background text-foreground text-sm"
                     />
                   </div>
@@ -575,7 +575,7 @@ const QuoteForm = () => {
                   </h3>
                   <p className="text-muted-foreground text-sm mb-2">
                     Mientras más sepamos de tu futura mujer, mejor podemos recomendarte el anillo perfecto.
-                    <strong className="text-foreground"> Responde lo que puedas</strong> — todo es opcional.
+                    <strong className="text-foreground"> Responde lo que puedas</strong>, todo es opcional.
                   </p>
                   <p className="text-muted-foreground text-xs mb-6 italic">
                     Esto nos ayuda a entender su estilo y proponerte algo que realmente la represente.

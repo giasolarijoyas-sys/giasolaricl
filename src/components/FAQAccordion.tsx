@@ -25,7 +25,7 @@ const faqs = [
   {
     question: "¿Hacen envíos?",
     answer:
-      "Las piezas a pedido — anillos de compromiso y joyas custom — se entregan en persona en Santiago. Para productos de stock disponibles, coordinamos el envío a todo Chile por WhatsApp.",
+      "Las piezas a pedido, anillos de compromiso y joyas custom, se entregan en persona en Santiago. Para productos de stock disponibles, coordinamos el envío a todo Chile por WhatsApp.",
   },
 ];
 

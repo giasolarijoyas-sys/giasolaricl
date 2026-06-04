@@ -19,7 +19,7 @@ const faqs = [
   { q: "¿Puedo pagar en cuotas?", a: "Sí, ofrezco facilidades de pago. Conversemos tu caso particular y encontramos la mejor opción para ti." },
   { q: "¿Hacen entregas urgentes?", a: "En algunos casos puedo acelerar el proceso, pero depende del diseño y la disponibilidad de materiales. Escríbeme y evaluamos juntos si es posible." },
   { q: "¿Tienen descuento en argollas si hice mi anillo de compromiso con ustedes?", a: "¡Sí! Las parejas que hacen su anillo de compromiso conmigo tienen un 20% de descuento en la hechura de las argollas de matrimonio." },
-  { q: "¿Tiene costo el grabado personalizado?", a: "No. Todo anillo de compromiso Gia Solari incluye un grabado personalizado gratis en el interior — nombres, fecha, una frase especial, una pequeña coordenada." },
+  { q: "¿Tiene costo el grabado personalizado?", a: "No. Todo anillo de compromiso Gia Solari incluye un grabado personalizado gratis en el interior, nombres, fecha, una frase especial, una pequeña coordenada." },
 ];
 
 const PreguntasFrecuentes = () => (

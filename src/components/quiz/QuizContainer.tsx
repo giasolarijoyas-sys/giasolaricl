@@ -102,7 +102,7 @@ const QuizContainer = () => {
               Gracias. Te contacto personalmente en menos de 24 horas con una propuesta detallada.
             </p>
             <p className="text-muted-foreground text-sm">
-              — Macarena González Solari
+             , Macarena González Solari
             </p>
           </motion.div>
         </div>

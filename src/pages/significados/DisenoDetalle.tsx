@@ -41,42 +41,42 @@ const APRENDE_LINKS: Record<string, AprendeLink[]> = {
 // SEO + extra SEO copy por slug. Las tres promesas usa el slug actual "el-tricillo".
 const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
   "el-eterno": {
-    title: "El Eterno · Anillo de compromiso solitario | Gia Solari",
+    title: "El Eterno, Anillo de compromiso solitario | Gia Solari",
     description:
-      "Anillo solitario de compromiso a medida en platino u oro 18k con diamante certificado. Una piedra, una promesa. Atelier en Las Condes, Santiago.",
+      "Anillo solitario de compromiso a medida en platino u oro 18k con diamante certificado. Una piedra, una promesa. Showroom en Vitacura, Santiago.",
   },
   "el-tricillo": {
-    title: "Las Tres Promesas · Anillo de compromiso tres piedras | Gia Solari",
+    title: "Las Tres Promesas, Anillo de compromiso tres piedras | Gia Solari",
     description:
       "Anillo de compromiso de tres diamantes (trilogy) a medida en platino u oro 18k. Pasado, presente y futuro. Diseño de autor en Santiago.",
   },
   "el-alado": {
-    title: "El Alado · Anillo de compromiso con halo de diamantes | Gia Solari",
+    title: "El Alado, Anillo de compromiso con halo de diamantes | Gia Solari",
     description:
-      "Anillo de compromiso con halo de diamantes a medida, inspirado en el estilo de Lady Di. Más brillo y presencia. Atelier en Las Condes, Santiago.",
+      "Anillo de compromiso con halo de diamantes a medida, inspirado en el estilo de Lady Di. Más brillo y presencia. Showroom en Vitacura, Santiago.",
   },
   "el-real": {
-    title: "El Real · Anillo de zafiro azul estilo Lady Di | Gia Solari",
+    title: "El Real, Anillo de zafiro azul estilo Lady Di | Gia Solari",
     description:
       "Anillo de compromiso con zafiro azul ovalado y halo de diamantes, inspirado en el de Lady Di. A medida en platino u oro 18k. Santiago, Chile.",
   },
   "el-tiempo": {
-    title: "El Tiempo · Anillo de compromiso ovalado | Gia Solari",
+    title: "El Tiempo, Anillo de compromiso ovalado | Gia Solari",
     description:
       "Anillo de compromiso con diamante ovalado a medida en platino u oro 18k. La forma más buscada del momento, fluida y atemporal. Santiago.",
   },
   "los-cuatro-pilares": {
-    title: "Los Cuatro Pilares · Anillo de cuatro diamantes | Gia Solari",
+    title: "Los Cuatro Pilares, Anillo de cuatro diamantes | Gia Solari",
     description:
       "Anillo de compromiso de cuatro diamantes en línea, a medida en platino u oro 18k. Equilibrio y simetría. Diseño de autor en Santiago.",
   },
   "la-constelacion": {
-    title: "La Constelación · Anillo de tres piedras con halo | Gia Solari",
+    title: "La Constelación, Anillo de tres piedras con halo | Gia Solari",
     description:
-      "Anillo de compromiso de tres piedras con halo central, el diseño más luminoso. A medida en platino u oro 18k. Atelier en Las Condes, Santiago.",
+      "Anillo de compromiso de tres piedras con halo central, el diseño más luminoso. A medida en platino u oro 18k. Showroom en Vitacura, Santiago.",
   },
   "el-primer-amuleto": {
-    title: "El Primer Amuleto · Dije con piedra de nacimiento | Gia Solari",
+    title: "El Primer Amuleto, Dije con piedra de nacimiento | Gia Solari",
     description:
       "Dije a medida en oro con la piedra de nacimiento del bebé. Regalo de bautizo y bienvenida al mundo. Joyería de autor en Santiago.",
   },
@@ -85,7 +85,7 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
 // Cada entrada: dos párrafos. El segundo tiene el CTA con el texto entre [ ] que se renderiza como link a /cotizar.
 const EXTRA_COPY: Record<string, { p1: string; p2: { before: string; cta: string; after: string } }> = {
   "el-eterno": {
-    p1: "El solitario es el anillo de compromiso más clásico y atemporal: una sola piedra central elevada sobre la banda, sin nada que la distraiga. Es la elección de quienes buscan elegancia que no pasa de moda. En Gia Solari diseñamos cada Eterno a medida —elegís el diamante certificado, la forma de la piedra, el alto del engaste y el grosor de la banda en platino u oro 18k.",
+    p1: "El solitario es el anillo de compromiso más clásico y atemporal: una sola piedra central elevada sobre la banda, sin nada que la distraiga. Es la elección de quienes buscan elegancia que no pasa de moda. En Gia Solari diseñamos cada Eterno a medida , elegís el diamante certificado, la forma de la piedra, el alto del engaste y el grosor de la banda en platino u oro 18k.",
     p2: {
       before:
         "Al ser un diseño tan limpio, todo el protagonismo es de la piedra: por eso te acompañamos a elegir bien proporción, brillo y presupuesto, sin presión. ¿Te imaginás tu Eterno? ",
@@ -94,7 +94,7 @@ const EXTRA_COPY: Record<string, { p1: string; p2: { before: string; cta: string
     },
   },
   "el-tricillo": {
-    p1: "El anillo de tres piedras —o trilogy— es uno de los estilos de compromiso más queridos: una piedra central escoltada por dos laterales que la enmarcan. Simboliza el pasado, el presente y el futuro de la pareja, y por eso es el favorito de quienes ya llevan una historia juntos. Lo diseñamos a medida, ajustando el tamaño de las tres piedras para que se vean en perfecto equilibrio.",
+    p1: "El anillo de tres piedras , o trilogy,  es uno de los estilos de compromiso más queridos: una piedra central escoltada por dos laterales que la enmarcan. Simboliza el pasado, el presente y el futuro de la pareja, y por eso es el favorito de quienes ya llevan una historia juntos. Lo diseñamos a medida, ajustando el tamaño de las tres piedras para que se vean en perfecto equilibrio.",
     p2: {
       before:
         "Podés elegir diamantes en las tres posiciones o sumar color en las laterales. Todo en platino u oro 18k, con certificado incluido. ",
@@ -129,7 +129,7 @@ const EXTRA_COPY: Record<string, { p1: string; p2: { before: string; cta: string
     },
   },
   "los-cuatro-pilares": {
-    p1: "Los Cuatro Pilares es un anillo de cuatro diamantes alineados, un estilo de simetría perfecta que también funciona como anillo de aniversario o de eternidad. Cada piedra representa un pilar de la relación —respeto, amor, confianza y comunicación— y las cuatro estaciones de la vida en pareja. Lo diseñamos a medida en platino u oro 18k.",
+    p1: "Los Cuatro Pilares es un anillo de cuatro diamantes alineados, un estilo de simetría perfecta que también funciona como anillo de aniversario o de eternidad. Cada piedra representa un pilar de la relación , respeto, amor, confianza y comunicación,  y las cuatro estaciones de la vida en pareja. Lo diseñamos a medida en platino u oro 18k.",
     p2: {
       before: "Es un diseño cómodo para el uso diario y fácil de combinar con la argolla de matrimonio. ",
       cta: "Cotizá Los Cuatro Pilares",
@@ -160,7 +160,7 @@ const DisenoDetalle = () => {
   return (
     <>
       <SEO
-        title={seo?.title ?? `${d.nombre} · ${d.subtitulo} | Gia Solari`}
+        title={seo?.title ?? `${d.nombre}, ${d.subtitulo} | Gia Solari`}
         description={seo?.description ?? `${d.subtitulo}. ${d.descripcion.slice(0, 140)}…`}
         path={`/significados/disenos/${d.slug}`}
         type="article"
@@ -347,7 +347,7 @@ const DisenoDetalle = () => {
                         {link.label}
                       </Link>
                       {i < aprendeLinks.length - 1 && (
-                        <span style={{ color: SIG_TOKENS.caramel }}>{"  ·  "}</span>
+                        <span style={{ color: SIG_TOKENS.caramel }}>{" ,  "}</span>
                       )}
                     </span>
                   ))}

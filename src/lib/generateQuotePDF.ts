@@ -16,9 +16,9 @@ export function generateQuotePDF(quote: Quote) {
   doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(120);
-  doc.text("Joyeria de Autor · Santiago, Chile", w / 2, y, { align: "center" });
+  doc.text("Joyeria de Autor, Santiago, Chile", w / 2, y, { align: "center" });
   y += 4;
-  doc.text("www.giasolari.cl · +56 9 8404 9502", w / 2, y, { align: "center" });
+  doc.text("www.giasolari.cl, +56 9 8404 9502", w / 2, y, { align: "center" });
   y += 10;
 
   // Line
@@ -130,7 +130,7 @@ export function generateQuotePDF(quote: Quote) {
     "GARANTÍA POR GUSTO: 30 días desde la entrega para rediseñar la pieza si no se siente tuya. La hechura va por nuestra cuenta; tú solo cubres la merma del metal (~10%) y las piedras adicionales que requiera el nuevo diseño. Ver detalles en giasolari.cl/garantia-por-gusto.",
   ];
   terms.forEach((t) => {
-    doc.text(`· ${t}`, 20, y, { maxWidth: w - 40 });
+    doc.text(`, ${t}`, 20, y, { maxWidth: w - 40 });
     y += 5;
   });
 
@@ -138,7 +138,7 @@ export function generateQuotePDF(quote: Quote) {
   y = doc.internal.pageSize.getHeight() - 15;
   doc.setFontSize(7);
   doc.setTextColor(160);
-  doc.text("GIA SOLARI SpA · Atención con cita previa · Las Condes · Santiago · giasolari.cl", w / 2, y, { align: "center" });
+  doc.text("GIA SOLARI SpA, Atención con cita previa, Vitacura, Santiago, giasolari.cl", w / 2, y, { align: "center" });
 
   doc.save(`Propuesta_GiaSolari_${quote.nombre.replace(/\s+/g, "_")}_${quote.id.slice(0, 8)}.pdf`);
 }

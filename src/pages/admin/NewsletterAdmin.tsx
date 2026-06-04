@@ -40,7 +40,7 @@ const NewsletterAdmin = () => {
               {subs.map((s) => (
                 <TableRow key={s.id}>
                   <TableCell className="font-medium">{s.email}</TableCell>
-                  <TableCell>{s.nombre || "—"}</TableCell>
+                  <TableCell>{s.nombre || ", "}</TableCell>
                   <TableCell>{new Date(s.created_at).toLocaleDateString("es-CL")}</TableCell>
                   <TableCell>{s.subscribed ? "Si" : "No"}</TableCell>
                 </TableRow>

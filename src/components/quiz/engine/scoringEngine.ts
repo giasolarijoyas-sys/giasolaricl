@@ -1,4 +1,4 @@
-// Scoring engine — transforms quiz answers into ring recommendations
+// Scoring engine, transforms quiz answers into ring recommendations
 import type { QuizAnswers, Recommendation, ScoreMap } from '../types';
 import { RING_STYLES, CENTER_STONE_TYPES, STONE_SHAPES, METALS, SIZE_PREFERENCES } from '../taxonomies';
 import { estimatePrice } from './priceEstimator';

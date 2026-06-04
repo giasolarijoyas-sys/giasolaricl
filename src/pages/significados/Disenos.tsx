@@ -26,19 +26,19 @@ const FOTOS: Partial<Record<string, string>> = {
 };
 
 const ALT_TEXT: Record<string, string> = {
-  "el-eterno": "El Eterno — anillo media alianza con diamantes redondos en oro blanco",
-  "el-tricillo": "El Tricillo — anillo de tres diamantes redondos en oro blanco",
-  "el-alado": "El Alado — anillo de halo redondo en oro blanco",
-  "el-real": "El Real — anillo con zafiro azul ovalado y cluster de diamantes",
-  "el-tiempo": "El Tiempo — solitario ovalado sobre piedra clara",
-  "los-cuatro-pilares": "Los Cuatro Pilares — anillo con cuatro diamantes redondos en fila",
-  "la-constelacion": "La Constelación — anillo de tres piedras con halo central",
+  "el-eterno": "El Eterno, anillo media alianza con diamantes redondos en oro blanco",
+  "el-tricillo": "El Tricillo, anillo de tres diamantes redondos en oro blanco",
+  "el-alado": "El Alado, anillo de halo redondo en oro blanco",
+  "el-real": "El Real, anillo con zafiro azul ovalado y cluster de diamantes",
+  "el-tiempo": "El Tiempo, solitario ovalado sobre piedra clara",
+  "los-cuatro-pilares": "Los Cuatro Pilares, anillo con cuatro diamantes redondos en fila",
+  "la-constelacion": "La Constelación, anillo de tres piedras con halo central",
 };
 
 const Disenos = () => (
   <>
     <SEO
-      title="Los Diseños · Anillos de Compromiso con Significado | Gia Solari"
+      title="Los Diseños, Anillos de Compromiso con Significado | Gia Solari"
       description="Cada anillo tiene un nombre y una historia. Conocé los diseños de Gia Solari: solitario, halo, tres piedras, zafiro estilo Lady Di y más. A medida en Santiago."
       path="/significados/disenos"
     />

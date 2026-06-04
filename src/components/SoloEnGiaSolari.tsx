@@ -4,7 +4,7 @@ import { PenLine } from "lucide-react";
 const cards = [
   {
     icon: PenLine,
-    title: "Grabado — GRATIS",
+    title: "Grabado, GRATIS",
     desc: "Grabamos por dentro de tu anillo lo que quieras: una frase, una fecha o un dibujo simple. Un detalle que solo ustedes dos conocen.",
   },
 ];

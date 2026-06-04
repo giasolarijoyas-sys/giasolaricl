@@ -45,7 +45,7 @@ const JoyaDetalle = () => {
   if (!item) return <Navigate to="/joyas" replace />;
 
   const imgs = item.imagenes;
-  const tipoEstilo = `${item.categoria}${item.estilo ? ` · ${item.estilo}` : ""}`;
+  const tipoEstilo = `${item.categoria}${item.estilo ? `, ${item.estilo}` : ""}`;
   const precioLabel = formatPrecioDesde(item.precioDesde);
 
   // Split description into emotional + body paragraphs
@@ -55,7 +55,7 @@ const JoyaDetalle = () => {
   const bodyParas = paragraphs.slice(1);
 
   // SEO
-  const seoTitle = `${item.nombre} — ${tipoEstilo} | Gia Solari Joyas`;
+  const seoTitle = `${item.nombre}, ${tipoEstilo} | Gia Solari Joyas`;
   const seoDesc = emotional.slice(0, 155);
 
   const productJsonLd: Record<string, unknown> = {
@@ -81,7 +81,7 @@ const JoyaDetalle = () => {
 
   // Build specs
   const specsRows: { label: string; value: string }[] = [
-    { label: "Metal", value: item.metalPrincipal ?? item.material.split(" · ")[0] ?? "A definir" },
+    { label: "Metal", value: item.metalPrincipal ?? item.material.split(", ")[0] ?? "A definir" },
   ];
   if (item.piedraCentral) specsRows.push({ label: "Centro", value: item.piedraCentral });
   if (item.estilo) specsRows.push({ label: "Estilo", value: item.estilo });
@@ -111,23 +111,23 @@ const JoyaDetalle = () => {
           {/* BREADCRUMB */}
           <nav className="mb-8 md:mb-10" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.1em", color: OLIVE_SOFT }}>
             <Link to="/" className="hover:underline">Inicio</Link>
-            <span className="mx-2">·</span>
+            <span className="mx-2">,</span>
             <Link to="/joyas" className="hover:underline">Joyas</Link>
-            <span className="mx-2">·</span>
+            <span className="mx-2">,</span>
             <Link to={`/joyas?tipo=compromiso`} className="hover:underline">{item.categoria}</Link>
             {item.estilo && (
               <>
-                <span className="mx-2">·</span>
+                <span className="mx-2">,</span>
                 <span>{item.estilo}</span>
               </>
             )}
-            <span className="mx-2">·</span>
+            <span className="mx-2">,</span>
             <span style={{ color: OLIVE_DEEP, fontWeight: 500 }}>{item.nombre}</span>
           </nav>
 
           {/* MAIN GRID */}
           <div className="grid lg:grid-cols-[58fr_42fr] gap-8 lg:gap-20">
-            {/* LEFT — GALERÍA */}
+            {/* LEFT, GALERÍA */}
             <div>
               <button
                 type="button"
@@ -137,7 +137,7 @@ const JoyaDetalle = () => {
               >
                 <img
                   src={imgs[activeImg]}
-                  alt={`${item.nombre} — vista ${activeImg + 1}`}
+                  alt={`${item.nombre}, vista ${activeImg + 1}`}
                   className="w-full h-full object-cover"
                   loading="eager"
                 />
@@ -180,7 +180,7 @@ const JoyaDetalle = () => {
               )}
             </div>
 
-            {/* RIGHT — INFO */}
+            {/* RIGHT, INFO */}
             <div className="lg:sticky lg:self-start" style={{ top: "140px" }}>
               <Eyebrow>{tipoEstilo}</Eyebrow>
               <h1
@@ -284,7 +284,7 @@ const JoyaDetalle = () => {
               {/* Personalizar block */}
               <div className="mt-8 p-6 rounded-lg" style={{ background: CREAM_WARM }}>
                 <p style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 500, color: OLIVE_DEEP }}>
-                  ¿Te gusta {item.nombre.split("·")[0].trim()} pero quieres cambiar algo?
+                  ¿Te gusta {item.nombre.split(",")[0].trim()} pero quieres cambiar algo?
                 </p>
                 <p className="mt-2" style={{ fontFamily: "Inter, sans-serif", fontSize: "14px", lineHeight: 1.6, color: INK }}>
                   Cambiamos centro, kilates, metal o forma del halo. Cotiza y te paso opciones a medida.

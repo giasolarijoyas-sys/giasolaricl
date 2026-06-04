@@ -224,7 +224,7 @@ const Cotizar = () => {
       ? `El cotizador me mostró un rango de ${rangoMaxText}. Me gustaría conversar los detalles.`
       : `Me gustaría que me ayudes a definir los detalles.`;
     const lines = [
-      "Hola Gia! Vengo del cotizador del sitio.",
+      "Hola Maca! Vengo del cotizador del sitio.",
       "",
       `🎁 Pieza: ${tipoLabel}`,
       `✨ Metal: ${metalLabel}`,
@@ -297,7 +297,7 @@ const Cotizar = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
-        title="Cotiza tu pieza · Gia Solari Joyas"
+        title="Cotiza tu pieza, Gia Solari Joyas"
         description="Cotizador online: armá tu anillo o joya en pocos pasos y recibí un presupuesto aproximado al instante. Joyería hecha a mano en Santiago."
         path="/cotizar"
       />

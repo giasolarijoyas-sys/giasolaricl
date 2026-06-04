@@ -168,7 +168,7 @@ const PremiumStoneCard = ({ p }: { p: PiedraPremium }) => (
 const Piedras = () => (
   <>
     <SEO
-      title="Las Piedras · Alta joyería | Gia Solari"
+      title="Las Piedras, Alta joyería | Gia Solari"
       description="Diamante, zafiro, rubí, esmeralda y aguamarina. Conoce el significado y la belleza natural detrás de cada gema en la alta joyería de Gia Solari."
       path="/significados/piedras"
     />
@@ -187,7 +187,7 @@ const Piedras = () => (
             fontWeight: 500,
           }}
         >
-          Alta Joyería · Gia Solari
+          Alta Joyería, Gia Solari
         </p>
         <h1
           style={{

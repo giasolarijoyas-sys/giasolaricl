@@ -10,12 +10,12 @@ const pasos = [
   {
     n: "01",
     title: "Me cuentas qué tienes en mente",
-    text: "Por WhatsApp o en el atelier. Sin compromiso.",
+    text: "Por WhatsApp o en el showroom. Sin compromiso.",
   },
   {
     n: "02",
     title: "Diseñamos juntos antes de fabricar nada",
-    text: "Bocetos, piedras y materiales. Tú aprobas cada paso.",
+    text: "Bocetos, piedras y materiales. Tú apruebas cada paso.",
   },
   {
     n: "03",

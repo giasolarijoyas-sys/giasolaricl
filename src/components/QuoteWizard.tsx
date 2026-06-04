@@ -206,7 +206,7 @@ const QuoteWizard = () => {
             <p className="text-muted-foreground leading-relaxed max-w-md mx-auto mb-2">
               Gracias. Te contacto personalmente en menos de 24 horas con una propuesta detallada.
             </p>
-            <p className="text-muted-foreground text-sm">— Macarena González Solari</p>
+            <p className="text-muted-foreground text-sm">,  Macarena González Solari</p>
           </motion.div>
         </div>
       </section>
@@ -242,7 +242,7 @@ const QuoteWizard = () => {
         {/* Progress */}
         <div className="mb-8">
           <div className="flex justify-between text-xs text-muted-foreground mb-2">
-            <span>Paso {step + 1} de 5 — {STEP_TITLES[step]}</span>
+            <span>Paso {step + 1} de 5, {STEP_TITLES[step]}</span>
             <span>{Math.round(((step + 1) / 5) * 100)}%</span>
           </div>
           <Progress value={((step + 1) / 5) * 100} className="h-1.5" />
@@ -315,7 +315,7 @@ const QuoteWizard = () => {
                           type="text"
                           value={data.grabado}
                           onChange={e => update({ grabado: e.target.value })}
-                          placeholder="Nombres · fecha · una frase… (opcional, gratis)"
+                          placeholder="Nombres, fecha, una frase… (opcional, gratis)"
                           className={inputCls}
                         />
                       </div>

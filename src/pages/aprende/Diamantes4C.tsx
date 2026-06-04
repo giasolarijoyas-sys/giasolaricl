@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const AprendeDiamantes4C = () => (
   <>
     <SEO
-      title="Las 4C del diamante explicadas simple · Gia Solari Joyas"
+      title="Las 4C del diamante explicadas simple, Gia Solari Joyas"
       description="Corte, color, claridad y quilates: cómo evaluar un diamante sin depender del vendedor. Guía honesta de Gia Solari, Santiago de Chile."
       path="/aprende/diamantes-4c"
       type="article"
@@ -77,7 +77,7 @@ const AprendeDiamantes4C = () => (
 
               <section>
                 <h2 className="font-display text-2xl text-foreground mb-4">3. Claridad (Clarity)</h2>
-                <p>La claridad mide las inclusiones naturales del diamante. Casi todos los diamantes tienen alguna inclusión — la pregunta es si son visibles.</p>
+                <p>La claridad mide las inclusiones naturales del diamante. Casi todos los diamantes tienen alguna inclusión, la pregunta es si son visibles.</p>
                 <div className="overflow-x-auto mt-6">
                   <table className="w-full text-sm">
                     <thead><tr className="border-b border-border"><th className="py-2 px-3 text-left text-foreground">Grado</th><th className="py-2 px-3 text-left text-foreground">Significado</th><th className="py-2 px-3 text-left text-foreground">Visible sin lupa</th></tr></thead>
@@ -94,14 +94,14 @@ const AprendeDiamantes4C = () => (
 
               <section>
                 <h2 className="font-display text-2xl text-foreground mb-4">4. Quilates (Carat)</h2>
-                <p>Los quilates miden el peso del diamante, no su tamaño. 1 quilate equivale a 0.2 gramos. A mayor peso, mayor precio — pero la relación no es lineal.</p>
+                <p>Los quilates miden el peso del diamante, no su tamaño. 1 quilate equivale a 0.2 gramos. A mayor peso, mayor precio, pero la relación no es lineal.</p>
                 <p className="mt-3">Un diamante de 2 quilates no cuesta el doble que uno de 1 quilate, sino mucho más, porque los diamantes grandes son proporcionalmente más raros.</p>
                 <p className="mt-4 text-sm italic">Mi consejo: Un 0.90ct se ve casi igual que un 1.00ct pero cuesta significativamente menos. Lo mismo con 1.90 vs 2.00.</p>
               </section>
 
               <section>
                 <h2 className="font-display text-2xl text-foreground mb-4">La clave: el equilibrio</h2>
-                <p>No busques un diamante perfecto en las 4C — busca el <strong className="text-foreground">equilibrio perfecto para tu presupuesto</strong>. Un buen corte con color G, claridad VS2 y el tamaño que se ajuste a tu bolsillo es, en mi experiencia, la combinación ganadora.</p>
+                <p>No busques un diamante perfecto en las 4C, busca el <strong className="text-foreground">equilibrio perfecto para tu presupuesto</strong>. Un buen corte con color G, claridad VS2 y el tamaño que se ajuste a tu bolsillo es, en mi experiencia, la combinación ganadora.</p>
                 <p className="mt-3">Y recuerda: cada diamante es único. Lo mejor es verlos en persona, comparar y sentir cuál es el tuyo.</p>
               </section>
             </div>

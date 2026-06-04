@@ -6,7 +6,7 @@ import { FileText, Heart, Mail, TrendingUp } from "lucide-react";
 import { Loader2 } from "lucide-react";
 
 const StatsAdmin = () => {
-  const [stats, setStats] = useState({ quotes: 0, quotesMonth: 0, wishes: 0, subs: 0, topPiece: "—" });
+  const [stats, setStats] = useState({ quotes: 0, quotesMonth: 0, wishes: 0, subs: 0, topPiece: ", " });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const StatsAdmin = () => {
       const piezas = (quotesRes.data || []).map((q) => q.pieza);
       const freq: Record<string, number> = {};
       piezas.forEach((p) => { freq[p] = (freq[p] || 0) + 1; });
-      const topPiece = Object.entries(freq).sort((a, b) => b[1] - a[1])[0]?.[0] || "—";
+      const topPiece = Object.entries(freq).sort((a, b) => b[1] - a[1])[0]?.[0] || ", ";
 
       setStats({
         quotes: quotesRes.count || 0,

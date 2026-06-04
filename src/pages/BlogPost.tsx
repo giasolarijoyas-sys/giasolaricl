@@ -81,7 +81,7 @@ const BlogPost = () => {
               <h1 className="font-display text-3xl md:text-4xl text-foreground mt-2 mb-4">{post.title}</h1>
               <div className="flex items-center gap-3 text-muted-foreground text-sm mb-10">
                 <span>Por {post.author}</span>
-                <span>·</span>
+                <span>,</span>
                 <span>{new Date(post.date).toLocaleDateString("es-CL", { day: "numeric", month: "long", year: "numeric" })}</span>
               </div>
               <div className="text-muted-foreground leading-relaxed">

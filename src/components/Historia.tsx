@@ -13,7 +13,7 @@ const Historia = () => {
           >
             <img
               src={giannaImg}
-              alt="Gianna y Macarena — el legado madre e hija de Gia Solari"
+              alt="Gianna y Macarena, el legado madre e hija de Gia Solari"
               loading="lazy"
               width={600}
               height={450}
@@ -44,13 +44,13 @@ const Historia = () => {
               </p>
               <p>
                 Mi misión es dar una atención personalizada y dedicada, para que mandar a hacer una joya sea una{" "}
-                <strong className="text-foreground">experiencia extraordinaria</strong> — tanto para quien la compra como para quien la recibe.
+                <strong className="text-foreground">experiencia extraordinaria</strong>, tanto para quien la compra como para quien la recibe.
               </p>
               <p className="italic text-foreground font-display text-lg pt-2">
                 "Tú me cuentas tu historia, yo la convierto en joya."
               </p>
               <p className="text-sm text-primary tracking-wide">
-                — Maca · Gia Solari
+               , Maca, Gia Solari
               </p>
             </div>
           </motion.div>

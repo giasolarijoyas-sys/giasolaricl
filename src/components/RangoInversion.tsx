@@ -10,7 +10,7 @@ const RangoInversion = () => (
 
       <div className="max-w-2xl mx-auto border border-border rounded-lg p-10 bg-card text-center">
         <p className="font-display text-3xl md:text-4xl text-foreground mb-4">
-          Desde $1.500.000 CLP
+          Desde $1.200.000 CLP
         </p>
         <p className="text-muted-foreground text-sm leading-relaxed">
           El precio final depende del metal, la piedra central y la complejidad del

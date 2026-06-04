@@ -113,7 +113,7 @@ export const PIEDRAS: Piedra[] = [
       { label: "Simbolismo", value: "Amor verdadero, fertilidad, renovación" },
     ],
     historia:
-      "La esmeralda era la piedra favorita de Cleopatra, que tenía las minas más famosas del mundo antiguo y las hacía grabar con su nombre. Los incas la veneraban como sagrada. La esmeralda tarda millones de años más que el diamante en formarse. Cada esmeralda tiene inclusiones internas llamadas 'jardin' — su huella única.",
+      "La esmeralda era la piedra favorita de Cleopatra, que tenía las minas más famosas del mundo antiguo y las hacía grabar con su nombre. Los incas la veneraban como sagrada. La esmeralda tarda millones de años más que el diamante en formarse. Cada esmeralda tiene inclusiones internas llamadas 'jardin', su huella única.",
     frases: [
       "La esmeralda tarda más en formarse que el diamante. Como el amor verdadero.",
       "Cada esmeralda tiene un jardín en su interior. Ninguna es igual a otra. Como tu relación.",
@@ -171,7 +171,7 @@ export const DISENOS: Diseno[] = [
     nombre: "El Tricillo",
     subtitulo: "Pasado, presente, futuro",
     descripcion:
-      "Tres piedras en fila. La central más grande, las laterales la escoltan y la enmarcan. Tres piedras, tres promesas: quién eras, quién eres y quién serás — y yo elijo las tres. También representa los tres pilares del amor: respeto, confianza y pasión.",
+      "Tres piedras en fila. La central más grande, las laterales la escoltan y la enmarcan. Tres piedras, tres promesas: quién eras, quién eres y quién serás, y yo elijo las tres. También representa los tres pilares del amor: respeto, confianza y pasión.",
     frase: "Tres piedras. Tres promesas. Un solo anillo para toda la historia.",
     idealPara:
       "Parejas con historia. Que llevan tiempo juntos y quieren celebrar lo que construyeron.",
@@ -199,7 +199,7 @@ export const DISENOS: Diseno[] = [
     nombre: "El Tiempo",
     subtitulo: "Sin ángulos, solo fluidez",
     descripcion:
-      "Piedra central en corte ovalado. Sin ángulos, sin quiebres — como un amor que fluye. También evoca una gota de agua: pureza, vida, renovación. El ovalado es la tendencia más fuerte del momento.",
+      "Piedra central en corte ovalado. Sin ángulos, sin quiebres, como un amor que fluye. También evoca una gota de agua: pureza, vida, renovación. El ovalado es la tendencia más fuerte del momento.",
     frase: "Sin ángulos. Sin quiebres. Como un amor que solo sabe fluir.",
     idealPara: "Las modernas que quieren algo diferente pero atemporal.",
   },
@@ -226,15 +226,15 @@ export const DISENOS: Diseno[] = [
 export const PHONE = "56984049502";
 
 export function waPiedra(nombre: string) {
-  const msg = `Hola Gia ✦ Vi ${nombre} en tu web y me encantaría conocer opciones de anillos con esta piedra.`;
+  const msg = `Hola Maca ✦ Vi ${nombre} en tu web y me encantaría conocer opciones de anillos con esta piedra.`;
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
 }
 
 export function waDiseno(nombre: string) {
-  const msg = `Hola Gia ✦ Vi ${nombre} en tu web y me gustaría cotizarlo.`;
+  const msg = `Hola Maca ✦ Vi ${nombre} en tu web y me gustaría cotizarlo.`;
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
 }
 
 export const WA_GENERAL = `https://wa.me/${PHONE}?text=${encodeURIComponent(
-  "Hola Gia ✦ Me gustaría agendar una conversación para diseñar mi anillo."
+  "Hola Maca ✦ Me gustaría agendar una conversación para diseñar mi anillo."
 )}`;

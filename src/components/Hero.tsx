@@ -109,7 +109,7 @@ const Hero = () => {
                 marginBottom: "20px",
               }}
             >
-              Una joya que se pasa de generación en generación empieza con una <em>conversación</em>
+              La joya que se hereda empieza con una <em>conversación</em>
             </h1>
 
             <p
@@ -123,7 +123,7 @@ const Hero = () => {
                 marginBottom: "36px",
               }}
             >
-              Diseño a medida en oro 18k y platino · Diamantes certificados GIA/IGI · Atelier en Las Condes
+              Diseño a medida en oro 18k y platino. Diamantes certificados GIA/IGI. Showroom en Vitacura.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -165,7 +165,7 @@ const Hero = () => {
                 color: MUTED,
               }}
             >
-              Te respondo personalmente en menos de 24h · Sin compromiso
+              Te respondo personalmente en menos de 24h hábiles, sin compromiso
             </p>
 
 
@@ -178,7 +178,7 @@ const Hero = () => {
                 color: MUTED,
               }}
             >
-              Garantía por Gusto · Diamantes certificados · Atelier solo con cita previa
+              Garantía por Gusto, diamantes certificados, showroom solo con cita previa
             </p>
 
             <div className="flex items-center gap-4" style={{ marginTop: "16px", color: MUTED }}>
@@ -192,7 +192,7 @@ const Hero = () => {
                 <Instagram size={18} strokeWidth={1.5} />
               </a>
               <a
-                href="https://pinterest.com"
+                href="https://cl.pinterest.com/giasolarijoyas/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Pinterest"
@@ -201,7 +201,7 @@ const Hero = () => {
                 <PinterestIcon width={18} height={18} />
               </a>
               <a
-                href="https://tiktok.com"
+                href="https://www.tiktok.com/@giasolari.cl"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"

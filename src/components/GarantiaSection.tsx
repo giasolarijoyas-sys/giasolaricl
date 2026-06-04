@@ -11,7 +11,7 @@ const cards = [
   {
     icon: Ruler,
     title: "Ajustes incluidos",
-    badge: "Sin costo · Siempre",
+    badge: "Sin costo, Siempre",
     items: [
       "Cambio de talla (±2 medidas) durante los primeros 3 meses",
       "Pulido profesional la primera vez",
@@ -69,7 +69,7 @@ const GarantiaSection = () => {
             className="font-display text-xl md:text-2xl italic max-w-2xl mx-auto"
             style={{ color: "#1A1614" }}
           >
-            Queremos que ames tu joya — no que te conformes.
+            Queremos que ames tu joya de verdad.
           </p>
           <p
             className="mt-8 font-body text-base md:text-[15px] leading-relaxed mx-auto"
@@ -124,7 +124,7 @@ const GarantiaSection = () => {
                       className="font-body text-sm leading-relaxed flex gap-2"
                       style={{ color: "#6B6560" }}
                     >
-                      <span style={{ color: "#B8995A" }}>·</span>
+                      <span style={{ color: "#B8995A" }}>,</span>
                       <span>{it}</span>
                     </li>
                   ))}
@@ -169,7 +169,7 @@ const GarantiaSection = () => {
                           className="text-sm leading-relaxed flex gap-2"
                           style={{ color: "#6B6560" }}
                         >
-                          <span style={{ color: "#B8995A" }}>·</span>
+                          <span style={{ color: "#B8995A" }}>,</span>
                           <span>{it}</span>
                         </li>
                       ))}
@@ -186,7 +186,7 @@ const GarantiaSection = () => {
                       {[
                         "Pérdida o daño por maltrato, golpes, químicos o pérdida de piedras por uso indebido",
                         "Piedras adicionales que el nuevo diseño requiera (se cotizan aparte)",
-                        "La merma del metal al refundir (~10%) — pérdida física inevitable del proceso",
+                        "La merma del metal al refundir (~10%), pérdida física inevitable del proceso",
                         "Cambios solicitados después del plazo de 30 días (van por Cambios Mayores)",
                       ].map((it) => (
                         <li
@@ -194,7 +194,7 @@ const GarantiaSection = () => {
                           className="text-sm leading-relaxed flex gap-2"
                           style={{ color: "#6B6560" }}
                         >
-                          <span style={{ color: "#B8995A" }}>·</span>
+                          <span style={{ color: "#B8995A" }}>,</span>
                           <span>{it}</span>
                         </li>
                       ))}

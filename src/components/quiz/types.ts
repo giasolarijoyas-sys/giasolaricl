@@ -1,4 +1,4 @@
-// Quiz types — shared across all quiz components and engine
+// Quiz types, shared across all quiz components and engine
 
 export type KnowledgeLevel = 'expert' | 'intermediate' | 'beginner';
 

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const ArgollasMatrimonio = () => (
   <>
     <SEO
-      title="Argollas de matrimonio personalizadas en Chile · Gia Solari"
+      title="Argollas de matrimonio personalizadas en Chile, Gia Solari"
       description="Argollas de matrimonio hechas a mano en Santiago: oro 18k, platino, con o sin diamantes. Diseño a medida, garantía Gia Solari."
       path="/aprende/argollas-matrimonio-personalizadas"
       type="article"

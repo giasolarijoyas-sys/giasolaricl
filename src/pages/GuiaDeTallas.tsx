@@ -20,7 +20,7 @@ const tallas = [
 const GuiaDeTallas = () => (
   <>
     <SEO
-      title="Guía de Tallas de Anillos | Mide tu Talla en Casa — Gia Solari"
+      title="Guía de Tallas de Anillos | Mide tu Talla en Casa, Gia Solari"
       description="Guía completa para medir la talla de tu anillo en casa, con tabla de circunferencia y diámetro. Perfecta para sorprender con un anillo de compromiso."
       path="/guia-de-tallas"
     />
@@ -40,7 +40,7 @@ const GuiaDeTallas = () => (
               <li>Toma un hilo o una tira de papel delgada.</li>
               <li>Envuélvelo alrededor de tu dedo, justo donde usarías el anillo.</li>
               <li>Marca donde se cruza con un lápiz.</li>
-              <li>Mide la distancia con una regla — esa es tu circunferencia.</li>
+              <li>Mide la distancia con una regla, esa es tu circunferencia.</li>
               <li>Busca tu medida en la tabla de abajo.</li>
             </ol>
             <p className="text-muted-foreground text-xs mt-4 italic">Tip: Mide al final del día cuando tus dedos están más anchos. Si dudas entre dos tallas, elige la mayor.</p>

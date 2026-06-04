@@ -1,4 +1,4 @@
-// Jewelry taxonomies — max 4 options per category to keep it simple
+// Jewelry taxonomies, max 4 options per category to keep it simple
 
 export const RING_STYLES = [
   { key: 'solitaire', label: 'Solitario', desc: 'Una piedra central protagonista' },

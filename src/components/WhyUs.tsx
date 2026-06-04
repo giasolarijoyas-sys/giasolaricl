@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { MapPin, Gem, Users } from "lucide-react";
 
 const reasons = [
-  { icon: MapPin, title: "Atelier propio en Santiago", desc: "Cada pieza se hace a mano en nuestro taller, una a la vez." },
+  { icon: MapPin, title: "Showroom propio en Santiago", desc: "Cada pieza se hace a mano en nuestro taller, una a la vez." },
   { icon: Gem, title: "Diamantes certificados GIA o IGI", desc: "Solo trabajamos con piedras certificadas, sin excepciones." },
   { icon: Users, title: "Atención personalizada de principio a fin", desc: "Te acompañamos desde la primera conversación hasta la entrega, no delegamos tu proyecto." },
 ];
@@ -43,11 +43,11 @@ const WhyUs = () => {
           className="mt-16 text-center max-w-2xl mx-auto"
         >
           <p className="font-display text-lg md:text-xl italic text-foreground leading-relaxed">
-            "Una joya no es un gasto — es una historia que se hereda. La diseño
+            "Una joya es una historia que se hereda. La diseño
             para que la uses con orgullo hoy, y tu hija la use con orgullo mañana."
           </p>
           <p className="text-primary text-sm mt-4 tracking-wide">
-            — Macarena González Solari · Fundadora Gia Solari
+            Macarena González Solari, fundadora de Gia Solari
           </p>
         </motion.blockquote>
       </div>

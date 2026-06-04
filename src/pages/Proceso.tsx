@@ -15,7 +15,7 @@ const pasos = [
     n: "01",
     titulo: "Conversamos",
     img: paso1,
-    texto: "Cuéntanos lo que tienes en mente: ella, el estilo, el presupuesto. No necesitas saber de joyas; nosotros te guiamos. Por WhatsApp, videollamada o en el atelier.",
+    texto: "Cuéntanos lo que tienes en mente: ella, el estilo, el presupuesto. No necesitas saber de joyas; nosotros te guiamos. Por WhatsApp, videollamada o en el showroom.",
   },
   {
     n: "02",

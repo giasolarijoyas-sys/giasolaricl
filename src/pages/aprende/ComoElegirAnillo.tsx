@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const ComoElegirAnillo = () => (
   <>
     <SEO
-      title="Cómo elegir el anillo de compromiso perfecto · Guía 2026 · Gia Solari"
+      title="Cómo elegir el anillo de compromiso perfecto, Guía 2026, Gia Solari"
       description="Guía paso a paso para elegir el anillo de compromiso ideal en Chile: presupuesto, estilo, forma del diamante y talla. Por Gia Solari Joyas, Santiago."
       path="/aprende/como-elegir-anillo-compromiso"
       type="article"
@@ -86,7 +86,7 @@ const ComoElegirAnillo = () => (
               <section>
                 <h2 className="font-display text-2xl text-foreground mb-4">El paso más importante</h2>
                 <p className="text-foreground font-medium text-lg">Conversemos.</p>
-                <p className="mt-2">El anillo de compromiso perfecto no sale de una guía — sale de una conversación. Cuéntame tu historia, tu presupuesto y el estilo de tu pareja, y juntas creamos algo único.</p>
+                <p className="mt-2">El anillo de compromiso perfecto no sale de una guía, sale de una conversación. Cuéntame tu historia, tu presupuesto y el estilo de tu pareja, y juntas creamos algo único.</p>
               </section>
             </div>
 
