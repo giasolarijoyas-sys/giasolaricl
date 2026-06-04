@@ -264,7 +264,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-aguamarina-cushion",
-    nombre: "Aguamarina, Halo Cushion",
+    nombre: "Aguamarina, Halo Rectangular",
     material: "Oro 18k blanco, Aguamarina cushion, Halo de diamantes",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
@@ -320,7 +320,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-cushion-pave-platino",
-    nombre: "Halo Cushion Pavé",
+    nombre: "Halo Esmeralda Pavé",
     material: "Platino, Diamante natural corte emerald, Halo de diamantes + banda pavé + milgrain, Certificación GIA",
     metalPrincipal: "Platino",
     estilo: "Editorial",
