@@ -174,10 +174,6 @@ const Joyas = () => {
   filters.estilo.forEach((e) => chips.push({ label: e, onRemove: () => toggleArray("estilo", e) }));
   filters.metal.forEach((m) => chips.push({ label: m, onRemove: () => toggleArray("metal", m) }));
   filters.piedra.forEach((p) => chips.push({ label: p, onRemove: () => toggleArray("piedra", p) }));
-  if (filters.precio !== "all") {
-    const lbl = PRECIOS.find((p) => p.id === filters.precio)?.label;
-    if (lbl) chips.push({ label: lbl, onRemove: () => updateFilters({ precio: "all" }) });
-  }
 
   // Lock body scroll on drawer
   useEffect(() => {
