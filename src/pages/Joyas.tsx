@@ -139,16 +139,6 @@ const Joyas = () => {
       if (filters.estilo.length && !filters.estilo.some((e) => matchEstilo(j.estilo, e))) return false;
       if (filters.metal.length && !filters.metal.some((m) => (j.metalPrincipal ?? "").toLowerCase() === m.toLowerCase())) return false;
       if (filters.piedra.length && !filters.piedra.some((p) => matchPiedra(j.piedraCentral, p))) return false;
-      if (filters.precio !== "all") {
-        const range = PRECIOS.find((p) => p.id === filters.precio);
-        if (range) {
-          if (range.id === "consultar") {
-            if (typeof j.precioDesde === "number") return false;
-          } else if (typeof j.precioDesde !== "number" || j.precioDesde < range.min || j.precioDesde >= range.max) {
-            return false;
-          }
-        }
-      }
       return true;
     });
   }, [baseJoyas, filters]);
