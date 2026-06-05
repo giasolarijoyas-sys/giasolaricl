@@ -109,7 +109,6 @@ const Joyas = () => {
     if (merged.estilo.length) params.set("estilo", merged.estilo.join(","));
     if (merged.metal.length) params.set("metal", merged.metal.join(","));
     if (merged.piedra.length) params.set("piedra", merged.piedra.join(","));
-    if (merged.precio !== "all") params.set("precio", merged.precio);
     setSearchParams(params, { replace: true });
     setVisibleCount(PAGE_SIZE);
   };
