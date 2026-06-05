@@ -56,14 +56,6 @@ const PIEDRAS = [
   "Sin piedra",
 ];
 
-const PRECIOS = [
-  { id: "all", label: "Todos los rangos", min: 0, max: Infinity },
-  { id: "p1", label: "Hasta $1.000.000", min: 0, max: 1000000 },
-  { id: "p2", label: "$1.000.000, $2.000.000", min: 1000000, max: 2000000 },
-  { id: "p3", label: "$2.000.000, $3.000.000", min: 2000000, max: 3000000 },
-  { id: "p4", label: "$3.000.000+", min: 3000000, max: Infinity },
-  { id: "consultar", label: "A cotizar", min: -1, max: -1 },
-];
 
 const PAGE_SIZE = 12;
 
