@@ -24,7 +24,7 @@ import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 import InstagramFeed from "@/components/InstagramFeed";
 import ComoTeAyudo from "@/components/ComoTeAyudo";
 
-import NewIn from "@/components/NewIn";
+
 import SignificadosTeaser from "@/components/SignificadosTeaser";
 import LeadMagnetGuia from "@/components/LeadMagnetGuia";
 
@@ -75,8 +75,6 @@ const Index = () => {
       <ComoTeAyudo />
 
 
-      {/* New In, recién salido del taller */}
-      <NewIn />
 
       {/* 6. Proceso en 3 pasos */}
       <ProcesoHome />
