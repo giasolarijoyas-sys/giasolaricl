@@ -128,8 +128,7 @@ const Joyas = () => {
     (filters.tipo !== "todos" ? 1 : 0) +
     filters.estilo.length +
     filters.metal.length +
-    filters.piedra.length +
-    (filters.precio !== "all" ? 1 : 0);
+    filters.piedra.length;
 
   // === Filter joyas ===
   const baseJoyas = useMemo(() => JOYAS.filter((j) => !j.isPlaceholder), []);
