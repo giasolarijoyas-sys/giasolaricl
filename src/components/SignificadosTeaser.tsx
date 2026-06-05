@@ -6,8 +6,8 @@ import { PIEDRAS, DISENOS } from "@/data/significados";
 import imgDiamante from "@/assets/gal-diamante-halo.png";
 import imgZafiro from "@/assets/gal-zafiro-halo.png";
 import imgAguamarina from "@/assets/gal-aguamarina-halo.png";
-import imgEterno from "@/assets/diseno-el-eterno.png";
-import imgTricillo from "@/assets/diseno-el-tricillo.png";
+import imgEterno from "@/assets/joyas/solitario-oval-platino-01.jpg";
+import imgTricillo from "@/assets/gal-tricillo.jpeg";
 import imgAlado from "@/assets/diseno-el-alado.png";
 
 const PIEDRA_IMGS: Record<string, string> = {

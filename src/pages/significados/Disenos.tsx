@@ -7,8 +7,8 @@ import GoldenDivider from "@/components/significados/GoldenDivider";
 import { SIG_TOKENS, SIG_FONTS } from "@/components/significados/tokens";
 import { DISENOS } from "@/data/significados";
 
-import imgEterno from "@/assets/diseno-el-eterno.png";
-import imgTricillo from "@/assets/diseno-el-tricillo.png";
+import imgEterno from "@/assets/joyas/solitario-oval-platino-01.jpg";
+import imgTricillo from "@/assets/gal-tricillo.jpeg";
 import imgAlado from "@/assets/diseno-el-alado.png";
 import imgReal from "@/assets/diseno-el-real.png";
 import imgTiempo from "@/assets/diseno-el-tiempo.png";
