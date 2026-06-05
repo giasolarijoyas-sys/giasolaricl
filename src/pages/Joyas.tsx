@@ -99,8 +99,7 @@ const Joyas = () => {
     const estilo = (searchParams.get("estilo") ?? "").split(",").filter(Boolean);
     const metal = (searchParams.get("metal") ?? "").split(",").filter(Boolean);
     const piedra = (searchParams.get("piedra") ?? "").split(",").filter(Boolean);
-    const precio = searchParams.get("precio") ?? "all";
-    return { tipo, estilo, metal, piedra, precio };
+    return { tipo, estilo, metal, piedra };
   }, [searchParams]);
 
   const updateFilters = (next: Partial<FilterState>) => {
