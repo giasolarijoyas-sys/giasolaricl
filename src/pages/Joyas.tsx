@@ -56,14 +56,6 @@ const PIEDRAS = [
   "Sin piedra",
 ];
 
-const PRECIOS = [
-  { id: "all", label: "Todos los rangos", min: 0, max: Infinity },
-  { id: "p1", label: "Hasta $1.000.000", min: 0, max: 1000000 },
-  { id: "p2", label: "$1.000.000, $2.000.000", min: 1000000, max: 2000000 },
-  { id: "p3", label: "$2.000.000, $3.000.000", min: 2000000, max: 3000000 },
-  { id: "p4", label: "$3.000.000+", min: 3000000, max: Infinity },
-  { id: "consultar", label: "A cotizar", min: -1, max: -1 },
-];
 
 const PAGE_SIZE = 12;
 
@@ -94,7 +86,6 @@ type FilterState = {
   estilo: string[];
   metal: string[];
   piedra: string[];
-  precio: string;
 };
 
 const Joyas = () => {
@@ -108,8 +99,7 @@ const Joyas = () => {
     const estilo = (searchParams.get("estilo") ?? "").split(",").filter(Boolean);
     const metal = (searchParams.get("metal") ?? "").split(",").filter(Boolean);
     const piedra = (searchParams.get("piedra") ?? "").split(",").filter(Boolean);
-    const precio = searchParams.get("precio") ?? "all";
-    return { tipo, estilo, metal, piedra, precio };
+    return { tipo, estilo, metal, piedra };
   }, [searchParams]);
 
   const updateFilters = (next: Partial<FilterState>) => {
@@ -119,7 +109,6 @@ const Joyas = () => {
     if (merged.estilo.length) params.set("estilo", merged.estilo.join(","));
     if (merged.metal.length) params.set("metal", merged.metal.join(","));
     if (merged.piedra.length) params.set("piedra", merged.piedra.join(","));
-    if (merged.precio !== "all") params.set("precio", merged.precio);
     setSearchParams(params, { replace: true });
     setVisibleCount(PAGE_SIZE);
   };
@@ -139,8 +128,7 @@ const Joyas = () => {
     (filters.tipo !== "todos" ? 1 : 0) +
     filters.estilo.length +
     filters.metal.length +
-    filters.piedra.length +
-    (filters.precio !== "all" ? 1 : 0);
+    filters.piedra.length;
 
   // === Filter joyas ===
   const baseJoyas = useMemo(() => JOYAS.filter((j) => !j.isPlaceholder), []);
@@ -151,16 +139,6 @@ const Joyas = () => {
       if (filters.estilo.length && !filters.estilo.some((e) => matchEstilo(j.estilo, e))) return false;
       if (filters.metal.length && !filters.metal.some((m) => (j.metalPrincipal ?? "").toLowerCase() === m.toLowerCase())) return false;
       if (filters.piedra.length && !filters.piedra.some((p) => matchPiedra(j.piedraCentral, p))) return false;
-      if (filters.precio !== "all") {
-        const range = PRECIOS.find((p) => p.id === filters.precio);
-        if (range) {
-          if (range.id === "consultar") {
-            if (typeof j.precioDesde === "number") return false;
-          } else if (typeof j.precioDesde !== "number" || j.precioDesde < range.min || j.precioDesde >= range.max) {
-            return false;
-          }
-        }
-      }
       return true;
     });
   }, [baseJoyas, filters]);
@@ -196,10 +174,6 @@ const Joyas = () => {
   filters.estilo.forEach((e) => chips.push({ label: e, onRemove: () => toggleArray("estilo", e) }));
   filters.metal.forEach((m) => chips.push({ label: m, onRemove: () => toggleArray("metal", m) }));
   filters.piedra.forEach((p) => chips.push({ label: p, onRemove: () => toggleArray("piedra", p) }));
-  if (filters.precio !== "all") {
-    const lbl = PRECIOS.find((p) => p.id === filters.precio)?.label;
-    if (lbl) chips.push({ label: lbl, onRemove: () => updateFilters({ precio: "all" }) });
-  }
 
   // Lock body scroll on drawer
   useEffect(() => {
@@ -333,34 +307,6 @@ const Joyas = () => {
         </div>
       </div>
 
-      {/* PRECIO */}
-      <div className="pb-8">
-        <p className="mb-4" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: OLIVE_SOFT }}>Precio</p>
-        <div className="flex flex-col gap-2.5">
-          {PRECIOS.map((p) => (
-            <label key={p.id} className="flex items-center gap-3 cursor-pointer">
-              <input
-                type="radio"
-                name="precio"
-                checked={filters.precio === p.id}
-                onChange={() => updateFilters({ precio: p.id })}
-                className="sr-only"
-              />
-              <span
-                className="inline-block rounded-full"
-                style={{
-                  width: 14, height: 14,
-                  border: `1px solid ${filters.precio === p.id ? OLIVE : LINE}`,
-                  background: filters.precio === p.id ? OLIVE : "transparent",
-                  boxShadow: filters.precio === p.id ? `inset 0 0 0 3px ${CREAM}` : "none",
-                  flexShrink: 0,
-                }}
-              />
-              <span style={{ fontFamily: "Inter, sans-serif", fontSize: "13.5px", color: INK }}>{p.label}</span>
-            </label>
-          ))}
-        </div>
-      </div>
     </aside>
   );
 
