@@ -184,7 +184,7 @@ const pieces: Piece[] = [
   { img: galProd2110, name: "Halo Pera Mármol", desc: "Corte Pera, Halo Pavé", category: "anillos" },
   { img: galProd2113, name: "Solitario Oval Espejo", desc: "Diamante, Pavé Lateral", category: "anillos" },
   { img: galProd2116, name: "Halo Cushion", desc: "Diamante, Caja Terciopelo", category: "anillos" },
-  { img: galProd2117, name: "Zafiro Oval Halo", desc: "Zafiro Azul, Oro Blanco", category: "anillos" },
+  { img: galProd2117, name: "Marquesa Doble Halo", desc: "Diamante Marquesa, Doble Halo", category: "anillos" },
   { img: galProd2121, name: "Halo Marquesa Oliva", desc: "Diamante, Caja Terciopelo", category: "anillos" },
   { img: galProd2123, name: "Halo Oval Celeste", desc: "Piedra Oval Celeste, Halo Pavé", category: "anillos" },
   { img: galProd2126, name: "Solitario Satén Rosa", desc: "Diamante, Sobre Satén", category: "anillos" },
@@ -195,7 +195,7 @@ const pieces: Piece[] = [
   { img: galProd2147, name: "Solitario Textura", desc: "Diamante, Fondo Textil", category: "anillos" },
   { img: galProd2151, name: "Halo Redondo Eucalipto", desc: "Diamante, Decoración Natural", category: "anillos" },
   { img: galProd2168, name: "Cintillo Brillantes", desc: "Diamantes, Sobre Terciopelo", category: "anillos" },
-  { img: galProd2172, name: "Par Argollas Oro", desc: "Art Déco, Caja Azul", category: "anillos" },
+  { img: galProd2172, name: "Solitario con Baguettes", desc: "Diamante, Baguettes Laterales", category: "anillos" },
   { img: galProd2195, name: "Collar Halo Floral", desc: "Colgante con diamante, Cadena oro 18k", category: "collares" },
   { img: galProd2197, name: "Cluster Diamantes", desc: "Pavé, Sobre Lino Natural", category: "anillos" },
 
