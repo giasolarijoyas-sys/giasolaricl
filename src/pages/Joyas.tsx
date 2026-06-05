@@ -86,7 +86,6 @@ type FilterState = {
   estilo: string[];
   metal: string[];
   piedra: string[];
-  precio: string;
 };
 
 const Joyas = () => {
