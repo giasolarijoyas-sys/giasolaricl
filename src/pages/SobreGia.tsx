@@ -107,6 +107,10 @@ const SobreGia = () => (
       </section>
 
       {/* Testimonios destacados */}
+      {/* El Taller, galería de proceso */}
+      <ElTaller />
+
+      {/* Testimonios destacados */}
       <TestimoniosDestacados />
 
       <Footer />
