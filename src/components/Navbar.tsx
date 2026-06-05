@@ -18,7 +18,7 @@ const joyasMenuCols: { title: string; items: SubItem[] }[] = [
   {
     title: "Anillos de compromiso y argollas",
     items: [
-      { label: "Esencial", href: "/esencial" },
+      
       { label: "Halos", href: "/joyas?tipo=bodas&estilo=Halo" },
       { label: "Solitarios", href: "/joyas?tipo=bodas&estilo=Solitarios" },
       { label: "Tres y cinco piedras", href: "/joyas?tipo=bodas&estilo=Tres+y+cinco+piedras" },

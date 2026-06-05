@@ -37,7 +37,7 @@ import Proceso from "./pages/Proceso.tsx";
 import Cotizar from "./pages/Cotizar.tsx";
 import NewIn from "./pages/NewIn.tsx";
 import Filosofia from "./pages/Filosofia.tsx";
-import Esencial from "./pages/Esencial.tsx";
+
 import Piedras from "./pages/significados/Piedras.tsx";
 import PiedraDetalle from "./pages/significados/PiedraDetalle.tsx";
 import Disenos from "./pages/significados/Disenos.tsx";
@@ -94,7 +94,7 @@ const App = () => (
             <Route path="/cotizar" element={<Cotizar />} />
             <Route path="/new" element={<NewIn />} />
             <Route path="/filosofia" element={<Filosofia />} />
-            <Route path="/esencial" element={<Esencial />} />
+            
             <Route path="/significados/piedras" element={<Piedras />} />
             <Route path="/significados/piedras/:slug" element={<PiedraDetalle />} />
             <Route path="/significados/disenos" element={<Disenos />} />
