@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import TestimoniosDestacados from "@/components/TestimoniosDestacados";
+import ElTaller from "@/components/ElTaller";
 import { motion } from "framer-motion";
 import { ShieldCheck, Gem, Users, Heart } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
@@ -104,6 +105,9 @@ const SobreGia = () => (
           </div>
         </div>
       </section>
+
+      {/* El Taller, galería de proceso */}
+      <ElTaller />
 
       {/* Testimonios destacados */}
       <TestimoniosDestacados />

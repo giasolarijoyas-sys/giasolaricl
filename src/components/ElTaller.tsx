@@ -6,6 +6,10 @@ import tallerImg2 from "@/assets/gal-sesion-dsc_5898.jpg";
 import tallerImg3 from "@/assets/gal-sesion-dsc_5902.jpg";
 import tallerImg4 from "@/assets/gal-sesion-dsc_5948.jpg";
 import tallerImg5 from "@/assets/gal-sesion-dsc_5984.jpg";
+import tallerImg6 from "@/assets/taller-1.jpg";
+import tallerImg7 from "@/assets/taller-2.jpg";
+import tallerImg8 from "@/assets/taller-3.jpeg";
+import tallerImg9 from "@/assets/taller-4.jpg";
 
 const photos = [
   { src: tallerImg1, alt: "Proceso artesanal, detalle de engaste" },
@@ -13,6 +17,10 @@ const photos = [
   { src: tallerImg3, alt: "Soldando con precisión" },
   { src: tallerImg4, alt: "Inspección con lupa" },
   { src: tallerImg5, alt: "Pulido final de la joya" },
+  { src: tallerImg6, alt: "Maca en el banco de joyería" },
+  { src: tallerImg7, alt: "Herramientas y piezas en proceso" },
+  { src: tallerImg8, alt: "Detalle del trabajo a mano" },
+  { src: tallerImg9, alt: "Acabado y revisión final" },
 ];
 
 const ElTaller = () => (
