@@ -307,34 +307,6 @@ const Joyas = () => {
         </div>
       </div>
 
-      {/* PRECIO */}
-      <div className="pb-8">
-        <p className="mb-4" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: OLIVE_SOFT }}>Precio</p>
-        <div className="flex flex-col gap-2.5">
-          {PRECIOS.map((p) => (
-            <label key={p.id} className="flex items-center gap-3 cursor-pointer">
-              <input
-                type="radio"
-                name="precio"
-                checked={filters.precio === p.id}
-                onChange={() => updateFilters({ precio: p.id })}
-                className="sr-only"
-              />
-              <span
-                className="inline-block rounded-full"
-                style={{
-                  width: 14, height: 14,
-                  border: `1px solid ${filters.precio === p.id ? OLIVE : LINE}`,
-                  background: filters.precio === p.id ? OLIVE : "transparent",
-                  boxShadow: filters.precio === p.id ? `inset 0 0 0 3px ${CREAM}` : "none",
-                  flexShrink: 0,
-                }}
-              />
-              <span style={{ fontFamily: "Inter, sans-serif", fontSize: "13.5px", color: INK }}>{p.label}</span>
-            </label>
-          ))}
-        </div>
-      </div>
     </aside>
   );
 
