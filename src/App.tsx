@@ -30,6 +30,7 @@ import CuantoCuestaAnillo from "./pages/aprende/CuantoCuestaAnillo.tsx";
 import AnilloZafiro from "./pages/aprende/AnilloZafiro.tsx";
 import ArgollasMatrimonio from "./pages/aprende/ArgollasMatrimonio.tsx";
 import TallaAnillo from "./pages/aprende/TallaAnillo.tsx";
+import DiamanteCertificadoGiaIgi from "./pages/aprende/DiamanteCertificadoGiaIgi.tsx";
 import Joyas from "./pages/Joyas.tsx";
 import JoyaDetalle from "./pages/JoyaDetalle.tsx";
 import Agenda from "./pages/Agenda.tsx";
