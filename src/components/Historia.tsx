@@ -50,7 +50,7 @@ const Historia = () => {
                 "Tú me cuentas tu historia, yo la convierto en joya."
               </p>
               <p className="text-sm text-primary tracking-wide">
-               , Maca, Gia Solari
+                — Maca, Gia Solari
               </p>
             </div>
           </motion.div>
