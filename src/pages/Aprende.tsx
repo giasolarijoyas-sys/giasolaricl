@@ -33,7 +33,7 @@ const articles = [
     icon: Wallet,
     tag: "Precios",
     title: "¿Cuánto cuesta un anillo de compromiso en Chile?",
-    desc: "Rangos reales por presupuesto y qué influye en el precio.",
+    desc: "Qué define el precio (diamante, metal, diseño) y por qué se cotiza a medida.",
     href: "/aprende/cuanto-cuesta-anillo-compromiso-chile",
   },
   {
