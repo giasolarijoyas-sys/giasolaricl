@@ -70,8 +70,8 @@ const JoyaDetalle = () => {
     offers: {
       "@type": "Offer",
       priceCurrency: "CLP",
-      ...(item.precioDesde ? { price: item.precioDesde } : {}),
       availability: "https://schema.org/MadeToOrder",
+      priceSpecification: { "@type": "PriceSpecification", priceCurrency: "CLP", valueAddedTaxIncluded: true, description: "A cotizar" },
       seller: { "@type": "Organization", name: "Gia Solari Joyas" },
     },
   };

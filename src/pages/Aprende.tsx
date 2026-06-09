@@ -5,7 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import LeadMagnetGuia from "@/components/LeadMagnetGuia";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Gem, CircleDot, Heart, Wallet, Sparkles, Infinity as InfinityIcon, Ruler } from "lucide-react";
+import { Gem, CircleDot, Heart, Wallet, Sparkles, Infinity as InfinityIcon, Ruler, BadgeCheck } from "lucide-react";
 
 const articles = [
   {
@@ -23,10 +23,17 @@ const articles = [
     href: "/aprende/diamantes-4c",
   },
   {
+    icon: BadgeCheck,
+    tag: "Certificación",
+    title: "Diamante certificado GIA o IGI: qué significa",
+    desc: "Qué es la certificación, las 4C explicadas simple y por qué importa.",
+    href: "/aprende/diamante-certificado-gia-igi",
+  },
+  {
     icon: Wallet,
     tag: "Precios",
     title: "¿Cuánto cuesta un anillo de compromiso en Chile?",
-    desc: "Rangos reales por presupuesto y qué influye en el precio.",
+    desc: "Qué define el precio (diamante, metal, diseño) y por qué se cotiza a medida.",
     href: "/aprende/cuanto-cuesta-anillo-compromiso-chile",
   },
   {

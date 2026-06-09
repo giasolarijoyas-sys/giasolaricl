@@ -4,24 +4,51 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { Link } from "react-router-dom";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Qué define el precio de un anillo de compromiso en Chile?",
+      acceptedAnswer: { "@type": "Answer", text: "El tipo y tamaño del diamante o piedra central, el metal (oro 18k o platino), la complejidad del diseño y la mano de obra. Cada pieza se cotiza según el proyecto." },
+    },
+    {
+      "@type": "Question",
+      name: "¿Conviene hacer un anillo a medida en Santiago?",
+      acceptedAnswer: { "@type": "Answer", text: "Sí. Un anillo a medida se ajusta a la persona, al presupuesto y a la historia detrás. No pagas por una marca, pagas por una pieza pensada para ella." },
+    },
+    {
+      "@type": "Question",
+      name: "¿Es mejor oro 18k o platino?",
+      acceptedAnswer: { "@type": "Answer", text: "Depende del estilo y del uso. El oro 18k es cálido y más liviano; el platino es más denso, blanco puro y resistente. Conversemos cuál te acomoda." },
+    },
+  ],
+};
 
 const CuantoCuestaAnillo = () => (
   <>
     <SEO
-      title="¿Cuánto cuesta un anillo de compromiso en Chile? Guía 2026"
-      description="Rangos reales de precios de anillos de compromiso en Chile, desde $1.500.000. Qué afecta el precio: metal, diamante, diseño. Por Gia Solari."
+      title="¿Cuánto cuesta un anillo de compromiso en Chile? | Gia Solari Santiago"
+      description="Te cuento qué factores definen el precio de un anillo de compromiso en Santiago, Chile: diamante, quilataje, metal y diseño. Cada pieza se cotiza a medida."
       path="/aprende/cuanto-cuesta-anillo-compromiso-chile"
       type="article"
     />
     <ArticleSchema
-      headline="¿Cuánto cuesta un anillo de compromiso en Chile? Guía 2026"
-      description="Rangos reales de precios de anillos de compromiso en Chile y qué influye en el precio."
+      headline="¿Cuánto cuesta un anillo de compromiso en Chile?"
+      description="Qué define el precio de un anillo de compromiso en Chile y por qué un anillo a medida vale la pena."
       path="/aprende/cuanto-cuesta-anillo-compromiso-chile"
       datePublished="2026-05-09"
-      dateModified="2026-05-09"
+      dateModified="2026-06-09"
     />
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
+    </Helmet>
     <div className="min-h-screen">
       <Navbar />
       <article className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">
@@ -29,79 +56,63 @@ const CuantoCuestaAnillo = () => (
           <motion.div animate={{ opacity: 1, y: 0 }}>
             <Breadcrumbs items={[{ label: "Aprende", path: "/aprende" }, { label: "Cuánto cuesta un anillo" }]} />
             <h1 className="font-display text-3xl md:text-4xl text-foreground mb-6">¿Cuánto cuesta un anillo de compromiso en Chile?</h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-10">Rangos honestos, sin letra chica. Esto es lo que tienes que saber antes de cotizar.</p>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-10">Una pregunta que me hacen todos los días. Te la respondo honesta, sin cifras al aire, porque cada anillo se cotiza según el proyecto.</p>
 
             <div className="space-y-10 text-muted-foreground leading-relaxed">
               <section>
-                <h2 className="font-display text-2xl text-foreground mb-4">La respuesta corta</h2>
-                <p>En Chile, un anillo de compromiso bien hecho parte en torno a <strong className="text-foreground">$1.500.000 CLP</strong> y puede llegar a varios millones según el diamante, el metal y la complejidad del diseño.</p>
-                <p className="mt-3">En Gia Solari trabajamos con un presupuesto mínimo de $1.800.000 CLP porque por debajo de ese monto no podemos garantizar la calidad de materiales ni la mano de obra que nos representa.</p>
+                <h2 className="font-display text-2xl text-foreground mb-4">Por qué no doy un número en internet</h2>
+                <p>Porque no sería honesto. Dos anillos que se ven parecidos pueden valer muy distinto. El precio depende de la piedra que elijas, del metal, del diseño y de cuánta mano de obra lleva. Por eso prefiero conversarlo contigo y armar una cotización real para tu pieza.</p>
               </section>
 
               <section>
-                <h2 className="font-display text-2xl text-foreground mb-4">Qué influye en el precio</h2>
-                <p>El precio final depende de cuatro factores principales:</p>
-                <h3 className="font-display text-lg text-foreground mt-6 mb-2">1. El diamante (o piedra central)</h3>
-                <p>Es lo que más mueve la aguja. Tamaño, color, claridad y corte (las 4C) definen el rango de precio del diamante certificado.</p>
-                <h3 className="font-display text-lg text-foreground mt-6 mb-2">2. El metal</h3>
-                <p>Platino cuesta entre 30% y 50% más que oro 18k por gramo. Y dentro del oro, los anillos más anchos o pesados suben el precio proporcionalmente.</p>
+                <h2 className="font-display text-2xl text-foreground mb-4">Lo que sí influye en el precio</h2>
+
+                <h3 className="font-display text-lg text-foreground mt-6 mb-2">1. El diamante o piedra central</h3>
+                <p>Es lo que más mueve la aguja. No solo importa el tamaño en quilates: el corte (cómo brilla), el color y la claridad cambian el valor de la piedra. Un diamante certificado natural no es lo mismo que uno de laboratorio, y los dos son hermosos por razones distintas.</p>
+
+                <h3 className="font-display text-lg text-foreground mt-6 mb-2">2. El metal: oro 18k o platino</h3>
+                <p>El oro 18k es cálido, versátil y más liviano. El platino es más denso, blanco puro y muy resistente, ideal si quieres una pieza para toda la vida sin retoques de color. El platino suele ser más caro por gramo, y también más noble.</p>
+
                 <h3 className="font-display text-lg text-foreground mt-6 mb-2">3. El diseño</h3>
-                <p>Un solitario clásico tiene menos mano de obra que un halo con pavé o un diseño art decó con engaste tipo bezel. La complejidad técnica se nota.</p>
+                <p>Un solitario limpio lleva menos horas de taller que un halo con pavé, un engaste tipo bezel o un diseño art decó con detalles tallados. Mientras más artesanía, más tiempo y, por lo tanto, más inversión.</p>
+
                 <h3 className="font-display text-lg text-foreground mt-6 mb-2">4. La mano de obra</h3>
-                <p>Una pieza hecha a mano por un maestro joyero local no cuesta lo mismo que una pieza de catálogo importada. Por eso somos transparentes con cada partida del presupuesto.</p>
+                <p>En Gia Solari trabajamos con maestros joyeros aquí en Santiago. Cada pieza se hace a mano, pensada para una persona en particular. No es lo mismo que un anillo de catálogo importado, y eso se nota cuando lo tienes en la mano.</p>
               </section>
 
               <section>
-                <h2 className="font-display text-2xl text-foreground mb-4">Rangos reales por presupuesto</h2>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead><tr className="border-b border-border"><th className="py-3 px-3 text-left text-foreground">Presupuesto</th><th className="py-3 px-3 text-left text-foreground">Qué esperar</th></tr></thead>
-                    <tbody>
-                      <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground align-top">$1.800.000, $2.500.000</td><td className="py-2 px-3">Solitario en oro 18k con diamante certificado 0,25–0,35ct, calidad muy buena. Diseño limpio.</td></tr>
-                      <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground align-top">$2.500.000, $4.000.000</td><td className="py-2 px-3">Diamante natural 0,4–0,6ct en oro 18k, o lab 1ct en platino. Posibilidad de halo o detalles.</td></tr>
-                      <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground align-top">$4.000.000, $7.000.000</td><td className="py-2 px-3">Natural 0,7–1ct en platino, halo, pavé o diseño personalizado complejo.</td></tr>
-                      <tr className="border-b border-border/50"><td className="py-2 px-3 text-foreground align-top">$8.000.000+</td><td className="py-2 px-3">Diamantes naturales sobre 1ct, certificación GIA, platino, diseños premium.</td></tr>
-                    </tbody>
-                  </table>
-                </div>
+                <h2 className="font-display text-2xl text-foreground mb-4">Por qué un anillo a medida vale la pena</h2>
+                <p>Un anillo de compromiso lo vas a usar todos los días, por mucho tiempo. Cuando lo haces a medida pasan tres cosas que no pasan con una pieza estándar:</p>
+                <p className="mt-3">• <strong className="text-foreground">Se ajusta a tu presupuesto real.</strong> No tienes que estirarte para pagar algo prediseñado: conversamos qué priorizar (tamaño de la piedra, metal, diseño) según lo que te acomode.</p>
+                <p>• <strong className="text-foreground">Es una pieza única.</strong> Nadie más va a tener el mismo anillo. Lleva tu historia, no la de una marca.</p>
+                <p>• <strong className="text-foreground">Lo conoces por dentro.</strong> Vemos juntas la piedra, el metal, el certificado. Sabes exactamente qué llevas en el dedo.</p>
               </section>
 
               <section>
                 <h2 className="font-display text-2xl text-foreground mb-4">Cómo armar tu presupuesto</h2>
-                <p>Mi recomendación es partir al revés: define cuánto te sientes cómodo invirtiendo y construimos la mejor pieza posible dentro de eso.</p>
-                <p className="mt-3">No existe la regla de los "tres sueldos". Existe la regla de no endeudarte para empezar tu matrimonio.</p>
-                <p className="mt-3">Una vez que tienes el monto, las palancas son: tipo de diamante (natural o lab), tamaño, metal y complejidad del diseño. Mover una sola de esas palancas puede cambiar el precio en 30% o más.</p>
+                <p>Mi consejo: parte al revés. Decide cuánto te sientes cómodo invirtiendo, sin endeudarte para empezar tu matrimonio. Con ese monto, construimos juntos la mejor pieza posible. Mover una palanca (cambiar el tipo de diamante, el metal o el diseño) puede cambiar el valor final bastante. Por eso vale la pena conversarlo.</p>
               </section>
 
               <section>
-                <h2 className="font-display text-2xl text-foreground mb-4">Cuidado con precios sospechosamente bajos</h2>
-                <p>Si ves un anillo "de compromiso con diamante" bajo $500.000, casi seguro es uno de estos casos:</p>
-                <p className="mt-2">• Es plata o oro de baja ley (no 18k).</p>
-                <p>• La piedra es circón, moissanita o diamante de muy baja calidad.</p>
-                <p>• La mano de obra es industrial, sin garantía ni servicio postventa.</p>
-                <p className="mt-3">No hay magia: en joyería fina los materiales tienen un piso de costo y la mano de obra de calidad también. Lo barato sale caro cuando se rompe a los dos años.</p>
-              </section>
-
-              <section>
-                <h2 className="font-display text-2xl text-foreground mb-4">Lo que incluye nuestro precio</h2>
-                <p>En Gia Solari, cada presupuesto incluye:</p>
+                <h2 className="font-display text-2xl text-foreground mb-4">Lo que incluye nuestra cotización</h2>
+                <p>Cuando te paso un presupuesto en Gia Solari, ahí va todo:</p>
                 <p className="mt-2">• Diseño personalizado conversado contigo.</p>
-                <p>• Boceto antes de avanzar.</p>
+                <p>• Boceto antes de avanzar (no rendering 3D, dibujo de verdad).</p>
                 <p>• Materiales certificados (oro, platino, diamantes).</p>
                 <p>• Ajuste de talla incluido.</p>
-                <p>• Garantía por gusto: si no te enamora, lo arreglamos.</p>
+                <p>• Garantía por gusto: si no te enamora cuando lo ves, lo arreglamos.</p>
               </section>
             </div>
 
             <div className="mt-16 p-8 bg-card border border-border rounded-lg text-center">
-              <h3 className="font-display text-xl text-foreground mb-3">¿Quieres tu cotización personalizada?</h3>
-              <p className="text-muted-foreground text-sm mb-4">En 3 pasos te damos un rango realista para tu pieza.</p>
-              <Link to="/cotizar" className="inline-block px-8 py-3 bg-primary text-primary-foreground text-sm tracking-widest uppercase">Cotizar ahora</Link>
+              <h3 className="font-display text-xl text-foreground mb-3">¿Quieres cotizar tu anillo?</h3>
+              <p className="text-muted-foreground text-sm mb-4">Cuéntame por WhatsApp qué tienes en mente y armamos una propuesta para ti.</p>
+              <a href={buildWhatsAppUrl("generico")} target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-3 bg-primary text-primary-foreground text-sm tracking-widest uppercase">Cotizar por WhatsApp</a>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4 text-sm">
               <Link to="/aprende/como-elegir-anillo-compromiso" className="text-primary hover:underline">→ Cómo elegir tu anillo</Link>
-              <Link to="/aprende/diamantes-4c" className="text-primary hover:underline">→ Las 4C del Diamante</Link>
+              <Link to="/aprende/diamante-certificado-gia-igi" className="text-primary hover:underline">→ Diamante certificado GIA o IGI</Link>
               <Link to="/aprende/oro-vs-platino" className="text-primary hover:underline">→ Oro 18k vs Platino</Link>
             </div>
           </motion.div>
