@@ -23,6 +23,13 @@ const articles = [
     href: "/aprende/diamantes-4c",
   },
   {
+    icon: BadgeCheck,
+    tag: "Certificación",
+    title: "Diamante certificado GIA o IGI: qué significa",
+    desc: "Qué es la certificación, las 4C explicadas simple y por qué importa.",
+    href: "/aprende/diamante-certificado-gia-igi",
+  },
+  {
     icon: Wallet,
     tag: "Precios",
     title: "¿Cuánto cuesta un anillo de compromiso en Chile?",
