@@ -7,6 +7,7 @@ const OLIVE_DARK = "#3A4429";
 const CREAM = "#F5EFE6";
 const CHAMPAGNE = "#F5EFE6";
 const INK = "#1A1A18";
+const CARAMEL = "#C9A87C";
 const MUTED_TXT = "#6B7752";
 const MUTED = "#6B7752";
 
