@@ -28,7 +28,7 @@ export type WhatsAppOptions = {
 };
 
 const MESSAGES: Record<Exclude<WhatsAppContext, "pieza_especifica">, string> = {
-  home_hero: "Hola Maca, llego desde tu web, me gustaría cotizar una joya 💛",
+  home_hero: "Hola Maca, vengo de Instagram y quiero cotizar una pieza",
   anillo_compromiso: "Hola Maca, me interesa un anillo de compromiso",
   argollas: "Hola Maca, me interesa cotizar argollas de matrimonio",
   pieza_custom: "Hola Maca, quiero diseñar una joya a medida",

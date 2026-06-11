@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Instagram } from "lucide-react";
+import { Shield, Diamond, Clock, MapPin } from "lucide-react";
 import heroImg from "@/assets/hero-halo-cushion.png";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const OLIVE = "#4A5536";
 const OLIVE_DARK = "#3A4429";
@@ -13,22 +12,7 @@ const MUTED_TXT = "#6B7752";
 const MUTED = "#6B7752";
 
 const HERO_IMG = heroImg;
-
-// Pinterest icon (lineal)
-const PinterestIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <circle cx="12" cy="12" r="10" />
-    <path d="M11 7c2.5-.5 5 1 5 3.5S14 15 12 14.5c-.7-.2-1-.8-.8-1.5l1.3-5.5" />
-    <path d="M11 14l-1.5 6" />
-  </svg>
-);
-
-// TikTok icon (lineal)
-const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
-  </svg>
-);
+const INSTAGRAM_WA_URL = "https://wa.me/56984049502?text=Hola%20Maca%2C%20vengo%20de%20Instagram%20y%20quiero%20cotizar%20una%20pieza";
 
 const Hero = () => {
   const imgRef = useRef<HTMLDivElement>(null);
@@ -40,7 +24,6 @@ const Hero = () => {
       raf && cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
         const y = window.scrollY;
-        // 0.92x scroll => translate up by 0.08x
         setOffset(y * -0.08);
       });
     };
@@ -60,7 +43,7 @@ const Hero = () => {
       <div
         ref={imgRef}
         className="relative overflow-hidden md:w-[60%] w-full"
-        style={{ minHeight: "60vh" }}
+        style={{ minHeight: "45vh" }}
       >
         <div className="absolute inset-0 md:hidden">
           <img
@@ -91,22 +74,19 @@ const Hero = () => {
       {/* Texto */}
       <div
         className="md:w-[40%] flex items-center"
-        style={{ background: CHAMPAGNE, minHeight: "60vh" }}
+        style={{ background: CHAMPAGNE, minHeight: "auto" }}
       >
-        <div
-          className="w-full"
-          style={{ padding: "32px" }}
-        >
+        <div className="w-full" style={{ padding: "24px" }}>
           <div className="md:p-[80px] md:pl-[64px] p-0 max-w-[560px]">
 
             <h1
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 400,
-                fontSize: "clamp(32px, 4.4vw, 56px)",
-                lineHeight: 1.15,
+                fontSize: "clamp(28px, 4.4vw, 56px)",
+                lineHeight: 1.12,
                 color: INK,
-                marginBottom: "20px",
+                marginBottom: "12px",
               }}
             >
               La joya que se hereda empieza con una <em>conversación</em>
@@ -115,100 +95,91 @@ const Hero = () => {
             <p
               style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: "14px",
-                fontWeight: 300,
+                fontSize: "13px",
+                fontWeight: 400,
                 color: MUTED_TXT,
-                lineHeight: 1.6,
-                maxWidth: "460px",
-                marginBottom: "36px",
-              }}
-            >
-              Diseño a medida en oro 18k y platino. Diamantes certificados GIA/IGI. Showroom en Vitacura.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={buildWhatsAppUrl("home_hero")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-center transition-all"
-                style={{
-                  background: OLIVE,
-                  color: CREAM,
-                  padding: "14px 32px",
-                  borderRadius: "999px",
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: "14px",
-                  fontWeight: 500,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = OLIVE_DARK;
-                  e.currentTarget.style.transform = "translateY(-1px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = OLIVE;
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-              >
-                Cotiza tu pieza
-              </a>
-            </div>
-
-            <p
-              style={{
-                marginTop: "12px",
-                fontFamily: "'Inter', sans-serif",
-                fontSize: "12px",
                 lineHeight: 1.5,
-                color: MUTED,
+                maxWidth: "480px",
+                marginBottom: "20px",
               }}
             >
-              Te respondo personalmente en menos de 24h hábiles, sin compromiso
+              Anillos de compromiso y joyas a medida en oro 18k y platino, hechas a mano en Santiago. Diamantes certificados GIA/IGI.
             </p>
 
-
-            <p
+            {/* CTA primario */}
+            <a
+              href={INSTAGRAM_WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-center transition-all inline-block"
               style={{
-                marginTop: "48px",
+                background: OLIVE,
+                color: CREAM,
+                padding: "16px 36px",
+                borderRadius: "999px",
                 fontFamily: "'Inter', sans-serif",
-                fontSize: "12px",
-                letterSpacing: "0.05em",
-                color: MUTED,
+                fontSize: "15px",
+                fontWeight: 500,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = OLIVE_DARK;
+                e.currentTarget.style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = OLIVE;
+                e.currentTarget.style.transform = "translateY(0)";
               }}
             >
-              Garantía por Gusto, diamantes certificados, showroom solo con cita previa
+              Cotiza tu pieza
+            </a>
+
+            {/* CTA secundario */}
+            <p style={{ marginTop: "10px" }}>
+              <a
+                href="/agenda"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: "12px",
+                  color: MUTED,
+                  textDecoration: "underline",
+                  textUnderlineOffset: "3px",
+                  textDecorationColor: "rgba(107,119,82,0.3)",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = CARAMEL)}
+                onMouseLeave={(e) => (e.currentTarget.style.color = MUTED)}
+              >
+                ¿Prefieres ver las piezas en persona? Agendar visita al showroom
+              </a>
             </p>
 
-            <div className="flex items-center gap-4" style={{ marginTop: "16px", color: MUTED }}>
-              <a
-                href="https://instagram.com/giasolari.cl"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="hero-social"
-              >
-                <Instagram size={18} strokeWidth={1.5} />
-              </a>
-              <a
-                href="https://cl.pinterest.com/giasolarijoyas/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Pinterest"
-                className="hero-social"
-              >
-                <PinterestIcon width={18} height={18} />
-              </a>
-              <a
-                href="https://www.tiktok.com/@giasolari.cl"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TikTok"
-                className="hero-social"
-              >
-                <TikTokIcon width={18} height={18} />
-              </a>
+            {/* Barra de confianza */}
+            <div
+              className="flex flex-wrap items-center gap-x-4 gap-y-2"
+              style={{ marginTop: "20px" }}
+            >
+              {[
+                { icon: Shield, text: "Garantía por Gusto" },
+                { icon: Diamond, text: "Diamantes certificados" },
+                { icon: Clock, text: "Respuesta personal en 24h" },
+                { icon: MapPin, text: "Showroom en Vitacura" },
+              ].map((item) => (
+                <span
+                  key={item.text}
+                  className="inline-flex items-center gap-1"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: "11px",
+                    color: MUTED,
+                    letterSpacing: "0.01em",
+                  }}
+                >
+                  <item.icon size={13} strokeWidth={1.5} />
+                  {item.text}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -218,8 +189,6 @@ const Hero = () => {
         @media (min-width: 768px) {
           section[class*="flex-row"] > div:first-child { height: auto; min-height: 88vh; }
         }
-        .hero-social { color: ${MUTED}; transition: color .2s; }
-        .hero-social:hover { color: ${CARAMEL}; }
       `}</style>
     </section>
   );

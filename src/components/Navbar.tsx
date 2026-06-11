@@ -297,39 +297,31 @@ const Navbar = () => {
           </div>
 
           {/* Right zone - desktop */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-5">
             <a
               href="/cotizar"
-              className="transition-colors"
+              className="nav-underline"
               style={{
-                background: OLIVE,
-                color: CREAM,
-                padding: "10px 22px",
-                borderRadius: "999px",
                 fontFamily: "'Inter', sans-serif",
-                fontSize: "13px",
                 fontWeight: 500,
-                letterSpacing: "0.08em",
+                fontSize: "13px",
+                letterSpacing: "0.06em",
                 textTransform: "uppercase",
+                color: OLIVE,
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = OLIVE_DARK)}
-              onMouseLeave={(e) => (e.currentTarget.style.background = OLIVE)}
             >
               Cotizar
             </a>
             <a
               href="/agenda"
-              className="transition-colors"
+              className="nav-underline"
               style={{
-                border: `1px solid ${OLIVE}`,
-                color: OLIVE,
-                padding: "10px 22px",
-                borderRadius: "999px",
                 fontFamily: "'Inter', sans-serif",
-                fontSize: "13px",
                 fontWeight: 500,
-                letterSpacing: "0.08em",
+                fontSize: "13px",
+                letterSpacing: "0.06em",
                 textTransform: "uppercase",
+                color: MUTED,
               }}
             >
               Agendar
@@ -342,17 +334,6 @@ const Navbar = () => {
               className="p-2 rounded-full hover:bg-[#F5EFE6] transition-colors"
             >
               <Heart size={20} strokeWidth={1.5} style={{ color: INK }} />
-            </a>
-
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-              title="WhatsApp"
-              className="p-2 rounded-full transition-colors group"
-            >
-              <WhatsAppIcon className="w-5 h-5 transition-colors" />
             </a>
           </div>
 
@@ -441,17 +422,6 @@ const Navbar = () => {
                 }}
               >
                 Agendar
-              </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="flex items-center justify-center gap-2 mt-2"
-                style={{ color: "#25D366", fontFamily: "'Inter', sans-serif", fontSize: "13px", letterSpacing: "0.08em", textTransform: "uppercase" }}
-              >
-                <WhatsAppIcon className="w-5 h-5" />
-                WhatsApp
               </a>
             </div>
           </motion.div>
