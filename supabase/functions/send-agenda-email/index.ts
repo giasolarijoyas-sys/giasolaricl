@@ -109,8 +109,9 @@ serve(async (req) => {
   }
 
   if (!RESEND_API_KEY) {
+    console.error("RESEND_API_KEY not configured");
     return new Response(
-      JSON.stringify({ error: "RESEND_API_KEY not configured" }),
+      JSON.stringify({ error: "Internal server error" }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
     );
   }
