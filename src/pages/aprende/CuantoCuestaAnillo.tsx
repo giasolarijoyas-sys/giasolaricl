@@ -100,7 +100,7 @@ const CuantoCuestaAnillo = () => (
                 <p>• Boceto antes de avanzar (no rendering 3D, dibujo de verdad).</p>
                 <p>• Materiales certificados (oro, platino, diamantes).</p>
                 <p>• Ajuste de talla incluido.</p>
-                <p>• Garantía por gusto: si no te enamora cuando lo ves, lo arreglamos.</p>
+                <p>• Garantía por gusto: si no te fascina cuando lo ves, lo arreglamos.</p>
               </section>
             </div>
 

@@ -13,7 +13,7 @@ const valores = [
   { icon: Gem, title: "Certificación real", desc: "Solo piedras con certificado GIA o IGI. Sin excepciones." },
   { icon: ShieldCheck, title: "Transparencia total", desc: "Te explico cada material, cada costo y cada paso del proceso." },
   { icon: Users, title: "Atención personalizada", desc: "Te acompaño de principio a fin. No delego tu proyecto." },
-  { icon: Heart, title: "Garantía por gusto", desc: "Si no te encanta, lo cambiamos. Así de simple." },
+  { icon: Heart, title: "Garantía por gusto", desc: "Si no te fascina, lo cambiamos. Así de simple." },
 ];
 
 const SobreGia = () => (
@@ -54,10 +54,13 @@ const SobreGia = () => (
           <motion.div className="space-y-5 text-foreground leading-relaxed">
             <p><strong className="text-foreground">Aprendí a mirar las joyas con mi mamá.</strong> En su cómoda guardaba las piezas que habían sido de mi abuela , cada una con un nombre, una fecha, una historia que volvía cada vez que alguien las usaba. Esa fue mi primera lección: <em>una joya no se compra, se hereda</em>.</p>
             <p>Hoy diseño junto a Gianna , mi mamá y socia,  en un taller pequeño en Santiago. Trabajamos con orfebres que nos acompañan hace años, y cada pieza pasa por mis manos antes de llegar a las tuyas.</p>
-            <p>Estudié gemología en el <strong className="text-foreground">GIA</strong> (Gemological Institute of America) para entender, una a una, las piedras que elijo. Me especialicé en platino y diamantes certificados porque creo que quien invierte en una joya merece saber exactamente qué está comprando.</p>
+            <p>Soy joyera y futura gemóloga: actualmente me especializo en gemología en el <strong className="text-foreground">IGE</strong> (Instituto Gemológico Español). Por eso elijo y reviso cada piedra con criterio: quien invierte en una joya merece saber exactamente qué está comprando.</p>
+            <p><strong className="text-foreground">El nombre.</strong> "Gia" viene de Gianna Solari, mi mamá, y a la vez de <strong className="text-foreground">GIA</strong>, el instituto gemológico de referencia mundial. Dos raíces, una sola promesa: rigor y oficio detrás de cada pieza.</p>
+            <p><strong className="text-foreground">Una joya que literalmente trasciende generaciones.</strong> Todas las nietas de la familia llevamos un anillo hecho con el oro de una pulsera que era de nuestra abuela. Ese gesto, fundir el oro de una mujer para que siga vivo en sus nietas, es lo que intento traducir en cada pieza que sale del taller.</p>
             <p>No tengo vitrina ni stock. Tampoco hago dos piezas iguales. Cada anillo, cada argolla, cada joya nace de una conversación: <strong className="text-foreground">me cuentas tu historia, yo la traduzco en metal y piedra.</strong></p>
             <p className="italic text-foreground font-display text-lg">"Me cuentas tu historia. Yo la convierto en joya."</p>
           </motion.div>
+
         </div>
       </section>
 

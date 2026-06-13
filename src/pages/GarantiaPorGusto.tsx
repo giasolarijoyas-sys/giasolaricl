@@ -14,11 +14,12 @@ import {
 } from "@/components/ui/accordion";
 
 const items = [
-  { icon: ShieldCheck, title: "¿Qué cubre?", desc: "Si no te encanta el resultado final de tu joya, la rehacemos. Esto aplica a joyas diseñadas y fabricadas por Gia Solari." },
+  { icon: ShieldCheck, title: "¿Qué cubre?", desc: "Si no te fascina el resultado final, la rehago sin costo usando tu mismo metal y tus mismas piedras. Si quieres sumar piedras o subir de material, se puede pagando solo esa diferencia. Incluye ajuste de talla." },
   { icon: RefreshCw, title: "Plazo", desc: "Tienes 30 días desde la entrega para comunicarnos cualquier inconformidad. Nos ponemos en contacto contigo para evaluar la mejor solución." },
   { icon: Ruler, title: "Cambio de talla gratis", desc: "Incluimos un ajuste de talla sin costo (hasta 2 tallas arriba o abajo) durante los primeros 3 meses." },
   { icon: MessageCircle, title: "Ajuste de diseño", desc: "Si algún detalle del diseño no te convence, lo conversamos y buscamos la mejor solución juntas. Tu satisfacción es nuestra prioridad." },
 ];
+
 
 const faqs = [
   {
@@ -39,7 +40,7 @@ const faqs = [
   },
   {
     q: "¿Qué pasa si quiero modificar la pieza en vez de devolverla?",
-    a: "Es lo más común y lo que más nos gusta hacer. Si quieres cambiar el tipo de engaste, ajustar la proporción, sumar un detalle o cambiar la silueta, lo conversamos y rediseñamos sobre la pieza original. La idea es que termines con una joya que de verdad te enamore, no que te quedes con algo que no usas.",
+    a: "Es lo más común y lo que más nos gusta hacer. Si quieres cambiar el tipo de engaste, ajustar la proporción, sumar un detalle o cambiar la silueta, lo conversamos y rediseñamos sobre la pieza original. La idea es que termines con una joya que de verdad te fascine, no que te quedes con algo que no usas.",
   },
 ];
 
@@ -47,7 +48,7 @@ const GarantiaPorGusto = () => (
   <>
     <SEO
       title="Garantía por Gusto y certificación | Gia Solari"
-      description="Si no te encanta tu joya, la rehacemos. Garantía por Gusto, certificación Gia Solari y diamantes con certificado GIA opcional. Tranquilidad para invertir."
+      description="Si no te fascina tu joya, la rehacemos. Garantía por Gusto, certificación Gia Solari y diamantes con certificado GIA opcional. Tranquilidad para invertir."
       path="/garantia-por-gusto"
     />
     <div className="min-h-screen">
@@ -59,14 +60,14 @@ const GarantiaPorGusto = () => (
           <motion.div animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
             <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">Compromiso</p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground">Garantía por Gusto</h1>
-            <p className="text-muted-foreground mt-4 max-w-md mx-auto italic font-display text-lg">Si no te encanta, lo cambiamos. Así de simple.</p>
+            <p className="text-muted-foreground mt-4 max-w-md mx-auto italic font-display text-lg">Si no te fascina, lo cambiamos. Así de simple.</p>
           </motion.div>
 
           <motion.div
             className="space-y-5 text-muted-foreground leading-relaxed text-base md:text-[17px] mb-12"
           >
             <p>
-              La Garantía por Gusto nace de algo simple: creemos que una joya que vas a usar toda la vida tiene que empezar por gustarte de verdad. No la mitad. No "está bonita". Tiene que enamorarte. Y como diseñar una pieza de autor es un proceso íntimo, donde a veces lo que imaginas y lo que terminas recibiendo necesitan un último ajuste, te damos espacio real para confirmarlo.
+              La Garantía por Gusto nace de algo simple: creemos que una joya que vas a usar toda la vida tiene que empezar por fascinarte de verdad. No la mitad. No "está bonita". Tiene que fascinarte. Y como diseñar una pieza de autor es un proceso íntimo, donde a veces lo que imaginas y lo que terminas recibiendo necesitan un último ajuste, te damos espacio real para confirmarlo.
             </p>
             <p>
               No somos una joyería industrial que produce en masa y se desentiende. Cada pieza que sale del taller es una conversación que tuvimos contigo, y queremos que esa conversación termine bien. Por eso, si al recibirla algo no se siente tuyo, la rehacemos. No es un favor ni una excepción: es parte de cómo trabajamos. Tu tranquilidad es la base de nuestra relación.
