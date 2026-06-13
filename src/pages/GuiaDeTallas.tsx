@@ -33,6 +33,23 @@ const GuiaDeTallas = () => (
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground">Guía de Tallas</h1>
           </motion.div>
 
+          {/* Método más fácil */}
+          <div className="bg-primary/5 border border-primary/30 rounded-lg p-6 md:p-8 mb-6">
+            <p className="text-primary tracking-[0.2em] uppercase text-[11px] mb-2">El método más fácil</p>
+            <h2 className="font-display text-xl text-foreground mb-3">¿No sabes su talla?</h2>
+            <p className="text-foreground/85 text-sm leading-relaxed mb-4">
+              Mándame una foto de su mano y la calculo con muy alta precisión, sin que se entere. Es el método que más uso para sorpresas.
+            </p>
+            <a
+              href="https://wa.me/56984049502?text=Hola%20Maca%2C%20quiero%20calcular%20la%20talla%20a%20partir%20de%20una%20foto%20de%20su%20mano"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 text-xs tracking-[0.2em] uppercase bg-primary text-primary-foreground hover:opacity-90 transition-opacity rounded-md"
+            >
+              Enviar foto por WhatsApp
+            </a>
+          </div>
+
           {/* Instructions */}
           <div className="bg-card border border-border rounded-lg p-6 md:p-8 mb-10">
             <h2 className="font-display text-xl text-foreground mb-4">Cómo medir tu talla en casa</h2>
@@ -45,6 +62,7 @@ const GuiaDeTallas = () => (
             </ol>
             <p className="text-muted-foreground text-xs mt-4 italic">Tip: Mide al final del día cuando tus dedos están más anchos. Si dudas entre dos tallas, elige la mayor.</p>
           </div>
+
 
           {/* Table */}
           <div className="overflow-x-auto">
