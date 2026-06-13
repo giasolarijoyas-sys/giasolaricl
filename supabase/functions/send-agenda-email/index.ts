@@ -207,10 +207,9 @@ serve(async (req) => {
       { headers: { ...corsHeaders, "Content-Type": "application/json" } },
     );
   } catch (err) {
-    const msg = err instanceof Error ? err.message : "Unknown error";
-    console.error("send-agenda-email error:", msg);
+    console.error("send-agenda-email error:", err);
     return new Response(
-      JSON.stringify({ error: msg }),
+      JSON.stringify({ error: "Internal server error" }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
     );
   }
