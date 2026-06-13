@@ -89,6 +89,63 @@ const GarantiaPorGusto = () => (
         </div>
       </section>
 
+      {/* Origen — historia real de Maca */}
+      <section className="py-16 md:py-24" style={{ backgroundColor: "#F5F0E8" }}>
+        <div className="container mx-auto px-4 md:px-8 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-10"
+          >
+            <p
+              className="text-xs uppercase mb-4"
+              style={{ color: "#B8995A", letterSpacing: "0.3em" }}
+            >
+              Origen
+            </p>
+            <h2
+              className="font-display text-3xl md:text-4xl"
+              style={{ color: "#1A1614" }}
+            >
+              Por qué existe esta garantía
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="relative px-8 py-10 md:px-14 md:py-14"
+            style={{
+              backgroundColor: "#FDFAF6",
+              border: "1px solid #D4C5A9",
+              borderLeft: "3px solid #B8995A",
+            }}
+          >
+            <Heart
+              className="w-5 h-5 mb-6"
+              style={{ color: "#B8995A" }}
+              strokeWidth={1.5}
+            />
+            <blockquote
+              className="font-display italic text-lg md:text-xl leading-relaxed mb-8"
+              style={{ color: "#1A1614" }}
+            >
+              La Garantía por Gusto nació de algo que viví. A mí me encantan los detalles y lo vintage, soy exigente. Cuando mi marido diseñó mi anillo de compromiso, preguntó en las joyerías de acá y ninguna le daba solución si algo hecho a medida no me gustaba. Para asegurarse, lo mandó a hacer a Estados Unidos. Nadie debería tener que hacer eso para quedarse tranquilo. Por eso, en Gia Solari, si no te fascina, lo rediseñamos. Acá, conmigo.
+            </blockquote>
+            <p
+              className="text-xs uppercase tracking-[0.25em]"
+              style={{ color: "#B8995A" }}
+            >
+              Maca, Gia Solari
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-16 md:py-20 bg-card">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
