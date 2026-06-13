@@ -23,9 +23,12 @@ import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 
 import InstagramFeed from "@/components/InstagramFeed";
 import ComoTeAyudo from "@/components/ComoTeAyudo";
+import Posventa from "@/components/Posventa";
+import PorQueAMedida from "@/components/PorQueAMedida";
 
 
 import SignificadosTeaser from "@/components/SignificadosTeaser";
+
 import LeadMagnetGuia from "@/components/LeadMagnetGuia";
 
 
@@ -74,6 +77,11 @@ const Index = () => {
       {/* ¿Cómo te ayudo?, atención personal */}
       <ComoTeAyudo />
 
+      {/* ¿Por qué a medida? — comparación */}
+      <PorQueAMedida />
+
+
+
 
 
       {/* 6. Proceso en 3 pasos */}
@@ -105,6 +113,11 @@ const Index = () => {
 
       {/* Garantía por Gusto - promesa de marca */}
       <GarantiaSection />
+
+      {/* Posventa: certificado, limpieza, garantía de uso normal */}
+      <Posventa />
+
+
 
       {/* 10. Formulario de cotización (wizard) */}
       <QuoteWizard />

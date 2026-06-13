@@ -92,7 +92,7 @@ const Terminos = () => {
               </p>
               <ul className="space-y-2">
                 <li>
-                  Si al recibir tu joya personalizada <strong>no te encanta el resultado</strong>, la rehacemos para asegurar tu satisfacción total.
+                  Si al recibir tu joya personalizada <strong>no te fascina el resultado</strong>, la rehacemos para asegurar tu satisfacción total.
                 </li>
                 <li>
                   Esta garantía aplica siempre que la pieza se haya fabricado según el diseño aprobado por el cliente. Si el cliente solicita cambios al diseño original, se evaluará caso a caso.

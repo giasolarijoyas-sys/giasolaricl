@@ -86,11 +86,24 @@ const Hero = () => {
                 fontSize: "clamp(28px, 4.4vw, 56px)",
                 lineHeight: 1.12,
                 color: INK,
-                marginBottom: "12px",
+                marginBottom: "10px",
               }}
             >
               La joya que se hereda empieza con una <em>conversación</em>
             </h1>
+
+            <p
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontStyle: "italic",
+                fontSize: "15px",
+                color: CARAMEL,
+                letterSpacing: "0.04em",
+                marginBottom: "14px",
+              }}
+            >
+              Joyas que trascienden generaciones
+            </p>
 
             <p
               style={{
@@ -105,6 +118,7 @@ const Hero = () => {
             >
               Anillos de compromiso y joyas a medida en oro 18k y platino, hechas a mano en Santiago. Diamantes certificados GIA/IGI.
             </p>
+
 
             {/* CTA primario */}
             <a
