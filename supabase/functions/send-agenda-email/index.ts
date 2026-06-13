@@ -98,7 +98,7 @@ async function sendEmail(opts: {
   const data = await res.json();
   if (!res.ok) {
     console.error("Resend error:", res.status, data);
-    throw new Error(typeof data === "object" ? JSON.stringify(data) : "Resend error");
+    throw new Error("Email delivery failed");
   }
   return data;
 }
@@ -109,8 +109,9 @@ serve(async (req) => {
   }
 
   if (!RESEND_API_KEY) {
+    console.error("RESEND_API_KEY not configured");
     return new Response(
-      JSON.stringify({ error: "RESEND_API_KEY not configured" }),
+      JSON.stringify({ error: "Internal server error" }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
     );
   }
@@ -206,10 +207,9 @@ serve(async (req) => {
       { headers: { ...corsHeaders, "Content-Type": "application/json" } },
     );
   } catch (err) {
-    const msg = err instanceof Error ? err.message : "Unknown error";
-    console.error("send-agenda-email error:", msg);
+    console.error("send-agenda-email error:", err);
     return new Response(
-      JSON.stringify({ error: msg }),
+      JSON.stringify({ error: "Internal server error" }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
     );
   }
