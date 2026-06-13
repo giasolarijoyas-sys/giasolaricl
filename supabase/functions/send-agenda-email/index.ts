@@ -98,7 +98,7 @@ async function sendEmail(opts: {
   const data = await res.json();
   if (!res.ok) {
     console.error("Resend error:", res.status, data);
-    throw new Error(typeof data === "object" ? JSON.stringify(data) : "Resend error");
+    throw new Error("Email delivery failed");
   }
   return data;
 }
