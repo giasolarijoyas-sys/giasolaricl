@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { motion } from "framer-motion";
-import { ShieldCheck, RefreshCw, Ruler, MessageCircle, Quote, Gift } from "lucide-react";
+import { ShieldCheck, RefreshCw, Ruler, MessageCircle, Quote, Gift, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import {
