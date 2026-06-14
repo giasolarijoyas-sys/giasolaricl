@@ -114,12 +114,12 @@ const EnTusManos = () => {
             ¿Ya tienes tu pieza? Etiquétame en Instagram
           </p>
           <a
-            href="https://www.instagram.com/giasolari.cl/"
+            href="https://www.instagram.com/giasolarijoyas/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-2.5 border border-primary text-primary text-sm tracking-widest uppercase hover:bg-primary hover:text-primary-foreground transition-all"
           >
-            @giasolari.cl
+            @giasolarijoyas
           </a>
         </motion.div>
       </div>

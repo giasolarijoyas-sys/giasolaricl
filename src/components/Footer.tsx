@@ -1,6 +1,14 @@
 import { Instagram } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
+const ThreadsIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z" opacity="0" />
+    <path d="M9.5 10.5c0-1.1.9-2 2-2h.5c1.7 0 3 1.3 3 3v.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5v-3c0-2.5 2-4.5 4.5-4.5h.5" />
+    <path d="M12 17.5v-4" />
+  </svg>
+);
+
 const PinterestIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <circle cx="12" cy="12" r="10" />
@@ -35,6 +43,17 @@ const Footer = () => {
             <p className="mt-2 leading-relaxed" style={{ color: "#EBE2D2", opacity: 0.7 }}>
               Fundado en 2019 por Macarena González Solari.
             </p>
+            <div className="flex items-center gap-4 mt-5" style={{ color: "#C9A87C" }}>
+              <a href="https://www.instagram.com/giasolarijoyas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
+                <Instagram size={20} strokeWidth={1.5} />
+              </a>
+              <a href="https://www.tiktok.com/@giasolarijoyas" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:opacity-70 transition-opacity">
+                <TikTokIcon width={20} height={20} />
+              </a>
+              <a href="https://www.threads.com/@giasolarijoyas" target="_blank" rel="noopener noreferrer" aria-label="Threads" className="hover:opacity-70 transition-opacity">
+                <ThreadsIcon width={20} height={20} />
+              </a>
+            </div>
           </div>
 
           {/* COL 2 - Catálogo */}
@@ -151,13 +170,13 @@ const Footer = () => {
           </p>
 
           <div className="flex items-center gap-5" style={{ color: "#C9A87C" }}>
-            <a href="https://www.instagram.com/giasolari.cl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
+            <a href="https://www.instagram.com/giasolarijoyas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
               <Instagram size={16} strokeWidth={1.5} />
             </a>
             <a href="https://cl.pinterest.com/giasolarijoyas/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className="hover:opacity-70 transition-opacity">
               <PinterestIcon width={16} height={16} />
             </a>
-            <a href="https://www.tiktok.com/@giasolari.cl" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:opacity-70 transition-opacity">
+            <a href="https://www.tiktok.com/@giasolarijoyas" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:opacity-70 transition-opacity">
               <TikTokIcon width={16} height={16} />
             </a>
             <a href={buildWhatsAppUrl("generico")} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:opacity-70 transition-opacity">

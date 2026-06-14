@@ -198,7 +198,7 @@ const Terminos = () => {
               </p>
               <ul className="space-y-1">
                 <li>• <strong>WhatsApp:</strong> +56 9 8404 9502</li>
-                <li>• <strong>Instagram:</strong> @giasolari.cl</li>
+                <li>• <strong>Instagram:</strong> @giasolarijoyas</li>
                 <li>• <strong>Showroom:</strong> Atención con cita previa, Vitacura, Santiago</li>
               </ul>
             </section>
