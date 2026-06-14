@@ -13,6 +13,9 @@ const RangoInversion = () => (
           Cada pieza se cotiza según el diseño, el metal y la piedra que elijas.
           Conversemos por WhatsApp y armamos juntas el valor de la tuya.
         </p>
+        <p className="text-muted-foreground/80 text-xs leading-relaxed mt-5 pt-5 border-t border-border">
+          <span aria-hidden="true">💳</span> Transferencia bancaria · Tarjeta de crédito · Cuotas sin interés disponibles · Consulta condiciones
+        </p>
       </div>
 
       <div className="text-center mt-8">
