@@ -315,6 +315,7 @@ const Joyas = () => {
       <SEO title={dynamicTitle} description={dynamicDesc} path="/joyas" />
       <Helmet>
         <link rel="canonical" href="https://www.giasolari.cl/joyas" />
+        <style>{`.joya-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.08);}`}</style>
       </Helmet>
       <Navbar />
 
