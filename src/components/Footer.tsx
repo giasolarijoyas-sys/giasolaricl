@@ -1,6 +1,14 @@
 import { Instagram } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
+const ThreadsIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z" opacity="0" />
+    <path d="M9.5 10.5c0-1.1.9-2 2-2h.5c1.7 0 3 1.3 3 3v.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5v-3c0-2.5 2-4.5 4.5-4.5h.5" />
+    <path d="M12 17.5v-4" />
+  </svg>
+);
+
 const PinterestIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <circle cx="12" cy="12" r="10" />
