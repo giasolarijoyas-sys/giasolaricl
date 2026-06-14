@@ -4,6 +4,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 
 import { TooltipProvider } from "@/components/ui/tooltip";
+import WhatsAppButton from "./components/WhatsAppButton";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Terminos from "./pages/Terminos.tsx";
