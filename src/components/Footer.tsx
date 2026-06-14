@@ -45,15 +45,15 @@ const Footer = () => {
             <p className="mt-2 leading-relaxed" style={{ color: "#EBE2D2", opacity: 0.7 }}>
               Fundado en 2019 por Macarena González Solari.
             </p>
-            <div className="flex items-center gap-4 mt-5" style={{ color: "#C9A87C" }}>
+            <div className="flex items-center mt-5" style={{ color: "#FFFFFF", gap: "16px" }}>
               <a href="https://www.instagram.com/giasolarijoyas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
-                <Instagram size={20} strokeWidth={1.5} />
+                <InstagramBrandIcon width={24} height={24} />
               </a>
               <a href="https://www.tiktok.com/@giasolarijoyas" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:opacity-70 transition-opacity">
-                <TikTokIcon width={20} height={20} />
+                <TikTokIcon width={24} height={24} />
               </a>
               <a href="https://www.threads.com/@giasolarijoyas" target="_blank" rel="noopener noreferrer" aria-label="Threads" className="hover:opacity-70 transition-opacity">
-                <ThreadsIcon width={20} height={20} />
+                <ThreadsIcon width={24} height={24} />
               </a>
             </div>
           </div>
@@ -173,7 +173,7 @@ const Footer = () => {
 
           <div className="flex items-center gap-5" style={{ color: "#C9A87C" }}>
             <a href="https://www.instagram.com/giasolarijoyas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
-              <Instagram size={16} strokeWidth={1.5} />
+              <InstagramBrandIcon width={16} height={16} />
             </a>
             <a href="https://cl.pinterest.com/giasolarijoyas/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className="hover:opacity-70 transition-opacity">
               <PinterestIcon width={16} height={16} />
