@@ -170,13 +170,13 @@ const Footer = () => {
           </p>
 
           <div className="flex items-center gap-5" style={{ color: "#C9A87C" }}>
-            <a href="https://www.instagram.com/giasolari.cl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
+            <a href="https://www.instagram.com/giasolarijoyas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
               <Instagram size={16} strokeWidth={1.5} />
             </a>
             <a href="https://cl.pinterest.com/giasolarijoyas/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className="hover:opacity-70 transition-opacity">
               <PinterestIcon width={16} height={16} />
             </a>
-            <a href="https://www.tiktok.com/@giasolari.cl" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:opacity-70 transition-opacity">
+            <a href="https://www.tiktok.com/@giasolarijoyas" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:opacity-70 transition-opacity">
               <TikTokIcon width={16} height={16} />
             </a>
             <a href={buildWhatsAppUrl("generico")} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:opacity-70 transition-opacity">

@@ -128,6 +128,25 @@ const Newsletter = () => {
             </button>
           </form>
         )}
+        <p
+          className="mt-6"
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontStyle: "italic",
+            fontSize: "14px",
+            color: "rgba(245,239,230,0.7)",
+          }}
+        >
+          También puedes seguirnos en{" "}
+          <a href="https://www.tiktok.com/@giasolarijoyas" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C9A87C] transition-colors">
+            TikTok
+          </a>{" "}
+          e{" "}
+          <a href="https://www.instagram.com/giasolarijoyas/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C9A87C] transition-colors">
+            Instagram
+          </a>
+          : @giasolarijoyas
+        </p>
       </div>
     </section>
   );

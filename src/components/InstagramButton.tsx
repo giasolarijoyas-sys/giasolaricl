@@ -3,7 +3,7 @@ import { Instagram } from "lucide-react";
 const InstagramButton = () => {
   return (
     <a
-      href="https://instagram.com/giasolari.cl"
+      href="https://instagram.com/giasolarijoyas"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed z-[999] flex items-center justify-center rounded-full bottom-[156px] right-5 sm:bottom-[88px] sm:right-6 w-14 h-14 hover:scale-105 transition-transform"
