@@ -17,13 +17,10 @@ const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) =>
     <>
       <InstagramButton />
       <div
-        className={`fixed z-[9999] ${hideOnMobile ? "hidden sm:block" : ""}`}
-        style={{
-          bottom: "20px",
-          right: "16px",
-        }}
+        className={`fixed bottom-5 right-4 sm:bottom-6 sm:right-6 ${hideOnMobile ? "hidden sm:block" : "block"}`}
+        style={{ zIndex: 9999 }}
       >
-        <div className="relative sm:bottom-0 sm:right-0" style={{ position: "relative" }}>
+        <div className="relative">
           {/* Tooltip desktop */}
           <span
             className="hidden sm:block absolute right-full top-1/2 -translate-y-1/2 mr-3 whitespace-nowrap pointer-events-none transition-opacity"
@@ -54,7 +51,7 @@ const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) =>
               setHover(false);
               e.currentTarget.style.transform = "scale(1)";
             }}
-            className="flex items-center justify-center rounded-full whatsapp-fab"
+            className="flex items-center justify-center rounded-full w-[50px] h-[50px] sm:w-14 sm:h-14"
             style={{
               background: "#25D366",
               boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
@@ -64,22 +61,7 @@ const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) =>
             <WhatsAppIcon size={28} />
           </a>
         </div>
-
-        <style>{`
-          .whatsapp-fab {
-            width: 50px;
-            height: 50px;
-          }
-          @media (min-width: 640px) {
-            .whatsapp-fab { width: 56px; height: 56px; }
-          }
-        `}</style>
       </div>
-      <style>{`
-        @media (min-width: 640px) {
-          [data-wa-wrapper] { bottom: 24px !important; right: 24px !important; }
-        }
-      `}</style>
     </>
   );
 };
