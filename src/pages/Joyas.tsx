@@ -482,7 +482,7 @@ const Joyas = () => {
                                 </span>
                               )}
                             </div>
-                            <div className="pt-5 px-1">
+                            <div className="py-4 px-1">
                               <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "20px", color: "#2A2520", lineHeight: 1.25, fontWeight: 400 }}>
                                 {p.nombre}
                               </h2>
