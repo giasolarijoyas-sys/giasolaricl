@@ -429,68 +429,70 @@ const Joyas = () => {
                 </div>
               ) : (
                 <>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-10 md:gap-x-6 md:gap-y-14">
-                    {visible.map((p, i) => (
-                      <motion.article
-                        key={p.slug}
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: Math.min(i, 5) * 0.04 }}
-                        className="group"
-                      >
-                        <Link to={`/joyas/${p.slug}`} className="block">
-                          <div className="relative overflow-hidden" style={{ aspectRatio: "4 / 5", background: CREAM_WARM }}>
-                            <img
-                              src={p.imagenes[0]}
-                              alt={`${p.nombre}, ${p.material}`}
-                              loading={i < 6 ? "eager" : "lazy"}
-                              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            />
-                            {p.categoria === "Vintage" && (
-                              <span
-                                className="absolute top-3 left-3"
-                                style={{
-                                  background: TERRACOTA,
-                                  color: CREAM,
-                                  fontFamily: "Inter, sans-serif",
-                                  fontSize: "10px",
-                                  letterSpacing: "0.18em",
-                                  textTransform: "uppercase",
-                                  padding: "4px 10px",
-                                }}
-                              >
-                                Vintage, Único
-                              </span>
-                            )}
-                            <button
-                              type="button"
-                              aria-label="Guardar en favoritos"
-                              onClick={(e) => { e.preventDefault(); }}
-                              className="absolute top-3 right-3 rounded-full transition-transform hover:scale-110"
-                              style={{
-                                width: 32, height: 32,
-                                background: "rgba(245,239,230,0.85)",
-                                backdropFilter: "blur(8px)",
-                                display: "flex", alignItems: "center", justifyContent: "center",
-                              }}
-                            >
-                              <Heart size={14} strokeWidth={1.5} style={{ color: INK }} />
-                            </button>
-                          </div>
-                          <div className="pt-4 px-1">
-                            <p style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: OLIVE_SOFT }}>
-                              {p.categoria}{p.estilo ? `, ${p.estilo}` : ""}
-                            </p>
-                            <h2 className="mt-1.5" style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "18px", color: OLIVE_DEEP, lineHeight: 1.2 }}>
-                              {p.nombre}
-                            </h2>
-                            <p className="mt-1.5" style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", color: CHAMPAGNE, fontWeight: 500 }}>
-                              Precio a cotizar
-                            </p>
-                          </div>
-                        </Link>
-                      </motion.article>
-                    ))}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {visible.map((p, i) => {
+                      const hoverImg = p.imagenes[1];
+                      const priceLabel = formatPrecioDesde(p.precioDesde) ?? "Precio a cotizar";
+                      return (
+                        <motion.article
+                          key={p.slug}
+                          initial={{ opacity: 0, y: 8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: Math.min(i, 5) * 0.04 }}
+                          className="group joya-card"
+                          style={{
+                            padding: "12px",
+                            borderRadius: "4px",
+                            transition: "box-shadow 0.3s ease, transform 0.3s ease",
+                          }}
+                        >
+                          <Link to={`/joyas/${p.slug}`} className="block">
+                            <div className="relative overflow-hidden" style={{ aspectRatio: "4 / 5", background: CREAM_WARM }}>
+                              <img
+                                src={p.imagenes[0]}
+                                alt={`${p.nombre}, ${p.material}`}
+                                loading={i < 6 ? "eager" : "lazy"}
+                                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+                                style={{ opacity: 1 }}
+                              />
+                              {hoverImg && (
+                                <img
+                                  src={hoverImg}
+                                  alt=""
+                                  aria-hidden="true"
+                                  loading="lazy"
+                                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                />
+                              )}
+                              {p.categoria === "Vintage" && (
+                                <span
+                                  className="absolute top-3 left-3"
+                                  style={{
+                                    background: TERRACOTA,
+                                    color: CREAM,
+                                    fontFamily: "Inter, sans-serif",
+                                    fontSize: "10px",
+                                    letterSpacing: "0.18em",
+                                    textTransform: "uppercase",
+                                    padding: "4px 10px",
+                                  }}
+                                >
+                                  Vintage, Único
+                                </span>
+                              )}
+                            </div>
+                            <div className="pt-5 px-1">
+                              <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "20px", color: "#2A2520", lineHeight: 1.25, fontWeight: 400 }}>
+                                {p.nombre}
+                              </h2>
+                              <p className="mt-2" style={{ fontFamily: "Inter, sans-serif", fontSize: "12.5px", color: "#7A7266", fontWeight: 400 }}>
+                                {priceLabel}
+                              </p>
+                            </div>
+                          </Link>
+                        </motion.article>
+                      );
+                    })}
                   </div>
 
                   {hasMore && (
