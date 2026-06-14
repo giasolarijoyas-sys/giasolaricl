@@ -198,29 +198,29 @@ const Joyas = () => {
       {/* TIPO */}
       <div className="pb-8" style={{ borderBottom: `1px solid ${LINE}` }}>
         <p className="mb-4" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: OLIVE_SOFT }}>Tipo</p>
-        <div className="flex flex-col gap-2.5">
-          {TIPOS.map((t) => (
-            <label key={t.id} className="flex items-center gap-3 cursor-pointer group">
-              <input
-                type="radio"
-                name="tipo"
-                checked={filters.tipo === t.id}
-                onChange={() => updateFilters({ tipo: t.id, estilo: [] })}
-                className="sr-only"
-              />
-              <span
-                className="inline-block rounded-full"
+        <div className="flex flex-wrap gap-2">
+          {TIPOS.map((t) => {
+            const active = filters.tipo === t.id;
+            return (
+              <button
+                key={t.id}
+                onClick={() => updateFilters({ tipo: t.id, estilo: [] })}
                 style={{
-                  width: 14, height: 14,
-                  border: `1px solid ${filters.tipo === t.id ? OLIVE : LINE}`,
-                  background: filters.tipo === t.id ? OLIVE : "transparent",
-                  boxShadow: filters.tipo === t.id ? `inset 0 0 0 3px ${CREAM}` : "none",
-                  flexShrink: 0,
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "12.5px",
+                  color: active ? OLIVE_DEEP : INK,
+                  background: "transparent",
+                  border: `${active ? 2 : 1}px solid ${OLIVE}`,
+                  borderRadius: "999px",
+                  padding: active ? "5px 13px" : "6px 14px",
+                  transition: "all 0.2s ease",
+                  cursor: "pointer",
                 }}
-              />
-              <span style={{ fontFamily: "Inter, sans-serif", fontSize: "13.5px", color: INK }}>{t.label}</span>
-            </label>
-          ))}
+              >
+                {t.label}
+              </button>
+            );
+          })}
         </div>
       </div>
 
