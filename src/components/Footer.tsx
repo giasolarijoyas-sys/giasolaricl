@@ -43,6 +43,17 @@ const Footer = () => {
             <p className="mt-2 leading-relaxed" style={{ color: "#EBE2D2", opacity: 0.7 }}>
               Fundado en 2019 por Macarena González Solari.
             </p>
+            <div className="flex items-center gap-4 mt-5" style={{ color: "#C9A87C" }}>
+              <a href="https://www.instagram.com/giasolarijoyas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
+                <Instagram size={20} strokeWidth={1.5} />
+              </a>
+              <a href="https://www.tiktok.com/@giasolarijoyas" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:opacity-70 transition-opacity">
+                <TikTokIcon width={20} height={20} />
+              </a>
+              <a href="https://www.threads.com/@giasolarijoyas" target="_blank" rel="noopener noreferrer" aria-label="Threads" className="hover:opacity-70 transition-opacity">
+                <ThreadsIcon width={20} height={20} />
+              </a>
+            </div>
           </div>
 
           {/* COL 2 - Catálogo */}
