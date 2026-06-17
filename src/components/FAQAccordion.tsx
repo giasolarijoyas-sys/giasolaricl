@@ -10,22 +10,27 @@ const faqs = [
   {
     question: "¿Por cuánto tiempo es válida la cotización?",
     answer:
-      "Las cotizaciones tienen validez de 10 días corridos desde que la recibes. El precio del oro y las piedras varía constantemente, por eso no podemos mantenerla por más tiempo. Si ya pasaron los 10 días, escríbenos y la actualizamos sin problema.",
+      "La cotización es válida por 15 días. Los precios del oro y las piedras fluctúan, así que si pasa ese tiempo te mando una cotización actualizada. Generalmente la diferencia es mínima.",
   },
   {
     question: "¿Puedo cambiar la talla después?",
     answer:
-      "Sí. Hacemos un ajuste de talla sin costo, siempre que el cambio sea de hasta 2 tallas hacia arriba o hacia abajo. Cambios mayores requieren rehacer la pieza, lo que tiene un costo adicional que evaluamos según el diseño.",
+      "Sí, el ajuste de talla está incluido dentro de la Garantía por Gusto durante los primeros 30 días. Después del primer año también lo hacemos, con un costo de gestión según el trabajo que requiera.",
   },
   {
     question: "¿Qué pasa si no me gusta cómo quedó?",
     answer:
-      "Trabajamos con renders y muestras antes de producir, para que sepas exactamente cómo va a quedar tu joya antes de hacerla. Si al recibirla algo no te convence, lo conversamos y buscamos la mejor solución juntas.",
+      "La rediseñamos. Eso es exactamente la Garantía por Gusto. Si dentro de los 30 días siguientes a la entrega no te fascina, la rehago usando tu mismo metal y tus mismas piedras, sin costo. En promedio el rediseño demora entre 2 y 4 semanas, igual que la pieza original.",
   },
   {
     question: "¿Hacen envíos?",
     answer:
-      "Las piezas a pedido, anillos de compromiso y joyas custom, se entregan en persona en Santiago. Para productos de stock disponibles, coordinamos el envío a todo Chile por WhatsApp.",
+      "Sí. Enviamos a todo Chile con despacho asegurado y seguimiento. También podemos coordinar envíos internacionales. Escríbeme por WhatsApp y lo vemos caso a caso.",
+  },
+  {
+    question: "¿Cómo puedo pagar?",
+    answer:
+      "Transferencia bancaria, tarjeta de crédito o débito, y cuotas sin interés con tarjetas seleccionadas. También trabajo con anticipo del 50% al confirmar el encargo y el saldo al momento de la entrega.",
   },
 ];
 
