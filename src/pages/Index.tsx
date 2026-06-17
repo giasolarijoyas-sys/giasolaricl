@@ -10,7 +10,6 @@ import VideoSection from "@/components/VideoSection";
 import Historia from "@/components/Historia";
 import QuoteWizard from "@/components/QuoteWizard";
 import FAQAccordion from "@/components/FAQAccordion";
-import EnTusManos from "@/components/EnTusManos";
 import GarantiaSection from "@/components/GarantiaSection";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
@@ -22,20 +21,10 @@ import IncluyeAnillo from "@/components/IncluyeAnillo";
 import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 
 import InstagramFeed from "@/components/InstagramFeed";
-import ComoTeAyudo from "@/components/ComoTeAyudo";
-import Posventa from "@/components/Posventa";
-import PorQueAMedida from "@/components/PorQueAMedida";
-
-
-import SignificadosTeaser from "@/components/SignificadosTeaser";
 import GrabadosSimbolicosSection from "@/components/GrabadosSimbolicosSection";
-
-import LeadMagnetGuia from "@/components/LeadMagnetGuia";
-
 
 import bannerNusa from "@/assets/banner-anillo-nusa.png";
 import bannerHalo from "@/assets/banner-halo-oval.png";
-import bannerDetail from "@/assets/banner-detail.jpg";
 import bannerHands from "@/assets/banner-hands.jpg";
 
 const Index = () => {
@@ -46,23 +35,16 @@ const Index = () => {
         description="Showroom de joyería de autor en Vitacura, Santiago. Anillos de compromiso, argollas y joyas en oro 18k, platino y diamantes certificados. Garantía por Gusto."
         path="/"
       />
-      {/* 1. Navegación fija */}
       <Navbar />
 
-      {/* 2. Hero con slideshow */}
       <Hero />
 
-      {/* 3 Pilares, promesa de marca unificada (promesa de marca) */}
       <TresPilares />
 
-      {/* Historia de Maca, conexión real, antes de la galería */}
       <Historia />
 
-
-      {/* 3. Barra marquee de keywords */}
       <Marquee />
 
-      {/* 4. Galería de trabajos */}
       <Gallery />
 
       <SectionBanner
@@ -75,32 +57,22 @@ const Index = () => {
       {/* Grabados Simbólicos — diferenciador exclusivo */}
       <GrabadosSimbolicosSection />
 
-      {/* 5. Diferenciadores / por qué elegirnos */}
+      {/* Diferenciadores */}
       <WhyUs />
 
-      {/* ¿Cómo te ayudo?, atención personal */}
-      <ComoTeAyudo />
-
-      {/* ¿Por qué a medida? — comparación */}
-      <PorQueAMedida />
-
-
-
-
-
-      {/* 6. Proceso en 3 pasos */}
+      {/* Proceso en 3 pasos */}
       <ProcesoHome />
 
-      {/* Video section */}
+      {/* Video */}
       <VideoSection />
 
-      {/* Rango de inversión, antes de testimonios */}
+      {/* Rango de inversión */}
       <RangoInversion />
 
-      {/* Qué incluye tu anillo de compromiso */}
+      {/* Qué incluye */}
       <IncluyeAnillo />
 
-      {/* Testimonios destacados */}
+      {/* Testimonios */}
       <TestimoniosDestacados />
 
       <SectionBanner
@@ -109,21 +81,11 @@ const Index = () => {
         text="Hecho a Tu Medida"
         subtext="100% personalizado, 100% único"
       />
-      <SectionBanner
-        image={bannerDetail}
-        alt="Detalle de anillo Gia Solari"
-        text="Tu Historia, Nuestra Inspiración"
-      />
 
-      {/* Garantía por Gusto - promesa de marca */}
+      {/* Garantía por Gusto */}
       <GarantiaSection />
 
-      {/* Posventa: certificado, limpieza, garantía de uso normal */}
-      <Posventa />
-
-
-
-      {/* 10. Formulario de cotización (wizard) */}
+      {/* Cotizador */}
       <QuoteWizard />
 
       <SectionBanner
@@ -135,28 +97,16 @@ const Index = () => {
         ctaLabel="Ir a la lista"
       />
 
-      {/* En tus manos gallery */}
-      <EnTusManos />
-
       {/* Newsletter */}
       <Newsletter />
 
-
-
-      {/* Significados, cada joya tiene una historia */}
-      <SignificadosTeaser />
-
-      {/* 11. Acordeón de términos y condiciones */}
+      {/* FAQ */}
       <FAQAccordion />
 
-      {/* Instagram feed antes del footer */}
+      {/* Instagram feed */}
       <InstagramFeed />
 
-      {/* Lead magnet, guía descargable */}
-      <LeadMagnetGuia variant="full" />
-
-
-      {/* 12. Footer */}
+      {/* Footer */}
       <Footer />
 
       <WhatsAppButton />
