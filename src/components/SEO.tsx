@@ -40,6 +40,9 @@ const SEO = ({ title, description, path, image, noindex, type = "website" }: SEO
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:image:alt" content={title} />
+
+      {/* AI summary */}
+      <meta name="summary" content="Gia Solari Joyas: joyería de autor en Santiago de Chile. Anillos de compromiso, argollas y joyas a medida en oro 18k y platino. Hecho a mano, con grabados simbólicos únicos. Showroom en Vitacura." />
     </Helmet>
   );
 };

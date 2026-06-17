@@ -20,7 +20,7 @@ const tallas = [
 const GuiaDeTallas = () => (
   <>
     <SEO
-      title="Guía de Tallas de Anillos | Mide tu Talla en Casa, Gia Solari"
+      title="Guía de Tallas de Anillos | Gia Solari"
       description="Guía completa para medir la talla de tu anillo en casa, con tabla de circunferencia y diámetro. Perfecta para sorprender con un anillo de compromiso."
       path="/guia-de-tallas"
     />

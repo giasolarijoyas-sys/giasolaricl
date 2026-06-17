@@ -31,7 +31,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Gia Solari Joyas | Anillos de compromiso a medida en Santiago de Chile"
+        title="Anillos de Compromiso a Medida en Santiago | Gia Solari"
         description="Showroom de joyería de autor en Vitacura, Santiago. Anillos de compromiso, argollas y joyas en oro 18k, platino y diamantes certificados. Garantía por Gusto."
         path="/"
       />
