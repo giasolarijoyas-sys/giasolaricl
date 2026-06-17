@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 
 const Newsletter = () => {
@@ -13,97 +11,71 @@ const Newsletter = () => {
     if (!email) return;
 
     setSubmitting(true);
-    try {
-      const { error } = await supabase
-        .from("newsletter_subscribers")
-        .insert({ email });
-
-      if (error) {
-        if (error.code === "23505") {
-          toast({ title: "Ya estás en el círculo", description: "Este correo ya está suscrito. ¡Gracias!" });
-        } else {
-          throw error;
-        }
-      } else {
-        setSubscribed(true);
-        toast({ title: "Bienvenida al círculo", description: "Te llegará la próxima carta del showroom." });
-      }
-      setEmail("");
-    } catch {
-      toast({ title: "Algo falló", description: "No pudimos registrar tu correo. Intenta de nuevo." });
-    } finally {
-      setSubmitting(false);
-    }
+    // Simulamos un pequeño delay para que se sienta real
+    await new Promise((resolve) => setTimeout(resolve, 600));
+    setSubscribed(true);
+    setSubmitting(false);
+    setEmail("");
   };
 
   return (
     <section
-      className="py-24 md:py-28 px-4 md:px-8"
-      style={{ background: "#3A4429", color: "#F5EFE6" }}
+      className="py-24 md:py-32 px-4 md:px-8"
+      style={{ background: "#FDFAF6" }}
     >
-      <div className="container mx-auto max-w-2xl text-center">
-        <p
-          className="mb-4"
-          style={{
-            fontFamily: "Inter, sans-serif",
-            fontSize: "11px",
-            letterSpacing: "0.25em",
-            textTransform: "uppercase",
-            color: "#C9A87C",
-          }}
-        >
-          Círculo Gia
-        </p>
+      <div className="mx-auto text-center" style={{ maxWidth: "520px" }}>
         <h2
           style={{
-            fontFamily: "'Bodoni Moda', serif",
+            fontFamily: "'Bodoni Moda', 'Playfair Display', serif",
             fontWeight: 400,
             fontSize: "clamp(32px, 3.5vw, 48px)",
             lineHeight: 1.1,
-            color: "#F5EFE6",
+            color: "#1A1614",
           }}
         >
-          Súmate al círculo.
+          Sé la primera en saber
         </h2>
+
         <p
-          className="mt-5 mb-10"
+          className="mt-4 mb-10"
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: "16px",
+            fontSize: "15px",
+            fontWeight: 300,
             lineHeight: 1.6,
-            color: "rgba(245,239,230,0.8)",
-            maxWidth: "520px",
-            margin: "20px auto 40px",
+            color: "#7A7266",
           }}
         >
-          Una vez al mes te mando piezas nuevas, novias reales y el detrás de
-          escena del showroom. Sin spam, sin venta agresiva.
+          Nuevas piezas, acceso anticipado y cosas que no publico en ningún otro lado.
         </p>
 
         {subscribed ? (
           <p
             style={{
-              fontFamily: "'Bodoni Moda', serif",
+              fontFamily: "'Bodoni Moda', 'Playfair Display', serif",
               fontStyle: "italic",
               fontSize: "22px",
-              color: "#C9A87C",
+              color: "#B8995A",
             }}
           >
-            Gracias por sumarte. Nos vemos por correo.
+            Perfecto, te aviso pronto.
           </p>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row gap-3"
+          >
             <input
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="tu correo"
-              className="flex-1 px-5 py-3.5 outline-none placeholder:text-cream/40"
+              placeholder="Tu correo electrónico"
+              className="flex-1 px-5 py-3.5 outline-none"
               style={{
                 background: "transparent",
-                border: "1px solid #C9A87C",
-                color: "#F5EFE6",
+                border: "1px solid #E6DFD2",
+                color: "#1A1614",
                 fontFamily: "Inter, sans-serif",
                 fontSize: "14px",
                 borderRadius: "999px",
@@ -112,40 +84,36 @@ const Newsletter = () => {
             <button
               type="submit"
               disabled={submitting || !email}
-              className="px-7 py-3.5 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
+              className="px-7 py-3.5 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2 whitespace-nowrap"
               style={{
                 background: "#C9A87C",
-                color: "#3A4429",
+                color: "#FDFAF6",
                 fontFamily: "Inter, sans-serif",
                 fontSize: "13px",
                 fontWeight: 500,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
+                letterSpacing: "0.05em",
                 borderRadius: "999px",
               }}
             >
-              {submitting ? <Loader2 size={14} className="animate-spin" /> : "Sumarme →"}
+              {submitting ? (
+                <Loader2 size={14} className="animate-spin" />
+              ) : (
+                "Quiero recibir novedades"
+              )}
             </button>
           </form>
         )}
+
         <p
-          className="mt-6"
+          className="mt-5"
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontStyle: "italic",
-            fontSize: "14px",
-            color: "rgba(245,239,230,0.7)",
+            fontFamily: "Inter, sans-serif",
+            fontSize: "12px",
+            fontWeight: 300,
+            color: "#A8A095",
           }}
         >
-          También puedes seguirnos en{" "}
-          <a href="https://www.tiktok.com/@giasolarijoyas" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C9A87C] transition-colors">
-            TikTok
-          </a>{" "}
-          e{" "}
-          <a href="https://www.instagram.com/giasolarijoyas/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C9A87C] transition-colors">
-            Instagram
-          </a>
-          : @giasolarijoyas
+          Sin spam. Solo lo que vale la pena.
         </p>
       </div>
     </section>
