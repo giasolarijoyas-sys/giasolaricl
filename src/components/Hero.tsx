@@ -150,7 +150,24 @@ const Hero = () => {
             </a>
 
             {/* CTA secundario */}
-            <p style={{ marginTop: "10px" }}>
+            <p style={{ marginTop: "10px", display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
+              <a
+                href="#galeria"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: "12px",
+                  color: OLIVE,
+                  textDecoration: "underline",
+                  textUnderlineOffset: "3px",
+                  textDecorationColor: "rgba(74,85,54,0.4)",
+                  fontWeight: 500,
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = OLIVE_DARK)}
+                onMouseLeave={(e) => (e.currentTarget.style.color = OLIVE)}
+              >
+                Ver la colección ↓
+              </a>
               <a
                 href="/agenda"
                 style={{
@@ -165,7 +182,7 @@ const Hero = () => {
                 onMouseEnter={(e) => (e.currentTarget.style.color = CARAMEL)}
                 onMouseLeave={(e) => (e.currentTarget.style.color = MUTED)}
               >
-                ¿Prefieres ver las piezas en persona? Agendar visita al showroom
+                Agendar visita al showroom
               </a>
             </p>
 

@@ -39,12 +39,9 @@ const Index = () => {
 
       <Hero />
 
-      <TresPilares />
-
-      <Historia />
-
       <Marquee />
 
+      {/* Galería primero — lo que vino a ver desde Instagram */}
       <Gallery />
 
       <SectionBanner
@@ -56,6 +53,12 @@ const Index = () => {
 
       {/* Grabados Simbólicos — diferenciador exclusivo */}
       <GrabadosSimbolicosSection />
+
+      {/* Promesa de marca */}
+      <TresPilares />
+
+      {/* Historia de Maca */}
+      <Historia />
 
       {/* Diferenciadores */}
       <WhyUs />
