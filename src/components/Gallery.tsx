@@ -89,6 +89,17 @@ import galVintageDetail from "@/assets/gal-vintage-detail.jpg";
 import galHaloOlivo from "@/assets/gal-halo-olivo.png";
 import galHaloEucalipto from "@/assets/gal-halo-eucalipto.png";
 
+// Grabados Simbólicos — Serie Exclusiva
+import galGrabadoMontana from "@/assets/gal-solitario-oval-grabado-montana.png";
+import galGrabadoCoordenadas from "@/assets/gal-tresillo-platino-grabado-coordenadas.png";
+import galGrabadoLatido from "@/assets/gal-solitario-redondo-grabado-latido.png";
+import galGrabadoConstelacion from "@/assets/gal-quintillo-platino-grabado-constelacion.png";
+import galGrabadoLunaSol from "@/assets/gal-halo-pera-grabado-luna-sol.png";
+import galGrabadoHuella from "@/assets/gal-marquise-grabado-huella.png";
+import galVintageAguamarinaOlas from "@/assets/gal-vintage-artdeco-aguamarina-olas.png";
+import galAguamarinaHaloArtDeco from "@/assets/gal-aguamarina-oval-halo-artdeco.png";
+import galAguamarinaOvalGrabado from "@/assets/gal-aguamarina-oval-grabado.png";
+
 type Category =
   | "todas"
   | "anillos"
@@ -97,7 +108,7 @@ type Category =
   | "pulseras";
 
 type Material = "todos" | "oro18k" | "platino";
-type Estilo = "todos" | "solitario" | "pave" | "halo" | "tres-piedras" | "minimalista";
+type Estilo = "todos" | "solitario" | "pave" | "halo" | "tres-piedras" | "minimalista" | "grabado";
 
 interface Piece {
   img: string;
@@ -130,6 +141,7 @@ const estilos: { key: Estilo; label: string }[] = [
   { key: "halo", label: "Halo" },
   { key: "tres-piedras", label: "Tres piedras" },
   { key: "minimalista", label: "Minimalista" },
+  { key: "grabado", label: "✦ Grabados" },
 ];
 
 const formatPrice = (n: number) =>
@@ -204,6 +216,17 @@ const pieces: Piece[] = [
   { img: galVintageDetail, name: "Vintage Filigrana", desc: "Diamante, Vista Macro", category: "anillos" },
   { img: galHaloOlivo, name: "Halo Olivo", desc: "Diamante, Halo Pavé", category: "anillos", material: "platino", estilo: "halo" },
   { img: galHaloEucalipto, name: "Halo Eucalipto", desc: "Diamante, Halo Milgrain", category: "anillos", material: "platino", estilo: "halo" },
+
+  // ── Grabados Simbólicos ──
+  { img: galGrabadoMontana, name: "Solitario Oval · Grabado Montaña", desc: "Grabado interior de cordillera, Oro 18k amarillo", category: "anillos", material: "oro18k", estilo: "grabado" },
+  { img: galGrabadoCoordenadas, name: "Tresillo · Grabado Coordenadas", desc: "Grabado interior de coordenadas GPS, Platino", category: "anillos", material: "platino", estilo: "grabado" },
+  { img: galGrabadoLatido, name: "Solitario Redondo · Grabado Latido", desc: "Grabado interior de latido cardíaco, Platino", category: "anillos", material: "platino", estilo: "grabado" },
+  { img: galGrabadoConstelacion, name: "Quintillo · Grabado Constelación", desc: "Grabado interior de constelación, Platino", category: "anillos", material: "platino", estilo: "grabado" },
+  { img: galGrabadoLunaSol, name: "Halo Pera · Luna y Sol", desc: "Grabado interior luna y sol, Platino", category: "anillos", material: "platino", estilo: "grabado" },
+  { img: galGrabadoHuella, name: "Marquise · Grabado Huella", desc: "Grabado interior de huella dactilar, Platino", category: "anillos", material: "platino", estilo: "grabado" },
+  { img: galVintageAguamarinaOlas, name: "Vintage Art Déco · Aguamarina y Olas", desc: "Grabado interior de olas, Aguamarina, Platino", category: "anillos", material: "platino", estilo: "grabado" },
+  { img: galAguamarinaHaloArtDeco, name: "Aguamarina Oval · Halo Art Déco", desc: "Aguamarina oval, Halo filigrana Art Déco, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galAguamarinaOvalGrabado, name: "Aguamarina Oval · Grabado Interior", desc: "Grabado interior personalizado, Aguamarina, Platino", category: "anillos", material: "platino", estilo: "grabado" },
 
   // ── Collares ──
   { img: galProd2214, name: "Cadena Eslabones", desc: "Oro 18k, Aros Diamante", category: "collares" },
