@@ -55,7 +55,10 @@ const JoyaDetalle = () => {
   const bodyParas = paragraphs.slice(1);
 
   // SEO
-  const seoTitle = `${item.nombre}, ${tipoEstilo} | Gia Solari Joyas`;
+  const isRing = item.categoria?.toLowerCase().includes("anillo") || item.categoria?.toLowerCase().includes("argolla");
+  const seoTitle = isRing
+    ? `Anillo ${item.nombre} | ${item.metalPrincipal ?? "Joyería a medida"} · Gia Solari`
+    : `${item.nombre} | Gia Solari Joyas`;
   const seoDesc = emotional.slice(0, 155);
 
   const productJsonLd: Record<string, unknown> = {

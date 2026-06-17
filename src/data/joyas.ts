@@ -363,13 +363,13 @@ export const JOYAS: Joya[] = [
   {
     slug: "anillo-lady-di",
     nombre: "Lady Di, Zafiro",
-    material: "Oro 18k blanco, Zafiro oval, Halo de diamantes, Bezel",
-    metalPrincipal: "Oro 18k blanco",
+    material: "Oro 18k blanco, Zafiro azul oval, Halo de diamantes, Engaste bezel",
+    metalPrincipal: "Zafiro azul oval y halo de diamantes en oro 18k blanco",
     estilo: "Color",
     descripcion:
-      "Anillo inspirado en el icónico Lady Di: zafiro azul central rodeado de un halo de diamantes.",
+      "Anillo de compromiso estilo Lady Di: zafiro azul oval con halo de diamantes en oro 18k blanco. Hecho a medida en Santiago.",
     descripcionLarga:
-      "Inspirado en uno de los anillos de compromiso más icónicos del siglo: zafiro azul oval central enmarcado en un engaste bezel y rodeado por un halo de diamantes brillantes, sobre oro 18k blanco. Una pieza con historia, ahora en versión Gia Solari. Cada anillo incluye Certificado Gia Solari.",
+      "El anillo de compromiso más icónico del mundo, en versión Gia Solari. Zafiro azul oval como protagonista, enmarcado en engaste bezel y rodeado por un halo de diamantes brillantes sobre oro 18k blanco — exactamente como el anillo Lady Di original, pero hecho a medida para ti en Santiago.\n\nEl zafiro azul es la piedra del compromiso eterno. Quienes eligen este anillo lo hacen porque quieren algo con historia, con color, con personalidad. No un diamante más — algo que se recuerda.\n\nPuedes personalizar el tamaño del zafiro, el tipo de oro (blanco, amarillo o platino) y agregar un grabado simbólico en el interior de la banda sin costo adicional. Incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
     imagenes: [anilloLadyDiZafiro01, anilloLadyDiZafiro02],
     isPlaceholder: false,
