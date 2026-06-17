@@ -150,12 +150,12 @@ const Hero = () => {
             </a>
 
             {/* CTA secundario */}
-            <p style={{ marginTop: "10px", display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
+            <p style={{ marginTop: "12px" }}>
               <a
                 href="#galeria"
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: "12px",
+                  fontSize: "13px",
                   color: OLIVE,
                   textDecoration: "underline",
                   textUnderlineOffset: "3px",
@@ -168,6 +168,8 @@ const Hero = () => {
               >
                 Ver la colección ↓
               </a>
+            </p>
+            <p style={{ marginTop: "8px" }}>
               <a
                 href="/agenda"
                 style={{
