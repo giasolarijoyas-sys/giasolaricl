@@ -23,7 +23,7 @@ const Newsletter = () => {
       className="py-24 md:py-32 px-4 md:px-8"
       style={{ background: "#FDFAF6" }}
     >
-      <div className="mx-auto text-center" style={{ maxWidth: "520px" }}>
+      <div className="mx-auto text-center" style={{ maxWidth: "540px" }}>
         <h2
           style={{
             fontFamily: "'Bodoni Moda', 'Playfair Display', serif",
