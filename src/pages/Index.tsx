@@ -28,6 +28,7 @@ import PorQueAMedida from "@/components/PorQueAMedida";
 
 
 import SignificadosTeaser from "@/components/SignificadosTeaser";
+import GrabadosSimbolicosSection from "@/components/GrabadosSimbolicosSection";
 
 import LeadMagnetGuia from "@/components/LeadMagnetGuia";
 
@@ -70,6 +71,9 @@ const Index = () => {
         text="Cada Detalle Cuenta"
         subtext="Diseño artesanal con piedras certificadas"
       />
+
+      {/* Grabados Simbólicos — diferenciador exclusivo */}
+      <GrabadosSimbolicosSection />
 
       {/* 5. Diferenciadores / por qué elegirnos */}
       <WhyUs />
