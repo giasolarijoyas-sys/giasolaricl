@@ -89,6 +89,52 @@ import galVintageDetail from "@/assets/gal-vintage-detail.jpg";
 import galHaloOlivo from "@/assets/gal-halo-olivo.png";
 import galHaloEucalipto from "@/assets/gal-halo-eucalipto.png";
 
+// Fotos nuevas 2026
+import galAlianzasOroGrabado from "@/assets/gal-alianzas-oro-grabado.png";
+import galAlianzasPlatino from "@/assets/gal-alianzas-platino.png";
+import galAguamarinaHaloArtDeco2 from "@/assets/gal-aguamarina-halo-artdeco-2.png";
+import galAguamarinaOvalSutil from "@/assets/gal-aguamarina-oval-sutil.png";
+import galOroAmarilloColor from "@/assets/gal-oro-amarillo-piedras-color.png";
+import galAnilloPerlaOro from "@/assets/gal-anillo-perla-oro.png";
+import galBandaEternidadPlatino from "@/assets/gal-banda-eternidad-platino.png";
+import galCollarAguamarinaPlatino from "@/assets/gal-collar-aguamarina-platino.png";
+import galEternidadDiamantesPlatino from "@/assets/gal-eternidad-diamantes-platino.png";
+import galEternidadOroBlanco from "@/assets/gal-eternidad-oro-blanco.png";
+import galHaloCushionAguamarina from "@/assets/gal-halo-cushion-aguamarina.png";
+import galHaloCushionAmatista from "@/assets/gal-halo-cushion-amatista.png";
+import galHaloCushionDiamante from "@/assets/gal-halo-cushion-diamante.png";
+import galHaloCushionPave2 from "@/assets/gal-halo-cushion-pave-2.png";
+import galHaloEmeraldVintagePlatino from "@/assets/gal-halo-emerald-vintage-platino.jpg";
+import galHaloMarquisePlatino2 from "@/assets/gal-halo-marquise-platino-2.png";
+import galHaloOvalDiamante from "@/assets/gal-halo-oval-diamante.png";
+import galHaloOvalEsmeralda from "@/assets/gal-halo-oval-esmeralda.png";
+import galHaloOvalRubi from "@/assets/gal-halo-oval-rubi.png";
+import galHaloOvalVintage from "@/assets/gal-halo-oval-vintage.png";
+import galHaloOvalZafiroDiana from "@/assets/gal-halo-oval-zafiro-diana.png";
+import galHaloOvalZafiro from "@/assets/gal-halo-oval-zafiro.png";
+import galHaloPeraDiamante from "@/assets/gal-halo-pera-diamante.png";
+import galHaloPeraPave from "@/assets/gal-halo-pera-pave.png";
+import galHaloRedondoBrillante from "@/assets/gal-halo-redondo-brillante.png";
+import galHaloRedondoDiamante from "@/assets/gal-halo-redondo-diamante.png";
+import galLifestyleManos from "@/assets/gal-lifestyle-manos.png";
+import galMediaEternidadPlatino from "@/assets/gal-media-eternidad-platino.png";
+import galSolitarioEmeraldPave from "@/assets/gal-solitario-emerald-pave.png";
+import galSolitarioHaloCushion from "@/assets/gal-solitario-halo-cushion.png";
+import galSolitarioMarquisePlatino from "@/assets/gal-solitario-marquise-platino.png";
+import galSolitarioOvalMinimalista from "@/assets/gal-solitario-oval-minimalista.png";
+import galSolitarioOvalLaterales from "@/assets/gal-solitario-oval-laterales.png";
+import galSolitarioPlatinaMacro from "@/assets/gal-solitario-platino-macro.png";
+import galSolitarioRedondoCaja from "@/assets/gal-solitario-redondo-caja.png";
+import galSolitarioRedondoPiedra from "@/assets/gal-solitario-redondo-piedra.png";
+import galTrilogiaDiamantePlatino from "@/assets/gal-trilogia-diamante-platino.png";
+import galTrilogiaEsmeraldaBaguette from "@/assets/gal-trilogia-esmeralda-baguette.png";
+import galTrilogiaHaloDiamante from "@/assets/gal-trilogia-halo-diamante.png";
+import galTrilogiaOroAmarillo from "@/assets/gal-trilogia-oro-amarillo.png";
+import galTrilogiaOvalDiamante from "@/assets/gal-trilogia-oval-diamante.png";
+import galTrilogiaOvalRubi from "@/assets/gal-trilogia-oval-rubi.png";
+import galTrilogiaRedondaDiamante from "@/assets/gal-trilogia-redonda-diamante.png";
+import galArtDecoBaguettePlatino from "@/assets/gal-art-deco-baguette-platino.png";
+
 // Grabados Simbólicos — Serie Exclusiva
 import galGrabadoMontana from "@/assets/gal-solitario-oval-grabado-montana.png";
 import galGrabadoCoordenadas from "@/assets/gal-tresillo-platino-grabado-coordenadas.png";
@@ -216,6 +262,52 @@ const pieces: Piece[] = [
   { img: galVintageDetail, name: "Vintage Filigrana", desc: "Diamante, Vista Macro", category: "anillos" },
   { img: galHaloOlivo, name: "Halo Olivo", desc: "Diamante, Halo Pavé", category: "anillos", material: "platino", estilo: "halo" },
   { img: galHaloEucalipto, name: "Halo Eucalipto", desc: "Diamante, Halo Milgrain", category: "anillos", material: "platino", estilo: "halo" },
+
+  // ── Fotos nuevas 2026 ──
+  { img: galAlianzasOroGrabado, name: "Alianzas Oro Grabado", desc: "Par de alianzas, Grabado interior, Oro 18k", category: "anillos", material: "oro18k", estilo: "grabado" },
+  { img: galAlianzasPlatino, name: "Alianzas Platino", desc: "Par de alianzas, Platino", category: "anillos", material: "platino", estilo: "minimalista" },
+  { img: galAguamarinaHaloArtDeco2, name: "Halo Aguamarina Art Déco", desc: "Aguamarina oval, Halo filigrana, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galAguamarinaOvalSutil, name: "Solitario Aguamarina Oval", desc: "Aguamarina oval, Solitario minimalista, Platino", category: "anillos", material: "platino", estilo: "solitario" },
+  { img: galOroAmarilloColor, name: "Anillo Color Oro Amarillo", desc: "Piedra central con color, Oro amarillo 18k", category: "anillos", material: "oro18k", estilo: "halo" },
+  { img: galAnilloPerlaOro, name: "Anillo Perla Oro", desc: "Perla central, Oro 18k", category: "anillos", material: "oro18k" },
+  { img: galBandaEternidadPlatino, name: "Banda Eternidad Diamantes", desc: "Diamantes, Banda completa, Platino", category: "anillos", material: "platino", estilo: "pave" },
+  { img: galCollarAguamarinaPlatino, name: "Collar Aguamarina Platino", desc: "Aguamarina colgante, Platino", category: "collares", material: "platino" },
+  { img: galEternidadDiamantesPlatino, name: "Media Eternidad Diamantes", desc: "Diamantes, Platino", category: "anillos", material: "platino", estilo: "pave" },
+  { img: galEternidadOroBlanco, name: "Eternidad Oro Blanco", desc: "Diamantes, Oro blanco 18k", category: "anillos", material: "oro18k", estilo: "pave" },
+  { img: galHaloCushionAguamarina, name: "Halo Cushion Aguamarina", desc: "Aguamarina cushion, Halo pavé, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloCushionAmatista, name: "Halo Cushion Amatista", desc: "Amatista cushion, Halo pavé, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloCushionDiamante, name: "Halo Cushion Diamante", desc: "Diamante cushion, Halo pavé, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloCushionPave2, name: "Halo Cushion Pavé Platino", desc: "Diamante cushion, Doble halo pavé, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloEmeraldVintagePlatino, name: "Halo Esmeralda Vintage Platino", desc: "Corte esmeralda, Halo vintage, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloMarquisePlatino2, name: "Halo Marquise Platino", desc: "Marquise, Halo pavé, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloOvalDiamante, name: "Halo Oval Diamante Platino", desc: "Diamante oval, Halo pavé, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloOvalEsmeralda, name: "Halo Oval Esmeralda Oro", desc: "Esmeralda oval, Halo diamantes, Oro 18k", category: "anillos", material: "oro18k", estilo: "halo" },
+  { img: galHaloOvalRubi, name: "Halo Oval Rubí Oro", desc: "Rubí oval, Halo diamantes, Oro 18k", category: "anillos", material: "oro18k", estilo: "halo" },
+  { img: galHaloOvalVintage, name: "Halo Oval Vintage Platino", desc: "Diamante oval, Halo vintage milgrain, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloOvalZafiroDiana, name: "Halo Oval Zafiro Diana", desc: "Zafiro azul oval, Halo diamantes, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloOvalZafiro, name: "Halo Oval Zafiro Platino", desc: "Zafiro azul oval, Halo pavé, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloPeraDiamante, name: "Halo Pera Diamante Platino", desc: "Diamante pera, Halo pavé, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloPeraPave, name: "Halo Pera Pavé Platino", desc: "Diamante pera, Halo pavé total, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloRedondoBrillante, name: "Halo Redondo Brillante Platino", desc: "Diamante brillante redondo, Halo pavé, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galHaloRedondoDiamante, name: "Halo Redondo Diamante Platino", desc: "Diamante redondo, Halo clásico, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galLifestyleManos, name: "Lifestyle Anillos en Mano", desc: "Anillos a medida, Vista lifestyle", category: "anillos" },
+  { img: galMediaEternidadPlatino, name: "Media Eternidad Platino", desc: "Diamantes, Media eternidad, Platino", category: "anillos", material: "platino", estilo: "pave" },
+  { img: galSolitarioEmeraldPave, name: "Solitario Esmeralda Pavé Platino", desc: "Corte esmeralda, Banda pavé, Platino", category: "anillos", material: "platino", estilo: "solitario" },
+  { img: galSolitarioHaloCushion, name: "Solitario Halo Cushion Platino", desc: "Diamante cushion, Halo sutil, Platino", category: "anillos", material: "platino", estilo: "halo" },
+  { img: galSolitarioMarquisePlatino, name: "Solitario Marquise Platino", desc: "Diamante marquise, Solitario clásico, Platino", category: "anillos", material: "platino", estilo: "solitario" },
+  { img: galSolitarioOvalMinimalista, name: "Solitario Oval Minimalista Platino", desc: "Diamante oval, Banda fina, Platino", category: "anillos", material: "platino", estilo: "solitario" },
+  { img: galSolitarioOvalLaterales, name: "Solitario Oval con Peras Laterales", desc: "Diamante oval, Peras laterales, Platino", category: "anillos", material: "platino", estilo: "solitario" },
+  { img: galSolitarioPlatinaMacro, name: "Solitario Platino Macro", desc: "Diamante, Vista macro, Platino", category: "anillos", material: "platino", estilo: "solitario" },
+  { img: galSolitarioRedondoCaja, name: "Solitario Redondo Caja Terciopelo", desc: "Diamante redondo, Caja terciopelo Gia Solari", category: "anillos", material: "platino", estilo: "solitario" },
+  { img: galSolitarioRedondoPiedra, name: "Solitario Redondo Diamante", desc: "Diamante redondo brillante, Platino", category: "anillos", material: "platino", estilo: "solitario" },
+  { img: galTrilogiaDiamantePlatino, name: "Trilogía Diamante Platino", desc: "Tres diamantes, Platino", category: "anillos", material: "platino", estilo: "tres-piedras" },
+  { img: galTrilogiaEsmeraldaBaguette, name: "Trilogía Esmeralda Baguette Platino", desc: "Esmeralda central, Baguettes laterales, Platino", category: "anillos", material: "platino", estilo: "tres-piedras" },
+  { img: galTrilogiaHaloDiamante, name: "Trilogía Halo Diamante Platino", desc: "Tres diamantes con halo, Platino", category: "anillos", material: "platino", estilo: "tres-piedras" },
+  { img: galTrilogiaOroAmarillo, name: "Trilogía Oro Amarillo", desc: "Tres piedras, Oro amarillo 18k", category: "anillos", material: "oro18k", estilo: "tres-piedras" },
+  { img: galTrilogiaOvalDiamante, name: "Trilogía Oval Diamante Platino", desc: "Diamante oval central, Redondos laterales, Platino", category: "anillos", material: "platino", estilo: "tres-piedras" },
+  { img: galTrilogiaOvalRubi, name: "Trilogía Oval Rubí Platino", desc: "Rubí oval, Diamantes laterales, Platino", category: "anillos", material: "platino", estilo: "tres-piedras" },
+  { img: galTrilogiaRedondaDiamante, name: "Trilogía Redonda Diamante Platino", desc: "Tres diamantes redondos, Platino", category: "anillos", material: "platino", estilo: "tres-piedras" },
+  { img: galArtDecoBaguettePlatino, name: "Art Déco Baguette Platino", desc: "Diamante central, Baguettes Art Déco, Platino", category: "anillos", material: "platino" },
 
   // ── Grabados Simbólicos ──
   { img: galGrabadoMontana, name: "Solitario Oval · Grabado Montaña", desc: "Grabado interior de cordillera, Oro 18k amarillo", category: "anillos", material: "oro18k", estilo: "grabado" },
