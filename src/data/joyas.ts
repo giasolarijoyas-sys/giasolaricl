@@ -205,8 +205,99 @@ import trilogiaOvalRubi01 from "@/assets/joyas/trilogia-oval-rubi-01.jpg";
 import collarAguamarinaPlatino01 from "@/assets/joyas/collar-aguamarina-platino-01.jpg";
 import alianzasParejaOroGrabado01 from "@/assets/joyas/alianzas-pareja-oro-grabado-01.jpg";
 import haloOvalClasico01 from "@/assets/joyas/halo-oval-clasico-01.jpg";
+import solitarioOvalOroBlanco01 from "@/assets/joyas/solitario-oval-oro-blanco-01.jpg";
+import solitarioOvalOroAmarillo01 from "@/assets/joyas/solitario-oval-oro-amarillo-01.jpg";
+import haloOvalDelicado01 from "@/assets/joyas/halo-oval-delicado-01.jpg";
+import haloCushionDiamante01 from "@/assets/joyas/halo-cushion-diamante-01.jpg";
+import haloCushionDiamante02 from "@/assets/joyas/halo-cushion-diamante-02.jpg";
+import haloClusterDiamantes01 from "@/assets/joyas/halo-cluster-diamantes-01.jpg";
+import haloRedondoOro01 from "@/assets/joyas/halo-redondo-oro-01.jpg";
 
 export const JOYAS: Joya[] = [
+  {
+    slug: "solitario-oval-oro-blanco",
+    nombre: "Solitario Oval, Oro Blanco",
+    material: "Oro 18k blanco, Diamante oval central, banda lisa",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Atemporal",
+    descripcion:
+      "Solitario oval en oro blanco con banda lisa. Puro, minimalista, todo para la piedra.",
+    descripcionLarga:
+      "Un diamante oval que se lleva todo el protagonismo, sostenido en alto sobre una banda lisa de oro blanco que no compite con él. El solitario en su forma más pura, para quien cree que menos es más. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [solitarioOvalOroBlanco01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "solitario-oval-oro-amarillo",
+    nombre: "Solitario Oval, Oro Amarillo",
+    material: "Oro 18k amarillo, Diamante oval central, banda lisa",
+    metalPrincipal: "Oro 18k amarillo",
+    estilo: "Atemporal",
+    descripcion:
+      "Solitario oval en oro amarillo con banda lisa. Cálido, clásico y atemporal.",
+    descripcionLarga:
+      "Un diamante oval sobre una banda lisa de oro amarillo, que le aporta calor y un aire vintage. El contraste del oro cálido con el brillo del diamante es de los que nunca pasan de moda. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [solitarioOvalOroAmarillo01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "halo-oval-delicado",
+    nombre: "Halo Oval, Delicado",
+    material: "Oro 18k blanco, Diamante oval central, halo de diamantes, banda fina",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Atemporal",
+    descripcion:
+      "Diamante oval con halo de diamantes y banda fina en oro blanco. Brillo y delicadeza.",
+    descripcionLarga:
+      "Un diamante oval rodeado por un halo finito de diamantes, sobre una banda delgada que lo hace ver aún más luminoso. Delicado y femenino, para quien quiere el efecto del halo sin nada de peso. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [haloOvalDelicado01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "halo-cushion-diamante",
+    nombre: "Halo Cushion, Diamante",
+    material: "Oro 18k blanco, Diamante corte cushion central, halo de diamantes, banda con pavé",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Atemporal",
+    descripcion:
+      "Diamante cushion con halo de diamantes y banda con pavé en oro blanco. Luz de extremo a extremo.",
+    descripcionLarga:
+      "Un diamante corte cushion, suave en sus esquinas, envuelto por un halo de diamantes y acompañado por una banda con pavé que reparte el brillo de punta a punta. Un halo clásico que se luce especialmente en la mano. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [haloCushionDiamante01, haloCushionDiamante02],
+    isPlaceholder: false,
+  },
+  {
+    slug: "halo-cluster-diamantes",
+    nombre: "Halo Cluster, Diamantes",
+    material: "Oro 18k blanco, Cluster de diamantes que simula una piedra central, halo",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Atemporal",
+    descripcion:
+      "Cluster de diamantes en forma redonda sobre oro blanco. Mucho brillo con varias piedras.",
+    descripcionLarga:
+      "Varios diamantes agrupados que juntos forman una pieza redonda llena de luz, rodeada por un halo. Una alternativa al solitario para quien quiere máximo brillo repartido en muchas piedras. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [haloClusterDiamantes01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "halo-redondo-oro",
+    nombre: "Halo Redondo, Oro",
+    material: "Oro 18k amarillo, Diamante redondo central, halo de diamantes, banda fina",
+    metalPrincipal: "Oro 18k amarillo",
+    estilo: "Atemporal",
+    descripcion:
+      "Diamante redondo con halo de diamantes en oro amarillo. Clásico con calidez vintage.",
+    descripcionLarga:
+      "Un diamante redondo en el centro, abrazado por un halo de diamantes, sobre oro amarillo que le da un aire de joya heredada. El brillo del halo con la calidez del oro: una combinación que enamora. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [haloRedondoOro01],
+    isPlaceholder: false,
+  },
   {
     slug: "halo-oval-clasico",
     nombre: "Halo Oval, Clásico",
