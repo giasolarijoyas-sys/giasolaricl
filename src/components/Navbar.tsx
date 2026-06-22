@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Heart, ChevronDown, Instagram } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import SeasonalBanner from "./SeasonalBanner";
 
 const OLIVE = "#4A5536";
 const OLIVE_DARK = "#3A4429";
