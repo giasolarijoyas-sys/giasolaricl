@@ -200,6 +200,10 @@ import trilogiaTresDiamantes01 from "@/assets/joyas/trilogia-tres-diamantes-01.j
 import trilogiaLateralesPera01 from "@/assets/joyas/trilogia-laterales-pera-01.jpg";
 import quintilloDiamantes01 from "@/assets/joyas/quintillo-diamantes-01.jpg";
 import haloOvalRubiOro01 from "@/assets/joyas/halo-oval-rubi-oro-01.jpg";
+import haloOvalRubiOro02 from "@/assets/joyas/halo-oval-rubi-oro-02.jpg";
+import solitarioEmeraldCutPlatino02 from "@/assets/joyas/solitario-emerald-cut-platino-02.jpg";
+import solitarioOvalPlatino02 from "@/assets/joyas/solitario-oval-platino-02.jpg";
+import solitarioOvalPlatino03 from "@/assets/joyas/solitario-oval-platino-03.jpg";
 import haloCushionAmatista01 from "@/assets/joyas/halo-cushion-amatista-01.jpg";
 import trilogiaOvalRubi01 from "@/assets/joyas/trilogia-oval-rubi-01.jpg";
 import collarAguamarinaPlatino01 from "@/assets/joyas/collar-aguamarina-platino-01.jpg";
@@ -323,7 +327,7 @@ export const JOYAS: Joya[] = [
     descripcionLarga:
       "Un rubí oval de rojo intenso, enmarcado por un halo de diamantes que lo enciende todavía más. El oro amarillo realza el calor de la piedra y le da un aire de joya heredada. Para quien quiere alejarse del diamante y llevar color con carácter. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
-    imagenes: [haloOvalRubiOro01],
+    imagenes: [haloOvalRubiOro01, haloOvalRubiOro02],
     isPlaceholder: false,
   },
   {
@@ -683,7 +687,7 @@ export const JOYAS: Joya[] = [
     descripcionLarga:
       "Diamante natural corte oval elevado sobre grifas finas, banda lisa en platino. La pureza del solitario clásico, en la versión más atemporal. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
-    imagenes: [solitarioOvalPlatino01],
+    imagenes: [solitarioOvalPlatino01, solitarioOvalPlatino02, solitarioOvalPlatino03],
     isPlaceholder: false,
   },
   {
@@ -696,7 +700,7 @@ export const JOYAS: Joya[] = [
     descripcionLarga:
       "Diamante corte emerald, escalonado, geométrico, con destellos largos, montado a grifas sobre banda lisa de platino. Una pieza arquitectónica que conserva la sobriedad del solitario. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
-    imagenes: [solitarioEmeraldCutPlatino01],
+    imagenes: [solitarioEmeraldCutPlatino01, solitarioEmeraldCutPlatino02],
     isPlaceholder: false,
   },
   {
