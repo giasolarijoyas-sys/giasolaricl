@@ -216,7 +216,7 @@ import haloRedondoOro01 from "@/assets/joyas/halo-redondo-oro-01.jpg";
 export const JOYAS: Joya[] = [
   {
     slug: "solitario-oval-oro-blanco",
-    nombre: "Solitario Oval, Oro Blanco",
+    nombre: "Olivia · Solitario Oval",
     material: "Oro 18k blanco, Diamante oval central, banda lisa",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Atemporal",
@@ -230,7 +230,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "solitario-oval-oro-amarillo",
-    nombre: "Solitario Oval, Oro Amarillo",
+    nombre: "Aurora · Solitario Oval Oro",
     material: "Oro 18k amarillo, Diamante oval central, banda lisa",
     metalPrincipal: "Oro 18k amarillo",
     estilo: "Atemporal",
@@ -244,7 +244,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-oval-delicado",
-    nombre: "Halo Oval, Delicado",
+    nombre: "Paola · Halo Oval",
     material: "Oro 18k blanco, Diamante oval central, halo de diamantes, banda fina",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Atemporal",
@@ -258,7 +258,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-cushion-diamante",
-    nombre: "Halo Cushion, Diamante",
+    nombre: "Valentina · Halo Cushion",
     material: "Oro 18k blanco, Diamante corte cushion central, halo de diamantes, banda con pavé",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Atemporal",
@@ -272,7 +272,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-cluster-diamantes",
-    nombre: "Halo Cluster, Diamantes",
+    nombre: "Sofia · Halo Cluster",
     material: "Oro 18k blanco, Cluster de diamantes que simula una piedra central, halo",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Atemporal",
@@ -286,7 +286,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-redondo-oro",
-    nombre: "Halo Redondo, Oro",
+    nombre: "Vera · Halo Redondo Oro",
     material: "Oro 18k amarillo, Diamante redondo central, halo de diamantes, banda fina",
     metalPrincipal: "Oro 18k amarillo",
     estilo: "Atemporal",
@@ -300,7 +300,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-oval-clasico",
-    nombre: "Halo Oval, Clásico",
+    nombre: "Marina · Halo Oval",
     material: "Oro 18k blanco, Diamante oval central, halo de diamantes, banda con pavé",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Atemporal",
@@ -314,7 +314,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-oval-rubi",
-    nombre: "Halo Oval, Rubí",
+    nombre: "Flora · Halo Rubí",
     material: "Oro 18k amarillo, Rubí oval central, halo de diamantes, banda con pavé",
     metalPrincipal: "Oro 18k amarillo",
     estilo: "Color",
@@ -328,7 +328,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-cushion-amatista",
-    nombre: "Halo Cushion, Amatista",
+    nombre: "Greta · Halo Amatista",
     material: "Oro 18k blanco, Amatista corte cushion central, halo de diamantes, banda con pavé",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
@@ -342,7 +342,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "trilogia-oval-rubi",
-    nombre: "Trilogía Oval, Rubí",
+    nombre: "Ilaria · Trilogía Rubí",
     material: "Oro 18k blanco, Rubí oval central, dos diamantes laterales",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
@@ -356,7 +356,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "collar-aguamarina-platino",
-    nombre: "Collar Aguamarina, Platino",
+    nombre: "Lucia · Collar Aguamarina",
     material: "Oro 18k blanco, Aguamarina facetada, cadena fina",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
@@ -369,22 +369,22 @@ export const JOYAS: Joya[] = [
     isPlaceholder: false,
   },
   {
-    slug: "alianzas-pareja-oro-grabado",
-    nombre: "Alianzas de Matrimonio, Oro con Grabado",
-    material: "Oro 18k amarillo, par de alianzas lisas, grabado interior o exterior a pedido",
+    slug: "argollas-matrimonio-grabado",
+    nombre: "Argollas · Oro con Grabado",
+    material: "Oro 18k amarillo, par de argollas de matrimonio lisas, grabado interior o exterior a pedido",
     metalPrincipal: "Oro 18k amarillo",
     estilo: "Atemporal",
     descripcion:
-      "Par de alianzas de matrimonio lisas en oro amarillo 18k, con grabado personalizado a pedido.",
+      "Par de argollas de matrimonio lisas en oro amarillo 18k, con grabado personalizado a pedido.",
     descripcionLarga:
-      "Dos alianzas lisas en oro amarillo 18k, hechas para durar toda una vida. Pueden llevar un grabado escondido, una montaña, una fecha, unas coordenadas, lo que signifique algo solo para ustedes. Lo que nadie más verá, pero siempre van a llevar puesto. Cada par incluye Certificado Gia Solari.",
+      "Dos argollas lisas en oro amarillo 18k, hechas para durar toda una vida. Pueden llevar un grabado escondido, una montaña, una fecha, unas coordenadas, lo que signifique algo solo para ustedes. Lo que nadie más verá, pero siempre van a llevar puesto. Cada par incluye Certificado Gia Solari.",
     categoria: "Argolla",
     imagenes: [alianzasParejaOroGrabado01],
     isPlaceholder: false,
   },
   {
     slug: "solitario-clasico-pave",
-    nombre: "Solitario Clásico, Pavé",
+    nombre: "Allegra · Solitario Pavé",
     material: "Oro 18k blanco, Diamante brillante redondo central, banda con pavé de diamantes",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Atemporal",
@@ -398,7 +398,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "solitario-pave-lateral",
-    nombre: "Solitario con Pavé Lateral",
+    nombre: "Bianca · Solitario",
     material: "Oro 18k blanco, Diamante brillante redondo central, tres diamantes de pavé por lado",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Atemporal",
@@ -412,7 +412,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "trilogia-tres-diamantes",
-    nombre: "Trilogía de Diamantes",
+    nombre: "Carlotta · Trilogía",
     material: "Oro 18k blanco, Diamante brillante redondo central, dos diamantes laterales, banda con pavé",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Atemporal",
@@ -426,7 +426,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "trilogia-laterales-pera",
-    nombre: "Trilogía con Laterales Pera",
+    nombre: "Dalia · Trilogía Pera",
     material: "Oro 18k blanco, Diamante brillante redondo central, dos diamantes corte pera laterales",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Atemporal",
@@ -440,7 +440,7 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "quintillo-diamantes",
-    nombre: "Quintillo de Diamantes",
+    nombre: "Elisa · Quintillo",
     material: "Oro 18k blanco, Cinco diamantes brillantes redondos graduados",
     metalPrincipal: "Oro 18k blanco",
     estilo: "Atemporal",
