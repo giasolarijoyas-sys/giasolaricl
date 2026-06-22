@@ -194,7 +194,158 @@ export type Joya = {
  * },
  * ===================================================================== */
 
+import solitarioClasicoPave01 from "@/assets/joyas/solitario-clasico-pave-01.jpg";
+import solitarioPaveLateral01 from "@/assets/joyas/solitario-pave-lateral-01.jpg";
+import trilogiaTresDiamantes01 from "@/assets/joyas/trilogia-tres-diamantes-01.jpg";
+import trilogiaLateralesPera01 from "@/assets/joyas/trilogia-laterales-pera-01.jpg";
+import quintilloDiamantes01 from "@/assets/joyas/quintillo-diamantes-01.jpg";
+import haloOvalRubiOro01 from "@/assets/joyas/halo-oval-rubi-oro-01.jpg";
+import haloCushionAmatista01 from "@/assets/joyas/halo-cushion-amatista-01.jpg";
+import trilogiaOvalRubi01 from "@/assets/joyas/trilogia-oval-rubi-01.jpg";
+import collarAguamarinaPlatino01 from "@/assets/joyas/collar-aguamarina-platino-01.jpg";
+import alianzasParejaOroGrabado01 from "@/assets/joyas/alianzas-pareja-oro-grabado-01.jpg";
+
 export const JOYAS: Joya[] = [
+  {
+    slug: "halo-oval-rubi",
+    nombre: "Halo Oval, Rubí",
+    material: "Oro 18k amarillo, Rubí oval central, halo de diamantes, banda con pavé",
+    metalPrincipal: "Oro 18k amarillo",
+    estilo: "Color",
+    descripcion:
+      "Rubí oval rodeado por un halo de diamantes, sobre oro amarillo con banda de pavé.",
+    descripcionLarga:
+      "Un rubí oval de rojo intenso, enmarcado por un halo de diamantes que lo enciende todavía más. El oro amarillo realza el calor de la piedra y le da un aire de joya heredada. Para quien quiere alejarse del diamante y llevar color con carácter. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [haloOvalRubiOro01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "halo-cushion-amatista",
+    nombre: "Halo Cushion, Amatista",
+    material: "Oro 18k blanco, Amatista corte cushion central, halo de diamantes, banda con pavé",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Color",
+    descripcion:
+      "Amatista corte cushion en violeta profundo, halo de diamantes y oro blanco.",
+    descripcionLarga:
+      "Una amatista corte cushion, de un violeta profundo y misterioso, rodeada por un halo de diamantes que la hace brillar sobre el oro blanco. Una piedra poco vista en anillos de compromiso, para quien quiere algo verdaderamente propio. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [haloCushionAmatista01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "trilogia-oval-rubi",
+    nombre: "Trilogía Oval, Rubí",
+    material: "Oro 18k blanco, Rubí oval central, dos diamantes laterales",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Color",
+    descripcion:
+      "Rubí oval central con dos diamantes laterales, en oro blanco. Color y luz en equilibrio.",
+    descripcionLarga:
+      "Un rubí oval al centro, acompañado por dos diamantes que lo dejan ser el protagonista. El contraste del rojo sobre el oro blanco es elegante y nada tímido, para quien quiere color sin perder la sobriedad de una trilogía. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [trilogiaOvalRubi01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "collar-aguamarina-platino",
+    nombre: "Collar Aguamarina, Platino",
+    material: "Oro 18k blanco, Aguamarina facetada, cadena fina",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Color",
+    descripcion:
+      "Colgante de aguamarina en oro blanco sobre cadena fina. Color celeste suave y luminoso.",
+    descripcionLarga:
+      "Una aguamarina facetada, de ese celeste de agua clara, colgando de una cadena fina en oro blanco. Liviano y luminoso, un collar para llevar todos los días o regalar a quien amas. Cada pieza incluye Certificado Gia Solari.",
+    categoria: "Collar",
+    imagenes: [collarAguamarinaPlatino01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "alianzas-pareja-oro-grabado",
+    nombre: "Alianzas de Matrimonio, Oro con Grabado",
+    material: "Oro 18k amarillo, par de alianzas lisas, grabado interior o exterior a pedido",
+    metalPrincipal: "Oro 18k amarillo",
+    estilo: "Atemporal",
+    descripcion:
+      "Par de alianzas de matrimonio lisas en oro amarillo 18k, con grabado personalizado a pedido.",
+    descripcionLarga:
+      "Dos alianzas lisas en oro amarillo 18k, hechas para durar toda una vida. Pueden llevar un grabado escondido, una montaña, una fecha, unas coordenadas, lo que signifique algo solo para ustedes. Lo que nadie más verá, pero siempre van a llevar puesto. Cada par incluye Certificado Gia Solari.",
+    categoria: "Argolla",
+    imagenes: [alianzasParejaOroGrabado01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "solitario-clasico-pave",
+    nombre: "Solitario Clásico, Pavé",
+    material: "Oro 18k blanco, Diamante brillante redondo central, banda con pavé de diamantes",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Atemporal",
+    descripcion:
+      "Solitario redondo con banda de pavé de diamantes en oro blanco. El clásico que nunca falla.",
+    descripcionLarga:
+      "Un diamante redondo en el centro, sostenido en alto para que reciba toda la luz, y una banda sembrada de diamantes pequeños que acompañan sin competir. Es el anillo de compromiso clásico por una razón: nunca pasa de moda. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [solitarioClasicoPave01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "solitario-pave-lateral",
+    nombre: "Solitario con Pavé Lateral",
+    material: "Oro 18k blanco, Diamante brillante redondo central, tres diamantes de pavé por lado",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Atemporal",
+    descripcion:
+      "Solitario redondo con tres diamantes de pavé a cada lado. Delicado y luminoso en oro blanco.",
+    descripcionLarga:
+      "Un solitario redondo con un detalle sutil: tres diamantes de pavé a cada lado de la banda, que se apagan suavemente hacia los costados. Liviano, femenino y discreto, para quien busca brillo sin exceso. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [solitarioPaveLateral01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "trilogia-tres-diamantes",
+    nombre: "Trilogía de Diamantes",
+    material: "Oro 18k blanco, Diamante brillante redondo central, dos diamantes laterales, banda con pavé",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Atemporal",
+    descripcion:
+      "Trilogía de tres diamantes redondos con banda de pavé. El pasado, el presente y el futuro.",
+    descripcionLarga:
+      "Tres diamantes en línea, uno por cada momento de una historia: el pasado, el presente y el futuro. El central manda y los dos laterales lo acompañan, sobre una banda con pavé que multiplica la luz. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [trilogiaTresDiamantes01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "trilogia-laterales-pera",
+    nombre: "Trilogía con Laterales Pera",
+    material: "Oro 18k blanco, Diamante brillante redondo central, dos diamantes corte pera laterales",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Atemporal",
+    descripcion:
+      "Trilogía con un diamante redondo central y dos diamantes corte pera a los lados. Romántico y distinto.",
+    descripcionLarga:
+      "Un diamante redondo al centro, abrazado por dos diamantes corte pera que apuntan hacia él como dos gotas de luz. Un giro romántico sobre la trilogía clásica, para quien quiere algo reconocible pero con un detalle propio. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [trilogiaLateralesPera01],
+    isPlaceholder: false,
+  },
+  {
+    slug: "quintillo-diamantes",
+    nombre: "Quintillo de Diamantes",
+    material: "Oro 18k blanco, Cinco diamantes brillantes redondos graduados",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Atemporal",
+    descripcion:
+      "Cinco diamantes redondos graduados en arco sobre oro blanco. Luminoso y elegante.",
+    descripcionLarga:
+      "Cinco diamantes redondos que crecen hacia el centro, formando un arco de luz sobre la banda. Una alternativa al solitario para quien quiere brillo repartido y una pieza que se luce todos los días. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [quintilloDiamantes01],
+    isPlaceholder: false,
+  },
   {
     slug: "bruma-dorada",
     nombre: "Bruma Dorada, Esmeralda",
