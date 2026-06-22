@@ -204,8 +204,23 @@ import haloCushionAmatista01 from "@/assets/joyas/halo-cushion-amatista-01.jpg";
 import trilogiaOvalRubi01 from "@/assets/joyas/trilogia-oval-rubi-01.jpg";
 import collarAguamarinaPlatino01 from "@/assets/joyas/collar-aguamarina-platino-01.jpg";
 import alianzasParejaOroGrabado01 from "@/assets/joyas/alianzas-pareja-oro-grabado-01.jpg";
+import haloOvalClasico01 from "@/assets/joyas/halo-oval-clasico-01.jpg";
 
 export const JOYAS: Joya[] = [
+  {
+    slug: "halo-oval-clasico",
+    nombre: "Halo Oval, Clásico",
+    material: "Oro 18k blanco, Diamante oval central, halo de diamantes, banda con pavé",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Atemporal",
+    descripcion:
+      "Diamante oval rodeado por un halo de diamantes, sobre banda con pavé en oro blanco.",
+    descripcionLarga:
+      "Un diamante oval en el centro, envuelto por un halo de diamantes pequeños que lo hace ver más grande y lo llena de luz. La banda con pavé completa el brillo de extremo a extremo. Un halo atemporal, de los que enamoran a primera vista. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [haloOvalClasico01],
+    isPlaceholder: false,
+  },
   {
     slug: "halo-oval-rubi",
     nombre: "Halo Oval, Rubí",
