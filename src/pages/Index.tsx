@@ -22,6 +22,7 @@ import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 
 import InstagramFeed from "@/components/InstagramFeed";
 import GrabadosSimbolicosSection from "@/components/GrabadosSimbolicosSection";
+import DestacadosHero from "@/components/DestacadosHero";
 
 import bannerNusa from "@/assets/banner-anillo-nusa.png";
 import bannerHalo from "@/assets/banner-halo-oval.png";
