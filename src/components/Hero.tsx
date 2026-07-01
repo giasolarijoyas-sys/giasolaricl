@@ -235,8 +235,12 @@ const Hero = () => {
       </div>
 
       <style>{`
+        /* Móvil: hero compacto para que se vea la foto pero también asome producto real debajo */
+        .hero-shell { min-height: auto; }
+        .hero-img-wrap { min-height: 40vh; max-height: 52vh; }
         @media (min-width: 768px) {
-          section[class*="flex-row"] > div:first-child { height: auto; min-height: 88vh; }
+          .hero-shell { min-height: 88vh; }
+          .hero-img-wrap { min-height: 88vh; max-height: none; height: auto; }
         }
       `}</style>
     </section>
