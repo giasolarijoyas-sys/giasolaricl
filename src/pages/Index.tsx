@@ -22,6 +22,7 @@ import TestimoniosDestacados from "@/components/TestimoniosDestacados";
 
 import InstagramFeed from "@/components/InstagramFeed";
 import GrabadosSimbolicosSection from "@/components/GrabadosSimbolicosSection";
+import DestacadosHero from "@/components/DestacadosHero";
 
 import bannerNusa from "@/assets/banner-anillo-nusa.png";
 import bannerHalo from "@/assets/banner-halo-oval.png";
@@ -31,13 +32,16 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Anillos de Compromiso a Medida en Santiago | Gia Solari"
-        description="Showroom de joyería de autor en Vitacura, Santiago. Anillos de compromiso, argollas y joyas en oro 18k, platino y diamantes certificados. Garantía por Gusto."
+        title="Anillos de Compromiso a Medida Santiago | Oro 18k y Diamante Certificado, Gia Solari"
+        description="Anillos de compromiso a medida en Santiago de Chile. Oro 18k, platino y diamante certificado GIA/IGI. Showroom en Vitacura, entrega en 4 semanas. Cotiza tu pieza."
         path="/"
       />
       <Navbar />
 
       <Hero />
+
+      {/* Piezas destacadas — visibles apenas entras, atacan el rebote */}
+      <DestacadosHero />
 
       <Marquee />
 
