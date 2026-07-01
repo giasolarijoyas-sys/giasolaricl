@@ -13,6 +13,11 @@ const WhatsAppIcon = ({ size = 28 }: { size?: number }) => (
 
 const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) => {
   const [hover, setHover] = useState(false);
+  const [hoverCotizar, setHoverCotizar] = useState(false);
+  const location = useLocation();
+
+  // Ocultar el FAB de Cotizar en la propia página /cotizar
+  const showCotizar = !location.pathname.startsWith("/cotizar");
 
   return (
     <>
@@ -21,46 +26,98 @@ const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) =>
         className={`fixed bottom-5 right-4 sm:bottom-6 sm:right-6 ${hideOnMobile ? "hidden sm:block" : "block"}`}
         style={{ zIndex: 9999 }}
       >
-        <div className="relative">
-          {/* Tooltip desktop */}
-          <span
-            className="hidden sm:block absolute right-full top-1/2 -translate-y-1/2 mr-3 whitespace-nowrap pointer-events-none transition-opacity"
-            style={{
-              background: "#1A1A18",
-              color: "#FFFFFF",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "12px",
-              padding: "6px 10px",
-              borderRadius: "6px",
-              opacity: hover ? 1 : 0,
-              boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-            }}
-          >
-            Cotiza por WhatsApp
-          </span>
+        <div className="flex flex-col items-end gap-3">
+          {/* FAB Cotizar — apilado encima del WhatsApp */}
+          {showCotizar && (
+            <div className="relative">
+              <span
+                className="hidden sm:block absolute right-full top-1/2 -translate-y-1/2 mr-3 whitespace-nowrap pointer-events-none transition-opacity"
+                style={{
+                  background: "#1A1A18",
+                  color: "#FFFFFF",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "12px",
+                  padding: "6px 10px",
+                  borderRadius: "6px",
+                  opacity: hoverCotizar ? 1 : 0,
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                }}
+              >
+                Cotiza tu pieza
+              </span>
+              <Link
+                to="/cotizar"
+                aria-label="Cotiza tu pieza"
+                onMouseEnter={(e) => {
+                  setHoverCotizar(true);
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                }}
+                onMouseLeave={(e) => {
+                  setHoverCotizar(false);
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+                className="flex items-center justify-center rounded-full"
+                style={{
+                  background: "#4A5536",
+                  color: "#F5EFE6",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: 13,
+                  fontWeight: 500,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  padding: "12px 20px",
+                  height: 50,
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                  transition: "transform 0.2s ease",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Cotizar
+              </Link>
+            </div>
+          )}
 
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Cotiza por WhatsApp"
-            onMouseEnter={(e) => {
-              setHover(true);
-              e.currentTarget.style.transform = "scale(1.08)";
-            }}
-            onMouseLeave={(e) => {
-              setHover(false);
-              e.currentTarget.style.transform = "scale(1)";
-            }}
-            className="flex items-center justify-center rounded-full w-[50px] h-[50px] sm:w-14 sm:h-14"
-            style={{
-              background: "#25D366",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-              transition: "transform 0.2s ease",
-            }}
-          >
-            <WhatsAppIcon size={28} />
-          </a>
+          {/* FAB WhatsApp */}
+          <div className="relative">
+            <span
+              className="hidden sm:block absolute right-full top-1/2 -translate-y-1/2 mr-3 whitespace-nowrap pointer-events-none transition-opacity"
+              style={{
+                background: "#1A1A18",
+                color: "#FFFFFF",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "12px",
+                padding: "6px 10px",
+                borderRadius: "6px",
+                opacity: hover ? 1 : 0,
+                boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+              }}
+            >
+              Cotiza por WhatsApp
+            </span>
+
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Cotiza por WhatsApp"
+              onMouseEnter={(e) => {
+                setHover(true);
+                e.currentTarget.style.transform = "scale(1.08)";
+              }}
+              onMouseLeave={(e) => {
+                setHover(false);
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+              className="flex items-center justify-center rounded-full w-[50px] h-[50px] sm:w-14 sm:h-14"
+              style={{
+                background: "#25D366",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                transition: "transform 0.2s ease",
+              }}
+            >
+              <WhatsAppIcon size={28} />
+            </a>
+          </div>
         </div>
       </div>
     </>
