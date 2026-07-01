@@ -40,6 +40,9 @@ const Index = () => {
 
       <Hero />
 
+      {/* Piezas destacadas — visibles apenas entras, atacan el rebote */}
+      <DestacadosHero />
+
       <Marquee />
 
       {/* Galería primero — lo que vino a ver desde Instagram */}
