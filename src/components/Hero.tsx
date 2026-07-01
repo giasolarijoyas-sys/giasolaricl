@@ -36,14 +36,12 @@ const Hero = () => {
 
   return (
     <section
-      className="w-full flex flex-col md:flex-row-reverse pt-[60px] md:pt-[112px] items-stretch"
-      style={{ minHeight: "88vh" }}
+      className="w-full flex flex-col md:flex-row-reverse pt-[60px] md:pt-[112px] items-stretch hero-shell"
     >
       {/* Imagen */}
       <div
         ref={imgRef}
-        className="relative overflow-hidden md:w-[60%] w-full"
-        style={{ minHeight: "45vh" }}
+        className="relative overflow-hidden md:w-[60%] w-full hero-img-wrap"
       >
         <div className="absolute inset-0 md:hidden">
           <img
