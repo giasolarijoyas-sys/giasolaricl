@@ -6,7 +6,7 @@ interface SEOProps {
   path: string;
   image?: string;
   noindex?: boolean;
-  type?: "website" | "article" | "product";
+  type?: "website" | "article" | "product" | "book" | "profile";
 }
 
 const BASE_URL = "https://www.giasolari.cl";
