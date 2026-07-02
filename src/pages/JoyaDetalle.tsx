@@ -167,10 +167,11 @@ const JoyaDetalle = () => {
               >
                 <img
                   src={imgs[activeImg]}
-                  alt={`${item.nombre}, vista ${activeImg + 1}`}
+                  alt={altText}
                   className="w-full h-full object-cover"
                   loading="eager"
                 />
+
               </button>
 
               {imgs.length > 1 && (
