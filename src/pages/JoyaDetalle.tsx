@@ -54,33 +54,48 @@ const JoyaDetalle = () => {
   const emotional = paragraphs[0] ?? item.descripcion;
   const bodyParas = paragraphs.slice(1);
 
-  // SEO
+  // SEO, orientado a búsquedas reales en Chile
   const isRing = item.categoria?.toLowerCase().includes("anillo") || item.categoria?.toLowerCase().includes("argolla");
+  const metalLabel = item.metalPrincipal ?? item.material.split(",")[0] ?? "Oro 18k";
+  const piedraLabel = item.piedraCentral ?? "";
   const seoTitle = isRing
-    ? `Anillo ${item.nombre} | ${item.metalPrincipal ?? "Joyería a medida"} · Gia Solari`
-    : `${item.nombre} | Gia Solari Joyas`;
-  const seoDesc = emotional.slice(0, 155);
+    ? `${item.nombre}, ${metalLabel}${piedraLabel ? ` con ${piedraLabel}` : ""} | Anillos a Medida Santiago, Gia Solari`
+    : `${item.nombre}, ${metalLabel} | Joyería a Medida Santiago, Gia Solari`;
+  const seoDescBase = `${item.nombre}, ${item.categoria.toLowerCase()} en ${metalLabel.toLowerCase()}${piedraLabel ? ` con ${piedraLabel.toLowerCase()}` : ""}. ${emotional}`;
+  const seoDesc = seoDescBase.replace(/\s+/g, " ").slice(0, 158);
+  const absImage = imgs[0].startsWith("http") ? imgs[0] : `https://www.giasolari.cl${imgs[0]}`;
+  const priceLabel = item.precioDesde ? `Desde $${item.precioDesde.toLocaleString("es-CL")} CLP` : "A cotizar";
+  const altText = `${item.nombre}, ${item.categoria.toLowerCase()} en ${metalLabel.toLowerCase()}${piedraLabel ? ` con ${piedraLabel.toLowerCase()}` : ""}, Gia Solari Joyas Santiago`;
 
   const productJsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: item.nombre,
-    image: `https://www.giasolari.cl${imgs[0]}`,
+    image: imgs.map((src) => (src.startsWith("http") ? src : `https://www.giasolari.cl${src}`)),
     description: emotional,
     brand: { "@type": "Brand", name: "Gia Solari Joyas" },
     sku: item.slug,
     category: tipoEstilo,
+    material: metalLabel,
+    ...(piedraLabel ? { color: piedraLabel } : {}),
     offers: {
       "@type": "Offer",
       priceCurrency: "CLP",
+      ...(item.precioDesde ? { price: String(item.precioDesde) } : {}),
       availability: "https://schema.org/MadeToOrder",
-      priceSpecification: { "@type": "PriceSpecification", priceCurrency: "CLP", valueAddedTaxIncluded: true, description: "A cotizar" },
+      itemCondition: "https://schema.org/NewCondition",
+      url: `https://www.giasolari.cl/joyas/${item.slug}`,
       seller: { "@type": "Organization", name: "Gia Solari Joyas" },
     },
   };
 
   const goPrev = () => setActiveImg((i) => (i - 1 + imgs.length) % imgs.length);
   const goNext = () => setActiveImg((i) => (i + 1) % imgs.length);
+  const pinUrl = `https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(
+    `https://www.giasolari.cl/joyas/${item.slug}`,
+  )}&media=${encodeURIComponent(absImage)}&description=${encodeURIComponent(
+    `${item.nombre}, ${metalLabel}${piedraLabel ? ` con ${piedraLabel}` : ""}, Gia Solari Joyas`,
+  )}`;
 
   // Build specs
   const specsRows: { label: string; value: string }[] = [
@@ -98,11 +113,23 @@ const JoyaDetalle = () => {
         title={seoTitle}
         description={seoDesc}
         path={`/joyas/${item.slug}`}
-        image={imgs[0]}
+        image={absImage}
         noindex={item.isPlaceholder}
+        type="product"
       />
       <Helmet>
         <link rel="canonical" href={`https://www.giasolari.cl/joyas/${item.slug}`} />
+        {/* Pinterest Rich Pins (product) + Open Graph product tags */}
+        <meta property="product:brand" content="Gia Solari Joyas" />
+        <meta property="product:availability" content="made to order" />
+        <meta property="product:condition" content="new" />
+        <meta property="product:price:currency" content="CLP" />
+        {item.precioDesde && (
+          <meta property="product:price:amount" content={String(item.precioDesde)} />
+        )}
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="1500" />
+        <meta name="pinterest-rich-pin" content="true" />
         {!item.isPlaceholder && (
           <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>
         )}
