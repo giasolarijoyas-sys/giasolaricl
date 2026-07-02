@@ -151,18 +151,19 @@ const Joyas = () => {
     const parts: string[] = [];
     const tipoOpt = TIPOS.find((t) => t.id === filters.tipo);
     if (tipoOpt && tipoOpt.id !== "todos") parts.push(tipoOpt.label);
-    else parts.push("Joyas");
+    else parts.push("Catálogo de Anillos y Joyas a Medida");
     if (filters.estilo.length) parts.push(filters.estilo.join(" / "));
     if (filters.metal.length) parts.push(`en ${filters.metal.join(" / ")}`);
-    return `${parts.join(" ")} | Gia Solari Joyas`;
+    return `${parts.join(" ")} | Santiago Chile, Gia Solari`;
   }, [filters]);
 
   const dynamicDesc = useMemo(() => {
     const tipoOpt = TIPOS.find((t) => t.id === filters.tipo);
-    const tipoLabel = tipoOpt && tipoOpt.id !== "todos" ? tipoOpt.label.toLowerCase() : "joyas a medida";
+    const tipoLabel = tipoOpt && tipoOpt.id !== "todos" ? tipoOpt.label.toLowerCase() : "anillos de compromiso y joyas a medida";
     const filtros = [...filters.estilo, ...filters.metal, ...filters.piedra].join(", ");
-    return `Catálogo de ${tipoLabel}${filtros ? ` (${filtros})` : ""} hechas a mano en Santiago en oro 18k, platino y diamantes certificados.`;
+    return `Catálogo de ${tipoLabel}${filtros ? ` (${filtros})` : ""} en oro 18k, platino y diamante certificado GIA/IGI. Hechas a mano en Santiago, showroom en Vitacura. Cotiza tu pieza.`;
   }, [filters]);
+
 
   // === Chips ===
   type Chip = { label: string; onRemove: () => void };
