@@ -151,15 +151,15 @@ const Joyas = () => {
     const parts: string[] = [];
     const tipoOpt = TIPOS.find((t) => t.id === filters.tipo);
     if (tipoOpt && tipoOpt.id !== "todos") parts.push(tipoOpt.label);
-    else parts.push("Catálogo de Anillos y Joyas a Medida");
+    else parts.push("Anillos de Compromiso y Argollas de Matrimonio");
     if (filters.estilo.length) parts.push(filters.estilo.join(" / "));
     if (filters.metal.length) parts.push(`en ${filters.metal.join(" / ")}`);
-    return `${parts.join(" ")} | Santiago Chile, Gia Solari`;
+    return `${parts.join(" ")} en Santiago | Gia Solari`;
   }, [filters]);
 
   const dynamicDesc = useMemo(() => {
     const tipoOpt = TIPOS.find((t) => t.id === filters.tipo);
-    const tipoLabel = tipoOpt && tipoOpt.id !== "todos" ? tipoOpt.label.toLowerCase() : "anillos de compromiso y joyas a medida";
+    const tipoLabel = tipoOpt && tipoOpt.id !== "todos" ? tipoOpt.label.toLowerCase() : "anillos de compromiso y argollas de matrimonio a medida";
     const filtros = [...filters.estilo, ...filters.metal, ...filters.piedra].join(", ");
     return `Catálogo de ${tipoLabel}${filtros ? ` (${filtros})` : ""} en oro 18k, platino y diamante certificado GIA/IGI. Hechas a mano en Santiago, showroom en Vitacura. Cotiza tu pieza.`;
   }, [filters]);
