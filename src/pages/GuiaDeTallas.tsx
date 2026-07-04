@@ -71,17 +71,17 @@ const GuiaDeTallas = () => (
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border">
-                  <th className="py-3 px-4 text-left font-display text-foreground">Talla</th>
-                  <th className="py-3 px-4 text-left font-display text-foreground">Circunferencia</th>
-                  <th className="py-3 px-4 text-left font-display text-foreground">Diámetro</th>
+                  <th className="py-3 px-4 text-left font-display text-foreground">Diámetro interno</th>
+                  <th className="py-3 px-4 text-left font-display text-foreground">Talla Chile</th>
+                  <th className="py-3 px-4 text-left font-display text-foreground">Talla USA</th>
                 </tr>
               </thead>
               <tbody>
                 {tallas.map((t) => (
-                  <tr key={t.talla} className="border-b border-border/50 hover:bg-card/50">
-                    <td className="py-3 px-4 text-foreground font-medium">{t.talla}</td>
-                    <td className="py-3 px-4 text-muted-foreground">{t.circunferencia}</td>
-                    <td className="py-3 px-4 text-muted-foreground">{t.diametro}</td>
+                  <tr key={t.cl} className="border-b border-border/50 hover:bg-card/50">
+                    <td className="py-3 px-4 text-foreground font-medium">{t.mm}</td>
+                    <td className="py-3 px-4 text-muted-foreground">{t.cl}</td>
+                    <td className="py-3 px-4 text-muted-foreground">{t.us}</td>
                   </tr>
                 ))}
               </tbody>
