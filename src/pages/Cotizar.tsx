@@ -244,6 +244,14 @@ const Cotizar = () => {
         });
       }
     } catch { /* noop */ }
+    try {
+      if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+        (window as any).fbq("track", "Lead", {
+          content_name: "cotizador_completado",
+          content_category: tipoLabel,
+        });
+      }
+    } catch { /* noop */ }
     return url;
   };
 

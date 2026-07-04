@@ -61,6 +61,7 @@ export function initWhatsAppClickTracking(): void {
           link_url: href,
           location: window.location.pathname,
         });
+        trackFbEvent("ClickWhatsApp", { link_url: href }, "trackCustom");
       }
     },
     { capture: true }
