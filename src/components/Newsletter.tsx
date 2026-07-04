@@ -15,13 +15,19 @@ const Newsletter = () => {
 
     setSubmitting(true);
     try {
+      const cleanEmail = email.trim().toLowerCase();
       const { error } = await supabase
         .from("newsletter_subscribers")
-        .insert({ email: email.trim().toLowerCase() });
+        .insert({ email: cleanEmail });
       // Si el email ya existe (unique violation, code 23505), lo tratamos como éxito
       if (error && error.code !== "23505") {
         console.error("Newsletter subscribe error:", error);
       }
+      // Enviar guía por correo (no bloqueante)
+      try {
+        supabase.functions.invoke("enviar-guia", { body: { email: cleanEmail } })
+          .catch((e) => console.error("enviar-guia invoke error:", e));
+      } catch (e) { console.error("enviar-guia invoke error:", e); }
       try {
         if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
           (window as any).gtag("event", "newsletter_suscrito", {
