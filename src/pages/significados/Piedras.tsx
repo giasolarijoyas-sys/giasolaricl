@@ -169,7 +169,7 @@ const Piedras = () => (
   <>
     <SEO
       title="Las Piedras, Alta joyería | Gia Solari"
-      description="Diamante, zafiro, rubí, esmeralda y aguamarina. Conoce el significado y la belleza natural detrás de cada gema en la alta joyería de Gia Solari."
+      description="Diamante, zafiro, rubí, esmeralda y aguamarina. Conoce el significado y la belleza natural detrás de cada piedra en la alta joyería de Gia Solari."
       path="/significados/piedras"
     />
     <div style={{ background: BG, color: TEXT, minHeight: "100vh" }}>
