@@ -221,7 +221,7 @@ const Piedras = () => (
             lineHeight: 1.5,
           }}
         >
-          Cada gema guarda siglos de historia, belleza y significado. Conoce la tuya.
+          Cada piedra guarda siglos de historia, belleza y significado. Conoce la tuya.
         </p>
       </section>
 
