@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet-async";
+import { testimonios } from "@/data/testimonios";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
