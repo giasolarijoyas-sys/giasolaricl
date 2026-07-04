@@ -22,8 +22,8 @@ const tallas = [
 const GuiaDeTallas = () => (
   <>
     <SEO
-      title="Guía de Tallas de Anillos | Gia Solari"
-      description="Guía completa para medir la talla de tu anillo en casa, con tabla de circunferencia y diámetro. Perfecta para sorprender con un anillo de compromiso."
+      title="Guía de Tallas de Anillos: Cómo Medir en Casa | Gia Solari"
+      description="Cómo saber tu talla de anillo en casa con tabla de conversión Chile, USA, UK y diámetro en mm. Guía práctica para elegir un anillo de compromiso a medida."
       path="/guia-de-tallas"
     />
     <div className="min-h-screen">
