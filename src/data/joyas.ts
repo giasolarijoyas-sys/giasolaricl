@@ -625,7 +625,7 @@ export const JOYAS: Joya[] = [
     slug: "anillo-lady-di",
     nombre: "Lady Di, Zafiro",
     material: "Oro 18k blanco, Zafiro azul oval, Halo de diamantes, Engaste bezel",
-    metalPrincipal: "Zafiro azul oval y halo de diamantes en oro 18k blanco",
+    metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
     descripcion:
       "Anillo de compromiso estilo Lady Di: zafiro azul oval con halo de diamantes en oro 18k blanco. Hecho a medida en Santiago.",
