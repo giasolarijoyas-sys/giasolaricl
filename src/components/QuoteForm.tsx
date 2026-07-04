@@ -244,6 +244,15 @@ const QuoteForm = () => {
       });
 
       if (error) throw error;
+      try {
+        if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+          (window as any).gtag("event", "cotizacion_enviada", {
+            pieza: form.pieza,
+            metal: form.metal,
+            piedra: form.piedra,
+          });
+        }
+      } catch { /* noop */ }
       setSubmitted(true);
     } catch (err) {
       console.error('Submit error:', err);

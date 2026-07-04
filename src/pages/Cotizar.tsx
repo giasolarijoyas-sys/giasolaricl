@@ -233,7 +233,18 @@ const Cotizar = () => {
     if (isCompromiso && estiloLabel) lines.push(`🎨 Estilo: ${estiloLabel}`);
     if (isCompromiso && isDiamante && tamanoLabel) lines.push(`📏 Tamaño piedra: ${tamanoLabel}`);
     lines.push(`💰 Presupuesto: ${presupuestoLabel}`, "", rangoText, "", "Gracias!");
-    return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(lines.join("\n"))}`;
+    const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(lines.join("\n"))}`;
+    try {
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "cotizador_completado", {
+          tipo: tipoLabel,
+          metal: metalLabel,
+          piedra: piedraLabel,
+          presupuesto: presupuestoLabel,
+        });
+      }
+    } catch { /* noop */ }
+    return url;
   };
 
   const reset = () => {
