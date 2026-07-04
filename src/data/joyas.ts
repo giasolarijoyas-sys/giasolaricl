@@ -518,7 +518,7 @@ export const JOYAS: Joya[] = [
     descripcion:
       "Zafiro azul oval central rodeado por un halo de diamantes, oro 18k blanco. Presentación sobre cofre verde oliva.",
     descripcionLarga:
-      "Un zafiro azul oval al centro, rodeado por un halo cluster que no se cierra: los diamantes se abren como rayos desde la piedra, formando un starburst asimétrico de inspiración art déco. Presentado sobre cofre de terciopelo verde oliva, firma visual de la casa. Cada anillo incluye Certificado Gia Solari.",
+      "Un zafiro azul oval al centro, rodeado por un halo cluster que no se cierra: los diamantes se abren como rayos desde la piedra, formando un starburst asimétrico de inspiración Art Decó. Presentado sobre cofre de terciopelo verde oliva, firma visual de la casa. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
     imagenes: [zafiroHaloClusterVintage01],
     isPlaceholder: false,
@@ -546,7 +546,7 @@ export const JOYAS: Joya[] = [
     descripcion:
       "Aguamarina corte emerald rectangular con halo octogonal de diamantes, milgrain y banda con diamantes, oro 18k blanco.",
     descripcionLarga:
-      "Aguamarina corte emerald, rectangular y luminosa, enmarcada por un halo octogonal de diamantes con milgrain, un trabajo de showroom que se inclina al art déco. La banda acompaña con pequeños diamantes para continuar la línea de luz. Pieza estudiada al detalle. Cada anillo incluye Certificado Gia Solari.",
+      "Aguamarina corte emerald, rectangular y luminosa, enmarcada por un halo octogonal de diamantes con milgrain, un trabajo de showroom que se inclina al Art Decó. La banda acompaña con pequeños diamantes para continuar la línea de luz. Pieza estudiada al detalle. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
     imagenes: [aguamarinaRectangularShowroom01, aguamarinaRectangularShowroom02],
     isPlaceholder: false,
@@ -581,12 +581,12 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-cushion-pave-platino",
-    nombre: "Halo Esmeralda Pavé",
-    material: "Platino, Diamante natural corte emerald, Halo de diamantes + banda pavé + milgrain, Certificación GIA",
+    nombre: "Halo Cushion Pavé",
+    material: "Platino, Diamante natural corte cushion, Halo de diamantes + banda pavé + milgrain, Certificación GIA",
     metalPrincipal: "Platino",
     estilo: "Editorial",
     descripcion:
-      "Diamante emerald cut con halo de diamantes, banda pavé y detalle milgrain. Platino.",
+      "Diamante cushion con halo de diamantes, banda pavé y detalle milgrain. Platino.",
     descripcionLarga:
       "Diamante cushion con certificación GIA, rodeado por un halo de brillantes y una banda en pavé con detalle milgrain. El platino aporta temperatura fría y la milgrain suma un guiño vintage. Editorial sin perder uso diario. Cada anillo incluye Certificado Gia Solari, además del certificado GIA del diamante.",
     categoria: "Anillo de compromiso",
@@ -625,7 +625,7 @@ export const JOYAS: Joya[] = [
     slug: "anillo-lady-di",
     nombre: "Lady Di, Zafiro",
     material: "Oro 18k blanco, Zafiro azul oval, Halo de diamantes, Engaste bezel",
-    metalPrincipal: "Zafiro azul oval y halo de diamantes en oro 18k blanco",
+    metalPrincipal: "Oro 18k blanco",
     estilo: "Color",
     descripcion:
       "Anillo de compromiso estilo Lady Di: zafiro azul oval con halo de diamantes en oro 18k blanco. Hecho a medida en Santiago.",
@@ -642,9 +642,9 @@ export const JOYAS: Joya[] = [
     metalPrincipal: "Oro 18k blanco",
     estilo: "Editorial",
     descripcion:
-      "Anillo art-déco con tres diamantes redondos en disposición vertical, rodeados de halo de diamantes pequeños. Estilo escalonado vintage.",
+      "Anillo Art Decó con tres diamantes redondos en disposición vertical, rodeados de halo de diamantes pequeños. Estilo escalonado vintage.",
     descripcionLarga:
-      "Tres diamantes brillantes redondos en composición vertical centrada, enmarcados por un halo escalonado de diamantes pavé pequeños. Detalle milgrain y arquitectura art-deco. Oro 18k blanco. Pieza con presencia y línea editorial vintage.",
+      "Tres diamantes brillantes redondos en composición vertical centrada, enmarcados por un halo escalonado de diamantes pavé pequeños. Detalle milgrain y arquitectura Art Decó. Oro 18k blanco. Pieza con presencia y línea editorial vintage.",
     categoria: "Anillo de compromiso",
     imagenes: [anilloFelisa01, anilloFelisa02],
     isPlaceholder: false,
@@ -784,12 +784,12 @@ export const JOYAS: Joya[] = [
   {
     slug: "art-deco-baguette",
     nombre: "Art Decó Baguette, Platino",
-    material: "Platino, Diamante central, Diamantes baguette laterales, Líneas geométricas art déco",
+    material: "Platino, Diamante central, Diamantes baguette laterales, Líneas geométricas Art Decó",
     metalPrincipal: "Platino",
     estilo: "Editorial",
-    descripcion: "Diamante central con baguettes laterales en composición art déco. Platino.",
+    descripcion: "Diamante central con baguettes laterales en composición Art Decó. Platino.",
     descripcionLarga:
-      "Diamante central con diamantes baguette a los costados, en una composición geométrica de inspiración art déco. Platino, líneas limpias y simetría perfecta. Una pieza para quienes aman el diseño de los años 20. Cada anillo incluye Certificado Gia Solari.",
+      "Diamante central con diamantes baguette a los costados, en una composición geométrica de inspiración Art Decó. Platino, líneas limpias y simetría perfecta. Una pieza para quienes aman el diseño de los años 20. Cada anillo incluye Certificado Gia Solari.",
     categoria: "Anillo de compromiso",
     imagenes: [artDecoBaguette01],
     isPlaceholder: false,
@@ -843,7 +843,7 @@ export const JOYAS: Joya[] = [
     metalPrincipal: "Oro 18k amarillo",
     estilo: "Vintage",
     piedraCentral: "Diamante",
-    descripcion: "Diamante redondo central con halo art decó en oro 18k amarillo.",
+    descripcion: "Diamante redondo central con halo Art Decó en oro 18k amarillo.",
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente003],
@@ -857,7 +857,7 @@ export const JOYAS: Joya[] = [
     metalPrincipal: "Oro 18k blanco",
     estilo: "Vintage",
     piedraCentral: "Diamante",
-    descripcion: "Diamante trillion central con halo art decó escalonado, oro 18k blanco.",
+    descripcion: "Diamante trillion central con halo Art Decó escalonado, oro 18k blanco.",
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente004],
@@ -1011,7 +1011,7 @@ export const JOYAS: Joya[] = [
     metalPrincipal: "Oro 18k blanco",
     estilo: "Vintage",
     piedraCentral: "Zafiro",
-    descripcion: "Zafiro corte emerald rectangular con halo de diamantes art decó, oro 18k blanco.",
+    descripcion: "Zafiro corte emerald rectangular con halo de diamantes Art Decó, oro 18k blanco.",
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente016],
@@ -1067,7 +1067,7 @@ export const JOYAS: Joya[] = [
     metalPrincipal: "Oro 18k blanco",
     estilo: "Vintage",
     piedraCentral: "Esmeralda",
-    descripcion: "Anillo art decó navette con diamante central y baguettes esmeraldas, oro 18k blanco.",
+    descripcion: "Anillo Art Decó navette con diamante central y baguettes esmeraldas, oro 18k blanco.",
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente022],
@@ -1179,7 +1179,7 @@ export const JOYAS: Joya[] = [
     metalPrincipal: "Oro 18k blanco",
     estilo: "Vintage",
     piedraCentral: "Diamante",
-    descripcion: "Trilogía con tres diamantes art decó con halo, oro 18k blanco.",
+    descripcion: "Trilogía con tres diamantes Art Decó con halo, oro 18k blanco.",
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente035],
@@ -1305,7 +1305,7 @@ export const JOYAS: Joya[] = [
     metalPrincipal: "Oro 18k amarillo",
     estilo: "Vintage",
     piedraCentral: "Morganita",
-    descripcion: "Anillo art decó con tres morganitas y diamantes, oro 18k amarillo.",
+    descripcion: "Anillo Art Decó con tres morganitas y diamantes, oro 18k amarillo.",
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente055],
@@ -1417,7 +1417,7 @@ export const JOYAS: Joya[] = [
     metalPrincipal: "Oro 18k blanco",
     estilo: "Vintage",
     piedraCentral: "Esmeralda",
-    descripcion: "Esmeralda emerald cut con halo art decó navette, oro 18k blanco.",
+    descripcion: "Esmeralda emerald cut con halo Art Decó navette, oro 18k blanco.",
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente073],
@@ -1431,7 +1431,7 @@ export const JOYAS: Joya[] = [
     metalPrincipal: "Oro 18k blanco",
     estilo: "Vintage",
     piedraCentral: "Diamante",
-    descripcion: "Diamante navette cluster art decó, oro 18k blanco.",
+    descripcion: "Diamante navette cluster Art Decó, oro 18k blanco.",
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente076],
@@ -1515,7 +1515,7 @@ export const JOYAS: Joya[] = [
     metalPrincipal: "Oro 18k blanco",
     estilo: "Vintage",
     piedraCentral: "Diamante",
-    descripcion: "Solitario diamante con banda art decó escalonada, oro 18k blanco.",
+    descripcion: "Solitario diamante con banda Art Decó escalonada, oro 18k blanco.",
     descripcionLarga:
       "Pieza única hecha a mano. La piedra, el metal y los detalles se conversan a medida según disponibilidad. Cada anillo incluye Certificado Gia Solari.",
     imagenes: [pendiente093],

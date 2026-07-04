@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
@@ -11,8 +12,17 @@ const Newsletter = () => {
     if (!email) return;
 
     setSubmitting(true);
-    // Simulamos un pequeño delay para que se sienta real
-    await new Promise((resolve) => setTimeout(resolve, 600));
+    try {
+      const { error } = await supabase
+        .from("newsletter_subscribers")
+        .insert({ email: email.trim().toLowerCase() });
+      // Si el email ya existe (unique violation, code 23505), lo tratamos como éxito
+      if (error && error.code !== "23505") {
+        console.error("Newsletter subscribe error:", error);
+      }
+    } catch (err) {
+      console.error("Newsletter subscribe error:", err);
+    }
     setSubscribed(true);
     setSubmitting(false);
     setEmail("");

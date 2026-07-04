@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import InstagramButton from "./InstagramButton";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
-const WA_URL =
-  "https://wa.me/56984049502?text=Hola%20Gia%2C%20me%20interesa%20cotizar%20una%20joya%20%E2%9C%A8";
+const WA_URL = buildWhatsAppUrl("generico", {
+  custom: "Hola Maca, me interesa cotizar una joya",
+});
 
 const WhatsAppIcon = ({ size = 28 }: { size?: number }) => (
   <svg viewBox="0 0 32 32" width={size} height={size} fill="#FFFFFF" aria-hidden="true">

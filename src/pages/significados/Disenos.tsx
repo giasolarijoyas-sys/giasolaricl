@@ -39,7 +39,7 @@ const Disenos = () => (
   <>
     <SEO
       title="Los Diseños, Anillos de Compromiso con Significado | Gia Solari"
-      description="Cada anillo tiene un nombre y una historia. Conocé los diseños de Gia Solari: solitario, halo, tres piedras, zafiro estilo Lady Di y más. A medida en Santiago."
+      description="Cada anillo tiene un nombre y una historia. Conoce los diseños de Gia Solari: solitario, halo, tres piedras, zafiro estilo Lady Di y más. A medida en Santiago."
       path="/significados/disenos"
     />
     <div style={{ background: SIG_TOKENS.bg, color: SIG_TOKENS.text }}>
