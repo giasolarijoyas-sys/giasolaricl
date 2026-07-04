@@ -63,8 +63,8 @@ const Agenda = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Agendar visita al showroom | Cotizar tu joya, Gia Solari"
-        description="Reserva tu cita en nuestro showroom de Vitacura, Santiago. Asesoría personalizada para anillos de compromiso, argollas y joyería a medida."
+        title="Agenda tu Cita: Anillos de Compromiso en Vitacura | Gia Solari"
+        description="Reserva tu cita en el showroom de Vitacura, Santiago. Asesoría 1 a 1 para tu anillo de compromiso a medida en oro 18k, platino y diamantes certificados."
         path="/agenda"
       />
       <Navbar />

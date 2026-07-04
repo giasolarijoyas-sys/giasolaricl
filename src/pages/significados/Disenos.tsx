@@ -38,8 +38,8 @@ const ALT_TEXT: Record<string, string> = {
 const Disenos = () => (
   <>
     <SEO
-      title="Los Diseños, Anillos de Compromiso con Significado | Gia Solari"
-      description="Cada anillo tiene un nombre y una historia. Conoce los diseños de Gia Solari: solitario, halo, tres piedras, zafiro estilo Lady Di y más. A medida en Santiago."
+      title="Anillos de Compromiso a Medida en Chile: Solitario, Halo y Tres Piedras"
+      description="Diseños de anillo de compromiso a medida en Chile: solitario, halo, tres piedras y estilo Lady Di con zafiro. Oro 18k, platino y diamantes certificados GIA."
       path="/significados/disenos"
     />
     <div style={{ background: SIG_TOKENS.bg, color: SIG_TOKENS.text }}>
