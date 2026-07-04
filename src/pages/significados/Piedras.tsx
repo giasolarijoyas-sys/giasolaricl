@@ -34,7 +34,7 @@ const PIEDRAS_PREMIUM: PiedraPremium[] = [
     nombre: "Diamante",
     simbolo: "Símbolo de amor eterno, fortaleza y compromiso.",
     descripcion:
-      "Los diamantes más valiosos son aquellos con menor presencia de color, permitiendo que la luz se refleje con máxima pureza. Su brillo excepcional y fuego natural los convierten en la gema más icónica para celebrar los momentos más importantes de la vida.",
+      "Los diamantes más valiosos son aquellos con menor presencia de color, permitiendo que la luz se refleje con máxima pureza. Su brillo excepcional y fuego natural los convierten en la piedra más icónica para celebrar los momentos más importantes de la vida.",
     img: imgDiamante,
   },
   {
@@ -42,7 +42,7 @@ const PIEDRAS_PREMIUM: PiedraPremium[] = [
     nombre: "Zafiro",
     simbolo: "Símbolo de sabiduría, lealtad y nobleza.",
     descripcion:
-      "Los zafiros más apreciados poseen un azul intenso y profundo, conocido por su elegancia atemporal. Durante siglos han sido elegidos por la realeza y continúan siendo una de las gemas más sofisticadas de la alta joyería.",
+      "Los zafiros más apreciados poseen un azul intenso y profundo, conocido por su elegancia atemporal. Durante siglos han sido elegidos por la realeza y continúan siendo una de las piedras más sofisticadas de la alta joyería.",
     img: imgZafiro,
   },
   {
@@ -50,7 +50,7 @@ const PIEDRAS_PREMIUM: PiedraPremium[] = [
     nombre: "Rubí",
     simbolo: "Símbolo de pasión, fuerza y amor profundo.",
     descripcion:
-      "Reconocido por su extraordinario color rojo intenso, el rubí es una de las gemas más raras y valiosas del mundo. Su energía vibrante y belleza cautivadora lo convierten en una piedra única para quienes buscan una joya con carácter.",
+      "Reconocido por su extraordinario color rojo intenso, el rubí es una de las piedras más raras y valiosas del mundo. Su energía vibrante y belleza cautivadora lo convierten en una piedra única para quienes buscan una joya con carácter.",
     img: imgRubi,
   },
   {
