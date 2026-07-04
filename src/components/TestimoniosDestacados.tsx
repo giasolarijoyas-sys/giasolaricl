@@ -20,6 +20,12 @@ const TestimoniosDestacados = () => {
           <h2 className="font-display text-3xl md:text-4xl text-foreground">
             Testimonios
           </h2>
+          <p className="font-display text-xl md:text-2xl text-foreground mt-6">
+            Más de 200 anillos de compromiso creados a mano
+          </p>
+          <p className="text-sm text-muted-foreground italic mt-2">
+            y más de 250 joyas en total
+          </p>
         </div>
 
         {/* Desktop: grid 3 columnas */}
