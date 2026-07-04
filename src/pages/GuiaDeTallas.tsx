@@ -5,16 +5,18 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { motion } from "framer-motion";
 
 const tallas = [
-  { talla: 4, circunferencia: "46.8 mm", diametro: "14.9 mm" },
-  { talla: 5, circunferencia: "49.3 mm", diametro: "15.7 mm" },
-  { talla: 6, circunferencia: "51.9 mm", diametro: "16.5 mm" },
-  { talla: 7, circunferencia: "54.4 mm", diametro: "17.3 mm" },
-  { talla: 8, circunferencia: "57.0 mm", diametro: "18.1 mm" },
-  { talla: 9, circunferencia: "59.5 mm", diametro: "18.9 mm" },
-  { talla: 10, circunferencia: "62.1 mm", diametro: "19.8 mm" },
-  { talla: 11, circunferencia: "64.6 mm", diametro: "20.6 mm" },
-  { talla: 12, circunferencia: "67.2 mm", diametro: "21.4 mm" },
-  { talla: 13, circunferencia: "69.7 mm", diametro: "22.2 mm" },
+  { mm: "14,9 mm", cl: "6", us: "4" },
+  { mm: "15,3 mm", cl: "7", us: "4.5" },
+  { mm: "15,7 mm", cl: "9", us: "5" },
+  { mm: "16,1 mm", cl: "10", us: "5.5" },
+  { mm: "16,5 mm", cl: "12", us: "6" },
+  { mm: "16,9 mm", cl: "13", us: "6.5" },
+  { mm: "17,3 mm", cl: "14", us: "7" },
+  { mm: "17,7 mm", cl: "15", us: "7.5" },
+  { mm: "18,1 mm", cl: "16", us: "8" },
+  { mm: "18,5 mm", cl: "17", us: "8.5" },
+  { mm: "18,9 mm", cl: "18", us: "9" },
+  { mm: "19,4 mm", cl: "19", us: "9.5" },
 ];
 
 const GuiaDeTallas = () => (
