@@ -782,7 +782,7 @@ export const JOYAS: Joya[] = [
     isPlaceholder: false,
   },
   {
-    slug: "Art Decó-baguette",
+    slug: "art-deco-baguette",
     nombre: "Art Decó Baguette, Platino",
     material: "Platino, Diamante central, Diamantes baguette laterales, Líneas geométricas Art Decó",
     metalPrincipal: "Platino",
