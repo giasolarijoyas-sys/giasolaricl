@@ -14,18 +14,18 @@ const WA_PLANTILLA = buildWhatsAppUrl("generico", {
 const WA_CITA = buildWhatsAppUrl("agenda");
 
 const tabla = [
-  { mm: "14.9", cl: "9", us: "4", uk: "H" },
-  { mm: "15.3", cl: "10", us: "4.5", uk: "I" },
-  { mm: "15.7", cl: "11", us: "5", uk: "J" },
-  { mm: "16.1", cl: "12", us: "5.5", uk: "K" },
-  { mm: "16.5", cl: "13", us: "6", uk: "L" },
-  { mm: "16.9", cl: "14", us: "6.5", uk: "M" },
-  { mm: "17.3", cl: "15", us: "7", uk: "N" },
-  { mm: "17.7", cl: "16", us: "7.5", uk: "O" },
-  { mm: "18.1", cl: "17", us: "8", uk: "P" },
-  { mm: "18.5", cl: "18", us: "8.5", uk: "Q" },
-  { mm: "18.9", cl: "19", us: "9", uk: "R" },
-  { mm: "19.4", cl: "20", us: "9.5", uk: "S" },
+  { mm: "14.9", cl: "6", us: "4", uk: "H" },
+  { mm: "15.3", cl: "7", us: "4.5", uk: "I" },
+  { mm: "15.7", cl: "9", us: "5", uk: "J" },
+  { mm: "16.1", cl: "10", us: "5.5", uk: "K" },
+  { mm: "16.5", cl: "12", us: "6", uk: "L" },
+  { mm: "16.9", cl: "13", us: "6.5", uk: "M" },
+  { mm: "17.3", cl: "14", us: "7", uk: "N" },
+  { mm: "17.7", cl: "15", us: "7.5", uk: "O" },
+  { mm: "18.1", cl: "16", us: "8", uk: "P" },
+  { mm: "18.5", cl: "17", us: "8.5", uk: "Q" },
+  { mm: "18.9", cl: "18", us: "9", uk: "R" },
+  { mm: "19.4", cl: "19", us: "9.5", uk: "S" },
 ];
 
 const TallaAnillo = () => (
@@ -79,7 +79,7 @@ const TallaAnillo = () => (
                   de borde a borde. Ese número en milímetros es tu talla.
                 </p>
                 <p className="mt-3">
-                  Por ejemplo: si el diámetro interno mide 16 mm, tu talla chilena es 12.
+                  Por ejemplo: si el diámetro interno mide 16,5 mm, tu talla chilena es 12.
                 </p>
               </section>
 
