@@ -581,12 +581,12 @@ export const JOYAS: Joya[] = [
   },
   {
     slug: "halo-cushion-pave-platino",
-    nombre: "Halo Esmeralda Pavé",
-    material: "Platino, Diamante natural corte emerald, Halo de diamantes + banda pavé + milgrain, Certificación GIA",
+    nombre: "Halo Cushion Pavé",
+    material: "Platino, Diamante natural corte cushion, Halo de diamantes + banda pavé + milgrain, Certificación GIA",
     metalPrincipal: "Platino",
     estilo: "Editorial",
     descripcion:
-      "Diamante emerald cut con halo de diamantes, banda pavé y detalle milgrain. Platino.",
+      "Diamante cushion con halo de diamantes, banda pavé y detalle milgrain. Platino.",
     descripcionLarga:
       "Diamante cushion con certificación GIA, rodeado por un halo de brillantes y una banda en pavé con detalle milgrain. El platino aporta temperatura fría y la milgrain suma un guiño vintage. Editorial sin perder uso diario. Cada anillo incluye Certificado Gia Solari, además del certificado GIA del diamante.",
     categoria: "Anillo de compromiso",
