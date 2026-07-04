@@ -20,6 +20,13 @@ const Newsletter = () => {
       if (error && error.code !== "23505") {
         console.error("Newsletter subscribe error:", error);
       }
+      try {
+        if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+          (window as any).gtag("event", "newsletter_suscrito", {
+            already_subscribed: error?.code === "23505",
+          });
+        }
+      } catch { /* noop */ }
     } catch (err) {
       console.error("Newsletter subscribe error:", err);
     }
