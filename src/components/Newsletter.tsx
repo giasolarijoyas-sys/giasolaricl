@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
+const GUIA_PDF_URL = "/guia-anillo-compromiso-gia-solari.pdf";
+
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -37,6 +39,12 @@ const Newsletter = () => {
     } catch (err) {
       console.error("Newsletter subscribe error:", err);
     }
+    // Abrir la guía en una pestaña nueva
+    try {
+      if (typeof window !== "undefined") {
+        window.open(GUIA_PDF_URL, "_blank", "noopener,noreferrer");
+      }
+    } catch { /* noop */ }
     setSubscribed(true);
     setSubmitting(false);
     setEmail("");
@@ -57,7 +65,7 @@ const Newsletter = () => {
             color: "#1A1614",
           }}
         >
-          Sé la primera en saber
+          Descarga gratis la guía para elegir tu anillo
         </h2>
 
         <p
@@ -70,20 +78,41 @@ const Newsletter = () => {
             color: "#7A7266",
           }}
         >
-          Nuevas piezas, acceso anticipado y cosas que no publico en ningún otro lado.
+          Déjame tu correo y te envío la guía con todo lo que debes saber antes de comprar tu anillo de compromiso: piedras, cortes, metales y presupuesto.
         </p>
 
         {subscribed ? (
-          <p
-            style={{
-              fontFamily: "'Bodoni Moda', 'Playfair Display', serif",
-              fontStyle: "italic",
-              fontSize: "22px",
-              color: "#B8995A",
-            }}
-          >
-            Perfecto, te aviso pronto.
-          </p>
+          <div>
+            <p
+              style={{
+                fontFamily: "'Bodoni Moda', 'Playfair Display', serif",
+                fontStyle: "italic",
+                fontSize: "22px",
+                color: "#B8995A",
+              }}
+            >
+              Perfecto, también te la envié por correo.
+            </p>
+            <p
+              className="mt-3"
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                color: "#7A7266",
+              }}
+            >
+              Si la ventana no se abrió,{" "}
+              <a
+                href={GUIA_PDF_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#4A5536", textDecoration: "underline" }}
+              >
+                descarga la guía aquí
+              </a>
+              .
+            </p>
+          </div>
         ) : (
           <form
             onSubmit={handleSubmit}
@@ -122,7 +151,7 @@ const Newsletter = () => {
               {submitting ? (
                 <Loader2 size={14} className="animate-spin" />
               ) : (
-                "Quiero recibir novedades"
+                "Descargar guía gratis"
               )}
             </button>
           </form>
@@ -145,3 +174,4 @@ const Newsletter = () => {
 };
 
 export default Newsletter;
+
