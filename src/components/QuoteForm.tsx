@@ -253,6 +253,14 @@ const QuoteForm = () => {
           });
         }
       } catch { /* noop */ }
+      try {
+        if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+          (window as any).fbq("track", "Lead", {
+            content_name: "cotizacion_enviada",
+            content_category: form.pieza,
+          });
+        }
+      } catch { /* noop */ }
       setSubmitted(true);
     } catch (err) {
       console.error('Submit error:', err);
