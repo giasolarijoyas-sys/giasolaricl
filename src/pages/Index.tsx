@@ -29,13 +29,45 @@ import bannerHalo from "@/assets/banner-halo-oval.png";
 import bannerHands from "@/assets/banner-hands.jpg";
 
 const Index = () => {
+  const ratingJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "JewelryStore",
+    "name": "Gia Solari Joyas",
+    "url": "https://www.giasolari.cl",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": String(testimonios.length),
+      "bestRating": "5",
+      "worstRating": "1",
+    },
+    "review": testimonios.map((t) => ({
+      "@type": "Review",
+      "author": { "@type": "Person", "name": t.autor },
+      "reviewBody": t.cita,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1",
+      },
+      "itemReviewed": {
+        "@type": "Product",
+        "name": t.pieza,
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <SEO
-        title="Anillos de Compromiso a Medida Santiago | Oro 18k y Diamante Certificado, Gia Solari"
+        title="Anillos de Compromiso a Medida en Santiago | Gia Solari Joyas"
         description="Anillos de compromiso a medida en Santiago de Chile. Oro 18k, platino y diamante certificado GIA/IGI. Showroom en Vitacura, entrega en 4 semanas. Cotiza tu pieza."
         path="/"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(ratingJsonLd)}</script>
+      </Helmet>
       <Navbar />
 
       <Hero />
