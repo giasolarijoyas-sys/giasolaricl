@@ -89,11 +89,11 @@ const engastes = [
 ];
 
 const tallaManos = [
-  { emoji: "🤏", label: "XS, Mano muy delgada", desc: "Talla 4–5 (aprox. 15mm)" },
-  { emoji: "✋", label: "S, Mano delgada", desc: "Talla 5–6 (aprox. 16mm)" },
-  { emoji: "🖐️", label: "M, Mano mediana", desc: "Talla 6–7 (aprox. 17mm)" },
-  { emoji: "🫲", label: "L, Mano ancha", desc: "Talla 7–8 (aprox. 18mm)" },
-  { emoji: "🤚", label: "XL, Mano grande", desc: "Talla 8+ (aprox. 19mm+)" },
+  { emoji: "🤏", label: "XS, Mano muy delgada", desc: "Talla 7 (aprox. 15,3 mm)" },
+  { emoji: "✋", label: "S, Mano delgada", desc: "Talla 10 (aprox. 16,1 mm)" },
+  { emoji: "🖐️", label: "M, Mano mediana", desc: "Talla 12 (aprox. 16,5 mm)" },
+  { emoji: "🫲", label: "L, Mano ancha", desc: "Talla 15 (aprox. 17,7 mm)" },
+  { emoji: "🤚", label: "XL, Mano grande", desc: "Talla 18 (aprox. 18,9 mm)" },
   { emoji: "❓", label: "No lo sé", desc: "Te ayudamos a medir" },
 ];
 
