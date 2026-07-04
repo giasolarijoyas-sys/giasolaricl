@@ -74,6 +74,7 @@ Deno.serve(async (req) => {
       body: JSON.stringify({
         from: FROM,
         to: [email],
+        reply_to: "giasolarijoyas@gmail.com",
         subject: "Tu guía para elegir el anillo de compromiso 💍",
         html,
       }),
