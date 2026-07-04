@@ -89,6 +89,39 @@ Deno.serve(async (req) => {
       });
     }
 
+    // Agregar el contacto a la audiencia "Newsletter Gia Solari" (best-effort)
+    try {
+      const audRes = await fetch("https://api.resend.com/audiences", {
+        method: "GET",
+        headers: { Authorization: `Bearer ${RESEND_API_KEY}` },
+      });
+      if (!audRes.ok) {
+        console.error("Resend audiences list error:", audRes.status, await audRes.text());
+      } else {
+        const audData = await audRes.json();
+        const audiences = Array.isArray(audData?.data) ? audData.data : [];
+        const target = audiences.find((a: { name?: string }) => a?.name === "Newsletter Gia Solari");
+        if (!target?.id) {
+          console.error("Audience 'Newsletter Gia Solari' no encontrada");
+        } else {
+          const contactRes = await fetch(`https://api.resend.com/audiences/${target.id}/contacts`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${RESEND_API_KEY}`,
+            },
+            body: JSON.stringify({ email, unsubscribed: false }),
+          });
+          if (!contactRes.ok) {
+            // Si ya existe u otro error, solo loguear
+            console.error("Resend add contact error:", contactRes.status, await contactRes.text());
+          }
+        }
+      }
+    } catch (audErr) {
+      console.error("Audience add exception:", audErr);
+    }
+
     return new Response(JSON.stringify({ ok: true }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
