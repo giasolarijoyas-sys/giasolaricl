@@ -20,7 +20,7 @@ const SobreGia = () => (
   <>
     <SEO
       title="Sobre Gia Solari, diseñadora y showroom en Santiago"
-      description="Conocé a Macarena González Solari, diseñadora detrás del showroom. Joyería hecha a mano en Vitacura con piedras certificadas y atención personalizada."
+      description="Conoce a Macarena González Solari, diseñadora detrás del showroom. Joyería hecha a mano en Vitacura con piedras certificadas y atención personalizada."
       path="/sobre-gia"
     />
     <div className="min-h-screen">
