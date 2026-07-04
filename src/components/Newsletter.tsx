@@ -27,6 +27,13 @@ const Newsletter = () => {
           });
         }
       } catch { /* noop */ }
+      try {
+        if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+          (window as any).fbq("track", "Subscribe", {
+            already_subscribed: error?.code === "23505",
+          });
+        }
+      } catch { /* noop */ }
     } catch (err) {
       console.error("Newsletter subscribe error:", err);
     }

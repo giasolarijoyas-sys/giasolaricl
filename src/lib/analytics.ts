@@ -7,6 +7,7 @@ declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
     dataLayer?: unknown[];
+    fbq?: (...args: unknown[]) => void;
   }
 }
 
@@ -17,6 +18,21 @@ export function trackEvent(
   try {
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
       window.gtag("event", name, params);
+    }
+  } catch {
+    /* noop */
+  }
+}
+
+/** Meta Pixel event helper — safe if fbq no cargó. */
+export function trackFbEvent(
+  name: string,
+  params: Record<string, unknown> = {},
+  type: "track" | "trackCustom" = "track"
+): void {
+  try {
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq(type, name, params);
     }
   } catch {
     /* noop */
@@ -45,6 +61,7 @@ export function initWhatsAppClickTracking(): void {
           link_url: href,
           location: window.location.pathname,
         });
+        trackFbEvent("ClickWhatsApp", { link_url: href }, "trackCustom");
       }
     },
     { capture: true }
