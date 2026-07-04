@@ -277,7 +277,7 @@ const QuoteForm = () => {
               con una propuesta detallada.
             </p>
             <p className="text-muted-foreground text-sm">
-             , Macarena González Solari
+              Un abrazo, Macarena González Solari
             </p>
           </motion.div>
         </div>
