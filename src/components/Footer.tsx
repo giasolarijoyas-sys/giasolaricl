@@ -72,12 +72,11 @@ const Footer = () => {
               Catálogo
             </p>
             <div className="flex flex-col gap-2">
-              <a href="/joyas?categoria=Anillo+de+compromiso" className="hover:text-[#C9A87C] transition-colors">Anillos de compromiso</a>
-              <a href="/joyas?categoria=Argolla" className="hover:text-[#C9A87C] transition-colors">Argollas</a>
-              <a href="/joyas?categoria=Vintage" className="hover:text-[#C9A87C] transition-colors">Vintage</a>
-              <a href="/joyas?categoria=Aros" className="hover:text-[#C9A87C] transition-colors">Aros</a>
-              <a href="/joyas?categoria=Collar" className="hover:text-[#C9A87C] transition-colors">Collares</a>
-              <a href="/joyas" className="hover:text-[#C9A87C] transition-colors">Pulseras</a>
+              <a href="/joyas?tipo=bodas" className="hover:text-[#C9A87C] transition-colors">Anillos de compromiso y argollas</a>
+              <a href="/joyas?tipo=vintage" className="hover:text-[#C9A87C] transition-colors">Vintage</a>
+              <a href="/joyas?tipo=aros" className="hover:text-[#C9A87C] transition-colors">Aros</a>
+              <a href="/joyas?tipo=collares" className="hover:text-[#C9A87C] transition-colors">Collares</a>
+              <a href="/joyas?tipo=pulseras" className="hover:text-[#C9A87C] transition-colors">Pulseras</a>
               <a href="/joyas" className="hover:text-[#C9A87C] transition-colors">Ver todo</a>
             </div>
           </div>
