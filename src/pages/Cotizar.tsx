@@ -177,8 +177,9 @@ function calcularRango(tipo: string, metal: string, piedra: string, tamano: stri
 
   let { min, max } = leaf;
   if (metal === "platino") {
-    min = Math.round((min * 1.3) / 100000) * 100000;
-    max = Math.round((max * 1.3) / 100000) * 100000;
+    // Recargo fijo por metal: el platino solo suma su propio sobreprecio, no escala la piedra.
+    min = min + 400000;
+    max = max + 400000;
   }
   // El máximo nunca supera el mínimo × 1,6 (rango acotado)
   const cappedMax = Math.min(max, min * 1.6);
