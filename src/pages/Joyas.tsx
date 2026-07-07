@@ -6,7 +6,7 @@ import { X, SearchX, SlidersHorizontal } from "lucide-react";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
 import { JOYAS, formatPrecioDesde } from "@/data/joyas";
 
 const OLIVE = "#4A5536";
