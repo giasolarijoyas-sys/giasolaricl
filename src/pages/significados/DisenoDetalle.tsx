@@ -324,7 +324,7 @@ const DisenoDetalle = () => {
                     marginBottom: 12,
                   }}
                 >
-                  ¿Querés saber más?
+                  ¿Quieres saber más?
                 </p>
                 <p
                   style={{
