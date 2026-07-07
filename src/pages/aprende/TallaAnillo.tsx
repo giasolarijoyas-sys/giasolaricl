@@ -9,23 +9,23 @@ import { Link } from "react-router-dom";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const WA_PLANTILLA = buildWhatsAppUrl("generico", {
-  custom: "Hola Maca, ¿me podís enviar la plantilla para medir mi talla de anillo?",
+  custom: "Hola Maca, ¿me puedes enviar la plantilla para medir mi talla de anillo?",
 });
 const WA_CITA = buildWhatsAppUrl("agenda");
 
 const tabla = [
-  { mm: "14.9", cl: "6", us: "4", uk: "H" },
-  { mm: "15.3", cl: "7", us: "4.5", uk: "I" },
-  { mm: "15.7", cl: "9", us: "5", uk: "J" },
-  { mm: "16.1", cl: "10", us: "5.5", uk: "K" },
-  { mm: "16.5", cl: "12", us: "6", uk: "L" },
-  { mm: "16.9", cl: "13", us: "6.5", uk: "M" },
-  { mm: "17.3", cl: "14", us: "7", uk: "N" },
-  { mm: "17.7", cl: "15", us: "7.5", uk: "O" },
-  { mm: "18.1", cl: "16", us: "8", uk: "P" },
-  { mm: "18.5", cl: "17", us: "8.5", uk: "Q" },
-  { mm: "18.9", cl: "18", us: "9", uk: "R" },
-  { mm: "19.4", cl: "19", us: "9.5", uk: "S" },
+  { mm: "14,9", cl: "6", us: "4", uk: "H" },
+  { mm: "15,3", cl: "7", us: "4,5", uk: "I" },
+  { mm: "15,7", cl: "9", us: "5", uk: "J" },
+  { mm: "16,1", cl: "10", us: "5,5", uk: "K" },
+  { mm: "16,5", cl: "12", us: "6", uk: "L" },
+  { mm: "16,9", cl: "13", us: "6,5", uk: "M" },
+  { mm: "17,3", cl: "14", us: "7", uk: "N" },
+  { mm: "17,7", cl: "15", us: "7,5", uk: "O" },
+  { mm: "18,1", cl: "16", us: "8", uk: "P" },
+  { mm: "18,5", cl: "17", us: "8,5", uk: "Q" },
+  { mm: "18,9", cl: "18", us: "9", uk: "R" },
+  { mm: "19,4", cl: "19", us: "9,5", uk: "S" },
 ];
 
 const TallaAnillo = () => (
@@ -94,8 +94,8 @@ const TallaAnillo = () => (
                   en milímetros, ese es el contorno de tu dedo.
                 </p>
                 <p className="mt-3">
-                  Después divídelo por 3.14 (π) y te da el diámetro. Ejemplo: si el contorno es 50.3 mm,
-                  divides por 3.14 y te da 16 mm de diámetro → talla 12.
+                  Después divídelo por 3,14 (π) y te da el diámetro. Ejemplo: si el contorno es 50,3 mm,
+                  divides por 3,14 y te da 16 mm de diámetro → talla 12.
                 </p>
               </section>
 

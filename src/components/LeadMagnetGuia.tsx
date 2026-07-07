@@ -9,7 +9,7 @@ type Variant = "full" | "compact";
 const emailSchema = z
   .string()
   .trim()
-  .email({ message: "Ingresá un correo válido" })
+  .email({ message: "Ingresa un correo válido" })
   .max(255, { message: "Correo demasiado largo" });
 
 const LEAD_TAG = "lead-magnet-guia";
@@ -40,7 +40,7 @@ const LeadMagnetGuia = ({ variant = "full" }: { variant?: Variant }) => {
       toast.success("¡Listo! Tu guía está lista para descargar.");
       setEmail("");
     } catch {
-      toast.error("No pudimos registrar tu correo. Intentá de nuevo.");
+      toast.error("No pudimos registrar tu correo. Intenta de nuevo.");
     } finally {
       setSubmitting(false);
     }
@@ -88,7 +88,7 @@ const LeadMagnetGuia = ({ variant = "full" }: { variant?: Variant }) => {
             margin: "20px auto 32px",
           }}
         >
-          Presupuesto, estilos, tallas y la gran pregunta. Descargala gratis al
+          Presupuesto, estilos, tallas y la gran pregunta. Descárgala gratis al
           dejarnos tu correo.
         </p>
 

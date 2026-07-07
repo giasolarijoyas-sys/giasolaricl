@@ -6,7 +6,7 @@ import { X, SearchX, SlidersHorizontal } from "lucide-react";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
 import { JOYAS, formatPrecioDesde } from "@/data/joyas";
 
 const OLIVE = "#4A5536";
@@ -182,7 +182,7 @@ const Joyas = () => {
     return () => { document.body.style.overflow = ""; };
   }, [drawerOpen]);
 
-  const showEstilo = filters.tipo === "compromiso";
+  const showEstilo = filters.tipo === "bodas";
 
   // === SIDEBAR CONTENT ===
   const Sidebar = () => (
@@ -563,7 +563,6 @@ const Joyas = () => {
       </AnimatePresence>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 };

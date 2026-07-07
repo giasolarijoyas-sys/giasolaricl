@@ -94,7 +94,7 @@ const ArgollasMatrimonio = () => (
 
             <div className="mt-16 p-8 bg-card border border-border rounded-lg text-center">
               <h3 className="font-display text-xl text-foreground mb-3">¿Listos para diseñar las suyas?</h3>
-              <p className="text-muted-foreground text-sm mb-4">Cotizá tus argollas en 3 pasos simples.</p>
+              <p className="text-muted-foreground text-sm mb-4">Cotiza tus argollas en 3 pasos simples.</p>
               <Link to="/cotizar" className="inline-block px-8 py-3 bg-primary text-primary-foreground text-sm tracking-widest uppercase">Cotizar argollas</Link>
             </div>
 

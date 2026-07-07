@@ -9,7 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const faqs = [
   { q: "¿Cuánto demora hacer un anillo a medida?", a: "Entre 4 y 6 semanas, dependiendo de la complejidad del diseño, el tipo de piedra y los detalles que elijas. Si tienes una fecha especial, avísame con tiempo y hago lo posible por cumplir." },
   { q: "¿Puedo ver los diamantes antes de elegir?", a: "Sí. En la cita presencial te muestro las piedras disponibles, sus certificados y te explico cada detalle para que elijas con total confianza." },
-  { q: "¿Qué tipo de diamantes usan?", a: "Trabajamos con diamantes certificados, seleccionados por su brillo, claridad y corte. Cada pieza incluye su certificado gemológico para que sepas exactamente lo que tenés." },
+  { q: "¿Qué tipo de diamantes usan?", a: "Trabajamos con diamantes certificados, seleccionados por su brillo, claridad y corte. Cada pieza incluye su certificado gemológico para que sepas exactamente lo que tienes." },
   { q: "¿Trabajas con oro que me traigo de herencia?", a: "Sí, hago refundición de oro. Evalúo el metal que traes, te explico el proceso y lo integro en tu nueva pieza. Es una forma hermosa de darle nueva vida a joyas con historia." },
   { q: "¿Entregan a regiones?", a: "Sí, coordino envíos asegurados a todo Chile por WhatsApp. Las piezas a pedido (anillos de compromiso y joyas custom) se entregan preferentemente en persona en Santiago." },
   { q: "¿Cómo es la Garantía por Gusto?", a: "Si no te fascina cómo quedó tu joya, la rehago. Trabajo con bocetos y muestras antes de producir para minimizar sorpresas, pero si algo no te convence, buscamos la solución juntos. Tienes 30 días desde la entrega para activar la garantía." },
