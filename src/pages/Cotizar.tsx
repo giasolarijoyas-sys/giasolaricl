@@ -789,7 +789,50 @@ const Cotizar = () => {
                   </div>
                 )}
 
-                {isResult && (
+                {currentKey === "contacto" && (
+                  <div>
+                    <h2 className="font-display text-xl md:text-2xl text-charcoal mb-2">
+                      ¿A nombre de quién preparo tu cotización?
+                    </h2>
+                    <p className="text-sm text-charcoal/60 mb-5">
+                      Te enviamos tu cotización y te contactamos por aquí. Sin spam.
+                    </p>
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-xs tracking-widest uppercase text-charcoal/60 mb-1.5">
+                          Nombre
+                        </label>
+                        <input
+                          type="text"
+                          value={nombre}
+                          onChange={(e) => setNombre(e.target.value)}
+                          placeholder="Tu nombre"
+                          autoComplete="name"
+                          className="w-full px-4 py-3 bg-background border border-charcoal/20 rounded-md text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-gold transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs tracking-widest uppercase text-charcoal/60 mb-1.5">
+                          Correo
+                        </label>
+                        <input
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="tu@correo.com"
+                          autoComplete="email"
+                          className="w-full px-4 py-3 bg-background border border-charcoal/20 rounded-md text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-gold transition-colors"
+                        />
+                        {email.trim().length > 0 && !emailValido && (
+                          <p className="text-xs text-charcoal/70 mt-1.5">
+                            Ingresa un correo válido.
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                   <div className="text-center py-4">
                     {showRango && rango ? (
                       <>
