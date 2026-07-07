@@ -134,7 +134,7 @@ const GarantiaPorGusto = () => (
               className="font-display italic text-lg md:text-xl leading-relaxed mb-8"
               style={{ color: "#1A1614" }}
             >
-              La Garantía por Gusto nació de algo que viví. A mí me encantan los detalles y lo vintage, soy exigente. Cuando mi marido diseñó mi anillo de compromiso, preguntó en las joyerías de acá y ninguna le daba solución si algo hecho a medida no me gustaba. Para asegurarse, lo mandó a hacer a Estados Unidos. Nadie debería tener que hacer eso para quedarse tranquilo. Por eso, en Gia Solari, si no te fascina, lo rediseñamos. Acá, conmigo.
+              La Garantía por Gusto nació de algo que viví. A mí me encantan los detalles y lo vintage, soy exigente. Cuando mi marido diseñó mi anillo de compromiso, preguntó en las joyerías de aquí y ninguna le daba solución si algo hecho a medida no me gustaba. Para asegurarse, lo mandó a hacer a Estados Unidos. Nadie debería tener que hacer eso para quedarse tranquilo. Por eso, en Gia Solari, si no te fascina, lo rediseñamos. Aquí, conmigo.
             </blockquote>
             <p
               className="text-xs uppercase tracking-[0.25em]"
