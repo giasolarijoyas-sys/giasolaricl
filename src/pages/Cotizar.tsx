@@ -365,6 +365,33 @@ const Cotizar = () => {
       .then(({ error }) => {
         if (error) console.error("cotizaciones insert error", error);
       });
+
+    // Aviso por correo del lead (fire-and-forget, una sola vez).
+    if (!leadEmailSentRef.current) {
+      leadEmailSentRef.current = true;
+      const rangoText = showRango && rango
+        ? showPlus
+          ? `${formatCLP(rango.min)} – $12.000.000+`
+          : `${formatCLP(rango.min)} – ${formatCLP(rango.max)}`
+        : "";
+      supabase.functions
+        .invoke("enviar-referencias-cotizador", {
+          body: {
+            contacto: { nombre: nombre.trim(), email: email.trim() },
+            resumen: {
+              pieza: tipoLabel,
+              metal: metalLabel,
+              piedra: piedraLabel,
+              estilo: estiloLabel,
+              tamano: tamanoLabel,
+              presupuesto: presupuestoLabel,
+              rango: rangoText,
+            },
+            imageUrls: [],
+          },
+        })
+        .catch((err) => console.error("lead email invoke error", err));
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isResult]);
 
@@ -491,51 +518,49 @@ const Cotizar = () => {
   };
 
   const handleWaClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Ya enviamos el correo; deja que el href abra WhatsApp
-    if (leadEmailSentRef.current) return;
+    const hasImages = refImages.length > 0;
+    // Sin fotos: el aviso del lead ya se envió al llegar al resultado. Solo abrir WhatsApp.
+    if (!hasImages) return;
     e.preventDefault();
     const url = (e.currentTarget as HTMLAnchorElement).href;
-    // Marcamos ANTES de las await para evitar doble envío por doble clic.
-    leadEmailSentRef.current = true;
-    const hasImages = refImages.length > 0;
-    if (hasImages) setUploading(true);
+    setUploading(true);
     try {
       let imageUrls: string[] = [];
-      if (hasImages) {
-        try {
-          imageUrls = await uploadRefImages();
-        } catch (err) {
-          console.error("ref upload error", err);
-        }
-      }
-      const rangoText =
-        showRango && rango
-          ? showPlus
-            ? `${formatCLP(rango.min)} – $12.000.000+`
-            : `${formatCLP(rango.min)} – ${formatCLP(rango.max)}`
-          : "";
       try {
-        await supabase.functions.invoke("enviar-referencias-cotizador", {
-          body: {
-            contacto: { nombre: nombre.trim(), email: email.trim() },
-            resumen: {
-              pieza: tipoLabel,
-              metal: metalLabel,
-              piedra: piedraLabel,
-              estilo: estiloLabel,
-              tamano: tamanoLabel,
-              presupuesto: presupuestoLabel,
-              rango: rangoText,
-            },
-            imageUrls,
-          },
-        });
+        imageUrls = await uploadRefImages();
       } catch (err) {
-        console.error("lead email invoke error", err);
+        console.error("ref upload error", err);
+      }
+      if (imageUrls.length > 0) {
+        const rangoText =
+          showRango && rango
+            ? showPlus
+              ? `${formatCLP(rango.min)} – $12.000.000+`
+              : `${formatCLP(rango.min)} – ${formatCLP(rango.max)}`
+            : "";
+        try {
+          await supabase.functions.invoke("enviar-referencias-cotizador", {
+            body: {
+              contacto: { nombre: nombre.trim(), email: email.trim() },
+              resumen: {
+                pieza: tipoLabel,
+                metal: metalLabel,
+                piedra: piedraLabel,
+                estilo: estiloLabel,
+                tamano: tamanoLabel,
+                presupuesto: presupuestoLabel,
+                rango: rangoText,
+              },
+              imageUrls,
+            },
+          });
+        } catch (err) {
+          console.error("images email invoke error", err);
+        }
       }
       setEmailSent(true);
     } finally {
-      if (hasImages) setUploading(false);
+      setUploading(false);
       window.open(url, "_blank", "noopener,noreferrer");
     }
   };
