@@ -330,7 +330,7 @@ const pieces: Piece[] = [
 
 ];
 
-const AUTOPLAY_INTERVAL = 3000;
+const AUTOPLAY_INTERVAL = 4500;
 
 const Gallery = () => {
   const [active, setActive] = useState<Category>("todas");
