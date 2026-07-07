@@ -64,6 +64,7 @@ const App = () => (
             <Route path="/guia/*" element={<Navigate to="/aprende" replace />} />
             <Route path="/terminos" element={<Terminos />} />
             <Route path="/lista-de-deseos" element={<ListaDeseos />} />
+            <Route path="/favoritas" element={<Favoritas />} />
             <Route path="/sobre-gia" element={<SobreGia />} />
             <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes />} />
             <Route path="/guia-de-tallas" element={<GuiaDeTallas />} />
