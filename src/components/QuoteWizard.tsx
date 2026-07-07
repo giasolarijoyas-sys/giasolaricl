@@ -300,11 +300,17 @@ const QuoteWizard = () => {
                       <label className="text-sm font-medium text-foreground block mb-1.5">Email *</label>
                       <input type="email" value={data.email} onChange={e => update({ email: e.target.value })}
                         placeholder="tu@email.com" className={inputCls} />
+                      {data.email.trim() && !emailValid(data.email) && (
+                        <p className="text-xs text-destructive mt-1">Ingresa un correo válido</p>
+                      )}
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground block mb-1.5">WhatsApp *</label>
                       <input type="tel" value={data.whatsapp} onChange={e => update({ whatsapp: e.target.value })}
                         placeholder="+56 9 XXXX XXXX" className={inputCls} />
+                      {data.whatsapp.trim() && !phoneValid(data.whatsapp) && (
+                        <p className="text-xs text-destructive mt-1">Ingresa un teléfono válido (solo números, mínimo 8 dígitos)</p>
+                      )}
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground block mb-1.5">Fecha tentativa de entrega</label>
