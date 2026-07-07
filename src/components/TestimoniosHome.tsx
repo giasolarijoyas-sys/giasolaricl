@@ -12,22 +12,22 @@ type Testimonio = {
 
 const testimonios: Testimonio[] = [
   {
-    nombre: "Cliente 1",
+    nombre: "Ignacio F., Santiago",
     foto: "",
     texto:
-      "Encargué un anillo a medida en oro 18k. Me explicaron cada paso y el resultado fue exactamente lo que pedí.",
+      "Lo que más rescato es la honestidad. Le di mi presupuesto a la Maca y me mostró las alternativas que se podían hacer. Los aros quedaron increíbles.",
   },
   {
-    nombre: "Cliente 2",
+    nombre: "Valentina P., Viña del Mar",
     foto: "",
     texto:
-      "Las argollas las hicieron a mano con grabado interior. Cumplieron el plazo y la atención fue directa y clara.",
+      "Desde la primera reunión sentí que estaba en buenas manos. La Maca me explicó todo con paciencia y me ayudó a elegir la piedra perfecta dentro de mi presupuesto.",
   },
   {
-    nombre: "Cliente 3",
+    nombre: "Camila R., Concepción",
     foto: "",
     texto:
-      "Compré un anillo de compromiso con diamante certificado. Vi el boceto antes de fabricar y quedó tal cual.",
+      "Hice todo por WhatsApp y Zoom porque vivo en regiones. La Maca fue súper atenta y el collar llegó tal cual como lo imaginé. Servicio impecable.",
   },
 ];
 
