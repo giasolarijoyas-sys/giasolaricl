@@ -2,7 +2,7 @@ import { useMemo, useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, SearchX, SlidersHorizontal } from "lucide-react";
+import { X, SearchX, SlidersHorizontal, Search } from "lucide-react";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
