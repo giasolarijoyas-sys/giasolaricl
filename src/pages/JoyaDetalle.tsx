@@ -7,6 +7,7 @@ import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { JOYAS, formatPrecioDesde } from "@/data/joyas";
+import { isFavorita, toggleFavorita, subscribeFavoritas } from "@/lib/favorites";
 
 const OLIVE = "#4A5536";
 const OLIVE_DEEP = "#3A4429";
