@@ -563,7 +563,6 @@ const Joyas = () => {
       </AnimatePresence>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 };
