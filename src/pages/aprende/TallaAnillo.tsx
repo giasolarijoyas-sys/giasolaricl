@@ -31,7 +31,7 @@ const tabla = [
 const TallaAnillo = () => (
   <>
     <SEO
-      title="¿Cómo saber tu talla de anillo? Guía para medir en casa, Gia Solari"
+      title="Cómo saber tu talla de anillo | Gia Solari"
       description="Aprende a medir tu talla de anillo en casa con tres métodos simples. Tabla de equivalencias Chile, USA y UK incluida. Joyería de autor Gia Solari."
       path="/aprende/talla-anillo"
       type="article"
