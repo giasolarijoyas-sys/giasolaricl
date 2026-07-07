@@ -1,7 +1,9 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { JOYAS } from "@/data/joyas";
 
 // Existing gallery images
 import galZafiro from "@/assets/gal-zafiro.jpeg";
@@ -328,7 +330,7 @@ const pieces: Piece[] = [
 
 ];
 
-const AUTOPLAY_INTERVAL = 3000;
+const AUTOPLAY_INTERVAL = 4500;
 
 const Gallery = () => {
   const [active, setActive] = useState<Category>("todas");
@@ -358,14 +360,32 @@ const Gallery = () => {
     setCanScrollNext(emblaApi.canScrollNext());
   }, [emblaApi]);
 
-  // Autoplay
+  // Autoplay con pausa en hover/focus y respeto a prefers-reduced-motion
+  const [paused, setPaused] = useState(false);
+  const prefersReducedMotion = useMemo(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return false;
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }, []);
   useEffect(() => {
-    if (!emblaApi) return;
+    if (!emblaApi || paused || prefersReducedMotion) return;
     const timer = setInterval(() => {
       emblaApi.scrollNext();
     }, AUTOPLAY_INTERVAL);
     return () => clearInterval(timer);
-  }, [emblaApi, active]);
+  }, [emblaApi, active, paused, prefersReducedMotion]);
+
+  // Mapa nombre → slug para linkear cada tarjeta a su ficha
+  const slugByName = useMemo(() => {
+    const m = new Map<string, string>();
+    for (const j of JOYAS) {
+      if (!j.isPlaceholder && j.slug) m.set(j.nombre.toLowerCase().trim(), j.slug);
+    }
+    return m;
+  }, []);
+  const linkFor = (name: string) => {
+    const s = slugByName.get(name.toLowerCase().trim());
+    return s ? `/joyas/${s}` : "/joyas";
+  };
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -472,7 +492,13 @@ const Gallery = () => {
 
         {/* Carousel */}
         {filtered.length > 0 && (
-          <div className="relative group/carousel">
+          <div
+            className="relative group/carousel"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            onFocusCapture={() => setPaused(true)}
+            onBlurCapture={() => setPaused(false)}
+          >
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex -ml-3 md:-ml-4">
                 {filtered.map((piece, i) => (
@@ -480,34 +506,37 @@ const Gallery = () => {
                     key={piece.name + i}
                     className="flex-[0_0_50%] sm:flex-[0_0_33.333%] lg:flex-[0_0_25%] xl:flex-[0_0_20%] pl-3 md:pl-4 min-w-0"
                   >
-                    <div className="group relative overflow-hidden cursor-pointer">
-                      <div className="aspect-square overflow-hidden">
-                      <img
-                          src={piece.img}
-                          alt={piece.name}
-                          loading={i === 0 ? "eager" : "lazy"}
-                          decoding="async"
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                      </div>
-                      <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/60 transition-all duration-500 flex items-end p-4">
-                        <div className="translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                          <p className="text-cream font-display text-sm md:text-base">
-                            {piece.name}
-                          </p>
-                          <p className="text-cream/60 text-xs">{piece.desc}</p>
+                    <Link to={linkFor(piece.name)} aria-label={`Ver ${piece.name}`} className="block">
+                      <div className="group relative overflow-hidden cursor-pointer">
+                        <div className="aspect-square overflow-hidden">
+                        <img
+                            src={piece.img}
+                            alt={piece.name}
+                            loading={i === 0 ? "eager" : "lazy"}
+                            decoding="async"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                        </div>
+                        <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/60 transition-all duration-500 flex items-end p-4">
+                          <div className="translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <p className="text-cream font-display text-sm md:text-base">
+                              {piece.name}
+                            </p>
+                            <p className="text-cream/60 text-xs">{piece.desc}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    {piece.priceFrom && (
-                      <p className="mt-2 text-xs tracking-wide text-muted-foreground">
-                        Desde {formatPrice(piece.priceFrom)}
-                      </p>
-                    )}
+                      {piece.priceFrom && (
+                        <p className="mt-2 text-xs tracking-wide text-muted-foreground">
+                          Desde {formatPrice(piece.priceFrom)}
+                        </p>
+                      )}
+                    </Link>
                   </div>
                 ))}
               </div>
             </div>
+
 
             {/* Navigation arrows */}
             <button

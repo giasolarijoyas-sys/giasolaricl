@@ -34,7 +34,7 @@ const faqJsonLd = {
 const CuantoCuestaAnillo = () => (
   <>
     <SEO
-      title="¿Cuánto cuesta un anillo de compromiso en Chile? | Gia Solari Santiago"
+      title="Cuánto cuesta un anillo de compromiso | Gia Solari"
       description="Te cuento qué factores definen el precio de un anillo de compromiso en Santiago, Chile: diamante, quilataje, metal y diseño. Cada pieza se cotiza a medida."
       path="/aprende/cuanto-cuesta-anillo-compromiso-chile"
       type="article"

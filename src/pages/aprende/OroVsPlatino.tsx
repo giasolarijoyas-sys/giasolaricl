@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const OroVsPlatino = () => (
   <>
     <SEO
-      title="Oro 18k vs platino para anillos: guía completa 2026, Gia Solari"
+      title="Oro 18k vs platino para anillos | Gia Solari"
       description="Diferencias entre oro 18k (amarillo, blanco, rosado) y platino: precio, durabilidad, mantenimiento e hipoalergenia. Cuál elegir para tu anillo."
       path="/aprende/oro-vs-platino"
       type="article"

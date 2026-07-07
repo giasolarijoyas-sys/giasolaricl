@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Shield, Diamond, Clock, MapPin } from "lucide-react";
 import heroImg from "@/assets/hero-halo-cushion.png";
 
@@ -12,7 +13,7 @@ const MUTED_TXT = "#6B7752";
 const MUTED = "#6B7752";
 
 const HERO_IMG = heroImg;
-const INSTAGRAM_WA_URL = "https://wa.me/56984049502?text=Hola%20Maca%2C%20vengo%20de%20Instagram%20y%20quiero%20cotizar%20una%20pieza";
+
 
 const Hero = () => {
   const imgRef = useRef<HTMLDivElement>(null);
@@ -118,11 +119,9 @@ const Hero = () => {
             </p>
 
 
-            {/* CTA primario */}
-            <a
-              href={INSTAGRAM_WA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* CTA primario — al cotizador para capturar el lead */}
+            <Link
+              to="/cotizar"
               className="text-center transition-all inline-block"
               style={{
                 background: OLIVE,
@@ -145,7 +144,7 @@ const Hero = () => {
               }}
             >
               Cotiza tu pieza
-            </a>
+            </Link>
 
             {/* CTA secundario */}
             <p style={{ marginTop: "12px" }}>
