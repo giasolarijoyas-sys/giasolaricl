@@ -507,27 +507,52 @@ const Joyas = () => {
                 <div className="text-center py-24 md:py-32">
                   <SearchX size={40} strokeWidth={1.2} style={{ color: OLIVE_SOFT, margin: "0 auto 24px" }} />
                   <h3 className="mb-3" style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "28px", color: OLIVE_DEEP }}>
-                    No encontré piezas con esos filtros.
+                    {searchTerm.trim()
+                      ? <>No encontramos piezas con "{searchTerm.trim()}".</>
+                      : "No encontramos piezas con esos filtros."}
                   </h3>
                   <p className="mb-7" style={{ fontFamily: "Inter, sans-serif", fontSize: "15px", color: OLIVE_SOFT }}>
-                    Si tienes algo concreto en mente, lo diseñamos juntas.
+                    {searchTerm.trim()
+                      ? "Prueba con otra palabra o revisa todo el catálogo."
+                      : "Si tienes algo concreto en mente, lo diseñamos juntas."}
                   </p>
-                  <Link
-                    to="/cotizar"
-                    className="inline-block rounded-full transition-colors"
-                    style={{
-                      background: OLIVE,
-                      color: CREAM,
-                      padding: "14px 32px",
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "13px",
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    Cotizar pieza única →
-                  </Link>
+                  <div className="flex flex-wrap items-center justify-center gap-3">
+                    <button
+                      onClick={clearAll}
+                      className="rounded-full transition-colors"
+                      style={{
+                        background: OLIVE,
+                        color: CREAM,
+                        padding: "14px 32px",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: "13px",
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                        border: "none",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Ver todo el catálogo
+                    </button>
+                    <Link
+                      to="/cotizar"
+                      className="rounded-full transition-colors"
+                      style={{
+                        border: `1px solid ${OLIVE}`,
+                        color: OLIVE,
+                        padding: "14px 32px",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: "13px",
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                        background: "transparent",
+                      }}
+                    >
+                      Cotizar pieza única →
+                    </Link>
+                  </div>
                 </div>
+
               ) : (
                 <>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
