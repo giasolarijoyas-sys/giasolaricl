@@ -253,7 +253,15 @@ const Cotizar = () => {
     ];
     if (isCompromiso && estiloLabel) lines.push(`🎨 Estilo: ${estiloLabel}`);
     if (isCompromiso && isDiamante && tamanoLabel) lines.push(`📏 Tamaño piedra: ${tamanoLabel}`);
-    lines.push(`💰 Presupuesto: ${presupuestoLabel}`, "", rangoText, "", "Gracias!");
+    lines.push(
+      `💰 Presupuesto: ${presupuestoLabel}`,
+      "",
+      rangoText,
+      "",
+      "Si tengo fotos de referencia, te las comparto por aquí 👇",
+      "",
+      "Gracias!",
+    );
     const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(lines.join("\n"))}`;
     try {
       if (typeof window !== "undefined" && typeof window.gtag === "function") {
