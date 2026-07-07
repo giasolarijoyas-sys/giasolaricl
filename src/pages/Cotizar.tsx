@@ -254,7 +254,11 @@ const Cotizar = () => {
   const [refImages, setRefImages] = useState<File[]>([]);
   const [uploading, setUploading] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
+  const [nombre, setNombre] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 
   // Precarga desde ?pieza=slug&modificada=true (llegan desde una ficha)
   const [searchParams] = useSearchParams();
