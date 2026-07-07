@@ -450,11 +450,13 @@ const JoyaDetalle = () => {
       >
         <button
           type="button"
-          aria-label="Guardar"
+          onClick={handleToggleFav}
+          aria-pressed={isFav}
+          aria-label={isFav ? "Quitar de favoritas" : "Guardar en favoritas"}
           className="rounded-full"
-          style={{ width: 48, height: 48, border: `1px solid ${OLIVE}`, color: OLIVE, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}
+          style={{ width: 48, height: 48, border: `1px solid ${OLIVE}`, color: OLIVE, background: isFav ? CREAM_WARM : "transparent", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}
         >
-          <Heart size={18} strokeWidth={1.5} />
+          <Heart size={18} strokeWidth={1.5} fill={isFav ? OLIVE : "none"} />
         </button>
         <a
           href={pinUrl}
