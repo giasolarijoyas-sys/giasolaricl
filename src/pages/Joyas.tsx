@@ -35,7 +35,7 @@ const TIPOS = [
 const ESTILOS = [
   "Halo",
   "Solitarios",
-  "Tres y cinco piedras",
+  "Tricillo y cinco piedras",
   "Pavé",
   "Cintillos",
   "Eternity",
