@@ -193,6 +193,10 @@ const Cotizar = () => {
   const [estilo, setEstilo] = useState<string>("");
   const [tamano, setTamano] = useState<string>("");
   const [presupuesto, setPresupuesto] = useState<string>("");
+  const [refImages, setRefImages] = useState<File[]>([]);
+  const [uploading, setUploading] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const isCompromiso = tipo === "anillo_compromiso";
   const isDiamante = piedra === "diamante_natural" || piedra === "diamante_lab";
