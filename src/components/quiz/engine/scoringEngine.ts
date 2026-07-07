@@ -232,6 +232,7 @@ export function generateRecommendations(answers: QuizAnswers): Recommendation[] 
       ringStyle: combo.style,
       metal: combo.metal,
       sizePreference: bestSize,
+      budgetRange: answers.budgetRange,
     });
 
     const matchingImage = findMatchingImage({
