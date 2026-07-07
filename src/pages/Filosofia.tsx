@@ -97,7 +97,7 @@ const Filosofia = () => (
             <p>
               No diseñamos joyas para verse bonitas. Diseñamos amuletos para llevar puestos
               toda la vida. Que cuando alguien reciba una joya nuestra, no reciba solo
-              metal y piedra: reciba la historia milenaria de su gema, el nombre de su
+              metal y piedra: reciba la historia milenaria de su piedra, el nombre de su
               diseño, el significado de su forma. Reciba un universo de narrativa que
               convierte su pieza en algo único e irrepetible.
             </p>
