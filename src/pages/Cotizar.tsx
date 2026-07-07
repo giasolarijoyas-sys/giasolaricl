@@ -515,8 +515,9 @@ const Cotizar = () => {
                           </span>
                         </h2>
                         <p className="text-sm text-charcoal/70 mb-8 max-w-md mx-auto leading-relaxed">
-                          El precio final depende del quilataje de la piedra y los detalles que conversemos.
-                          Cada anillo incluye Certificado Gia Solari.
+                          {presupuestoBajo
+                            ? "Este es un rango orientativo. Cuéntame tu idea y buscamos juntas la mejor opción dentro de lo que tienes pensado."
+                            : "El precio final depende del quilataje de la piedra y los detalles que conversemos. Cada anillo incluye Certificado Gia Solari."}
                         </p>
                       </>
                     ) : (
