@@ -218,6 +218,8 @@ const Cotizar = () => {
   const presupuestoLabel = PRESUPUESTOS.find((p) => p.key === presupuesto)?.label ?? "";
 
   const rango = calcularRango(tipo, metal, piedra, tamano);
+  const presupuestoMax = PRESUPUESTO_MAX[presupuesto] ?? null;
+  const presupuestoBajo = !!rango && presupuestoMax !== null && presupuestoMax < rango.min;
   const showRango = !!rango;
   const showPlus =
     !!rango &&
