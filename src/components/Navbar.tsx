@@ -390,7 +390,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="/lista-de-deseos"
+                href="/favoritas"
                 onClick={() => setOpen(false)}
                 style={{ fontFamily: "'Bodoni Moda', serif", fontStyle: "italic", fontSize: "22px", color: MUTED }}
               >
