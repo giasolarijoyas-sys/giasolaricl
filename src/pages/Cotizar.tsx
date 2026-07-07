@@ -254,7 +254,11 @@ const Cotizar = () => {
   const [refImages, setRefImages] = useState<File[]>([]);
   const [uploading, setUploading] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
+  const [nombre, setNombre] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 
   // Precarga desde ?pieza=slug&modificada=true (llegan desde una ficha)
   const [searchParams] = useSearchParams();
@@ -301,6 +305,7 @@ const Cotizar = () => {
     if (isCompromiso) arr.push("estilo");
     if (isCompromiso && isDiamante) arr.push("tamano");
     arr.push("presupuesto");
+    arr.push("contacto");
     return arr;
   }, [isCompromiso, isDiamante]);
 
@@ -340,6 +345,8 @@ const Cotizar = () => {
     if (cotizacionInsertedRef.current) return;
     cotizacionInsertedRef.current = true;
     const row = {
+      nombre: nombre.trim() || null,
+      email: email.trim() || null,
       pieza: tipoLabel || null,
       metal: metalLabel || null,
       piedra: piedraLabel || null,
@@ -357,6 +364,31 @@ const Cotizar = () => {
       .then(({ error }) => {
         if (error) console.error("cotizaciones insert error", error);
       });
+
+    // Notificación fire-and-forget a Maca con el lead completo (con o sin imágenes)
+    const rangoTextEmail =
+      showRango && rango
+        ? showPlus
+          ? `${formatCLP(rango.min)} – $12.000.000+`
+          : `${formatCLP(rango.min)} – ${formatCLP(rango.max)}`
+        : "";
+    supabase.functions
+      .invoke("enviar-referencias-cotizador", {
+        body: {
+          contacto: { nombre: nombre.trim(), email: email.trim() },
+          resumen: {
+            pieza: tipoLabel,
+            metal: metalLabel,
+            piedra: piedraLabel,
+            estilo: estiloLabel,
+            tamano: tamanoLabel,
+            presupuesto: presupuestoLabel,
+            rango: rangoTextEmail,
+          },
+          imageUrls: [],
+        },
+      })
+      .catch((err) => console.error("lead email invoke error", err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isResult]);
 
@@ -369,8 +401,9 @@ const Cotizar = () => {
     const rangoText = showRango
       ? `El cotizador me mostró un rango de ${rangoMaxText}. Me gustaría conversar los detalles.`
       : `Me gustaría que me ayudes a definir los detalles.`;
+    const saludoNombre = nombre.trim() ? `Soy ${nombre.trim()}, ` : "";
     const lines = [
-      "Hola Maca! Vengo del cotizador del sitio.",
+      `Hola Maca! ${saludoNombre}vengo del cotizador del sitio.`,
       "",
       `🎁 Pieza: ${tipoLabel}`,
       `✨ Metal: ${metalLabel}`,
@@ -419,6 +452,9 @@ const Cotizar = () => {
     setPresupuesto("");
     setRefImages([]);
     setEmailSent(false);
+    setNombre("");
+    setEmail("");
+    cotizacionInsertedRef.current = false;
   };
 
   const handleFilesSelected = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -492,6 +528,7 @@ const Cotizar = () => {
         try {
           await supabase.functions.invoke("enviar-referencias-cotizador", {
             body: {
+              contacto: { nombre: nombre.trim(), email: email.trim() },
               resumen: {
                 pieza: tipoLabel,
                 metal: metalLabel,
@@ -519,12 +556,13 @@ const Cotizar = () => {
 
 
   const canNext =
-    (currentKey === "tipo" && tipo) ||
-    (currentKey === "metal" && metal) ||
-    (currentKey === "piedra" && piedra) ||
-    (currentKey === "estilo" && estilo) ||
-    (currentKey === "tamano" && tamano) ||
-    (currentKey === "presupuesto" && presupuesto);
+    (currentKey === "tipo" && !!tipo) ||
+    (currentKey === "metal" && !!metal) ||
+    (currentKey === "piedra" && !!piedra) ||
+    (currentKey === "estilo" && !!estilo) ||
+    (currentKey === "tamano" && !!tamano) ||
+    (currentKey === "presupuesto" && !!presupuesto) ||
+    (currentKey === "contacto" && nombre.trim().length > 0 && emailValido);
 
   const next = () => setStep((s) => Math.min(totalSteps + 1, s + 1));
   const back = () => setStep((s) => Math.max(1, s - 1));
@@ -751,8 +789,53 @@ const Cotizar = () => {
                   </div>
                 )}
 
+                {currentKey === "contacto" && (
+                  <div>
+                    <h2 className="font-display text-xl md:text-2xl text-charcoal mb-2">
+                      ¿A nombre de quién preparo tu cotización?
+                    </h2>
+                    <p className="text-sm text-charcoal/60 mb-5">
+                      Te enviamos tu cotización y te contactamos por aquí. Sin spam.
+                    </p>
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-xs tracking-widest uppercase text-charcoal/60 mb-1.5">
+                          Nombre
+                        </label>
+                        <input
+                          type="text"
+                          value={nombre}
+                          onChange={(e) => setNombre(e.target.value)}
+                          placeholder="Tu nombre"
+                          autoComplete="name"
+                          className="w-full px-4 py-3 bg-background border border-charcoal/20 rounded-md text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-gold transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs tracking-widest uppercase text-charcoal/60 mb-1.5">
+                          Correo
+                        </label>
+                        <input
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="tu@correo.com"
+                          autoComplete="email"
+                          className="w-full px-4 py-3 bg-background border border-charcoal/20 rounded-md text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-gold transition-colors"
+                        />
+                        {email.trim().length > 0 && !emailValido && (
+                          <p className="text-xs text-charcoal/70 mt-1.5">
+                            Ingresa un correo válido.
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {isResult && (
                   <div className="text-center py-4">
+
                     {showRango && rango ? (
                       <>
                         <p className="text-[11px] tracking-[0.3em] uppercase text-gold mb-3">

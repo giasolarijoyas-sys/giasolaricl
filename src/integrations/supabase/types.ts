@@ -48,9 +48,11 @@ export type Database = {
         Row: {
           con_referencias: boolean
           created_at: string
+          email: string | null
           estilo: string | null
           id: string
           metal: string | null
+          nombre: string | null
           origen_pieza: string | null
           piedra: string | null
           pieza: string | null
@@ -62,9 +64,11 @@ export type Database = {
         Insert: {
           con_referencias?: boolean
           created_at?: string
+          email?: string | null
           estilo?: string | null
           id?: string
           metal?: string | null
+          nombre?: string | null
           origen_pieza?: string | null
           piedra?: string | null
           pieza?: string | null
@@ -76,9 +80,11 @@ export type Database = {
         Update: {
           con_referencias?: boolean
           created_at?: string
+          email?: string | null
           estilo?: string | null
           id?: string
           metal?: string | null
+          nombre?: string | null
           origen_pieza?: string | null
           piedra?: string | null
           pieza?: string | null

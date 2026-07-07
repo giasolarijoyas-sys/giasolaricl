@@ -1,0 +1,1 @@
+ALTER TABLE public.cotizaciones ADD COLUMN IF NOT EXISTS nombre text; ALTER TABLE public.cotizaciones ADD COLUMN IF NOT EXISTS email text;
