@@ -59,6 +59,16 @@ const PIEDRAS = [
 
 const PAGE_SIZE = 12;
 
+// Normaliza: minúsculas + sin acentos
+const normalize = (s: string | undefined | null) =>
+  (s ?? "")
+    .toString()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+
+
 // Estilo del item: matchea estilo de la pieza con label de filtro
 const matchEstilo = (joyaEstilo: string | undefined, filtro: string) => {
   if (!joyaEstilo) return false;
