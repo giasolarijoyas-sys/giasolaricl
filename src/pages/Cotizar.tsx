@@ -365,6 +365,33 @@ const Cotizar = () => {
       .then(({ error }) => {
         if (error) console.error("cotizaciones insert error", error);
       });
+
+    // Aviso por correo del lead (fire-and-forget, una sola vez).
+    if (!leadEmailSentRef.current) {
+      leadEmailSentRef.current = true;
+      const rangoText = showRango && rango
+        ? showPlus
+          ? `${formatCLP(rango.min)} – $12.000.000+`
+          : `${formatCLP(rango.min)} – ${formatCLP(rango.max)}`
+        : "";
+      supabase.functions
+        .invoke("enviar-referencias-cotizador", {
+          body: {
+            contacto: { nombre: nombre.trim(), email: email.trim() },
+            resumen: {
+              pieza: tipoLabel,
+              metal: metalLabel,
+              piedra: piedraLabel,
+              estilo: estiloLabel,
+              tamano: tamanoLabel,
+              presupuesto: presupuestoLabel,
+              rango: rangoText,
+            },
+            imageUrls: [],
+          },
+        })
+        .catch((err) => console.error("lead email invoke error", err));
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isResult]);
 
