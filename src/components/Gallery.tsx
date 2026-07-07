@@ -187,7 +187,7 @@ const estilos: { key: Estilo; label: string }[] = [
   { key: "solitario", label: "Solitario" },
   { key: "pave", label: "Pavé" },
   { key: "halo", label: "Halo" },
-  { key: "tres-piedras", label: "Tres piedras" },
+  { key: "tres-piedras", label: "Tricillo" },
   { key: "minimalista", label: "Minimalista" },
   { key: "grabado", label: "✦ Grabados" },
 ];
