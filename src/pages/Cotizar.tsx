@@ -528,6 +528,7 @@ const Cotizar = () => {
         try {
           await supabase.functions.invoke("enviar-referencias-cotizador", {
             body: {
+              contacto: { nombre: nombre.trim(), email: email.trim() },
               resumen: {
                 pieza: tipoLabel,
                 metal: metalLabel,
