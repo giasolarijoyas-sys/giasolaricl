@@ -2,7 +2,7 @@ import { useMemo, useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, SearchX, SlidersHorizontal } from "lucide-react";
+import { X, SearchX, SlidersHorizontal, Search } from "lucide-react";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -59,6 +59,16 @@ const PIEDRAS = [
 
 const PAGE_SIZE = 12;
 
+// Normaliza: minúsculas + sin acentos
+const normalize = (s: string | undefined | null) =>
+  (s ?? "")
+    .toString()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+
+
 // Estilo del item: matchea estilo de la pieza con label de filtro
 const matchEstilo = (joyaEstilo: string | undefined, filtro: string) => {
   if (!joyaEstilo) return false;
@@ -102,6 +112,25 @@ const Joyas = () => {
     return { tipo, estilo, metal, piedra };
   }, [searchParams]);
 
+  // === search term from URL (?q=) ===
+  const queryFromUrl = searchParams.get("q") ?? "";
+  const [searchTerm, setSearchTerm] = useState(queryFromUrl);
+
+  // Sync input -> URL (debounced)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const current = searchParams.get("q") ?? "";
+      if (current === searchTerm) return;
+      const params = new URLSearchParams(searchParams);
+      if (searchTerm.trim()) params.set("q", searchTerm.trim());
+      else params.delete("q");
+      setSearchParams(params, { replace: true });
+      setVisibleCount(PAGE_SIZE);
+    }, 200);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm]);
+
   const updateFilters = (next: Partial<FilterState>) => {
     const merged = { ...filters, ...next };
     const params = new URLSearchParams();
@@ -109,6 +138,7 @@ const Joyas = () => {
     if (merged.estilo.length) params.set("estilo", merged.estilo.join(","));
     if (merged.metal.length) params.set("metal", merged.metal.join(","));
     if (merged.piedra.length) params.set("piedra", merged.piedra.join(","));
+    if (searchTerm.trim()) params.set("q", searchTerm.trim());
     setSearchParams(params, { replace: true });
     setVisibleCount(PAGE_SIZE);
   };
@@ -119,6 +149,7 @@ const Joyas = () => {
   };
 
   const clearAll = () => {
+    setSearchTerm("");
     setSearchParams(new URLSearchParams(), { replace: true });
     setVisibleCount(PAGE_SIZE);
   };
@@ -133,18 +164,33 @@ const Joyas = () => {
   // === Filter joyas ===
   const baseJoyas = useMemo(() => JOYAS.filter((j) => !j.isPlaceholder), []);
   const filtered = useMemo(() => {
+    const q = normalize(searchTerm);
     return baseJoyas.filter((j) => {
       const tipoOpt = TIPOS.find((t) => t.id === filters.tipo);
       if (tipoOpt?.match && !tipoOpt.match(j.categoria)) return false;
       if (filters.estilo.length && !filters.estilo.some((e) => matchEstilo(j.estilo, e))) return false;
       if (filters.metal.length && !filters.metal.some((m) => (j.metalPrincipal ?? "").toLowerCase() === m.toLowerCase())) return false;
       if (filters.piedra.length && !filters.piedra.some((p) => matchPiedra(j.piedraCentral, p))) return false;
+      if (q) {
+        const haystack = [
+          (j as any).nombre,
+          (j as any).categoria,
+          (j as any).estilo,
+          (j as any).piedraCentral,
+          (j as any).metalPrincipal,
+          (j as any).material,
+          (j as any).descripcion,
+          (j as any).descripcionCorta,
+        ].map(normalize).join(" | ");
+        if (!haystack.includes(q)) return false;
+      }
       return true;
     });
-  }, [baseJoyas, filters]);
+  }, [baseJoyas, filters, searchTerm]);
 
   const visible = filtered.slice(0, visibleCount);
   const hasMore = visibleCount < filtered.length;
+
 
   // === SEO dynamic title ===
   const dynamicTitle = useMemo(() => {
@@ -350,6 +396,59 @@ const Joyas = () => {
           </p>
         </header>
 
+        {/* SEARCH BAR */}
+        <div className="container mx-auto px-4 md:px-8 mb-6 md:mb-8">
+          <div className="mx-auto" style={{ maxWidth: 640 }}>
+            <div
+              className="flex items-center gap-3 w-full"
+              style={{
+                background: "#FFFFFF",
+                border: `1px solid ${LINE}`,
+                borderRadius: "999px",
+                padding: "10px 16px",
+              }}
+            >
+              <Search size={18} strokeWidth={1.5} style={{ color: OLIVE_SOFT, flexShrink: 0 }} />
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Buscar por nombre, estilo o piedra..."
+                aria-label="Buscar piezas"
+                className="flex-1 bg-transparent outline-none border-none"
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14.5px",
+                  color: INK,
+                }}
+              />
+              {searchTerm && (
+                <button
+                  onClick={() => setSearchTerm("")}
+                  aria-label="Limpiar búsqueda"
+                  className="flex-shrink-0"
+                  style={{ color: OLIVE_SOFT }}
+                >
+                  <X size={16} strokeWidth={1.8} />
+                </button>
+              )}
+            </div>
+            <p
+              className="mt-3 text-center"
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "12px",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: OLIVE_SOFT,
+              }}
+            >
+              {filtered.length} {filtered.length === 1 ? "pieza" : "piezas"}
+            </p>
+          </div>
+        </div>
+
+
         {/* MOBILE FILTER BUTTON */}
         <div className="lg:hidden container mx-auto px-4 mb-6 sticky top-[72px] z-30">
           <button
@@ -408,27 +507,52 @@ const Joyas = () => {
                 <div className="text-center py-24 md:py-32">
                   <SearchX size={40} strokeWidth={1.2} style={{ color: OLIVE_SOFT, margin: "0 auto 24px" }} />
                   <h3 className="mb-3" style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "28px", color: OLIVE_DEEP }}>
-                    No encontré piezas con esos filtros.
+                    {searchTerm.trim()
+                      ? <>No encontramos piezas con "{searchTerm.trim()}".</>
+                      : "No encontramos piezas con esos filtros."}
                   </h3>
                   <p className="mb-7" style={{ fontFamily: "Inter, sans-serif", fontSize: "15px", color: OLIVE_SOFT }}>
-                    Si tienes algo concreto en mente, lo diseñamos juntas.
+                    {searchTerm.trim()
+                      ? "Prueba con otra palabra o revisa todo el catálogo."
+                      : "Si tienes algo concreto en mente, lo diseñamos juntas."}
                   </p>
-                  <Link
-                    to="/cotizar"
-                    className="inline-block rounded-full transition-colors"
-                    style={{
-                      background: OLIVE,
-                      color: CREAM,
-                      padding: "14px 32px",
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "13px",
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    Cotizar pieza única →
-                  </Link>
+                  <div className="flex flex-wrap items-center justify-center gap-3">
+                    <button
+                      onClick={clearAll}
+                      className="rounded-full transition-colors"
+                      style={{
+                        background: OLIVE,
+                        color: CREAM,
+                        padding: "14px 32px",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: "13px",
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                        border: "none",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Ver todo el catálogo
+                    </button>
+                    <Link
+                      to="/cotizar"
+                      className="rounded-full transition-colors"
+                      style={{
+                        border: `1px solid ${OLIVE}`,
+                        color: OLIVE,
+                        padding: "14px 32px",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: "13px",
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                        background: "transparent",
+                      }}
+                    >
+                      Cotizar pieza única →
+                    </Link>
+                  </div>
                 </div>
+
               ) : (
                 <>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
