@@ -396,6 +396,59 @@ const Joyas = () => {
           </p>
         </header>
 
+        {/* SEARCH BAR */}
+        <div className="container mx-auto px-4 md:px-8 mb-6 md:mb-8">
+          <div className="mx-auto" style={{ maxWidth: 640 }}>
+            <div
+              className="flex items-center gap-3 w-full"
+              style={{
+                background: "#FFFFFF",
+                border: `1px solid ${LINE}`,
+                borderRadius: "999px",
+                padding: "10px 16px",
+              }}
+            >
+              <Search size={18} strokeWidth={1.5} style={{ color: OLIVE_SOFT, flexShrink: 0 }} />
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Buscar por nombre, estilo o piedra..."
+                aria-label="Buscar piezas"
+                className="flex-1 bg-transparent outline-none border-none"
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14.5px",
+                  color: INK,
+                }}
+              />
+              {searchTerm && (
+                <button
+                  onClick={() => setSearchTerm("")}
+                  aria-label="Limpiar búsqueda"
+                  className="flex-shrink-0"
+                  style={{ color: OLIVE_SOFT }}
+                >
+                  <X size={16} strokeWidth={1.8} />
+                </button>
+              )}
+            </div>
+            <p
+              className="mt-3 text-center"
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "12px",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: OLIVE_SOFT,
+              }}
+            >
+              {filtered.length} {filtered.length === 1 ? "pieza" : "piezas"}
+            </p>
+          </div>
+        </div>
+
+
         {/* MOBILE FILTER BUTTON */}
         <div className="lg:hidden container mx-auto px-4 mb-6 sticky top-[72px] z-30">
           <button
