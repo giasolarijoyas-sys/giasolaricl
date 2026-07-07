@@ -25,6 +25,8 @@ const ResultView = ({ recommendations, answers, onSelectRecommendation, onReques
   const primary = recommendations[0];
   const alternatives = recommendations.slice(1);
   const partnerName = answers.partnerName || 'ella';
+  const budget = BUDGET_RANGES.find(b => b.key === answers.budgetRange);
+  const budgetBelowEstimate = budget ? budget.max < primary.estimatedPriceRange.min : false;
 
   return (
     <div>
