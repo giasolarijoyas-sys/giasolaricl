@@ -833,7 +833,9 @@ const Cotizar = () => {
                   </div>
                 )}
 
+                {isResult && (
                   <div className="text-center py-4">
+
                     {showRango && rango ? (
                       <>
                         <p className="text-[11px] tracking-[0.3em] uppercase text-gold mb-3">
