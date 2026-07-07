@@ -187,6 +187,62 @@ function calcularRango(tipo: string, metal: string, piedra: string, tamano: stri
   return { min, max };
 }
 
+// Mapea una pieza del catálogo (JOYAS) a los valores del cotizador.
+function mapJoyaToCotizador(j: Joya): {
+  tipo: string;
+  metal: string;
+  piedra: string;
+  estilo: string;
+} {
+  const cat = (j.categoria || "").toLowerCase();
+  let tipo = "";
+  if (cat.includes("compromiso")) tipo = "anillo_compromiso";
+  else if (cat.includes("argolla") || cat.includes("alianza")) tipo = "alianza";
+  else if (cat.includes("aro")) tipo = "aros";
+  else if (cat.includes("collar") || cat.includes("colgante")) tipo = "colgante";
+  else if (cat.includes("pulsera") || cat.includes("esclava")) tipo = "pulsera_esclava";
+
+  const metalStr = (j.metalPrincipal || j.material || "").toLowerCase();
+  let metal = "";
+  if (metalStr.includes("platino")) metal = "platino";
+  else if (metalStr.includes("blanco")) metal = "oro_blanco";
+  else if (metalStr.includes("amarillo")) metal = "oro_amarillo";
+  else if (metalStr.includes("rosad")) metal = "oro_rosado";
+
+  const piedraStr = (j.piedraCentral || j.material || "").toLowerCase();
+  let piedra = "";
+  if (tipo === "anillo_compromiso") {
+    if (piedraStr.includes("lab")) piedra = "diamante_lab";
+    else if (piedraStr.includes("diamante")) piedra = "diamante_natural";
+    else if (piedraStr.includes("zafiro")) piedra = "zafiro";
+    else if (piedraStr.includes("aguamarina")) piedra = "aguamarina";
+    else if (piedraStr.includes("esmeralda")) piedra = "esmeralda";
+    else if (piedraStr) piedra = "otra_color";
+  } else if (tipo === "alianza") {
+    piedra = piedraStr.includes("diamante") ? "con_diamantes" : "sin_piedras";
+  } else if (tipo) {
+    piedra = piedraStr && piedraStr !== "sin piedra" ? "con_piedras" : "sin_piedras";
+  }
+
+  const nombre = (j.nombre || "").toLowerCase();
+  const desc = ((j.descripcionLarga || j.descripcion) || "").toLowerCase();
+  const hay = (s: string) => nombre.includes(s) || desc.includes(s);
+  let estilo = "";
+  if (tipo === "anillo_compromiso") {
+    if (hay("solitario")) estilo = "solitario";
+    else if (hay("halo")) estilo = "halo";
+    else if (hay("trilog") || hay("tricillo") || hay("tres piedras") || hay("tres diamantes"))
+      estilo = "tricillo";
+    else if (hay("cuatricillo") || hay("cuatro piedras")) estilo = "cuatricillo";
+    else if (hay("pav") || hay("cintillo") || hay("eternity") || hay("quintillo"))
+      estilo = "cintillo_pave";
+    else if (hay("vintage") || hay("art déco") || hay("art deco") || hay("mandala") || hay("milgrain"))
+      estilo = "vintage_editorial";
+  }
+
+  return { tipo, metal, piedra, estilo };
+}
+
 const Cotizar = () => {
   const [step, setStep] = useState(1);
   const [tipo, setTipo] = useState<string>("");
