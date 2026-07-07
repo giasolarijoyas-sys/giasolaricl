@@ -112,6 +112,25 @@ const Joyas = () => {
     return { tipo, estilo, metal, piedra };
   }, [searchParams]);
 
+  // === search term from URL (?q=) ===
+  const queryFromUrl = searchParams.get("q") ?? "";
+  const [searchTerm, setSearchTerm] = useState(queryFromUrl);
+
+  // Sync input -> URL (debounced)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const current = searchParams.get("q") ?? "";
+      if (current === searchTerm) return;
+      const params = new URLSearchParams(searchParams);
+      if (searchTerm.trim()) params.set("q", searchTerm.trim());
+      else params.delete("q");
+      setSearchParams(params, { replace: true });
+      setVisibleCount(PAGE_SIZE);
+    }, 200);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm]);
+
   const updateFilters = (next: Partial<FilterState>) => {
     const merged = { ...filters, ...next };
     const params = new URLSearchParams();
@@ -119,6 +138,7 @@ const Joyas = () => {
     if (merged.estilo.length) params.set("estilo", merged.estilo.join(","));
     if (merged.metal.length) params.set("metal", merged.metal.join(","));
     if (merged.piedra.length) params.set("piedra", merged.piedra.join(","));
+    if (searchTerm.trim()) params.set("q", searchTerm.trim());
     setSearchParams(params, { replace: true });
     setVisibleCount(PAGE_SIZE);
   };
@@ -129,6 +149,7 @@ const Joyas = () => {
   };
 
   const clearAll = () => {
+    setSearchTerm("");
     setSearchParams(new URLSearchParams(), { replace: true });
     setVisibleCount(PAGE_SIZE);
   };
@@ -143,18 +164,33 @@ const Joyas = () => {
   // === Filter joyas ===
   const baseJoyas = useMemo(() => JOYAS.filter((j) => !j.isPlaceholder), []);
   const filtered = useMemo(() => {
+    const q = normalize(searchTerm);
     return baseJoyas.filter((j) => {
       const tipoOpt = TIPOS.find((t) => t.id === filters.tipo);
       if (tipoOpt?.match && !tipoOpt.match(j.categoria)) return false;
       if (filters.estilo.length && !filters.estilo.some((e) => matchEstilo(j.estilo, e))) return false;
       if (filters.metal.length && !filters.metal.some((m) => (j.metalPrincipal ?? "").toLowerCase() === m.toLowerCase())) return false;
       if (filters.piedra.length && !filters.piedra.some((p) => matchPiedra(j.piedraCentral, p))) return false;
+      if (q) {
+        const haystack = [
+          (j as any).nombre,
+          (j as any).categoria,
+          (j as any).estilo,
+          (j as any).piedraCentral,
+          (j as any).metalPrincipal,
+          (j as any).material,
+          (j as any).descripcion,
+          (j as any).descripcionCorta,
+        ].map(normalize).join(" | ");
+        if (!haystack.includes(q)) return false;
+      }
       return true;
     });
-  }, [baseJoyas, filters]);
+  }, [baseJoyas, filters, searchTerm]);
 
   const visible = filtered.slice(0, visibleCount);
   const hasMore = visibleCount < filtered.length;
+
 
   // === SEO dynamic title ===
   const dynamicTitle = useMemo(() => {
