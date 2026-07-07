@@ -53,6 +53,22 @@ interface PriceInput {
   ringStyle: string;
   metal: string;
   sizePreference: string;
+  budgetRange?: string;
+}
+
+const BUDGET_ANCHORS: Record<string, number> = {
+  '1m_2m': 1500000,
+  '2m_3m': 2500000,
+  '3m_4m': 3500000,
+  'over_4m': 4500000,
+};
+
+const round50k = (n: number) => Math.round(n / 50000) * 50000;
+
+// Cap the range width so max never exceeds min * 1.6
+function clampWidth(min: number, max: number): { min: number; max: number } {
+  const cappedMax = Math.min(max, min * 1.6);
+  return { min: round50k(min), max: round50k(cappedMax) };
 }
 
 export function estimatePrice(input: PriceInput): { min: number; max: number } {
@@ -65,13 +81,30 @@ export function estimatePrice(input: PriceInput): { min: number; max: number } {
   const rawMin = (labor + metal.min + stone.min + style.min) * sizeMult;
   const rawMax = (labor + metal.max + stone.max + style.max) * sizeMult;
 
-  // Round to nearest 50k, enforce $1.8M floor
-  const round50k = (n: number) => Math.round(n / 50000) * 50000;
+  let min = Math.max(1800000, rawMin);
+  let max = Math.max(2000000, rawMax);
 
-  return {
-    min: Math.max(1800000, round50k(rawMin)),
-    max: Math.max(2000000, round50k(rawMax)),
-  };
+  // Anchor to selected budget when provided
+  const anchor = input.budgetRange ? BUDGET_ANCHORS[input.budgetRange] : undefined;
+  if (anchor) {
+    const budgetMin = anchor * 0.85;
+    const budgetMax = anchor * 1.25;
+
+    // If the raw estimate falls within/near budget, blend toward it;
+    // otherwise center the shown range on the budget anchor.
+    if (max < budgetMin || min > budgetMax) {
+      min = budgetMin;
+      max = budgetMax;
+    } else {
+      min = Math.max(min, budgetMin * 0.95);
+      max = Math.min(max, budgetMax * 1.05);
+    }
+    // Never go below the $1.8M floor
+    min = Math.max(1800000, min);
+    max = Math.max(min + 200000, max);
+  }
+
+  return clampWidth(min, max);
 }
 
 export function formatCLP(amount: number): string {
