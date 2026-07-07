@@ -78,7 +78,7 @@ const matchEstilo = (joyaEstilo: string | undefined, filtro: string) => {
   const f = filtro.toLowerCase();
   if (f === "halo") return e.includes("halo") || e.includes("color");
   if (f === "solitarios") return e.includes("solitar") || e.includes("atemporal");
-  if (f === "tres y cinco piedras") return e.includes("tres") || e.includes("cinco") || e.includes("trilog");
+  if (f === "tricillo y cinco piedras") return e.includes("tres") || e.includes("cinco") || e.includes("trilog") || e.includes("tricillo");
   if (f === "pavé") return e.includes("pavé") || e.includes("pave");
   return e.includes(f);
 };
