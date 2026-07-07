@@ -345,6 +345,8 @@ const Cotizar = () => {
     if (cotizacionInsertedRef.current) return;
     cotizacionInsertedRef.current = true;
     const row = {
+      nombre: nombre.trim() || null,
+      email: email.trim() || null,
       pieza: tipoLabel || null,
       metal: metalLabel || null,
       piedra: piedraLabel || null,
@@ -362,6 +364,31 @@ const Cotizar = () => {
       .then(({ error }) => {
         if (error) console.error("cotizaciones insert error", error);
       });
+
+    // Notificación fire-and-forget a Maca con el lead completo (con o sin imágenes)
+    const rangoTextEmail =
+      showRango && rango
+        ? showPlus
+          ? `${formatCLP(rango.min)} – $12.000.000+`
+          : `${formatCLP(rango.min)} – ${formatCLP(rango.max)}`
+        : "";
+    supabase.functions
+      .invoke("enviar-referencias-cotizador", {
+        body: {
+          contacto: { nombre: nombre.trim(), email: email.trim() },
+          resumen: {
+            pieza: tipoLabel,
+            metal: metalLabel,
+            piedra: piedraLabel,
+            estilo: estiloLabel,
+            tamano: tamanoLabel,
+            presupuesto: presupuestoLabel,
+            rango: rangoTextEmail,
+          },
+          imageUrls: [],
+        },
+      })
+      .catch((err) => console.error("lead email invoke error", err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isResult]);
 
