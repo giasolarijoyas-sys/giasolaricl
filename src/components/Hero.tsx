@@ -119,11 +119,9 @@ const Hero = () => {
             </p>
 
 
-            {/* CTA primario */}
-            <a
-              href={INSTAGRAM_WA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* CTA primario — al cotizador para capturar el lead */}
+            <Link
+              to="/cotizar"
               className="text-center transition-all inline-block"
               style={{
                 background: OLIVE,
@@ -146,7 +144,7 @@ const Hero = () => {
               }}
             >
               Cotiza tu pieza
-            </a>
+            </Link>
 
             {/* CTA secundario */}
             <p style={{ marginTop: "12px" }}>
