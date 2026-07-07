@@ -44,6 +44,51 @@ export type Database = {
         }
         Relationships: []
       }
+      cotizaciones: {
+        Row: {
+          con_referencias: boolean
+          created_at: string
+          estilo: string | null
+          id: string
+          metal: string | null
+          origen_pieza: string | null
+          piedra: string | null
+          pieza: string | null
+          presupuesto: string | null
+          rango_max: number | null
+          rango_min: number | null
+          tamano: string | null
+        }
+        Insert: {
+          con_referencias?: boolean
+          created_at?: string
+          estilo?: string | null
+          id?: string
+          metal?: string | null
+          origen_pieza?: string | null
+          piedra?: string | null
+          pieza?: string | null
+          presupuesto?: string | null
+          rango_max?: number | null
+          rango_min?: number | null
+          tamano?: string | null
+        }
+        Update: {
+          con_referencias?: boolean
+          created_at?: string
+          estilo?: string | null
+          id?: string
+          metal?: string | null
+          origen_pieza?: string | null
+          piedra?: string | null
+          pieza?: string | null
+          presupuesto?: string | null
+          rango_max?: number | null
+          rango_min?: number | null
+          tamano?: string | null
+        }
+        Relationships: []
+      }
       newsletter_subscribers: {
         Row: {
           created_at: string
