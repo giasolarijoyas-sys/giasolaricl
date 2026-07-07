@@ -135,9 +135,15 @@ const ResultView = ({ recommendations, answers, onSelectRecommendation, onReques
         </>
       )}
 
-      <p className="text-xs text-center text-muted-foreground italic">
-        * Los precios son estimaciones orientativas. La cotización final depende del diseño exacto.
-      </p>
+      {budgetBelowEstimate ? (
+        <p className="text-sm text-center text-foreground/80 max-w-md mx-auto leading-relaxed">
+          Este es un rango orientativo. Cuéntame tu idea y buscamos juntas la mejor opción dentro de lo que tienes pensado.
+        </p>
+      ) : (
+        <p className="text-xs text-center text-muted-foreground italic">
+          * Los precios son estimaciones orientativas. La cotización final depende del diseño exacto.
+        </p>
+      )}
     </div>
   );
 };
