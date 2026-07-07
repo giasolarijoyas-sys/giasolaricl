@@ -305,6 +305,7 @@ const Cotizar = () => {
     if (isCompromiso) arr.push("estilo");
     if (isCompromiso && isDiamante) arr.push("tamano");
     arr.push("presupuesto");
+    arr.push("contacto");
     return arr;
   }, [isCompromiso, isDiamante]);
 
