@@ -29,6 +29,19 @@ const JoyaDetalle = () => {
   const [activeImg, setActiveImg] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const [specsOpen, setSpecsOpen] = useState(false);
+  const [isFav, setIsFav] = useState(false);
+
+  useEffect(() => {
+    if (!slug) return;
+    setIsFav(isFavorita(slug));
+    return subscribeFavoritas(() => setIsFav(isFavorita(slug)));
+  }, [slug]);
+
+  const handleToggleFav = () => {
+    if (!slug) return;
+    const next = toggleFavorita(slug);
+    setIsFav(next);
+  };
 
   // Related pieces (same tipo, exclude current)
   const related = useMemo(() => {
