@@ -9,7 +9,7 @@ type Variant = "full" | "compact";
 const emailSchema = z
   .string()
   .trim()
-  .email({ message: "Ingresá un correo válido" })
+  .email({ message: "Ingresa un correo válido" })
   .max(255, { message: "Correo demasiado largo" });
 
 const LEAD_TAG = "lead-magnet-guia";
