@@ -85,29 +85,29 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
 // Cada entrada: dos párrafos. El segundo tiene el CTA con el texto entre [ ] que se renderiza como link a /cotizar.
 const EXTRA_COPY: Record<string, { p1: string; p2: { before: string; cta: string; after: string } }> = {
   "el-eterno": {
-    p1: "El solitario es el anillo de compromiso más clásico y atemporal: una sola piedra central elevada sobre la banda, sin nada que la distraiga. Es la elección de quienes buscan elegancia que no pasa de moda. En Gia Solari diseñamos cada Eterno a medida , elegís el diamante certificado, la forma de la piedra, el alto del engaste y el grosor de la banda en platino u oro 18k.",
+    p1: "El solitario es el anillo de compromiso más clásico y atemporal: una sola piedra central elevada sobre la banda, sin nada que la distraiga. Es la elección de quienes buscan elegancia que no pasa de moda. En Gia Solari diseñamos cada Eterno a medida, eliges el diamante certificado, la forma de la piedra, el alto del engaste y el grosor de la banda en platino u oro 18k.",
     p2: {
       before:
-        "Al ser un diseño tan limpio, todo el protagonismo es de la piedra: por eso te acompañamos a elegir bien proporción, brillo y presupuesto, sin presión. ¿Te imaginás tu Eterno? ",
-      cta: "Cotizá tu pieza",
+        "Al ser un diseño tan limpio, todo el protagonismo es de la piedra: por eso te acompañamos a elegir bien proporción, brillo y presupuesto, sin presión. ¿Te imaginas tu Eterno? ",
+      cta: "Cotiza tu pieza",
       after: " y conversemos.",
     },
   },
   "el-tricillo": {
-    p1: "El anillo de tres piedras , o trilogy,  es uno de los estilos de compromiso más queridos: una piedra central escoltada por dos laterales que la enmarcan. Simboliza el pasado, el presente y el futuro de la pareja, y por eso es el favorito de quienes ya llevan una historia juntos. Lo diseñamos a medida, ajustando el tamaño de las tres piedras para que se vean en perfecto equilibrio.",
+    p1: "El anillo de tres piedras, o trilogía, es uno de los estilos de compromiso más queridos: una piedra central escoltada por dos laterales que la enmarcan. Simboliza el pasado, el presente y el futuro de la pareja, y por eso es el favorito de quienes ya llevan una historia juntos. Lo diseñamos a medida, ajustando el tamaño de las tres piedras para que se vean en perfecto equilibrio.",
     p2: {
       before:
-        "Podés elegir diamantes en las tres posiciones o sumar color en las laterales. Todo en platino u oro 18k, con certificado incluido. ",
-      cta: "Cotizá Las Tres Promesas",
+        "Puedes elegir diamantes en las tres posiciones o sumar color en las laterales. Todo en platino u oro 18k, con certificado incluido. ",
+      cta: "Cotiza Las Tres Promesas",
       after: " y lo adaptamos a tu historia.",
     },
   },
   "el-alado": {
-    p1: "El halo es un anillo de compromiso en el que la piedra central va rodeada por un círculo de diamantes pequeños que multiplican su brillo y hacen ver la piedra más grande. Es el estilo más luminoso y romántico, e ideal si buscás máxima presencia con un presupuesto inteligente. Lo diseñamos a medida en platino u oro 18k, con diamantes certificados.",
+    p1: "El halo es un anillo de compromiso en el que la piedra central va rodeada por un círculo de diamantes pequeños que multiplican su brillo y hacen ver la piedra más grande. Es el estilo más luminoso y romántico, e ideal si buscas máxima presencia con un presupuesto inteligente. Lo diseñamos a medida en platino u oro 18k, con diamantes certificados.",
     p2: {
       before:
-        "El halo de El Alado se inspira en uno de los anillos más icónicos de la historia. ¿Querés ver cómo quedaría con tu piedra? ",
-      cta: "Cotizá tu pieza",
+        "El halo de El Alado se inspira en uno de los anillos más icónicos de la historia. ¿Quieres ver cómo quedaría con tu piedra? ",
+      cta: "Cotiza tu pieza",
       after: " y lo proyectamos juntos.",
     },
   },
@@ -115,24 +115,24 @@ const EXTRA_COPY: Record<string, { p1: string; p2: { before: string; cta: string
     p1: "El Real recrea el anillo de compromiso más famoso del mundo: un zafiro azul ovalado rodeado de diamantes, el mismo estilo que lució Lady Diana y hoy lleva Kate Middleton. Es la elección de quien quiere algo icónico, con color y con historia. Lo hacemos a medida, eligiendo el tamaño y tono del zafiro y el contorno de diamantes, en platino u oro 18k.",
     p2: {
       before:
-        "El zafiro es además una piedra durísima y perfecta para uso diario. Si querés un anillo que destaque de verdad, ",
-      cta: "Cotizá El Real",
-      after: " y lo diseñamos para vos.",
+        "El zafiro es además una piedra durísima y perfecta para uso diario. Si quieres un anillo que destaque de verdad, ",
+      cta: "Cotiza El Real",
+      after: " y lo diseñamos para ti.",
     },
   },
   "el-tiempo": {
     p1: "El diamante ovalado es la forma más buscada del momento: estiliza el dedo, se ve más grande que un redondo del mismo peso y tiene una elegancia suave, sin ángulos. El Tiempo es nuestro solitario ovalado, pensado para quienes quieren algo moderno pero que no pase de moda. A medida, en platino u oro 18k, con diamante certificado.",
     p2: {
-      before: "Su forma fluida evoca una gota de agua: pureza y movimiento. ¿Te imaginás tu anillo ovalado? ",
-      cta: "Cotizá El Tiempo",
+      before: "Su forma fluida evoca una gota de agua: pureza y movimiento. ¿Te imaginas tu anillo ovalado? ",
+      cta: "Cotiza El Tiempo",
       after: " y elegimos juntos la proporción ideal.",
     },
   },
   "los-cuatro-pilares": {
-    p1: "Los Cuatro Pilares es un anillo de cuatro diamantes alineados, un estilo de simetría perfecta que también funciona como anillo de aniversario o de eternidad. Cada piedra representa un pilar de la relación , respeto, amor, confianza y comunicación,  y las cuatro estaciones de la vida en pareja. Lo diseñamos a medida en platino u oro 18k.",
+    p1: "Los Cuatro Pilares es un anillo de cuatro diamantes alineados, un estilo de simetría perfecta que también funciona como anillo de aniversario o de eternidad. Cada piedra representa un pilar de la relación, respeto, amor, confianza y comunicación, y las cuatro estaciones de la vida en pareja. Lo diseñamos a medida en platino u oro 18k.",
     p2: {
       before: "Es un diseño cómodo para el uso diario y fácil de combinar con la argolla de matrimonio. ",
-      cta: "Cotizá Los Cuatro Pilares",
+      cta: "Cotiza Los Cuatro Pilares",
       after: " y lo ajustamos a tu mano.",
     },
   },
@@ -141,7 +141,7 @@ const EXTRA_COPY: Record<string, { p1: string; p2: { before: string; cta: string
     p2: {
       before:
         "Cada piedra es como una estrella necesaria dentro de una constelación, igual que cada momento de su historia. ",
-      cta: "Cotizá La Constelación",
+      cta: "Cotiza La Constelación",
       after: " y la proyectamos a tu medida.",
     },
   },
