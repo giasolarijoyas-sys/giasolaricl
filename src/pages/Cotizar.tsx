@@ -491,47 +491,55 @@ const Cotizar = () => {
   };
 
   const handleWaClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (refImages.length === 0 || emailSent) return; // deja que el href abra WhatsApp
+    // Ya enviamos el correo; deja que el href abra WhatsApp
+    if (leadEmailSentRef.current) return;
     e.preventDefault();
     const url = (e.currentTarget as HTMLAnchorElement).href;
-    setUploading(true);
+    // Marcamos ANTES de las await para evitar doble envío por doble clic.
+    leadEmailSentRef.current = true;
+    const hasImages = refImages.length > 0;
+    if (hasImages) setUploading(true);
     try {
-      const imageUrls = await uploadRefImages();
-      if (imageUrls.length > 0) {
-        const rangoText =
-          showRango && rango
-            ? showPlus
-              ? `${formatCLP(rango.min)} – $12.000.000+`
-              : `${formatCLP(rango.min)} – ${formatCLP(rango.max)}`
-            : "";
+      let imageUrls: string[] = [];
+      if (hasImages) {
         try {
-          await supabase.functions.invoke("enviar-referencias-cotizador", {
-            body: {
-              contacto: { nombre: nombre.trim(), email: email.trim() },
-              resumen: {
-                pieza: tipoLabel,
-                metal: metalLabel,
-                piedra: piedraLabel,
-                estilo: estiloLabel,
-                tamano: tamanoLabel,
-                presupuesto: presupuestoLabel,
-                rango: rangoText,
-              },
-              imageUrls,
-            },
-          });
+          imageUrls = await uploadRefImages();
         } catch (err) {
-          console.error("email invoke error", err);
+          console.error("ref upload error", err);
         }
       }
+      const rangoText =
+        showRango && rango
+          ? showPlus
+            ? `${formatCLP(rango.min)} – $12.000.000+`
+            : `${formatCLP(rango.min)} – ${formatCLP(rango.max)}`
+          : "";
+      try {
+        await supabase.functions.invoke("enviar-referencias-cotizador", {
+          body: {
+            contacto: { nombre: nombre.trim(), email: email.trim() },
+            resumen: {
+              pieza: tipoLabel,
+              metal: metalLabel,
+              piedra: piedraLabel,
+              estilo: estiloLabel,
+              tamano: tamanoLabel,
+              presupuesto: presupuestoLabel,
+              rango: rangoText,
+            },
+            imageUrls,
+          },
+        });
+      } catch (err) {
+        console.error("lead email invoke error", err);
+      }
       setEmailSent(true);
-    } catch (err) {
-      console.error("ref upload flow error", err);
     } finally {
-      setUploading(false);
+      if (hasImages) setUploading(false);
       window.open(url, "_blank", "noopener,noreferrer");
     }
   };
+
 
 
   const canNext =
