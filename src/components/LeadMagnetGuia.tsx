@@ -40,7 +40,7 @@ const LeadMagnetGuia = ({ variant = "full" }: { variant?: Variant }) => {
       toast.success("¡Listo! Tu guía está lista para descargar.");
       setEmail("");
     } catch {
-      toast.error("No pudimos registrar tu correo. Intentá de nuevo.");
+      toast.error("No pudimos registrar tu correo. Intenta de nuevo.");
     } finally {
       setSubmitting(false);
     }
