@@ -88,6 +88,15 @@ const PRESUPUESTOS = [
   { key: "conversar", label: "Prefiero conversarlo" },
 ];
 
+const PRESUPUESTO_MAX: Record<string, number | null> = {
+  "hasta_1.8": 1800000,
+  "1.8_2.8": 2800000,
+  "2.8_3.5": 3500000,
+  "3.5_4.5": 4500000,
+  "5_mas": null,
+  "conversar": null,
+};
+
 type RangoLeaf = { min: number; max: number };
 type RangoNode = RangoLeaf | Record<string, RangoLeaf>;
 
