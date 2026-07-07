@@ -353,7 +353,7 @@ const JoyaDetalle = () => {
               <ul className="mt-7 space-y-2">
                 {[
                   { Icon: ShieldCheck, t: "Garantía por Gusto incluida" },
-                  { Icon: Award, t: "Certificado del centro" },
+                  { Icon: Award, t: "Diamantes con certificado GIA o IGI, más Certificado Gia Solari" },
                   { Icon: Sparkles, t: "Diseño a medida sobre esta pieza" },
                 ].map(({ Icon, t }) => (
                   <li key={t} className="flex items-center gap-2" style={{ fontFamily: "Inter, sans-serif", fontSize: "12px", color: OLIVE_SOFT }}>
