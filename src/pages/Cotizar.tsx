@@ -556,12 +556,13 @@ const Cotizar = () => {
 
 
   const canNext =
-    (currentKey === "tipo" && tipo) ||
-    (currentKey === "metal" && metal) ||
-    (currentKey === "piedra" && piedra) ||
-    (currentKey === "estilo" && estilo) ||
-    (currentKey === "tamano" && tamano) ||
-    (currentKey === "presupuesto" && presupuesto);
+    (currentKey === "tipo" && !!tipo) ||
+    (currentKey === "metal" && !!metal) ||
+    (currentKey === "piedra" && !!piedra) ||
+    (currentKey === "estilo" && !!estilo) ||
+    (currentKey === "tamano" && !!tamano) ||
+    (currentKey === "presupuesto" && !!presupuesto) ||
+    (currentKey === "contacto" && nombre.trim().length > 0 && emailValido);
 
   const next = () => setStep((s) => Math.min(totalSteps + 1, s + 1));
   const back = () => setStep((s) => Math.max(1, s - 1));
