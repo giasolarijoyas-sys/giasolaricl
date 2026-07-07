@@ -1,12 +1,19 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, MessageCircle } from "lucide-react";
+import { ChevronLeft, MessageCircle, Upload, X, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TrustMicrocopy from "@/components/TrustMicrocopy";
 import { WHATSAPP_PHONE } from "@/lib/whatsapp";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
+
+const MAX_IMAGES = 5;
+const MAX_SIZE_MB = 10;
+const ACCEPTED_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp", "image/heic", "image/heif"];
+const ACCEPTED_EXT = /\.(jpe?g|png|webp|heic|heif)$/i;
 
 type TipoKey =
   | "anillo_compromiso"
