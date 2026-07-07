@@ -586,15 +586,28 @@ const Cotizar = () => {
               Pocas preguntas y armamos el presupuesto aproximado en menos de un minuto.
             </p>
             <p className="text-charcoal/60 text-xs md:text-sm mt-3">
-              ¿Tenés dudas de presupuesto?{" "}
+              ¿Tienes dudas de presupuesto?{" "}
               <Link
                 to="/aprende/cuanto-cuesta-anillo-compromiso-chile"
                 className="text-gold underline underline-offset-2 hover:opacity-80"
               >
-                Mirá nuestra guía de precios
+                Mira nuestra guía de precios
               </Link>
               .
             </p>
+            {piezaOrigen && (
+              <div className="mt-5 inline-flex flex-col items-center gap-1 px-4 py-3 bg-cream/80 border border-gold/25 rounded-md">
+                <span className="text-[10px] tracking-[0.25em] uppercase text-gold">
+                  Estás cotizando
+                </span>
+                <span className="font-display text-base text-charcoal">
+                  {piezaOrigen.nombre}
+                  {modificada && (
+                    <span className="text-charcoal/60 text-sm"> (con modificaciones)</span>
+                  )}
+                </span>
+              </div>
+            )}
           </header>
 
           {!isResult && (
