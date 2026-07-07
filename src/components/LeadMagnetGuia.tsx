@@ -88,7 +88,7 @@ const LeadMagnetGuia = ({ variant = "full" }: { variant?: Variant }) => {
             margin: "20px auto 32px",
           }}
         >
-          Presupuesto, estilos, tallas y la gran pregunta. Descargala gratis al
+          Presupuesto, estilos, tallas y la gran pregunta. Descárgala gratis al
           dejarnos tu correo.
         </p>
 
