@@ -186,7 +186,7 @@ export type Joya = {
  *   material: "Oro 18k blanco, Diamante natural",
  *   descripcion: "Una línea breve para la grilla.",
  *   descripcionLarga:
- *     "Párrafo más extenso para la ficha. Hablá del diseño, la inspiración, los detalles técnicos.",
+ *     "Párrafo más extenso para la ficha. Habla del diseño, la inspiración, los detalles técnicos.",
  *   imagenes: [fotoPrincipal, foto2, foto3, foto4],
  *   precioDesde: 2400000,
  *   historia: "Diseñada para Camila, que quería algo que le recordara a su abuela.",
