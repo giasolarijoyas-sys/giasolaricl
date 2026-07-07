@@ -216,8 +216,24 @@ import haloCushionDiamante01 from "@/assets/joyas/halo-cushion-diamante-01.jpg";
 import haloCushionDiamante02 from "@/assets/joyas/halo-cushion-diamante-02.jpg";
 import haloClusterDiamantes01 from "@/assets/joyas/halo-cluster-diamantes-01.jpg";
 import haloRedondoOro01 from "@/assets/joyas/halo-redondo-oro-01.jpg";
+import anilloPerlaOro01 from "@/assets/joyas/anillo-perla-oro-01.png";
 
 export const JOYAS: Joya[] = [
+  {
+    slug: "anillo-perla-oro",
+    nombre: "Julieta · Anillo de Perla",
+    material: "Oro 18k amarillo, Perla cultivada, banda con pavé de diamantes",
+    metalPrincipal: "Oro 18k amarillo",
+    estilo: "Atemporal",
+    piedraCentral: "Perla",
+    descripcion:
+      "Perla cultivada sobre banda de oro amarillo con pavé de diamantes. Delicado y distinto.",
+    descripcionLarga:
+      "Una perla cultivada en el centro, sostenida con sutileza sobre una banda de oro amarillo con pavé de diamantes que la acompaña sin robarle protagonismo. Una pieza distinta para quien busca algo más allá del diamante clásico, con la elegancia serena de la perla. Cada anillo incluye Certificado Gia Solari.",
+    categoria: "Anillo de compromiso",
+    imagenes: [anilloPerlaOro01],
+    isPlaceholder: false,
+  },
   {
     slug: "solitario-oval-oro-blanco",
     nombre: "Olivia · Solitario Oval",
