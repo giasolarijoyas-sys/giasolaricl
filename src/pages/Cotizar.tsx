@@ -88,6 +88,15 @@ const PRESUPUESTOS = [
   { key: "conversar", label: "Prefiero conversarlo" },
 ];
 
+const PRESUPUESTO_MAX: Record<string, number | null> = {
+  "hasta_1.8": 1800000,
+  "1.8_2.8": 2800000,
+  "2.8_3.5": 3500000,
+  "3.5_4.5": 4500000,
+  "5_mas": null,
+  "conversar": null,
+};
+
 type RangoLeaf = { min: number; max: number };
 type RangoNode = RangoLeaf | Record<string, RangoLeaf>;
 
@@ -103,14 +112,14 @@ const RANGOS_BASE: Record<string, Record<string, RangoNode>> = {
       mediana: { min: 2500000, max: 4000000 },
       grande: { min: 4000000, max: 6000000 },
       extra_grande: { min: 6000000, max: 9000000 },
-      a_definir: { min: 1800000, max: 9000000 },
+      a_definir: { min: 1800000, max: 2800000 },
     },
     diamante_natural: {
       pequena: { min: 2500000, max: 4000000 },
       mediana: { min: 4000000, max: 7000000 },
       grande: { min: 7000000, max: 12000000 },
       extra_grande: { min: 12000000, max: 20000000 },
-      a_definir: { min: 2500000, max: 12000000 },
+      a_definir: { min: 2500000, max: 4000000 },
     },
   },
   alianza: {
@@ -163,6 +172,9 @@ function calcularRango(tipo: string, metal: string, piedra: string, tamano: stri
     min = Math.round((min * 1.3) / 100000) * 100000;
     max = Math.round((max * 1.3) / 100000) * 100000;
   }
+  // El máximo nunca supera el mínimo × 1,6 (rango acotado)
+  const cappedMax = Math.min(max, min * 1.6);
+  max = Math.round(cappedMax / 100000) * 100000;
   return { min, max };
 }
 
@@ -206,6 +218,8 @@ const Cotizar = () => {
   const presupuestoLabel = PRESUPUESTOS.find((p) => p.key === presupuesto)?.label ?? "";
 
   const rango = calcularRango(tipo, metal, piedra, tamano);
+  const presupuestoMax = PRESUPUESTO_MAX[presupuesto] ?? null;
+  const presupuestoBajo = !!rango && presupuestoMax !== null && presupuestoMax < rango.min;
   const showRango = !!rango;
   const showPlus =
     !!rango &&
@@ -501,8 +515,9 @@ const Cotizar = () => {
                           </span>
                         </h2>
                         <p className="text-sm text-charcoal/70 mb-8 max-w-md mx-auto leading-relaxed">
-                          El precio final depende del quilataje de la piedra y los detalles que conversemos.
-                          Cada anillo incluye Certificado Gia Solari.
+                          {presupuestoBajo
+                            ? "Este es un rango orientativo. Cuéntame tu idea y buscamos juntas la mejor opción dentro de lo que tienes pensado."
+                            : "El precio final depende del quilataje de la piedra y los detalles que conversemos. Cada anillo incluye Certificado Gia Solari."}
                         </p>
                       </>
                     ) : (
