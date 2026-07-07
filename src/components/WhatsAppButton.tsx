@@ -21,6 +21,13 @@ const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) =>
   // Ocultar el FAB de Cotizar en la propia página /cotizar
   const showCotizar = !location.pathname.startsWith("/cotizar");
 
+  // En rutas con barra inferior fija (cotizador y fichas /joyas/:slug),
+  // ocultamos todo el FAB en móvil para no solaparlo. En desktop se mantiene.
+  const hasMobileBottomBar =
+    location.pathname.startsWith("/cotizar") ||
+    /^\/joyas\/[^/]+$/.test(location.pathname);
+  const effectiveHideOnMobile = hideOnMobile || hasMobileBottomBar;
+
   return (
     <>
       <div
