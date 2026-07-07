@@ -1,12 +1,19 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, MessageCircle } from "lucide-react";
+import { ChevronLeft, MessageCircle, Upload, X, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TrustMicrocopy from "@/components/TrustMicrocopy";
 import { WHATSAPP_PHONE } from "@/lib/whatsapp";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
+
+const MAX_IMAGES = 5;
+const MAX_SIZE_MB = 10;
+const ACCEPTED_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp", "image/heic", "image/heif"];
+const ACCEPTED_EXT = /\.(jpe?g|png|webp|heic|heif)$/i;
 
 type TipoKey =
   | "anillo_compromiso"
@@ -186,6 +193,10 @@ const Cotizar = () => {
   const [estilo, setEstilo] = useState<string>("");
   const [tamano, setTamano] = useState<string>("");
   const [presupuesto, setPresupuesto] = useState<string>("");
+  const [refImages, setRefImages] = useState<File[]>([]);
+  const [uploading, setUploading] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const isCompromiso = tipo === "anillo_compromiso";
   const isDiamante = piedra === "diamante_natural" || piedra === "diamante_lab";
@@ -246,7 +257,15 @@ const Cotizar = () => {
     ];
     if (isCompromiso && estiloLabel) lines.push(`🎨 Estilo: ${estiloLabel}`);
     if (isCompromiso && isDiamante && tamanoLabel) lines.push(`📏 Tamaño piedra: ${tamanoLabel}`);
-    lines.push(`💰 Presupuesto: ${presupuestoLabel}`, "", rangoText, "", "Gracias!");
+    lines.push(
+      `💰 Presupuesto: ${presupuestoLabel}`,
+      "",
+      rangoText,
+      "",
+      "Si tengo fotos de referencia, te las comparto por aquí 👇",
+      "",
+      "Gracias!",
+    );
     const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(lines.join("\n"))}`;
     try {
       if (typeof window !== "undefined" && typeof window.gtag === "function") {
@@ -277,7 +296,106 @@ const Cotizar = () => {
     setEstilo("");
     setTamano("");
     setPresupuesto("");
+    setRefImages([]);
+    setEmailSent(false);
   };
+
+  const handleFilesSelected = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const picked = Array.from(e.target.files ?? []);
+    if (e.target) e.target.value = "";
+    const valid: File[] = [];
+    for (const f of picked) {
+      const typeOk = ACCEPTED_TYPES.includes(f.type.toLowerCase()) || ACCEPTED_EXT.test(f.name);
+      if (!typeOk) {
+        toast({
+          title: "Formato no válido",
+          description: `${f.name} no es una imagen compatible. Usa jpg, png, webp o heic.`,
+        });
+        continue;
+      }
+      if (f.size > MAX_SIZE_MB * 1024 * 1024) {
+        toast({
+          title: "Imagen muy pesada",
+          description: `${f.name} supera los ${MAX_SIZE_MB} MB. Comprime la imagen e inténtalo de nuevo.`,
+        });
+        continue;
+      }
+      valid.push(f);
+    }
+    setRefImages((prev) => [...prev, ...valid].slice(0, MAX_IMAGES));
+  };
+
+  const removeRefImage = (idx: number) => {
+    setRefImages((prev) => prev.filter((_, i) => i !== idx));
+  };
+
+  const uploadRefImages = async (): Promise<string[]> => {
+    if (refImages.length === 0) return [];
+    const urls: string[] = [];
+    for (const file of refImages) {
+      const ext = (file.name.split(".").pop() || "jpg").toLowerCase();
+      const path = `${new Date().toISOString().slice(0, 10)}/${crypto.randomUUID()}.${ext}`;
+      const { error: upErr } = await supabase.storage
+        .from("cotizador-referencias")
+        .upload(path, file, { contentType: file.type || "image/jpeg", upsert: false });
+      if (upErr) {
+        console.error("upload error", upErr);
+        continue;
+      }
+      const { data: signed, error: signErr } = await supabase.storage
+        .from("cotizador-referencias")
+        .createSignedUrl(path, 60 * 60 * 24 * 7); // 7 días
+      if (signErr || !signed?.signedUrl) {
+        console.error("sign url error", signErr);
+        continue;
+      }
+      urls.push(signed.signedUrl);
+    }
+    return urls;
+  };
+
+  const handleWaClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (refImages.length === 0 || emailSent) return; // deja que el href abra WhatsApp
+    e.preventDefault();
+    const url = (e.currentTarget as HTMLAnchorElement).href;
+    setUploading(true);
+    try {
+      const imageUrls = await uploadRefImages();
+      if (imageUrls.length > 0) {
+        const rangoText =
+          showRango && rango
+            ? showPlus
+              ? `${formatCLP(rango.min)} – $12.000.000+`
+              : `${formatCLP(rango.min)} – ${formatCLP(rango.max)}`
+            : "";
+        try {
+          await supabase.functions.invoke("enviar-referencias-cotizador", {
+            body: {
+              resumen: {
+                pieza: tipoLabel,
+                metal: metalLabel,
+                piedra: piedraLabel,
+                estilo: estiloLabel,
+                tamano: tamanoLabel,
+                presupuesto: presupuestoLabel,
+                rango: rangoText,
+              },
+              imageUrls,
+            },
+          });
+        } catch (err) {
+          console.error("email invoke error", err);
+        }
+      }
+      setEmailSent(true);
+    } catch (err) {
+      console.error("ref upload flow error", err);
+    } finally {
+      setUploading(false);
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+  };
+
 
   const canNext =
     (currentKey === "tipo" && tipo) ||
@@ -534,14 +652,69 @@ const Cotizar = () => {
                       </>
                     )}
 
+                    <div className="mb-6 max-w-md mx-auto text-left border border-gold/20 bg-background/60 rounded-md p-4">
+                      <p className="font-medium text-sm text-charcoal mb-1">
+                        ¿Tienes fotos de referencia? <span className="text-charcoal/50 font-normal">(opcional)</span>
+                      </p>
+                      <p className="text-xs text-charcoal/60 mb-3">
+                        Sube el anillo o estilo que te inspira. Nos ayuda a entender tu idea.
+                      </p>
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
+                        multiple
+                        onChange={handleFilesSelected}
+                        className="hidden"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => fileInputRef.current?.click()}
+                        disabled={refImages.length >= MAX_IMAGES}
+                        className="w-full flex items-center justify-center gap-2 px-4 py-3 border border-dashed border-charcoal/30 rounded-md text-xs tracking-widest uppercase text-charcoal/70 hover:border-gold hover:text-gold transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                      >
+                        <Upload className="w-4 h-4" />
+                        {refImages.length === 0 ? "Subir imágenes" : `Agregar más (${refImages.length}/${MAX_IMAGES})`}
+                      </button>
+                      {refImages.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mt-3">
+                          {refImages.map((f, i) => (
+                            <div key={i} className="relative w-16 h-16 rounded-md overflow-hidden border border-charcoal/15">
+                              <img
+                                src={URL.createObjectURL(f)}
+                                alt={`Referencia ${i + 1}`}
+                                className="w-full h-full object-cover"
+                              />
+                              <button
+                                type="button"
+                                onClick={() => removeRefImage(i)}
+                                aria-label="Quitar imagen"
+                                className="absolute top-0 right-0 bg-charcoal/70 text-cream p-0.5 rounded-bl"
+                              >
+                                <X size={12} />
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      <p className="text-[11px] text-charcoal/50 mt-2">
+                        Máximo {MAX_IMAGES} imágenes, hasta {MAX_SIZE_MB} MB cada una. Formatos jpg, png, webp o heic.
+                      </p>
+                    </div>
+
                     <a
                       href={buildWaUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[52px] px-8 py-4 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm hover:opacity-90 transition-opacity"
+                      onClick={handleWaClick}
+                      aria-disabled={uploading}
+                      className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[52px] px-8 py-4 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm hover:opacity-90 transition-opacity ${uploading ? "opacity-70 pointer-events-none" : ""}`}
                     >
-                      <MessageCircle className="w-4 h-4" />
-                      Conversar con Gia por WhatsApp
+                      {uploading ? (
+                        <><Loader2 className="w-4 h-4 animate-spin" /> Enviando referencias…</>
+                      ) : (
+                        <><MessageCircle className="w-4 h-4" /> Conversar con Gia por WhatsApp</>
+                      )}
                     </a>
                     <TrustMicrocopy marginTop={14} />
                     <div className="mt-6">
