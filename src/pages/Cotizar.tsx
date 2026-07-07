@@ -652,14 +652,69 @@ const Cotizar = () => {
                       </>
                     )}
 
+                    <div className="mb-6 max-w-md mx-auto text-left border border-gold/20 bg-background/60 rounded-md p-4">
+                      <p className="font-medium text-sm text-charcoal mb-1">
+                        ¿Tienes fotos de referencia? <span className="text-charcoal/50 font-normal">(opcional)</span>
+                      </p>
+                      <p className="text-xs text-charcoal/60 mb-3">
+                        Sube el anillo o estilo que te inspira. Nos ayuda a entender tu idea.
+                      </p>
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
+                        multiple
+                        onChange={handleFilesSelected}
+                        className="hidden"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => fileInputRef.current?.click()}
+                        disabled={refImages.length >= MAX_IMAGES}
+                        className="w-full flex items-center justify-center gap-2 px-4 py-3 border border-dashed border-charcoal/30 rounded-md text-xs tracking-widest uppercase text-charcoal/70 hover:border-gold hover:text-gold transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                      >
+                        <Upload className="w-4 h-4" />
+                        {refImages.length === 0 ? "Subir imágenes" : `Agregar más (${refImages.length}/${MAX_IMAGES})`}
+                      </button>
+                      {refImages.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mt-3">
+                          {refImages.map((f, i) => (
+                            <div key={i} className="relative w-16 h-16 rounded-md overflow-hidden border border-charcoal/15">
+                              <img
+                                src={URL.createObjectURL(f)}
+                                alt={`Referencia ${i + 1}`}
+                                className="w-full h-full object-cover"
+                              />
+                              <button
+                                type="button"
+                                onClick={() => removeRefImage(i)}
+                                aria-label="Quitar imagen"
+                                className="absolute top-0 right-0 bg-charcoal/70 text-cream p-0.5 rounded-bl"
+                              >
+                                <X size={12} />
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      <p className="text-[11px] text-charcoal/50 mt-2">
+                        Máximo {MAX_IMAGES} imágenes, hasta {MAX_SIZE_MB} MB cada una. Formatos jpg, png, webp o heic.
+                      </p>
+                    </div>
+
                     <a
                       href={buildWaUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[52px] px-8 py-4 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm hover:opacity-90 transition-opacity"
+                      onClick={handleWaClick}
+                      aria-disabled={uploading}
+                      className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[52px] px-8 py-4 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm hover:opacity-90 transition-opacity ${uploading ? "opacity-70 pointer-events-none" : ""}`}
                     >
-                      <MessageCircle className="w-4 h-4" />
-                      Conversar con Gia por WhatsApp
+                      {uploading ? (
+                        <><Loader2 className="w-4 h-4 animate-spin" /> Enviando referencias…</>
+                      ) : (
+                        <><MessageCircle className="w-4 h-4" /> Conversar con Gia por WhatsApp</>
+                      )}
                     </a>
                     <TrustMicrocopy marginTop={14} />
                     <div className="mt-6">
