@@ -13,7 +13,7 @@ const cards = [
     title: "Ajustes incluidos",
     badge: "Sin costo, Siempre",
     items: [
-      "Cambio de talla (±2 medidas) durante los primeros 3 meses",
+      "Cambio de talla (±2 medidas) durante los primeros 6 meses",
       "Pulido profesional la primera vez",
       "Ajuste de engaste si una piedra se mueve",
     ],
