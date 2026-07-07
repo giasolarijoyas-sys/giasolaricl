@@ -7,6 +7,7 @@ import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { JOYAS, formatPrecioDesde } from "@/data/joyas";
+import { isFavorita, toggleFavorita, subscribeFavoritas } from "@/lib/favorites";
 
 const OLIVE = "#4A5536";
 const OLIVE_DEEP = "#3A4429";
@@ -28,6 +29,19 @@ const JoyaDetalle = () => {
   const [activeImg, setActiveImg] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const [specsOpen, setSpecsOpen] = useState(false);
+  const [isFav, setIsFav] = useState(false);
+
+  useEffect(() => {
+    if (!slug) return;
+    setIsFav(isFavorita(slug));
+    return subscribeFavoritas(() => setIsFav(isFavorita(slug)));
+  }, [slug]);
+
+  const handleToggleFav = () => {
+    if (!slug) return;
+    const next = toggleFavorita(slug);
+    setIsFav(next);
+  };
 
   // Related pieces (same tipo, exclude current)
   const related = useMemo(() => {
@@ -291,11 +305,14 @@ const JoyaDetalle = () => {
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     type="button"
+                    onClick={handleToggleFav}
+                    aria-pressed={isFav}
+                    aria-label={isFav ? "Quitar de favoritas" : "Agregar a favoritas"}
                     className="text-center rounded-full transition-colors flex items-center justify-center gap-2"
-                    style={{ border: `1px solid ${OLIVE}`, color: OLIVE, padding: "15px", background: "transparent", fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase" }}
+                    style={{ border: `1px solid ${OLIVE}`, color: OLIVE, padding: "15px", background: isFav ? CREAM_WARM : "transparent", fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase" }}
                   >
-                    <Heart size={14} strokeWidth={1.5} />
-                    Wishlist
+                    <Heart size={14} strokeWidth={1.5} fill={isFav ? OLIVE : "none"} />
+                    {isFav ? "Guardada" : "Wishlist"}
                   </button>
                   <a
                     href={pinUrl}
@@ -433,11 +450,13 @@ const JoyaDetalle = () => {
       >
         <button
           type="button"
-          aria-label="Guardar"
+          onClick={handleToggleFav}
+          aria-pressed={isFav}
+          aria-label={isFav ? "Quitar de favoritas" : "Guardar en favoritas"}
           className="rounded-full"
-          style={{ width: 48, height: 48, border: `1px solid ${OLIVE}`, color: OLIVE, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}
+          style={{ width: 48, height: 48, border: `1px solid ${OLIVE}`, color: OLIVE, background: isFav ? CREAM_WARM : "transparent", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}
         >
-          <Heart size={18} strokeWidth={1.5} />
+          <Heart size={18} strokeWidth={1.5} fill={isFav ? OLIVE : "none"} />
         </button>
         <a
           href={pinUrl}

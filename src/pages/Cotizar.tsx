@@ -1,7 +1,7 @@
-import { useState, useMemo, useRef } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, MessageCircle, Upload, X, Loader2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,6 +9,7 @@ import TrustMicrocopy from "@/components/TrustMicrocopy";
 import { WHATSAPP_PHONE } from "@/lib/whatsapp";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import { JOYAS, type Joya } from "@/data/joyas";
 
 const MAX_IMAGES = 5;
 const MAX_SIZE_MB = 10;
@@ -176,13 +177,70 @@ function calcularRango(tipo: string, metal: string, piedra: string, tamano: stri
 
   let { min, max } = leaf;
   if (metal === "platino") {
-    min = Math.round((min * 1.3) / 100000) * 100000;
-    max = Math.round((max * 1.3) / 100000) * 100000;
+    // Recargo fijo por metal: el platino solo suma su propio sobreprecio, no escala la piedra.
+    min = min + 400000;
+    max = max + 400000;
   }
   // El máximo nunca supera el mínimo × 1,6 (rango acotado)
   const cappedMax = Math.min(max, min * 1.6);
   max = Math.round(cappedMax / 100000) * 100000;
   return { min, max };
+}
+
+// Mapea una pieza del catálogo (JOYAS) a los valores del cotizador.
+function mapJoyaToCotizador(j: Joya): {
+  tipo: string;
+  metal: string;
+  piedra: string;
+  estilo: string;
+} {
+  const cat = (j.categoria || "").toLowerCase();
+  let tipo = "";
+  if (cat.includes("compromiso")) tipo = "anillo_compromiso";
+  else if (cat.includes("argolla") || cat.includes("alianza")) tipo = "alianza";
+  else if (cat.includes("aro")) tipo = "aros";
+  else if (cat.includes("collar") || cat.includes("colgante")) tipo = "colgante";
+  else if (cat.includes("pulsera") || cat.includes("esclava")) tipo = "pulsera_esclava";
+
+  const metalStr = (j.metalPrincipal || j.material || "").toLowerCase();
+  let metal = "";
+  if (metalStr.includes("platino")) metal = "platino";
+  else if (metalStr.includes("blanco")) metal = "oro_blanco";
+  else if (metalStr.includes("amarillo")) metal = "oro_amarillo";
+  else if (metalStr.includes("rosad")) metal = "oro_rosado";
+
+  const piedraStr = (j.piedraCentral || j.material || "").toLowerCase();
+  let piedra = "";
+  if (tipo === "anillo_compromiso") {
+    if (piedraStr.includes("lab")) piedra = "diamante_lab";
+    else if (piedraStr.includes("diamante")) piedra = "diamante_natural";
+    else if (piedraStr.includes("zafiro")) piedra = "zafiro";
+    else if (piedraStr.includes("aguamarina")) piedra = "aguamarina";
+    else if (piedraStr.includes("esmeralda")) piedra = "esmeralda";
+    else if (piedraStr) piedra = "otra_color";
+  } else if (tipo === "alianza") {
+    piedra = piedraStr.includes("diamante") ? "con_diamantes" : "sin_piedras";
+  } else if (tipo) {
+    piedra = piedraStr && piedraStr !== "sin piedra" ? "con_piedras" : "sin_piedras";
+  }
+
+  const nombre = (j.nombre || "").toLowerCase();
+  const desc = ((j.descripcionLarga || j.descripcion) || "").toLowerCase();
+  const hay = (s: string) => nombre.includes(s) || desc.includes(s);
+  let estilo = "";
+  if (tipo === "anillo_compromiso") {
+    if (hay("solitario")) estilo = "solitario";
+    else if (hay("halo")) estilo = "halo";
+    else if (hay("trilog") || hay("tricillo") || hay("tres piedras") || hay("tres diamantes"))
+      estilo = "tricillo";
+    else if (hay("cuatricillo") || hay("cuatro piedras")) estilo = "cuatricillo";
+    else if (hay("pav") || hay("cintillo") || hay("eternity") || hay("quintillo"))
+      estilo = "cintillo_pave";
+    else if (hay("vintage") || hay("art déco") || hay("art deco") || hay("mandala") || hay("milgrain"))
+      estilo = "vintage_editorial";
+  }
+
+  return { tipo, metal, piedra, estilo };
 }
 
 const Cotizar = () => {
@@ -197,6 +255,42 @@ const Cotizar = () => {
   const [uploading, setUploading] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Precarga desde ?pieza=slug&modificada=true (llegan desde una ficha)
+  const [searchParams] = useSearchParams();
+  const piezaSlug = searchParams.get("pieza") || "";
+  const modificada = searchParams.get("modificada") === "true";
+  const piezaOrigen = useMemo(
+    () => (piezaSlug ? JOYAS.find((j) => j.slug === piezaSlug) : undefined),
+    [piezaSlug],
+  );
+
+  useEffect(() => {
+    if (!piezaOrigen) return;
+    const preset = mapJoyaToCotizador(piezaOrigen);
+    if (preset.tipo) setTipo(preset.tipo);
+    if (preset.metal) setMetal(preset.metal);
+    if (preset.piedra) setPiedra(preset.piedra);
+    if (preset.estilo) setEstilo(preset.estilo);
+    // Salta al primer paso todavía no definido
+    const stepsForType: string[] = ["tipo", "metal", "piedra"];
+    if (preset.tipo === "anillo_compromiso") stepsForType.push("estilo");
+    const values: Record<string, string> = {
+      tipo: preset.tipo,
+      metal: preset.metal,
+      piedra: preset.piedra,
+      estilo: preset.estilo,
+    };
+    let idx = 1;
+    for (const k of stepsForType) {
+      if (values[k]) idx++;
+      else break;
+    }
+    setStep(idx);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [piezaOrigen]);
+
+
 
   const isCompromiso = tipo === "anillo_compromiso";
   const isDiamante = piedra === "diamante_natural" || piedra === "diamante_lab";
@@ -238,6 +332,33 @@ const Cotizar = () => {
     isDiamante &&
     (tamano === "extra_grande" || (piedra === "diamante_natural" && tamano === "a_definir")) &&
     rango.max > 12000000;
+
+  // Registro anónimo de la cotización al llegar al resultado (fire-and-forget).
+  const cotizacionInsertedRef = useRef(false);
+  useEffect(() => {
+    if (!isResult) return;
+    if (cotizacionInsertedRef.current) return;
+    cotizacionInsertedRef.current = true;
+    const row = {
+      pieza: tipoLabel || null,
+      metal: metalLabel || null,
+      piedra: piedraLabel || null,
+      estilo: estiloLabel || null,
+      tamano: tamanoLabel || null,
+      presupuesto: presupuestoLabel || null,
+      rango_min: rango?.min ?? null,
+      rango_max: rango?.max ?? null,
+      con_referencias: refImages.length > 0,
+      origen_pieza: piezaSlug || null,
+    };
+    supabase
+      .from("cotizaciones")
+      .insert(row)
+      .then(({ error }) => {
+        if (error) console.error("cotizaciones insert error", error);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isResult]);
 
   const buildWaUrl = () => {
     const rangoMaxText = showRango && rango
@@ -465,15 +586,28 @@ const Cotizar = () => {
               Pocas preguntas y armamos el presupuesto aproximado en menos de un minuto.
             </p>
             <p className="text-charcoal/60 text-xs md:text-sm mt-3">
-              ¿Tenés dudas de presupuesto?{" "}
+              ¿Tienes dudas de presupuesto?{" "}
               <Link
                 to="/aprende/cuanto-cuesta-anillo-compromiso-chile"
                 className="text-gold underline underline-offset-2 hover:opacity-80"
               >
-                Mirá nuestra guía de precios
+                Mira nuestra guía de precios
               </Link>
               .
             </p>
+            {piezaOrigen && (
+              <div className="mt-5 inline-flex flex-col items-center gap-1 px-4 py-3 bg-cream/80 border border-gold/25 rounded-md">
+                <span className="text-[10px] tracking-[0.25em] uppercase text-gold">
+                  Estás cotizando
+                </span>
+                <span className="font-display text-base text-charcoal">
+                  {piezaOrigen.nombre}
+                  {modificada && (
+                    <span className="text-charcoal/60 text-sm"> (con modificaciones)</span>
+                  )}
+                </span>
+              </div>
+            )}
           </header>
 
           {!isResult && (

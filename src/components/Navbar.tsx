@@ -328,7 +328,7 @@ const Navbar = () => {
             </a>
 
             <a
-              href="/lista-de-deseos"
+              href="/favoritas"
               aria-label="Mis favoritas"
               title="Mis favoritas"
               className="p-2 rounded-full hover:bg-[#F5EFE6] transition-colors"
@@ -390,7 +390,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="/lista-de-deseos"
+                href="/favoritas"
                 onClick={() => setOpen(false)}
                 style={{ fontFamily: "'Bodoni Moda', serif", fontStyle: "italic", fontSize: "22px", color: MUTED }}
               >
