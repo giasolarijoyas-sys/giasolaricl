@@ -333,6 +333,33 @@ const Cotizar = () => {
     (tamano === "extra_grande" || (piedra === "diamante_natural" && tamano === "a_definir")) &&
     rango.max > 12000000;
 
+  // Registro anónimo de la cotización al llegar al resultado (fire-and-forget).
+  const cotizacionInsertedRef = useRef(false);
+  useEffect(() => {
+    if (!isResult) return;
+    if (cotizacionInsertedRef.current) return;
+    cotizacionInsertedRef.current = true;
+    const row = {
+      pieza: tipoLabel || null,
+      metal: metalLabel || null,
+      piedra: piedraLabel || null,
+      estilo: estiloLabel || null,
+      tamano: tamanoLabel || null,
+      presupuesto: presupuestoLabel || null,
+      rango_min: rango?.min ?? null,
+      rango_max: rango?.max ?? null,
+      con_referencias: refImages.length > 0,
+      origen_pieza: piezaSlug || null,
+    };
+    supabase
+      .from("cotizaciones")
+      .insert(row)
+      .then(({ error }) => {
+        if (error) console.error("cotizaciones insert error", error);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isResult]);
+
   const buildWaUrl = () => {
     const rangoMaxText = showRango && rango
       ? showPlus
