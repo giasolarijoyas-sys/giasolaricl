@@ -432,7 +432,9 @@ const Cotizar = () => {
     setNombre("");
     setEmail("");
     cotizacionInsertedRef.current = false;
+    leadEmailSentRef.current = false;
   };
+
 
   const handleFilesSelected = (e: React.ChangeEvent<HTMLInputElement>) => {
     const picked = Array.from(e.target.files ?? []);
