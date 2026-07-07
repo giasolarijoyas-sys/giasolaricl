@@ -15,6 +15,7 @@ import WishListAdmin from "./pages/admin/WishListAdmin.tsx";
 import NewsletterAdmin from "./pages/admin/NewsletterAdmin.tsx";
 import StatsAdmin from "./pages/admin/StatsAdmin.tsx";
 import ListaDeseos from "./pages/ListaDeseos.tsx";
+import Favoritas from "./pages/Favoritas.tsx";
 import SobreGia from "./pages/SobreGia.tsx";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes.tsx";
 import GuiaDeTallas from "./pages/GuiaDeTallas.tsx";
