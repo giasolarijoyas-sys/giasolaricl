@@ -401,8 +401,9 @@ const Cotizar = () => {
     const rangoText = showRango
       ? `El cotizador me mostró un rango de ${rangoMaxText}. Me gustaría conversar los detalles.`
       : `Me gustaría que me ayudes a definir los detalles.`;
+    const saludoNombre = nombre.trim() ? `Soy ${nombre.trim()}, ` : "";
     const lines = [
-      "Hola Maca! Vengo del cotizador del sitio.",
+      `Hola Maca! ${saludoNombre}vengo del cotizador del sitio.`,
       "",
       `🎁 Pieza: ${tipoLabel}`,
       `✨ Metal: ${metalLabel}`,
