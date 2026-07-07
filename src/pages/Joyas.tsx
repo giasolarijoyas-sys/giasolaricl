@@ -230,7 +230,7 @@ const Joyas = () => {
     return () => { document.body.style.overflow = ""; };
   }, [drawerOpen]);
 
-  const showEstilo = filters.tipo === "bodas";
+  const showEstilo = filters.tipo === "compromiso";
 
   // === SIDEBAR CONTENT ===
   const Sidebar = () => (
