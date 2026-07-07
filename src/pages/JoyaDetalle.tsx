@@ -264,10 +264,12 @@ const JoyaDetalle = () => {
               {/* Price block */}
               <div className="mt-8">
                 <p style={{ fontFamily: "Inter, sans-serif", fontSize: "22px", fontWeight: 500, color: OLIVE_DEEP }}>
-                  Precio a cotizar
+                  {item.precioDesde ? precioLabel : "Precio a cotizar"}
                 </p>
                 <p className="mt-1" style={{ fontFamily: "Inter, sans-serif", fontSize: "12px", color: OLIVE_SOFT }}>
-                  El valor depende del diseño final que conversemos
+                  {item.precioDesde
+                    ? "Valor referencial. El precio final depende del diseño que conversemos."
+                    : "El valor depende del diseño final que conversemos"}
                 </p>
               </div>
 
