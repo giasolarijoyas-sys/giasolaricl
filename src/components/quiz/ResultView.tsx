@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Star, ArrowRight, Sparkles, Shield } from "lucide-react";
 import type { Recommendation, QuizAnswers } from "./types";
 import { formatCLP } from "./engine/priceEstimator";
+import { BUDGET_RANGES } from "./taxonomies";
 
 interface ResultViewProps {
   recommendations: Recommendation[];
