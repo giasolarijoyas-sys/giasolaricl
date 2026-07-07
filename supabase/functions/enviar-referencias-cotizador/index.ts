@@ -1,6 +1,6 @@
 import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors';
 
-const FROM = "Gia Solari <cotizaciones@giasolari.cl>";
+const FROM = "Gia Solari <hola@giasolari.cl>";
 const TO = "giasolarijoyas@gmail.com";
 
 const escape = (s: unknown) =>
