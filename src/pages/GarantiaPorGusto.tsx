@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: "¿Aplica también a piezas hechas a medida?",
-    a: "Sí, justamente para esas. La Garantía por Gusto fue pensada para mis piezas custom, anillos de compromiso y joyería de autor diseñada y fabricada por mí. Es mi forma de decirte: confiá en el proceso, porque si algo no resulta como lo soñaste, lo arreglamos juntas.",
+    a: "Sí, justamente para esas. La Garantía por Gusto fue pensada para mis piezas custom, anillos de compromiso y joyería de autor diseñada y fabricada por mí. Es mi forma de decirte: confía en el proceso, porque si algo no resulta como lo soñaste, lo arreglamos juntas.",
   },
   {
     q: "¿Qué pasa si quiero modificar la pieza en vez de devolverla?",
