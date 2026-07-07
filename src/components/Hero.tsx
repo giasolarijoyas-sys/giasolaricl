@@ -13,7 +13,7 @@ const MUTED_TXT = "#6B7752";
 const MUTED = "#6B7752";
 
 const HERO_IMG = heroImg;
-const INSTAGRAM_WA_URL = "https://wa.me/56984049502?text=Hola%20Maca%2C%20vengo%20del%20sitio%20web%20y%20quiero%20cotizar%20una%20pieza";
+
 
 const Hero = () => {
   const imgRef = useRef<HTMLDivElement>(null);
