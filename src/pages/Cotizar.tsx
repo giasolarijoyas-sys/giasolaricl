@@ -103,14 +103,14 @@ const RANGOS_BASE: Record<string, Record<string, RangoNode>> = {
       mediana: { min: 2500000, max: 4000000 },
       grande: { min: 4000000, max: 6000000 },
       extra_grande: { min: 6000000, max: 9000000 },
-      a_definir: { min: 1800000, max: 9000000 },
+      a_definir: { min: 1800000, max: 2800000 },
     },
     diamante_natural: {
       pequena: { min: 2500000, max: 4000000 },
       mediana: { min: 4000000, max: 7000000 },
       grande: { min: 7000000, max: 12000000 },
       extra_grande: { min: 12000000, max: 20000000 },
-      a_definir: { min: 2500000, max: 12000000 },
+      a_definir: { min: 2500000, max: 4000000 },
     },
   },
   alianza: {
