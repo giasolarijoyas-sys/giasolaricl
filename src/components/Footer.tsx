@@ -72,7 +72,8 @@ const Footer = () => {
               Catálogo
             </p>
             <div className="flex flex-col gap-2">
-              <a href="/joyas?tipo=bodas" className="hover:text-[#C9A87C] transition-colors">Anillos de compromiso y argollas</a>
+              <a href="/joyas?tipo=compromiso" className="hover:text-[#C9A87C] transition-colors">Anillos de compromiso</a>
+              <a href="/joyas?tipo=argollas" className="hover:text-[#C9A87C] transition-colors">Argollas de matrimonio</a>
               <a href="/joyas?tipo=vintage" className="hover:text-[#C9A87C] transition-colors">Vintage</a>
               <a href="/joyas?tipo=aros" className="hover:text-[#C9A87C] transition-colors">Aros</a>
               <a href="/joyas?tipo=collares" className="hover:text-[#C9A87C] transition-colors">Collares</a>

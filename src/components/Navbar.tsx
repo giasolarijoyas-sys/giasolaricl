@@ -16,19 +16,20 @@ const WHATSAPP_URL = "https://wa.me/56984049502";
 type SubItem = { label: string; href: string };
 const joyasMenuCols: { title: string; items: SubItem[] }[] = [
   {
-    title: "Anillos de compromiso y argollas",
+    title: "Anillos de compromiso",
     items: [
-      
-      { label: "Halos", href: "/joyas?tipo=bodas&estilo=Halo" },
-      { label: "Solitarios", href: "/joyas?tipo=bodas&estilo=Solitarios" },
-      { label: "Tres y cinco piedras", href: "/joyas?tipo=bodas&estilo=Tres+y+cinco+piedras" },
-      { label: "Pavé", href: "/joyas?tipo=bodas&estilo=Pavé" },
-      { label: "Cintillos", href: "/joyas?tipo=bodas&estilo=Cintillos" },
-      { label: "Eternity", href: "/joyas?tipo=bodas&estilo=Eternity" },
-      { label: "Color (zafiro, aguamarina, esmeralda)", href: "/joyas?tipo=bodas&estilo=Color" },
-      { label: "Ver todos →", href: "/joyas?tipo=bodas" },
+      { label: "Halos", href: "/joyas?tipo=compromiso&estilo=Halo" },
+      { label: "Solitarios", href: "/joyas?tipo=compromiso&estilo=Solitarios" },
+      { label: "Tres y cinco piedras", href: "/joyas?tipo=compromiso&estilo=Tres+y+cinco+piedras" },
+      { label: "Pavé", href: "/joyas?tipo=compromiso&estilo=Pavé" },
+      { label: "Cintillos", href: "/joyas?tipo=compromiso&estilo=Cintillos" },
+      { label: "Eternity", href: "/joyas?tipo=compromiso&estilo=Eternity" },
+      { label: "Color (zafiro, aguamarina, esmeralda)", href: "/joyas?tipo=compromiso&estilo=Color" },
+      { label: "Ver anillos de compromiso →", href: "/joyas?tipo=compromiso" },
+      { label: "Argollas de matrimonio →", href: "/joyas?tipo=argollas" },
     ],
   },
+
   {
     title: "Otras piezas",
     items: [
