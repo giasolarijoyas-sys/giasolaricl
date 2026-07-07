@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Star, ArrowRight, Sparkles, Shield } from "lucide-react";
 import type { Recommendation, QuizAnswers } from "./types";
 import { formatCLP } from "./engine/priceEstimator";
+import { BUDGET_RANGES } from "./taxonomies";
 
 interface ResultViewProps {
   recommendations: Recommendation[];
@@ -24,6 +25,8 @@ const ResultView = ({ recommendations, answers, onSelectRecommendation, onReques
   const primary = recommendations[0];
   const alternatives = recommendations.slice(1);
   const partnerName = answers.partnerName || 'ella';
+  const budget = BUDGET_RANGES.find(b => b.key === answers.budgetRange);
+  const budgetBelowEstimate = budget ? budget.max < primary.estimatedPriceRange.min : false;
 
   return (
     <div>
@@ -132,9 +135,15 @@ const ResultView = ({ recommendations, answers, onSelectRecommendation, onReques
         </>
       )}
 
-      <p className="text-xs text-center text-muted-foreground italic">
-        * Los precios son estimaciones orientativas. La cotización final depende del diseño exacto.
-      </p>
+      {budgetBelowEstimate ? (
+        <p className="text-sm text-center text-foreground/80 max-w-md mx-auto leading-relaxed">
+          Este es un rango orientativo. Cuéntame tu idea y buscamos juntas la mejor opción dentro de lo que tienes pensado.
+        </p>
+      ) : (
+        <p className="text-xs text-center text-muted-foreground italic">
+          * Los precios son estimaciones orientativas. La cotización final depende del diseño exacto.
+        </p>
+      )}
     </div>
   );
 };
