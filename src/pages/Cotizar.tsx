@@ -182,7 +182,7 @@ function calcularRango(tipo: string, metal: string, piedra: string, tamano: stri
     max = max + 400000;
   }
   // El máximo nunca supera el mínimo × 1,6 (rango acotado)
-  const cappedMax = Math.min(max, min * 1.6);
+  const cappedMax = Math.min(max, min * 2);
   max = Math.round(cappedMax / 100000) * 100000;
   return { min, max };
 }
