@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Shield, Diamond, Clock, MapPin } from "lucide-react";
 import heroImg from "@/assets/hero-halo-cushion.png";
 
