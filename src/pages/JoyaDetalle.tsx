@@ -160,7 +160,8 @@ const JoyaDetalle = () => {
             <span className="mx-2">,</span>
             <Link to={`/joyas?tipo=${(() => {
               const c = item.categoria?.toLowerCase() ?? "";
-              if (c.includes("anillo") || c.includes("argolla")) return "bodas";
+              if (c.includes("argolla") || c.includes("alianza")) return "argollas";
+              if (c.includes("anillo")) return "compromiso";
               if (c.includes("aro")) return "aros";
               if (c.includes("collar")) return "collares";
               if (c.includes("pulsera") || c.includes("esclava")) return "pulseras";
