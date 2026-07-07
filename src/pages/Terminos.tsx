@@ -74,7 +74,7 @@ const Terminos = () => {
                 Los plazos estimados de fabricación son:
               </p>
               <ul className="space-y-1">
-                <li>• <strong>Anillos de compromiso:</strong> 3 a 6 semanas</li>
+                <li>• <strong>Anillos de compromiso:</strong> 4 a 6 semanas</li>
                 <li>• <strong>Argollas de matrimonio:</strong> 2 a 4 semanas</li>
                 <li>• <strong>Joyas con piedras especiales:</strong> 4 a 8 semanas (puede requerir importación de piedra)</li>
                 <li>• <strong>Otras joyas:</strong> 2 a 4 semanas</li>
