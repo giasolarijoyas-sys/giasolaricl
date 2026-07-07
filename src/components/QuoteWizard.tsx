@@ -90,13 +90,19 @@ const QuoteWizard = () => {
 
   const update = (partial: Partial<FormData>) => setData(prev => ({ ...prev, ...partial }));
 
+  const emailValid = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+  const phoneValid = (v: string) => {
+    const digits = v.replace(/\D/g, "");
+    return digits.length >= 8 && digits.length <= 15;
+  };
+
   const canNext = () => {
     switch (step) {
       case 0: return !!data.pieza;
       case 1: return !!data.metal;
       case 2: return !!data.piedra;
       case 3: return !!data.presupuesto;
-      case 4: return data.nombre.trim() && data.email.trim() && data.whatsapp.trim();
+      case 4: return !!data.nombre.trim() && emailValid(data.email) && phoneValid(data.whatsapp);
       default: return false;
     }
   };
