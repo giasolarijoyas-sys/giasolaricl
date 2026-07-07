@@ -305,11 +305,14 @@ const JoyaDetalle = () => {
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     type="button"
+                    onClick={handleToggleFav}
+                    aria-pressed={isFav}
+                    aria-label={isFav ? "Quitar de favoritas" : "Agregar a favoritas"}
                     className="text-center rounded-full transition-colors flex items-center justify-center gap-2"
-                    style={{ border: `1px solid ${OLIVE}`, color: OLIVE, padding: "15px", background: "transparent", fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase" }}
+                    style={{ border: `1px solid ${OLIVE}`, color: OLIVE, padding: "15px", background: isFav ? CREAM_WARM : "transparent", fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase" }}
                   >
-                    <Heart size={14} strokeWidth={1.5} />
-                    Wishlist
+                    <Heart size={14} strokeWidth={1.5} fill={isFav ? OLIVE : "none"} />
+                    {isFav ? "Guardada" : "Wishlist"}
                   </button>
                   <a
                     href={pinUrl}
