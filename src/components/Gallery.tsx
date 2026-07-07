@@ -511,7 +511,7 @@ const Gallery = () => {
                         <div className="aspect-square overflow-hidden">
                         <img
                             src={piece.img}
-                            alt={piece.name}
+                            alt={piece.desc ? `${piece.name}, ${piece.desc}` : piece.name}
                             loading={i === 0 ? "eager" : "lazy"}
                             decoding="async"
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
