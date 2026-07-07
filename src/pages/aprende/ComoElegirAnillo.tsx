@@ -34,7 +34,7 @@ const faqJsonLd = {
 const ComoElegirAnillo = () => (
   <>
     <SEO
-      title="Cómo elegir el anillo de compromiso perfecto | Gia Solari, Santiago, Chile"
+      title="Cómo elegir tu anillo de compromiso | Gia Solari"
       description="Te guío paso a paso para elegir el anillo de compromiso ideal en Santiago, Chile: estilo, forma de la piedra, talla y cómo conversarlo en la primera reunión."
       path="/aprende/como-elegir-anillo-compromiso"
       type="article"
