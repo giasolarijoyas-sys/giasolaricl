@@ -33,7 +33,7 @@ const pasos = [
     n: "04",
     titulo: "Fabricamos",
     img: paso4,
-    texto: "Cada pieza se hace a mano en nuestro taller de Santiago. Una pieza a la vez. Entre 4 y 6 semanas.",
+    texto: "Cada pieza se hace a mano en nuestro taller de Santiago. Una pieza a la vez. De 4 a 6 semanas.",
   },
   {
     n: "05",
