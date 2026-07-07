@@ -256,6 +256,42 @@ const Cotizar = () => {
   const [emailSent, setEmailSent] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // Precarga desde ?pieza=slug&modificada=true (llegan desde una ficha)
+  const [searchParams] = useSearchParams();
+  const piezaSlug = searchParams.get("pieza") || "";
+  const modificada = searchParams.get("modificada") === "true";
+  const piezaOrigen = useMemo(
+    () => (piezaSlug ? JOYAS.find((j) => j.slug === piezaSlug) : undefined),
+    [piezaSlug],
+  );
+
+  useEffect(() => {
+    if (!piezaOrigen) return;
+    const preset = mapJoyaToCotizador(piezaOrigen);
+    if (preset.tipo) setTipo(preset.tipo);
+    if (preset.metal) setMetal(preset.metal);
+    if (preset.piedra) setPiedra(preset.piedra);
+    if (preset.estilo) setEstilo(preset.estilo);
+    // Salta al primer paso todavía no definido
+    const stepsForType: string[] = ["tipo", "metal", "piedra"];
+    if (preset.tipo === "anillo_compromiso") stepsForType.push("estilo");
+    const values: Record<string, string> = {
+      tipo: preset.tipo,
+      metal: preset.metal,
+      piedra: preset.piedra,
+      estilo: preset.estilo,
+    };
+    let idx = 1;
+    for (const k of stepsForType) {
+      if (values[k]) idx++;
+      else break;
+    }
+    setStep(idx);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [piezaOrigen]);
+
+
+
   const isCompromiso = tipo === "anillo_compromiso";
   const isDiamante = piedra === "diamante_natural" || piedra === "diamante_lab";
 
