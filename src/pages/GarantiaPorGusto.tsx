@@ -16,7 +16,7 @@ import {
 const items = [
   { icon: ShieldCheck, title: "¿Qué cubre?", desc: "Si no te fascina el resultado final, la rehago sin costo usando tu mismo metal y tus mismas piedras. Si quieres sumar piedras o subir de material, se puede pagando solo esa diferencia. Incluye ajuste de talla." },
   { icon: RefreshCw, title: "Plazo", desc: "Tienes 30 días desde la entrega para comunicarnos cualquier inconformidad. Nos ponemos en contacto contigo para evaluar la mejor solución." },
-  { icon: Ruler, title: "Cambio de talla gratis", desc: "Incluimos un ajuste de talla sin costo (hasta 2 tallas arriba o abajo) durante los primeros 3 meses." },
+  { icon: Ruler, title: "Cambio de talla gratis", desc: "Incluimos un ajuste de talla sin costo (hasta 2 tallas arriba o abajo) durante los primeros 6 meses." },
   { icon: MessageCircle, title: "Ajuste de diseño", desc: "Si algún detalle del diseño no te convence, lo conversamos y buscamos la mejor solución juntas. Tu satisfacción es nuestra prioridad." },
 ];
 
