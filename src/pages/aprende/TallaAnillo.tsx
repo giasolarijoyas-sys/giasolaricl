@@ -94,8 +94,8 @@ const TallaAnillo = () => (
                   en milímetros, ese es el contorno de tu dedo.
                 </p>
                 <p className="mt-3">
-                  Después divídelo por 3.14 (π) y te da el diámetro. Ejemplo: si el contorno es 50.3 mm,
-                  divides por 3.14 y te da 16 mm de diámetro → talla 12.
+                  Después divídelo por 3,14 (π) y te da el diámetro. Ejemplo: si el contorno es 50,3 mm,
+                  divides por 3,14 y te da 16 mm de diámetro → talla 12.
                 </p>
               </section>
 
