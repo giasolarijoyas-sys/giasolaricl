@@ -39,7 +39,7 @@ const faqJsonLd = {
 const DiamanteCertificadoGiaIgi = () => (
   <>
     <SEO
-      title="Diamante certificado GIA o IGI: qué significa y por qué importa | Gia Solari, Santiago, Chile"
+      title="Diamante certificado GIA o IGI | Gia Solari"
       description="Te explico qué es un certificado GIA o IGI, las 4C del diamante y por qué comprar con certificación es clave en Santiago, Chile. Guía honesta de Gia Solari."
       path="/aprende/diamante-certificado-gia-igi"
       type="article"
