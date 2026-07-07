@@ -360,14 +360,32 @@ const Gallery = () => {
     setCanScrollNext(emblaApi.canScrollNext());
   }, [emblaApi]);
 
-  // Autoplay
+  // Autoplay con pausa en hover/focus y respeto a prefers-reduced-motion
+  const [paused, setPaused] = useState(false);
+  const prefersReducedMotion = useMemo(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return false;
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }, []);
   useEffect(() => {
-    if (!emblaApi) return;
+    if (!emblaApi || paused || prefersReducedMotion) return;
     const timer = setInterval(() => {
       emblaApi.scrollNext();
     }, AUTOPLAY_INTERVAL);
     return () => clearInterval(timer);
-  }, [emblaApi, active]);
+  }, [emblaApi, active, paused, prefersReducedMotion]);
+
+  // Mapa nombre → slug para linkear cada tarjeta a su ficha
+  const slugByName = useMemo(() => {
+    const m = new Map<string, string>();
+    for (const j of JOYAS) {
+      if (!j.isPlaceholder && j.slug) m.set(j.nombre.toLowerCase().trim(), j.slug);
+    }
+    return m;
+  }, []);
+  const linkFor = (name: string) => {
+    const s = slugByName.get(name.toLowerCase().trim());
+    return s ? `/joyas/${s}` : "/joyas";
+  };
 
   useEffect(() => {
     if (!emblaApi) return;
