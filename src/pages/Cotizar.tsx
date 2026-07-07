@@ -296,7 +296,106 @@ const Cotizar = () => {
     setEstilo("");
     setTamano("");
     setPresupuesto("");
+    setRefImages([]);
+    setEmailSent(false);
   };
+
+  const handleFilesSelected = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const picked = Array.from(e.target.files ?? []);
+    if (e.target) e.target.value = "";
+    const valid: File[] = [];
+    for (const f of picked) {
+      const typeOk = ACCEPTED_TYPES.includes(f.type.toLowerCase()) || ACCEPTED_EXT.test(f.name);
+      if (!typeOk) {
+        toast({
+          title: "Formato no válido",
+          description: `${f.name} no es una imagen compatible. Usa jpg, png, webp o heic.`,
+        });
+        continue;
+      }
+      if (f.size > MAX_SIZE_MB * 1024 * 1024) {
+        toast({
+          title: "Imagen muy pesada",
+          description: `${f.name} supera los ${MAX_SIZE_MB} MB. Comprime la imagen e inténtalo de nuevo.`,
+        });
+        continue;
+      }
+      valid.push(f);
+    }
+    setRefImages((prev) => [...prev, ...valid].slice(0, MAX_IMAGES));
+  };
+
+  const removeRefImage = (idx: number) => {
+    setRefImages((prev) => prev.filter((_, i) => i !== idx));
+  };
+
+  const uploadRefImages = async (): Promise<string[]> => {
+    if (refImages.length === 0) return [];
+    const urls: string[] = [];
+    for (const file of refImages) {
+      const ext = (file.name.split(".").pop() || "jpg").toLowerCase();
+      const path = `${new Date().toISOString().slice(0, 10)}/${crypto.randomUUID()}.${ext}`;
+      const { error: upErr } = await supabase.storage
+        .from("cotizador-referencias")
+        .upload(path, file, { contentType: file.type || "image/jpeg", upsert: false });
+      if (upErr) {
+        console.error("upload error", upErr);
+        continue;
+      }
+      const { data: signed, error: signErr } = await supabase.storage
+        .from("cotizador-referencias")
+        .createSignedUrl(path, 60 * 60 * 24 * 7); // 7 días
+      if (signErr || !signed?.signedUrl) {
+        console.error("sign url error", signErr);
+        continue;
+      }
+      urls.push(signed.signedUrl);
+    }
+    return urls;
+  };
+
+  const handleWaClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (refImages.length === 0 || emailSent) return; // deja que el href abra WhatsApp
+    e.preventDefault();
+    const url = (e.currentTarget as HTMLAnchorElement).href;
+    setUploading(true);
+    try {
+      const imageUrls = await uploadRefImages();
+      if (imageUrls.length > 0) {
+        const rangoText =
+          showRango && rango
+            ? showPlus
+              ? `${formatCLP(rango.min)} – $12.000.000+`
+              : `${formatCLP(rango.min)} – ${formatCLP(rango.max)}`
+            : "";
+        try {
+          await supabase.functions.invoke("enviar-referencias-cotizador", {
+            body: {
+              resumen: {
+                pieza: tipoLabel,
+                metal: metalLabel,
+                piedra: piedraLabel,
+                estilo: estiloLabel,
+                tamano: tamanoLabel,
+                presupuesto: presupuestoLabel,
+                rango: rangoText,
+              },
+              imageUrls,
+            },
+          });
+        } catch (err) {
+          console.error("email invoke error", err);
+        }
+      }
+      setEmailSent(true);
+    } catch (err) {
+      console.error("ref upload flow error", err);
+    } finally {
+      setUploading(false);
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+  };
+
 
   const canNext =
     (currentKey === "tipo" && tipo) ||
