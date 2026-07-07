@@ -64,7 +64,7 @@ const Index = () => {
     <div className="min-h-screen">
       <SEO
         title="Anillos de Compromiso a Medida en Santiago | Gia Solari Joyas"
-        description="Anillos de compromiso a medida en Santiago de Chile. Oro 18k, platino y diamante certificado GIA/IGI. Showroom en Vitacura, entrega en 4 a 6 semanas. Cotiza tu pieza."
+        description="Anillos de compromiso a medida en Santiago. Oro 18k, platino y diamante GIA/IGI. Showroom en Vitacura, entrega 4 a 6 semanas."
         path="/"
       />
       <Helmet>
