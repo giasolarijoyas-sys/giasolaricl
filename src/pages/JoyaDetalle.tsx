@@ -186,7 +186,7 @@ const JoyaDetalle = () => {
               <button
                 type="button"
                 onClick={() => setLightbox(true)}
-                className="block w-full overflow-hidden cursor-zoom-in"
+                className="block w-full overflow-hidden cursor-zoom-in max-h-[60vh] md:max-h-none"
                 style={{ aspectRatio: "4 / 5", background: CREAM_WARM }}
               >
                 <img

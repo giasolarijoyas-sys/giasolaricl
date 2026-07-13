@@ -236,7 +236,7 @@ const Hero = () => {
       <style>{`
         /* Móvil: hero compacto para que se vea la foto pero también asome producto real debajo */
         .hero-shell { min-height: auto; }
-        .hero-img-wrap { min-height: 40vh; max-height: 52vh; }
+        .hero-img-wrap { min-height: 30vh; max-height: 55vh; }
         @media (min-width: 768px) {
           .hero-shell { min-height: 88vh; }
           .hero-img-wrap { min-height: 88vh; max-height: none; height: auto; }
