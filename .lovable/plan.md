@@ -1,67 +1,67 @@
-# Reestructura completa Gia Solari Joyas — v1.0
 
-Es un trabajo extenso (17 secciones, ~25-30 archivos tocados, 3 rutas nuevas). Antes de implementar quiero confirmar alcance y orden para no romper lo que ya funciona y para que el resultado se parezca a lo que tenés en la cabeza.
+# Auditoría móvil (375px) — reporte de hallazgos
 
-## Lo que voy a hacer
+Se capturaron screenshots reales a 375×812 (DPR 2) recorriendo top y 5 scrolls de cada página: Home, Joyas, Ficha de producto, Significados/Piedras, Significados/Diseños, New In, Aprende, Sobre Gia, Cotizar, Agenda, Favoritas, Lista de Deseos, FAQ, Guía de Tallas, más el menú móvil abierto.
 
-### Fase 1 — Cimientos (design system)
-1. **`tailwind.config.ts`** — agregar tokens nuevos: `olive` (DEFAULT/deep/soft), `champagne`, `terracota`, `cream` (DEFAULT/warm), `ink`, `line`. Mantener tokens existentes para no romper el resto.
-2. **`src/index.css`** — actualizar variables HSL: background → cream, primary → olive, accent → champagne. Eyebrow utility class. Quitar blanco puro como fondo en componentes globales.
-3. **`index.html`** — `<title>` y `<meta>` por defecto + preconnect fonts.
+Alturas totales medidas en móvil (px): Home 17.498, Sobre Gia 6.735, Piedras 5.700, Joya-detalle 4.903, Aprende 4.529, New In 4.131, Joyas 4.054, Lista deseos 3.839, Diseños 3.355, Guía tallas 2.852, FAQ 2.645, Agenda 2.509, Cotizar 2.233, Favoritas 2.055.
 
-### Fase 2 — Layout global
-4. **`Navbar.tsx`** — top bar oliva profundo con sociales, navbar sticky con dropdown JOYAS de 3 columnas, links nuevos (NEW IN, VINTAGE, DIARIO, LOOKBOOK), CTAs Agendar/Cotizar, mobile overlay full-screen.
-5. **`Footer.tsx`** — fondo ink, 4 columnas reorganizadas según copy entregado, tira inferior con sociales en champagne.
-6. **`Newsletter.tsx`** — rediseño "Círculo Gia" fondo olive.deep + champagne (mantengo lógica Supabase existente).
-7. **`WhatsAppButton.tsx`** — circular champagne 56px, aparece tras 600px de scroll, copy prefilled chileno.
+No es un plan de implementación: es diagnóstico. Al aprobar, sigo con un plan de arreglos separado.
 
-### Fase 3 — Home (`Index.tsx`)
-8. **`Hero.tsx`** — split 60/40, izquierda foto editorial (placeholder Unsplash hasta que suba real), derecha eyebrow + headline Bodoni con "tuya" italic + subheadline + 2 CTAs + tira confianza.
-9. **`WhyUs.tsx`** — refactor a 4 columnas con copy nuevo y tono chileno cercano-formal.
-10. **`ComoTeAyudo.tsx`** (nuevo) — 3 tarjetas WhatsApp / Agenda / Email.
-11. **`VitrinaCategorias.tsx`** (nuevo) — 6 cards 4:5 con overlay oliva.
-12. **`NewIn.tsx`** (nuevo) — carrusel de piezas creadas en últimos 60 días.
-13. Reordenar `Index.tsx` con la nueva secuencia y remover bloques que no van.
+---
 
-### Fase 4 — Catálogo y ficha
-14. **`Joyas.tsx`** — header con eyebrow/H1/subtítulo, sidebar de filtros (Tipo, Estilo cuando Tipo=Compromiso, Metal, Piedra, Precio), grid 3 cols con corazón flotante.
-15. **`JoyaDetalle.tsx`** — galería izquierda (principal + miniaturas), columna derecha sticky con descripción narrativa (primer párrafo Bodoni italic), specs en acordeón, CTAs primario/secundario, sección "Piezas relacionadas" + "El proceso de Gia".
+## PRIORIDAD ALTA (rompen usabilidad o tapan contenido)
 
-### Fase 5 — Páginas de marca
-16. **`SobreGia.tsx`** — hero foto Macarena, copy en primera persona entregado, bloque "Detrás de cada pieza".
-17. **`Proceso.tsx`** — stepper vertical 4 pasos con número Bodoni 80px champagne.
-18. **`Aprende.tsx`** + 7 sub-páginas — solo rediseño envolvente (header eyebrow/H1, body Inter 17px max-w 680px, CTA final). **No toco el contenido textual** de las guías.
+1. **Stack flotante de botones (Instagram + COTIZAR + WhatsApp) tapa contenido en TODAS las páginas.** En 375px los tres botones se apilan en la esquina inferior derecha y cubren ~180×260px permanentes.
+   - Home: tapa el trust bar ("Showroom en Vitacura") y textos de testimonios ("Maca entendió a la primera…").
+   - Joyas/catálogo y New In: cortan los nombres de las piezas de la columna derecha ("Olivia · Solitario O…", "Greta · Halo Amat…").
+   - Cotizar y Agenda: **cubren los íconos de calendario/reloj de los inputs de fecha y hora** — el usuario no puede tocarlos.
+   - Ficha de producto: se suman al sticky "COTIZAR PIEZA" de abajo → doble capa de flotantes.
+   - Piedras: tapan el primer StoneCard.
 
-### Fase 6 — Rutas nuevas
-19. **`/diario`** y **`/diario/[slug]`** — hub + 6 placeholders ("Catalina M.", "Trinidad V.", etc.) con foto, frase italic, link.
-20. **`/lookbook`** — masonry de 12 fotos Unsplash con queries entregadas, 1 quote italic cada 5.
-21. **`/new`** — reusa `Joyas.tsx` con filtro `created_at >= now() - 60 días`.
-22. Registrar rutas en `App.tsx` y agregarlas al `sitemap.xml`.
+2. **Menú móvil abierto muestra dos "COTIZAR" simultáneos.** Al abrir el hamburguesa, el CTA "COTIZAR" del footer del menú aparece junto al COTIZAR flotante persistente. Además Instagram+WhatsApp siguen visibles encima del menú.
 
-### Fase 7 — SEO
-23. `<SEO>` específico en cada ruta nueva con templates entregados. Schema `Product` ya existe en ficha; agregar `BlogPosting` en entradas de diario.
+3. **Sticky bar "COTIZAR PIEZA" de la ficha de producto tapa la descripción.** El bloque "Pieza única hecha a mano. La piedra, el…" queda cortado en la mitad; para leer hay que hacer scroll y el bar reaparece encima.
 
-## Lo que NO voy a tocar
-- Lógica de cotizar, wishlist, checkout, admin, auth, edge functions.
-- Contenido textual de las 7 guías de `/aprende` (solo el envoltorio visual).
-- `supabase/*`, `src/integrations/*`.
+4. **Chips de filtro en /joyas quedan cortados por el navbar fijo al scrollear.** Los rótulos de categorías ("Halo Cushion", "Cluster") aparecen partidos horizontalmente detrás del header translúcido. El navbar cream no tiene backdrop sólido → siempre se lee el texto de fondo a través.
 
-## Notas de tono y copy
-- Tuteo chileno suave ("te mando", "cuéntame", "acá en Las Condes"). El brief incluye un par de vos ("contigo/contigo" mezclado con "vos contás") — voy a **uniformar a tuteo chileno** ("tú/contigo/cuéntame") salvo que me digas lo contrario, porque mezclar voseo argentino con chileno suena raro y la memoria del proyecto pide registro chileno.
-- Cero emojis, cero 3D renders (usar "boceto" cuando aplique).
+5. **Header translúcido superpone texto en TODAS las páginas al scrollear.** Se ve el h2 "Certificación real" leyéndose a través del navbar en Sobre Gia; mismo problema en Home, Aprende, Piedras. Falta `backdrop-blur` u opacidad completa cuando `scrollY > 0`.
 
-## Detalles técnicos
-- Tokens nuevos en `tailwind.config.ts` extendiendo el theme — no rompo clases existentes.
-- Imágenes placeholder via `https://images.unsplash.com/...` con queries del brief, marcadas con `TODO: reemplazar con foto real` en comentarios.
-- "NEW IN" lee de `src/data/joyas.ts` (tu fuente actual). Si las piezas no tienen `createdAt`, agrego un campo opcional y por ahora muestro las primeras 6 — avisame si querés que agregue fecha real a cada pieza.
-- Dropdown del navbar: usaré Radix `NavigationMenu` (ya está en shadcn) para accesibilidad y mobile.
-- Schema markup: extiendo `ArticleSchema` existente para diario.
+## PRIORIDAD MEDIA (fricción, mucho scroll o jerarquía rota)
 
-## Confirmaciones que necesito antes de arrancar
+6. **Home tiene 17.498px de alto en móvil (~21 viewports).** Demasiadas secciones apiladas con paddings grandes iguales a desktop. Candidatos a compactar en móvil: TresPilares, WhyUs, ProcesoHome, RangoInversion, IncluyeAnillo, GarantiaSection y separadores `SectionBanner` (cada uno ~350px). Bajar `py-*` en móvil recuperaría 30–40% del alto.
 
-1. **Tuteo uniforme chileno** (tú/contigo/cuéntame) en lugar de mezclar con voseo del brief — ¿OK?
-2. **Placeholders Unsplash** para todas las fotos editoriales que no tenés aún (Hero, Sobre Gia, Diario, Lookbook, Vitrina Categorías) — ¿OK arrancar así o preferís que deje los slots vacíos con un fondo neutro?
-3. **Campo `createdAt` en piezas** para "NEW IN" — ¿agrego con fechas dummy escalonadas o muestro las 6 primeras del array como "recién salidas" hasta que vos definas?
-4. **Screenshots finales** — voy a sacar las 6 que pediste (Home, /joyas, ficha, /diario, /lookbook, footer) al cierre.
+7. **Marquee/Instagram feed muestra rectángulos vacíos.** Al final del Home, el `InstagramFeed` renderiza 9 placeholders de color sólido — parece un error visual, no un feed. En móvil ocupa 3 filas visibles sin contexto.
 
-Dame el visto bueno (o ajustes) sobre estos 4 puntos y arranco con la Fase 1.
+8. **Botón "FILTROS" en /joyas es enorme.** Ocupa full-width y ~70px de alto sólo para abrir un drawer; empuja las piezas más abajo. Además el buscador + "98 PIEZAS" + FILTROS suman ~260px antes del primer producto.
+
+9. **H1 gigantes en móvil.** "Joyas Gia Solari", "Las Piedras", "Guías sobre diamantes, oro y joyería fina" — el `clamp` mínimo queda muy alto para 375px, generando saltos de línea forzados y mucho vertical wasted. También el H1 de Ficha ("Oval Loredana") ocupa ~110px.
+
+10. **Breadcrumbs en Ficha con separación fea.** Se ve "Inicio  ,  Joyas  ,  Anillo de compromiso  ,  Vintage  ,  Oval Loredana" — el separador es una coma con dos espacios y hace wrap en 375px generando 2 líneas irregulares.
+
+11. **Cards de piezas a 2 columnas quedan muy angostas para nombres largos.** "Vera · Halo Redondo Oro", "Marina · Halo Oval", "Flora · Halo Rubí", "Julieta · Anillo de Perla" hacen wrap a 3 líneas. Considerar `text-sm` móvil o truncate con `line-clamp-2`.
+
+12. **CTA "SIGUIENTE" del cotizador queda deshabilitado y con color gris que parece bug.** En Paso 1 sin selección se ve como si el botón estuviera roto (contraste muy bajo sobre cream). Falta estado visual "elige una opción".
+
+13. **Grabados Simbólicos / secciones tipo grid a 2×2 en móvil apretadas.** En Home s0, las cards "Montaña / Coordenadas / Latido / Huella dactilar" quedan estrechas y la última se corta por los flotantes.
+
+## PRIORIDAD BAJA (pulido)
+
+14. **`SectionBanner` con texto centrado sobre imagen se ve pequeño en móvil.** "Cada Detalle Cuenta", "Hecho a Tu Medida" pierden fuerza; el subtexto casi no se lee.
+
+15. **Espaciado inconsistente entre secciones del Home.** Algunos bloques tienen `py-20` y otros `py-12`, se nota como saltos.
+
+16. **Íconos del hero (Shield/Diamond/Clock/MapPin) hacen wrap en 4 líneas a 375px.** Ocupan ~90px cuando podrían estar en 2 líneas con gap más ajustado.
+
+17. **Enlaces del footer todos en una columna con `text-white/70` sobre negro** — legibilidad OK, pero muy larga (5 secciones apiladas: catálogo, empresa, ayuda, contacto, legal). El footer solo mide ~1.400px en móvil.
+
+18. **Botón WhatsApp flotante no tiene `aria-label` visible** (verificar accesibilidad, no confirmado por screenshot).
+
+19. **`min-height: 88vh` del hero shell desktop no aplica en móvil** — bien resuelto, pero el `hero-img-wrap` en móvil llega a 55vh y aún así el bloque texto+CTA queda comprimido si el trust bar y los flotantes se solapan.
+
+20. **Instagram feed placeholders sin `alt` ni estado "cargando".** En móvil se ve como un bug visual (3 filas de rectángulos beige/marrón).
+
+---
+
+## Recomendación de próximo paso
+
+Al aprobar, el siguiente plan atacaría primero los 5 puntos ALTA (que son los que hacen que el sitio se sienta "roto" en celular), luego los MEDIA (compactación y jerarquía), y por último los BAJA. Los cambios son solo CSS/responsive, sin tocar lógica de negocio, cotizador, favoritos ni filtros.
