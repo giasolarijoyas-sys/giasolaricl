@@ -1612,7 +1612,7 @@ export const JOYAS: Joya[] = [
       "Turmalina verde oval enmarcada por un halo floral de diamantes, oro 18k amarillo. Vintage y con carácter.",
     descripcionLarga:
       "Una turmalina verde oval al centro, cálida y profunda, rodeada por un halo floral de diamantes que la enmarca como los pétalos de una flor. El oro 18k amarillo le da ese aire vintage de joya heredada, con personalidad propia. Para quien no quiere un diamante más, sino color e historia. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: [turmalinaVerdeFloralVintage01, turmalinaVerdeFloralVintage02],
+    imagenes: [turmalinaVerdeFloralVintage01],
     isPlaceholder: false,
   },
 ];
