@@ -1566,6 +1566,52 @@ export const JOYAS: Joya[] = [
     precioDesde: 2200000,
     isPlaceholder: false,
   },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // PIEZA NUEVA — Renata · Solitario Pera
+  // Foto esperada: src/assets/joyas/solitario-pera-diamante-01.png
+  // (reemplazar /placeholder.svg por la importación de la foto real cuando
+  // la usuaria suba la imagen; mantener isPlaceholder: false para que se
+  // muestre en el catálogo y se indexe)
+  // ═══════════════════════════════════════════════════════════════════════
+  {
+    slug: "solitario-pera-diamante",
+    nombre: "Renata · Solitario Pera",
+    categoria: "Anillo de compromiso",
+    material: "Oro 18k blanco, Diamante corte pera",
+    metalPrincipal: "Oro 18k blanco",
+    estilo: "Atemporal",
+    piedraCentral: "Diamante",
+    descripcion:
+      "Diamante corte pera en solitario sobre banda fina de oro 18k blanco. Limpio, alargado y elegante.",
+    descripcionLarga:
+      "Un diamante corte pera en solitario, sostenido con delicadeza sobre una banda fina de oro 18k blanco que lo deja como único protagonista. La forma de gota estiliza la mano y aporta un aire moderno sin renunciar a lo clásico. Para quien busca un solitario distinto, sin halo ni adornos, donde la piedra lo dice todo. Cada anillo incluye Certificado Gia Solari.",
+    imagenes: ["/placeholder.svg"],
+    isPlaceholder: false,
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // PIEZA NUEVA — Delia · Turmalina Verde
+  // Foto esperada: src/assets/joyas/turmalina-verde-floral-vintage-01.png
+  // (reemplazar /placeholder.svg por la importación de la foto real cuando
+  // la usuaria suba la imagen; mantener isPlaceholder: false para que se
+  // muestre en el catálogo y se indexe)
+  // ═══════════════════════════════════════════════════════════════════════
+  {
+    slug: "turmalina-verde-floral-vintage",
+    nombre: "Delia · Turmalina Verde",
+    categoria: "Anillo de compromiso",
+    material: "Oro 18k amarillo, Turmalina verde oval, halo floral de diamantes",
+    metalPrincipal: "Oro 18k amarillo",
+    estilo: "Vintage",
+    piedraCentral: "Turmalina verde",
+    descripcion:
+      "Turmalina verde oval enmarcada por un halo floral de diamantes, oro 18k amarillo. Vintage y con carácter.",
+    descripcionLarga:
+      "Una turmalina verde oval al centro, cálida y profunda, rodeada por un halo floral de diamantes que la enmarca como los pétalos de una flor. El oro 18k amarillo le da ese aire vintage de joya heredada, con personalidad propia. Para quien no quiere un diamante más, sino color e historia. Cada anillo incluye Certificado Gia Solari.",
+    imagenes: ["/placeholder.svg"],
+    isPlaceholder: false,
+  },
 ];
 
 /** True si hay al menos una pieza real cargada (no placeholder). */
