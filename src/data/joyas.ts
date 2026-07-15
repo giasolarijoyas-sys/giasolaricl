@@ -20,6 +20,9 @@
  * ===================================================================== */
 
 // (no shared gal-* assets in use after catalog cleanup)
+import tuYYoGotaOvalPlatino01 from "@/assets/joyas/tu-y-yo-gota-oval-platino-01.jpg";
+import turmalinaVerdeFloralVintage01 from "@/assets/joyas/turmalina-verde-floral-vintage-01.jpg";
+import turmalinaVerdeFloralVintage02 from "@/assets/joyas/turmalina-verde-floral-vintage-02.jpg";
 import anilloCupula01 from "@/assets/joyas/anillo-cupula-01.png";
 import anilloCupula02 from "@/assets/joyas/anillo-cupula-02.png";
 import anilloLadyDiZafiro01 from "@/assets/joyas/anillo-lady-di-01.png";
@@ -1586,7 +1589,7 @@ export const JOYAS: Joya[] = [
       "Diseño tú y yo en platino: un diamante corte gota y uno corte oval, lado a lado. Dos piedras que se encuentran.",
     descripcionLarga:
       "El diseño 'tú y yo' (toi et moi) nace para representar a dos personas que se encuentran: aquí, un diamante corte gota y un diamante corte oval engastados lado a lado sobre platino. Dos piedras distintas que conversan entre sí, un símbolo romántico con historia reinterpretado con la sobriedad del platino. Para quien quiere un anillo con significado y una forma que no se ve en todos lados. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: ["/placeholder.svg"],
+    imagenes: [tuYYoGotaOvalPlatino01],
     isPlaceholder: false,
   },
 
@@ -1609,7 +1612,7 @@ export const JOYAS: Joya[] = [
       "Turmalina verde oval enmarcada por un halo floral de diamantes, oro 18k amarillo. Vintage y con carácter.",
     descripcionLarga:
       "Una turmalina verde oval al centro, cálida y profunda, rodeada por un halo floral de diamantes que la enmarca como los pétalos de una flor. El oro 18k amarillo le da ese aire vintage de joya heredada, con personalidad propia. Para quien no quiere un diamante más, sino color e historia. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: ["/placeholder.svg"],
+    imagenes: [turmalinaVerdeFloralVintage01, turmalinaVerdeFloralVintage02],
     isPlaceholder: false,
   },
 ];
