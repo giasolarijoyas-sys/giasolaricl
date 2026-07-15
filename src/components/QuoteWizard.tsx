@@ -202,7 +202,7 @@ const QuoteWizard = () => {
 
   if (sent) {
     return (
-      <section id="cotizador" className="py-24 md:py-32 bg-background">
+      <section id="cotizador" className="py-12 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 max-w-2xl">
           <motion.div animate={{ opacity: 1, scale: 1 }}
             className="bg-card border border-border rounded-lg p-10 md:p-16 text-center">
@@ -235,7 +235,7 @@ const QuoteWizard = () => {
   );
 
   return (
-    <section id="cotizador" className="py-24 md:py-32 bg-background">
+    <section id="cotizador" className="py-12 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-8 max-w-2xl">
         <motion.div
           className="text-center mb-12">
