@@ -4,7 +4,7 @@ const IG_URL = "https://www.instagram.com/giasolarijoyas";
 const TIKTOK_URL = "https://www.tiktok.com/@giasolarijoyas";
 const THREADS_URL = "https://www.threads.com/@giasolarijoyas";
 const PINTEREST_URL = "https://cl.pinterest.com/giasolarijoyas/";
-const FACEBOOK_URL = "https://www.facebook.com/giasolarijoyas";
+const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61579579319759";
 
 const chipStyle = {
   border: "1px solid #4A5536",
