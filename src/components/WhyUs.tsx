@@ -40,7 +40,7 @@ const WhyUs = () => {
         </div>
 
         <motion.blockquote
-          className="mt-16 text-center max-w-2xl mx-auto"
+          className="mt-10 md:mt-16 text-center max-w-2xl mx-auto"
         >
           <p className="font-display text-lg md:text-xl italic text-foreground leading-relaxed">
             "Una joya es una historia que se hereda. La diseño
