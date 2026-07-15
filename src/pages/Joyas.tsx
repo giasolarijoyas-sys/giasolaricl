@@ -368,16 +368,16 @@ const Joyas = () => {
       </Helmet>
       <Navbar />
 
-      <main className="pt-24 md:pt-36 pb-40 md:pb-32">
+      <main className="pt-18 md:pt-36 pb-40 md:pb-32">
         {/* HEADER */}
-        <header className="container mx-auto px-4 md:px-8 text-center mb-8 md:mb-20">
+        <header className="container mx-auto px-4 md:px-8 text-center mb-4 md:mb-20">
           <Eyebrow>Catálogo</Eyebrow>
           <h1
-            className="mt-3 md:mt-4 mb-4 md:mb-5"
+            className="mt-2 md:mt-4 mb-2 md:mb-5"
             style={{
               fontFamily: "'Bodoni Moda', serif",
               fontWeight: 400,
-              fontSize: "clamp(28px, 5vw, 64px)",
+              fontSize: "clamp(23px, 5vw, 64px)",
               lineHeight: 1.05,
               color: OLIVE_DEEP,
             }}
@@ -385,11 +385,11 @@ const Joyas = () => {
             Joyas Gia Solari
           </h1>
           <p
-            className="mx-auto"
+            className="mx-auto px-2 md:px-0"
             style={{
               fontFamily: "Inter, sans-serif",
-              fontSize: "15px",
-              lineHeight: 1.55,
+              fontSize: "13px",
+              lineHeight: 1.45,
               color: OLIVE_SOFT,
               maxWidth: "600px",
             }}
@@ -399,7 +399,7 @@ const Joyas = () => {
         </header>
 
         {/* SEARCH BAR */}
-        <div className="container mx-auto px-4 md:px-8 mb-3 md:mb-8">
+        <div className="container mx-auto px-4 md:px-8 mb-2 md:mb-8">
           <div className="mx-auto" style={{ maxWidth: 640 }}>
             <div
               className="flex items-center gap-3 w-full"
@@ -407,7 +407,7 @@ const Joyas = () => {
                 background: "#FFFFFF",
                 border: `1px solid ${LINE}`,
                 borderRadius: "999px",
-                padding: "8px 14px",
+                padding: "5px 10px",
               }}
             >
               <Search size={18} strokeWidth={1.5} style={{ color: OLIVE_SOFT, flexShrink: 0 }} />
@@ -436,7 +436,7 @@ const Joyas = () => {
               )}
             </div>
             <p
-              className="mt-2 md:mt-3 text-center"
+              className="mt-1 md:mt-3 text-center"
               style={{
                 fontFamily: "Inter, sans-serif",
                 fontSize: "11px",
@@ -452,7 +452,7 @@ const Joyas = () => {
 
 
         {/* MOBILE FILTER BUTTON */}
-        <div className="lg:hidden container mx-auto px-4 mb-4 sticky top-[64px] z-30">
+        <div className="lg:hidden container mx-auto px-4 mb-3 sticky top-[64px] z-30">
           <button
             onClick={() => setDrawerOpen(true)}
             className="w-full flex items-center justify-center gap-2 py-2 rounded-full"
@@ -557,7 +557,7 @@ const Joyas = () => {
 
               ) : (
                 <>
-                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8">
                     {visible.map((p, i) => {
                       const hoverImg = p.imagenes[1];
                       const priceLabel = formatPrecioDesde(p.precioDesde) ?? "Precio a cotizar";
@@ -567,15 +567,14 @@ const Joyas = () => {
                           initial={{ opacity: 0, y: 8 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: Math.min(i, 5) * 0.04 }}
-                          className="group joya-card"
+                          className="group joya-card p-1.5 md:p-3"
                           style={{
-                            padding: "12px",
                             borderRadius: "4px",
                             transition: "box-shadow 0.3s ease, transform 0.3s ease",
                           }}
                         >
                           <Link to={`/joyas/${p.slug}`} className="block">
-                            <div className="relative overflow-hidden" style={{ aspectRatio: "4 / 5", background: CREAM_WARM }}>
+                            <div className="relative overflow-hidden aspect-square md:aspect-[4/5]" style={{ background: CREAM_WARM }}>
                               <img
                                 src={p.imagenes[0]}
                                 alt={`${p.nombre}, ${p.material}`}
@@ -594,26 +593,26 @@ const Joyas = () => {
                               )}
                               {p.categoria === "Vintage" && (
                                 <span
-                                  className="absolute top-3 left-3"
+                                  className="absolute top-2 left-2 md:top-3 md:left-3"
                                   style={{
                                     background: TERRACOTA,
                                     color: CREAM,
                                     fontFamily: "Inter, sans-serif",
-                                    fontSize: "10px",
+                                    fontSize: "9px",
                                     letterSpacing: "0.18em",
                                     textTransform: "uppercase",
-                                    padding: "4px 10px",
+                                    padding: "3px 8px",
                                   }}
                                 >
                                   Vintage, Único
                                 </span>
                               )}
                             </div>
-                            <div className="py-4 px-1">
-                              <h2 style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "20px", color: "#2A2520", lineHeight: 1.25, fontWeight: 400 }}>
+                            <div className="py-1 px-0.5 md:py-4 md:px-1">
+                              <h2 className="line-clamp-2" style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "clamp(13px, 3.4vw, 20px)", color: "#2A2520", lineHeight: 1.2, fontWeight: 400 }}>
                                 {p.nombre}
                               </h2>
-                              <p className="mt-2" style={{ fontFamily: "Inter, sans-serif", fontSize: "12.5px", color: "#7A7266", fontWeight: 400 }}>
+                              <p className="mt-0.5 md:mt-2" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", color: "#7A7266", fontWeight: 400 }}>
                                 {priceLabel}
                               </p>
                             </div>
