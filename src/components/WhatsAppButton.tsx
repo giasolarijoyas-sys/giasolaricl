@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import InstagramButton from "./InstagramButton";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
@@ -16,17 +16,31 @@ const WhatsAppIcon = ({ size = 28 }: { size?: number }) => (
 const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) => {
   const [hover, setHover] = useState(false);
   const [hoverCotizar, setHoverCotizar] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent<{ open: boolean }>).detail;
+      setMenuOpen(!!detail?.open);
+    };
+    window.addEventListener("gs:menu", handler as EventListener);
+    // In case menu is already open on mount
+    if (document.body.getAttribute("data-menu-open") === "true") setMenuOpen(true);
+    return () => window.removeEventListener("gs:menu", handler as EventListener);
+  }, []);
 
   // Ocultar el FAB de Cotizar en la propia página /cotizar
   const showCotizar = !location.pathname.startsWith("/cotizar");
 
-  // En rutas con barra inferior fija (cotizador y fichas /joyas/:slug),
+  // En rutas con formulario/barra fija (cotizador, agenda y fichas /joyas/:slug),
   // ocultamos todo el FAB en móvil para no solaparlo. En desktop se mantiene.
   const hasMobileBottomBar =
     location.pathname.startsWith("/cotizar") ||
+    location.pathname.startsWith("/agenda") ||
     /^\/joyas\/[^/]+$/.test(location.pathname);
   const effectiveHideOnMobile = hideOnMobile || hasMobileBottomBar;
+
 
   return (
     <>
