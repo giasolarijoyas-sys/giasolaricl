@@ -399,7 +399,7 @@ const Joyas = () => {
         </header>
 
         {/* SEARCH BAR */}
-        <div className="container mx-auto px-4 md:px-8 mb-6 md:mb-8">
+        <div className="container mx-auto px-4 md:px-8 mb-3 md:mb-8">
           <div className="mx-auto" style={{ maxWidth: 640 }}>
             <div
               className="flex items-center gap-3 w-full"
@@ -407,7 +407,7 @@ const Joyas = () => {
                 background: "#FFFFFF",
                 border: `1px solid ${LINE}`,
                 borderRadius: "999px",
-                padding: "10px 16px",
+                padding: "8px 14px",
               }}
             >
               <Search size={18} strokeWidth={1.5} style={{ color: OLIVE_SOFT, flexShrink: 0 }} />
