@@ -1568,24 +1568,24 @@ export const JOYAS: Joya[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════
-  // PIEZA NUEVA — Renata · Solitario Pera
-  // Foto esperada: src/assets/joyas/solitario-pera-diamante-01.png
+  // PIEZA NUEVA — Renata · Tú y Yo
+  // Foto esperada: src/assets/joyas/tu-y-yo-gota-oval-platino-01.png
   // (reemplazar /placeholder.svg por la importación de la foto real cuando
   // la usuaria suba la imagen; mantener isPlaceholder: false para que se
   // muestre en el catálogo y se indexe)
   // ═══════════════════════════════════════════════════════════════════════
   {
-    slug: "solitario-pera-diamante",
-    nombre: "Renata · Solitario Pera",
+    slug: "tu-y-yo-gota-oval-platino",
+    nombre: "Renata · Tú y Yo",
     categoria: "Anillo de compromiso",
-    material: "Oro 18k blanco, Diamante corte pera",
-    metalPrincipal: "Oro 18k blanco",
-    estilo: "Atemporal",
+    material: "Platino, Diamante corte gota (pera) y diamante corte oval, estilo tú y yo",
+    metalPrincipal: "Platino",
+    estilo: "Editorial",
     piedraCentral: "Diamante",
     descripcion:
-      "Diamante corte pera en solitario sobre banda fina de oro 18k blanco. Limpio, alargado y elegante.",
+      "Diseño tú y yo en platino: un diamante corte gota y uno corte oval, lado a lado. Dos piedras que se encuentran.",
     descripcionLarga:
-      "Un diamante corte pera en solitario, sostenido con delicadeza sobre una banda fina de oro 18k blanco que lo deja como único protagonista. La forma de gota estiliza la mano y aporta un aire moderno sin renunciar a lo clásico. Para quien busca un solitario distinto, sin halo ni adornos, donde la piedra lo dice todo. Cada anillo incluye Certificado Gia Solari.",
+      "El diseño 'tú y yo' (toi et moi) nace para representar a dos personas que se encuentran: aquí, un diamante corte gota y un diamante corte oval engastados lado a lado sobre platino. Dos piedras distintas que conversan entre sí, un símbolo romántico con historia reinterpretado con la sobriedad del platino. Para quien quiere un anillo con significado y una forma que no se ve en todos lados. Cada anillo incluye Certificado Gia Solari.",
     imagenes: ["/placeholder.svg"],
     isPlaceholder: false,
   },
