@@ -608,11 +608,11 @@ const Joyas = () => {
                                 </span>
                               )}
                             </div>
-                            <div className="py-2 px-0.5 md:py-4 md:px-1">
-                              <h2 className="line-clamp-2" style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "clamp(14px, 3.6vw, 20px)", color: "#2A2520", lineHeight: 1.25, fontWeight: 400, minHeight: "2.5em" }}>
+                            <div className="py-1 px-0.5 md:py-4 md:px-1">
+                              <h2 className="line-clamp-2" style={{ fontFamily: "'Bodoni Moda', serif", fontSize: "clamp(13px, 3.4vw, 20px)", color: "#2A2520", lineHeight: 1.2, fontWeight: 400 }}>
                                 {p.nombre}
                               </h2>
-                              <p className="mt-1 md:mt-2" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", color: "#7A7266", fontWeight: 400 }}>
+                              <p className="mt-0.5 md:mt-2" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", color: "#7A7266", fontWeight: 400 }}>
                                 {priceLabel}
                               </p>
                             </div>
