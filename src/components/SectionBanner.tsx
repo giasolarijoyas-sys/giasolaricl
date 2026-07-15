@@ -10,7 +10,7 @@ interface SectionBannerProps {
   height?: string;
 }
 
-const SectionBanner = ({ image, alt, text, subtext, ctaHref, ctaLabel, height = "h-[45vh]" }: SectionBannerProps) => {
+const SectionBanner = ({ image, alt, text, subtext, ctaHref, ctaLabel, height = "h-[30vh] md:h-[45vh]" }: SectionBannerProps) => {
   return (
     <section className={`relative ${height} w-full overflow-hidden`}>
       <div
