@@ -25,9 +25,9 @@ const pasos = [
 ];
 
 const ProcesoHome = () => (
-  <section className="py-24 md:py-28 bg-background">
+  <section className="py-12 md:py-28 bg-background">
     <div className="container mx-auto px-4 md:px-8">
-      <div className="text-center mb-14 max-w-2xl mx-auto">
+      <div className="text-center mb-10 md:mb-14 max-w-2xl mx-auto">
         <p
           className="mb-4"
           style={{
@@ -53,7 +53,7 @@ const ProcesoHome = () => (
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto mb-14">
+      <div className="grid md:grid-cols-3 gap-6 md:gap-12 max-w-5xl mx-auto mb-10 md:mb-14">
         {pasos.map((p) => (
           <div key={p.n} className="text-center md:text-left">
             <div

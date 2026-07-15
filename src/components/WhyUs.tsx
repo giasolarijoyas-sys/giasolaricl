@@ -9,10 +9,10 @@ const reasons = [
 
 const WhyUs = () => {
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-12 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <p className="text-primary tracking-[0.3em] uppercase text-xs mb-4">
             Por qué elegirnos
@@ -40,7 +40,7 @@ const WhyUs = () => {
         </div>
 
         <motion.blockquote
-          className="mt-16 text-center max-w-2xl mx-auto"
+          className="mt-10 md:mt-16 text-center max-w-2xl mx-auto"
         >
           <p className="font-display text-lg md:text-xl italic text-foreground leading-relaxed">
             "Una joya es una historia que se hereda. La diseño

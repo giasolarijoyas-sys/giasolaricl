@@ -368,16 +368,16 @@ const Joyas = () => {
       </Helmet>
       <Navbar />
 
-      <main className="pt-28 md:pt-36 pb-40 md:pb-32">
+      <main className="pt-24 md:pt-36 pb-40 md:pb-32">
         {/* HEADER */}
-        <header className="container mx-auto px-4 md:px-8 text-center mb-14 md:mb-20">
+        <header className="container mx-auto px-4 md:px-8 text-center mb-8 md:mb-20">
           <Eyebrow>Catálogo</Eyebrow>
           <h1
-            className="mt-4 mb-5"
+            className="mt-3 md:mt-4 mb-4 md:mb-5"
             style={{
               fontFamily: "'Bodoni Moda', serif",
               fontWeight: 400,
-              fontSize: "clamp(40px, 5vw, 64px)",
+              fontSize: "clamp(28px, 5vw, 64px)",
               lineHeight: 1.05,
               color: OLIVE_DEEP,
             }}
@@ -388,8 +388,8 @@ const Joyas = () => {
             className="mx-auto"
             style={{
               fontFamily: "Inter, sans-serif",
-              fontSize: "17px",
-              lineHeight: 1.6,
+              fontSize: "15px",
+              lineHeight: 1.55,
               color: OLIVE_SOFT,
               maxWidth: "600px",
             }}
@@ -399,7 +399,7 @@ const Joyas = () => {
         </header>
 
         {/* SEARCH BAR */}
-        <div className="container mx-auto px-4 md:px-8 mb-6 md:mb-8">
+        <div className="container mx-auto px-4 md:px-8 mb-3 md:mb-8">
           <div className="mx-auto" style={{ maxWidth: 640 }}>
             <div
               className="flex items-center gap-3 w-full"
@@ -407,7 +407,7 @@ const Joyas = () => {
                 background: "#FFFFFF",
                 border: `1px solid ${LINE}`,
                 borderRadius: "999px",
-                padding: "10px 16px",
+                padding: "8px 14px",
               }}
             >
               <Search size={18} strokeWidth={1.5} style={{ color: OLIVE_SOFT, flexShrink: 0 }} />
@@ -436,10 +436,10 @@ const Joyas = () => {
               )}
             </div>
             <p
-              className="mt-3 text-center"
+              className="mt-2 md:mt-3 text-center"
               style={{
                 fontFamily: "Inter, sans-serif",
-                fontSize: "12px",
+                fontSize: "11px",
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
                 color: OLIVE_SOFT,
@@ -452,20 +452,20 @@ const Joyas = () => {
 
 
         {/* MOBILE FILTER BUTTON */}
-        <div className="lg:hidden container mx-auto px-4 mb-6 sticky top-[72px] z-30">
+        <div className="lg:hidden container mx-auto px-4 mb-4 sticky top-[64px] z-30">
           <button
             onClick={() => setDrawerOpen(true)}
-            className="w-full flex items-center justify-center gap-2 py-3 rounded-full"
+            className="w-full flex items-center justify-center gap-2 py-2 rounded-full"
             style={{
               background: OLIVE,
               color: CREAM,
               fontFamily: "Inter, sans-serif",
-              fontSize: "13px",
+              fontSize: "12px",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
             }}
           >
-            <SlidersHorizontal size={16} strokeWidth={1.5} />
+            <SlidersHorizontal size={14} strokeWidth={1.5} />
             Filtros {activeCount > 0 && `(${activeCount})`}
           </button>
         </div>

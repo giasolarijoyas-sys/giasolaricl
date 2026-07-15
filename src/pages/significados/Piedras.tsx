@@ -193,7 +193,7 @@ const Piedras = () => (
           style={{
             fontFamily: DISPLAY,
             fontWeight: 400,
-            fontSize: "clamp(40px, 6.5vw, 72px)",
+            fontSize: "clamp(30px, 6.5vw, 72px)",
             lineHeight: 1.05,
             letterSpacing: "0.01em",
             marginBottom: 26,

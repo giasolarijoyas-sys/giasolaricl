@@ -243,7 +243,7 @@ const JoyaDetalle = () => {
                 style={{
                   fontFamily: "'Bodoni Moda', serif",
                   fontWeight: 400,
-                  fontSize: "clamp(36px, 4vw, 48px)",
+                  fontSize: "clamp(26px, 4vw, 48px)",
                   lineHeight: 1.05,
                   color: OLIVE_DEEP,
                 }}
