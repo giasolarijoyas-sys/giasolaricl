@@ -33,27 +33,27 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const Footer = () => {
   return (
-    <footer style={{ background: "#1A1A18", color: "#F5EFE6" }} className="pt-20 pb-10 px-6 md:px-12">
+    <footer style={{ background: "#1A1A18", color: "#F5EFE6" }} className="pt-12 md:pt-20 pb-10 px-6 md:px-12">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-14" style={{ fontFamily: "Inter, sans-serif", fontSize: "13px" }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 md:gap-12 mb-12 md:mb-14" style={{ fontFamily: "Inter, sans-serif", fontSize: "13px" }}>
           {/* COL 1 - Marca */}
-          <div>
-            <img src="/wordmark-champan.svg" alt="Gia Solari Joyas" style={{ width: "200px" }} />
-            <p className="mt-6 leading-relaxed" style={{ color: "#EBE2D2" }}>
+          <div className="col-span-2 md:col-span-1">
+            <img src="/wordmark-champan.svg" alt="Gia Solari Joyas" className="w-[160px] md:w-[200px]" />
+            <p className="mt-5 md:mt-6 leading-relaxed" style={{ color: "#EBE2D2" }}>
               Joyería de autor en Santiago de Chile.
             </p>
             <p className="mt-2 leading-relaxed" style={{ color: "#EBE2D2", opacity: 0.7 }}>
               Fundado en 2019 por Macarena González Solari.
             </p>
-            <div className="flex items-center mt-5" style={{ color: "#FFFFFF", gap: "16px" }}>
+            <div className="flex items-center mt-4 md:mt-5 gap-3.5 md:gap-4" style={{ color: "#FFFFFF" }}>
               <a href="https://www.instagram.com/giasolarijoyas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
-                <InstagramBrandIcon width={24} height={24} />
+                <InstagramBrandIcon className="w-[22px] h-[22px] md:w-6 md:h-6" />
               </a>
               <a href="https://www.tiktok.com/@giasolarijoyas" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:opacity-70 transition-opacity">
-                <TikTokIcon width={24} height={24} />
+                <TikTokIcon className="w-[22px] h-[22px] md:w-6 md:h-6" />
               </a>
               <a href="https://www.threads.com/@giasolarijoyas" target="_blank" rel="noopener noreferrer" aria-label="Threads" className="hover:opacity-70 transition-opacity">
-                <ThreadsIcon width={24} height={24} />
+                <ThreadsIcon className="w-[22px] h-[22px] md:w-6 md:h-6" />
               </a>
             </div>
           </div>
@@ -61,7 +61,7 @@ const Footer = () => {
           {/* COL 2 - Catálogo */}
           <div>
             <p
-              className="mb-4"
+              className="mb-3 md:mb-4"
               style={{
                 fontSize: "11px",
                 letterSpacing: "0.25em",
@@ -71,9 +71,9 @@ const Footer = () => {
             >
               Catálogo
             </p>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1.5 md:gap-2">
               <a href="/joyas?tipo=compromiso" className="hover:text-[#C9A87C] transition-colors">Anillos de compromiso</a>
-              <a href="/joyas?tipo=argollas" className="hover:text-[#C9A87C] transition-colors">Argollas de matrimonio</a>
+              <a href="/joyas?tipo=argollas" className="hover:text-[#C9A87C] transition-colors"><span className="md:hidden">Argollas</span><span className="hidden md:inline">Argollas de matrimonio</span></a>
               <a href="/joyas?tipo=vintage" className="hover:text-[#C9A87C] transition-colors">Vintage</a>
               <a href="/joyas?tipo=aros" className="hover:text-[#C9A87C] transition-colors">Aros</a>
               <a href="/joyas?tipo=collares" className="hover:text-[#C9A87C] transition-colors">Collares</a>
@@ -85,7 +85,7 @@ const Footer = () => {
           {/* COL 3 - Showroom */}
           <div>
             <p
-              className="mb-4"
+              className="mb-3 md:mb-4"
               style={{
                 fontSize: "11px",
                 letterSpacing: "0.25em",
@@ -95,8 +95,8 @@ const Footer = () => {
             >
               Showroom
             </p>
-            <div className="flex flex-col gap-2 mb-5">
-              <p>Vitacura, Santiago de Chile</p>
+            <div className="flex flex-col gap-1.5 md:gap-2 mb-4 md:mb-5">
+              <p><span className="md:hidden">Vitacura, Santiago</span><span className="hidden md:inline">Vitacura, Santiago de Chile</span></p>
               <p>Solo con cita previa</p>
               <a href="tel:+56984049502" className="hover:text-[#C9A87C] transition-colors">+56 9 8404 9502</a>
               <a href="mailto:giasolarijoyas@gmail.com" className="hover:text-[#C9A87C] transition-colors">giasolarijoyas@gmail.com</a>
@@ -104,16 +104,7 @@ const Footer = () => {
             <div className="flex flex-col gap-2">
               <a
                 href="/agenda"
-                className="inline-block text-center transition-colors"
-                style={{
-                  border: "1px solid #C9A87C",
-                  color: "#C9A87C",
-                  padding: "10px 22px",
-                  borderRadius: "999px",
-                  fontSize: "12px",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                }}
+                className="inline-block text-center transition-colors py-2 px-4 md:py-2.5 md:px-5 rounded-full border border-[#C9A87C] text-[#C9A87C] text-[11px] md:text-xs tracking-[0.08em] uppercase"
               >
                 Agendar cita
               </a>
@@ -121,17 +112,7 @@ const Footer = () => {
                 href={buildWhatsAppUrl("generico")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-center transition-colors"
-                style={{
-                  background: "#C9A87C",
-                  color: "#1A1A18",
-                  padding: "10px 22px",
-                  borderRadius: "999px",
-                  fontSize: "12px",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  fontWeight: 500,
-                }}
+                className="inline-block text-center transition-colors py-2 px-4 md:py-2.5 md:px-5 rounded-full bg-[#C9A87C] text-[#1A1A18] text-[11px] md:text-xs tracking-[0.08em] uppercase font-medium"
               >
                 WhatsApp
               </a>
@@ -141,7 +122,7 @@ const Footer = () => {
           {/* COL 4 - Recursos */}
           <div>
             <p
-              className="mb-4"
+              className="mb-3 md:mb-4"
               style={{
                 fontSize: "11px",
                 letterSpacing: "0.25em",
@@ -151,14 +132,14 @@ const Footer = () => {
             >
               Recursos
             </p>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1.5 md:gap-2">
               <a href="/sobre-gia" className="hover:text-[#C9A87C] transition-colors">Sobre Gia</a>
               <a href="/proceso" className="hover:text-[#C9A87C] transition-colors">Proceso</a>
               <a href="/aprende" className="hover:text-[#C9A87C] transition-colors">Aprende</a>
               <a href="/guia-de-tallas" className="hover:text-[#C9A87C] transition-colors">Guía de tallas</a>
-              <a href="/cuidado-de-la-joya" className="hover:text-[#C9A87C] transition-colors">Cuidado de la joya</a>
-              <a href="/garantia-por-gusto" className="hover:text-[#C9A87C] transition-colors">Garantía por Gusto</a>
-              <a href="/preguntas-frecuentes" className="hover:text-[#C9A87C] transition-colors">Preguntas frecuentes</a>
+              <a href="/cuidado-de-la-joya" className="hover:text-[#C9A87C] transition-colors"><span className="md:hidden">Cuidado</span><span className="hidden md:inline">Cuidado de la joya</span></a>
+              <a href="/garantia-por-gusto" className="hover:text-[#C9A87C] transition-colors"><span className="md:hidden">Garantía</span><span className="hidden md:inline">Garantía por Gusto</span></a>
+              <a href="/preguntas-frecuentes" className="hover:text-[#C9A87C] transition-colors"><span className="md:hidden">FAQ</span><span className="hidden md:inline">Preguntas frecuentes</span></a>
             </div>
           </div>
         </div>

@@ -25,7 +25,7 @@ const pasos = [
 ];
 
 const ProcesoHome = () => (
-  <section className="py-12 md:py-28 bg-background">
+  <section className="py-10 md:py-24 bg-background">
     <div className="container mx-auto px-4 md:px-8">
       <div className="text-center mb-10 md:mb-14 max-w-2xl mx-auto">
         <p

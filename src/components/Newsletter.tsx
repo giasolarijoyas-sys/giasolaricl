@@ -58,7 +58,7 @@ const Newsletter = () => {
 
   return (
     <section
-      className="py-12 md:py-32 px-4 md:px-8"
+      className="py-10 md:py-28 px-4 md:px-8"
       style={{ background: "#FDFAF6" }}
     >
       <div className="mx-auto text-center" style={{ maxWidth: "540px" }}>

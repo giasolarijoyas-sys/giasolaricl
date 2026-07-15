@@ -36,7 +36,7 @@ const faqs = [
 
 const FAQAccordion = () => {
   return (
-    <section id="faq-terminos" className="py-12 md:py-32 bg-card">
+    <section id="faq-terminos" className="py-10 md:py-28 bg-card">
       <div className="container mx-auto px-4 md:px-8 max-w-3xl">
         <motion.div
           className="text-center mb-12"

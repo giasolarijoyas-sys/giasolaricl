@@ -19,11 +19,12 @@ const SectionBanner = ({ image, alt, text, subtext, ctaHref, ctaLabel, height = 
         role="img"
         aria-label={alt}
       />
-      <div className="absolute inset-0 bg-charcoal/50" />
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <div className="absolute inset-0 bg-charcoal/60" />
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-5 md:px-4">
         {text && (
           <motion.h3
-            className="font-display text-3xl md:text-5xl text-cream tracking-wide"
+            className="font-display text-[clamp(1.75rem,7vw,3rem)] md:text-5xl text-cream tracking-wide leading-tight"
+            style={{ textShadow: "0 2px 18px rgba(0,0,0,0.45)" }}
           >
             {text}
           </motion.h3>
@@ -31,7 +32,8 @@ const SectionBanner = ({ image, alt, text, subtext, ctaHref, ctaLabel, height = 
         {subtext && (
           <motion.p
             transition={{ delay: 0.15 }}
-            className="mt-4 text-cream/80 text-sm md:text-base tracking-widest uppercase max-w-lg"
+            className="mt-3 md:mt-4 text-cream/90 text-xs md:text-base tracking-[0.18em] md:tracking-widest uppercase max-w-lg font-medium"
+            style={{ textShadow: "0 1px 10px rgba(0,0,0,0.4)" }}
           >
             {subtext}
           </motion.p>
@@ -40,7 +42,8 @@ const SectionBanner = ({ image, alt, text, subtext, ctaHref, ctaLabel, height = 
           <motion.a
             href={ctaHref}
             transition={{ delay: 0.25 }}
-            className="mt-6 px-8 py-3 border border-cream/60 text-cream text-sm tracking-widest uppercase hover:bg-cream hover:text-charcoal transition-all"
+            className="mt-6 px-8 py-3 border border-cream/70 text-cream text-sm tracking-widest uppercase hover:bg-cream hover:text-charcoal transition-all"
+            style={{ textShadow: "0 1px 8px rgba(0,0,0,0.35)" }}
           >
             {ctaLabel}
           </motion.a>

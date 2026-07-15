@@ -187,7 +187,7 @@ const Hero = () => {
 
             {/* Barra de confianza */}
             <div
-              className="flex flex-wrap items-center gap-x-4 gap-y-2"
+              className="grid grid-cols-2 gap-x-3 gap-y-2 md:flex md:flex-wrap md:items-center md:gap-x-4 md:gap-y-2"
               style={{ marginTop: "20px" }}
             >
               {[
@@ -198,7 +198,7 @@ const Hero = () => {
               ].map((item) => (
                 <span
                   key={item.text}
-                  className="inline-flex items-center gap-1"
+                  className="inline-flex items-center gap-1.5"
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     fontSize: "11px",
