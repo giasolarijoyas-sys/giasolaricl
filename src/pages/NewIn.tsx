@@ -39,7 +39,7 @@ const NewIn = () => {
               style={{
                 fontFamily: "'Bodoni Moda', serif",
                 fontWeight: 400,
-                fontSize: "clamp(40px, 5vw, 64px)",
+                fontSize: "clamp(28px, 5vw, 64px)",
                 lineHeight: 1.05,
                 color: "#3A4429",
               }}
