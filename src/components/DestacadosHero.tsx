@@ -7,12 +7,12 @@ import { JOYAS } from "@/data/joyas";
  * Selección basada en las páginas de producto con más tráfico + variedad de estilos.
  */
 const DESTACADOS_SLUGS = [
-  "vintage-018",          // Marquise Maddalena  (top tráfico)
-  "onix-halo",            // Ónix, Halo
-  "vintage-003",          // Halo Vintage, Eleonora
-  "art-deco-baguette",    // Art Decó Baguette
-  "vintage-038",          // Trilogía Stella (tricillo)
-  "halo-cushion-diamante" // Valentina · Halo Cushion
+  "anillo-lady-di",          // Lady Di, Zafiro (el más icónico)
+  "solitario-oval-oro-blanco", // Olivia · Solitario Oval
+  "trilogia-tres-diamantes",   // Carlotta · Trilogía (tricillo clásico)
+  "solitario-clasico-pave",    // Allegra · Solitario Pavé
+  "trilogia-laterales-pera",   // Dalia · Trilogía Pera
+  "halo-cushion-diamante"      // Valentina · Halo Cushion
 ];
 
 const OLIVE = "#4A5536";
