@@ -7,7 +7,7 @@ const INK = "#1A1A18";
 const CARAMEL = "#C9A87C";
 
 const VideoSection = () => (
-  <section className="relative w-full overflow-hidden py-16 md:py-24" style={{ background: CREAM }}>
+  <section className="relative w-full overflow-hidden py-10 md:py-24" style={{ background: CREAM }}>
     <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10 md:gap-16">
       {/* Texto */}
       <div className="md:w-1/2 text-center md:text-left">
