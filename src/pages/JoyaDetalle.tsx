@@ -150,7 +150,7 @@ const JoyaDetalle = () => {
       </Helmet>
       <Navbar />
 
-      <main className="pt-28 md:pt-36 pb-32 md:pb-32">
+      <main className="pt-28 md:pt-36 pb-44 md:pb-32">
         <div className="container mx-auto px-4 md:px-8 max-w-[1200px]">
           {/* BREADCRUMB */}
           <nav className="mb-8 md:mb-10" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.1em", color: OLIVE_SOFT }}>
