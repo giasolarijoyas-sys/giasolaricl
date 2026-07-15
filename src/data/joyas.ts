@@ -22,7 +22,7 @@
 // (no shared gal-* assets in use after catalog cleanup)
 import tuYYoGotaOvalPlatino01 from "@/assets/joyas/tu-y-yo-gota-oval-platino-01.jpg";
 import turmalinaVerdeFloralVintage01 from "@/assets/joyas/turmalina-verde-floral-vintage-01.jpg";
-import turmalinaVerdeFloralVintage02 from "@/assets/joyas/turmalina-verde-floral-vintage-02.jpg";
+
 import anilloCupula01 from "@/assets/joyas/anillo-cupula-01.png";
 import anilloCupula02 from "@/assets/joyas/anillo-cupula-02.png";
 import anilloLadyDiZafiro01 from "@/assets/joyas/anillo-lady-di-01.png";
@@ -1612,7 +1612,7 @@ export const JOYAS: Joya[] = [
       "Turmalina verde oval enmarcada por un halo floral de diamantes, oro 18k amarillo. Vintage y con carácter.",
     descripcionLarga:
       "Una turmalina verde oval al centro, cálida y profunda, rodeada por un halo floral de diamantes que la enmarca como los pétalos de una flor. El oro 18k amarillo le da ese aire vintage de joya heredada, con personalidad propia. Para quien no quiere un diamante más, sino color e historia. Cada anillo incluye Certificado Gia Solari.",
-    imagenes: [turmalinaVerdeFloralVintage01, turmalinaVerdeFloralVintage02],
+    imagenes: [turmalinaVerdeFloralVintage01],
     isPlaceholder: false,
   },
 ];
