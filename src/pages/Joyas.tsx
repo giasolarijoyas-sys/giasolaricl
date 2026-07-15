@@ -388,8 +388,8 @@ const Joyas = () => {
             className="mx-auto"
             style={{
               fontFamily: "Inter, sans-serif",
-              fontSize: "17px",
-              lineHeight: 1.6,
+              fontSize: "15px",
+              lineHeight: 1.55,
               color: OLIVE_SOFT,
               maxWidth: "600px",
             }}
