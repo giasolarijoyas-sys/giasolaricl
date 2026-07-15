@@ -28,7 +28,7 @@ const pilares = [
 ];
 
 const TresPilares = () => (
-  <section className="py-16 md:py-20" style={{ background: "#F5EFE6" }}>
+  <section className="py-10 md:py-20" style={{ background: "#F5EFE6" }}>
     <div className="container mx-auto px-4 md:px-8">
       <div className="grid md:grid-cols-4 gap-10 md:gap-10 max-w-6xl mx-auto">
         {pilares.map(({ Icon, title, text }) => (
