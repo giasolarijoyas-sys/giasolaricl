@@ -368,16 +368,16 @@ const Joyas = () => {
       </Helmet>
       <Navbar />
 
-      <main className="pt-28 md:pt-36 pb-40 md:pb-32">
+      <main className="pt-24 md:pt-36 pb-40 md:pb-32">
         {/* HEADER */}
-        <header className="container mx-auto px-4 md:px-8 text-center mb-14 md:mb-20">
+        <header className="container mx-auto px-4 md:px-8 text-center mb-8 md:mb-20">
           <Eyebrow>Catálogo</Eyebrow>
           <h1
-            className="mt-4 mb-5"
+            className="mt-3 md:mt-4 mb-4 md:mb-5"
             style={{
               fontFamily: "'Bodoni Moda', serif",
               fontWeight: 400,
-              fontSize: "clamp(40px, 5vw, 64px)",
+              fontSize: "clamp(28px, 5vw, 64px)",
               lineHeight: 1.05,
               color: OLIVE_DEEP,
             }}
