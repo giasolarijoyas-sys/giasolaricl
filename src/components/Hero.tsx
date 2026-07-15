@@ -193,7 +193,7 @@ const Hero = () => {
               {[
                 { icon: Shield, text: "Garantía por Gusto" },
                 { icon: Diamond, text: "Diamantes certificados" },
-                { icon: Clock, text: "Respuesta personal en 24h" },
+                { icon: Clock, text: "Respuesta personal en 24h hábiles" },
                 { icon: MapPin, text: "Showroom en Vitacura" },
               ].map((item) => (
                 <span
