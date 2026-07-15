@@ -20,7 +20,7 @@ const NewIn = () => {
       />
       <Navbar />
 
-      <main className="pt-32 pb-20">
+      <main className="pt-32 pb-40 md:pb-20">
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <header className="text-center mb-16 max-w-2xl mx-auto">
             <p
