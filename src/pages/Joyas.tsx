@@ -452,20 +452,20 @@ const Joyas = () => {
 
 
         {/* MOBILE FILTER BUTTON */}
-        <div className="lg:hidden container mx-auto px-4 mb-6 sticky top-[72px] z-30">
+        <div className="lg:hidden container mx-auto px-4 mb-4 sticky top-[64px] z-30">
           <button
             onClick={() => setDrawerOpen(true)}
-            className="w-full flex items-center justify-center gap-2 py-3 rounded-full"
+            className="w-full flex items-center justify-center gap-2 py-2 rounded-full"
             style={{
               background: OLIVE,
               color: CREAM,
               fontFamily: "Inter, sans-serif",
-              fontSize: "13px",
+              fontSize: "12px",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
             }}
           >
-            <SlidersHorizontal size={16} strokeWidth={1.5} />
+            <SlidersHorizontal size={14} strokeWidth={1.5} />
             Filtros {activeCount > 0 && `(${activeCount})`}
           </button>
         </div>
