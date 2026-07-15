@@ -65,11 +65,27 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [joyasOpen, setJoyasOpen] = useState(false);
   const [sigOpen, setSigOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    if (open) document.body.setAttribute("data-menu-open", "true");
+    else document.body.removeAttribute("data-menu-open");
+    try {
+      window.dispatchEvent(new CustomEvent("gs:menu", { detail: { open } }));
+    } catch { /* noop */ }
+    return () => {
+      document.body.style.overflow = "";
+      document.body.removeAttribute("data-menu-open");
+    };
   }, [open]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 4);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
@@ -107,10 +123,12 @@ const Navbar = () => {
         </div>
 
       <nav
-        className="backdrop-blur-md"
+        className={scrolled ? "" : "backdrop-blur-md"}
         style={{
-          background: `${CREAM}E0`,
+          background: scrolled ? CREAM : `${CREAM}E0`,
           borderBottom: `1px solid ${BORDER}`,
+          boxShadow: scrolled ? "0 2px 12px rgba(31, 36, 23, 0.06)" : "none",
+          transition: "background 200ms, box-shadow 200ms",
         }}
       >
         <div className="container mx-auto h-[60px] md:h-[72px] px-4 md:px-8 flex items-center justify-between">
