@@ -1570,8 +1570,9 @@ export const JOYAS: Joya[] = [
   // ═══════════════════════════════════════════════════════════════════════
   // PIEZA NUEVA — Renata · Solitario Pera
   // Foto esperada: src/assets/joyas/solitario-pera-diamante-01.png
-  // (reemplazar /placeholder.svg por la importación de la foto real y
-  // cambiar isPlaceholder a false cuando la usuaria suba la imagen)
+  // (reemplazar /placeholder.svg por la importación de la foto real cuando
+  // la usuaria suba la imagen; mantener isPlaceholder: false para que se
+  // muestre en el catálogo y se indexe)
   // ═══════════════════════════════════════════════════════════════════════
   {
     slug: "solitario-pera-diamante",
@@ -1586,14 +1587,15 @@ export const JOYAS: Joya[] = [
     descripcionLarga:
       "Un diamante corte pera en solitario, sostenido con delicadeza sobre una banda fina de oro 18k blanco que lo deja como único protagonista. La forma de gota estiliza la mano y aporta un aire moderno sin renunciar a lo clásico. Para quien busca un solitario distinto, sin halo ni adornos, donde la piedra lo dice todo. Cada anillo incluye Certificado Gia Solari.",
     imagenes: ["/placeholder.svg"],
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
 
   // ═══════════════════════════════════════════════════════════════════════
   // PIEZA NUEVA — Delia · Turmalina Verde
   // Foto esperada: src/assets/joyas/turmalina-verde-floral-vintage-01.png
-  // (reemplazar /placeholder.svg por la importación de la foto real y
-  // cambiar isPlaceholder a false cuando la usuaria suba la imagen)
+  // (reemplazar /placeholder.svg por la importación de la foto real cuando
+  // la usuaria suba la imagen; mantener isPlaceholder: false para que se
+  // muestre en el catálogo y se indexe)
   // ═══════════════════════════════════════════════════════════════════════
   {
     slug: "turmalina-verde-floral-vintage",
@@ -1608,7 +1610,7 @@ export const JOYAS: Joya[] = [
     descripcionLarga:
       "Una turmalina verde oval al centro, cálida y profunda, rodeada por un halo floral de diamantes que la enmarca como los pétalos de una flor. El oro 18k amarillo le da ese aire vintage de joya heredada, con personalidad propia. Para quien no quiere un diamante más, sino color e historia. Cada anillo incluye Certificado Gia Solari.",
     imagenes: ["/placeholder.svg"],
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
 ];
 
