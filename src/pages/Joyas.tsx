@@ -368,7 +368,7 @@ const Joyas = () => {
       </Helmet>
       <Navbar />
 
-      <main className="pt-28 md:pt-36 pb-32">
+      <main className="pt-28 md:pt-36 pb-40 md:pb-32">
         {/* HEADER */}
         <header className="container mx-auto px-4 md:px-8 text-center mb-14 md:mb-20">
           <Eyebrow>Catálogo</Eyebrow>
