@@ -153,30 +153,65 @@ const JoyaDetalle = () => {
       <main className="pt-28 md:pt-36 pb-44 md:pb-32">
         <div className="container mx-auto px-4 md:px-8 max-w-[1200px]">
           {/* BREADCRUMB */}
-          <nav className="mb-8 md:mb-10" style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", letterSpacing: "0.1em", color: OLIVE_SOFT }}>
-            <Link to="/" className="hover:underline">Inicio</Link>
-            <span className="mx-2">,</span>
-            <Link to="/joyas" className="hover:underline">Joyas</Link>
-            <span className="mx-2">,</span>
-            <Link to={`/joyas?tipo=${(() => {
-              const c = item.categoria?.toLowerCase() ?? "";
-              if (c.includes("argolla") || c.includes("alianza")) return "argollas";
-              if (c.includes("anillo")) return "compromiso";
-              if (c.includes("aro")) return "aros";
-              if (c.includes("collar")) return "collares";
-              if (c.includes("pulsera") || c.includes("esclava")) return "pulseras";
-              if (c.includes("vintage")) return "vintage";
-              if (c.includes("familia")) return "familia";
-              return "todos";
-            })()}`} className="hover:underline">{item.categoria}</Link>
-            {item.estilo && (
-              <>
-                <span className="mx-2">,</span>
-                <span>{item.estilo}</span>
-              </>
-            )}
-            <span className="mx-2">,</span>
-            <span style={{ color: OLIVE_DEEP, fontWeight: 500 }}>{item.nombre}</span>
+          <nav
+            className="mb-6 md:mb-10 text-[10px] md:text-[11px]"
+            style={{ fontFamily: "Inter, sans-serif", letterSpacing: "0.08em", color: OLIVE_SOFT }}
+            aria-label="Breadcrumb"
+          >
+            <ol className="flex flex-wrap items-center gap-x-1 gap-y-1">
+              <li className="flex items-center">
+                <Link to="/" className="hover:underline">Inicio</Link>
+              </li>
+              <li className="flex items-center" aria-hidden="true">
+                <span className="mx-1.5 text-primary/70">›</span>
+              </li>
+              <li className="flex items-center md:hidden">
+                <span className="text-primary/50">…</span>
+              </li>
+              <li className="flex items-center md:hidden" aria-hidden="true">
+                <span className="mx-1.5 text-primary/70">›</span>
+              </li>
+              <li className="hidden md:flex items-center">
+                <Link to="/joyas" className="hover:underline">Joyas</Link>
+              </li>
+              <li className="hidden md:flex items-center" aria-hidden="true">
+                <span className="mx-1.5 text-primary/70">›</span>
+              </li>
+              <li className="hidden md:flex items-center">
+                <Link
+                  to={`/joyas?tipo=${(() => {
+                    const c = item.categoria?.toLowerCase() ?? "";
+                    if (c.includes("argolla") || c.includes("alianza")) return "argollas";
+                    if (c.includes("anillo")) return "compromiso";
+                    if (c.includes("aro")) return "aros";
+                    if (c.includes("collar")) return "collares";
+                    if (c.includes("pulsera") || c.includes("esclava")) return "pulseras";
+                    if (c.includes("vintage")) return "vintage";
+                    if (c.includes("familia")) return "familia";
+                    return "todos";
+                  })()}`}
+                  className="hover:underline"
+                >
+                  {item.categoria}
+                </Link>
+              </li>
+              {item.estilo && (
+                <>
+                  <li className="hidden md:flex items-center" aria-hidden="true">
+                    <span className="mx-1.5 text-primary/70">›</span>
+                  </li>
+                  <li className="hidden md:flex items-center">
+                    <span>{item.estilo}</span>
+                  </li>
+                </>
+              )}
+              <li className="flex items-center" aria-hidden="true">
+                <span className="mx-1.5 text-primary/70">›</span>
+              </li>
+              <li className="flex items-center">
+                <span style={{ color: OLIVE_DEEP, fontWeight: 500 }}>{item.nombre}</span>
+              </li>
+            </ol>
           </nav>
 
           {/* MAIN GRID */}

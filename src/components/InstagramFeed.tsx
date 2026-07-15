@@ -20,7 +20,7 @@ const chipStyle = {
 
 const InstagramFeed = () => {
   return (
-    <section className="py-12 md:py-20 bg-cream">
+    <section className="py-10 md:py-20 bg-cream">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-8 md:mb-10">
           <h2 className="font-display text-3xl md:text-4xl text-charcoal mb-2">

@@ -405,7 +405,7 @@ const Gallery = () => {
     cat === "todas" ? pieces.length : pieces.filter((p) => p.category === cat).length;
 
   return (
-    <section id="galeria" className="py-12 md:py-32 bg-card">
+    <section id="galeria" className="py-10 md:py-24 bg-card">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           className="text-center mb-12"

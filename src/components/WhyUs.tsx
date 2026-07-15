@@ -9,7 +9,7 @@ const reasons = [
 
 const WhyUs = () => {
   return (
-    <section className="py-12 md:py-32 bg-background">
+    <section className="py-10 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           className="text-center mb-10 md:mb-16"

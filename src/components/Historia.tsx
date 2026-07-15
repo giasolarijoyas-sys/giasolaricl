@@ -3,7 +3,7 @@ import giannaImg from "@/assets/maca-gianna.jpeg";
 
 const Historia = () => {
   return (
-    <section id="historia" className="py-12 md:py-32 bg-background">
+    <section id="historia" className="py-10 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Image */}
