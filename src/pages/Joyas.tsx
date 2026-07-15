@@ -436,10 +436,10 @@ const Joyas = () => {
               )}
             </div>
             <p
-              className="mt-3 text-center"
+              className="mt-2 md:mt-3 text-center"
               style={{
                 fontFamily: "Inter, sans-serif",
-                fontSize: "12px",
+                fontSize: "11px",
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
                 color: OLIVE_SOFT,
