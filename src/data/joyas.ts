@@ -216,7 +216,7 @@ import haloCushionDiamante01 from "@/assets/joyas/halo-cushion-diamante-01.jpg";
 import haloCushionDiamante02 from "@/assets/joyas/halo-cushion-diamante-02.jpg";
 import haloClusterDiamantes01 from "@/assets/joyas/halo-cluster-diamantes-01.jpg";
 import haloRedondoOro01 from "@/assets/joyas/halo-redondo-oro-01.jpg";
-import anilloPerlaOro01 from "@/assets/joyas/anillo-perla-oro-01.png";
+
 
 export const JOYAS: Joya[] = [
   {

@@ -97,7 +97,7 @@ import galAlianzasPlatino from "@/assets/gal-alianzas-platino.png";
 import galAguamarinaHaloArtDeco2 from "@/assets/gal-aguamarina-halo-artdeco-2.png";
 import galAguamarinaOvalSutil from "@/assets/gal-aguamarina-oval-sutil.png";
 import galOroAmarilloColor from "@/assets/gal-oro-amarillo-piedras-color.png";
-import galAnilloPerlaOro from "@/assets/gal-anillo-perla-oro.png";
+
 import galBandaEternidadPlatino from "@/assets/gal-banda-eternidad-platino.png";
 import galCollarAguamarinaPlatino from "@/assets/gal-collar-aguamarina-platino.png";
 import galEternidadDiamantesPlatino from "@/assets/gal-eternidad-diamantes-platino.png";
