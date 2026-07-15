@@ -97,7 +97,7 @@ import galAlianzasPlatino from "@/assets/gal-alianzas-platino.png";
 import galAguamarinaHaloArtDeco2 from "@/assets/gal-aguamarina-halo-artdeco-2.png";
 import galAguamarinaOvalSutil from "@/assets/gal-aguamarina-oval-sutil.png";
 import galOroAmarilloColor from "@/assets/gal-oro-amarillo-piedras-color.png";
-import galAnilloPerlaOro from "@/assets/gal-anillo-perla-oro.png";
+
 import galBandaEternidadPlatino from "@/assets/gal-banda-eternidad-platino.png";
 import galCollarAguamarinaPlatino from "@/assets/gal-collar-aguamarina-platino.png";
 import galEternidadDiamantesPlatino from "@/assets/gal-eternidad-diamantes-platino.png";
@@ -271,7 +271,7 @@ const pieces: Piece[] = [
   { img: galAguamarinaHaloArtDeco2, name: "Halo Aguamarina Art Déco", desc: "Aguamarina oval, Halo filigrana, Platino", category: "anillos", material: "platino", estilo: "halo" },
   { img: galAguamarinaOvalSutil, name: "Solitario Aguamarina Oval", desc: "Aguamarina oval, Solitario minimalista, Platino", category: "anillos", material: "platino", estilo: "solitario" },
   { img: galOroAmarilloColor, name: "Anillo Color Oro Amarillo", desc: "Piedra central con color, Oro amarillo 18k", category: "anillos", material: "oro18k", estilo: "halo" },
-  { img: galAnilloPerlaOro, name: "Anillo Perla Oro", desc: "Perla central, Oro 18k", category: "anillos", material: "oro18k" },
+  
   { img: galBandaEternidadPlatino, name: "Banda Eternidad Diamantes", desc: "Diamantes, Banda completa, Platino", category: "anillos", material: "platino", estilo: "pave" },
   { img: galCollarAguamarinaPlatino, name: "Collar Aguamarina Platino", desc: "Aguamarina colgante, Platino", category: "collares", material: "platino" },
   { img: galEternidadDiamantesPlatino, name: "Media Eternidad Diamantes", desc: "Diamantes, Platino", category: "anillos", material: "platino", estilo: "pave" },
