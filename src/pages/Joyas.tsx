@@ -368,16 +368,16 @@ const Joyas = () => {
       </Helmet>
       <Navbar />
 
-      <main className="pt-20 md:pt-36 pb-40 md:pb-32">
+      <main className="pt-18 md:pt-36 pb-40 md:pb-32">
         {/* HEADER */}
-        <header className="container mx-auto px-4 md:px-8 text-center mb-5 md:mb-20">
+        <header className="container mx-auto px-4 md:px-8 text-center mb-4 md:mb-20">
           <Eyebrow>Catálogo</Eyebrow>
           <h1
-            className="mt-2 md:mt-4 mb-3 md:mb-5"
+            className="mt-2 md:mt-4 mb-2 md:mb-5"
             style={{
               fontFamily: "'Bodoni Moda', serif",
               fontWeight: 400,
-              fontSize: "clamp(24px, 5vw, 64px)",
+              fontSize: "clamp(23px, 5vw, 64px)",
               lineHeight: 1.05,
               color: OLIVE_DEEP,
             }}
@@ -388,8 +388,8 @@ const Joyas = () => {
             className="mx-auto px-2 md:px-0"
             style={{
               fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
-              lineHeight: 1.55,
+              fontSize: "13px",
+              lineHeight: 1.45,
               color: OLIVE_SOFT,
               maxWidth: "600px",
             }}
@@ -407,7 +407,7 @@ const Joyas = () => {
                 background: "#FFFFFF",
                 border: `1px solid ${LINE}`,
                 borderRadius: "999px",
-                padding: "6px 12px",
+                padding: "5px 10px",
               }}
             >
               <Search size={18} strokeWidth={1.5} style={{ color: OLIVE_SOFT, flexShrink: 0 }} />
