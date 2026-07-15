@@ -44,7 +44,7 @@ const GarantiaSection = () => {
   return (
     <section
       id="garantia"
-      className="py-20 md:py-28"
+      className="py-12 md:py-28"
       style={{ backgroundColor: "#FDFAF6" }}
     >
       <div className="container mx-auto px-4 md:px-8 max-w-6xl">
