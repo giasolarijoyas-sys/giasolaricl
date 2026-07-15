@@ -220,21 +220,6 @@ import haloRedondoOro01 from "@/assets/joyas/halo-redondo-oro-01.jpg";
 
 export const JOYAS: Joya[] = [
   {
-    slug: "anillo-perla-oro",
-    nombre: "Julieta · Anillo de Perla",
-    material: "Oro 18k amarillo, Perla cultivada, banda con pavé de diamantes",
-    metalPrincipal: "Oro 18k amarillo",
-    estilo: "Atemporal",
-    piedraCentral: "Perla",
-    descripcion:
-      "Perla cultivada sobre banda de oro amarillo con pavé de diamantes. Delicado y distinto.",
-    descripcionLarga:
-      "Una perla cultivada en el centro, sostenida con sutileza sobre una banda de oro amarillo con pavé de diamantes que la acompaña sin robarle protagonismo. Una pieza distinta para quien busca algo más allá del diamante clásico, con la elegancia serena de la perla. Cada anillo incluye Certificado Gia Solari.",
-    categoria: "Anillo de compromiso",
-    imagenes: [anilloPerlaOro01],
-    isPlaceholder: false,
-  },
-  {
     slug: "solitario-oval-oro-blanco",
     nombre: "Olivia · Solitario Oval",
     material: "Oro 18k blanco, Diamante oval central, banda lisa",
