@@ -69,7 +69,7 @@ const Agenda = () => {
       />
       <Navbar />
 
-      <main className="pt-24 pb-20">
+      <main className="pt-24 pb-32 md:pb-20">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div
             animate={{ opacity: 1, y: 0 }}
