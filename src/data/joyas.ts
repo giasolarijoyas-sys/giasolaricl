@@ -22,7 +22,7 @@
 // (no shared gal-* assets in use after catalog cleanup)
 import tuYYoGotaOvalPlatino01 from "@/assets/joyas/tu-y-yo-gota-oval-platino-01.jpg";
 import turmalinaVerdeFloralVintage01 from "@/assets/joyas/turmalina-verde-floral-vintage-01.jpg";
-import turmalinaVerdeFloralVintage02 from "@/assets/joyas/turmalina-verde-floral-vintage-02.jpg";
+
 import anilloCupula01 from "@/assets/joyas/anillo-cupula-01.png";
 import anilloCupula02 from "@/assets/joyas/anillo-cupula-02.png";
 import anilloLadyDiZafiro01 from "@/assets/joyas/anillo-lady-di-01.png";
