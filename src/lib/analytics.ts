@@ -92,6 +92,7 @@ export function initWhatsAppClickTracking(): void {
       const isCotizarText = /\bcotiza(r|\s+tu)\b/.test(label);
       if (isCotizarHref || isCotizarText) {
         trackEvent("cotizar_click", { link_url: href || null, location });
+        trackFbEvent("CotizarClick", { link_url: href || null, location }, "trackCustom");
         return;
       }
 
@@ -100,6 +101,7 @@ export function initWhatsAppClickTracking(): void {
       const isAgendarText = /\bagenda(r|\s+(visita|cita|tu))\b/.test(label);
       if (isAgendarHref || isAgendarText) {
         trackEvent("agendar_click", { link_url: href || null, location });
+        trackFbEvent("Schedule", { link_url: href || null, location });
       }
     },
     { capture: true }
