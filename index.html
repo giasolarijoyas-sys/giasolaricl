@@ -8,13 +8,15 @@
     <meta name="author" content="Gia Solari Joyas" />
 
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8DKMJ6KWLM"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKJYVNGB0G"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       window.gtag = gtag;
       gtag('js', new Date());
-      gtag('config', 'G-8DKMJ6KWLM');
+      // SPA: enviamos page_view manualmente en cada cambio de ruta
+      gtag('config', 'G-RKJYVNGB0G', { send_page_view: false });
+      gtag('config', 'G-8DKMJ6KWLM', { send_page_view: false });
     </script>
 
     <!-- Meta Pixel -->
