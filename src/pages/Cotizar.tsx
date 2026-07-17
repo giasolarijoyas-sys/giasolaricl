@@ -365,6 +365,14 @@ const Cotizar = () => {
       .insert(row)
       .then(({ error }) => {
         if (error) console.error("cotizaciones insert error", error);
+        else
+          trackEvent("cotizacion_enviada", {
+            pieza: row.pieza,
+            metal: row.metal,
+            piedra: row.piedra,
+            presupuesto: row.presupuesto,
+            con_referencias: row.con_referencias,
+          });
       });
 
     // Aviso por correo del lead (fire-and-forget, una sola vez).
