@@ -250,9 +250,16 @@ const Hero = () => {
         /* Móvil: hero compacto para que se vea la foto pero también asome producto real debajo */
         .hero-shell { min-height: auto; }
         .hero-img-wrap { min-height: 30vh; max-height: 55vh; }
+        /* Móvil: CTA primario dominante, secundarios discretos */
+        .hero-cta-primary { display: block; }
+        .hero-secondary { text-align: center; font-size: 12px; opacity: 0.85; }
+        .hero-secondary a { font-size: 12px !important; }
         @media (min-width: 768px) {
           .hero-shell { min-height: 88vh; }
           .hero-img-wrap { min-height: 88vh; max-height: none; height: auto; }
+          .hero-cta-primary { display: inline-block; }
+          .hero-secondary { text-align: left; font-size: 13px; opacity: 1; }
+          .hero-secondary a { font-size: 13px !important; }
         }
       `}</style>
     </section>
