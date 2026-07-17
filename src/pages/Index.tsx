@@ -142,6 +142,10 @@ const Index = () => {
       {/* Newsletter */}
       <Newsletter />
 
+      {/* Testimonios reales de clientas (auto-oculto si vacío) */}
+      <Testimonios />
+
+
       {/* FAQ */}
       <FAQAccordion />
 
