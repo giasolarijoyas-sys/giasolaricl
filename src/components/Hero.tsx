@@ -122,7 +122,7 @@ const Hero = () => {
             {/* CTA primario — al cotizador para capturar el lead */}
             <Link
               to="/cotizar"
-              className="text-center transition-all inline-block"
+              className="text-center transition-all inline-block w-full md:w-auto hero-cta-primary"
               style={{
                 background: OLIVE,
                 color: CREAM,
@@ -146,13 +146,26 @@ const Hero = () => {
               Cotiza tu pieza
             </Link>
 
-            {/* CTA secundario */}
-            <p style={{ marginTop: "12px" }}>
+            {/* Microcopy de baja fricción */}
+            <p
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "12px",
+                color: MUTED,
+                letterSpacing: "0.02em",
+                marginTop: "10px",
+              }}
+              className="text-center md:text-left"
+            >
+              Cotiza gratis, sin compromiso.
+            </p>
+
+            {/* CTAs secundarios — más discretos en móvil */}
+            <p className="hero-secondary" style={{ marginTop: "12px" }}>
               <a
                 href="#galeria"
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: "13px",
                   color: OLIVE,
                   textDecoration: "underline",
                   textUnderlineOffset: "3px",
@@ -166,12 +179,11 @@ const Hero = () => {
                 Ver la colección ↓
               </a>
             </p>
-            <p style={{ marginTop: "8px" }}>
+            <p className="hero-secondary" style={{ marginTop: "8px" }}>
               <a
                 href="/agenda"
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: "12px",
                   color: MUTED,
                   textDecoration: "underline",
                   textUnderlineOffset: "3px",
@@ -184,6 +196,7 @@ const Hero = () => {
                 Agendar visita al showroom
               </a>
             </p>
+
 
             {/* Barra de confianza */}
             <div
