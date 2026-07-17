@@ -10,7 +10,7 @@ import { WHATSAPP_PHONE } from "@/lib/whatsapp";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { JOYAS, type Joya } from "@/data/joyas";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackFbEvent } from "@/lib/analytics";
 
 const MAX_IMAGES = 5;
 const MAX_SIZE_MB = 10;
