@@ -10,6 +10,7 @@ import { WHATSAPP_PHONE } from "@/lib/whatsapp";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { JOYAS, type Joya } from "@/data/joyas";
+import { trackEvent } from "@/lib/analytics";
 
 const MAX_IMAGES = 5;
 const MAX_SIZE_MB = 10;
@@ -364,6 +365,14 @@ const Cotizar = () => {
       .insert(row)
       .then(({ error }) => {
         if (error) console.error("cotizaciones insert error", error);
+        else
+          trackEvent("cotizacion_enviada", {
+            pieza: row.pieza,
+            metal: row.metal,
+            piedra: row.piedra,
+            presupuesto: row.presupuesto,
+            con_referencias: row.con_referencias,
+          });
       });
 
     // Aviso por correo del lead (fire-and-forget, una sola vez).
