@@ -136,6 +136,7 @@ const Footer = () => {
               <a href="/sobre-gia" className="hover:text-[#C9A87C] transition-colors">Sobre Gia</a>
               <a href="/proceso" className="hover:text-[#C9A87C] transition-colors">Proceso</a>
               <a href="/aprende" className="hover:text-[#C9A87C] transition-colors">Aprende</a>
+              <a href="/guia-del-anillo" className="hover:text-[#C9A87C] transition-colors">La Biblia del Anillo</a>
               <a href="/guia-de-tallas" className="hover:text-[#C9A87C] transition-colors">Guía de tallas</a>
               <a href="/cuidado-de-la-joya" className="hover:text-[#C9A87C] transition-colors"><span className="md:hidden">Cuidado</span><span className="hidden md:inline">Cuidado de la joya</span></a>
               <a href="/garantia-por-gusto" className="hover:text-[#C9A87C] transition-colors"><span className="md:hidden">Garantía</span><span className="hidden md:inline">Garantía por Gusto</span></a>
