@@ -51,6 +51,7 @@ const significadosItems: SubItem[] = [
 const mainLinks = [
   { label: "New In", href: "/new" },
   { label: "Aprende", href: "/aprende" },
+  { label: "La Biblia del Anillo", href: "/guia-del-anillo" },
   { label: "Sobre Gia", href: "/sobre-gia" },
 ];
 

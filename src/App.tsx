@@ -25,6 +25,7 @@ import GarantiaPorGusto from "./pages/GarantiaPorGusto.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import Aprende from "./pages/Aprende.tsx";
+import GuiaDelAnillo from "./pages/GuiaDelAnillo.tsx";
 import AprendeDiamantes4C from "./pages/aprende/Diamantes4C.tsx";
 import OroVsPlatino from "./pages/aprende/OroVsPlatino.tsx";
 
@@ -79,6 +80,7 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/aprende" element={<Aprende />} />
+            <Route path="/guia-del-anillo" element={<GuiaDelAnillo />} />
             <Route path="/aprende/diamantes-4c" element={<AprendeDiamantes4C />} />
             <Route path="/aprende/oro-vs-platino" element={<OroVsPlatino />} />
             <Route path="/aprende/diamante-natural-vs-laboratorio" element={<Navigate to="/aprende" replace />} />
