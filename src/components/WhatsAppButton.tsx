@@ -50,56 +50,7 @@ const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) =>
       >
 
         <div className="flex flex-col items-end gap-3">
-          <InstagramButton />
-          {/* FAB Cotizar — apilado encima del WhatsApp */}
-          {showCotizar && (
-            <div className="relative">
-              <span
-                className="hidden sm:block absolute right-full top-1/2 -translate-y-1/2 mr-3 whitespace-nowrap pointer-events-none transition-opacity"
-                style={{
-                  background: "#1A1A18",
-                  color: "#FFFFFF",
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: "12px",
-                  padding: "6px 10px",
-                  borderRadius: "6px",
-                  opacity: hoverCotizar ? 1 : 0,
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-                }}
-              >
-                Cotiza tu pieza
-              </span>
-              <Link
-                to="/cotizar"
-                aria-label="Cotiza tu pieza"
-                onMouseEnter={(e) => {
-                  setHoverCotizar(true);
-                  e.currentTarget.style.transform = "translateY(-1px)";
-                }}
-                onMouseLeave={(e) => {
-                  setHoverCotizar(false);
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-                className="flex items-center justify-center rounded-full"
-                style={{
-                  background: "#4A5536",
-                  color: "#F5EFE6",
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: 13,
-                  fontWeight: 500,
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                  padding: "12px 20px",
-                  height: 50,
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-                  transition: "transform 0.2s ease",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                Cotizar
-              </Link>
-            </div>
-          )}
+
 
           {/* FAB WhatsApp */}
           <div className="relative">
