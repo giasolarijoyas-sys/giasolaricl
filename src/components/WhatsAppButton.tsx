@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import InstagramButton from "./InstagramButton";
+import { useLocation } from "react-router-dom";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const WA_URL = buildWhatsAppUrl("generico", {
@@ -15,7 +14,6 @@ const WhatsAppIcon = ({ size = 28 }: { size?: number }) => (
 
 const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) => {
   const [hover, setHover] = useState(false);
-  const [hoverCotizar, setHoverCotizar] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -29,9 +27,6 @@ const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) =>
     if (document.body.getAttribute("data-menu-open") === "true") setMenuOpen(true);
     return () => window.removeEventListener("gs:menu", handler as EventListener);
   }, []);
-
-  // Ocultar el FAB de Cotizar en la propia página /cotizar
-  const showCotizar = !location.pathname.startsWith("/cotizar");
 
   // En rutas con formulario/barra fija (cotizador, agenda y fichas /joyas/:slug),
   // ocultamos todo el FAB en móvil para no solaparlo. En desktop se mantiene.
@@ -50,56 +45,7 @@ const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) =>
       >
 
         <div className="flex flex-col items-end gap-3">
-          <InstagramButton />
-          {/* FAB Cotizar — apilado encima del WhatsApp */}
-          {showCotizar && (
-            <div className="relative">
-              <span
-                className="hidden sm:block absolute right-full top-1/2 -translate-y-1/2 mr-3 whitespace-nowrap pointer-events-none transition-opacity"
-                style={{
-                  background: "#1A1A18",
-                  color: "#FFFFFF",
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: "12px",
-                  padding: "6px 10px",
-                  borderRadius: "6px",
-                  opacity: hoverCotizar ? 1 : 0,
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-                }}
-              >
-                Cotiza tu pieza
-              </span>
-              <Link
-                to="/cotizar"
-                aria-label="Cotiza tu pieza"
-                onMouseEnter={(e) => {
-                  setHoverCotizar(true);
-                  e.currentTarget.style.transform = "translateY(-1px)";
-                }}
-                onMouseLeave={(e) => {
-                  setHoverCotizar(false);
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-                className="flex items-center justify-center rounded-full"
-                style={{
-                  background: "#4A5536",
-                  color: "#F5EFE6",
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: 13,
-                  fontWeight: 500,
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                  padding: "12px 20px",
-                  height: 50,
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-                  transition: "transform 0.2s ease",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                Cotizar
-              </Link>
-            </div>
-          )}
+
 
           {/* FAB WhatsApp */}
           <div className="relative">

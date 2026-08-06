@@ -134,6 +134,7 @@ const Footer = () => {
             </p>
             <div className="flex flex-col gap-1.5 md:gap-2">
               <a href="/sobre-gia" className="hover:text-[#C9A87C] transition-colors">Sobre Gia</a>
+              <a href="/como-funciona" className="hover:text-[#C9A87C] transition-colors">Cómo funciona</a>
               <a href="/proceso" className="hover:text-[#C9A87C] transition-colors">Proceso</a>
               <a href="/aprende" className="hover:text-[#C9A87C] transition-colors">Aprende</a>
               <a href="/guia-del-anillo" className="hover:text-[#C9A87C] transition-colors">La Biblia del Anillo</a>

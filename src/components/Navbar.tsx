@@ -50,6 +50,7 @@ const significadosItems: SubItem[] = [
 
 const mainLinks = [
   { label: "New In", href: "/new" },
+  { label: "Cómo funciona", href: "/como-funciona" },
   { label: "Aprende", href: "/aprende" },
   { label: "La Biblia del Anillo", href: "/guia-del-anillo" },
   { label: "Sobre Gia", href: "/sobre-gia" },
@@ -341,7 +342,7 @@ const Navbar = () => {
                 fontSize: "13px",
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
-                color: MUTED,
+                color: OLIVE,
               }}
             >
               Agendar
