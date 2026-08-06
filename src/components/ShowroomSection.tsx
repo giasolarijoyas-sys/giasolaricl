@@ -59,6 +59,16 @@ const ShowroomSection = () => {
             >
               Agendar visita al showroom
             </a>
+
+            <p className="mt-4">
+              <a
+                href="/como-funciona"
+                className="text-xs tracking-[0.15em] uppercase hover:opacity-70 transition-opacity"
+                style={{ fontFamily: "Inter, sans-serif", color: "#6B7752" }}
+              >
+                Cómo funciona el proceso y el precio
+              </a>
+            </p>
           </div>
         </div>
       </div>
