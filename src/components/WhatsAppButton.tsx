@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import InstagramButton from "./InstagramButton";
+import { useLocation } from "react-router-dom";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const WA_URL = buildWhatsAppUrl("generico", {
@@ -15,7 +14,6 @@ const WhatsAppIcon = ({ size = 28 }: { size?: number }) => (
 
 const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) => {
   const [hover, setHover] = useState(false);
-  const [hoverCotizar, setHoverCotizar] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -29,9 +27,6 @@ const WhatsAppButton = ({ hideOnMobile = false }: { hideOnMobile?: boolean }) =>
     if (document.body.getAttribute("data-menu-open") === "true") setMenuOpen(true);
     return () => window.removeEventListener("gs:menu", handler as EventListener);
   }, []);
-
-  // Ocultar el FAB de Cotizar en la propia página /cotizar
-  const showCotizar = !location.pathname.startsWith("/cotizar");
 
   // En rutas con formulario/barra fija (cotizador, agenda y fichas /joyas/:slug),
   // ocultamos todo el FAB en móvil para no solaparlo. En desktop se mantiene.

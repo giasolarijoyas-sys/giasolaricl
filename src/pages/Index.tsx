@@ -26,6 +26,9 @@ import InstagramFeed from "@/components/InstagramFeed";
 import GrabadosSimbolicosSection from "@/components/GrabadosSimbolicosSection";
 import DestacadosHero from "@/components/DestacadosHero";
 import Testimonios from "@/components/Testimonios";
+import TestimoniosHero from "@/components/TestimoniosHero";
+import ShowroomSection from "@/components/ShowroomSection";
+import ArgollasIncluidas from "@/components/ArgollasIncluidas";
 
 import bannerNusa from "@/assets/banner-anillo-nusa.png";
 import bannerHalo from "@/assets/banner-halo-oval.png";
@@ -75,6 +78,9 @@ const Index = () => {
 
       <Hero />
 
+      {/* Prueba social apenas entras */}
+      <TestimoniosHero />
+
       {/* Piezas destacadas — visibles apenas entras, atacan el rebote */}
       <DestacadosHero />
 
@@ -123,6 +129,12 @@ const Index = () => {
         text="Hecho a Tu Medida"
         subtext="100% personalizado, 100% único"
       />
+
+      {/* Showroom */}
+      <ShowroomSection />
+
+      {/* Argollas incluidas */}
+      <ArgollasIncluidas />
 
       {/* Garantía por Gusto */}
       <GarantiaSection />
