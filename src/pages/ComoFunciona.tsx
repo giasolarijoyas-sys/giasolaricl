@@ -24,7 +24,7 @@ const pasos = [
   {
     num: "02",
     titulo: "Conversamos el diseño",
-    texto: "En el showroom o por videollamada. Te muestras referencias, te pruebas anillos ya hechos y definimos forma de piedra, metal y estilo. Acá también medimos la talla.",
+    texto: "En el showroom o por videollamada. Nos muestras referencias, te pruebas anillos ya hechos y definimos forma de piedra, metal y estilo. Acá también medimos la talla.",
   },
   {
     num: "03",
