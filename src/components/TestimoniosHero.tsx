@@ -3,8 +3,13 @@ import galHaloPeraDiamante from "@/assets/gal-halo-pera-diamante.png";
 import galOvalPave from "@/assets/gal-oval-pave.jpg";
 
 /**
- * Testimonios bajo el hero. PLACEHOLDERS:
- * reemplaza foto, nombre y frase por los testimonios reales.
+ * Testimonios bajo el hero. TESTIMONIOS REALES:
+ * las frases y nombres son textuales de clientas, no editarlos.
+ *
+ * IMPORTANTE: las imágenes actuales provienen de la galería general y NO
+ * corresponden al anillo de cada persona. Son referenciales: reemplaza cada
+ * una por la foto real del anillo de la persona correspondiente antes de
+ * considerar esta sección terminada.
  */
 type TestimonioHero = {
   imagen: string;
@@ -18,23 +23,20 @@ const testimoniosHero: TestimonioHero[] = [
   {
     imagen: galHaloOvalZafiro,
     alt: "Anillo de compromiso halo oval con zafiro azul en oro blanco",
-    nombre: "Nombre de la clienta",
-    frase: "Frase corta de la clienta sobre su anillo. Reemplazar por texto real.",
-    pieza: "Halo oval, zafiro, oro blanco 18k",
+    nombre: "Nico F.",
+    frase: "Apañe, confianza, la buena onda y obvio, el anillo",
   },
   {
     imagen: galHaloPeraDiamante,
     alt: "Anillo de compromiso halo pera con diamante",
-    nombre: "Nombre de la clienta",
-    frase: "Frase corta de la clienta sobre su anillo. Reemplazar por texto real.",
-    pieza: "Halo pera, diamante, platino",
+    nombre: "Pablo F.",
+    frase: "Quedó bellísimo, gracias querida",
   },
   {
     imagen: galOvalPave,
     alt: "Anillo de compromiso oval con pavé de diamantes",
-    nombre: "Nombre de la clienta",
-    frase: "Frase corta de la clienta sobre su anillo. Reemplazar por texto real.",
-    pieza: "Oval con pavé, oro 18k",
+    nombre: "Titi Barros",
+    frase: "Quedó feliz, y le quedó perfecto",
   },
 ];
 
