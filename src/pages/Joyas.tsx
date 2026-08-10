@@ -71,17 +71,9 @@ const normalize = (s: string | undefined | null) =>
     .trim();
 
 
-// Estilo del item: matchea estilo de la pieza con label de filtro
-const matchEstilo = (joyaEstilo: string | undefined, filtro: string) => {
-  if (!joyaEstilo) return false;
-  const e = joyaEstilo.toLowerCase();
-  const f = filtro.toLowerCase();
-  if (f === "halo") return e.includes("halo") || e.includes("color");
-  if (f === "solitarios") return e.includes("solitar") || e.includes("atemporal");
-  if (f === "tricillo y cinco piedras") return e.includes("tres") || e.includes("cinco") || e.includes("trilog") || e.includes("tricillo");
-  if (f === "pavé") return e.includes("pavé") || e.includes("pave");
-  return e.includes(f);
-};
+// Estilo real del anillo: coincidencia exacta con `estiloAnillo`
+const matchEstilo = (estiloAnillo: string | undefined, filtro: string) =>
+  !!estiloAnillo && estiloAnillo === filtro;
 
 const matchPiedra = (joyaPiedra: string | undefined, filtro: string) => {
   if (filtro === "Sin piedra") return !joyaPiedra || joyaPiedra.toLowerCase().includes("sin piedra");
