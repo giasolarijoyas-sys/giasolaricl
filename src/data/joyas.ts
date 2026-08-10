@@ -156,8 +156,13 @@ export type Joya = {
   material: string;
   /** Metal principal para filtros del catálogo. */
   metalPrincipal?: string;
-  /** Estilo/colección para filtros del catálogo. */
+  /** Colección a la que pertenece la pieza (Vintage, Atemporal, Color, Editorial). */
   estilo?: string;
+  /**
+   * Estilo real del anillo, para el filtro "Estilo" del catálogo.
+   * Valores: "Halo" | "Solitario" | "Tricillo" | "Cinco piedras" | "Pavé" | "Cintillo" | "Eternity"
+   */
+  estiloAnillo?: string;
   /** Piedra central, opcional. */
   piedraCentral?: string;
   /** Descripción corta (1-2 líneas) para grilla y meta description */
