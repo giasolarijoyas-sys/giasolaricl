@@ -24,6 +24,7 @@ const TIPOS = [
   { id: "todos", label: "Ver todo", match: null as null | ((c: string) => boolean) },
   { id: "compromiso", label: "Anillos de compromiso", match: (c: string) => c === "Anillo de compromiso" },
   { id: "argollas", label: "Argollas de matrimonio", match: (c: string) => c === "Argolla" || c === "Alianza" },
+  { id: "cintillos", label: "Cintillos y eternity", match: (c: string) => c === "Cintillo" },
   { id: "aros", label: "Aros", match: (c: string) => c === "Aros" },
   { id: "collares", label: "Collares", match: (c: string) => c === "Collar" },
   { id: "pulseras", label: "Pulseras y esclavas", match: (c: string) => c === "Pulsera" },
@@ -32,14 +33,13 @@ const TIPOS = [
 ];
 
 
+// Estilos reales de anillo presentes en el catálogo (coincidencia exacta con `estiloAnillo`)
 const ESTILOS = [
   "Halo",
-  "Solitarios",
-  "Tricillo y cinco piedras",
-  "Pavé",
-  "Cintillos",
+  "Solitario",
+  "Tricillo",
+  "Cinco piedras",
   "Eternity",
-  "Color",
 ];
 
 const METALES = [
@@ -71,17 +71,9 @@ const normalize = (s: string | undefined | null) =>
     .trim();
 
 
-// Estilo del item: matchea estilo de la pieza con label de filtro
-const matchEstilo = (joyaEstilo: string | undefined, filtro: string) => {
-  if (!joyaEstilo) return false;
-  const e = joyaEstilo.toLowerCase();
-  const f = filtro.toLowerCase();
-  if (f === "halo") return e.includes("halo") || e.includes("color");
-  if (f === "solitarios") return e.includes("solitar") || e.includes("atemporal");
-  if (f === "tricillo y cinco piedras") return e.includes("tres") || e.includes("cinco") || e.includes("trilog") || e.includes("tricillo");
-  if (f === "pavé") return e.includes("pavé") || e.includes("pave");
-  return e.includes(f);
-};
+// Estilo real del anillo: coincidencia exacta con `estiloAnillo`
+const matchEstilo = (estiloAnillo: string | undefined, filtro: string) =>
+  !!estiloAnillo && estiloAnillo === filtro;
 
 const matchPiedra = (joyaPiedra: string | undefined, filtro: string) => {
   if (filtro === "Sin piedra") return !joyaPiedra || joyaPiedra.toLowerCase().includes("sin piedra");
@@ -170,7 +162,7 @@ const Joyas = () => {
     return baseJoyas.filter((j) => {
       const tipoOpt = TIPOS.find((t) => t.id === filters.tipo);
       if (tipoOpt?.match && !tipoOpt.match(j.categoria)) return false;
-      if (filters.estilo.length && !filters.estilo.some((e) => matchEstilo(j.estilo, e))) return false;
+      if (filters.estilo.length && !filters.estilo.some((e) => matchEstilo(j.estiloAnillo, e))) return false;
       if (filters.metal.length && !filters.metal.some((m) => (j.metalPrincipal ?? "").toLowerCase() === m.toLowerCase())) return false;
       if (filters.piedra.length && !filters.piedra.some((p) => matchPiedra(j.piedraCentral, p))) return false;
       if (q) {
