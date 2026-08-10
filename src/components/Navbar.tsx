@@ -19,12 +19,10 @@ const joyasMenuCols: { title: string; items: SubItem[] }[] = [
     title: "Anillos de compromiso",
     items: [
       { label: "Halos", href: "/joyas?tipo=compromiso&estilo=Halo" },
-      { label: "Solitarios", href: "/joyas?tipo=compromiso&estilo=Solitarios" },
-      { label: "Tres y cinco piedras", href: "/joyas?tipo=compromiso&estilo=Tres+y+cinco+piedras" },
-      { label: "Pavé", href: "/joyas?tipo=compromiso&estilo=Pavé" },
-      { label: "Cintillos", href: "/joyas?tipo=compromiso&estilo=Cintillos" },
+      { label: "Solitarios", href: "/joyas?tipo=compromiso&estilo=Solitario" },
+      { label: "Tricillos", href: "/joyas?tipo=compromiso&estilo=Tricillo" },
+      { label: "Cinco piedras", href: "/joyas?tipo=compromiso&estilo=Cinco+piedras" },
       { label: "Eternity", href: "/joyas?tipo=compromiso&estilo=Eternity" },
-      { label: "Color (zafiro, aguamarina, esmeralda)", href: "/joyas?tipo=compromiso&estilo=Color" },
       { label: "Ver anillos de compromiso →", href: "/joyas?tipo=compromiso" },
       { label: "Argollas de matrimonio →", href: "/joyas?tipo=argollas" },
     ],
@@ -33,6 +31,7 @@ const joyasMenuCols: { title: string; items: SubItem[] }[] = [
   {
     title: "Otras piezas",
     items: [
+      { label: "Cintillos y eternity", href: "/joyas?tipo=cintillos" },
       { label: "Aros", href: "/joyas?tipo=aros" },
       { label: "Collares", href: "/joyas?tipo=collares" },
       { label: "Pulseras y esclavas", href: "/joyas?tipo=pulseras" },
