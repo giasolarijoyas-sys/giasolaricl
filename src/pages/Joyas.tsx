@@ -24,6 +24,7 @@ const TIPOS = [
   { id: "todos", label: "Ver todo", match: null as null | ((c: string) => boolean) },
   { id: "compromiso", label: "Anillos de compromiso", match: (c: string) => c === "Anillo de compromiso" },
   { id: "argollas", label: "Argollas de matrimonio", match: (c: string) => c === "Argolla" || c === "Alianza" },
+  { id: "cintillos", label: "Cintillos y eternity", match: (c: string) => c === "Cintillo" },
   { id: "aros", label: "Aros", match: (c: string) => c === "Aros" },
   { id: "collares", label: "Collares", match: (c: string) => c === "Collar" },
   { id: "pulseras", label: "Pulseras y esclavas", match: (c: string) => c === "Pulsera" },
@@ -32,14 +33,13 @@ const TIPOS = [
 ];
 
 
+// Estilos reales de anillo presentes en el catálogo (coincidencia exacta con `estiloAnillo`)
 const ESTILOS = [
   "Halo",
-  "Solitarios",
-  "Tricillo y cinco piedras",
-  "Pavé",
-  "Cintillos",
+  "Solitario",
+  "Tricillo",
+  "Cinco piedras",
   "Eternity",
-  "Color",
 ];
 
 const METALES = [
