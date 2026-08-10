@@ -162,7 +162,7 @@ const Joyas = () => {
     return baseJoyas.filter((j) => {
       const tipoOpt = TIPOS.find((t) => t.id === filters.tipo);
       if (tipoOpt?.match && !tipoOpt.match(j.categoria)) return false;
-      if (filters.estilo.length && !filters.estilo.some((e) => matchEstilo(j.estilo, e))) return false;
+      if (filters.estilo.length && !filters.estilo.some((e) => matchEstilo(j.estiloAnillo, e))) return false;
       if (filters.metal.length && !filters.metal.some((m) => (j.metalPrincipal ?? "").toLowerCase() === m.toLowerCase())) return false;
       if (filters.piedra.length && !filters.piedra.some((p) => matchPiedra(j.piedraCentral, p))) return false;
       if (q) {
