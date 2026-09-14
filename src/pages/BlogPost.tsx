@@ -92,7 +92,7 @@ const BlogPost = () => {
             {/* CTA */}
             <div className="mt-16 p-8 bg-card border border-border rounded-lg text-center">
               <h3 className="font-display text-xl text-foreground mb-3">¿Necesitas asesoría personalizada?</h3>
-              <a href="https://calendly.com/giasolarijoyas" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-3 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors">
+              <a href="/agenda" className="inline-block px-8 py-3 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors">
                 Agenda tu cita
               </a>
             </div>

@@ -21,7 +21,7 @@ const Terminos = () => {
             <p className="text-primary text-sm tracking-widest uppercase mb-3 text-center">Legal</p>
             <h1 className="font-display text-4xl md:text-5xl text-foreground mb-4 text-center">Términos y Condiciones</h1>
             <p className="text-muted-foreground text-center mb-12">
-              Última actualización: Abril 2026
+              Última actualización: Septiembre 2026
             </p>
           </motion.div>
 
@@ -53,7 +53,7 @@ const Terminos = () => {
               <h2 className="font-display text-xl text-foreground">3. Proceso de compra y pagos</h2>
               <ul className="space-y-2">
                 <li>
-                  <strong>Asesoría y diseño:</strong> La asesoría inicial y bocetos son <strong>sin costo</strong>. No se cobra hasta que el cliente apruebe el diseño final.
+                  <strong>Asesoría y diseño:</strong> Las asesorías personalizadas de diseño se reservan mediante un abono de $20.000, según la política de reserva de citas indicada a continuación. Los retiros, ajustes y atenciones de postventa no están sujetos a este abono.
                 </li>
                 <li>
                   <strong>Adelanto (70%):</strong> Una vez aprobado el diseño final, se requiere un adelanto del 70% del precio total para iniciar la fabricación y adquisición de materiales (piedras, metales). Este adelanto <strong>no es reembolsable</strong> dado que los materiales se adquieren específicamente para tu pieza.
@@ -67,9 +67,22 @@ const Terminos = () => {
               </ul>
             </section>
 
+            <section id="reserva-citas" className="scroll-mt-28">
+              <h2 className="font-display text-xl text-foreground">4. Reserva, cancelación y reagendamiento de citas</h2>
+              <ul className="space-y-2">
+                <li><strong>Confirmación:</strong> Las asesorías personalizadas de diseño se confirman mediante el pago anticipado de $20.000.</li>
+                <li><strong>Abono al encargo:</strong> El monto se descuenta íntegramente del precio final si el cliente confirma el encargo dentro de los 30 días siguientes a la cita.</li>
+                <li><strong>Segunda cita:</strong> Una vez confirmado el encargo del anillo, se incluye sin un nuevo cobro una segunda cita para revisar piedras, diseño o tomar la decisión final.</li>
+                <li><strong>Reagendamiento:</strong> La cita puede reagendarse una vez, sin costo, avisando con al menos 24 horas de anticipación.</li>
+                <li><strong>Inasistencia o aviso tardío:</strong> Si el cliente no asiste o avisa con menos de 24 horas, el abono se destinará a compensar el tiempo profesional reservado y no se aplicará a una nueva cita.</li>
+                <li><strong>Cancelación por Gia Solari:</strong> Si Gia Solari Joyas cancela o modifica la cita, el cliente podrá elegir entre reagendar o recibir la devolución íntegra del monto pagado.</li>
+              </ul>
+              <p>Esta política se aplica sin perjuicio de los derechos irrenunciables reconocidos por la legislación chilena.</p>
+            </section>
+
             {/* 4 */}
             <section>
-              <h2 className="font-display text-xl text-foreground">4. Plazos de fabricación</h2>
+              <h2 className="font-display text-xl text-foreground">5. Plazos de fabricación</h2>
               <p>
                 Los plazos estimados de fabricación son:
               </p>
@@ -86,7 +99,7 @@ const Terminos = () => {
 
             {/* 5 */}
             <section>
-              <h2 className="font-display text-xl text-foreground">5. Garantía por Gusto</h2>
+              <h2 className="font-display text-xl text-foreground">6. Garantía por Gusto</h2>
               <p>
                 Nuestra <strong>Garantía por Gusto</strong> es nuestro principal diferenciador:
               </p>
@@ -105,7 +118,7 @@ const Terminos = () => {
 
             {/* 6 */}
             <section>
-              <h2 className="font-display text-xl text-foreground">6. Garantía de calidad y servicio post-venta</h2>
+              <h2 className="font-display text-xl text-foreground">7. Garantía de calidad y servicio post-venta</h2>
               <ul className="space-y-2">
                 <li>
                   <strong>Ajuste de talla:</strong> Sin costo durante los primeros 6 meses desde la entrega.
@@ -130,7 +143,7 @@ const Terminos = () => {
 
             {/* 7 */}
             <section>
-              <h2 className="font-display text-xl text-foreground">7. Política de devoluciones</h2>
+              <h2 className="font-display text-xl text-foreground">8. Política de devoluciones</h2>
               <p>
                 Al ser piezas fabricadas a medida y a pedido, <strong>no se aceptan devoluciones</strong> por cambio de opinión o preferencia personal, salvo lo cubierto por la Garantía por Gusto (cláusula 5).
               </p>
@@ -141,7 +154,7 @@ const Terminos = () => {
 
             {/* 8 */}
             <section>
-              <h2 className="font-display text-xl text-foreground">8. Cancelación de pedidos</h2>
+              <h2 className="font-display text-xl text-foreground">9. Cancelación de pedidos</h2>
               <ul className="space-y-2">
                 <li>
                   <strong>Antes de iniciar fabricación:</strong> Se puede cancelar con devolución completa del adelanto, descontando únicamente costos de materiales ya adquiridos (si los hubiere).
@@ -154,7 +167,7 @@ const Terminos = () => {
 
             {/* 9 */}
             <section>
-              <h2 className="font-display text-xl text-foreground">9. Propiedad intelectual</h2>
+              <h2 className="font-display text-xl text-foreground">10. Propiedad intelectual</h2>
               <p>
                 Los diseños creados por Gia Solari son propiedad intelectual de la marca. El cliente adquiere el derecho sobre la pieza física fabricada, pero no sobre la reproducción del diseño. Las fotos de las piezas pueden ser utilizadas por Gia Solari en sus redes sociales y sitio web, salvo que el cliente solicite lo contrario por escrito.
               </p>
@@ -162,7 +175,7 @@ const Terminos = () => {
 
             {/* 10 */}
             <section>
-              <h2 className="font-display text-xl text-foreground">10. Privacidad y datos personales</h2>
+              <h2 className="font-display text-xl text-foreground">11. Privacidad y datos personales</h2>
               <p>
                 Los datos personales recopilados a través de nuestros formularios (cotizador, lista de deseos, quiz) se utilizan exclusivamente para la gestión de tu pedido y comunicación relacionada con nuestros servicios.
               </p>
@@ -173,7 +186,7 @@ const Terminos = () => {
 
             {/* 11 */}
             <section>
-              <h2 className="font-display text-xl text-foreground">11. Envíos</h2>
+              <h2 className="font-display text-xl text-foreground">12. Envíos</h2>
               <p>
                 La entrega se realiza de forma <strong>presencial</strong> en nuestro showroom en Vitacura, Santiago. Para envíos a regiones o fuera de Chile, se coordinará con el cliente el mejor medio de despacho. Los costos de envío corren por cuenta del cliente, salvo acuerdo en contrario.
               </p>
@@ -184,7 +197,7 @@ const Terminos = () => {
 
             {/* 12 */}
             <section>
-              <h2 className="font-display text-xl text-foreground">12. Resolución de conflictos</h2>
+              <h2 className="font-display text-xl text-foreground">13. Resolución de conflictos</h2>
               <p>
                 Cualquier diferencia derivada de estos términos se resolverá de manera amistosa. En caso de no llegar a acuerdo, las partes se someten a la jurisdicción de los tribunales ordinarios de Santiago, Chile.
               </p>
@@ -192,7 +205,7 @@ const Terminos = () => {
 
             {/* 13 */}
             <section>
-              <h2 className="font-display text-xl text-foreground">13. Contacto</h2>
+              <h2 className="font-display text-xl text-foreground">14. Contacto</h2>
               <p>
                 Para cualquier consulta sobre estos términos:
               </p>

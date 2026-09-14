@@ -1,197 +1,52 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { toast } from "sonner";
+import { CalendarDays, Check, Clock, CreditCard } from "lucide-react";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { supabase } from "@/integrations/supabase/client";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
-const Agenda = () => {
-  const [form, setForm] = useState({
-    nombre: "",
-    whatsapp: "",
-    email: "",
-    fecha: "",
-    hora: "",
-    motivo: "Asesoría personalizada",
-    notas: "",
-  });
-  const [loading, setLoading] = useState(false);
+const PAYMENT_URL = "https://api.funnelup.io/payment-link/6aa74ac632f95ae35594a69f";
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.nombre || !form.whatsapp || !form.fecha || !form.hora) {
-      toast.error("Completa nombre, WhatsApp, fecha y hora.");
-      return;
-    }
-    setLoading(true);
-    try {
-      const message = `Hola Maca, quiero agendar una visita.\n\nNombre: ${form.nombre}\nWhatsApp: ${form.whatsapp}\nEmail: ${form.email}\nFecha: ${form.fecha}\nHora: ${form.hora}\nMotivo: ${form.motivo}\nNotas: ${form.notas}`;
-
-      // Envía email a giasolarijoyas@gmail.com (y confirmación al cliente si dio email)
-      try {
-        await supabase.functions.invoke("send-agenda-email", {
-          body: {
-            nombre: form.nombre,
-            whatsapp: form.whatsapp,
-            email: form.email,
-            fecha: form.fecha,
-            hora: form.hora,
-            motivo: form.motivo,
-            notas: form.notas,
-          },
-        });
-      } catch (err) {
-        console.warn("No se pudo enviar el email:", err);
-      }
-
-      toast.success("¡Solicitud enviada! Te confirmamos por WhatsApp.");
-      window.open(buildWhatsAppUrl("agenda", { custom: message }), "_blank");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const today = new Date().toISOString().split("T")[0];
-
-  return (
-    <div className="min-h-screen bg-background">
-      <SEO
-        title="Agenda tu cita en Vitacura | Gia Solari"
-        description="Reserva tu cita en el showroom de Vitacura, Santiago. Asesoría 1 a 1 para tu anillo de compromiso a medida en oro 18k, platino y diamantes certificados."
-        path="/agenda"
-      />
-      <Navbar />
-
-      <main className="pt-24 pb-32 md:pb-20">
-        <div className="container mx-auto px-4 md:px-8">
-          <motion.div
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-xl mx-auto"
-          >
-            <p className="text-gold tracking-[0.3em] uppercase text-xs text-center mb-4">
-              Cita Previa
+const Agenda = () => (
+  <div className="min-h-screen bg-background">
+    <SEO
+      title="Agenda tu Cita: Anillos de Compromiso en Vitacura | Gia Solari"
+      description="Reserva tu asesoría personalizada de joyería en nuestro showroom de Vitacura. Citas de 45 minutos para diseñar una pieza única."
+      path="/agenda"
+    />
+    <Navbar />
+    <main className="pt-24 pb-20">
+      <div className="container mx-auto px-4 md:px-8">
+        <motion.div animate={{ opacity: 1, y: 0 }} className="max-w-2xl mx-auto">
+          <p className="text-gold tracking-[0.3em] uppercase text-xs text-center mb-4">Cita previa</p>
+          <h1 className="text-3xl md:text-5xl font-display text-charcoal text-center mb-4">Tu asesoría personalizada</h1>
+          <p className="text-center text-charcoal/70 mb-10 leading-relaxed max-w-xl mx-auto">
+            Un espacio privado en nuestro showroom de Vitacura para conversar sobre tu historia, conocer piedras y comenzar a diseñar una joya única.
+          </p>
+          <div className="bg-cream/40 border border-gold/20 p-6 md:p-9">
+            <div className="grid sm:grid-cols-3 gap-5 mb-8 text-center">
+              <div><Clock className="w-6 h-6 text-gold mx-auto mb-2" /><p className="font-medium text-charcoal">45 minutos</p><p className="text-xs text-charcoal/60">Atención dedicada</p></div>
+              <div><CreditCard className="w-6 h-6 text-gold mx-auto mb-2" /><p className="font-medium text-charcoal">$20.000</p><p className="text-xs text-charcoal/60">Abono descontable</p></div>
+              <div><CalendarDays className="w-6 h-6 text-gold mx-auto mb-2" /><p className="font-medium text-charcoal">Tú eliges</p><p className="text-xs text-charcoal/60">Día y hora disponible</p></div>
+            </div>
+            <div className="space-y-3 text-sm text-charcoal/70 mb-8">
+              <p className="flex gap-3"><Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />El abono se descuenta íntegramente si confirmas tu encargo dentro de 30 días.</p>
+              <p className="flex gap-3"><Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />Puedes reagendar una vez avisando con al menos 24 horas.</p>
+              <p className="flex gap-3"><Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />Una vez confirmado el anillo, tienes una segunda cita sin costo para revisar piedras, diseño o tomar la decisión final.</p>
+            </div>
+            <a href={PAYMENT_URL} className="block w-full min-h-[48px] px-6 py-3 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm text-center hover:opacity-90 transition-opacity">
+              Reservar y pagar $20.000
+            </a>
+            <p className="text-xs text-charcoal/60 text-center mt-4 leading-relaxed">
+              Después del pago podrás escoger tu día y hora. Al continuar aceptas nuestra{" "}<a href="/terminos#reserva-citas" className="underline hover:text-gold">política de reserva</a>.
             </p>
-            <h1 className="text-3xl md:text-5xl font-display text-charcoal text-center mb-4">
-              Agendar Visita
-            </h1>
-            <p className="text-center text-charcoal/70 mb-3 leading-relaxed">
-              Atiendo con cita previa en Vitacura, Santiago.
-            </p>
-            <p className="text-center text-charcoal/70 mb-10 leading-relaxed">
-              Confírmanos fecha y hora y coordinamos contigo por WhatsApp.
-            </p>
-
-            <form onSubmit={handleSubmit} className="space-y-5 bg-cream/40 border border-gold/20 p-6 md:p-8">
-              <div>
-                <label className="block text-xs tracking-widest uppercase text-charcoal/70 mb-1">Nombre *</label>
-                <input
-                  name="nombre"
-                  type="text"
-                  value={form.nombre}
-                  onChange={handleChange}
-                  className="w-full min-h-[44px] px-4 border border-gold/30 bg-background"
-                  required
-                />
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs tracking-widest uppercase text-charcoal/70 mb-1">WhatsApp *</label>
-                  <input
-                    name="whatsapp"
-                    type="tel"
-                    inputMode="tel"
-                    value={form.whatsapp}
-                    onChange={handleChange}
-                    placeholder="+56 9 ..."
-                    className="w-full min-h-[44px] px-4 border border-gold/30 bg-background"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs tracking-widest uppercase text-charcoal/70 mb-1">Email</label>
-                  <input
-                    name="email"
-                    type="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    className="w-full min-h-[44px] px-4 border border-gold/30 bg-background"
-                  />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs tracking-widest uppercase text-charcoal/70 mb-1">Fecha *</label>
-                  <input
-                    name="fecha"
-                    type="date"
-                    min={today}
-                    value={form.fecha}
-                    onChange={handleChange}
-                    className="w-full min-h-[44px] px-4 border border-gold/30 bg-background"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs tracking-widest uppercase text-charcoal/70 mb-1">Hora *</label>
-                  <input
-                    name="hora"
-                    type="time"
-                    value={form.hora}
-                    onChange={handleChange}
-                    className="w-full min-h-[44px] px-4 border border-gold/30 bg-background"
-                    required
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="block text-xs tracking-widest uppercase text-charcoal/70 mb-1">Motivo</label>
-                <select
-                  name="motivo"
-                  value={form.motivo}
-                  onChange={handleChange}
-                  className="w-full min-h-[44px] px-4 border border-gold/30 bg-background"
-                >
-                  <option>Asesoría personalizada (1h)</option>
-                  <option>Argollas de matrimonio (30min)</option>
-                  <option>Ajuste o retiro (15min)</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-xs tracking-widest uppercase text-charcoal/70 mb-1">Notas</label>
-                <textarea
-                  name="notas"
-                  value={form.notas}
-                  onChange={handleChange}
-                  rows={3}
-                  className="w-full px-4 py-3 border border-gold/30 bg-background"
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full min-h-[48px] px-6 py-3 bg-gradient-gold text-charcoal font-semibold tracking-widest uppercase text-sm disabled:opacity-50"
-              >
-                {loading ? "Enviando..." : "Solicitar cita"}
-              </button>
-              <p className="text-xs text-charcoal/60 text-center">
-                Te confirmaremos disponibilidad por WhatsApp en menos de 24h.
-              </p>
-            </form>
-          </motion.div>
-        </div>
-      </main>
-
-      <Footer />
-      <WhatsAppButton />
-    </div>
-  );
-};
+          </div>
+        </motion.div>
+      </div>
+    </main>
+    <Footer />
+    <WhatsAppButton />
+  </div>
+);
 
 export default Agenda;

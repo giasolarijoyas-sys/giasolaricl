@@ -71,13 +71,13 @@ Si el cliente no queda 100% satisfecho con el resultado final, Gia Solari lo reh
 - 30% restante al momento de la entrega
 - La asesoría y el diseño son completamente gratis
 
-### Tipos de cita (agendar en Calendly)
+### Tipos de cita (reservar en la web)
 - **Asesoría personalizada**: 1 hora — para conocer tu proyecto desde cero.
 - **Joya personalizada**: 1 hora — si ya tienes una idea clara y quieres avanzar.
 - **Argollas**: 30 min — para definir argollas de matrimonio.
 - **Ajustes**: 30 min — modificaciones o ajustes a piezas existentes.
 - **Retiro de pedido**: 15 min — para retirar tu joya terminada.
-- Agendar en: https://calendly.com/giasolarijoyas
+- Reservar y pagar el abono en: https://www.giasolari.cl/agenda
 
 ### Piezas que hacen
 Anillos de compromiso, argollas de matrimonio, aros, collares, pulseras, esclavas, transformación de joyas heredadas.
@@ -98,7 +98,7 @@ Puedes sugerir al usuario visitar secciones del sitio usando estos links:
 - Cotizador interactivo: [Cotizar tu joya](#cotizador)
 - Testimonios: [Leer testimonios](#testimonios)
 - Guía completa de joyas: [Ver guía de joyas](/guia)
-- Agendar cita: [Agenda tu visita](https://calendly.com/giasolarijoyas)
+- Agendar cita: [Agenda tu visita](https://www.giasolari.cl/agenda)
 - WhatsApp directo: https://wa.me/56984049502
 
 ## Redes sociales
