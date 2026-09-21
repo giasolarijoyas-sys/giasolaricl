@@ -1,19 +1,10 @@
-import galHaloOvalZafiro from "@/assets/gal-halo-oval-zafiro.png";
-import galHaloPeraDiamante from "@/assets/gal-halo-pera-diamante.png";
-import galOvalPave from "@/assets/gal-oval-pave.jpg";
-
 /**
  * Testimonios bajo el hero. TESTIMONIOS REALES:
  * las frases y nombres son textuales de clientas, no editarlos.
- *
- * IMPORTANTE: las imágenes actuales provienen de la galería general y NO
- * corresponden al anillo de cada persona. Son referenciales: reemplaza cada
- * una por la foto real del anillo de la persona correspondiente antes de
- * considerar esta sección terminada.
+ * No mostrar fotos de piezas hasta tener la imagen real correspondiente a
+ * cada testimonio: una imagen referencial puede sugerir una relación falsa.
  */
 type TestimonioHero = {
-  imagen: string;
-  alt: string;
   nombre: string;
   frase: string;
   pieza?: string;
@@ -21,20 +12,14 @@ type TestimonioHero = {
 
 const testimoniosHero: TestimonioHero[] = [
   {
-    imagen: galHaloOvalZafiro,
-    alt: "Anillo de compromiso halo oval con zafiro azul en oro blanco",
     nombre: "Nico F.",
     frase: "Apañe, confianza, la buena onda y obvio, el anillo",
   },
   {
-    imagen: galHaloPeraDiamante,
-    alt: "Anillo de compromiso halo pera con diamante",
     nombre: "Pablo F.",
     frase: "Quedó bellísimo, gracias querida",
   },
   {
-    imagen: galOvalPave,
-    alt: "Anillo de compromiso oval con pavé de diamantes",
     nombre: "Titi Barros",
     frase: "Quedó feliz, y le quedó perfecto",
   },
@@ -48,22 +33,17 @@ const TestimoniosHero = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="font-display text-2xl md:text-4xl" style={{ color: "#1A1A18" }}>
-            Clientas que ya dijeron que sí
+            Historias de quienes ya dijeron que sí
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {testimoniosHero.map((t, i) => (
             <figure key={i} className="flex flex-col">
-              <div className="overflow-hidden rounded-lg" style={{ background: "#EBE2D2" }}>
-                <img
-                  src={t.imagen}
-                  alt={t.alt}
-                  loading="lazy"
-                  className="w-full aspect-square object-cover"
-                />
-              </div>
-              <figcaption className="mt-4">
+              <figcaption
+                className="h-full rounded-lg p-6 md:p-8 flex flex-col justify-center"
+                style={{ background: "#EBE2D2" }}
+              >
                 <p
                   className="font-display italic leading-relaxed text-base md:text-lg"
                   style={{ color: "#1A1A18" }}
